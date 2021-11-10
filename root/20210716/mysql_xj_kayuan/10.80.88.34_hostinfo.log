@@ -1,0 +1,1198 @@
+======host meta information
+=====uptime===============================
+ 16:18:35 up 753 days, 11:06,  1 user,  load average: 0.39, 0.26, 0.23
+======ip=================================
+======hostname============================
+pfdbs
+======os version============================
+\S
+Kernel \r on an \m
+
+======kernel version=========================
+Linux pfdbs 3.10.0-957.10.1.el7.x86_64 #1 SMP Thu Feb 7 07:12:53 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+======mysql version=========================
+======mysql client==========================
+mysql  Ver 14.14 Distrib 5.7.24, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+======mysql instance========================
+tcp        0      0 10.80.88.34:42002       0.0.0.0:*               LISTEN      19966/mysqld_export 
+tcp6       0      0 :::3306                 :::*                    LISTEN      19898/mysqld        
+unix  2      [ ACC ]     STREAM     LISTENING     70288    19898/mysqld         /data/mysql/data/mysql.sock
+======memory&swap========================
+              total        used        free      shared  buff/cache   available
+Mem:          16037        5921         716         781        9399        8908
+Swap:          8063           0        8063
+======physical cpu==========================
+2
+======cores per physical cpu====================
+cpu cores	: 4
+======processor============================
+8
+======cpu version===========================
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+======disk info=============================
+Filesystem            Type      Size  Used Avail Use% Mounted on
+/dev/mapper/rhel-root xfs        50G   15G   36G  30% /
+devtmpfs              devtmpfs  7.9G     0  7.9G   0% /dev
+tmpfs                 tmpfs     7.9G   84K  7.9G   1% /dev/shm
+tmpfs                 tmpfs     7.9G  778M  7.1G  10% /run
+tmpfs                 tmpfs     7.9G     0  7.9G   0% /sys/fs/cgroup
+/dev/sdb              xfs       100G  7.5G   93G   8% /data
+/dev/sda1             xfs      1014M  242M  773M  24% /boot
+/dev/mapper/rhel-home xfs        21G   55M   21G   1% /home
+/dev/mapper/rhel-tmp  xfs       3.0G   76M  3.0G   3% /tmp
+tmpfs                 tmpfs     1.6G   12K  1.6G   1% /run/user/42
+tmpfs                 tmpfs     1.6G     0  1.6G   0% /run/user/0
+======numa mount========================
+0
+======io stat===============================
+Linux 3.10.0-957.10.1.el7.x86_64 (pfdbs) 	07/15/2021 	_x86_64_	(8 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2.25    0.00    0.21    0.02    0.00   97.52
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+fd0               0.00     0.00    0.00    0.00     0.00     0.00     8.00     0.00   30.95   30.95    0.00  30.95   0.00
+sdb               0.00     0.00    0.15    3.10     0.05     0.02    43.63     0.01    2.30   18.28    1.53   0.68   0.22
+sda               0.00     0.09    0.00    0.76     0.00     0.01    19.66     0.00    1.99    5.10    1.99   0.46   0.03
+dm-0              0.00     0.00    0.00    0.76     0.00     0.01    17.96     0.00    2.22    6.32    2.21   0.42   0.03
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     8.99     0.00    1.65    1.65    0.00   1.64   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00    16.73     0.00    1.56    1.90    1.48   1.08   0.00
+dm-3              0.00     0.00    0.00    0.09     0.00     0.00    14.31     0.00    0.99    1.47    0.99   0.35   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.58    0.00    0.11    0.03    0.00   98.29
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+fd0               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.00     0.00     0.02     5.43     0.01    0.88    0.00    0.88   0.88   0.53
+sda               0.00     0.00    0.00    2.40     0.00     0.14   122.67     0.02    8.50    0.00    8.50   0.92   0.22
+dm-0              0.00     0.00    0.00    2.40     0.00     0.14   122.67     0.02    8.50    0.00    8.50   0.92   0.22
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.73    0.00    0.18    0.03    0.00   98.07
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+fd0               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.40     0.00     0.02     6.98     0.00    0.62    0.00    0.62   0.59   0.38
+sda               0.00     0.00    0.00    1.10     0.00     0.02    29.09     0.00    2.45    0.00    2.45   1.82   0.20
+dm-0              0.00     0.00    0.00    0.80     0.00     0.01    31.38     0.00    1.38    0.00    1.38   0.50   0.04
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.20     0.00     0.00    18.50     0.00    0.50    0.00    0.50   0.50   0.01
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.75    0.00    0.41    0.03    0.00   97.81
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+fd0               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.00     0.00     0.02     5.57     0.00    0.58    0.00    0.58   0.58   0.35
+sda               0.00     0.00    0.00    0.10     0.00     0.00    16.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00    16.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.65    0.00    0.15    0.01    0.00   98.19
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+fd0               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.10     0.00     0.02     5.61     0.00    0.57    0.00    0.57   0.57   0.35
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.66    0.00    0.13    0.03    0.00   98.19
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+fd0               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.20     0.00     0.02     5.92     0.00    0.61    0.00    0.61   0.61   0.38
+sda               0.00     1.20    0.00    6.10     0.00     0.09    28.90     0.03    4.67    0.00    4.67   0.18   0.11
+dm-0              0.00     0.00    0.00    6.60     0.00     0.08    25.88     0.03    5.21    0.00    5.21   0.12   0.08
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.50     0.00     0.00    10.40     0.00    1.60    0.00    1.60   0.40   0.02
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.83    0.00    0.11    0.04    0.00   98.02
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+fd0               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.40     0.00     0.02     5.75     0.01    1.03    0.00    1.03   1.03   0.66
+sda               0.00     0.00    0.00    0.40     0.00     0.00     8.00     0.00    5.00    0.00    5.00   1.25   0.05
+dm-0              0.00     0.00    0.00    0.40     0.00     0.00     8.00     0.00    5.00    0.00    5.00   1.25   0.05
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.60    0.00    0.13    0.01    0.00   98.26
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+fd0               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    5.00     0.00     0.01     5.84     0.00    0.50    0.00    0.50   0.50   0.25
+sda               0.00     0.00    0.00    0.40     0.00     0.00    10.00     0.00    0.50    0.00    0.50   0.50   0.02
+dm-0              0.00     0.00    0.00    0.20     0.00     0.00    12.00     0.00    1.00    0.00    1.00   1.00   0.02
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.20     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.64    0.00    0.19    0.04    0.00   98.14
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+fd0               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    4.60     0.00     0.02     7.59     0.01    1.20    0.00    1.20   1.13   0.52
+sda               0.00     0.00    0.00    1.00     0.00     0.00     8.70     0.00    0.40    0.00    0.40   0.40   0.04
+dm-0              0.00     0.00    0.00    0.70     0.00     0.00    11.57     0.00    0.29    0.00    0.29   0.29   0.02
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     3.00     0.00    1.00    0.00    1.00   1.00   0.01
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.93    0.00    0.61    0.03    0.00   97.43
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+fd0               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    5.80     0.00     0.02     5.47     0.00    0.66    0.00    0.66   0.66   0.38
+sda               0.00     0.00    0.00    0.20     0.00     0.00     9.50     0.00    1.00    0.00    1.00   1.00   0.02
+dm-0              0.00     0.00    0.00    0.20     0.00     0.00     9.50     0.00    1.00    0.00    1.00   1.00   0.02
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+======vmstat======
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 735664     44 9625072    0    0     6     4    0    0  2  0 98  0  0
+ 0  0      0 735796     44 9625096    0    0     0    16  830 1196  2  0 98  0  0
+ 0  0      0 735796     44 9625096    0    0     0    15  810 1135  2  0 98  0  0
+ 0  0      0 735548     44 9625100    0    0     0    20  788 1139  1  0 98  0  0
+ 0  0      0 735548     44 9625100    0    0     0    23 1170 1672  2  0 97  0  0
+ 0  0      0 735420     44 9625108    0    0     0    16  676  962  1  0 98  0  0
+ 0  0      0 735056     44 9625108    0    0     0    20 1024 1283  2  0 98  0  0
+ 0  0      0 735388     44 9625108    0    0     0    15  804 1162  1  0 98  0  0
+ 0  0      0 735388     44 9625108    0    0     0    16  793 1136  2  0 98  0  0
+ 0  0      0 735388     44 9625108    0    0     0    15 1066 1534  2  0 98  0  0
+====dstat===
+You did not select any stats, using -cdngy by default.
+[7l----total-cpu-usage---- -dsk/total- -net/total- ---paging-- ---system--
+usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw 
+  2   0  98   0   0   0|  48k   30k|   0     0 |   0     0 | 435  1272 
+  2   0  98   0   0   0|   0    28k|1814B   23k|   0     0 | 736  1047 
+  1   0  98   0   0   0|   0    16k|2479B   23k|   0     0 | 815  1153 
+  2   0  98   0   0   0|   0    55k|2242B   24k|   0     0 | 809  1127 
+  2   0  98   0   0   0|   0    20k|2217B   23k|   0     0 | 984  1416 
+  2   0  98   0   0   0|   0    48k|2342B   43k|   0     0 | 845  1177 
+  1   0  99   0   0   0|   0    16k|2404B   23k|   0     0 | 806  1167 
+  2   0  98   0   0   0|   0    17k|1682B   23k|   0     0 | 741  1007 
+  2   0  98   0   0   0|   0    20k|2014B   23k|   0     0 | 802  1154 
+  2   0  98   0   0   0|   0    24k|1650B   23k|   0     0 |1012  1515 
+  2   0  98   0   0   0|   0    16k|2281B   43k|   0     0 | 927  1305 
+======system log============================
+Jul 15 12:38:01 pfdbs systemd: Started Session 1178741 of user mysql.
+Jul 15 12:38:01 pfdbs systemd: Started Session 1178742 of user root.
+Jul 15 12:38:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:39:01 pfdbs systemd: Started Session 1178743 of user root.
+Jul 15 12:39:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:39:01 pfdbs systemd: Started Session 1178744 of user mysql.
+Jul 15 12:39:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:40:01 pfdbs systemd: Started Session 1178747 of user root.
+Jul 15 12:40:01 pfdbs systemd: Started Session 1178746 of user root.
+Jul 15 12:40:01 pfdbs systemd: Started Session 1178745 of user root.
+Jul 15 12:40:01 pfdbs systemd: Started Session 1178748 of user root.
+Jul 15 12:40:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:40:01 pfdbs systemd: Started Session 1178749 of user mysql.
+Jul 15 12:40:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:41:01 pfdbs systemd: Started Session 1178750 of user root.
+Jul 15 12:41:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:41:01 pfdbs systemd: Started Session 1178751 of user mysql.
+Jul 15 12:41:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:42:01 pfdbs systemd: Started Session 1178752 of user root.
+Jul 15 12:42:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:42:01 pfdbs systemd: Started Session 1178753 of user mysql.
+Jul 15 12:42:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:43:01 pfdbs systemd: Started Session 1178754 of user root.
+Jul 15 12:43:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:43:01 pfdbs systemd: Started Session 1178755 of user mysql.
+Jul 15 12:43:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:44:01 pfdbs systemd: Started Session 1178756 of user root.
+Jul 15 12:44:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:44:01 pfdbs systemd: Started Session 1178757 of user mysql.
+Jul 15 12:44:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:45:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:45:01 pfdbs systemd: Started Session 1178760 of user mysql.
+Jul 15 12:45:01 pfdbs systemd: Started Session 1178759 of user root.
+Jul 15 12:45:01 pfdbs systemd: Started Session 1178758 of user root.
+Jul 15 12:45:01 pfdbs systemd: Started Session 1178761 of user root.
+Jul 15 12:45:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:46:02 pfdbs systemd: Started Session 1178762 of user root.
+Jul 15 12:46:02 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:46:02 pfdbs systemd: Started Session 1178763 of user mysql.
+Jul 15 12:46:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:47:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:47:01 pfdbs systemd: Started Session 1178765 of user mysql.
+Jul 15 12:47:01 pfdbs systemd: Started Session 1178764 of user root.
+Jul 15 12:47:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:48:01 pfdbs systemd: Started Session 1178766 of user root.
+Jul 15 12:48:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:48:01 pfdbs systemd: Started Session 1178767 of user mysql.
+Jul 15 12:48:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:49:01 pfdbs systemd: Started Session 1178768 of user root.
+Jul 15 12:49:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:49:01 pfdbs systemd: Started Session 1178769 of user mysql.
+Jul 15 12:49:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:50:01 pfdbs systemd: Started Session 1178770 of user root.
+Jul 15 12:50:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:50:01 pfdbs systemd: Started Session 1178773 of user mysql.
+Jul 15 12:50:01 pfdbs systemd: Started Session 1178772 of user root.
+Jul 15 12:50:01 pfdbs systemd: Started Session 1178774 of user root.
+Jul 15 12:50:01 pfdbs systemd: Started Session 1178771 of user root.
+Jul 15 12:50:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:51:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:51:01 pfdbs systemd: Started Session 1178775 of user mysql.
+Jul 15 12:51:01 pfdbs systemd: Started Session 1178776 of user root.
+Jul 15 12:51:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:52:01 pfdbs systemd: Started Session 1178777 of user root.
+Jul 15 12:52:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:52:01 pfdbs systemd: Started Session 1178778 of user mysql.
+Jul 15 12:52:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:53:01 pfdbs systemd: Started Session 1178779 of user root.
+Jul 15 12:53:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:53:01 pfdbs systemd: Started Session 1178780 of user mysql.
+Jul 15 12:53:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:54:01 pfdbs systemd: Started Session 1178781 of user root.
+Jul 15 12:54:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:54:01 pfdbs systemd: Started Session 1178782 of user mysql.
+Jul 15 12:54:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:55:01 pfdbs systemd: Started Session 1178784 of user root.
+Jul 15 12:55:01 pfdbs systemd: Started Session 1178783 of user root.
+Jul 15 12:55:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:55:01 pfdbs systemd: Started Session 1178786 of user mysql.
+Jul 15 12:55:01 pfdbs systemd: Started Session 1178785 of user root.
+Jul 15 12:55:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:56:01 pfdbs systemd: Started Session 1178787 of user root.
+Jul 15 12:56:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:56:01 pfdbs systemd: Started Session 1178788 of user mysql.
+Jul 15 12:56:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:57:01 pfdbs systemd: Started Session 1178789 of user root.
+Jul 15 12:57:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:57:01 pfdbs systemd: Started Session 1178790 of user mysql.
+Jul 15 12:57:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:58:01 pfdbs systemd: Started Session 1178791 of user root.
+Jul 15 12:58:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:58:01 pfdbs systemd: Started Session 1178792 of user mysql.
+Jul 15 12:58:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 12:59:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 12:59:01 pfdbs systemd: Started Session 1178794 of user mysql.
+Jul 15 12:59:01 pfdbs systemd: Started Session 1178793 of user root.
+Jul 15 12:59:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:00:01 pfdbs systemd: Started Session 1178796 of user root.
+Jul 15 13:00:01 pfdbs systemd: Started Session 1178795 of user root.
+Jul 15 13:00:01 pfdbs systemd: Started Session 1178797 of user root.
+Jul 15 13:00:01 pfdbs systemd: Started Session 1178798 of user root.
+Jul 15 13:00:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:00:01 pfdbs systemd: Started Session 1178799 of user mysql.
+Jul 15 13:00:01 pfdbs systemd: Started Session 1178800 of user mysql.
+Jul 15 13:01:01 pfdbs systemd: Started Session 1178803 of user mysql.
+Jul 15 13:01:01 pfdbs systemd: Started Session 1178801 of user root.
+Jul 15 13:01:01 pfdbs systemd: Started Session 1178802 of user root.
+Jul 15 13:02:01 pfdbs systemd: Started Session 1178804 of user root.
+Jul 15 13:02:01 pfdbs systemd: Started Session 1178805 of user mysql.
+Jul 15 13:03:01 pfdbs systemd: Started Session 1178806 of user root.
+Jul 15 13:03:01 pfdbs systemd: Started Session 1178807 of user mysql.
+Jul 15 13:03:07 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:04:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:04:01 pfdbs systemd: Started Session 1178809 of user mysql.
+Jul 15 13:04:01 pfdbs systemd: Started Session 1178808 of user root.
+Jul 15 13:04:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:05:01 pfdbs systemd: Started Session 1178811 of user root.
+Jul 15 13:05:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:05:01 pfdbs systemd: Started Session 1178812 of user mysql.
+Jul 15 13:05:01 pfdbs systemd: Started Session 1178810 of user root.
+Jul 15 13:05:01 pfdbs systemd: Started Session 1178813 of user root.
+Jul 15 13:05:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:06:01 pfdbs systemd: Started Session 1178814 of user root.
+Jul 15 13:06:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:06:01 pfdbs systemd: Started Session 1178815 of user mysql.
+Jul 15 13:06:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:07:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:07:01 pfdbs systemd: Started Session 1178816 of user mysql.
+Jul 15 13:07:01 pfdbs systemd: Started Session 1178817 of user root.
+Jul 15 13:07:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:08:01 pfdbs systemd: Started Session 1178818 of user root.
+Jul 15 13:08:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:08:01 pfdbs systemd: Started Session 1178819 of user mysql.
+Jul 15 13:08:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:09:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:09:01 pfdbs systemd: Started Session 1178821 of user mysql.
+Jul 15 13:09:01 pfdbs systemd: Started Session 1178820 of user root.
+Jul 15 13:09:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:10:01 pfdbs systemd: Started Session 1178824 of user root.
+Jul 15 13:10:01 pfdbs systemd: Started Session 1178823 of user root.
+Jul 15 13:10:01 pfdbs systemd: Started Session 1178822 of user root.
+Jul 15 13:10:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:10:01 pfdbs systemd: Started Session 1178825 of user mysql.
+Jul 15 13:10:01 pfdbs systemd: Started Session 1178826 of user root.
+Jul 15 13:10:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:11:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:11:01 pfdbs systemd: Started Session 1178827 of user mysql.
+Jul 15 13:11:01 pfdbs systemd: Started Session 1178828 of user root.
+Jul 15 13:11:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:12:01 pfdbs systemd: Started Session 1178829 of user root.
+Jul 15 13:12:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:12:01 pfdbs systemd: Started Session 1178830 of user mysql.
+Jul 15 13:12:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:13:01 pfdbs systemd: Started Session 1178831 of user root.
+Jul 15 13:13:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:13:01 pfdbs systemd: Started Session 1178832 of user mysql.
+Jul 15 13:13:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:14:01 pfdbs systemd: Started Session 1178833 of user root.
+Jul 15 13:14:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:14:01 pfdbs systemd: Started Session 1178834 of user mysql.
+Jul 15 13:14:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:15:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:15:01 pfdbs systemd: Started Session 1178835 of user mysql.
+Jul 15 13:15:01 pfdbs systemd: Started Session 1178837 of user root.
+Jul 15 13:15:01 pfdbs systemd: Started Session 1178836 of user root.
+Jul 15 13:15:01 pfdbs systemd: Started Session 1178838 of user root.
+Jul 15 13:15:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:16:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:16:01 pfdbs systemd: Started Session 1178840 of user mysql.
+Jul 15 13:16:01 pfdbs systemd: Started Session 1178839 of user root.
+Jul 15 13:16:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:17:01 pfdbs systemd: Started Session 1178841 of user root.
+Jul 15 13:17:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:17:01 pfdbs systemd: Started Session 1178842 of user mysql.
+Jul 15 13:17:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:18:01 pfdbs systemd: Started Session 1178843 of user root.
+Jul 15 13:18:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:18:01 pfdbs systemd: Started Session 1178844 of user mysql.
+Jul 15 13:18:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:19:01 pfdbs systemd: Started Session 1178845 of user root.
+Jul 15 13:19:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:19:01 pfdbs systemd: Started Session 1178846 of user mysql.
+Jul 15 13:19:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:20:01 pfdbs systemd: Started Session 1178849 of user root.
+Jul 15 13:20:01 pfdbs systemd: Started Session 1178848 of user root.
+Jul 15 13:20:01 pfdbs systemd: Started Session 1178850 of user root.
+Jul 15 13:20:01 pfdbs systemd: Started Session 1178847 of user root.
+Jul 15 13:20:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:20:01 pfdbs systemd: Started Session 1178851 of user mysql.
+Jul 15 13:20:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:21:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:21:01 pfdbs systemd: Started Session 1178852 of user mysql.
+Jul 15 13:21:01 pfdbs systemd: Started Session 1178853 of user root.
+Jul 15 13:21:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:22:01 pfdbs systemd: Started Session 1178854 of user root.
+Jul 15 13:22:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:22:01 pfdbs systemd: Started Session 1178855 of user mysql.
+Jul 15 13:22:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:23:01 pfdbs systemd: Started Session 1178856 of user root.
+Jul 15 13:23:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:23:01 pfdbs systemd: Started Session 1178857 of user mysql.
+Jul 15 13:23:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:24:01 pfdbs systemd: Started Session 1178858 of user root.
+Jul 15 13:24:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:24:01 pfdbs systemd: Started Session 1178859 of user mysql.
+Jul 15 13:24:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:25:01 pfdbs systemd: Started Session 1178860 of user root.
+Jul 15 13:25:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:25:01 pfdbs systemd: Started Session 1178862 of user mysql.
+Jul 15 13:25:01 pfdbs systemd: Started Session 1178861 of user root.
+Jul 15 13:25:01 pfdbs systemd: Started Session 1178863 of user root.
+Jul 15 13:25:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:26:01 pfdbs systemd: Started Session 1178864 of user root.
+Jul 15 13:26:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:26:01 pfdbs systemd: Started Session 1178865 of user mysql.
+Jul 15 13:26:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:27:01 pfdbs systemd: Started Session 1178866 of user root.
+Jul 15 13:27:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:27:01 pfdbs systemd: Started Session 1178867 of user mysql.
+Jul 15 13:27:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:28:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:28:01 pfdbs systemd: Started Session 1178869 of user mysql.
+Jul 15 13:28:01 pfdbs systemd: Started Session 1178868 of user root.
+Jul 15 13:28:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:29:01 pfdbs systemd: Started Session 1178870 of user root.
+Jul 15 13:29:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:29:01 pfdbs systemd: Started Session 1178871 of user mysql.
+Jul 15 13:29:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:30:01 pfdbs systemd: Started Session 1178872 of user root.
+Jul 15 13:30:01 pfdbs systemd: Started Session 1178873 of user root.
+Jul 15 13:30:01 pfdbs systemd: Started Session 1178874 of user root.
+Jul 15 13:30:01 pfdbs systemd: Started Session 1178875 of user root.
+Jul 15 13:30:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:30:01 pfdbs systemd: Started Session 1178876 of user mysql.
+Jul 15 13:30:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:31:01 pfdbs systemd: Started Session 1178877 of user root.
+Jul 15 13:31:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:31:01 pfdbs systemd: Started Session 1178878 of user mysql.
+Jul 15 13:31:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:32:01 pfdbs systemd: Started Session 1178879 of user root.
+Jul 15 13:32:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:32:01 pfdbs systemd: Started Session 1178880 of user mysql.
+Jul 15 13:32:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:33:01 pfdbs systemd: Started Session 1178881 of user root.
+Jul 15 13:33:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:33:01 pfdbs systemd: Started Session 1178882 of user mysql.
+Jul 15 13:33:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:34:01 pfdbs systemd: Started Session 1178883 of user root.
+Jul 15 13:34:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:34:01 pfdbs systemd: Started Session 1178884 of user mysql.
+Jul 15 13:34:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:35:01 pfdbs systemd: Started Session 1178885 of user root.
+Jul 15 13:35:01 pfdbs systemd: Started Session 1178886 of user root.
+Jul 15 13:35:01 pfdbs systemd: Started Session 1178888 of user root.
+Jul 15 13:35:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:35:01 pfdbs systemd: Started Session 1178887 of user mysql.
+Jul 15 13:35:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:36:01 pfdbs systemd: Started Session 1178889 of user root.
+Jul 15 13:36:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:36:01 pfdbs systemd: Started Session 1178890 of user mysql.
+Jul 15 13:36:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:37:01 pfdbs systemd: Started Session 1178891 of user root.
+Jul 15 13:37:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:37:01 pfdbs systemd: Started Session 1178892 of user mysql.
+Jul 15 13:37:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:38:01 pfdbs systemd: Started Session 1178893 of user root.
+Jul 15 13:38:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:38:01 pfdbs systemd: Started Session 1178894 of user mysql.
+Jul 15 13:38:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:39:01 pfdbs systemd: Started Session 1178895 of user root.
+Jul 15 13:39:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:39:01 pfdbs systemd: Started Session 1178896 of user mysql.
+Jul 15 13:39:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:40:01 pfdbs systemd: Started Session 1178900 of user root.
+Jul 15 13:40:01 pfdbs systemd: Started Session 1178898 of user root.
+Jul 15 13:40:01 pfdbs systemd: Started Session 1178897 of user root.
+Jul 15 13:40:01 pfdbs systemd: Started Session 1178899 of user root.
+Jul 15 13:40:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:40:01 pfdbs systemd: Started Session 1178901 of user mysql.
+Jul 15 13:40:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:41:01 pfdbs systemd: Started Session 1178902 of user root.
+Jul 15 13:41:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:41:01 pfdbs systemd: Started Session 1178903 of user mysql.
+Jul 15 13:41:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:42:01 pfdbs systemd: Started Session 1178904 of user root.
+Jul 15 13:42:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:42:01 pfdbs systemd: Started Session 1178905 of user mysql.
+Jul 15 13:42:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:43:01 pfdbs systemd: Started Session 1178906 of user root.
+Jul 15 13:43:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:43:01 pfdbs systemd: Started Session 1178907 of user mysql.
+Jul 15 13:43:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:44:01 pfdbs systemd: Started Session 1178908 of user root.
+Jul 15 13:44:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:44:01 pfdbs systemd: Started Session 1178909 of user mysql.
+Jul 15 13:44:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:45:01 pfdbs systemd: Started Session 1178912 of user root.
+Jul 15 13:45:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:45:01 pfdbs systemd: Started Session 1178913 of user mysql.
+Jul 15 13:45:01 pfdbs systemd: Started Session 1178910 of user root.
+Jul 15 13:45:01 pfdbs systemd: Started Session 1178911 of user root.
+Jul 15 13:45:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:46:01 pfdbs systemd: Started Session 1178914 of user root.
+Jul 15 13:46:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:46:01 pfdbs systemd: Started Session 1178915 of user mysql.
+Jul 15 13:46:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:47:01 pfdbs systemd: Started Session 1178916 of user root.
+Jul 15 13:47:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:47:01 pfdbs systemd: Started Session 1178917 of user mysql.
+Jul 15 13:47:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:48:01 pfdbs systemd: Started Session 1178918 of user root.
+Jul 15 13:48:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:48:01 pfdbs systemd: Started Session 1178919 of user mysql.
+Jul 15 13:48:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:49:01 pfdbs systemd: Started Session 1178920 of user root.
+Jul 15 13:49:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:49:01 pfdbs systemd: Started Session 1178921 of user mysql.
+Jul 15 13:49:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:50:01 pfdbs systemd: Started Session 1178922 of user root.
+Jul 15 13:50:01 pfdbs systemd: Started Session 1178925 of user root.
+Jul 15 13:50:01 pfdbs systemd: Started Session 1178924 of user root.
+Jul 15 13:50:01 pfdbs systemd: Started Session 1178923 of user root.
+Jul 15 13:50:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:50:01 pfdbs systemd: Started Session 1178926 of user mysql.
+Jul 15 13:50:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:51:01 pfdbs systemd: Started Session 1178927 of user root.
+Jul 15 13:51:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:51:01 pfdbs systemd: Started Session 1178928 of user mysql.
+Jul 15 13:51:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:52:01 pfdbs systemd: Started Session 1178929 of user root.
+Jul 15 13:52:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:52:01 pfdbs systemd: Started Session 1178930 of user mysql.
+Jul 15 13:52:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:53:01 pfdbs systemd: Started Session 1178931 of user root.
+Jul 15 13:53:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:53:01 pfdbs systemd: Started Session 1178932 of user mysql.
+Jul 15 13:53:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:54:02 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:54:02 pfdbs systemd: Started Session 1178934 of user mysql.
+Jul 15 13:54:02 pfdbs systemd: Started Session 1178933 of user root.
+Jul 15 13:54:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:55:01 pfdbs systemd: Started Session 1178935 of user root.
+Jul 15 13:55:01 pfdbs systemd: Started Session 1178936 of user root.
+Jul 15 13:55:01 pfdbs systemd: Started Session 1178937 of user root.
+Jul 15 13:55:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:55:01 pfdbs systemd: Started Session 1178938 of user mysql.
+Jul 15 13:55:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:56:01 pfdbs systemd: Started Session 1178940 of user root.
+Jul 15 13:56:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:56:01 pfdbs systemd: Started Session 1178939 of user mysql.
+Jul 15 13:56:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:57:01 pfdbs systemd: Started Session 1178941 of user root.
+Jul 15 13:57:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:57:01 pfdbs systemd: Started Session 1178942 of user mysql.
+Jul 15 13:57:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:58:01 pfdbs systemd: Started Session 1178943 of user root.
+Jul 15 13:58:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:58:01 pfdbs systemd: Started Session 1178944 of user mysql.
+Jul 15 13:58:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 13:59:01 pfdbs systemd: Started Session 1178945 of user root.
+Jul 15 13:59:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 13:59:01 pfdbs systemd: Started Session 1178946 of user mysql.
+Jul 15 13:59:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:00:01 pfdbs systemd: Started Session 1178947 of user root.
+Jul 15 14:00:01 pfdbs systemd: Started Session 1178948 of user root.
+Jul 15 14:00:01 pfdbs systemd: Started Session 1178950 of user root.
+Jul 15 14:00:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:00:01 pfdbs systemd: Started Session 1178951 of user mysql.
+Jul 15 14:00:01 pfdbs systemd: Started Session 1178952 of user mysql.
+Jul 15 14:00:01 pfdbs systemd: Started Session 1178949 of user root.
+Jul 15 14:01:01 pfdbs systemd: Started Session 1178953 of user root.
+Jul 15 14:01:01 pfdbs systemd: Started Session 1178954 of user mysql.
+Jul 15 14:01:01 pfdbs systemd: Started Session 1178955 of user root.
+Jul 15 14:02:01 pfdbs systemd: Started Session 1178956 of user root.
+Jul 15 14:02:01 pfdbs systemd: Started Session 1178957 of user mysql.
+Jul 15 14:03:01 pfdbs systemd: Started Session 1178958 of user root.
+Jul 15 14:03:01 pfdbs systemd: Started Session 1178959 of user mysql.
+Jul 15 14:03:07 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:04:01 pfdbs systemd: Started Session 1178960 of user root.
+Jul 15 14:04:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:04:01 pfdbs systemd: Started Session 1178961 of user mysql.
+Jul 15 14:04:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:05:01 pfdbs systemd: Started Session 1178964 of user root.
+Jul 15 14:05:01 pfdbs systemd: Started Session 1178962 of user root.
+Jul 15 14:05:01 pfdbs systemd: Started Session 1178963 of user root.
+Jul 15 14:05:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:05:01 pfdbs systemd: Started Session 1178965 of user mysql.
+Jul 15 14:05:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:06:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:06:01 pfdbs systemd: Started Session 1178967 of user mysql.
+Jul 15 14:06:01 pfdbs systemd: Started Session 1178966 of user root.
+Jul 15 14:06:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:07:01 pfdbs systemd: Started Session 1178968 of user root.
+Jul 15 14:07:02 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:07:02 pfdbs systemd: Started Session 1178969 of user mysql.
+Jul 15 14:07:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:08:01 pfdbs systemd: Started Session 1178970 of user root.
+Jul 15 14:08:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:08:01 pfdbs systemd: Started Session 1178971 of user mysql.
+Jul 15 14:08:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:09:01 pfdbs systemd: Started Session 1178972 of user root.
+Jul 15 14:09:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:09:01 pfdbs systemd: Started Session 1178973 of user mysql.
+Jul 15 14:09:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:10:01 pfdbs systemd: Started Session 1178975 of user root.
+Jul 15 14:10:01 pfdbs systemd: Started Session 1178974 of user root.
+Jul 15 14:10:01 pfdbs systemd: Started Session 1178977 of user root.
+Jul 15 14:10:01 pfdbs systemd: Started Session 1178976 of user root.
+Jul 15 14:10:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:10:01 pfdbs systemd: Started Session 1178978 of user mysql.
+Jul 15 14:10:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:11:01 pfdbs systemd: Started Session 1178979 of user root.
+Jul 15 14:11:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:11:01 pfdbs systemd: Started Session 1178980 of user mysql.
+Jul 15 14:11:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:12:01 pfdbs systemd: Started Session 1178981 of user root.
+Jul 15 14:12:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:12:01 pfdbs systemd: Started Session 1178982 of user mysql.
+Jul 15 14:12:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:13:01 pfdbs systemd: Started Session 1178983 of user root.
+Jul 15 14:13:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:13:01 pfdbs systemd: Started Session 1178984 of user mysql.
+Jul 15 14:13:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:14:01 pfdbs systemd: Started Session 1178985 of user root.
+Jul 15 14:14:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:14:01 pfdbs systemd: Started Session 1178986 of user mysql.
+Jul 15 14:14:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:15:01 pfdbs systemd: Started Session 1178987 of user root.
+Jul 15 14:15:01 pfdbs systemd: Started Session 1178988 of user root.
+Jul 15 14:15:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:15:01 pfdbs systemd: Started Session 1178990 of user mysql.
+Jul 15 14:15:01 pfdbs systemd: Started Session 1178989 of user root.
+Jul 15 14:15:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:16:01 pfdbs systemd: Started Session 1178991 of user root.
+Jul 15 14:16:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:16:01 pfdbs systemd: Started Session 1178992 of user mysql.
+Jul 15 14:16:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:17:01 pfdbs systemd: Started Session 1178994 of user root.
+Jul 15 14:17:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:17:01 pfdbs systemd: Started Session 1178993 of user mysql.
+Jul 15 14:17:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:18:01 pfdbs systemd: Started Session 1178995 of user root.
+Jul 15 14:18:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:18:01 pfdbs systemd: Started Session 1178996 of user mysql.
+Jul 15 14:18:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:19:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:19:01 pfdbs systemd: Started Session 1178998 of user mysql.
+Jul 15 14:19:01 pfdbs systemd: Started Session 1178997 of user root.
+Jul 15 14:19:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:20:01 pfdbs systemd: Started Session 1179000 of user root.
+Jul 15 14:20:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:20:01 pfdbs systemd: Started Session 1179002 of user mysql.
+Jul 15 14:20:01 pfdbs systemd: Started Session 1178999 of user root.
+Jul 15 14:20:01 pfdbs systemd: Started Session 1179003 of user root.
+Jul 15 14:20:01 pfdbs systemd: Started Session 1179001 of user root.
+Jul 15 14:20:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:21:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:21:01 pfdbs systemd: Started Session 1179004 of user mysql.
+Jul 15 14:21:01 pfdbs systemd: Started Session 1179005 of user root.
+Jul 15 14:21:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:22:01 pfdbs systemd: Started Session 1179006 of user root.
+Jul 15 14:22:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:22:01 pfdbs systemd: Started Session 1179007 of user mysql.
+Jul 15 14:22:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:23:01 pfdbs systemd: Started Session 1179008 of user root.
+Jul 15 14:23:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:23:01 pfdbs systemd: Started Session 1179009 of user mysql.
+Jul 15 14:23:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:24:01 pfdbs systemd: Started Session 1179010 of user root.
+Jul 15 14:24:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:24:01 pfdbs systemd: Started Session 1179011 of user mysql.
+Jul 15 14:24:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:25:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:25:01 pfdbs systemd: Started Session 1179013 of user mysql.
+Jul 15 14:25:01 pfdbs systemd: Started Session 1179015 of user root.
+Jul 15 14:25:01 pfdbs systemd: Started Session 1179012 of user root.
+Jul 15 14:25:01 pfdbs systemd: Started Session 1179014 of user root.
+Jul 15 14:25:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:26:01 pfdbs systemd: Started Session 1179016 of user root.
+Jul 15 14:26:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:26:01 pfdbs systemd: Started Session 1179017 of user mysql.
+Jul 15 14:26:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:27:01 pfdbs systemd: Started Session 1179018 of user root.
+Jul 15 14:27:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:27:01 pfdbs systemd: Started Session 1179019 of user mysql.
+Jul 15 14:27:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:28:01 pfdbs systemd: Started Session 1179020 of user root.
+Jul 15 14:28:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:28:01 pfdbs systemd: Started Session 1179021 of user mysql.
+Jul 15 14:28:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:29:01 pfdbs systemd: Started Session 1179023 of user root.
+Jul 15 14:29:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:29:01 pfdbs systemd: Started Session 1179022 of user mysql.
+Jul 15 14:29:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:30:01 pfdbs systemd: Started Session 1179025 of user root.
+Jul 15 14:30:01 pfdbs systemd: Started Session 1179024 of user root.
+Jul 15 14:30:01 pfdbs systemd: Started Session 1179026 of user root.
+Jul 15 14:30:01 pfdbs systemd: Started Session 1179027 of user root.
+Jul 15 14:30:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:30:01 pfdbs systemd: Started Session 1179028 of user mysql.
+Jul 15 14:30:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:31:01 pfdbs systemd: Started Session 1179029 of user root.
+Jul 15 14:31:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:31:01 pfdbs systemd: Started Session 1179030 of user mysql.
+Jul 15 14:31:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:32:01 pfdbs systemd: Started Session 1179031 of user root.
+Jul 15 14:32:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:32:01 pfdbs systemd: Started Session 1179032 of user mysql.
+Jul 15 14:32:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:33:01 pfdbs systemd: Started Session 1179033 of user root.
+Jul 15 14:33:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:33:01 pfdbs systemd: Started Session 1179034 of user mysql.
+Jul 15 14:33:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:34:01 pfdbs systemd: Started Session 1179035 of user root.
+Jul 15 14:34:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:34:01 pfdbs systemd: Started Session 1179036 of user mysql.
+Jul 15 14:34:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:35:01 pfdbs systemd: Started Session 1179038 of user root.
+Jul 15 14:35:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:35:01 pfdbs systemd: Started Session 1179040 of user mysql.
+Jul 15 14:35:01 pfdbs systemd: Started Session 1179037 of user root.
+Jul 15 14:35:01 pfdbs systemd: Started Session 1179039 of user root.
+Jul 15 14:35:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:36:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:36:01 pfdbs systemd: Started Session 1179041 of user mysql.
+Jul 15 14:36:01 pfdbs systemd: Started Session 1179042 of user root.
+Jul 15 14:36:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:37:01 pfdbs systemd: Started Session 1179043 of user root.
+Jul 15 14:37:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:37:01 pfdbs systemd: Started Session 1179044 of user mysql.
+Jul 15 14:37:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:38:01 pfdbs systemd: Started Session 1179045 of user root.
+Jul 15 14:38:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:38:01 pfdbs systemd: Started Session 1179046 of user mysql.
+Jul 15 14:38:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:39:01 pfdbs systemd: Started Session 1179047 of user root.
+Jul 15 14:39:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:39:01 pfdbs systemd: Started Session 1179048 of user mysql.
+Jul 15 14:39:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:40:01 pfdbs systemd: Started Session 1179052 of user root.
+Jul 15 14:40:01 pfdbs systemd: Started Session 1179049 of user root.
+Jul 15 14:40:01 pfdbs systemd: Started Session 1179050 of user root.
+Jul 15 14:40:01 pfdbs systemd: Started Session 1179051 of user root.
+Jul 15 14:40:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:40:01 pfdbs systemd: Started Session 1179053 of user mysql.
+Jul 15 14:40:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:41:01 pfdbs systemd: Started Session 1179054 of user root.
+Jul 15 14:41:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:41:01 pfdbs systemd: Started Session 1179055 of user mysql.
+Jul 15 14:41:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:42:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:42:01 pfdbs systemd: Started Session 1179057 of user mysql.
+Jul 15 14:42:01 pfdbs systemd: Started Session 1179056 of user root.
+Jul 15 14:42:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:43:01 pfdbs systemd: Started Session 1179059 of user root.
+Jul 15 14:43:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:43:01 pfdbs systemd: Started Session 1179058 of user mysql.
+Jul 15 14:43:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:44:01 pfdbs systemd: Started Session 1179060 of user root.
+Jul 15 14:44:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:44:01 pfdbs systemd: Started Session 1179061 of user mysql.
+Jul 15 14:44:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:45:01 pfdbs systemd: Started Session 1179062 of user root.
+Jul 15 14:45:01 pfdbs systemd: Started Session 1179064 of user root.
+Jul 15 14:45:01 pfdbs systemd: Started Session 1179063 of user root.
+Jul 15 14:45:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:45:01 pfdbs systemd: Started Session 1179065 of user mysql.
+Jul 15 14:45:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:46:01 pfdbs systemd: Started Session 1179066 of user root.
+Jul 15 14:46:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:46:01 pfdbs systemd: Started Session 1179067 of user mysql.
+Jul 15 14:46:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:47:01 pfdbs systemd: Started Session 1179068 of user root.
+Jul 15 14:47:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:47:01 pfdbs systemd: Started Session 1179069 of user mysql.
+Jul 15 14:47:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:48:01 pfdbs systemd: Started Session 1179070 of user root.
+Jul 15 14:48:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:48:01 pfdbs systemd: Started Session 1179071 of user mysql.
+Jul 15 14:48:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:49:01 pfdbs systemd: Started Session 1179072 of user root.
+Jul 15 14:49:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:49:01 pfdbs systemd: Started Session 1179073 of user mysql.
+Jul 15 14:49:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:50:01 pfdbs systemd: Started Session 1179076 of user root.
+Jul 15 14:50:01 pfdbs systemd: Started Session 1179075 of user root.
+Jul 15 14:50:01 pfdbs systemd: Started Session 1179074 of user root.
+Jul 15 14:50:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:50:01 pfdbs systemd: Started Session 1179077 of user mysql.
+Jul 15 14:50:01 pfdbs systemd: Started Session 1179078 of user root.
+Jul 15 14:50:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:51:01 pfdbs systemd: Started Session 1179079 of user root.
+Jul 15 14:51:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:51:01 pfdbs systemd: Started Session 1179080 of user mysql.
+Jul 15 14:51:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:52:01 pfdbs systemd: Started Session 1179082 of user root.
+Jul 15 14:52:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:52:01 pfdbs systemd: Started Session 1179081 of user mysql.
+Jul 15 14:52:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:53:01 pfdbs systemd: Started Session 1179084 of user root.
+Jul 15 14:53:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:53:01 pfdbs systemd: Started Session 1179083 of user mysql.
+Jul 15 14:53:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:54:01 pfdbs systemd: Started Session 1179085 of user root.
+Jul 15 14:54:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:54:01 pfdbs systemd: Started Session 1179086 of user mysql.
+Jul 15 14:54:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:55:01 pfdbs systemd: Started Session 1179087 of user root.
+Jul 15 14:55:01 pfdbs systemd: Started Session 1179088 of user root.
+Jul 15 14:55:01 pfdbs systemd: Started Session 1179089 of user root.
+Jul 15 14:55:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:55:01 pfdbs systemd: Started Session 1179090 of user mysql.
+Jul 15 14:55:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:56:01 pfdbs systemd: Started Session 1179091 of user root.
+Jul 15 14:56:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:56:01 pfdbs systemd: Started Session 1179092 of user mysql.
+Jul 15 14:56:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:57:01 pfdbs systemd: Started Session 1179094 of user root.
+Jul 15 14:57:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:57:01 pfdbs systemd: Started Session 1179093 of user mysql.
+Jul 15 14:57:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:58:01 pfdbs systemd: Started Session 1179095 of user root.
+Jul 15 14:58:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:58:01 pfdbs systemd: Started Session 1179096 of user mysql.
+Jul 15 14:58:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 14:59:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 14:59:01 pfdbs systemd: Started Session 1179097 of user mysql.
+Jul 15 14:59:01 pfdbs systemd: Started Session 1179098 of user root.
+Jul 15 14:59:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:00:01 pfdbs systemd: Started Session 1179099 of user root.
+Jul 15 15:00:01 pfdbs systemd: Started Session 1179102 of user root.
+Jul 15 15:00:01 pfdbs systemd: Started Session 1179101 of user root.
+Jul 15 15:00:01 pfdbs systemd: Started Session 1179100 of user root.
+Jul 15 15:00:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:00:01 pfdbs systemd: Started Session 1179103 of user mysql.
+Jul 15 15:00:01 pfdbs systemd: Started Session 1179104 of user mysql.
+Jul 15 15:01:01 pfdbs systemd: Started Session 1179106 of user root.
+Jul 15 15:01:01 pfdbs systemd: Started Session 1179105 of user root.
+Jul 15 15:01:01 pfdbs systemd: Started Session 1179107 of user mysql.
+Jul 15 15:02:01 pfdbs systemd: Started Session 1179108 of user root.
+Jul 15 15:02:01 pfdbs systemd: Started Session 1179109 of user mysql.
+Jul 15 15:03:01 pfdbs systemd: Started Session 1179110 of user mysql.
+Jul 15 15:03:01 pfdbs systemd: Started Session 1179111 of user root.
+Jul 15 15:03:08 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:04:01 pfdbs systemd: Started Session 1179112 of user root.
+Jul 15 15:04:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:04:01 pfdbs systemd: Started Session 1179113 of user mysql.
+Jul 15 15:04:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:05:01 pfdbs systemd: Started Session 1179115 of user root.
+Jul 15 15:05:01 pfdbs systemd: Started Session 1179114 of user root.
+Jul 15 15:05:01 pfdbs systemd: Started Session 1179116 of user root.
+Jul 15 15:05:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:05:01 pfdbs systemd: Started Session 1179117 of user mysql.
+Jul 15 15:05:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:06:01 pfdbs systemd: Started Session 1179118 of user root.
+Jul 15 15:06:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:06:01 pfdbs systemd: Started Session 1179119 of user mysql.
+Jul 15 15:06:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:07:01 pfdbs systemd: Started Session 1179121 of user root.
+Jul 15 15:07:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:07:01 pfdbs systemd: Started Session 1179120 of user mysql.
+Jul 15 15:07:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:08:01 pfdbs systemd: Started Session 1179122 of user root.
+Jul 15 15:08:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:08:01 pfdbs systemd: Started Session 1179123 of user mysql.
+Jul 15 15:08:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:09:01 pfdbs systemd: Started Session 1179124 of user root.
+Jul 15 15:09:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:09:01 pfdbs systemd: Started Session 1179125 of user mysql.
+Jul 15 15:09:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:10:01 pfdbs systemd: Started Session 1179129 of user root.
+Jul 15 15:10:01 pfdbs systemd: Started Session 1179126 of user root.
+Jul 15 15:10:01 pfdbs systemd: Started Session 1179128 of user root.
+Jul 15 15:10:01 pfdbs systemd: Started Session 1179127 of user root.
+Jul 15 15:10:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:10:01 pfdbs systemd: Started Session 1179130 of user mysql.
+Jul 15 15:10:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:11:01 pfdbs systemd: Started Session 1179131 of user root.
+Jul 15 15:11:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:11:01 pfdbs systemd: Started Session 1179132 of user mysql.
+Jul 15 15:11:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:12:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:12:01 pfdbs systemd: Started Session 1179133 of user mysql.
+Jul 15 15:12:01 pfdbs systemd: Started Session 1179134 of user root.
+Jul 15 15:12:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:13:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:13:01 pfdbs systemd: Started Session 1179136 of user mysql.
+Jul 15 15:13:01 pfdbs systemd: Started Session 1179135 of user root.
+Jul 15 15:13:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:14:01 pfdbs systemd: Started Session 1179137 of user root.
+Jul 15 15:14:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:14:01 pfdbs systemd: Started Session 1179138 of user mysql.
+Jul 15 15:14:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:15:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:15:01 pfdbs systemd: Started Session 1179141 of user mysql.
+Jul 15 15:15:01 pfdbs systemd: Started Session 1179140 of user root.
+Jul 15 15:15:01 pfdbs systemd: Started Session 1179139 of user root.
+Jul 15 15:15:01 pfdbs systemd: Started Session 1179142 of user root.
+Jul 15 15:15:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:16:01 pfdbs systemd: Started Session 1179143 of user root.
+Jul 15 15:16:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:16:01 pfdbs systemd: Started Session 1179144 of user mysql.
+Jul 15 15:16:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:17:01 pfdbs systemd: Started Session 1179145 of user root.
+Jul 15 15:17:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:17:01 pfdbs systemd: Started Session 1179146 of user mysql.
+Jul 15 15:17:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:18:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:18:01 pfdbs systemd: Started Session 1179147 of user mysql.
+Jul 15 15:18:01 pfdbs systemd: Started Session 1179148 of user root.
+Jul 15 15:18:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:19:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:19:01 pfdbs systemd: Started Session 1179150 of user mysql.
+Jul 15 15:19:01 pfdbs systemd: Started Session 1179149 of user root.
+Jul 15 15:19:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:20:01 pfdbs systemd: Started Session 1179151 of user root.
+Jul 15 15:20:01 pfdbs systemd: Started Session 1179152 of user root.
+Jul 15 15:20:01 pfdbs systemd: Started Session 1179154 of user root.
+Jul 15 15:20:01 pfdbs systemd: Started Session 1179153 of user root.
+Jul 15 15:20:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:20:01 pfdbs systemd: Started Session 1179155 of user mysql.
+Jul 15 15:20:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:21:01 pfdbs systemd: Started Session 1179156 of user root.
+Jul 15 15:21:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:21:01 pfdbs systemd: Started Session 1179157 of user mysql.
+Jul 15 15:21:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:22:01 pfdbs systemd: Started Session 1179158 of user root.
+Jul 15 15:22:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:22:01 pfdbs systemd: Started Session 1179159 of user mysql.
+Jul 15 15:22:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:23:01 pfdbs systemd: Started Session 1179160 of user root.
+Jul 15 15:23:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:23:01 pfdbs systemd: Started Session 1179161 of user mysql.
+Jul 15 15:23:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:24:01 pfdbs systemd: Started Session 1179162 of user root.
+Jul 15 15:24:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:24:01 pfdbs systemd: Started Session 1179163 of user mysql.
+Jul 15 15:24:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:25:01 pfdbs systemd: Started Session 1179164 of user root.
+Jul 15 15:25:01 pfdbs systemd: Started Session 1179165 of user root.
+Jul 15 15:25:01 pfdbs systemd: Started Session 1179166 of user root.
+Jul 15 15:25:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:25:01 pfdbs systemd: Started Session 1179167 of user mysql.
+Jul 15 15:25:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:26:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:26:01 pfdbs systemd: Started Session 1179169 of user mysql.
+Jul 15 15:26:01 pfdbs systemd: Started Session 1179168 of user root.
+Jul 15 15:26:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:27:01 pfdbs systemd: Started Session 1179170 of user root.
+Jul 15 15:27:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:27:01 pfdbs systemd: Started Session 1179171 of user mysql.
+Jul 15 15:27:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:28:01 pfdbs systemd: Started Session 1179172 of user root.
+Jul 15 15:28:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:28:01 pfdbs systemd: Started Session 1179173 of user mysql.
+Jul 15 15:28:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:29:01 pfdbs systemd: Started Session 1179175 of user root.
+Jul 15 15:29:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:29:01 pfdbs systemd: Started Session 1179174 of user mysql.
+Jul 15 15:29:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:30:01 pfdbs systemd: Started Session 1179177 of user root.
+Jul 15 15:30:01 pfdbs systemd: Started Session 1179178 of user root.
+Jul 15 15:30:01 pfdbs systemd: Started Session 1179176 of user root.
+Jul 15 15:30:01 pfdbs systemd: Started Session 1179179 of user root.
+Jul 15 15:30:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:30:01 pfdbs systemd: Started Session 1179180 of user mysql.
+Jul 15 15:30:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:31:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:31:01 pfdbs systemd: Started Session 1179182 of user mysql.
+Jul 15 15:31:01 pfdbs systemd: Started Session 1179181 of user root.
+Jul 15 15:31:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:32:01 pfdbs systemd: Started Session 1179184 of user root.
+Jul 15 15:32:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:32:01 pfdbs systemd: Started Session 1179183 of user mysql.
+Jul 15 15:32:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:33:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:33:01 pfdbs systemd: Started Session 1179185 of user mysql.
+Jul 15 15:33:01 pfdbs systemd: Started Session 1179186 of user root.
+Jul 15 15:33:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:34:01 pfdbs systemd: Started Session 1179187 of user root.
+Jul 15 15:34:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:34:01 pfdbs systemd: Started Session 1179188 of user mysql.
+Jul 15 15:34:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:35:01 pfdbs systemd: Started Session 1179190 of user root.
+Jul 15 15:35:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:35:01 pfdbs systemd: Started Session 1179191 of user mysql.
+Jul 15 15:35:01 pfdbs systemd: Started Session 1179189 of user root.
+Jul 15 15:35:01 pfdbs systemd: Started Session 1179192 of user root.
+Jul 15 15:35:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:36:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:36:01 pfdbs systemd: Started Session 1179193 of user mysql.
+Jul 15 15:36:01 pfdbs systemd: Started Session 1179194 of user root.
+Jul 15 15:36:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:37:01 pfdbs systemd: Started Session 1179195 of user root.
+Jul 15 15:37:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:37:01 pfdbs systemd: Started Session 1179196 of user mysql.
+Jul 15 15:37:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:38:01 pfdbs systemd: Started Session 1179197 of user root.
+Jul 15 15:38:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:38:01 pfdbs systemd: Started Session 1179198 of user mysql.
+Jul 15 15:38:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:39:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:39:01 pfdbs systemd: Started Session 1179200 of user mysql.
+Jul 15 15:39:01 pfdbs systemd: Started Session 1179199 of user root.
+Jul 15 15:39:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:40:01 pfdbs systemd: Started Session 1179201 of user root.
+Jul 15 15:40:01 pfdbs systemd: Started Session 1179202 of user root.
+Jul 15 15:40:01 pfdbs systemd: Started Session 1179203 of user root.
+Jul 15 15:40:01 pfdbs systemd: Started Session 1179204 of user root.
+Jul 15 15:40:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:40:01 pfdbs systemd: Started Session 1179205 of user mysql.
+Jul 15 15:40:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:41:01 pfdbs systemd: Started Session 1179206 of user root.
+Jul 15 15:41:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:41:01 pfdbs systemd: Started Session 1179207 of user mysql.
+Jul 15 15:41:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:42:01 pfdbs systemd: Started Session 1179208 of user root.
+Jul 15 15:42:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:42:01 pfdbs systemd: Started Session 1179209 of user mysql.
+Jul 15 15:42:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:43:01 pfdbs systemd: Started Session 1179210 of user root.
+Jul 15 15:43:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:43:01 pfdbs systemd: Started Session 1179211 of user mysql.
+Jul 15 15:43:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:44:01 pfdbs systemd: Started Session 1179212 of user root.
+Jul 15 15:44:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:44:01 pfdbs systemd: Started Session 1179213 of user mysql.
+Jul 15 15:44:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:45:01 pfdbs systemd: Started Session 1179214 of user root.
+Jul 15 15:45:01 pfdbs systemd: Started Session 1179216 of user root.
+Jul 15 15:45:01 pfdbs systemd: Started Session 1179215 of user root.
+Jul 15 15:45:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:45:01 pfdbs systemd: Started Session 1179217 of user mysql.
+Jul 15 15:45:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:46:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:46:01 pfdbs systemd: Started Session 1179218 of user mysql.
+Jul 15 15:46:01 pfdbs systemd: Started Session 1179219 of user root.
+Jul 15 15:46:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:47:01 pfdbs systemd: Started Session 1179220 of user root.
+Jul 15 15:47:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:47:01 pfdbs systemd: Started Session 1179221 of user mysql.
+Jul 15 15:47:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:48:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:48:01 pfdbs systemd: Started Session 1179222 of user mysql.
+Jul 15 15:48:01 pfdbs systemd: Started Session 1179223 of user root.
+Jul 15 15:48:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:49:01 pfdbs systemd: Started Session 1179224 of user root.
+Jul 15 15:49:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:49:01 pfdbs systemd: Started Session 1179225 of user mysql.
+Jul 15 15:49:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:50:01 pfdbs systemd: Started Session 1179227 of user root.
+Jul 15 15:50:01 pfdbs systemd: Started Session 1179226 of user root.
+Jul 15 15:50:01 pfdbs systemd: Started Session 1179228 of user root.
+Jul 15 15:50:01 pfdbs systemd: Started Session 1179229 of user root.
+Jul 15 15:50:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:50:01 pfdbs systemd: Started Session 1179230 of user mysql.
+Jul 15 15:50:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:51:01 pfdbs systemd: Started Session 1179231 of user root.
+Jul 15 15:51:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:51:01 pfdbs systemd: Started Session 1179232 of user mysql.
+Jul 15 15:51:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:52:01 pfdbs systemd: Started Session 1179233 of user root.
+Jul 15 15:52:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:52:01 pfdbs systemd: Started Session 1179234 of user mysql.
+Jul 15 15:52:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:53:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:53:01 pfdbs systemd: Started Session 1179235 of user mysql.
+Jul 15 15:53:01 pfdbs systemd: Started Session 1179236 of user root.
+Jul 15 15:53:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:54:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:54:01 pfdbs systemd: Started Session 1179237 of user mysql.
+Jul 15 15:54:01 pfdbs systemd: Started Session 1179238 of user root.
+Jul 15 15:54:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:55:01 pfdbs systemd: Started Session 1179242 of user root.
+Jul 15 15:55:01 pfdbs systemd: Started Session 1179240 of user root.
+Jul 15 15:55:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:55:01 pfdbs systemd: Started Session 1179241 of user mysql.
+Jul 15 15:55:01 pfdbs systemd: Started Session 1179239 of user root.
+Jul 15 15:55:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:56:01 pfdbs systemd: Started Session 1179243 of user root.
+Jul 15 15:56:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:56:01 pfdbs systemd: Started Session 1179244 of user mysql.
+Jul 15 15:56:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:57:01 pfdbs systemd: Started Session 1179245 of user root.
+Jul 15 15:57:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:57:01 pfdbs systemd: Started Session 1179246 of user mysql.
+Jul 15 15:57:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:58:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:58:01 pfdbs systemd: Started Session 1179247 of user mysql.
+Jul 15 15:58:01 pfdbs systemd: Started Session 1179248 of user root.
+Jul 15 15:58:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 15:59:01 pfdbs systemd: Started Session 1179249 of user root.
+Jul 15 15:59:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 15:59:01 pfdbs systemd: Started Session 1179250 of user mysql.
+Jul 15 15:59:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:00:01 pfdbs systemd: Started Session 1179252 of user root.
+Jul 15 16:00:01 pfdbs systemd: Started Session 1179251 of user root.
+Jul 15 16:00:01 pfdbs systemd: Started Session 1179253 of user root.
+Jul 15 16:00:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:00:01 pfdbs systemd: Started Session 1179254 of user mysql.
+Jul 15 16:00:01 pfdbs systemd: Started Session 1179255 of user mysql.
+Jul 15 16:00:01 pfdbs systemd: Started Session 1179256 of user root.
+Jul 15 16:01:01 pfdbs systemd: Started Session 1179259 of user root.
+Jul 15 16:01:01 pfdbs systemd: Started Session 1179257 of user root.
+Jul 15 16:01:01 pfdbs systemd: Started Session 1179258 of user mysql.
+Jul 15 16:02:01 pfdbs systemd: Started Session 1179260 of user root.
+Jul 15 16:02:01 pfdbs systemd: Started Session 1179261 of user mysql.
+Jul 15 16:03:01 pfdbs systemd: Started Session 1179262 of user root.
+Jul 15 16:03:01 pfdbs systemd: Started Session 1179263 of user mysql.
+Jul 15 16:03:08 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:04:01 pfdbs systemd: Started Session 1179264 of user root.
+Jul 15 16:04:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:04:01 pfdbs systemd: Started Session 1179265 of user mysql.
+Jul 15 16:04:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:05:01 pfdbs systemd: Started Session 1179266 of user root.
+Jul 15 16:05:01 pfdbs systemd: Started Session 1179268 of user root.
+Jul 15 16:05:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:05:01 pfdbs systemd: Started Session 1179269 of user mysql.
+Jul 15 16:05:01 pfdbs systemd: Started Session 1179267 of user root.
+Jul 15 16:05:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:06:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:06:01 pfdbs systemd: Started Session 1179270 of user mysql.
+Jul 15 16:06:01 pfdbs systemd: Started Session 1179271 of user root.
+Jul 15 16:06:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:07:01 pfdbs systemd: Started Session 1179272 of user root.
+Jul 15 16:07:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:07:01 pfdbs systemd: Started Session 1179273 of user mysql.
+Jul 15 16:07:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:08:01 pfdbs systemd: Started Session 1179274 of user root.
+Jul 15 16:08:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:08:01 pfdbs systemd: Started Session 1179275 of user mysql.
+Jul 15 16:08:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:09:01 pfdbs systemd: Started Session 1179276 of user root.
+Jul 15 16:09:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:09:01 pfdbs systemd: Started Session 1179277 of user mysql.
+Jul 15 16:09:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:10:01 pfdbs systemd: Started Session 1179280 of user root.
+Jul 15 16:10:01 pfdbs systemd: Started Session 1179278 of user root.
+Jul 15 16:10:01 pfdbs systemd: Started Session 1179279 of user root.
+Jul 15 16:10:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:10:01 pfdbs systemd: Started Session 1179281 of user mysql.
+Jul 15 16:10:01 pfdbs systemd: Started Session 1179282 of user root.
+Jul 15 16:10:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:11:01 pfdbs systemd: Started Session 1179284 of user root.
+Jul 15 16:11:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:11:01 pfdbs systemd: Started Session 1179283 of user mysql.
+Jul 15 16:11:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:12:01 pfdbs systemd: Started Session 1179285 of user root.
+Jul 15 16:12:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:12:01 pfdbs systemd: Started Session 1179286 of user mysql.
+Jul 15 16:12:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:13:01 pfdbs systemd: Started Session 1179287 of user root.
+Jul 15 16:13:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:13:01 pfdbs systemd: Started Session 1179288 of user mysql.
+Jul 15 16:13:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:14:01 pfdbs systemd: Started Session 1179289 of user root.
+Jul 15 16:14:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:14:01 pfdbs systemd: Started Session 1179290 of user mysql.
+Jul 15 16:14:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:15:01 pfdbs systemd: Started Session 1179292 of user root.
+Jul 15 16:15:01 pfdbs systemd: Started Session 1179291 of user root.
+Jul 15 16:15:01 pfdbs systemd: Started Session 1179293 of user root.
+Jul 15 16:15:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:15:01 pfdbs systemd: Started Session 1179294 of user mysql.
+Jul 15 16:15:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:16:01 pfdbs systemd: Started Session 1179295 of user root.
+Jul 15 16:16:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:16:01 pfdbs systemd: Started Session 1179296 of user mysql.
+Jul 15 16:16:02 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:16:31 pfdbs systemd-logind: New session 1179297 of user root.
+Jul 15 16:16:31 pfdbs systemd: Started Session 1179297 of user root.
+Jul 15 16:16:31 pfdbs dbus[8461]: [system] Activating service name='org.freedesktop.problems' (using servicehelper)
+Jul 15 16:16:31 pfdbs dbus[8461]: [system] Successfully activated service 'org.freedesktop.problems'
+Jul 15 16:17:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:17:01 pfdbs systemd: Started Session 1179298 of user mysql.
+Jul 15 16:17:01 pfdbs systemd: Started Session 1179299 of user root.
+Jul 15 16:17:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:17:54 pfdbs yum[34774]: Updated: sysstat-10.1.5-19.el7.x86_64
+Jul 15 16:17:54 pfdbs yum[34774]: Installed: dstat-0.7.2-12.el7.noarch
+Jul 15 16:17:54 pfdbs systemd: Reloading.
+Jul 15 16:17:55 pfdbs systemd: [/usr/lib/systemd/system/bolt.service:11] Unknown lvalue 'MemoryDenyWriteExecute' in section 'Service'
+Jul 15 16:17:55 pfdbs systemd: [/usr/lib/systemd/system/bolt.service:13] Unknown lvalue 'ProtectControlGroups' in section 'Service'
+Jul 15 16:17:55 pfdbs systemd: [/usr/lib/systemd/system/bolt.service:15] Unknown lvalue 'ProtectKernelModules' in section 'Service'
+Jul 15 16:17:55 pfdbs systemd: [/usr/lib/systemd/system/bolt.service:18] Unknown lvalue 'RestrictRealtime' in section 'Service'
+Jul 15 16:17:55 pfdbs systemd: [/usr/lib/systemd/system/bolt.service:19] Unknown lvalue 'ReadWritePaths' in section 'Service'
+Jul 15 16:18:01 pfdbs systemd: Started Session 1179300 of user root.
+Jul 15 16:18:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:18:01 pfdbs systemd: Started Session 1179301 of user mysql.
+Jul 15 16:18:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:19:01 pfdbs systemd: Started Session 1179302 of user root.
+Jul 15 16:19:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:19:01 pfdbs systemd: Started Session 1179303 of user mysql.
+Jul 15 16:19:01 pfdbs systemd: Removed slice User Slice of mysql.
+Jul 15 16:20:01 pfdbs systemd: Started Session 1179305 of user root.
+Jul 15 16:20:01 pfdbs systemd: Started Session 1179307 of user root.
+Jul 15 16:20:01 pfdbs systemd: Started Session 1179304 of user root.
+Jul 15 16:20:01 pfdbs systemd: Started Session 1179306 of user root.
+Jul 15 16:20:01 pfdbs systemd: Created slice User Slice of mysql.
+Jul 15 16:20:01 pfdbs systemd: Started Session 1179308 of user mysql.
+Jul 15 16:20:01 pfdbs systemd: Removed slice User Slice of mysql.

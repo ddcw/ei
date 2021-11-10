@@ -1,0 +1,418 @@
+======host meta information
+=====uptime===============================
+ 14:58:22 up 183 days, 22:25,  1 user,  load average: 0.09, 0.07, 0.06
+======ip=================================
+======hostname============================
+10-100-8-236
+======os version============================
+\S
+Kernel \r on an \m
+
+======kernel version=========================
+Linux 10-100-8-236 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+======mysql version=========================
+======mysql client==========================
+mysql  Ver 14.14 Distrib 5.7.24, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+======mysql instance========================
+tcp6       0      0 :::3306                 :::*                    LISTEN      4534/mysqld         
+unix  2      [ ACC ]     STREAM     LISTENING     215533   4534/mysqld          /data/mysql/data/mysql.sock
+======memory&swap========================
+              total        used        free      shared  buff/cache   available
+Mem:           7964        5027         209          59        2727        2607
+Swap:          8191           0        8191
+======physical cpu==========================
+1
+======cores per physical cpu====================
+cpu cores	: 4
+======processor============================
+4
+======cpu version===========================
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+======disk info=============================
+Filesystem              Type      Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root xfs        50G  4.6G   46G  10% /
+devtmpfs                devtmpfs  3.9G     0  3.9G   0% /dev
+tmpfs                   tmpfs     3.9G     0  3.9G   0% /dev/shm
+tmpfs                   tmpfs     3.9G   60M  3.9G   2% /run
+tmpfs                   tmpfs     3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sdb                xfs       500G  8.8G  492G   2% /data
+/dev/mapper/centos-tmp  xfs       5.0G   33M  5.0G   1% /tmp
+/dev/mapper/centos-home xfs        20G   33M   20G   1% /home
+/dev/sda1               xfs      1014M  132M  883M  13% /boot
+tmpfs                   tmpfs     797M     0  797M   0% /run/user/0
+======numa mount========================
+0
+======io stat===============================
+Linux 3.10.0-957.el7.x86_64 (10-100-8-236) 	07/15/2021 	_x86_64_	(4 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.05    0.00    0.06    0.04    0.00   99.85
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.01     0.00     0.00    28.45     0.00    3.15   24.38    1.49   0.51   0.00
+sdb               0.00     0.04    0.00    6.99     0.00     0.03     9.70     0.01    0.78    2.51    0.78   0.71   0.50
+dm-0              0.00     0.00    0.00    0.01     0.00     0.00    25.53     0.00    2.93   28.91    1.41   0.46   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00    54.67     0.00    0.18    0.18    0.00   0.11   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00    21.95     0.00    1.06    1.37    0.34   0.59   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00    12.54     0.00    0.15    0.32    0.14   0.12   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.05    0.00    0.08    0.00    0.00   99.87
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    1.50     0.00     0.14   191.47     0.00    0.53    0.00    0.53   0.20   0.03
+sdb               0.00     0.00    0.00    6.10     0.00     0.02     5.66     0.00    0.36    0.00    0.36   0.34   0.21
+dm-0              0.00     0.00    0.00    1.40     0.00     0.14   204.57     0.00    0.57    0.00    0.57   0.21   0.03
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.03    0.00    0.08    0.00    0.00   99.90
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    1.70     0.00     0.02    22.88     0.00    0.12    0.00    0.12   0.06   0.01
+sdb               0.00     0.10    0.00    6.90     0.00     0.02     7.01     0.00    0.32    0.00    0.32   0.32   0.22
+dm-0              0.00     0.00    0.00    1.20     0.00     0.02    30.42     0.00    0.17    0.00    0.17   0.08   0.01
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.30     0.00     0.00     7.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.23    0.00    0.10    0.23    0.00   99.45
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    2.60    0.10     0.05     0.00    36.74     0.02    7.74    8.04    0.00   3.33   0.90
+sdb               0.00     0.00    0.00    6.10     0.00     0.02     6.26     0.00    0.26    0.00    0.26   0.26   0.16
+dm-0              0.00     0.00    2.60    0.00     0.05     0.00    37.85     0.02    8.04    8.04    0.00   3.46   0.90
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.08    0.00    0.08    0.00    0.00   99.85
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.50     0.00     0.00     9.60     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.00     0.00     0.02     5.83     0.00    0.28    0.00    0.28   0.28   0.17
+dm-0              0.00     0.00    0.00    0.40     0.00     0.00    10.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+======host meta information
+=====uptime===============================
+ 14:59:22 up 183 days, 22:26,  1 user,  load average: 0.07, 0.07, 0.06
+======ip=================================
+======hostname============================
+10-100-8-236
+======os version============================
+\S
+Kernel \r on an \m
+
+======kernel version=========================
+Linux 10-100-8-236 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+======mysql version=========================
+======mysql client==========================
+mysql  Ver 14.14 Distrib 5.7.24, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+======mysql instance========================
+tcp6       0      0 :::3306                 :::*                    LISTEN      4534/mysqld         
+unix  2      [ ACC ]     STREAM     LISTENING     215533   4534/mysqld          /data/mysql/data/mysql.sock
+======memory&swap========================
+              total        used        free      shared  buff/cache   available
+Mem:           7964        5029         206          59        2728        2605
+Swap:          8191           0        8191
+======physical cpu==========================
+1
+======cores per physical cpu====================
+cpu cores	: 4
+======processor============================
+4
+======cpu version===========================
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+======disk info=============================
+Filesystem              Type      Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root xfs        50G  4.6G   46G  10% /
+devtmpfs                devtmpfs  3.9G     0  3.9G   0% /dev
+tmpfs                   tmpfs     3.9G     0  3.9G   0% /dev/shm
+tmpfs                   tmpfs     3.9G   60M  3.9G   2% /run
+tmpfs                   tmpfs     3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sdb                xfs       500G  8.8G  492G   2% /data
+/dev/mapper/centos-tmp  xfs       5.0G   33M  5.0G   1% /tmp
+/dev/mapper/centos-home xfs        20G   33M   20G   1% /home
+/dev/sda1               xfs      1014M  132M  883M  13% /boot
+tmpfs                   tmpfs     797M     0  797M   0% /run/user/0
+======numa mount========================
+0
+======io stat===============================
+Linux 3.10.0-957.el7.x86_64 (10-100-8-236) 	07/15/2021 	_x86_64_	(4 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.05    0.00    0.06    0.04    0.00   99.85
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.01     0.00     0.00    28.46     0.00    3.15   24.35    1.49   0.51   0.00
+sdb               0.00     0.04    0.00    6.99     0.00     0.03     9.70     0.01    0.78    2.51    0.78   0.71   0.50
+dm-0              0.00     0.00    0.00    0.01     0.00     0.00    25.54     0.00    2.93   28.87    1.41   0.46   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00    54.67     0.00    0.18    0.18    0.00   0.11   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00    21.95     0.00    1.06    1.37    0.34   0.59   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00    12.52     0.00    0.15    0.32    0.15   0.12   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.03    0.00    0.08    0.00    0.00   99.90
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    1.80     0.00     0.14   160.00     0.00    0.44    0.00    0.44   0.17   0.03
+sdb               0.00     0.00    0.00    5.90     0.00     0.02     6.17     0.00    0.31    0.00    0.31   0.31   0.18
+dm-0              0.00     0.00    0.00    1.60     0.00     0.14   179.00     0.00    0.50    0.00    0.50   0.19   0.03
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.20     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.05    0.00    0.05    0.00    0.00   99.90
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.30    0.00    1.20     0.00     0.01    22.08     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.30     0.00     0.02     6.95     0.00    0.30    0.00    0.30   0.30   0.19
+dm-0              0.00     0.00    0.00    1.30     0.00     0.01    19.54     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.20     0.00     0.00     5.50     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.05    0.00    0.08    0.03    0.00   99.85
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.20     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.00     0.00     0.02     5.83     0.00    0.32    0.00    0.32   0.33   0.20
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.20     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.10    0.00    0.13    0.00    0.00   99.77
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    7.30     0.00     0.02     6.42     0.00    0.30    0.00    0.30   0.30   0.22
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.05    0.00    0.08    0.00    0.00   99.87
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.60     0.00     0.01    18.83     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    7.10     0.00     0.02     6.87     0.00    0.35    0.00    0.35   0.35   0.25
+dm-0              0.00     0.00    0.00    0.40     0.00     0.00    25.50     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.20     0.00     0.00     5.50     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.05    0.00    0.08    0.03    0.00   99.85
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.80     0.00     0.02     5.65     0.00    0.35    0.00    0.35   0.35   0.24
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.08    0.00    0.05    0.00    0.00   99.87
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.50     0.00     0.00     9.60     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.80     0.00     0.02     6.00     0.00    0.32    0.00    0.32   0.32   0.22
+dm-0              0.00     0.00    0.00    0.40     0.00     0.00    10.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.05    0.00    0.05    0.03    0.00   99.87
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.10    0.00    0.90     0.00     0.01    17.89     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.40     0.00     0.02     7.59     0.00    0.33    0.00    0.33   0.33   0.21
+dm-0              0.00     0.00    0.00    0.70     0.00     0.01    20.29     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.30     0.00     0.00     6.33     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.03    0.00    0.08    0.00    0.00   99.90
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.60     0.00     0.02     6.02     0.00    0.35    0.00    0.35   0.35   0.23
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+======vmstat======
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 210612      0 2794060    0    0     0     9    0    0  0  0 100  0  0
+ 0  0      0 210636      0 2794092    0    0     0    16  143  256  0  0 100  0  0
+ 0  0      0 210636      0 2794100    0    0     0    23  147  256  0  0 100  0  0
+ 0  0      0 210636      0 2794108    0    0     0    20  140  255  0  0 100  0  0
+ 0  0      0 210636      0 2794108    0    0     0    15  138  261  0  0 100  0  0
+ 0  0      0 210604      0 2794108    0    0     0    20  137  251  0  0 100  0  0
+ 1  0      0 210604      0 2794108    0    0     0    15  154  265  0  0 100  0  0
+ 0  0      0 210636      0 2794108    0    0     0    16  155  273  0  0 100  0  0
+ 0  0      0 210636      0 2794108    0    0     0    15  135  256  0  0 100  0  0
+ 1  0      0 210188      0 2794116    0    0     0    25  451  639  1  1 99  0  0
+====dstat===
+You did not select any stats, using -cdngy by default.
+[7l----total-cpu-usage---- -dsk/total- -net/total- ---paging-- ---system--
+usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw 
+  0   0 100   0   0   0|  55B   34k|   0     0 |   0     0 | 106   185 
+  0   0 100   0   0   0|   0    24k| 770B   95B|   0     0 | 172   273 
+  0   0 100   0   0   0|   0    16k| 830B   95B|   0     0 | 140   253 
+  0   0 100   0   0   0|   0    16k| 862B   95B|   0     0 | 144   263 
+  0   0 100   0   0   0|   0    16k| 830B   95B|   0     0 | 148   261 
+  0   0 100   0   0   0|   0    16k| 954B   95B|   0     0 | 142   246 
+  0   0 100   0   0   0|   0    24k| 770B   95B|   0     0 | 131   239 
+  0   0 100   0   0   0|   0    24k|1147B   95B|   0     0 | 149   265 
+  0   0 100   0   0   0|   0   125k| 770B   95B|   0     0 | 153   283 
+  0   0 100   0   0   0|   0    16k| 770B   95B|   0     0 | 166   275 
+  0   0 100   0   0   0|   0    20k| 770B   95B|   0     0 | 132   235 
+======system log============================
+Jul 11 03:25:01 10-100-8-236 rsyslogd: [origin software="rsyslogd" swVersion="8.24.0-52.el7_8.2" x-pid="982" x-info="http://www.rsyslog.com"] rsyslogd was HUPed
+Jul 11 04:01:01 10-100-8-236 systemd: Started Session 4342 of user root.
+Jul 11 05:01:01 10-100-8-236 systemd: Started Session 4343 of user root.
+Jul 11 06:01:01 10-100-8-236 systemd: Started Session 4344 of user root.
+Jul 11 07:01:01 10-100-8-236 systemd: Started Session 4345 of user root.
+Jul 11 08:01:01 10-100-8-236 systemd: Started Session 4346 of user root.
+Jul 11 09:01:01 10-100-8-236 systemd: Started Session 4347 of user root.
+Jul 11 10:01:01 10-100-8-236 systemd: Started Session 4348 of user root.
+Jul 11 11:01:01 10-100-8-236 systemd: Started Session 4349 of user root.
+Jul 11 12:01:01 10-100-8-236 systemd: Started Session 4350 of user root.
+Jul 11 13:01:01 10-100-8-236 systemd: Started Session 4351 of user root.
+Jul 11 14:01:01 10-100-8-236 systemd: Started Session 4352 of user root.
+Jul 11 15:01:01 10-100-8-236 systemd: Started Session 4353 of user root.
+Jul 11 16:01:01 10-100-8-236 systemd: Started Session 4354 of user root.
+Jul 11 17:01:01 10-100-8-236 systemd: Started Session 4355 of user root.
+Jul 11 18:01:01 10-100-8-236 systemd: Started Session 4356 of user root.
+Jul 11 19:01:01 10-100-8-236 systemd: Started Session 4357 of user root.
+Jul 11 19:40:47 10-100-8-236 systemd: Starting Cleanup of Temporary Directories...
+Jul 11 19:40:47 10-100-8-236 systemd: Started Cleanup of Temporary Directories.
+Jul 11 20:01:01 10-100-8-236 systemd: Started Session 4358 of user root.
+Jul 11 21:01:01 10-100-8-236 systemd: Started Session 4359 of user root.
+Jul 11 22:01:01 10-100-8-236 systemd: Started Session 4360 of user root.
+Jul 11 23:01:01 10-100-8-236 systemd: Started Session 4361 of user root.
+Jul 12 00:01:01 10-100-8-236 systemd: Started Session 4362 of user root.
+Jul 12 01:01:01 10-100-8-236 systemd: Started Session 4363 of user root.
+Jul 12 02:01:01 10-100-8-236 systemd: Started Session 4364 of user root.
+Jul 12 03:01:01 10-100-8-236 systemd: Started Session 4365 of user root.
+Jul 12 04:01:01 10-100-8-236 systemd: Started Session 4366 of user root.
+Jul 12 05:01:01 10-100-8-236 systemd: Started Session 4367 of user root.
+Jul 12 06:01:01 10-100-8-236 systemd: Started Session 4368 of user root.
+Jul 12 07:01:01 10-100-8-236 systemd: Started Session 4369 of user root.
+Jul 12 08:01:01 10-100-8-236 systemd: Started Session 4370 of user root.
+Jul 12 09:01:01 10-100-8-236 systemd: Started Session 4371 of user root.
+Jul 12 10:01:01 10-100-8-236 systemd: Started Session 4372 of user root.
+Jul 12 11:01:01 10-100-8-236 systemd: Started Session 4373 of user root.
+Jul 12 12:01:01 10-100-8-236 systemd: Started Session 4374 of user root.
+Jul 12 13:01:01 10-100-8-236 systemd: Started Session 4375 of user root.
+Jul 12 14:01:01 10-100-8-236 systemd: Started Session 4376 of user root.
+Jul 12 15:01:01 10-100-8-236 systemd: Started Session 4377 of user root.
+Jul 12 16:01:01 10-100-8-236 systemd: Started Session 4378 of user root.
+Jul 12 17:01:01 10-100-8-236 systemd: Started Session 4379 of user root.
+Jul 12 18:01:01 10-100-8-236 systemd: Started Session 4380 of user root.
+Jul 12 19:01:01 10-100-8-236 systemd: Started Session 4381 of user root.
+Jul 12 19:41:47 10-100-8-236 systemd: Starting Cleanup of Temporary Directories...
+Jul 12 19:41:47 10-100-8-236 systemd: Started Cleanup of Temporary Directories.
+Jul 12 20:01:01 10-100-8-236 systemd: Started Session 4382 of user root.
+Jul 12 21:01:01 10-100-8-236 systemd: Started Session 4383 of user root.
+Jul 12 22:01:01 10-100-8-236 systemd: Started Session 4384 of user root.
+Jul 12 23:01:01 10-100-8-236 systemd: Started Session 4385 of user root.
+Jul 13 00:01:01 10-100-8-236 systemd: Started Session 4386 of user root.
+Jul 13 01:01:01 10-100-8-236 systemd: Started Session 4387 of user root.
+Jul 13 02:01:01 10-100-8-236 systemd: Started Session 4388 of user root.
+Jul 13 03:01:01 10-100-8-236 systemd: Started Session 4389 of user root.
+Jul 13 04:01:01 10-100-8-236 systemd: Started Session 4390 of user root.
+Jul 13 05:01:01 10-100-8-236 systemd: Started Session 4391 of user root.
+Jul 13 06:01:01 10-100-8-236 systemd: Started Session 4392 of user root.
+Jul 13 07:01:01 10-100-8-236 systemd: Started Session 4393 of user root.
+Jul 13 08:01:01 10-100-8-236 systemd: Started Session 4394 of user root.
+Jul 13 09:01:01 10-100-8-236 systemd: Started Session 4395 of user root.
+Jul 13 10:01:01 10-100-8-236 systemd: Started Session 4396 of user root.
+Jul 13 11:01:02 10-100-8-236 systemd: Started Session 4397 of user root.
+Jul 13 12:01:01 10-100-8-236 systemd: Started Session 4398 of user root.
+Jul 13 13:01:01 10-100-8-236 systemd: Started Session 4399 of user root.
+Jul 13 14:01:01 10-100-8-236 systemd: Started Session 4400 of user root.
+Jul 13 15:01:01 10-100-8-236 systemd: Started Session 4401 of user root.
+Jul 13 16:01:01 10-100-8-236 systemd: Started Session 4402 of user root.
+Jul 13 17:01:01 10-100-8-236 systemd: Started Session 4403 of user root.
+Jul 13 18:01:01 10-100-8-236 systemd: Started Session 4404 of user root.
+Jul 13 19:01:01 10-100-8-236 systemd: Started Session 4405 of user root.
+Jul 13 19:42:47 10-100-8-236 systemd: Starting Cleanup of Temporary Directories...
+Jul 13 19:42:47 10-100-8-236 systemd: Started Cleanup of Temporary Directories.
+Jul 13 20:01:01 10-100-8-236 systemd: Started Session 4406 of user root.
+Jul 13 21:01:01 10-100-8-236 systemd: Started Session 4407 of user root.
+Jul 13 22:01:01 10-100-8-236 systemd: Started Session 4408 of user root.
+Jul 13 23:01:01 10-100-8-236 systemd: Started Session 4409 of user root.
+Jul 14 00:01:01 10-100-8-236 systemd: Started Session 4410 of user root.
+Jul 14 01:01:01 10-100-8-236 systemd: Started Session 4411 of user root.
+Jul 14 02:01:01 10-100-8-236 systemd: Started Session 4412 of user root.
+Jul 14 03:01:01 10-100-8-236 systemd: Started Session 4413 of user root.
+Jul 14 04:01:01 10-100-8-236 systemd: Started Session 4414 of user root.
+Jul 14 05:01:01 10-100-8-236 systemd: Started Session 4415 of user root.
+Jul 14 06:01:01 10-100-8-236 systemd: Started Session 4416 of user root.
+Jul 14 07:01:01 10-100-8-236 systemd: Started Session 4417 of user root.
+Jul 14 08:01:01 10-100-8-236 systemd: Started Session 4418 of user root.
+Jul 14 09:01:01 10-100-8-236 systemd: Started Session 4419 of user root.
+Jul 14 10:01:01 10-100-8-236 systemd: Started Session 4420 of user root.
+Jul 14 11:01:01 10-100-8-236 systemd: Started Session 4421 of user root.
+Jul 14 11:01:01 10-100-8-236 rsyslogd: imjournal: journal reloaded... [v8.24.0-52.el7_8.2 try http://www.rsyslog.com/e/0 ]
+Jul 14 12:01:01 10-100-8-236 systemd: Started Session 4422 of user root.
+Jul 14 13:01:01 10-100-8-236 systemd: Started Session 4423 of user root.
+Jul 14 14:01:01 10-100-8-236 systemd: Started Session 4424 of user root.
+Jul 14 15:01:01 10-100-8-236 systemd: Started Session 4425 of user root.
+Jul 14 16:01:01 10-100-8-236 systemd: Started Session 4426 of user root.
+Jul 14 17:01:01 10-100-8-236 systemd: Started Session 4427 of user root.
+Jul 14 18:01:01 10-100-8-236 systemd: Started Session 4428 of user root.
+Jul 14 19:01:01 10-100-8-236 systemd: Started Session 4429 of user root.
+Jul 14 19:43:47 10-100-8-236 systemd: Starting Cleanup of Temporary Directories...
+Jul 14 19:43:47 10-100-8-236 systemd: Started Cleanup of Temporary Directories.
+Jul 14 20:01:01 10-100-8-236 systemd: Started Session 4430 of user root.
+Jul 14 21:01:01 10-100-8-236 systemd: Started Session 4431 of user root.
+Jul 14 22:01:01 10-100-8-236 systemd: Started Session 4432 of user root.
+Jul 14 23:01:01 10-100-8-236 systemd: Started Session 4433 of user root.
+Jul 15 00:01:01 10-100-8-236 systemd: Started Session 4434 of user root.
+Jul 15 01:01:01 10-100-8-236 systemd: Started Session 4435 of user root.
+Jul 15 02:01:01 10-100-8-236 systemd: Started Session 4436 of user root.
+Jul 15 03:01:01 10-100-8-236 systemd: Started Session 4437 of user root.
+Jul 15 04:01:01 10-100-8-236 systemd: Started Session 4438 of user root.
+Jul 15 05:01:01 10-100-8-236 systemd: Started Session 4439 of user root.
+Jul 15 06:01:01 10-100-8-236 systemd: Started Session 4440 of user root.
+Jul 15 07:01:01 10-100-8-236 systemd: Started Session 4441 of user root.
+Jul 15 08:01:01 10-100-8-236 systemd: Started Session 4442 of user root.
+Jul 15 09:01:01 10-100-8-236 systemd: Started Session 4443 of user root.
+Jul 15 10:01:01 10-100-8-236 systemd: Started Session 4444 of user root.
+Jul 15 11:01:01 10-100-8-236 systemd: Started Session 4445 of user root.
+Jul 15 12:01:01 10-100-8-236 systemd: Started Session 4446 of user root.
+Jul 15 13:01:01 10-100-8-236 systemd: Started Session 4447 of user root.
+Jul 15 14:01:01 10-100-8-236 systemd: Started Session 4448 of user root.
+Jul 15 14:15:02 10-100-8-236 systemd-logind: New session 4449 of user root.
+Jul 15 14:15:02 10-100-8-236 systemd: Started Session 4449 of user root.
+Jul 15 14:15:05 10-100-8-236 systemd-logind: Removed session 4449.
+Jul 15 14:56:40 10-100-8-236 systemd-logind: New session 4450 of user root.
+Jul 15 14:56:40 10-100-8-236 systemd: Started Session 4450 of user root.
+Jul 15 14:57:05 10-100-8-236 yum[106086]: Installed: lm_sensors-libs-3.4.0-8.20160601gitf9185e5.el7.x86_64
+Jul 15 14:57:05 10-100-8-236 systemd: Reloading.
+Jul 15 14:57:06 10-100-8-236 yum[106086]: Installed: sysstat-10.1.5-19.el7.x86_64
+Jul 15 14:57:06 10-100-8-236 yum[106086]: Installed: dstat-0.7.2-12.el7.noarch
+Jul 15 14:58:52 10-100-8-236 systemd-logind: New session 4451 of user root.
+Jul 15 14:58:52 10-100-8-236 systemd: Started Session 4451 of user root.
+Jul 15 15:00:01 10-100-8-236 systemd: Started Session 4452 of user root.
+Jul 15 15:01:01 10-100-8-236 systemd: Started Session 4453 of user root.

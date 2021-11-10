@@ -1,0 +1,39 @@
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+CentOS   7.6.1810  
+15
+100G
+localhost.localdomain
+0.00 0.01 0.05
+cpu(usr+sys)    .8
+memary usage %       20.0%
+swaps    0
+swappiness   1
+1%
+await svctm %util
+27.97 1.58 0.00
+2.75 0.71 0.00
+3.54 0.60 0.00
+0.68 0.47 0.00
+1.44 1.29 0.00
+5.48 2.98 0.00
+  
+5.0.9
+6379
+/app/redis/base/5.0.9
+dir                                       /app/redis/data/6379                
+8589934592
+noeviction
+databases                                 16
+bind                                      0.0.0.0
+requirepass                               "AY*s23y7"
+daemonize                                 yes
+loglevel                                  notice
+role:slave
+slaveof master_host:10.80.88.82

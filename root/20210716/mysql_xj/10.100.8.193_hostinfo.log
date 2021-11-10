@@ -1,0 +1,1017 @@
+======host meta information
+=====uptime===============================
+ 14:48:34 up 324 days,  3:42,  3 users,  load average: 0.02, 0.03, 0.05
+======ip=================================
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+    link/ether 00:50:56:be:5a:9e brd ff:ff:ff:ff:ff:ff
+    inet 10.100.8.193/24 brd 10.100.8.255 scope global noprefixroute ens192
+       valid_lft forever preferred_lft forever
+    inet6 fe80::250:56ff:febe:5a9e/64 scope link 
+       valid_lft forever preferred_lft forever
+======hostname============================
+localhost.localdomain
+======os version============================
+\S
+Kernel \r on an \m
+
+======kernel version=========================
+Linux localhost.localdomain 3.10.0-957.10.1.el7.x86_64 #1 SMP Thu Feb 7 07:12:53 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+======mysql version=========================
+======mysql client==========================
+mysql  Ver 14.14 Distrib 5.7.24, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+======mysql instance========================
+tcp6       0      0 :::3306                 :::*                    LISTEN      55729/mysqld        
+unix  2      [ ACC ]     STREAM     LISTENING     2324096  55729/mysqld         /data/mysql/data/mysql.sock
+======memory&swap========================
+              total        used        free      shared  buff/cache   available
+Mem:          16037        7276         351         261        8408        8096
+Swap:          8063           0        8063
+======physical cpu==========================
+2
+======cores per physical cpu====================
+cpu cores	: 4
+======processor============================
+8
+======cpu version===========================
+ Intel(R) Xeon(R) CPU E5-2420 v2 @ 2.20GHz
+======disk info=============================
+Filesystem            Type      Size  Used Avail Use% Mounted on
+/dev/mapper/rhel-root xfs        50G   11G   40G  22% /
+devtmpfs              devtmpfs  7.9G     0  7.9G   0% /dev
+tmpfs                 tmpfs     7.9G   80K  7.9G   1% /dev/shm
+tmpfs                 tmpfs     7.9G  258M  7.6G   4% /run
+tmpfs                 tmpfs     7.9G     0  7.9G   0% /sys/fs/cgroup
+/dev/sdb              xfs       100G   12G   89G  12% /data
+/dev/sda1             xfs      1014M  242M  773M  24% /boot
+/dev/mapper/rhel-home xfs        21G   33M   21G   1% /home
+/dev/mapper/rhel-tmp  xfs       3.0G   39M  3.0G   2% /tmp
+tmpfs                 tmpfs     1.6G  4.0K  1.6G   1% /run/user/42
+tmpfs                 tmpfs     1.6G   28K  1.6G   1% /run/user/0
+======numa mount========================
+1
+======io stat===============================
+Linux 3.10.0-957.10.1.el7.x86_64 (localhost.localdomain) 	07/15/2021 	_x86_64_	(8 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.15    0.00    0.38    0.02    0.00   98.44
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.01    0.00    0.07     0.00     0.00    90.42     0.00    6.92    4.85    6.95   0.22   0.00
+sdb               0.00     0.00    0.00    5.22     0.00     0.03    10.03     0.00    0.64    4.05    0.64   0.56   0.29
+dm-0              0.00     0.00    0.00    0.08     0.00     0.00    82.64     0.00    6.43    5.66    6.43   0.23   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00    41.07     0.00    0.78    0.44    2.56   0.72   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00    19.96     0.00    0.48    0.75    0.15   0.46   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00    36.04     0.00    0.26    0.19    0.27   0.22   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.45    0.16    0.06    0.19    0.00   99.14
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    8.80    3.00     0.45     0.15   103.78     0.04    3.53    4.53    0.60   1.46   1.72
+sdb               0.00     0.10    0.00    7.90     0.00     0.03     7.13     0.00    0.22    0.00    0.22   0.22   0.17
+dm-0              0.00     0.00    8.80    2.80     0.45     0.15   105.45     0.04    3.59    4.53    0.64   1.49   1.73
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.20     0.00     0.00     7.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.49    0.00    0.13    0.03    0.00   99.36
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.20    1.30     0.01     0.02    34.00     0.00    0.87    6.50    0.00   0.87   0.13
+sdb               0.00     0.00    0.00    9.70     0.00     0.06    11.74     0.00    0.30    0.00    0.30   0.30   0.29
+dm-0              0.00     0.00    0.20    1.10     0.01     0.01    38.00     0.00    1.00    6.50    0.00   1.00   0.13
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.20     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.46    0.00    0.08    0.11    0.00   99.35
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    7.60     0.00     0.02     6.24     0.01    1.34    0.00    1.34   1.34   1.02
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.45    0.00    0.05    0.01    0.00   99.49
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.60     0.00     0.00    10.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.20     0.00     0.02     6.42     0.00    0.32    0.00    0.32   0.32   0.20
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.60     0.00     0.00    10.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.44    0.00    0.08    0.01    0.00   99.47
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.50    0.00    3.00     0.00     0.04    25.83     0.00    0.67    0.00    0.67   0.07   0.02
+sdb               0.00     0.00    0.00    7.70     0.00     0.03     8.44     0.00    0.34    0.00    0.34   0.34   0.26
+dm-0              0.00     0.00    0.00    3.40     0.00     0.04    22.56     0.00    0.74    0.00    0.74   0.06   0.02
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.43    0.00    0.05    0.01    0.00   99.51
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.20     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.00     0.00     0.02     5.83     0.00    0.33    0.00    0.33   0.33   0.20
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.20     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.44    0.00    0.05    0.01    0.00   99.50
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.20     0.00     0.00     5.50     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.20     0.00     0.02     6.55     0.00    0.21    0.00    0.21   0.21   0.13
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.20     0.00     0.00     5.50     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.39    0.00    0.04    0.01    0.00   99.56
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.30     0.00     0.00    24.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    8.00     0.00     0.02     6.39     0.00    0.38    0.00    0.38   0.38   0.30
+dm-0              0.00     0.00    0.00    0.20     0.00     0.00    32.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.48    0.00    0.13    0.05    0.00   99.35
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    6.90     0.00     0.03     7.42     0.01    2.07    0.00    2.07   2.07   1.43
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+======vmstat======
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0    776 353432      0 8616744    0    0     0     4    0    0  1  0 98  0  0
+ 0  0    776 353500      0 8616764    0    0     0    35  169  259  0  0 100  0  0
+ 0  0    776 353564      0 8616768    0    0     0    26  225  339  0  0 100  0  0
+ 1  0    776 353564      0 8616768    0    0     0    24  165  250  0  0 100  0  0
+ 0  0    776 353564      0 8616768    0    0     0    15  212  288  1  0 100  0  0
+ 0  0    776 353532      0 8616768    0    0     0    56  168  249  0  0 100  0  0
+ 0  0    776 353532      0 8616768    0    0     0    21  229  311  1  0 99  1  0
+ 0  0    776 353564      0 8616772    0    0     0    15  176  251  0  0 99  0  0
+ 0  0    776 353532      0 8616772    0    0     0    16  183  273  1  0 100  0  0
+ 0  0    776 353532      0 8616776    0    0     0    19  162  236  0  0 100  0  0
+====dstat===
+You did not select any stats, using -cdngy by default.
+[7l----total-cpu-usage---- -dsk/total- -net/total- ---paging-- ---system--
+usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw 
+  1   0  98   0   0   0|  36B   29k|   0     0 |   0     0 |1117  2748 
+  0   0 100   0   0   0|   0    20k| 769B   95B|   0     0 | 194   304 
+  1   0 100   0   0   0|   0    16k| 769B   95B|   0     0 | 164   243 
+  0   0 100   0   0   0|   0    29k| 769B   95B|   0     0 | 186   288 
+  1   0 100   0   0   0|   0    20k| 769B   95B|   0     0 | 195   276 
+  0   0  99   0   0   0|   0    16k| 867B  193B|   0     0 | 188   277 
+  1   0 100   0   0   0|   0    16k|1235B  552B|   0     0 | 197   278 
+  0   0  99   0   0   0|   0    20k| 867B  193B|   0     0 | 185   275 
+  1   0  99   0   0   0|   0    20k|1569B  813B|   0     0 | 209   291 
+  0   0 100   0   0   0|   0    16k| 769B   95B|   0     0 | 186   290 
+  1   0  99   0   0   0|   0    16k| 979B  185B|   0     0 | 211   297 
+======system log============================
+Jul 11 03:42:01 localhost rsyslogd: [origin software="rsyslogd" swVersion="7.4.7" x-pid="8814" x-info="http://www.rsyslog.com"] rsyslogd was HUPed
+Jul 11 03:42:02 localhost rhsmd: In order for Subscription Manager to provide your system with updates, your system must be registered with the Customer Portal. Please enter your Red Hat login to ensure your system is up-to-date.
+Jul 11 03:50:01 localhost systemd: Started Session 54197 of user root.
+Jul 11 04:00:01 localhost systemd: Started Session 54198 of user root.
+Jul 11 04:01:01 localhost systemd: Started Session 54199 of user root.
+Jul 11 04:10:01 localhost systemd: Started Session 54200 of user root.
+Jul 11 04:20:01 localhost systemd: Started Session 54201 of user root.
+Jul 11 04:30:01 localhost systemd: Started Session 54202 of user root.
+Jul 11 04:40:01 localhost systemd: Started Session 54203 of user root.
+Jul 11 04:50:01 localhost systemd: Started Session 54204 of user root.
+Jul 11 05:00:01 localhost systemd: Started Session 54205 of user root.
+Jul 11 05:01:01 localhost systemd: Started Session 54206 of user root.
+Jul 11 05:10:01 localhost systemd: Started Session 54207 of user root.
+Jul 11 05:20:01 localhost systemd: Started Session 54208 of user root.
+Jul 11 05:30:01 localhost systemd: Started Session 54209 of user root.
+Jul 11 05:40:01 localhost systemd: Started Session 54210 of user root.
+Jul 11 05:50:01 localhost systemd: Started Session 54211 of user root.
+Jul 11 06:00:01 localhost systemd: Started Session 54212 of user root.
+Jul 11 06:01:01 localhost systemd: Started Session 54213 of user root.
+Jul 11 06:09:11 localhost journal: failed to call gs_plugin_refresh on odrs: [*/*/*/source/odrs/*] failed to download https://odrs.gnome.org/1.0/reviews/api/ratings: Cannot connect to destination
+Jul 11 06:10:01 localhost systemd: Started Session 54214 of user root.
+Jul 11 06:20:01 localhost systemd: Started Session 54215 of user root.
+Jul 11 06:30:01 localhost systemd: Started Session 54216 of user root.
+Jul 11 06:40:01 localhost systemd: Started Session 54217 of user root.
+Jul 11 06:50:01 localhost systemd: Started Session 54218 of user root.
+Jul 11 07:00:01 localhost systemd: Started Session 54219 of user root.
+Jul 11 07:01:01 localhost systemd: Started Session 54220 of user root.
+Jul 11 07:10:01 localhost systemd: Started Session 54221 of user root.
+Jul 11 07:20:01 localhost systemd: Started Session 54222 of user root.
+Jul 11 07:30:01 localhost systemd: Started Session 54223 of user root.
+Jul 11 07:40:01 localhost systemd: Started Session 54224 of user root.
+Jul 11 07:50:01 localhost systemd: Started Session 54225 of user root.
+Jul 11 08:00:01 localhost systemd: Started Session 54226 of user root.
+Jul 11 08:01:01 localhost systemd: Started Session 54227 of user root.
+Jul 11 08:10:01 localhost systemd: Started Session 54228 of user root.
+Jul 11 08:20:01 localhost systemd: Started Session 54229 of user root.
+Jul 11 08:30:01 localhost systemd: Started Session 54230 of user root.
+Jul 11 08:40:01 localhost systemd: Started Session 54231 of user root.
+Jul 11 08:50:01 localhost systemd: Started Session 54232 of user root.
+Jul 11 09:00:01 localhost systemd: Started Session 54233 of user root.
+Jul 11 09:01:01 localhost systemd: Started Session 54234 of user root.
+Jul 11 09:10:01 localhost systemd: Started Session 54235 of user root.
+Jul 11 09:20:01 localhost systemd: Started Session 54236 of user root.
+Jul 11 09:30:01 localhost systemd: Started Session 54237 of user root.
+Jul 11 09:40:01 localhost systemd: Started Session 54238 of user root.
+Jul 11 09:50:01 localhost systemd: Started Session 54239 of user root.
+Jul 11 10:00:01 localhost systemd: Started Session 54240 of user root.
+Jul 11 10:01:01 localhost systemd: Started Session 54241 of user root.
+Jul 11 10:10:01 localhost systemd: Started Session 54242 of user root.
+Jul 11 10:20:01 localhost systemd: Started Session 54243 of user root.
+Jul 11 10:30:01 localhost systemd: Started Session 54244 of user root.
+Jul 11 10:40:01 localhost systemd: Started Session 54245 of user root.
+Jul 11 10:50:01 localhost systemd: Started Session 54246 of user root.
+Jul 11 11:00:01 localhost systemd: Started Session 54247 of user root.
+Jul 11 11:01:02 localhost systemd: Started Session 54248 of user root.
+Jul 11 11:07:44 localhost dbus[8396]: [system] Activating service name='com.redhat.SubscriptionManager' (using servicehelper)
+Jul 11 11:07:44 localhost dbus[8396]: [system] Successfully activated service 'com.redhat.SubscriptionManager'
+Jul 11 11:10:01 localhost systemd: Started Session 54249 of user root.
+Jul 11 11:20:01 localhost systemd: Started Session 54250 of user root.
+Jul 11 11:30:01 localhost systemd: Started Session 54251 of user root.
+Jul 11 11:40:01 localhost systemd: Started Session 54252 of user root.
+Jul 11 11:50:01 localhost systemd: Started Session 54253 of user root.
+Jul 11 12:00:01 localhost systemd: Started Session 54254 of user root.
+Jul 11 12:01:01 localhost systemd: Started Session 54255 of user root.
+Jul 11 12:10:01 localhost systemd: Started Session 54256 of user root.
+Jul 11 12:20:01 localhost systemd: Started Session 54257 of user root.
+Jul 11 12:30:01 localhost systemd: Started Session 54258 of user root.
+Jul 11 12:40:01 localhost systemd: Started Session 54259 of user root.
+Jul 11 12:50:01 localhost systemd: Started Session 54260 of user root.
+Jul 11 13:00:01 localhost systemd: Started Session 54261 of user root.
+Jul 11 13:01:01 localhost systemd: Started Session 54262 of user root.
+Jul 11 13:10:01 localhost systemd: Started Session 54263 of user root.
+Jul 11 13:20:01 localhost systemd: Started Session 54264 of user root.
+Jul 11 13:30:01 localhost systemd: Started Session 54265 of user root.
+Jul 11 13:40:01 localhost systemd: Started Session 54266 of user root.
+Jul 11 13:50:01 localhost systemd: Started Session 54267 of user root.
+Jul 11 14:00:01 localhost systemd: Started Session 54268 of user root.
+Jul 11 14:01:01 localhost systemd: Started Session 54269 of user root.
+Jul 11 14:10:01 localhost systemd: Started Session 54270 of user root.
+Jul 11 14:20:01 localhost systemd: Started Session 54271 of user root.
+Jul 11 14:21:33 localhost systemd: Starting Cleanup of Temporary Directories...
+Jul 11 14:21:33 localhost systemd: Started Cleanup of Temporary Directories.
+Jul 11 14:30:01 localhost systemd: Started Session 54272 of user root.
+Jul 11 14:40:01 localhost systemd: Started Session 54273 of user root.
+Jul 11 14:50:01 localhost systemd: Started Session 54274 of user root.
+Jul 11 15:00:01 localhost systemd: Started Session 54275 of user root.
+Jul 11 15:01:02 localhost systemd: Started Session 54276 of user root.
+Jul 11 15:10:01 localhost systemd: Started Session 54277 of user root.
+Jul 11 15:20:01 localhost systemd: Started Session 54278 of user root.
+Jul 11 15:30:01 localhost systemd: Started Session 54279 of user root.
+Jul 11 15:40:01 localhost systemd: Started Session 54280 of user root.
+Jul 11 15:50:01 localhost systemd: Started Session 54281 of user root.
+Jul 11 16:00:01 localhost systemd: Started Session 54282 of user root.
+Jul 11 16:01:01 localhost systemd: Started Session 54283 of user root.
+Jul 11 16:10:01 localhost systemd: Started Session 54284 of user root.
+Jul 11 16:20:01 localhost systemd: Started Session 54285 of user root.
+Jul 11 16:30:01 localhost systemd: Started Session 54286 of user root.
+Jul 11 16:40:01 localhost systemd: Started Session 54287 of user root.
+Jul 11 16:50:01 localhost systemd: Started Session 54288 of user root.
+Jul 11 17:00:01 localhost systemd: Started Session 54289 of user root.
+Jul 11 17:01:01 localhost systemd: Started Session 54290 of user root.
+Jul 11 17:10:01 localhost systemd: Started Session 54291 of user root.
+Jul 11 17:20:01 localhost systemd: Started Session 54292 of user root.
+Jul 11 17:30:01 localhost systemd: Started Session 54293 of user root.
+Jul 11 17:40:01 localhost systemd: Started Session 54294 of user root.
+Jul 11 17:50:01 localhost systemd: Started Session 54295 of user root.
+Jul 11 18:00:01 localhost systemd: Started Session 54296 of user root.
+Jul 11 18:01:01 localhost systemd: Started Session 54297 of user root.
+Jul 11 18:10:01 localhost systemd: Started Session 54298 of user root.
+Jul 11 18:20:01 localhost systemd: Started Session 54299 of user root.
+Jul 11 18:30:01 localhost systemd: Started Session 54300 of user root.
+Jul 11 18:40:01 localhost systemd: Started Session 54301 of user root.
+Jul 11 18:50:01 localhost systemd: Started Session 54302 of user root.
+Jul 11 19:00:01 localhost systemd: Started Session 54303 of user root.
+Jul 11 19:01:01 localhost systemd: Started Session 54304 of user root.
+Jul 11 19:10:01 localhost systemd: Started Session 54305 of user root.
+Jul 11 19:20:02 localhost systemd: Started Session 54306 of user root.
+Jul 11 19:30:01 localhost systemd: Started Session 54307 of user root.
+Jul 11 19:40:01 localhost systemd: Started Session 54308 of user root.
+Jul 11 19:50:01 localhost systemd: Started Session 54309 of user root.
+Jul 11 20:00:01 localhost systemd: Started Session 54310 of user root.
+Jul 11 20:01:01 localhost systemd: Started Session 54311 of user root.
+Jul 11 20:10:01 localhost systemd: Started Session 54312 of user root.
+Jul 11 20:20:01 localhost systemd: Started Session 54313 of user root.
+Jul 11 20:30:01 localhost systemd: Started Session 54314 of user root.
+Jul 11 20:40:01 localhost systemd: Started Session 54315 of user root.
+Jul 11 20:50:01 localhost systemd: Started Session 54316 of user root.
+Jul 11 21:00:01 localhost systemd: Started Session 54317 of user root.
+Jul 11 21:01:01 localhost systemd: Started Session 54318 of user root.
+Jul 11 21:10:01 localhost systemd: Started Session 54319 of user root.
+Jul 11 21:20:01 localhost systemd: Started Session 54320 of user root.
+Jul 11 21:30:01 localhost systemd: Started Session 54321 of user root.
+Jul 11 21:40:01 localhost systemd: Started Session 54322 of user root.
+Jul 11 21:50:01 localhost systemd: Started Session 54323 of user root.
+Jul 11 22:00:01 localhost systemd: Started Session 54324 of user root.
+Jul 11 22:01:01 localhost systemd: Started Session 54325 of user root.
+Jul 11 22:10:01 localhost systemd: Started Session 54326 of user root.
+Jul 11 22:20:01 localhost systemd: Started Session 54327 of user root.
+Jul 11 22:30:01 localhost systemd: Started Session 54328 of user root.
+Jul 11 22:40:01 localhost systemd: Started Session 54329 of user root.
+Jul 11 22:50:01 localhost systemd: Started Session 54330 of user root.
+Jul 11 23:00:01 localhost systemd: Started Session 54331 of user root.
+Jul 11 23:01:01 localhost systemd: Started Session 54332 of user root.
+Jul 11 23:10:02 localhost systemd: Started Session 54333 of user root.
+Jul 11 23:20:01 localhost systemd: Started Session 54334 of user root.
+Jul 11 23:30:01 localhost systemd: Started Session 54335 of user root.
+Jul 11 23:40:01 localhost systemd: Started Session 54336 of user root.
+Jul 11 23:50:01 localhost systemd: Started Session 54337 of user root.
+Jul 11 23:53:01 localhost systemd: Started Session 54338 of user root.
+Jul 12 00:00:01 localhost systemd: Started Session 54339 of user root.
+Jul 12 00:00:01 localhost systemd: Starting update of the root trust anchor for DNSSEC validation in unbound...
+Jul 12 00:00:01 localhost systemd: Started update of the root trust anchor for DNSSEC validation in unbound.
+Jul 12 00:01:01 localhost systemd: Started Session 54340 of user root.
+Jul 12 00:10:01 localhost systemd: Started Session 54341 of user root.
+Jul 12 00:20:01 localhost systemd: Started Session 54342 of user root.
+Jul 12 00:30:01 localhost systemd: Started Session 54343 of user root.
+Jul 12 00:40:01 localhost systemd: Started Session 54344 of user root.
+Jul 12 00:50:01 localhost systemd: Started Session 54345 of user root.
+Jul 12 01:00:01 localhost systemd: Started Session 54346 of user root.
+Jul 12 01:01:01 localhost systemd: Started Session 54347 of user root.
+Jul 12 01:10:01 localhost systemd: Started Session 54348 of user root.
+Jul 12 01:20:01 localhost systemd: Started Session 54349 of user root.
+Jul 12 01:30:01 localhost systemd: Started Session 54350 of user root.
+Jul 12 01:40:01 localhost systemd: Started Session 54351 of user root.
+Jul 12 01:50:01 localhost systemd: Started Session 54352 of user root.
+Jul 12 02:00:01 localhost systemd: Started Session 54353 of user root.
+Jul 12 02:01:01 localhost systemd: Started Session 54354 of user root.
+Jul 12 02:10:01 localhost systemd: Started Session 54355 of user root.
+Jul 12 02:20:01 localhost systemd: Started Session 54356 of user root.
+Jul 12 02:30:01 localhost systemd: Started Session 54357 of user root.
+Jul 12 02:40:01 localhost systemd: Started Session 54358 of user root.
+Jul 12 02:50:01 localhost systemd: Started Session 54359 of user root.
+Jul 12 03:00:01 localhost systemd: Started Session 54360 of user root.
+Jul 12 03:01:01 localhost systemd: Started Session 54361 of user root.
+Jul 12 03:10:01 localhost systemd: Started Session 54362 of user root.
+Jul 12 03:20:01 localhost systemd: Started Session 54363 of user root.
+Jul 12 03:20:01 localhost rhsmd: In order for Subscription Manager to provide your system with updates, your system must be registered with the Customer Portal. Please enter your Red Hat login to ensure your system is up-to-date.
+Jul 12 03:30:01 localhost systemd: Started Session 54364 of user root.
+Jul 12 03:40:01 localhost systemd: Started Session 54365 of user root.
+Jul 12 03:50:01 localhost systemd: Started Session 54366 of user root.
+Jul 12 04:00:01 localhost systemd: Started Session 54367 of user root.
+Jul 12 04:01:01 localhost systemd: Started Session 54368 of user root.
+Jul 12 04:10:01 localhost systemd: Started Session 54369 of user root.
+Jul 12 04:20:01 localhost systemd: Started Session 54370 of user root.
+Jul 12 04:30:01 localhost systemd: Started Session 54371 of user root.
+Jul 12 04:40:01 localhost systemd: Started Session 54372 of user root.
+Jul 12 04:50:01 localhost systemd: Started Session 54373 of user root.
+Jul 12 05:00:01 localhost systemd: Started Session 54374 of user root.
+Jul 12 05:01:01 localhost systemd: Started Session 54375 of user root.
+Jul 12 05:10:01 localhost systemd: Started Session 54376 of user root.
+Jul 12 05:20:01 localhost systemd: Started Session 54377 of user root.
+Jul 12 05:30:01 localhost systemd: Started Session 54378 of user root.
+Jul 12 05:40:01 localhost systemd: Started Session 54379 of user root.
+Jul 12 05:50:01 localhost systemd: Started Session 54380 of user root.
+Jul 12 06:00:01 localhost systemd: Started Session 54381 of user root.
+Jul 12 06:01:01 localhost systemd: Started Session 54382 of user root.
+Jul 12 06:09:11 localhost journal: failed to call gs_plugin_refresh on odrs: [*/*/*/source/odrs/*] failed to download https://odrs.gnome.org/1.0/reviews/api/ratings: Cannot connect to destination
+Jul 12 06:10:01 localhost systemd: Started Session 54383 of user root.
+Jul 12 06:20:01 localhost systemd: Started Session 54384 of user root.
+Jul 12 06:30:01 localhost systemd: Started Session 54385 of user root.
+Jul 12 06:40:01 localhost systemd: Started Session 54386 of user root.
+Jul 12 06:50:01 localhost systemd: Started Session 54387 of user root.
+Jul 12 07:00:01 localhost systemd: Started Session 54388 of user root.
+Jul 12 07:01:01 localhost systemd: Started Session 54389 of user root.
+Jul 12 07:10:01 localhost systemd: Started Session 54390 of user root.
+Jul 12 07:20:01 localhost systemd: Started Session 54391 of user root.
+Jul 12 07:30:01 localhost systemd: Started Session 54392 of user root.
+Jul 12 07:40:01 localhost systemd: Started Session 54393 of user root.
+Jul 12 07:50:01 localhost systemd: Started Session 54394 of user root.
+Jul 12 08:00:01 localhost systemd: Started Session 54395 of user root.
+Jul 12 08:01:01 localhost systemd: Started Session 54396 of user root.
+Jul 12 08:10:01 localhost systemd: Started Session 54397 of user root.
+Jul 12 08:20:01 localhost systemd: Started Session 54398 of user root.
+Jul 12 08:30:01 localhost systemd: Started Session 54399 of user root.
+Jul 12 08:40:01 localhost systemd: Started Session 54400 of user root.
+Jul 12 08:50:01 localhost systemd: Started Session 54401 of user root.
+Jul 12 09:00:01 localhost systemd: Started Session 54402 of user root.
+Jul 12 09:01:01 localhost systemd: Started Session 54403 of user root.
+Jul 12 09:10:01 localhost systemd: Started Session 54404 of user root.
+Jul 12 09:20:01 localhost systemd: Started Session 54405 of user root.
+Jul 12 09:30:01 localhost systemd: Started Session 54406 of user root.
+Jul 12 09:40:01 localhost systemd: Started Session 54407 of user root.
+Jul 12 09:50:01 localhost systemd: Started Session 54408 of user root.
+Jul 12 10:00:01 localhost systemd: Started Session 54409 of user root.
+Jul 12 10:01:01 localhost systemd: Started Session 54410 of user root.
+Jul 12 10:10:01 localhost systemd: Started Session 54411 of user root.
+Jul 12 10:20:01 localhost systemd: Started Session 54412 of user root.
+Jul 12 10:30:01 localhost systemd: Started Session 54413 of user root.
+Jul 12 10:40:01 localhost systemd: Started Session 54414 of user root.
+Jul 12 10:50:01 localhost systemd: Started Session 54415 of user root.
+Jul 12 11:00:01 localhost systemd: Started Session 54416 of user root.
+Jul 12 11:01:01 localhost systemd: Started Session 54417 of user root.
+Jul 12 11:07:44 localhost dbus[8396]: [system] Activating service name='com.redhat.SubscriptionManager' (using servicehelper)
+Jul 12 11:07:44 localhost dbus[8396]: [system] Successfully activated service 'com.redhat.SubscriptionManager'
+Jul 12 11:10:01 localhost systemd: Started Session 54418 of user root.
+Jul 12 11:20:01 localhost systemd: Started Session 54419 of user root.
+Jul 12 11:30:01 localhost systemd: Started Session 54420 of user root.
+Jul 12 11:40:01 localhost systemd: Started Session 54421 of user root.
+Jul 12 11:50:01 localhost systemd: Started Session 54422 of user root.
+Jul 12 12:00:01 localhost systemd: Started Session 54423 of user root.
+Jul 12 12:01:01 localhost systemd: Started Session 54424 of user root.
+Jul 12 12:10:01 localhost systemd: Started Session 54425 of user root.
+Jul 12 12:20:01 localhost systemd: Started Session 54426 of user root.
+Jul 12 12:30:01 localhost systemd: Started Session 54427 of user root.
+Jul 12 12:40:01 localhost systemd: Started Session 54428 of user root.
+Jul 12 12:50:01 localhost systemd: Started Session 54429 of user root.
+Jul 12 13:00:01 localhost systemd: Started Session 54430 of user root.
+Jul 12 13:01:01 localhost systemd: Started Session 54431 of user root.
+Jul 12 13:10:01 localhost systemd: Started Session 54432 of user root.
+Jul 12 13:20:01 localhost systemd: Started Session 54433 of user root.
+Jul 12 13:30:01 localhost systemd: Started Session 54434 of user root.
+Jul 12 13:40:01 localhost systemd: Started Session 54435 of user root.
+Jul 12 13:50:01 localhost systemd: Started Session 54436 of user root.
+Jul 12 14:00:01 localhost systemd: Started Session 54437 of user root.
+Jul 12 14:01:01 localhost systemd: Started Session 54438 of user root.
+Jul 12 14:10:01 localhost systemd: Started Session 54439 of user root.
+Jul 12 14:20:01 localhost systemd: Started Session 54440 of user root.
+Jul 12 14:22:33 localhost systemd: Starting Cleanup of Temporary Directories...
+Jul 12 14:22:33 localhost systemd: Started Cleanup of Temporary Directories.
+Jul 12 14:30:01 localhost systemd: Started Session 54441 of user root.
+Jul 12 14:40:01 localhost systemd: Started Session 54442 of user root.
+Jul 12 14:50:01 localhost systemd: Started Session 54443 of user root.
+Jul 12 15:00:01 localhost systemd: Started Session 54444 of user root.
+Jul 12 15:01:01 localhost systemd: Started Session 54445 of user root.
+Jul 12 15:10:01 localhost systemd: Started Session 54446 of user root.
+Jul 12 15:20:01 localhost systemd: Started Session 54447 of user root.
+Jul 12 15:30:01 localhost systemd: Started Session 54448 of user root.
+Jul 12 15:40:01 localhost systemd: Started Session 54449 of user root.
+Jul 12 15:50:01 localhost systemd: Started Session 54450 of user root.
+Jul 12 16:00:01 localhost systemd: Started Session 54451 of user root.
+Jul 12 16:01:01 localhost systemd: Started Session 54452 of user root.
+Jul 12 16:10:01 localhost systemd: Started Session 54453 of user root.
+Jul 12 16:20:01 localhost systemd: Started Session 54454 of user root.
+Jul 12 16:30:01 localhost systemd: Started Session 54455 of user root.
+Jul 12 16:40:01 localhost systemd: Started Session 54456 of user root.
+Jul 12 16:50:01 localhost systemd: Started Session 54457 of user root.
+Jul 12 17:00:01 localhost systemd: Started Session 54458 of user root.
+Jul 12 17:01:01 localhost systemd: Started Session 54459 of user root.
+Jul 12 17:10:01 localhost systemd: Started Session 54460 of user root.
+Jul 12 17:20:01 localhost systemd: Started Session 54461 of user root.
+Jul 12 17:30:01 localhost systemd: Started Session 54462 of user root.
+Jul 12 17:40:01 localhost systemd: Started Session 54463 of user root.
+Jul 12 17:50:01 localhost systemd: Started Session 54464 of user root.
+Jul 12 18:00:01 localhost systemd: Started Session 54465 of user root.
+Jul 12 18:01:01 localhost systemd: Started Session 54466 of user root.
+Jul 12 18:10:01 localhost systemd: Started Session 54467 of user root.
+Jul 12 18:20:01 localhost systemd: Started Session 54468 of user root.
+Jul 12 18:30:01 localhost systemd: Started Session 54469 of user root.
+Jul 12 18:40:01 localhost systemd: Started Session 54470 of user root.
+Jul 12 18:50:01 localhost systemd: Started Session 54471 of user root.
+Jul 12 19:00:01 localhost systemd: Started Session 54472 of user root.
+Jul 12 19:01:01 localhost systemd: Started Session 54473 of user root.
+Jul 12 19:10:01 localhost systemd: Started Session 54474 of user root.
+Jul 12 19:20:01 localhost systemd: Started Session 54475 of user root.
+Jul 12 19:30:01 localhost systemd: Started Session 54476 of user root.
+Jul 12 19:40:01 localhost systemd: Started Session 54477 of user root.
+Jul 12 19:50:01 localhost systemd: Started Session 54478 of user root.
+Jul 12 20:00:01 localhost systemd: Started Session 54479 of user root.
+Jul 12 20:01:01 localhost systemd: Started Session 54480 of user root.
+Jul 12 20:10:01 localhost systemd: Started Session 54481 of user root.
+Jul 12 20:20:01 localhost systemd: Started Session 54482 of user root.
+Jul 12 20:30:01 localhost systemd: Started Session 54483 of user root.
+Jul 12 20:40:01 localhost systemd: Started Session 54484 of user root.
+Jul 12 20:50:01 localhost systemd: Started Session 54485 of user root.
+Jul 12 21:00:01 localhost systemd: Started Session 54486 of user root.
+Jul 12 21:01:01 localhost systemd: Started Session 54487 of user root.
+Jul 12 21:10:01 localhost systemd: Started Session 54488 of user root.
+Jul 12 21:20:01 localhost systemd: Started Session 54489 of user root.
+Jul 12 21:30:01 localhost systemd: Started Session 54490 of user root.
+Jul 12 21:40:01 localhost systemd: Started Session 54491 of user root.
+Jul 12 21:50:01 localhost systemd: Started Session 54492 of user root.
+Jul 12 22:00:01 localhost systemd: Started Session 54493 of user root.
+Jul 12 22:01:01 localhost systemd: Started Session 54494 of user root.
+Jul 12 22:10:01 localhost systemd: Started Session 54495 of user root.
+Jul 12 22:20:01 localhost systemd: Started Session 54496 of user root.
+Jul 12 22:30:01 localhost systemd: Started Session 54497 of user root.
+Jul 12 22:40:01 localhost systemd: Started Session 54498 of user root.
+Jul 12 22:50:01 localhost systemd: Started Session 54499 of user root.
+Jul 12 23:00:01 localhost systemd: Started Session 54500 of user root.
+Jul 12 23:01:01 localhost systemd: Started Session 54501 of user root.
+Jul 12 23:10:01 localhost systemd: Started Session 54502 of user root.
+Jul 12 23:20:01 localhost systemd: Started Session 54503 of user root.
+Jul 12 23:30:01 localhost systemd: Started Session 54504 of user root.
+Jul 12 23:40:01 localhost systemd: Started Session 54505 of user root.
+Jul 12 23:50:01 localhost systemd: Started Session 54506 of user root.
+Jul 12 23:53:01 localhost systemd: Started Session 54507 of user root.
+Jul 13 00:00:01 localhost systemd: Started Session 54508 of user root.
+Jul 13 00:00:01 localhost systemd: Starting update of the root trust anchor for DNSSEC validation in unbound...
+Jul 13 00:00:01 localhost systemd: Started update of the root trust anchor for DNSSEC validation in unbound.
+Jul 13 00:01:01 localhost systemd: Started Session 54509 of user root.
+Jul 13 00:10:01 localhost systemd: Started Session 54510 of user root.
+Jul 13 00:20:01 localhost systemd: Started Session 54511 of user root.
+Jul 13 00:30:01 localhost systemd: Started Session 54512 of user root.
+Jul 13 00:40:01 localhost systemd: Started Session 54513 of user root.
+Jul 13 00:50:01 localhost systemd: Started Session 54514 of user root.
+Jul 13 01:00:01 localhost systemd: Started Session 54515 of user root.
+Jul 13 01:01:01 localhost systemd: Started Session 54516 of user root.
+Jul 13 01:10:01 localhost systemd: Started Session 54517 of user root.
+Jul 13 01:20:01 localhost systemd: Started Session 54518 of user root.
+Jul 13 01:30:01 localhost systemd: Started Session 54519 of user root.
+Jul 13 01:40:01 localhost systemd: Started Session 54520 of user root.
+Jul 13 01:50:01 localhost systemd: Started Session 54521 of user root.
+Jul 13 02:00:01 localhost systemd: Started Session 54522 of user root.
+Jul 13 02:01:01 localhost systemd: Started Session 54523 of user root.
+Jul 13 02:10:01 localhost systemd: Started Session 54524 of user root.
+Jul 13 02:20:01 localhost systemd: Started Session 54525 of user root.
+Jul 13 02:30:01 localhost systemd: Started Session 54526 of user root.
+Jul 13 02:40:01 localhost systemd: Started Session 54527 of user root.
+Jul 13 02:50:01 localhost systemd: Started Session 54528 of user root.
+Jul 13 03:00:01 localhost systemd: Started Session 54529 of user root.
+Jul 13 03:01:01 localhost systemd: Started Session 54530 of user root.
+Jul 13 03:10:01 localhost systemd: Started Session 54531 of user root.
+Jul 13 03:20:01 localhost systemd: Started Session 54532 of user root.
+Jul 13 03:30:01 localhost systemd: Started Session 54533 of user root.
+Jul 13 03:39:01 localhost rhsmd: In order for Subscription Manager to provide your system with updates, your system must be registered with the Customer Portal. Please enter your Red Hat login to ensure your system is up-to-date.
+Jul 13 03:40:01 localhost systemd: Started Session 54534 of user root.
+Jul 13 03:50:01 localhost systemd: Started Session 54535 of user root.
+Jul 13 04:00:01 localhost systemd: Started Session 54536 of user root.
+Jul 13 04:01:01 localhost systemd: Started Session 54537 of user root.
+Jul 13 04:10:01 localhost systemd: Started Session 54538 of user root.
+Jul 13 04:20:01 localhost systemd: Started Session 54539 of user root.
+Jul 13 04:30:01 localhost systemd: Started Session 54540 of user root.
+Jul 13 04:40:01 localhost systemd: Started Session 54541 of user root.
+Jul 13 04:50:01 localhost systemd: Started Session 54542 of user root.
+Jul 13 05:00:01 localhost systemd: Started Session 54543 of user root.
+Jul 13 05:01:01 localhost systemd: Started Session 54544 of user root.
+Jul 13 05:10:01 localhost systemd: Started Session 54545 of user root.
+Jul 13 05:20:01 localhost systemd: Started Session 54546 of user root.
+Jul 13 05:30:01 localhost systemd: Started Session 54547 of user root.
+Jul 13 05:40:01 localhost systemd: Started Session 54548 of user root.
+Jul 13 05:50:01 localhost systemd: Started Session 54549 of user root.
+Jul 13 06:00:01 localhost systemd: Started Session 54550 of user root.
+Jul 13 06:01:01 localhost systemd: Started Session 54551 of user root.
+Jul 13 06:09:11 localhost journal: failed to call gs_plugin_refresh on odrs: [*/*/*/source/odrs/*] failed to download https://odrs.gnome.org/1.0/reviews/api/ratings: Cannot connect to destination
+Jul 13 06:10:01 localhost systemd: Started Session 54552 of user root.
+Jul 13 06:20:01 localhost systemd: Started Session 54553 of user root.
+Jul 13 06:30:01 localhost systemd: Started Session 54554 of user root.
+Jul 13 06:40:01 localhost systemd: Started Session 54555 of user root.
+Jul 13 06:50:01 localhost systemd: Started Session 54556 of user root.
+Jul 13 07:00:01 localhost systemd: Started Session 54557 of user root.
+Jul 13 07:01:01 localhost systemd: Started Session 54558 of user root.
+Jul 13 07:10:01 localhost systemd: Started Session 54559 of user root.
+Jul 13 07:20:01 localhost systemd: Started Session 54560 of user root.
+Jul 13 07:30:01 localhost systemd: Started Session 54561 of user root.
+Jul 13 07:40:01 localhost systemd: Started Session 54562 of user root.
+Jul 13 07:50:01 localhost systemd: Started Session 54563 of user root.
+Jul 13 08:00:01 localhost systemd: Started Session 54564 of user root.
+Jul 13 08:01:01 localhost systemd: Started Session 54565 of user root.
+Jul 13 08:10:01 localhost systemd: Started Session 54566 of user root.
+Jul 13 08:20:01 localhost systemd: Started Session 54567 of user root.
+Jul 13 08:30:01 localhost systemd: Started Session 54568 of user root.
+Jul 13 08:40:01 localhost systemd: Started Session 54569 of user root.
+Jul 13 08:50:01 localhost systemd: Started Session 54570 of user root.
+Jul 13 09:00:01 localhost systemd: Started Session 54571 of user root.
+Jul 13 09:01:01 localhost systemd: Started Session 54572 of user root.
+Jul 13 09:10:01 localhost systemd: Started Session 54573 of user root.
+Jul 13 09:20:01 localhost systemd: Started Session 54574 of user root.
+Jul 13 09:30:01 localhost systemd: Started Session 54575 of user root.
+Jul 13 09:40:01 localhost systemd: Started Session 54576 of user root.
+Jul 13 09:50:01 localhost systemd: Started Session 54577 of user root.
+Jul 13 10:00:01 localhost systemd: Started Session 54578 of user root.
+Jul 13 10:01:01 localhost systemd: Started Session 54579 of user root.
+Jul 13 10:10:01 localhost systemd: Started Session 54580 of user root.
+Jul 13 10:20:02 localhost systemd: Started Session 54581 of user root.
+Jul 13 10:30:01 localhost systemd: Started Session 54582 of user root.
+Jul 13 10:40:01 localhost systemd: Started Session 54583 of user root.
+Jul 13 10:50:01 localhost systemd: Started Session 54584 of user root.
+Jul 13 11:00:01 localhost systemd: Started Session 54585 of user root.
+Jul 13 11:01:01 localhost systemd: Started Session 54586 of user root.
+Jul 13 11:07:44 localhost dbus[8396]: [system] Activating service name='com.redhat.SubscriptionManager' (using servicehelper)
+Jul 13 11:07:44 localhost dbus[8396]: [system] Successfully activated service 'com.redhat.SubscriptionManager'
+Jul 13 11:10:01 localhost systemd: Started Session 54587 of user root.
+Jul 13 11:20:01 localhost systemd: Started Session 54588 of user root.
+Jul 13 11:30:01 localhost systemd: Started Session 54589 of user root.
+Jul 13 11:40:01 localhost systemd: Started Session 54590 of user root.
+Jul 13 11:50:01 localhost systemd: Started Session 54591 of user root.
+Jul 13 12:00:01 localhost systemd: Started Session 54592 of user root.
+Jul 13 12:01:01 localhost systemd: Started Session 54593 of user root.
+Jul 13 12:10:01 localhost systemd: Started Session 54594 of user root.
+Jul 13 12:20:01 localhost systemd: Started Session 54595 of user root.
+Jul 13 12:30:01 localhost systemd: Started Session 54596 of user root.
+Jul 13 12:40:01 localhost systemd: Started Session 54597 of user root.
+Jul 13 12:50:01 localhost systemd: Started Session 54598 of user root.
+Jul 13 13:00:01 localhost systemd: Started Session 54599 of user root.
+Jul 13 13:01:01 localhost systemd: Started Session 54600 of user root.
+Jul 13 13:10:01 localhost systemd: Started Session 54601 of user root.
+Jul 13 13:20:01 localhost systemd: Started Session 54602 of user root.
+Jul 13 13:30:01 localhost systemd: Started Session 54603 of user root.
+Jul 13 13:40:01 localhost systemd: Started Session 54604 of user root.
+Jul 13 13:50:01 localhost systemd: Started Session 54605 of user root.
+Jul 13 14:00:01 localhost systemd: Started Session 54606 of user root.
+Jul 13 14:01:01 localhost systemd: Started Session 54607 of user root.
+Jul 13 14:10:01 localhost systemd: Started Session 54608 of user root.
+Jul 13 14:20:01 localhost systemd: Started Session 54609 of user root.
+Jul 13 14:23:33 localhost systemd: Starting Cleanup of Temporary Directories...
+Jul 13 14:23:33 localhost systemd: Started Cleanup of Temporary Directories.
+Jul 13 14:30:01 localhost systemd: Started Session 54610 of user root.
+Jul 13 14:40:02 localhost systemd: Started Session 54611 of user root.
+Jul 13 14:50:01 localhost systemd: Started Session 54612 of user root.
+Jul 13 15:00:01 localhost systemd: Started Session 54613 of user root.
+Jul 13 15:01:01 localhost systemd: Started Session 54614 of user root.
+Jul 13 15:10:01 localhost systemd: Started Session 54615 of user root.
+Jul 13 15:20:01 localhost systemd: Started Session 54616 of user root.
+Jul 13 15:30:01 localhost systemd: Started Session 54617 of user root.
+Jul 13 15:40:01 localhost systemd: Started Session 54618 of user root.
+Jul 13 15:50:01 localhost systemd: Started Session 54619 of user root.
+Jul 13 16:00:01 localhost systemd: Started Session 54620 of user root.
+Jul 13 16:01:01 localhost systemd: Started Session 54621 of user root.
+Jul 13 16:10:01 localhost systemd: Started Session 54622 of user root.
+Jul 13 16:20:01 localhost systemd: Started Session 54623 of user root.
+Jul 13 16:30:01 localhost systemd: Started Session 54624 of user root.
+Jul 13 16:40:01 localhost systemd: Started Session 54625 of user root.
+Jul 13 16:50:01 localhost systemd: Started Session 54626 of user root.
+Jul 13 17:00:01 localhost systemd: Started Session 54627 of user root.
+Jul 13 17:01:01 localhost systemd: Started Session 54628 of user root.
+Jul 13 17:10:01 localhost systemd: Started Session 54629 of user root.
+Jul 13 17:20:01 localhost systemd: Started Session 54630 of user root.
+Jul 13 17:30:01 localhost systemd: Started Session 54631 of user root.
+Jul 13 17:40:01 localhost systemd: Started Session 54632 of user root.
+Jul 13 17:50:01 localhost systemd: Started Session 54633 of user root.
+Jul 13 18:00:01 localhost systemd: Started Session 54634 of user root.
+Jul 13 18:01:01 localhost systemd: Started Session 54635 of user root.
+Jul 13 18:10:01 localhost systemd: Started Session 54636 of user root.
+Jul 13 18:20:01 localhost systemd: Started Session 54637 of user root.
+Jul 13 18:30:01 localhost systemd: Started Session 54638 of user root.
+Jul 13 18:40:01 localhost systemd: Started Session 54639 of user root.
+Jul 13 18:50:02 localhost systemd: Started Session 54640 of user root.
+Jul 13 19:00:01 localhost systemd: Started Session 54641 of user root.
+Jul 13 19:01:01 localhost systemd: Started Session 54642 of user root.
+Jul 13 19:10:01 localhost systemd: Started Session 54643 of user root.
+Jul 13 19:20:01 localhost systemd: Started Session 54644 of user root.
+Jul 13 19:30:01 localhost systemd: Started Session 54645 of user root.
+Jul 13 19:40:01 localhost systemd: Started Session 54646 of user root.
+Jul 13 19:50:01 localhost systemd: Started Session 54647 of user root.
+Jul 13 20:00:01 localhost systemd: Started Session 54648 of user root.
+Jul 13 20:01:01 localhost systemd: Started Session 54649 of user root.
+Jul 13 20:10:01 localhost systemd: Started Session 54650 of user root.
+Jul 13 20:20:01 localhost systemd: Started Session 54651 of user root.
+Jul 13 20:30:01 localhost systemd: Started Session 54652 of user root.
+Jul 13 20:40:01 localhost systemd: Started Session 54653 of user root.
+Jul 13 20:50:01 localhost systemd: Started Session 54654 of user root.
+Jul 13 21:00:01 localhost systemd: Started Session 54655 of user root.
+Jul 13 21:01:01 localhost systemd: Started Session 54656 of user root.
+Jul 13 21:10:01 localhost systemd: Started Session 54657 of user root.
+Jul 13 21:20:01 localhost systemd: Started Session 54658 of user root.
+Jul 13 21:30:01 localhost systemd: Started Session 54659 of user root.
+Jul 13 21:40:01 localhost systemd: Started Session 54660 of user root.
+Jul 13 21:50:01 localhost systemd: Started Session 54661 of user root.
+Jul 13 22:00:01 localhost systemd: Started Session 54662 of user root.
+Jul 13 22:01:01 localhost systemd: Started Session 54663 of user root.
+Jul 13 22:10:01 localhost systemd: Started Session 54664 of user root.
+Jul 13 22:20:01 localhost systemd: Started Session 54665 of user root.
+Jul 13 22:30:01 localhost systemd: Started Session 54666 of user root.
+Jul 13 22:40:01 localhost systemd: Started Session 54667 of user root.
+Jul 13 22:50:01 localhost systemd: Started Session 54668 of user root.
+Jul 13 23:00:01 localhost systemd: Started Session 54669 of user root.
+Jul 13 23:01:01 localhost systemd: Started Session 54670 of user root.
+Jul 13 23:10:01 localhost systemd: Started Session 54671 of user root.
+Jul 13 23:20:01 localhost systemd: Started Session 54672 of user root.
+Jul 13 23:30:01 localhost systemd: Started Session 54673 of user root.
+Jul 13 23:40:01 localhost systemd: Started Session 54674 of user root.
+Jul 13 23:50:01 localhost systemd: Started Session 54675 of user root.
+Jul 13 23:53:01 localhost systemd: Started Session 54676 of user root.
+Jul 14 00:00:01 localhost systemd: Started Session 54677 of user root.
+Jul 14 00:00:01 localhost systemd: Starting update of the root trust anchor for DNSSEC validation in unbound...
+Jul 14 00:00:01 localhost systemd: Started update of the root trust anchor for DNSSEC validation in unbound.
+Jul 14 00:01:01 localhost systemd: Started Session 54678 of user root.
+Jul 14 00:10:01 localhost systemd: Started Session 54679 of user root.
+Jul 14 00:20:01 localhost systemd: Started Session 54680 of user root.
+Jul 14 00:30:01 localhost systemd: Started Session 54681 of user root.
+Jul 14 00:40:01 localhost systemd: Started Session 54682 of user root.
+Jul 14 00:50:01 localhost systemd: Started Session 54683 of user root.
+Jul 14 01:00:01 localhost systemd: Started Session 54684 of user root.
+Jul 14 01:01:01 localhost systemd: Started Session 54685 of user root.
+Jul 14 01:10:01 localhost systemd: Started Session 54686 of user root.
+Jul 14 01:20:01 localhost systemd: Started Session 54687 of user root.
+Jul 14 01:30:01 localhost systemd: Started Session 54688 of user root.
+Jul 14 01:40:01 localhost systemd: Started Session 54689 of user root.
+Jul 14 01:50:01 localhost systemd: Started Session 54690 of user root.
+Jul 14 02:00:01 localhost systemd: Started Session 54691 of user root.
+Jul 14 02:01:01 localhost systemd: Started Session 54692 of user root.
+Jul 14 02:10:01 localhost systemd: Started Session 54693 of user root.
+Jul 14 02:20:01 localhost systemd: Started Session 54694 of user root.
+Jul 14 02:30:01 localhost systemd: Started Session 54695 of user root.
+Jul 14 02:40:01 localhost systemd: Started Session 54696 of user root.
+Jul 14 02:50:01 localhost systemd: Started Session 54697 of user root.
+Jul 14 03:00:01 localhost systemd: Started Session 54698 of user root.
+Jul 14 03:01:01 localhost systemd: Started Session 54699 of user root.
+Jul 14 03:08:01 localhost rhsmd: In order for Subscription Manager to provide your system with updates, your system must be registered with the Customer Portal. Please enter your Red Hat login to ensure your system is up-to-date.
+Jul 14 03:10:01 localhost systemd: Started Session 54700 of user root.
+Jul 14 03:20:01 localhost systemd: Started Session 54701 of user root.
+Jul 14 03:30:01 localhost systemd: Started Session 54702 of user root.
+Jul 14 03:40:01 localhost systemd: Started Session 54703 of user root.
+Jul 14 03:50:01 localhost systemd: Started Session 54704 of user root.
+Jul 14 04:00:01 localhost systemd: Started Session 54705 of user root.
+Jul 14 04:01:01 localhost systemd: Started Session 54706 of user root.
+Jul 14 04:10:01 localhost systemd: Started Session 54707 of user root.
+Jul 14 04:20:01 localhost systemd: Started Session 54708 of user root.
+Jul 14 04:30:01 localhost systemd: Started Session 54709 of user root.
+Jul 14 04:40:01 localhost systemd: Started Session 54710 of user root.
+Jul 14 04:50:01 localhost systemd: Started Session 54711 of user root.
+Jul 14 05:00:01 localhost systemd: Started Session 54712 of user root.
+Jul 14 05:01:01 localhost systemd: Started Session 54713 of user root.
+Jul 14 05:10:01 localhost systemd: Started Session 54714 of user root.
+Jul 14 05:20:01 localhost systemd: Started Session 54715 of user root.
+Jul 14 05:30:01 localhost systemd: Started Session 54716 of user root.
+Jul 14 05:40:01 localhost systemd: Started Session 54717 of user root.
+Jul 14 05:50:01 localhost systemd: Started Session 54718 of user root.
+Jul 14 06:00:01 localhost systemd: Started Session 54719 of user root.
+Jul 14 06:01:01 localhost systemd: Started Session 54720 of user root.
+Jul 14 06:09:11 localhost journal: failed to call gs_plugin_refresh on odrs: [*/*/*/source/odrs/*] failed to download https://odrs.gnome.org/1.0/reviews/api/ratings: Cannot connect to destination
+Jul 14 06:10:01 localhost systemd: Started Session 54721 of user root.
+Jul 14 06:20:01 localhost systemd: Started Session 54722 of user root.
+Jul 14 06:30:01 localhost systemd: Started Session 54723 of user root.
+Jul 14 06:40:01 localhost systemd: Started Session 54724 of user root.
+Jul 14 06:50:01 localhost systemd: Started Session 54725 of user root.
+Jul 14 07:00:01 localhost systemd: Started Session 54726 of user root.
+Jul 14 07:01:01 localhost systemd: Started Session 54727 of user root.
+Jul 14 07:10:01 localhost systemd: Started Session 54728 of user root.
+Jul 14 07:20:01 localhost systemd: Started Session 54729 of user root.
+Jul 14 07:30:01 localhost systemd: Started Session 54730 of user root.
+Jul 14 07:40:01 localhost systemd: Started Session 54731 of user root.
+Jul 14 07:50:01 localhost systemd: Started Session 54732 of user root.
+Jul 14 08:00:01 localhost systemd: Started Session 54733 of user root.
+Jul 14 08:01:01 localhost systemd: Started Session 54734 of user root.
+Jul 14 08:10:01 localhost systemd: Started Session 54735 of user root.
+Jul 14 08:20:01 localhost systemd: Started Session 54736 of user root.
+Jul 14 08:30:01 localhost systemd: Started Session 54737 of user root.
+Jul 14 08:40:01 localhost systemd: Started Session 54738 of user root.
+Jul 14 08:50:01 localhost systemd: Started Session 54739 of user root.
+Jul 14 09:00:01 localhost systemd: Started Session 54740 of user root.
+Jul 14 09:01:01 localhost systemd: Started Session 54741 of user root.
+Jul 14 09:10:01 localhost systemd: Started Session 54742 of user root.
+Jul 14 09:20:01 localhost systemd: Started Session 54743 of user root.
+Jul 14 09:30:01 localhost systemd: Started Session 54744 of user root.
+Jul 14 09:40:01 localhost systemd: Started Session 54745 of user root.
+Jul 14 09:50:01 localhost systemd: Started Session 54746 of user root.
+Jul 14 10:00:01 localhost systemd: Started Session 54747 of user root.
+Jul 14 10:01:01 localhost systemd: Started Session 54748 of user root.
+Jul 14 10:10:01 localhost systemd: Started Session 54749 of user root.
+Jul 14 10:20:02 localhost systemd: Started Session 54750 of user root.
+Jul 14 10:30:01 localhost systemd: Started Session 54751 of user root.
+Jul 14 10:40:01 localhost systemd: Started Session 54752 of user root.
+Jul 14 10:50:01 localhost systemd: Started Session 54753 of user root.
+Jul 14 11:00:01 localhost systemd: Started Session 54754 of user root.
+Jul 14 11:01:01 localhost systemd: Started Session 54755 of user root.
+Jul 14 11:07:44 localhost dbus[8396]: [system] Activating service name='com.redhat.SubscriptionManager' (using servicehelper)
+Jul 14 11:07:44 localhost dbus[8396]: [system] Successfully activated service 'com.redhat.SubscriptionManager'
+Jul 14 11:10:01 localhost systemd: Started Session 54756 of user root.
+Jul 14 11:20:01 localhost systemd: Started Session 54757 of user root.
+Jul 14 11:30:01 localhost systemd: Started Session 54758 of user root.
+Jul 14 11:40:01 localhost systemd: Started Session 54759 of user root.
+Jul 14 11:50:01 localhost systemd: Started Session 54760 of user root.
+Jul 14 12:00:01 localhost systemd: Started Session 54761 of user root.
+Jul 14 12:01:01 localhost systemd: Started Session 54762 of user root.
+Jul 14 12:10:01 localhost systemd: Started Session 54763 of user root.
+Jul 14 12:20:01 localhost systemd: Started Session 54764 of user root.
+Jul 14 12:30:01 localhost systemd: Started Session 54765 of user root.
+Jul 14 12:40:01 localhost systemd: Started Session 54766 of user root.
+Jul 14 12:50:01 localhost systemd: Started Session 54767 of user root.
+Jul 14 13:00:01 localhost systemd: Started Session 54768 of user root.
+Jul 14 13:01:01 localhost systemd: Started Session 54769 of user root.
+Jul 14 13:10:01 localhost systemd: Started Session 54770 of user root.
+Jul 14 13:20:01 localhost systemd: Started Session 54771 of user root.
+Jul 14 13:30:01 localhost systemd: Started Session 54772 of user root.
+Jul 14 13:40:01 localhost systemd: Started Session 54773 of user root.
+Jul 14 13:50:01 localhost systemd: Started Session 54774 of user root.
+Jul 14 14:00:01 localhost systemd: Started Session 54775 of user root.
+Jul 14 14:01:01 localhost systemd: Started Session 54776 of user root.
+Jul 14 14:10:01 localhost systemd: Started Session 54777 of user root.
+Jul 14 14:20:01 localhost systemd: Started Session 54778 of user root.
+Jul 14 14:24:23 localhost systemd: Starting Cleanup of Temporary Directories...
+Jul 14 14:24:23 localhost systemd: Started Cleanup of Temporary Directories.
+Jul 14 14:30:02 localhost systemd: Started Session 54779 of user root.
+Jul 14 14:40:01 localhost systemd: Started Session 54780 of user root.
+Jul 14 14:50:01 localhost systemd: Started Session 54781 of user root.
+Jul 14 15:00:01 localhost systemd: Started Session 54782 of user root.
+Jul 14 15:01:01 localhost systemd: Started Session 54783 of user root.
+Jul 14 15:10:01 localhost systemd: Started Session 54784 of user root.
+Jul 14 15:20:01 localhost systemd: Started Session 54785 of user root.
+Jul 14 15:30:01 localhost systemd: Started Session 54786 of user root.
+Jul 14 15:40:01 localhost systemd: Started Session 54787 of user root.
+Jul 14 15:50:01 localhost systemd: Started Session 54788 of user root.
+Jul 14 16:00:01 localhost systemd: Started Session 54789 of user root.
+Jul 14 16:01:01 localhost systemd: Started Session 54790 of user root.
+Jul 14 16:10:01 localhost systemd: Started Session 54791 of user root.
+Jul 14 16:20:01 localhost systemd: Started Session 54792 of user root.
+Jul 14 16:30:01 localhost systemd: Started Session 54793 of user root.
+Jul 14 16:40:01 localhost systemd: Started Session 54794 of user root.
+Jul 14 16:50:01 localhost systemd: Started Session 54795 of user root.
+Jul 14 17:00:01 localhost systemd: Started Session 54796 of user root.
+Jul 14 17:01:01 localhost systemd: Started Session 54797 of user root.
+Jul 14 17:10:01 localhost systemd: Started Session 54798 of user root.
+Jul 14 17:20:01 localhost systemd: Started Session 54799 of user root.
+Jul 14 17:30:01 localhost systemd: Started Session 54800 of user root.
+Jul 14 17:40:01 localhost systemd: Started Session 54801 of user root.
+Jul 14 17:50:01 localhost systemd: Started Session 54802 of user root.
+Jul 14 18:00:01 localhost systemd: Started Session 54803 of user root.
+Jul 14 18:01:01 localhost systemd: Started Session 54804 of user root.
+Jul 14 18:10:01 localhost systemd: Started Session 54805 of user root.
+Jul 14 18:20:01 localhost systemd: Started Session 54806 of user root.
+Jul 14 18:30:01 localhost systemd: Started Session 54807 of user root.
+Jul 14 18:40:01 localhost systemd: Started Session 54808 of user root.
+Jul 14 18:50:01 localhost systemd: Started Session 54809 of user root.
+Jul 14 19:00:01 localhost systemd: Started Session 54810 of user root.
+Jul 14 19:01:01 localhost systemd: Started Session 54811 of user root.
+Jul 14 19:10:01 localhost systemd: Started Session 54812 of user root.
+Jul 14 19:20:01 localhost systemd: Started Session 54813 of user root.
+Jul 14 19:30:01 localhost systemd: Started Session 54814 of user root.
+Jul 14 19:40:01 localhost systemd: Started Session 54815 of user root.
+Jul 14 19:50:01 localhost systemd: Started Session 54816 of user root.
+Jul 14 20:00:01 localhost systemd: Started Session 54817 of user root.
+Jul 14 20:01:01 localhost systemd: Started Session 54818 of user root.
+Jul 14 20:10:01 localhost systemd: Started Session 54819 of user root.
+Jul 14 20:20:01 localhost systemd: Started Session 54820 of user root.
+Jul 14 20:30:01 localhost systemd: Started Session 54821 of user root.
+Jul 14 20:40:01 localhost systemd: Started Session 54822 of user root.
+Jul 14 20:50:01 localhost systemd: Started Session 54823 of user root.
+Jul 14 21:00:01 localhost systemd: Started Session 54824 of user root.
+Jul 14 21:01:01 localhost systemd: Started Session 54825 of user root.
+Jul 14 21:10:01 localhost systemd: Started Session 54826 of user root.
+Jul 14 21:20:01 localhost systemd: Started Session 54827 of user root.
+Jul 14 21:30:01 localhost systemd: Started Session 54828 of user root.
+Jul 14 21:40:01 localhost systemd: Started Session 54829 of user root.
+Jul 14 21:50:01 localhost systemd: Started Session 54830 of user root.
+Jul 14 22:00:01 localhost systemd: Started Session 54831 of user root.
+Jul 14 22:01:01 localhost systemd: Started Session 54832 of user root.
+Jul 14 22:10:01 localhost systemd: Started Session 54833 of user root.
+Jul 14 22:20:01 localhost systemd: Started Session 54834 of user root.
+Jul 14 22:30:01 localhost systemd: Started Session 54835 of user root.
+Jul 14 22:40:01 localhost systemd: Started Session 54836 of user root.
+Jul 14 22:50:02 localhost systemd: Started Session 54837 of user root.
+Jul 14 23:00:01 localhost systemd: Started Session 54838 of user root.
+Jul 14 23:01:01 localhost systemd: Started Session 54839 of user root.
+Jul 14 23:10:01 localhost systemd: Started Session 54840 of user root.
+Jul 14 23:20:01 localhost systemd: Started Session 54841 of user root.
+Jul 14 23:30:01 localhost systemd: Started Session 54842 of user root.
+Jul 14 23:40:01 localhost systemd: Started Session 54843 of user root.
+Jul 14 23:50:01 localhost systemd: Started Session 54844 of user root.
+Jul 14 23:53:01 localhost systemd: Started Session 54845 of user root.
+Jul 15 00:00:01 localhost systemd: Started Session 54846 of user root.
+Jul 15 00:00:01 localhost systemd: Starting update of the root trust anchor for DNSSEC validation in unbound...
+Jul 15 00:00:01 localhost systemd: Started update of the root trust anchor for DNSSEC validation in unbound.
+Jul 15 00:01:01 localhost systemd: Started Session 54847 of user root.
+Jul 15 00:10:01 localhost systemd: Started Session 54848 of user root.
+Jul 15 00:20:01 localhost systemd: Started Session 54849 of user root.
+Jul 15 00:30:01 localhost systemd: Started Session 54850 of user root.
+Jul 15 00:40:01 localhost systemd: Started Session 54851 of user root.
+Jul 15 00:50:01 localhost systemd: Started Session 54852 of user root.
+Jul 15 01:00:01 localhost systemd: Started Session 54853 of user root.
+Jul 15 01:01:01 localhost systemd: Started Session 54854 of user root.
+Jul 15 01:10:01 localhost systemd: Started Session 54855 of user root.
+Jul 15 01:20:01 localhost systemd: Started Session 54856 of user root.
+Jul 15 01:30:01 localhost systemd: Started Session 54857 of user root.
+Jul 15 01:40:01 localhost systemd: Started Session 54858 of user root.
+Jul 15 01:50:01 localhost systemd: Started Session 54859 of user root.
+Jul 15 02:00:01 localhost systemd: Started Session 54860 of user root.
+Jul 15 02:01:01 localhost systemd: Started Session 54861 of user root.
+Jul 15 02:10:01 localhost systemd: Started Session 54862 of user root.
+Jul 15 02:20:01 localhost systemd: Started Session 54863 of user root.
+Jul 15 02:30:01 localhost systemd: Started Session 54864 of user root.
+Jul 15 02:40:01 localhost systemd: Started Session 54865 of user root.
+Jul 15 02:50:01 localhost systemd: Started Session 54866 of user root.
+Jul 15 03:00:01 localhost systemd: Started Session 54867 of user root.
+Jul 15 03:01:01 localhost systemd: Started Session 54868 of user root.
+Jul 15 03:10:01 localhost systemd: Started Session 54869 of user root.
+Jul 15 03:14:01 localhost rhsmd: In order for Subscription Manager to provide your system with updates, your system must be registered with the Customer Portal. Please enter your Red Hat login to ensure your system is up-to-date.
+Jul 15 03:20:01 localhost systemd: Started Session 54870 of user root.
+Jul 15 03:30:01 localhost systemd: Started Session 54871 of user root.
+Jul 15 03:40:01 localhost systemd: Started Session 54872 of user root.
+Jul 15 03:50:01 localhost systemd: Started Session 54873 of user root.
+Jul 15 04:00:01 localhost systemd: Started Session 54874 of user root.
+Jul 15 04:01:01 localhost systemd: Started Session 54875 of user root.
+Jul 15 04:10:01 localhost systemd: Started Session 54876 of user root.
+Jul 15 04:20:01 localhost systemd: Started Session 54877 of user root.
+Jul 15 04:30:01 localhost systemd: Started Session 54878 of user root.
+Jul 15 04:40:01 localhost systemd: Started Session 54879 of user root.
+Jul 15 04:50:01 localhost systemd: Started Session 54880 of user root.
+Jul 15 05:00:01 localhost systemd: Started Session 54881 of user root.
+Jul 15 05:01:01 localhost systemd: Started Session 54882 of user root.
+Jul 15 05:10:01 localhost systemd: Started Session 54883 of user root.
+Jul 15 05:20:01 localhost systemd: Started Session 54884 of user root.
+Jul 15 05:30:01 localhost systemd: Started Session 54885 of user root.
+Jul 15 05:40:01 localhost systemd: Started Session 54886 of user root.
+Jul 15 05:50:01 localhost systemd: Started Session 54887 of user root.
+Jul 15 06:00:01 localhost systemd: Started Session 54888 of user root.
+Jul 15 06:01:01 localhost systemd: Started Session 54889 of user root.
+Jul 15 06:09:10 localhost journal: failed to call gs_plugin_refresh on odrs: [*/*/*/source/odrs/*] failed to download https://odrs.gnome.org/1.0/reviews/api/ratings: Cannot connect to destination
+Jul 15 06:10:01 localhost systemd: Started Session 54890 of user root.
+Jul 15 06:20:01 localhost systemd: Started Session 54891 of user root.
+Jul 15 06:30:01 localhost systemd: Started Session 54892 of user root.
+Jul 15 06:40:01 localhost systemd: Started Session 54893 of user root.
+Jul 15 06:50:01 localhost systemd: Started Session 54894 of user root.
+Jul 15 07:00:01 localhost systemd: Started Session 54895 of user root.
+Jul 15 07:01:01 localhost systemd: Started Session 54896 of user root.
+Jul 15 07:10:01 localhost systemd: Started Session 54897 of user root.
+Jul 15 07:20:01 localhost systemd: Started Session 54898 of user root.
+Jul 15 07:30:01 localhost systemd: Started Session 54899 of user root.
+Jul 15 07:40:01 localhost systemd: Started Session 54900 of user root.
+Jul 15 07:50:01 localhost systemd: Started Session 54901 of user root.
+Jul 15 08:00:01 localhost systemd: Started Session 54902 of user root.
+Jul 15 08:01:01 localhost systemd: Started Session 54903 of user root.
+Jul 15 08:10:01 localhost systemd: Started Session 54904 of user root.
+Jul 15 08:20:01 localhost systemd: Started Session 54905 of user root.
+Jul 15 08:30:01 localhost systemd: Started Session 54906 of user root.
+Jul 15 08:40:01 localhost systemd: Started Session 54907 of user root.
+Jul 15 08:50:01 localhost systemd: Started Session 54908 of user root.
+Jul 15 09:00:01 localhost systemd: Started Session 54909 of user root.
+Jul 15 09:01:01 localhost systemd: Started Session 54910 of user root.
+Jul 15 09:10:01 localhost systemd: Started Session 54911 of user root.
+Jul 15 09:20:01 localhost systemd: Started Session 54912 of user root.
+Jul 15 09:30:01 localhost systemd: Started Session 54913 of user root.
+Jul 15 09:40:01 localhost systemd: Started Session 54914 of user root.
+Jul 15 09:50:01 localhost systemd: Started Session 54915 of user root.
+Jul 15 10:00:01 localhost systemd: Started Session 54916 of user root.
+Jul 15 10:01:01 localhost systemd: Started Session 54917 of user root.
+Jul 15 10:10:01 localhost systemd: Started Session 54918 of user root.
+Jul 15 10:20:01 localhost systemd: Started Session 54919 of user root.
+Jul 15 10:30:01 localhost systemd: Started Session 54920 of user root.
+Jul 15 10:40:01 localhost systemd: Started Session 54921 of user root.
+Jul 15 10:50:01 localhost systemd: Started Session 54922 of user root.
+Jul 15 11:00:01 localhost systemd: Started Session 54923 of user root.
+Jul 15 11:01:01 localhost systemd: Started Session 54924 of user root.
+Jul 15 11:07:44 localhost dbus[8396]: [system] Activating service name='com.redhat.SubscriptionManager' (using servicehelper)
+Jul 15 11:07:45 localhost dbus[8396]: [system] Successfully activated service 'com.redhat.SubscriptionManager'
+Jul 15 11:10:01 localhost systemd: Started Session 54925 of user root.
+Jul 15 11:20:01 localhost systemd: Started Session 54926 of user root.
+Jul 15 11:30:01 localhost systemd: Started Session 54927 of user root.
+Jul 15 11:40:01 localhost systemd: Started Session 54928 of user root.
+Jul 15 11:50:01 localhost systemd: Started Session 54929 of user root.
+Jul 15 12:00:01 localhost systemd: Started Session 54930 of user root.
+Jul 15 12:01:01 localhost systemd: Started Session 54931 of user root.
+Jul 15 12:10:01 localhost systemd: Started Session 54932 of user root.
+Jul 15 12:20:01 localhost systemd: Started Session 54933 of user root.
+Jul 15 12:30:01 localhost systemd: Started Session 54934 of user root.
+Jul 15 12:40:01 localhost systemd: Started Session 54935 of user root.
+Jul 15 12:50:01 localhost systemd: Started Session 54936 of user root.
+Jul 15 13:00:01 localhost systemd: Started Session 54937 of user root.
+Jul 15 13:01:01 localhost systemd: Started Session 54938 of user root.
+Jul 15 13:10:01 localhost systemd: Started Session 54939 of user root.
+Jul 15 13:20:01 localhost systemd: Started Session 54940 of user root.
+Jul 15 13:30:01 localhost systemd: Started Session 54941 of user root.
+Jul 15 13:40:01 localhost systemd: Started Session 54942 of user root.
+Jul 15 13:50:01 localhost systemd: Started Session 54943 of user root.
+Jul 15 14:00:01 localhost systemd: Started Session 54944 of user root.
+Jul 15 14:01:01 localhost systemd: Started Session 54945 of user root.
+Jul 15 14:10:01 localhost systemd: Started Session 54946 of user root.
+Jul 15 14:14:49 localhost systemd-logind: New session 54947 of user root.
+Jul 15 14:14:49 localhost systemd: Started Session 54947 of user root.
+Jul 15 14:14:49 localhost dbus[8396]: [system] Activating service name='org.freedesktop.problems' (using servicehelper)
+Jul 15 14:14:49 localhost dbus[8396]: [system] Successfully activated service 'org.freedesktop.problems'
+Jul 15 14:14:51 localhost systemd-logind: Removed session 54947.
+Jul 15 14:20:01 localhost systemd: Started Session 54948 of user root.
+Jul 15 14:24:33 localhost systemd: Starting Cleanup of Temporary Directories...
+Jul 15 14:24:33 localhost systemd: Started Cleanup of Temporary Directories.
+Jul 15 14:30:01 localhost systemd: Started Session 54949 of user root.
+Jul 15 14:40:01 localhost systemd: Started Session 54950 of user root.
+Jul 15 14:46:34 localhost systemd-logind: New session 54951 of user root.
+Jul 15 14:46:34 localhost systemd: Started Session 54951 of user root.
+Jul 15 14:46:34 localhost dbus[8396]: [system] Activating service name='org.freedesktop.problems' (using servicehelper)
+Jul 15 14:46:34 localhost dbus[8396]: [system] Successfully activated service 'org.freedesktop.problems'
+Jul 15 14:46:54 localhost yum[57127]: Updated: sysstat-10.1.5-19.el7.x86_64
+Jul 15 14:46:54 localhost yum[57127]: Installed: dstat-0.7.2-12.el7.noarch
+Jul 15 14:46:54 localhost systemd: Reloading.
+Jul 15 14:46:55 localhost systemd: [/usr/lib/systemd/system/bolt.service:11] Unknown lvalue 'MemoryDenyWriteExecute' in section 'Service'
+Jul 15 14:46:55 localhost systemd: [/usr/lib/systemd/system/bolt.service:13] Unknown lvalue 'ProtectControlGroups' in section 'Service'
+Jul 15 14:46:55 localhost systemd: [/usr/lib/systemd/system/bolt.service:15] Unknown lvalue 'ProtectKernelModules' in section 'Service'
+Jul 15 14:46:55 localhost systemd: [/usr/lib/systemd/system/bolt.service:18] Unknown lvalue 'RestrictRealtime' in section 'Service'
+Jul 15 14:46:55 localhost systemd: [/usr/lib/systemd/system/bolt.service:19] Unknown lvalue 'ReadWritePaths' in section 'Service'
+Jul 15 14:47:08 localhost systemd-logind: New session 54952 of user root.
+Jul 15 14:47:08 localhost systemd: Started Session 54952 of user root.
+Jul 15 14:47:19 localhost systemd-logind: Removed session 54952.
+Jul 15 14:48:37 localhost journal: Could not save '/root/10.80.88.84_host_info.log' into failsafe persistence store: Error making symbolic link /tmp/tracker-extract-files.0/1-957c529c0530bce0087f6a5f76d6e325: No such file or directory
+Jul 15 14:48:37 localhost journal: unable to create file '/run/user/0/dconf/user': Permission denied.  dconf will not work properly.
+Jul 15 14:48:37 localhost journal: Could not delete '/root/10.80.88.84_host_info.log' from failsafe persistence store
+Jul 15 14:48:46 localhost systemd-logind: New session 54953 of user root.
+Jul 15 14:48:46 localhost systemd: Started Session 54953 of user root.
+Jul 15 14:50:01 localhost systemd: Started Session 54954 of user root.

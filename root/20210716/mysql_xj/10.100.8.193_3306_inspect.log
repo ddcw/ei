@@ -1,0 +1,819 @@
+******************** MySQL--localhost--3306 ***********************
+--------------
+mysql  Ver 14.14 Distrib 5.7.24, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+
+Connection id:		158
+Current database:	
+Current user:		root@localhost
+SSL:			Not in use
+Current pager:		stdout
+Using outfile:		''
+Using delimiter:	;
+Server version:		5.7.24-log MySQL Community Server (GPL)
+Protocol version:	10
+Connection:		Localhost via UNIX socket
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+UNIX socket:		/data/mysql/data/mysql.sock
+Uptime:			316 days 5 hours 34 min 41 sec
+
+Threads: 3  Questions: 50951739  Slow queries: 4  Opens: 1974  Flush tables: 1  Open tables: 1315  Queries per second avg: 1.864
+--------------
+
+                             basedir :	/usr/local/mysql/
+                             datadir :	/data/mysql/data/
+                                     :	          
+               ####Business info#### :	          
+                       Database size :	db_monitor 0.003 GB sys 0.000 GB tianan_insurance 5.182 GB
+                       Tables counts :	db_monitor 1 sys 101 tianan_insurance 78
+                      Engines counts :	NULL 100 InnoDB 80
+                 Top 10 of big table :	sys_log 1636649 ins_findings_audit_return 226751 ins_coins_data 213600 ins_policyholder 203672 policy_policyholder 182955 ins_invoice 105771 ins_payment_plan 103620 ins_insurance_risk_special 103269 ins_salesperson 102137 ins_insurance_kind 101427
+        Top 10 of auto increment num :	sys_log 1190078 ins_coins_data 394869 ins_insurance_kind 248724 ins_insurance_risk_special 248088 ins_insurance_kind_clause 246534 ins_policyholder 244706 ins_findings_audit_return 231734 policy_policyholder 205070 ins_respondent 171692 ins_payment_plan 152543
+                                     :	          
+              ####Runtime status#### :	          
+                   Threads connected :	     1.00 
+                                 QPS :	     0.00 
+                                 TPS :	     0.84 
+                               Reads :	   108.00 
+                              Writes :	28072650.00 
+                   Read/Writes Ratio :	    0.00% 
+   MyISAM Key buffer read hits(>99%) :	   95.49% 
+        MyISAM Key buffer write hits :	    0.00% 
+                    Query cache hits :	    NULL% 
+       InnoDB buffer read hits(>95%) :	  100.00% 
+             Thread cache hits(>90%) :	   98.73% 
+             Slow queries per second :	     0.00 
+         Select full join per second :	     0.00 
+      Select full join in all select :	    3.70% 
+         MyiSAM lock contention(<1%) :	    0.00% 
+           Temp tables to disk ratio :	    5.28% 
+Replication status:
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: 10.80.88.70
+                  Master_User: repl
+                  Master_Port: 3306
+                Connect_Retry: 60
+              Master_Log_File: mysql-bin.000146
+          Read_Master_Log_Pos: 77832352
+               Relay_Log_File: mysql-relay.000366
+                Relay_Log_Pos: 77832565
+        Relay_Master_Log_File: mysql-bin.000146
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
+              Replicate_Do_DB: 
+          Replicate_Ignore_DB: 
+           Replicate_Do_Table: 
+       Replicate_Ignore_Table: 
+      Replicate_Wild_Do_Table: 
+  Replicate_Wild_Ignore_Table: 
+                   Last_Errno: 0
+                   Last_Error: 
+                 Skip_Counter: 0
+          Exec_Master_Log_Pos: 77832352
+              Relay_Log_Space: 77832855
+              Until_Condition: None
+               Until_Log_File: 
+                Until_Log_Pos: 0
+           Master_SSL_Allowed: No
+           Master_SSL_CA_File: 
+           Master_SSL_CA_Path: 
+              Master_SSL_Cert: 
+            Master_SSL_Cipher: 
+               Master_SSL_Key: 
+        Seconds_Behind_Master: 0
+Master_SSL_Verify_Server_Cert: No
+                Last_IO_Errno: 0
+                Last_IO_Error: 
+               Last_SQL_Errno: 0
+               Last_SQL_Error: 
+  Replicate_Ignore_Server_Ids: 
+             Master_Server_Id: 88703306
+                  Master_UUID: 9200f922-ebf7-11ea-ab46-005056aae015
+             Master_Info_File: mysql.slave_master_info
+                    SQL_Delay: 0
+          SQL_Remaining_Delay: NULL
+      Slave_SQL_Running_State: Slave has read all relay log; waiting for more updates
+           Master_Retry_Count: 86400
+                  Master_Bind: 
+      Last_IO_Error_Timestamp: 
+     Last_SQL_Error_Timestamp: 
+               Master_SSL_Crl: 
+           Master_SSL_Crlpath: 
+           Retrieved_Gtid_Set: 9200f922-ebf7-11ea-ab46-005056aae015:7-22878240
+            Executed_Gtid_Set: 9200f922-ebf7-11ea-ab46-005056aae015:1-22878240
+                Auto_Position: 1
+         Replicate_Rewrite_DB: 
+                 Channel_Name: 
+           Master_TLS_Version: 
+Global variables:
+auto_increment_increment	1
+auto_increment_offset	1
+autocommit	ON
+automatic_sp_privileges	ON
+avoid_temporal_upgrade	OFF
+back_log	250
+basedir	/usr/local/mysql/
+big_tables	OFF
+bind_address	*
+binlog_cache_size	32768
+binlog_checksum	CRC32
+binlog_direct_non_transactional_updates	OFF
+binlog_error_action	ABORT_SERVER
+binlog_format	ROW
+binlog_group_commit_sync_delay	0
+binlog_group_commit_sync_no_delay_count	0
+binlog_gtid_simple_recovery	ON
+binlog_max_flush_queue_time	0
+binlog_order_commits	ON
+binlog_row_image	FULL
+binlog_rows_query_log_events	ON
+binlog_stmt_cache_size	32768
+binlog_transaction_dependency_history_size	25000
+binlog_transaction_dependency_tracking	COMMIT_ORDER
+block_encryption_mode	aes-128-ecb
+bulk_insert_buffer_size	8388608
+character_set_client	utf8mb4
+character_set_connection	utf8mb4
+character_set_database	utf8mb4
+character_set_filesystem	binary
+character_set_results	utf8mb4
+character_set_server	utf8mb4
+character_set_system	utf8
+character_sets_dir	/usr/local/mysql/share/charsets/
+check_proxy_users	OFF
+collation_connection	utf8mb4_general_ci
+collation_database	utf8mb4_general_ci
+collation_server	utf8mb4_general_ci
+completion_type	NO_CHAIN
+concurrent_insert	AUTO
+connect_timeout	10
+core_file	OFF
+datadir	/data/mysql/data/
+date_format	%Y-%m-%d
+datetime_format	%Y-%m-%d %H:%i:%s
+default_authentication_plugin	mysql_native_password
+default_password_lifetime	0
+default_storage_engine	InnoDB
+default_tmp_storage_engine	InnoDB
+default_week_format	0
+delay_key_write	ON
+delayed_insert_limit	100
+delayed_insert_timeout	300
+delayed_queue_size	1000
+disabled_storage_engines	
+disconnect_on_expired_password	ON
+div_precision_increment	4
+end_markers_in_json	OFF
+enforce_gtid_consistency	ON
+eq_range_index_dive_limit	200
+event_scheduler	OFF
+expire_logs_days	14
+explicit_defaults_for_timestamp	ON
+flush	OFF
+flush_time	0
+foreign_key_checks	ON
+ft_boolean_syntax	+ -><()~*:""&|
+ft_max_word_len	84
+ft_min_word_len	4
+ft_query_expansion_limit	20
+ft_stopword_file	(built-in)
+general_log	OFF
+general_log_file	/data/mysql/data/localhost.log
+group_concat_max_len	1024
+gtid_executed	9200f922-ebf7-11ea-ab46-005056aae015:1-22878240
+gtid_executed_compression_period	1000
+gtid_mode	ON
+gtid_owned	
+gtid_purged	9200f922-ebf7-11ea-ab46-005056aae015:1-21290074
+have_compress	YES
+have_crypt	YES
+have_dynamic_loading	YES
+have_geometry	YES
+have_openssl	DISABLED
+have_profiling	YES
+have_query_cache	YES
+have_rtree_keys	YES
+have_ssl	DISABLED
+have_statement_timeout	YES
+have_symlink	YES
+host_cache_size	653
+hostname	localhost.localdomain
+ignore_builtin_innodb	OFF
+ignore_db_dirs	
+init_connect	
+init_file	
+init_slave	
+innodb_adaptive_flushing	ON
+innodb_adaptive_flushing_lwm	10
+innodb_adaptive_hash_index	ON
+innodb_adaptive_hash_index_parts	8
+innodb_adaptive_max_sleep_delay	150000
+innodb_api_bk_commit_interval	5
+innodb_api_disable_rowlock	OFF
+innodb_api_enable_binlog	OFF
+innodb_api_enable_mdl	OFF
+innodb_api_trx_level	0
+innodb_autoextend_increment	64
+innodb_autoinc_lock_mode	1
+innodb_buffer_pool_chunk_size	134217728
+innodb_buffer_pool_dump_at_shutdown	ON
+innodb_buffer_pool_dump_now	OFF
+innodb_buffer_pool_dump_pct	25
+innodb_buffer_pool_filename	ib_buffer_pool
+innodb_buffer_pool_instances	8
+innodb_buffer_pool_load_abort	OFF
+innodb_buffer_pool_load_at_startup	ON
+innodb_buffer_pool_load_now	OFF
+innodb_buffer_pool_size	10737418240
+innodb_change_buffer_max_size	25
+innodb_change_buffering	all
+innodb_checksum_algorithm	innodb
+innodb_checksums	ON
+innodb_cmp_per_index_enabled	OFF
+innodb_commit_concurrency	0
+innodb_compression_failure_threshold_pct	5
+innodb_compression_level	6
+innodb_compression_pad_pct_max	50
+innodb_concurrency_tickets	5000
+innodb_data_file_path	ibdata1:200M:autoextend
+innodb_data_home_dir	
+innodb_deadlock_detect	ON
+innodb_default_row_format	dynamic
+innodb_disable_sort_file_cache	OFF
+innodb_doublewrite	ON
+innodb_fast_shutdown	1
+innodb_file_format	Barracuda
+innodb_file_format_check	ON
+innodb_file_format_max	Barracuda
+innodb_file_per_table	ON
+innodb_fill_factor	100
+innodb_flush_log_at_timeout	1
+innodb_flush_log_at_trx_commit	1
+innodb_flush_method	O_DIRECT
+innodb_flush_neighbors	1
+innodb_flush_sync	ON
+innodb_flushing_avg_loops	30
+innodb_force_load_corrupted	OFF
+innodb_force_recovery	0
+innodb_ft_aux_table	
+innodb_ft_cache_size	8000000
+innodb_ft_enable_diag_print	OFF
+innodb_ft_enable_stopword	ON
+innodb_ft_max_token_size	84
+innodb_ft_min_token_size	3
+innodb_ft_num_word_optimize	2000
+innodb_ft_result_cache_limit	2000000000
+innodb_ft_server_stopword_table	
+innodb_ft_sort_pll_degree	2
+innodb_ft_total_cache_size	640000000
+innodb_ft_user_stopword_table	
+innodb_io_capacity	800
+innodb_io_capacity_max	2000
+innodb_large_prefix	ON
+innodb_lock_wait_timeout	5
+innodb_locks_unsafe_for_binlog	OFF
+innodb_log_buffer_size	16777216
+innodb_log_checksums	ON
+innodb_log_compressed_pages	ON
+innodb_log_file_size	1572864000
+innodb_log_files_in_group	2
+innodb_log_group_home_dir	./
+innodb_log_write_ahead_size	8192
+innodb_lru_scan_depth	1024
+innodb_max_dirty_pages_pct	75.000000
+innodb_max_dirty_pages_pct_lwm	0.000000
+innodb_max_purge_lag	0
+innodb_max_purge_lag_delay	0
+innodb_max_undo_log_size	1073741824
+innodb_monitor_disable	
+innodb_monitor_enable	
+innodb_monitor_reset	
+innodb_monitor_reset_all	
+innodb_numa_interleave	OFF
+innodb_old_blocks_pct	37
+innodb_old_blocks_time	1000
+innodb_online_alter_log_max_size	134217728
+innodb_open_files	2000
+innodb_optimize_fulltext_only	OFF
+innodb_page_cleaners	4
+innodb_page_size	16384
+innodb_print_all_deadlocks	ON
+innodb_purge_batch_size	300
+innodb_purge_rseg_truncate_frequency	128
+innodb_purge_threads	4
+innodb_random_read_ahead	OFF
+innodb_read_ahead_threshold	56
+innodb_read_io_threads	4
+innodb_read_only	OFF
+innodb_replication_delay	0
+innodb_rollback_on_timeout	OFF
+innodb_rollback_segments	128
+innodb_sort_buffer_size	67108864
+innodb_spin_wait_delay	6
+innodb_stats_auto_recalc	ON
+innodb_stats_include_delete_marked	OFF
+innodb_stats_method	nulls_equal
+innodb_stats_on_metadata	OFF
+innodb_stats_persistent	ON
+innodb_stats_persistent_sample_pages	20
+innodb_stats_sample_pages	8
+innodb_stats_transient_sample_pages	8
+innodb_status_output	OFF
+innodb_status_output_locks	OFF
+innodb_strict_mode	ON
+innodb_support_xa	ON
+innodb_sync_array_size	1
+innodb_sync_spin_loops	30
+innodb_table_locks	ON
+innodb_temp_data_file_path	ibtmp1:12M:autoextend
+innodb_thread_concurrency	0
+innodb_thread_sleep_delay	10000
+innodb_tmpdir	
+innodb_undo_directory	./
+innodb_undo_log_truncate	OFF
+innodb_undo_logs	128
+innodb_undo_tablespaces	0
+innodb_use_native_aio	ON
+innodb_version	5.7.24
+innodb_write_io_threads	4
+interactive_timeout	28800
+internal_tmp_disk_storage_engine	InnoDB
+join_buffer_size	8388608
+keep_files_on_create	OFF
+key_buffer_size	8388608
+key_cache_age_threshold	300
+key_cache_block_size	1024
+key_cache_division_limit	100
+keyring_operations	ON
+large_files_support	ON
+large_page_size	0
+large_pages	OFF
+lc_messages	en_US
+lc_messages_dir	/usr/local/mysql/share/
+lc_time_names	en_US
+license	GPL
+local_infile	ON
+lock_wait_timeout	31536000
+locked_in_memory	OFF
+log_bin	ON
+log_bin_basename	/data/mysql/data/mysql-bin
+log_bin_index	/data/mysql/data/mysql-bin.index
+log_bin_trust_function_creators	ON
+log_bin_use_v1_row_events	OFF
+log_builtin_as_identified_by_password	OFF
+log_error	./mysql-error.log
+log_error_verbosity	3
+log_output	FILE
+log_queries_not_using_indexes	ON
+log_slave_updates	ON
+log_slow_admin_statements	ON
+log_slow_slave_statements	ON
+log_statements_unsafe_for_binlog	ON
+log_syslog	OFF
+log_syslog_facility	daemon
+log_syslog_include_pid	ON
+log_syslog_tag	
+log_throttle_queries_not_using_indexes	10
+log_timestamps	UTC
+log_warnings	2
+long_query_time	2.000000
+low_priority_updates	OFF
+lower_case_file_system	OFF
+lower_case_table_names	1
+master_info_repository	TABLE
+master_verify_checksum	OFF
+max_allowed_packet	33554432
+max_binlog_cache_size	18446744073709547520
+max_binlog_size	268435456
+max_binlog_stmt_cache_size	18446744073709547520
+max_connect_errors	100000
+max_connections	1000
+max_delayed_threads	20
+max_digest_length	1024
+max_error_count	64
+max_execution_time	0
+max_heap_table_size	16777216
+max_insert_delayed_threads	20
+max_join_size	18446744073709551615
+max_length_for_sort_data	1024
+max_points_in_geometry	65536
+max_prepared_stmt_count	16382
+max_relay_log_size	0
+max_seeks_for_key	18446744073709551615
+max_sort_length	1024
+max_sp_recursion_depth	0
+max_tmp_tables	32
+max_user_connections	0
+max_write_lock_count	18446744073709551615
+metadata_locks_cache_size	1024
+metadata_locks_hash_instances	8
+min_examined_row_limit	1000
+multi_range_count	256
+myisam_data_pointer_size	6
+myisam_max_sort_file_size	9223372036853727232
+myisam_mmap_size	18446744073709551615
+myisam_recover_options	OFF
+myisam_repair_threads	1
+myisam_sort_buffer_size	8388608
+myisam_stats_method	nulls_unequal
+myisam_use_mmap	OFF
+mysql_native_password_proxy_users	OFF
+net_buffer_length	16384
+net_read_timeout	30
+net_retry_count	10
+net_write_timeout	60
+new	OFF
+ngram_token_size	2
+offline_mode	OFF
+old	OFF
+old_alter_table	OFF
+old_passwords	0
+open_files_limit	65535
+optimizer_prune_level	1
+optimizer_search_depth	62
+optimizer_switch	index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,engine_condition_pushdown=on,index_condition_pushdown=on,mrr=on,mrr_cost_based=on,block_nested_loop=on,batched_key_access=off,materialization=on,semijoin=on,loosescan=on,firstmatch=on,duplicateweedout=on,subquery_materialization_cost_based=on,use_index_extensions=on,condition_fanout_filter=on,derived_merge=on
+optimizer_trace	enabled=off,one_line=off
+optimizer_trace_features	greedy_search=on,range_optimizer=on,dynamic_range=on,repeated_subselect=on
+optimizer_trace_limit	1
+optimizer_trace_max_mem_size	16384
+optimizer_trace_offset	-1
+parser_max_mem_size	18446744073709551615
+performance_schema	ON
+performance_schema_accounts_size	-1
+performance_schema_digests_size	10000
+performance_schema_events_stages_history_long_size	10000
+performance_schema_events_stages_history_size	10
+performance_schema_events_statements_history_long_size	10000
+performance_schema_events_statements_history_size	10
+performance_schema_events_transactions_history_long_size	10000
+performance_schema_events_transactions_history_size	10
+performance_schema_events_waits_history_long_size	10000
+performance_schema_events_waits_history_size	10
+performance_schema_hosts_size	-1
+performance_schema_max_cond_classes	80
+performance_schema_max_cond_instances	-1
+performance_schema_max_digest_length	1024
+performance_schema_max_file_classes	80
+performance_schema_max_file_handles	32768
+performance_schema_max_file_instances	-1
+performance_schema_max_index_stat	-1
+performance_schema_max_memory_classes	320
+performance_schema_max_metadata_locks	-1
+performance_schema_max_mutex_classes	210
+performance_schema_max_mutex_instances	-1
+performance_schema_max_prepared_statements_instances	-1
+performance_schema_max_program_instances	-1
+performance_schema_max_rwlock_classes	40
+performance_schema_max_rwlock_instances	-1
+performance_schema_max_socket_classes	10
+performance_schema_max_socket_instances	-1
+performance_schema_max_sql_text_length	1024
+performance_schema_max_stage_classes	150
+performance_schema_max_statement_classes	193
+performance_schema_max_statement_stack	10
+performance_schema_max_table_handles	-1
+performance_schema_max_table_instances	-1
+performance_schema_max_table_lock_stat	-1
+performance_schema_max_thread_classes	50
+performance_schema_max_thread_instances	-1
+performance_schema_session_connect_attrs_size	512
+performance_schema_setup_actors_size	-1
+performance_schema_setup_objects_size	-1
+performance_schema_users_size	-1
+pid_file	/data/mysql/data/mysql.pid
+plugin_dir	/usr/local/mysql/lib/plugin/
+port	3306
+preload_buffer_size	32768
+profiling	OFF
+profiling_history_size	15
+protocol_version	10
+query_alloc_block_size	8192
+query_cache_limit	1048576
+query_cache_min_res_unit	4096
+query_cache_size	0
+query_cache_type	OFF
+query_cache_wlock_invalidate	OFF
+query_prealloc_size	8192
+range_alloc_block_size	4096
+range_optimizer_max_mem_size	8388608
+rbr_exec_mode	STRICT
+read_buffer_size	8388608
+read_only	ON
+read_rnd_buffer_size	8388608
+relay_log	mysql-relay.log
+relay_log_basename	/data/mysql/data/mysql-relay
+relay_log_index	/data/mysql/data/mysql-relay.index
+relay_log_info_file	relay-log.info
+relay_log_info_repository	TABLE
+relay_log_purge	ON
+relay_log_recovery	ON
+relay_log_space_limit	0
+report_host	
+report_password	
+report_port	3306
+report_user	
+require_secure_transport	OFF
+rpl_semi_sync_master_enabled	ON
+rpl_semi_sync_master_timeout	5000
+rpl_semi_sync_master_trace_level	32
+rpl_semi_sync_master_wait_for_slave_count	1
+rpl_semi_sync_master_wait_no_slave	ON
+rpl_semi_sync_master_wait_point	AFTER_SYNC
+rpl_semi_sync_slave_enabled	ON
+rpl_semi_sync_slave_trace_level	32
+rpl_stop_slave_timeout	31536000
+secure_auth	ON
+secure_file_priv	
+server_id	81933306
+server_id_bits	32
+server_uuid	1f38f2b6-ec01-11ea-8135-005056be5a9e
+session_track_gtids	OFF
+session_track_schema	ON
+session_track_state_change	OFF
+session_track_system_variables	time_zone,autocommit,character_set_client,character_set_results,character_set_connection
+session_track_transaction_info	OFF
+sha256_password_proxy_users	OFF
+show_compatibility_56	OFF
+show_create_table_verbosity	OFF
+show_old_temporals	OFF
+skip_external_locking	ON
+skip_name_resolve	ON
+skip_networking	OFF
+skip_show_database	OFF
+slave_allow_batching	OFF
+slave_checkpoint_group	512
+slave_checkpoint_period	300
+slave_compressed_protocol	OFF
+slave_exec_mode	STRICT
+slave_load_tmpdir	/data/mysql/mysql_tmp
+slave_max_allowed_packet	1073741824
+slave_net_timeout	60
+slave_parallel_type	DATABASE
+slave_parallel_workers	0
+slave_pending_jobs_size_max	16777216
+slave_preserve_commit_order	OFF
+slave_rows_search_algorithms	TABLE_SCAN,INDEX_SCAN
+slave_skip_errors	OFF
+slave_sql_verify_checksum	ON
+slave_transaction_retries	10
+slave_type_conversions	
+slow_launch_time	2
+slow_query_log	ON
+slow_query_log_file	mysql-slow.log
+socket	/data/mysql/data/mysql.sock
+sort_buffer_size	2097152
+sql_auto_is_null	OFF
+sql_big_selects	ON
+sql_buffer_result	OFF
+sql_log_off	OFF
+sql_mode	ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+sql_notes	ON
+sql_quote_show_create	ON
+sql_safe_updates	OFF
+sql_select_limit	18446744073709551615
+sql_slave_skip_counter	0
+sql_warnings	OFF
+ssl_ca	
+ssl_capath	
+ssl_cert	
+ssl_cipher	
+ssl_crl	
+ssl_crlpath	
+ssl_key	
+stored_program_cache	256
+super_read_only	OFF
+sync_binlog	1
+sync_frm	ON
+sync_master_info	10000
+sync_relay_log	10000
+sync_relay_log_info	10000
+system_time_zone	CST
+table_definition_cache	1400
+table_open_cache	2000
+table_open_cache_instances	16
+thread_cache_size	18
+thread_handling	one-thread-per-connection
+thread_stack	262144
+time_format	%H:%i:%s
+time_zone	SYSTEM
+tls_version	TLSv1,TLSv1.1
+tmp_table_size	67108864
+tmpdir	/data/mysql/mysql_tmp
+transaction_alloc_block_size	8192
+transaction_isolation	REPEATABLE-READ
+transaction_prealloc_size	4096
+transaction_read_only	OFF
+transaction_write_set_extraction	OFF
+tx_isolation	REPEATABLE-READ
+tx_read_only	OFF
+unique_checks	ON
+updatable_views_with_limit	YES
+version	5.7.24-log
+version_comment	MySQL Community Server (GPL)
+version_compile_machine	x86_64
+version_compile_os	linux-glibc2.12
+wait_timeout	28800
+ERROR LOG:
+2020-09-02T01:15:42.428618Z 0 [Note] Shutting down plugin 'BLACKHOLE'
+2020-09-02T01:15:42.428625Z 0 [Note] Shutting down plugin 'partition'
+2020-09-02T01:15:42.428637Z 0 [Note] Shutting down plugin 'ARCHIVE'
+2020-09-02T01:15:42.428643Z 0 [Note] Shutting down plugin 'MyISAM'
+2020-09-02T01:15:42.428654Z 0 [Note] Shutting down plugin 'CSV'
+2020-09-02T01:15:42.428671Z 0 [Note] Shutting down plugin 'INNODB_SYS_VIRTUAL'
+2020-09-02T01:15:42.428679Z 0 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+2020-09-02T01:15:42.428684Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+2020-09-02T01:15:42.428689Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+2020-09-02T01:15:42.428694Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+2020-09-02T01:15:42.428700Z 0 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+2020-09-02T01:15:42.428705Z 0 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+2020-09-02T01:15:42.428710Z 0 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+2020-09-02T01:15:42.428714Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+2020-09-02T01:15:42.428720Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+2020-09-02T01:15:42.428725Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+2020-09-02T01:15:42.428729Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+2020-09-02T01:15:42.428734Z 0 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+2020-09-02T01:15:42.428739Z 0 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+2020-09-02T01:15:42.428744Z 0 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+2020-09-02T01:15:42.428749Z 0 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+2020-09-02T01:15:42.428754Z 0 [Note] Shutting down plugin 'INNODB_METRICS'
+2020-09-02T01:15:42.428758Z 0 [Note] Shutting down plugin 'INNODB_TEMP_TABLE_INFO'
+2020-09-02T01:15:42.428776Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+2020-09-02T01:15:42.428782Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+2020-09-02T01:15:42.428787Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+2020-09-02T01:15:42.428792Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+2020-09-02T01:15:42.428797Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+2020-09-02T01:15:42.428802Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+2020-09-02T01:15:42.428807Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM'
+2020-09-02T01:15:42.428812Z 0 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+2020-09-02T01:15:42.428817Z 0 [Note] Shutting down plugin 'INNODB_CMP'
+2020-09-02T01:15:42.428822Z 0 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+2020-09-02T01:15:42.428827Z 0 [Note] Shutting down plugin 'INNODB_LOCKS'
+2020-09-02T01:15:42.428832Z 0 [Note] Shutting down plugin 'INNODB_TRX'
+2020-09-02T01:15:42.428837Z 0 [Note] Shutting down plugin 'InnoDB'
+2020-09-02T01:15:42.428936Z 0 [Note] InnoDB: FTS optimize thread exiting.
+2020-09-02T01:15:42.429095Z 0 [Note] InnoDB: Starting shutdown...
+2020-09-02T01:15:42.529438Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2020-09-02T01:15:42.530911Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 200902  9:15:42
+2020-09-02T01:15:44.440428Z 0 [Note] InnoDB: Shutdown completed; log sequence number 2617135
+2020-09-02T01:15:44.440613Z 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2020-09-02T01:15:44.440633Z 0 [Note] Shutting down plugin 'MEMORY'
+2020-09-02T01:15:44.440652Z 0 [Note] Shutting down plugin 'MRG_MYISAM'
+2020-09-02T01:15:44.440659Z 0 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+2020-09-02T01:15:44.440696Z 0 [Note] Shutting down plugin 'sha256_password'
+2020-09-02T01:15:44.440704Z 0 [Note] Shutting down plugin 'mysql_native_password'
+2020-09-02T01:15:44.440993Z 0 [Note] Shutting down plugin 'binlog'
+2020-09-02T01:15:44.441459Z 0 [Note] /usr/local/mysql/bin/mysqld: Shutdown complete
+
+2020-09-02T01:15:44.527114Z mysqld_safe mysqld from pid file /data/mysql/data/mysql.pid ended
+2020-09-02T01:15:46.344358Z mysqld_safe Logging to '/data/mysql/data/mysql-error.log'.
+2020-09-02T01:15:46.387065Z mysqld_safe Starting mysqld daemon with databases from /data/mysql/data
+2020-09-02T01:15:46.595284Z 0 [Warning] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2020-09-02T01:15:46.595444Z 0 [Note] /usr/local/mysql/bin/mysqld (mysqld 5.7.24-log) starting as process 55729 ...
+2020-09-02T01:15:46.603223Z 0 [Warning] InnoDB: Using innodb_file_format is deprecated and the parameter may be removed in future releases. See http://dev.mysql.com/doc/refman/5.7/en/innodb-file-format.html
+2020-09-02T01:15:46.603277Z 0 [Warning] InnoDB: Using innodb_file_format_max is deprecated and the parameter may be removed in future releases. See http://dev.mysql.com/doc/refman/5.7/en/innodb-file-format.html
+2020-09-02T01:15:46.603357Z 0 [Note] InnoDB: PUNCH HOLE support available
+2020-09-02T01:15:46.603378Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+2020-09-02T01:15:46.603391Z 0 [Note] InnoDB: Uses event mutexes
+2020-09-02T01:15:46.603400Z 0 [Note] InnoDB: GCC builtin __sync_synchronize() is used for memory barrier
+2020-09-02T01:15:46.603409Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2020-09-02T01:15:46.603418Z 0 [Note] InnoDB: Using Linux native AIO
+2020-09-02T01:15:46.604307Z 0 [Note] InnoDB: Number of pools: 1
+2020-09-02T01:15:46.604476Z 0 [Note] InnoDB: Using CPU crc32 instructions
+2020-09-02T01:15:46.607390Z 0 [Note] InnoDB: Initializing buffer pool, total size = 10G, instances = 8, chunk size = 128M
+2020-09-02T01:15:47.530501Z 0 [Note] InnoDB: Completed initialization of buffer pool
+2020-09-02T01:15:47.606856Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+2020-09-02T01:15:47.645235Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+2020-09-02T01:15:47.902739Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2020-09-02T01:15:47.902874Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2020-09-02T01:15:47.936205Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+2020-09-02T01:15:47.938041Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+2020-09-02T01:15:47.938080Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+2020-09-02T01:15:47.939484Z 0 [Note] InnoDB: 5.7.24 started; log sequence number 2617135
+2020-09-02T01:15:47.939685Z 0 [Note] InnoDB: Loading buffer pool(s) from /data/mysql/data/ib_buffer_pool
+2020-09-02T01:15:47.940010Z 0 [Note] Plugin 'FEDERATED' is disabled.
+2020-09-02T01:15:48.020064Z 0 [Note] Semi-sync replication initialized for transactions.
+2020-09-02T01:15:48.020091Z 0 [Note] Semi-sync replication enabled on the master.
+2020-09-02T01:15:48.020238Z 0 [Note] Starting ack receiver thread
+2020-09-02T01:15:48.143344Z 0 [Warning] Failed to set up SSL because of the following SSL library error: SSL context is not usable without certificate and private key
+2020-09-02T01:15:48.143374Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
+2020-09-02T01:15:48.143431Z 0 [Note] IPv6 is available.
+2020-09-02T01:15:48.143451Z 0 [Note]   - '::' resolves to '::';
+2020-09-02T01:15:48.143496Z 0 [Note] Server socket created on IP: '::'.
+2020-09-02T01:15:48.170822Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+2020-09-02T01:15:48.170911Z 0 [Warning] 'user' entry 'mysql.session@localhost' ignored in --skip-name-resolve mode.
+2020-09-02T01:15:48.170942Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2020-09-02T01:15:48.171013Z 0 [Warning] 'db' entry 'performance_schema mysql.session@localhost' ignored in --skip-name-resolve mode.
+2020-09-02T01:15:48.171032Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2020-09-02T01:15:48.171066Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+2020-09-02T01:15:48.200966Z 0 [Warning] 'tables_priv' entry 'user mysql.session@localhost' ignored in --skip-name-resolve mode.
+2020-09-02T01:15:48.200995Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2020-09-02T01:15:48.205139Z 0 [Note] InnoDB: Buffer pool(s) load completed at 200902  9:15:48
+2020-09-02T01:15:48.213113Z 0 [Warning] Recovery from master pos 194 and file mysql-bin.000004 for channel ''. Previous relay log pos and relay log file had been set to 407, ./mysql-relay.000005 respectively.
+2020-09-02T01:15:48.214449Z 1 [Note] Slave I/O thread: Start semi-sync replication to master 'repl@10.80.88.70:3306' in log 'mysql-bin.000004' at position 194
+2020-09-02T01:15:48.214507Z 1 [Warning] Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information.
+2020-09-02T01:15:48.215416Z 2 [Note] Slave SQL thread for channel '' initialized, starting replication in log 'mysql-bin.000004' at position 194, relay log './mysql-relay.000006' position: 4
+2020-09-02T01:15:48.216982Z 1 [Note] Slave I/O thread for channel '': connected to master 'repl@10.80.88.70:3306',replication started in log 'mysql-bin.000004' at position 194
+2020-09-02T01:15:48.224628Z 0 [Note] Event Scheduler: Loaded 0 events
+2020-09-02T01:15:48.224928Z 0 [Note] /usr/local/mysql/bin/mysqld: ready for connections.
+Version: '5.7.24-log'  socket: '/data/mysql/data/mysql.sock'  port: 3306  MySQL Community Server (GPL)
+2020-09-02T01:16:59.192952Z 2 [Warning] Timeout waiting for reply of binlog (file: mysql-bin.000003, pos: 389), semi-sync up to file , position 0.
+2020-09-02T01:16:59.193030Z 2 [Note] Semi-sync replication switched OFF.
+2020-09-29T16:12:14.025355Z 6 [Note] Got an error reading communication packets
+2020-09-29T16:12:14.703001Z 7 [Note] Got an error reading communication packets
+2020-09-29T16:12:19.020330Z 8 [Note] Got an error reading communication packets
+2020-09-29T16:12:20.455204Z 9 [Note] Got an error reading communication packets
+2020-09-29T16:13:49.176032Z 10 [Note] Got packets out of order
+2020-09-29T16:13:49.185978Z 11 [Note] Got packets out of order
+2020-09-29T16:13:49.248496Z 12 [Note] Got packets out of order
+2020-09-29T16:13:50.909734Z 13 [Note] Bad handshake
+2020-09-29T16:14:38.515438Z 14 [Note] Got an error reading communication packets
+2020-10-26T07:45:42.058871Z 15 [Note] Got an error reading communication packets
+2020-10-26T07:45:42.947567Z 16 [Note] Got packets out of order
+2020-10-26T07:45:42.990157Z 17 [Note] Got packets out of order
+2020-10-26T07:45:43.047664Z 18 [Note] Got packets out of order
+2020-10-26T07:45:45.079040Z 19 [Note] Bad handshake
+2020-10-26T16:13:52.071669Z 20 [Note] Got an error reading communication packets
+2020-10-26T16:13:55.052060Z 21 [Note] Got an error reading communication packets
+2020-10-26T16:14:00.473162Z 22 [Note] Got an error reading communication packets
+2020-10-26T16:14:02.226531Z 23 [Note] Got an error reading communication packets
+2020-10-26T16:14:04.161825Z 24 [Note] Got an error reading communication packets
+2020-10-26T16:14:05.254506Z 25 [Note] Got an error reading communication packets
+2020-10-26T16:15:37.101023Z 26 [Note] Got packets out of order
+2020-10-26T16:15:37.134120Z 27 [Note] Got packets out of order
+2020-10-26T16:15:37.159722Z 28 [Note] Got packets out of order
+2020-10-26T16:15:38.586675Z 29 [Note] Bad handshake
+2020-10-26T16:16:24.357248Z 30 [Note] Got an error reading communication packets
+2020-11-26T16:14:15.059328Z 32 [Note] Got an error reading communication packets
+2020-11-26T16:15:46.081289Z 33 [Note] Got packets out of order
+2020-11-26T16:15:46.099486Z 34 [Note] Got packets out of order
+2020-11-26T16:15:46.318661Z 35 [Note] Got packets out of order
+2020-11-26T16:15:48.385791Z 36 [Note] Bad handshake
+2020-11-26T16:16:37.448123Z 37 [Note] Got an error reading communication packets
+2020-12-26T16:14:23.045523Z 38 [Note] Got an error reading communication packets
+2020-12-26T16:14:28.981457Z 39 [Note] Got an error reading communication packets
+2020-12-26T16:14:31.556047Z 40 [Note] Got an error reading communication packets
+2020-12-26T16:14:33.350146Z 41 [Note] Got an error reading communication packets
+2020-12-26T16:14:35.211981Z 42 [Note] Got an error reading communication packets
+2020-12-26T16:16:16.665802Z 43 [Note] Got packets out of order
+2020-12-26T16:16:17.181350Z 44 [Note] Got packets out of order
+2020-12-26T16:16:17.223506Z 45 [Note] Got packets out of order
+2020-12-26T16:16:37.394615Z 46 [Note] Got an error reading communication packets
+2020-12-26T16:16:58.929551Z 47 [Note] Bad handshake
+2020-12-26T16:17:10.053246Z 48 [Note] Got an error reading communication packets
+2021-01-19T14:13:10.075547Z 49 [Note] Got an error reading communication packets
+2021-01-19T14:13:10.624127Z 50 [Note] Got an error reading communication packets
+2021-01-19T14:13:11.756935Z 51 [Note] Got an error reading communication packets
+2021-01-19T14:13:14.158419Z 52 [Note] Got an error reading communication packets
+2021-01-19T14:13:21.866239Z 53 [Note] Got an error reading communication packets
+2021-01-19T14:14:48.426587Z 54 [Note] Got packets out of order
+2021-01-19T14:14:48.482564Z 55 [Note] Got packets out of order
+2021-01-19T14:14:48.509711Z 56 [Note] Got packets out of order
+2021-01-19T14:14:49.845150Z 57 [Note] Bad handshake
+2021-01-19T14:15:35.687652Z 58 [Note] Got an error reading communication packets
+2021-02-02T07:07:17.937213Z 60 [Note] Access denied for user 'root'@'localhost' (using password: NO)
+2021-02-19T14:14:11.003407Z 74 [Note] Got an error reading communication packets
+2021-02-19T14:15:57.529114Z 75 [Note] Got packets out of order
+2021-02-19T14:15:57.855550Z 77 [Note] Got packets out of order
+2021-02-19T14:15:57.855582Z 76 [Note] Got packets out of order
+2021-02-19T14:16:14.704317Z 78 [Note] Got an error reading communication packets
+2021-02-19T14:17:01.023374Z 79 [Note] Bad handshake
+2021-02-19T14:17:11.620285Z 80 [Note] Got an error reading communication packets
+2021-03-15T14:10:12.070132Z 81 [Note] Got an error reading communication packets
+2021-03-15T14:10:13.108831Z 82 [Note] Got an error reading communication packets
+2021-03-15T14:10:16.279956Z 83 [Note] Got an error reading communication packets
+2021-03-15T14:11:56.347663Z 84 [Note] Got packets out of order
+2021-03-15T14:11:56.511912Z 85 [Note] Got packets out of order
+2021-03-15T14:11:56.516629Z 86 [Note] Got packets out of order
+2021-03-15T14:12:12.147308Z 87 [Note] Got an error reading communication packets
+2021-03-15T14:12:34.010927Z 88 [Note] Bad handshake
+2021-03-15T14:12:56.567959Z 89 [Note] Got an error reading communication packets
+2021-04-08T07:36:07.309370Z 91 [Note] Access denied for user 'root'@'localhost' (using password: NO)
+2021-04-08T07:36:56.345739Z 106 [Note] Access denied for user 'root'@'localhost' (using password: NO)
+2021-04-15T14:11:53.033659Z 123 [Note] Got an error reading communication packets
+2021-04-15T14:11:53.041485Z 124 [Note] Got an error reading communication packets
+2021-04-15T14:11:57.695079Z 125 [Note] Got an error reading communication packets
+2021-04-15T14:11:59.421333Z 126 [Note] Got an error reading communication packets
+2021-04-15T14:12:02.465978Z 127 [Note] Got an error reading communication packets
+2021-04-15T14:13:40.240682Z 128 [Note] Got packets out of order
+2021-04-15T14:13:40.254059Z 129 [Note] Got packets out of order
+2021-04-15T14:13:40.302856Z 130 [Note] Got packets out of order
+2021-04-15T14:13:41.802725Z 131 [Note] Bad handshake
+2021-04-15T14:14:52.210225Z 132 [Note] Got an error reading communication packets
+2021-05-15T14:10:58.040576Z 133 [Note] Got an error reading communication packets
+2021-05-15T14:12:36.524189Z 134 [Note] Got packets out of order
+2021-05-15T14:12:36.602585Z 136 [Note] Got packets out of order
+2021-05-15T14:12:36.602624Z 135 [Note] Got packets out of order
+2021-05-15T14:12:39.230856Z 137 [Note] Bad handshake
+2021-05-15T14:13:28.027022Z 138 [Note] Got an error reading communication packets
+2021-06-15T14:10:54.070431Z 139 [Note] Got an error reading communication packets
+2021-06-15T14:10:56.143718Z 140 [Note] Got an error reading communication packets
+2021-06-15T14:12:41.315123Z 141 [Note] Got packets out of order
+2021-06-15T14:12:41.775866Z 142 [Note] Got packets out of order
+2021-06-15T14:12:41.783402Z 143 [Note] Got packets out of order
+2021-06-15T14:12:59.000295Z 144 [Note] Got an error reading communication packets
+2021-06-15T14:13:13.560714Z 145 [Note] Bad handshake
+2021-06-15T14:13:32.336533Z 146 [Note] Got an error reading communication packets
+2021-07-15T06:50:27.439505Z 148 [Note] Access denied for user 'root'@'localhost' (using password: NO)

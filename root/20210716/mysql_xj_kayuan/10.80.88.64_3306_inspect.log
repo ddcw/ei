@@ -1,0 +1,1136 @@
+******************** MySQL--localhost--3306 ***********************
+--------------
+mysql  Ver 14.14 Distrib 5.7.24, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+
+Connection id:		8842747
+Current database:	
+Current user:		root@localhost
+SSL:			Not in use
+Current pager:		stdout
+Using outfile:		''
+Using delimiter:	;
+Server version:		5.7.24-log MySQL Community Server (GPL)
+Protocol version:	10
+Connection:		Localhost via UNIX socket
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+UNIX socket:		/app/mysql/data/mysql.sock
+Uptime:			316 days 22 hours 12 min 38 sec
+
+Threads: 178  Questions: 1677322035  Slow queries: 12409  Opens: 66168278  Flush tables: 47  Open tables: 2000  Queries per second avg: 61.255
+--------------
+
+                             basedir :	/usr/local/mysql/
+                             datadir :	/app/mysql/data/
+                                     :	          
+               ####Business info#### :	          
+                       Database size :	bjpt_basis 0.049 GB db_monitor 0.050 GB sys 0.000 GB
+                       Tables counts :	bjpt_basis 30 db_monitor 1 sys 101
+                      Engines counts :	NULL 102 InnoDB 30
+                 Top 10 of big table :	accesslog 658446 pub_user 78513 pub_company 13604 xxl_job_log 13259 sys_task_phase 2301 sys_code 1742 sys_task_progress 934 xxl_job_log_report 229 sys_menu_roles 135 sys_user_role 108
+        Top 10 of auto increment num :	accesslog 1235776 xxl_job_log 158465 sys_task_phase 4546 sys_code 2989 sys_task_progress 1739 xxl_job_log_report 327 xxl_job_registry 293 sys_menu_roles 136 sys_user_role 126 sys_menu 40
+                                     :	          
+              ####Runtime status#### :	          
+                   Threads connected :	   178.00 
+                                 QPS :	    59.19 
+                                 TPS :	     6.12 
+                               Reads :	905328062.00 
+                              Writes :	71290194.00 
+                   Read/Writes Ratio :	 1269.92% 
+   MyISAM Key buffer read hits(>99%) :	  100.00% 
+        MyISAM Key buffer write hits :	    NULL% 
+                    Query cache hits :	    NULL% 
+       InnoDB buffer read hits(>95%) :	  100.00% 
+             Thread cache hits(>90%) :	   99.99% 
+             Slow queries per second :	     0.00 
+         Select full join per second :	     1.00 
+      Select full join in all select :	    0.05% 
+         MyiSAM lock contention(<1%) :	    0.00% 
+           Temp tables to disk ratio :	    9.32% 
+No innodb tables
+No primary key tables
+TABLE_SCHEMA	TABLE_NAME	TABLE_TYPE	TABLE_ROWS
+bjpt_basis	sys_company	VIEW	NULL
+bjpt_basis	sys_user	VIEW	NULL
+password equals user
+Global status:
+Aborted_clients	668
+Aborted_connects	223
+Binlog_cache_disk_use	350
+Binlog_cache_use	53307900
+Binlog_stmt_cache_disk_use	0
+Binlog_stmt_cache_use	9123
+Bytes_received	323642623466
+Bytes_sent	2782788950900
+Com_admin_commands	56508470
+Com_assign_to_keycache	0
+Com_alter_db	0
+Com_alter_db_upgrade	0
+Com_alter_event	0
+Com_alter_function	0
+Com_alter_instance	0
+Com_alter_procedure	0
+Com_alter_server	0
+Com_alter_table	1
+Com_alter_tablespace	0
+Com_alter_user	0
+Com_analyze	0
+Com_begin	2
+Com_binlog	0
+Com_call_procedure	0
+Com_change_db	297
+Com_change_master	0
+Com_change_repl_filter	0
+Com_check	0
+Com_checksum	0
+Com_commit	167605427
+Com_create_db	2
+Com_create_event	1
+Com_create_function	0
+Com_create_index	0
+Com_create_procedure	0
+Com_create_server	0
+Com_create_table	4671
+Com_create_trigger	0
+Com_create_udf	0
+Com_create_user	8
+Com_create_view	0
+Com_dealloc_sql	0
+Com_delete	10953210
+Com_delete_multi	2948
+Com_do	0
+Com_drop_db	0
+Com_drop_event	0
+Com_drop_function	0
+Com_drop_index	0
+Com_drop_procedure	0
+Com_drop_server	0
+Com_drop_table	9052
+Com_drop_trigger	0
+Com_drop_user	1
+Com_drop_view	0
+Com_empty_query	0
+Com_execute_sql	0
+Com_explain_other	0
+Com_flush	138
+Com_get_diagnostics	0
+Com_grant	49
+Com_ha_close	0
+Com_ha_open	0
+Com_ha_read	0
+Com_help	0
+Com_insert	1397761
+Com_insert_select	0
+Com_install_plugin	0
+Com_kill	0
+Com_load	9053
+Com_lock_tables	0
+Com_optimize	0
+Com_preload_keys	0
+Com_prepare_sql	0
+Com_purge	0
+Com_purge_before_date	0
+Com_release_savepoint	0
+Com_rename_table	0
+Com_rename_user	0
+Com_repair	0
+Com_replace	0
+Com_replace_select	0
+Com_reset	0
+Com_resignal	0
+Com_revoke	0
+Com_revoke_all	0
+Com_rollback	19
+Com_rollback_to_savepoint	0
+Com_savepoint	0
+Com_select	905328086
+Com_set_option	361335660
+Com_signal	0
+Com_show_binlog_events	0
+Com_show_binlogs	455592
+Com_show_charsets	2
+Com_show_collations	0
+Com_show_create_db	0
+Com_show_create_event	0
+Com_show_create_func	0
+Com_show_create_proc	0
+Com_show_create_table	48
+Com_show_create_trigger	0
+Com_show_databases	68
+Com_show_engine_logs	0
+Com_show_engine_mutex	0
+Com_show_engine_status	46
+Com_show_events	0
+Com_show_errors	0
+Com_show_fields	447
+Com_show_function_code	0
+Com_show_function_status	39
+Com_show_grants	0
+Com_show_keys	0
+Com_show_master_status	20752718
+Com_show_open_tables	0
+Com_show_plugins	46
+Com_show_privileges	0
+Com_show_procedure_code	0
+Com_show_procedure_status	39
+Com_show_processlist	3
+Com_show_profile	0
+Com_show_profiles	0
+Com_show_relaylog_events	0
+Com_show_slave_hosts	0
+Com_show_slave_status	26218560
+Com_show_status	27329001
+Com_show_storage_engines	2
+Com_show_table_status	9
+Com_show_tables	126
+Com_show_triggers	0
+Com_show_variables	1430313
+Com_show_warnings	2839367
+Com_show_create_user	0
+Com_shutdown	0
+Com_slave_start	0
+Com_slave_stop	0
+Com_group_replication_start	0
+Com_group_replication_stop	0
+Com_stmt_execute	7918
+Com_stmt_close	7688
+Com_stmt_fetch	0
+Com_stmt_prepare	7780
+Com_stmt_reset	0
+Com_stmt_send_long_data	0
+Com_truncate	4
+Com_uninstall_plugin	0
+Com_unlock_tables	46
+Com_update	58939223
+Com_update_multi	0
+Com_xa_commit	0
+Com_xa_end	0
+Com_xa_prepare	0
+Com_xa_recover	0
+Com_xa_rollback	0
+Com_xa_start	0
+Com_stmt_reprepare	46
+Connection_errors_accept	0
+Connection_errors_internal	0
+Connection_errors_max_connections	0
+Connection_errors_peer_address	0
+Connection_errors_select	0
+Connection_errors_tcpwrap	0
+Connections	8842752
+Created_tmp_disk_tables	27354468
+Created_tmp_files	360
+Created_tmp_tables	293456697
+Delayed_errors	0
+Delayed_insert_threads	0
+Delayed_writes	0
+Flush_commands	47
+Handler_commit	905701010
+Handler_delete	228268
+Handler_discover	0
+Handler_external_lock	1475923281
+Handler_mrr_init	0
+Handler_prepare	107600384
+Handler_read_first	157688011
+Handler_read_key	2048149343
+Handler_read_last	6303
+Handler_read_next	1211073128
+Handler_read_prev	1065684
+Handler_read_rnd	280231326
+Handler_read_rnd_next	36301640393
+Handler_rollback	32
+Handler_savepoint	0
+Handler_savepoint_rollback	0
+Handler_update	992142546
+Handler_write	17694957035
+Innodb_buffer_pool_dump_status	Buffer pool(s) dump completed at 210710 22:00:18
+Innodb_buffer_pool_load_status	Buffer pool(s) load completed at 200901 17:33:55
+Innodb_buffer_pool_resize_status	Completed resizing buffer pool at 200902 16:11:01.
+Innodb_buffer_pool_pages_data	30337
+Innodb_buffer_pool_bytes_data	497041408
+Innodb_buffer_pool_pages_dirty	490
+Innodb_buffer_pool_bytes_dirty	8028160
+Innodb_buffer_pool_pages_flushed	33136808
+Innodb_buffer_pool_pages_free	624771
+Innodb_buffer_pool_pages_misc	172
+Innodb_buffer_pool_pages_total	655280
+Innodb_buffer_pool_read_ahead_rnd	0
+Innodb_buffer_pool_read_ahead	53
+Innodb_buffer_pool_read_ahead_evicted	0
+Innodb_buffer_pool_read_requests	9631438311
+Innodb_buffer_pool_reads	2709
+Innodb_buffer_pool_wait_free	0
+Innodb_buffer_pool_write_requests	1271380536
+Innodb_data_fsyncs	86707905
+Innodb_data_pending_fsyncs	0
+Innodb_data_pending_reads	0
+Innodb_data_pending_writes	0
+Innodb_data_read	45322752
+Innodb_data_reads	2819
+Innodb_data_writes	112597703
+Innodb_data_written	1035677891072
+Innodb_dblwr_pages_written	24629288
+Innodb_dblwr_writes	5792652
+Innodb_log_waits	0
+Innodb_log_write_requests	53782092
+Innodb_log_writes	71602940
+Innodb_os_log_fsyncs	73652407
+Innodb_os_log_pending_fsyncs	0
+Innodb_os_log_pending_writes	0
+Innodb_os_log_written	88190638080
+Innodb_page_size	16384
+Innodb_pages_created	27592
+Innodb_pages_read	2761
+Innodb_pages_written	33136809
+Innodb_row_lock_current_waits	0
+Innodb_row_lock_time	18234
+Innodb_row_lock_time_avg	2
+Innodb_row_lock_time_max	66
+Innodb_row_lock_waits	8510
+Innodb_rows_deleted	228426
+Innodb_rows_inserted	2784699371
+Innodb_rows_read	7363322060
+Innodb_rows_updated	52143395
+Innodb_num_open_files	54
+Innodb_truncated_status_writes	0
+Innodb_available_undo_logs	128
+Key_blocks_not_flushed	0
+Key_blocks_unused	6696
+Key_blocks_used	2
+Key_read_requests	213864
+Key_reads	2
+Key_write_requests	0
+Key_writes	0
+Locked_connects	0
+Max_execution_time_exceeded	0
+Max_execution_time_set	0
+Max_execution_time_set_failed	0
+Max_used_connections	200
+Max_used_connections_time	2020-09-06 01:11:11
+Not_flushed_delayed_rows	0
+Ongoing_anonymous_transaction_count	0
+Open_files	34
+Open_streams	0
+Open_table_definitions	254
+Open_tables	2000
+Opened_files	13674661
+Opened_table_definitions	20922
+Opened_tables	66168305
+Performance_schema_accounts_lost	0
+Performance_schema_cond_classes_lost	0
+Performance_schema_cond_instances_lost	0
+Performance_schema_digest_lost	0
+Performance_schema_file_classes_lost	0
+Performance_schema_file_handles_lost	0
+Performance_schema_file_instances_lost	1
+Performance_schema_hosts_lost	0
+Performance_schema_index_stat_lost	0
+Performance_schema_locker_lost	0
+Performance_schema_memory_classes_lost	0
+Performance_schema_metadata_lock_lost	0
+Performance_schema_mutex_classes_lost	0
+Performance_schema_mutex_instances_lost	0
+Performance_schema_nested_statement_lost	0
+Performance_schema_prepared_statements_lost	0
+Performance_schema_program_lost	0
+Performance_schema_rwlock_classes_lost	0
+Performance_schema_rwlock_instances_lost	0
+Performance_schema_session_connect_attrs_lost	0
+Performance_schema_socket_classes_lost	0
+Performance_schema_socket_instances_lost	0
+Performance_schema_stage_classes_lost	0
+Performance_schema_statement_classes_lost	0
+Performance_schema_table_handles_lost	0
+Performance_schema_table_instances_lost	0
+Performance_schema_table_lock_stat_lost	0
+Performance_schema_thread_classes_lost	0
+Performance_schema_thread_instances_lost	0
+Performance_schema_users_lost	0
+Prepared_stmt_count	0
+Qcache_free_blocks	0
+Qcache_free_memory	0
+Qcache_hits	0
+Qcache_inserts	0
+Qcache_lowmem_prunes	0
+Qcache_not_cached	0
+Qcache_queries_in_cache	0
+Qcache_total_blocks	0
+Queries	1677322059
+Questions	1620797887
+Rpl_semi_sync_master_clients	2
+Rpl_semi_sync_master_net_avg_wait_time	0
+Rpl_semi_sync_master_net_wait_time	0
+Rpl_semi_sync_master_net_waits	93721391
+Rpl_semi_sync_master_no_times	1
+Rpl_semi_sync_master_no_tx	34
+Rpl_semi_sync_master_status	ON
+Rpl_semi_sync_master_timefunc_failures	0
+Rpl_semi_sync_master_tx_avg_wait_time	736
+Rpl_semi_sync_master_tx_wait_time	34462801010
+Rpl_semi_sync_master_tx_waits	46812206
+Rpl_semi_sync_master_wait_pos_backtraverse	0
+Rpl_semi_sync_master_wait_sessions	0
+Rpl_semi_sync_master_yes_tx	46882174
+Rpl_semi_sync_slave_status	OFF
+Select_full_join	455598
+Select_full_range_join	0
+Select_range	4284381
+Select_range_check	0
+Select_scan	162952689
+Slave_open_temp_tables	0
+Slow_launch_threads	0
+Slow_queries	12409
+Sort_merge_passes	7
+Sort_range	11353136
+Sort_rows	280318065
+Sort_scan	921716
+Ssl_accept_renegotiates	0
+Ssl_accepts	0
+Ssl_callback_cache_hits	0
+Ssl_cipher	
+Ssl_cipher_list	
+Ssl_client_connects	0
+Ssl_connect_renegotiates	0
+Ssl_ctx_verify_depth	0
+Ssl_ctx_verify_mode	0
+Ssl_default_timeout	0
+Ssl_finished_accepts	0
+Ssl_finished_connects	0
+Ssl_server_not_after	
+Ssl_server_not_before	
+Ssl_session_cache_hits	0
+Ssl_session_cache_misses	0
+Ssl_session_cache_mode	NONE
+Ssl_session_cache_overflows	0
+Ssl_session_cache_size	0
+Ssl_session_cache_timeouts	0
+Ssl_sessions_reused	0
+Ssl_used_session_cache_entries	0
+Ssl_verify_depth	0
+Ssl_verify_mode	0
+Ssl_version	
+Table_locks_immediate	53202244
+Table_locks_waited	0
+Table_open_cache_hits	1014642079
+Table_open_cache_misses	66168305
+Table_open_cache_overflows	66065221
+Tc_log_max_pages_used	0
+Tc_log_page_size	0
+Tc_log_page_waits	0
+Threads_cached	4
+Threads_connected	178
+Threads_created	704
+Threads_running	3
+Uptime	27382358
+Uptime_since_flush_status	27382358
+Replication status:
+Global variables:
+auto_increment_increment	1
+auto_increment_offset	1
+autocommit	ON
+automatic_sp_privileges	ON
+avoid_temporal_upgrade	OFF
+back_log	250
+basedir	/usr/local/mysql/
+big_tables	OFF
+bind_address	*
+binlog_cache_size	32768
+binlog_checksum	CRC32
+binlog_direct_non_transactional_updates	OFF
+binlog_error_action	ABORT_SERVER
+binlog_format	ROW
+binlog_group_commit_sync_delay	0
+binlog_group_commit_sync_no_delay_count	0
+binlog_gtid_simple_recovery	ON
+binlog_max_flush_queue_time	0
+binlog_order_commits	ON
+binlog_row_image	FULL
+binlog_rows_query_log_events	ON
+binlog_stmt_cache_size	32768
+binlog_transaction_dependency_history_size	25000
+binlog_transaction_dependency_tracking	COMMIT_ORDER
+block_encryption_mode	aes-128-ecb
+bulk_insert_buffer_size	8388608
+character_set_client	utf8mb4
+character_set_connection	utf8mb4
+character_set_database	utf8mb4
+character_set_filesystem	binary
+character_set_results	utf8mb4
+character_set_server	utf8mb4
+character_set_system	utf8
+character_sets_dir	/usr/local/mysql/share/charsets/
+check_proxy_users	OFF
+collation_connection	utf8mb4_general_ci
+collation_database	utf8mb4_general_ci
+collation_server	utf8mb4_general_ci
+completion_type	NO_CHAIN
+concurrent_insert	AUTO
+connect_timeout	10
+core_file	OFF
+datadir	/app/mysql/data/
+date_format	%Y-%m-%d
+datetime_format	%Y-%m-%d %H:%i:%s
+default_authentication_plugin	mysql_native_password
+default_password_lifetime	0
+default_storage_engine	InnoDB
+default_tmp_storage_engine	InnoDB
+default_week_format	0
+delay_key_write	ON
+delayed_insert_limit	100
+delayed_insert_timeout	300
+delayed_queue_size	1000
+disabled_storage_engines	
+disconnect_on_expired_password	ON
+div_precision_increment	4
+end_markers_in_json	OFF
+enforce_gtid_consistency	ON
+eq_range_index_dive_limit	200
+event_scheduler	OFF
+expire_logs_days	14
+explicit_defaults_for_timestamp	ON
+flush	OFF
+flush_time	0
+foreign_key_checks	ON
+ft_boolean_syntax	+ -><()~*:""&|
+ft_max_word_len	84
+ft_min_word_len	4
+ft_query_expansion_limit	20
+ft_stopword_file	(built-in)
+general_log	OFF
+general_log_file	/app/mysql/data/10-80-88-64.log
+group_concat_max_len	1024
+gtid_executed	4a6f6379-e770-11ea-8c3b-005056aae9bb:1-53696835
+gtid_executed_compression_period	1000
+gtid_mode	ON
+gtid_owned	
+gtid_purged	4a6f6379-e770-11ea-8c3b-005056aae9bb:1-50286855
+have_compress	YES
+have_crypt	YES
+have_dynamic_loading	YES
+have_geometry	YES
+have_openssl	DISABLED
+have_profiling	YES
+have_query_cache	YES
+have_rtree_keys	YES
+have_ssl	DISABLED
+have_statement_timeout	YES
+have_symlink	YES
+host_cache_size	653
+hostname	10-80-88-64
+ignore_builtin_innodb	OFF
+ignore_db_dirs	
+init_connect	insert into db_monitor.accesslog(thread_id,log_time,localname,matchname) \nvalues(connection_id(),now(),user(),current_user());
+init_file	
+init_slave	
+innodb_adaptive_flushing	ON
+innodb_adaptive_flushing_lwm	10
+innodb_adaptive_hash_index	ON
+innodb_adaptive_hash_index_parts	8
+innodb_adaptive_max_sleep_delay	150000
+innodb_api_bk_commit_interval	5
+innodb_api_disable_rowlock	OFF
+innodb_api_enable_binlog	OFF
+innodb_api_enable_mdl	OFF
+innodb_api_trx_level	0
+innodb_autoextend_increment	64
+innodb_autoinc_lock_mode	1
+innodb_buffer_pool_chunk_size	134217728
+innodb_buffer_pool_dump_at_shutdown	ON
+innodb_buffer_pool_dump_now	OFF
+innodb_buffer_pool_dump_pct	25
+innodb_buffer_pool_filename	ib_buffer_pool
+innodb_buffer_pool_instances	8
+innodb_buffer_pool_load_abort	OFF
+innodb_buffer_pool_load_at_startup	ON
+innodb_buffer_pool_load_now	OFF
+innodb_buffer_pool_size	10737418240
+innodb_change_buffer_max_size	25
+innodb_change_buffering	all
+innodb_checksum_algorithm	innodb
+innodb_checksums	ON
+innodb_cmp_per_index_enabled	OFF
+innodb_commit_concurrency	0
+innodb_compression_failure_threshold_pct	5
+innodb_compression_level	6
+innodb_compression_pad_pct_max	50
+innodb_concurrency_tickets	5000
+innodb_data_file_path	ibdata1:200M:autoextend
+innodb_data_home_dir	
+innodb_deadlock_detect	ON
+innodb_default_row_format	dynamic
+innodb_disable_sort_file_cache	OFF
+innodb_doublewrite	ON
+innodb_fast_shutdown	1
+innodb_file_format	Barracuda
+innodb_file_format_check	ON
+innodb_file_format_max	Barracuda
+innodb_file_per_table	ON
+innodb_fill_factor	100
+innodb_flush_log_at_timeout	1
+innodb_flush_log_at_trx_commit	1
+innodb_flush_method	O_DIRECT
+innodb_flush_neighbors	1
+innodb_flush_sync	ON
+innodb_flushing_avg_loops	30
+innodb_force_load_corrupted	OFF
+innodb_force_recovery	0
+innodb_ft_aux_table	
+innodb_ft_cache_size	8000000
+innodb_ft_enable_diag_print	OFF
+innodb_ft_enable_stopword	ON
+innodb_ft_max_token_size	84
+innodb_ft_min_token_size	3
+innodb_ft_num_word_optimize	2000
+innodb_ft_result_cache_limit	2000000000
+innodb_ft_server_stopword_table	
+innodb_ft_sort_pll_degree	2
+innodb_ft_total_cache_size	640000000
+innodb_ft_user_stopword_table	
+innodb_io_capacity	800
+innodb_io_capacity_max	2000
+innodb_large_prefix	ON
+innodb_lock_wait_timeout	5
+innodb_locks_unsafe_for_binlog	OFF
+innodb_log_buffer_size	16777216
+innodb_log_checksums	ON
+innodb_log_compressed_pages	ON
+innodb_log_file_size	1572864000
+innodb_log_files_in_group	2
+innodb_log_group_home_dir	./
+innodb_log_write_ahead_size	8192
+innodb_lru_scan_depth	1024
+innodb_max_dirty_pages_pct	75.000000
+innodb_max_dirty_pages_pct_lwm	0.000000
+innodb_max_purge_lag	0
+innodb_max_purge_lag_delay	0
+innodb_max_undo_log_size	1073741824
+innodb_monitor_disable	
+innodb_monitor_enable	
+innodb_monitor_reset	
+innodb_monitor_reset_all	
+innodb_numa_interleave	OFF
+innodb_old_blocks_pct	37
+innodb_old_blocks_time	1000
+innodb_online_alter_log_max_size	134217728
+innodb_open_files	2000
+innodb_optimize_fulltext_only	OFF
+innodb_page_cleaners	4
+innodb_page_size	16384
+innodb_print_all_deadlocks	ON
+innodb_purge_batch_size	300
+innodb_purge_rseg_truncate_frequency	128
+innodb_purge_threads	4
+innodb_random_read_ahead	OFF
+innodb_read_ahead_threshold	56
+innodb_read_io_threads	4
+innodb_read_only	OFF
+innodb_replication_delay	0
+innodb_rollback_on_timeout	OFF
+innodb_rollback_segments	128
+innodb_sort_buffer_size	67108864
+innodb_spin_wait_delay	6
+innodb_stats_auto_recalc	ON
+innodb_stats_include_delete_marked	OFF
+innodb_stats_method	nulls_equal
+innodb_stats_on_metadata	OFF
+innodb_stats_persistent	ON
+innodb_stats_persistent_sample_pages	20
+innodb_stats_sample_pages	8
+innodb_stats_transient_sample_pages	8
+innodb_status_output	OFF
+innodb_status_output_locks	OFF
+innodb_strict_mode	ON
+innodb_support_xa	ON
+innodb_sync_array_size	1
+innodb_sync_spin_loops	30
+innodb_table_locks	ON
+innodb_temp_data_file_path	ibtmp1:12M:autoextend
+innodb_thread_concurrency	0
+innodb_thread_sleep_delay	10000
+innodb_tmpdir	
+innodb_undo_directory	./
+innodb_undo_log_truncate	OFF
+innodb_undo_logs	128
+innodb_undo_tablespaces	0
+innodb_use_native_aio	ON
+innodb_version	5.7.24
+innodb_write_io_threads	4
+interactive_timeout	28800
+internal_tmp_disk_storage_engine	InnoDB
+join_buffer_size	8388608
+keep_files_on_create	OFF
+key_buffer_size	8388608
+key_cache_age_threshold	300
+key_cache_block_size	1024
+key_cache_division_limit	100
+keyring_operations	ON
+large_files_support	ON
+large_page_size	0
+large_pages	OFF
+lc_messages	en_US
+lc_messages_dir	/usr/local/mysql/share/
+lc_time_names	en_US
+license	GPL
+local_infile	ON
+lock_wait_timeout	31536000
+locked_in_memory	OFF
+log_bin	ON
+log_bin_basename	/app/mysql/data/mysql-bin
+log_bin_index	/app/mysql/data/mysql-bin.index
+log_bin_trust_function_creators	ON
+log_bin_use_v1_row_events	OFF
+log_builtin_as_identified_by_password	OFF
+log_error	./mysql-error.log
+log_error_verbosity	3
+log_output	FILE
+log_queries_not_using_indexes	ON
+log_slave_updates	ON
+log_slow_admin_statements	ON
+log_slow_slave_statements	ON
+log_statements_unsafe_for_binlog	ON
+log_syslog	OFF
+log_syslog_facility	daemon
+log_syslog_include_pid	ON
+log_syslog_tag	
+log_throttle_queries_not_using_indexes	10
+log_timestamps	SYSTEM
+log_warnings	2
+long_query_time	2.000000
+low_priority_updates	OFF
+lower_case_file_system	OFF
+lower_case_table_names	1
+master_info_repository	TABLE
+master_verify_checksum	OFF
+max_allowed_packet	33554432
+max_binlog_cache_size	18446744073709547520
+max_binlog_size	268435456
+max_binlog_stmt_cache_size	18446744073709547520
+max_connect_errors	100000
+max_connections	1000
+max_delayed_threads	20
+max_digest_length	1024
+max_error_count	64
+max_execution_time	0
+max_heap_table_size	16777216
+max_insert_delayed_threads	20
+max_join_size	18446744073709551615
+max_length_for_sort_data	1024
+max_points_in_geometry	65536
+max_prepared_stmt_count	16382
+max_relay_log_size	0
+max_seeks_for_key	18446744073709551615
+max_sort_length	1024
+max_sp_recursion_depth	0
+max_tmp_tables	32
+max_user_connections	0
+max_write_lock_count	18446744073709551615
+metadata_locks_cache_size	1024
+metadata_locks_hash_instances	8
+min_examined_row_limit	1000
+multi_range_count	256
+myisam_data_pointer_size	6
+myisam_max_sort_file_size	9223372036853727232
+myisam_mmap_size	18446744073709551615
+myisam_recover_options	OFF
+myisam_repair_threads	1
+myisam_sort_buffer_size	8388608
+myisam_stats_method	nulls_unequal
+myisam_use_mmap	OFF
+mysql_native_password_proxy_users	OFF
+net_buffer_length	16384
+net_read_timeout	30
+net_retry_count	10
+net_write_timeout	60
+new	OFF
+ngram_token_size	2
+offline_mode	OFF
+old	OFF
+old_alter_table	OFF
+old_passwords	0
+open_files_limit	65535
+optimizer_prune_level	1
+optimizer_search_depth	62
+optimizer_switch	index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,engine_condition_pushdown=on,index_condition_pushdown=on,mrr=on,mrr_cost_based=on,block_nested_loop=on,batched_key_access=off,materialization=on,semijoin=on,loosescan=on,firstmatch=on,duplicateweedout=on,subquery_materialization_cost_based=on,use_index_extensions=on,condition_fanout_filter=on,derived_merge=on
+optimizer_trace	enabled=off,one_line=off
+optimizer_trace_features	greedy_search=on,range_optimizer=on,dynamic_range=on,repeated_subselect=on
+optimizer_trace_limit	1
+optimizer_trace_max_mem_size	16384
+optimizer_trace_offset	-1
+parser_max_mem_size	18446744073709551615
+performance_schema	ON
+performance_schema_accounts_size	-1
+performance_schema_digests_size	10000
+performance_schema_events_stages_history_long_size	10000
+performance_schema_events_stages_history_size	10
+performance_schema_events_statements_history_long_size	10000
+performance_schema_events_statements_history_size	10
+performance_schema_events_transactions_history_long_size	10000
+performance_schema_events_transactions_history_size	10
+performance_schema_events_waits_history_long_size	10000
+performance_schema_events_waits_history_size	10
+performance_schema_hosts_size	-1
+performance_schema_max_cond_classes	80
+performance_schema_max_cond_instances	-1
+performance_schema_max_digest_length	1024
+performance_schema_max_file_classes	80
+performance_schema_max_file_handles	32768
+performance_schema_max_file_instances	-1
+performance_schema_max_index_stat	-1
+performance_schema_max_memory_classes	320
+performance_schema_max_metadata_locks	-1
+performance_schema_max_mutex_classes	210
+performance_schema_max_mutex_instances	-1
+performance_schema_max_prepared_statements_instances	-1
+performance_schema_max_program_instances	-1
+performance_schema_max_rwlock_classes	40
+performance_schema_max_rwlock_instances	-1
+performance_schema_max_socket_classes	10
+performance_schema_max_socket_instances	-1
+performance_schema_max_sql_text_length	1024
+performance_schema_max_stage_classes	150
+performance_schema_max_statement_classes	193
+performance_schema_max_statement_stack	10
+performance_schema_max_table_handles	-1
+performance_schema_max_table_instances	-1
+performance_schema_max_table_lock_stat	-1
+performance_schema_max_thread_classes	50
+performance_schema_max_thread_instances	-1
+performance_schema_session_connect_attrs_size	512
+performance_schema_setup_actors_size	-1
+performance_schema_setup_objects_size	-1
+performance_schema_users_size	-1
+pid_file	/app/mysql/data/mysql.pid
+plugin_dir	/usr/local/mysql/lib/plugin/
+port	3306
+preload_buffer_size	32768
+profiling	OFF
+profiling_history_size	15
+protocol_version	10
+query_alloc_block_size	8192
+query_cache_limit	1048576
+query_cache_min_res_unit	4096
+query_cache_size	0
+query_cache_type	OFF
+query_cache_wlock_invalidate	OFF
+query_prealloc_size	8192
+range_alloc_block_size	4096
+range_optimizer_max_mem_size	8388608
+rbr_exec_mode	STRICT
+read_buffer_size	8388608
+read_only	OFF
+read_rnd_buffer_size	8388608
+relay_log	mysql-relay.log
+relay_log_basename	/app/mysql/data/mysql-relay
+relay_log_index	/app/mysql/data/mysql-relay.index
+relay_log_info_file	relay-log.info
+relay_log_info_repository	TABLE
+relay_log_purge	ON
+relay_log_recovery	ON
+relay_log_space_limit	0
+report_host	
+report_password	
+report_port	3306
+report_user	
+require_secure_transport	OFF
+rpl_semi_sync_master_enabled	ON
+rpl_semi_sync_master_timeout	5000
+rpl_semi_sync_master_trace_level	32
+rpl_semi_sync_master_wait_for_slave_count	1
+rpl_semi_sync_master_wait_no_slave	ON
+rpl_semi_sync_master_wait_point	AFTER_SYNC
+rpl_semi_sync_slave_enabled	ON
+rpl_semi_sync_slave_trace_level	32
+rpl_stop_slave_timeout	31536000
+secure_auth	ON
+secure_file_priv	
+server_id	88643306
+server_id_bits	32
+server_uuid	4a6f6379-e770-11ea-8c3b-005056aae9bb
+session_track_gtids	OFF
+session_track_schema	ON
+session_track_state_change	OFF
+session_track_system_variables	time_zone,autocommit,character_set_client,character_set_results,character_set_connection
+session_track_transaction_info	OFF
+sha256_password_proxy_users	OFF
+show_compatibility_56	OFF
+show_create_table_verbosity	OFF
+show_old_temporals	OFF
+skip_external_locking	ON
+skip_name_resolve	ON
+skip_networking	OFF
+skip_show_database	OFF
+slave_allow_batching	OFF
+slave_checkpoint_group	512
+slave_checkpoint_period	300
+slave_compressed_protocol	OFF
+slave_exec_mode	STRICT
+slave_load_tmpdir	/app/mysql/mysql_tmp
+slave_max_allowed_packet	1073741824
+slave_net_timeout	60
+slave_parallel_type	DATABASE
+slave_parallel_workers	0
+slave_pending_jobs_size_max	16777216
+slave_preserve_commit_order	OFF
+slave_rows_search_algorithms	TABLE_SCAN,INDEX_SCAN
+slave_skip_errors	OFF
+slave_sql_verify_checksum	ON
+slave_transaction_retries	10
+slave_type_conversions	
+slow_launch_time	2
+slow_query_log	ON
+slow_query_log_file	mysql-slow.log
+socket	/app/mysql/data/mysql.sock
+sort_buffer_size	2097152
+sql_auto_is_null	OFF
+sql_big_selects	ON
+sql_buffer_result	OFF
+sql_log_off	OFF
+sql_mode	ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+sql_notes	ON
+sql_quote_show_create	ON
+sql_safe_updates	OFF
+sql_select_limit	18446744073709551615
+sql_slave_skip_counter	0
+sql_warnings	OFF
+ssl_ca	
+ssl_capath	
+ssl_cert	
+ssl_cipher	
+ssl_crl	
+ssl_crlpath	
+ssl_key	
+stored_program_cache	256
+super_read_only	OFF
+sync_binlog	1
+sync_frm	ON
+sync_master_info	10000
+sync_relay_log	10000
+sync_relay_log_info	10000
+system_time_zone	CST
+table_definition_cache	1400
+table_open_cache	2000
+table_open_cache_instances	16
+thread_cache_size	18
+thread_handling	one-thread-per-connection
+thread_stack	262144
+time_format	%H:%i:%s
+time_zone	SYSTEM
+tls_version	TLSv1,TLSv1.1
+tmp_table_size	67108864
+tmpdir	/app/mysql/mysql_tmp
+transaction_alloc_block_size	8192
+transaction_isolation	REPEATABLE-READ
+transaction_prealloc_size	4096
+transaction_read_only	OFF
+transaction_write_set_extraction	OFF
+tx_isolation	REPEATABLE-READ
+tx_read_only	OFF
+unique_checks	ON
+updatable_views_with_limit	YES
+version	5.7.24-log
+version_comment	MySQL Community Server (GPL)
+version_compile_machine	x86_64
+version_compile_os	linux-glibc2.12
+wait_timeout	28800
+ERROR LOG:
+2021-03-25T20:57:11.409868+08:00 5705008 [Note] Aborted connection 5705008 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-03-25T20:57:17.020845+08:00 5704748 [Note] Aborted connection 5704748 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.020921+08:00 5704664 [Note] Aborted connection 5704664 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.020979+08:00 5704840 [Note] Aborted connection 5704840 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.020852+08:00 5704672 [Note] Aborted connection 5704672 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.021035+08:00 5704669 [Note] Aborted connection 5704669 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.021117+08:00 5704993 [Note] Aborted connection 5704993 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.021150+08:00 5704639 [Note] Aborted connection 5704639 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.020991+08:00 5704595 [Note] Aborted connection 5704595 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.021063+08:00 5704873 [Note] Aborted connection 5704873 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.021031+08:00 5704822 [Note] Aborted connection 5704822 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.021066+08:00 5704924 [Note] Aborted connection 5704924 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.020955+08:00 5704767 [Note] Aborted connection 5704767 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.020940+08:00 5704686 [Note] Aborted connection 5704686 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.021099+08:00 5704584 [Note] Aborted connection 5704584 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.021156+08:00 5704871 [Note] Aborted connection 5704871 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.021090+08:00 5704703 [Note] Aborted connection 5704703 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.021343+08:00 5704919 [Note] Aborted connection 5704919 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.021057+08:00 5704966 [Note] Aborted connection 5704966 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.021445+08:00 5704829 [Note] Aborted connection 5704829 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:17.020850+08:00 5704923 [Note] Aborted connection 5704923 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-03-25T20:57:22.631510+08:00 5704660 [Note] Aborted connection 5704660 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631664+08:00 5704536 [Note] Aborted connection 5704536 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631734+08:00 5704975 [Note] Aborted connection 5704975 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631785+08:00 5704678 [Note] Aborted connection 5704678 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631832+08:00 5704665 [Note] Aborted connection 5704665 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631867+08:00 5704645 [Note] Aborted connection 5704645 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631766+08:00 5704692 [Note] Aborted connection 5704692 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.632094+08:00 5704899 [Note] Aborted connection 5704899 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631745+08:00 5704821 [Note] Aborted connection 5704821 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631801+08:00 5704709 [Note] Aborted connection 5704709 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631812+08:00 5704721 [Note] Aborted connection 5704721 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631673+08:00 5704463 [Note] Aborted connection 5704463 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631762+08:00 5704515 [Note] Aborted connection 5704515 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631810+08:00 5704898 [Note] Aborted connection 5704898 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.632503+08:00 5704596 [Note] Aborted connection 5704596 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.631892+08:00 5704777 [Note] Aborted connection 5704777 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.632145+08:00 5704788 [Note] Aborted connection 5704788 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.632668+08:00 5704930 [Note] Aborted connection 5704930 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.632854+08:00 5704638 [Note] Aborted connection 5704638 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-25T20:57:22.632162+08:00 5704583 [Note] Aborted connection 5704583 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-03-27T22:16:37.245118+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-03-27T22:16:37.246967+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210327 22:16:37
+2021-04-02T15:41:00.462457+08:00 5922845 [Note] Access denied for user 'root'@'10.80.80.213' (using password: YES)
+2021-04-02T15:41:05.079711+08:00 5922848 [Note] Access denied for user 'root'@'10.80.80.213' (using password: YES)
+2021-04-02T15:41:08.667271+08:00 5922850 [Note] Access denied for user 'root'@'10.80.80.213' (using password: YES)
+2021-04-04T03:06:28.024334+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-04-04T03:06:28.026147+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210404  3:06:28
+2021-04-07T19:46:22.122228+08:00 6068167 [Note] Access denied for user 'root'@'10.80.80.244' (using password: NO)
+2021-04-07T20:12:31.946718+08:00 6068686 [Note] Access denied for user 'root'@'10.80.80.244' (using password: NO)
+2021-04-07T20:13:33.500642+08:00 6068706 [Note] Access denied for user 'root'@'10.80.80.244' (using password: NO)
+2021-04-07T20:17:59.749081+08:00 6068803 [Note] Access denied for user 'root'@'10.80.80.244' (using password: NO)
+2021-04-10T22:05:56.206167+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-04-10T22:05:56.208067+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210410 22:05:56
+2021-04-12T15:12:53.655933+08:00 6203592 [Note] Access denied for user 'root'@'localhost' (using password: NO)
+2021-04-12T15:13:18.161937+08:00 6203601 [Note] Access denied for user 'root'@'localhost' (using password: NO)
+2021-04-12T15:14:24.838337+08:00 6203636 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.839316+08:00 6203637 [Note] Access denied for user 'root'@'localhost' (using password: NO)
+2021-04-12T15:14:24.844872+08:00 6203638 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.852368+08:00 6203639 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.859948+08:00 6203640 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.867093+08:00 6203641 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.874042+08:00 6203642 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.880537+08:00 6203643 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.887507+08:00 6203644 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.893805+08:00 6203645 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.899919+08:00 6203646 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.956474+08:00 6203647 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.963966+08:00 6203648 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.970117+08:00 6203649 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.975566+08:00 6203650 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.981049+08:00 6203651 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.986168+08:00 6203652 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.991075+08:00 6203653 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:24.996335+08:00 6203654 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:14:25.003093+08:00 6203655 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2021-04-12T15:16:06.353571+08:00 6203690 [Note] Access denied for user 'root'@'localhost' (using password: NO)
+2021-04-14T00:59:31.281864+08:00 6234008 [Note] Aborted connection 6234008 to db: 'unconnected' user: 'bjpt_basis_user' host: '10.80.80.23' (Got timeout reading communication packets)
+2021-04-14T00:59:34.784607+08:00 6234009 [Note] Aborted connection 6234009 to db: 'unconnected' user: 'bjpt_basis_user' host: '10.80.80.23' (Got timeout reading communication packets)
+2021-04-14T00:59:37.655655+08:00 6234011 [Note] Aborted connection 6234011 to db: 'unconnected' user: 'bjpt_basis_user' host: '10.80.80.23' (Got timeout reading communication packets)
+2021-04-15T01:29:17.302572+08:00 6262825 [Note] Aborted connection 6262825 to db: 'unconnected' user: 'bjpt_basis_user' host: '10.80.80.23' (Got timeout reading communication packets)
+2021-04-17T22:05:52.316219+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-04-17T22:05:52.318334+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210417 22:05:52
+2021-04-24T22:05:34.560142+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-04-24T22:05:34.562251+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210424 22:05:34
+2021-05-01T22:00:16.386525+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-05-01T22:00:16.388586+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210501 22:00:16
+2021-05-08T22:00:18.498241+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-05-08T22:00:18.500472+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210508 22:00:18
+2021-05-15T22:00:16.856131+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-05-15T22:00:16.858315+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210515 22:00:16
+2021-05-22T22:00:16.950560+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-05-22T22:00:16.952966+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210522 22:00:16
+2021-05-29T03:47:43.268965+08:00 7509136 [Note] Aborted connection 7509136 to db: 'unconnected' user: 'pmm' host: '127.0.0.1' (Got an error writing communication packets)
+2021-05-29T04:16:19.469115+08:00 7509641 [Note] Aborted connection 7509641 to db: 'unconnected' user: 'pmm' host: '127.0.0.1' (Got an error writing communication packets)
+2021-05-29T04:21:57.444617+08:00 7509739 [Note] Aborted connection 7509739 to db: 'unconnected' user: 'pmm' host: '127.0.0.1' (Got an error writing communication packets)
+2021-05-29T22:00:18.535262+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-05-29T22:00:18.537783+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210529 22:00:18
+2021-06-01T11:27:44.072440+08:00 7601910 [Note] Aborted connection 7601910 to db: 'unconnected' user: 'pmm' host: '127.0.0.1' (Got an error reading communication packets)
+2021-06-01T11:27:44.098972+08:00 7601909 [Note] Aborted connection 7601909 to db: 'unconnected' user: 'pmm' host: '127.0.0.1' (Got an error writing communication packets)
+2021-06-01T11:27:44.322720+08:00 7601911 [Note] Aborted connection 7601911 to db: 'unconnected' user: 'pmm' host: '127.0.0.1' (Got an error reading communication packets)
+2021-06-03T16:56:03.041945+08:00 7664642 [Note] Access denied for user 'yqong'@'10.80.80.23' (using password: NO)
+2021-06-05T22:00:18.408584+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-06-05T22:00:18.411131+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210605 22:00:18
+2021-06-09T10:56:52.049637+08:00 7825908 [Note] Access denied for user 'xlei40'@'10.80.80.23' (using password: YES)
+2021-06-09T18:57:16.887337+08:00 7825917 [Note] Aborted connection 7825917 to db: 'bjpt_basis' user: 'xlei40' host: '10.80.80.23' (Got timeout reading communication packets)
+2021-06-09T22:47:50.622703+08:00 7825910 [Note] Aborted connection 7825910 to db: 'bjpt_basis' user: 'xlei40' host: '10.80.80.23' (Got timeout reading communication packets)
+2021-06-12T22:00:17.838855+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-06-12T22:00:17.841547+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210612 22:00:17
+2021-06-19T22:00:16.392752+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-06-19T22:00:16.395285+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210619 22:00:16
+2021-06-26T22:00:17.294437+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-06-26T22:00:17.297557+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210626 22:00:17
+2021-07-03T22:00:17.370023+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-07-03T22:00:17.372674+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210703 22:00:17
+2021-07-10T22:00:18.137237+08:00 0 [Note] InnoDB: Dumping buffer pool(s) to /app/mysql/data/ib_buffer_pool
+2021-07-10T22:00:18.139888+08:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 210710 22:00:18
+2021-07-13T22:16:58.488298+08:00 8794402 [Note] Aborted connection 8794402 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488397+08:00 8793904 [Note] Aborted connection 8793904 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488523+08:00 8794219 [Note] Aborted connection 8794219 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488486+08:00 8794423 [Note] Aborted connection 8794423 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488551+08:00 8794156 [Note] Aborted connection 8794156 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488634+08:00 8794197 [Note] Aborted connection 8794197 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488677+08:00 8794368 [Note] Aborted connection 8794368 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488557+08:00 8794254 [Note] Aborted connection 8794254 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488698+08:00 8794097 [Note] Aborted connection 8794097 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488798+08:00 8794394 [Note] Aborted connection 8794394 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488649+08:00 8793948 [Note] Aborted connection 8793948 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488739+08:00 8794257 [Note] Aborted connection 8794257 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488501+08:00 8794303 [Note] Aborted connection 8794303 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488748+08:00 8794000 [Note] Aborted connection 8794000 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488586+08:00 8794387 [Note] Aborted connection 8794387 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488766+08:00 8794400 [Note] Aborted connection 8794400 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488817+08:00 8794084 [Note] Aborted connection 8794084 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488699+08:00 8793877 [Note] Aborted connection 8793877 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488534+08:00 8793928 [Note] Aborted connection 8793928 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:16:58.488592+08:00 8794346 [Note] Aborted connection 8794346 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.226' (Got an error reading communication packets)
+2021-07-13T22:17:04.370674+08:00 8793857 [Note] Aborted connection 8793857 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370686+08:00 8794108 [Note] Aborted connection 8794108 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370709+08:00 8794050 [Note] Aborted connection 8794050 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370720+08:00 8793936 [Note] Aborted connection 8793936 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370821+08:00 8794098 [Note] Aborted connection 8794098 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370842+08:00 8794292 [Note] Aborted connection 8794292 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370861+08:00 8793885 [Note] Aborted connection 8793885 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370967+08:00 8793947 [Note] Aborted connection 8793947 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.371078+08:00 8794382 [Note] Aborted connection 8794382 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370738+08:00 8793922 [Note] Aborted connection 8793922 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370733+08:00 8794065 [Note] Aborted connection 8794065 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370711+08:00 8794086 [Note] Aborted connection 8794086 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370748+08:00 8793876 [Note] Aborted connection 8793876 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370701+08:00 8794034 [Note] Aborted connection 8794034 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370773+08:00 8794393 [Note] Aborted connection 8794393 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370752+08:00 8793978 [Note] Aborted connection 8793978 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.371040+08:00 8794062 [Note] Aborted connection 8794062 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.371073+08:00 8794366 [Note] Aborted connection 8794366 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370783+08:00 8794204 [Note] Aborted connection 8794204 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:04.370733+08:00 8794096 [Note] Aborted connection 8794096 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.227' (Got an error reading communication packets)
+2021-07-13T22:17:09.846479+08:00 8794293 [Note] Aborted connection 8794293 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846591+08:00 8794201 [Note] Aborted connection 8794201 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846694+08:00 8794414 [Note] Aborted connection 8794414 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846773+08:00 8794271 [Note] Aborted connection 8794271 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.847026+08:00 8793875 [Note] Aborted connection 8793875 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846879+08:00 8793980 [Note] Aborted connection 8793980 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846724+08:00 8794054 [Note] Aborted connection 8794054 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846929+08:00 8793874 [Note] Aborted connection 8793874 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.847050+08:00 8794169 [Note] Aborted connection 8794169 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846826+08:00 8794252 [Note] Aborted connection 8794252 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846694+08:00 8793982 [Note] Aborted connection 8793982 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.847079+08:00 8794055 [Note] Aborted connection 8794055 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846969+08:00 8793940 [Note] Aborted connection 8793940 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846922+08:00 8794410 [Note] Aborted connection 8794410 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.847045+08:00 8794415 [Note] Aborted connection 8794415 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846954+08:00 8794146 [Note] Aborted connection 8794146 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846962+08:00 8793905 [Note] Aborted connection 8793905 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846983+08:00 8794059 [Note] Aborted connection 8794059 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846481+08:00 8793999 [Note] Aborted connection 8793999 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:09.846904+08:00 8793960 [Note] Aborted connection 8793960 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.228' (Got an error reading communication packets)
+2021-07-13T22:17:15.475567+08:00 8793855 [Note] Aborted connection 8793855 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.475636+08:00 8794018 [Note] Aborted connection 8794018 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.475659+08:00 8794302 [Note] Aborted connection 8794302 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.475847+08:00 8794027 [Note] Aborted connection 8794027 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.475853+08:00 8794001 [Note] Aborted connection 8794001 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.475636+08:00 8794290 [Note] Aborted connection 8794290 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.476104+08:00 8794306 [Note] Aborted connection 8794306 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.475851+08:00 8793989 [Note] Aborted connection 8793989 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.476844+08:00 8794294 [Note] Aborted connection 8794294 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.475922+08:00 8794202 [Note] Aborted connection 8794202 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.476920+08:00 8793958 [Note] Aborted connection 8793958 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.475920+08:00 8794375 [Note] Aborted connection 8794375 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.475660+08:00 8794007 [Note] Aborted connection 8794007 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.476888+08:00 8794028 [Note] Aborted connection 8794028 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.476893+08:00 8794266 [Note] Aborted connection 8794266 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.475874+08:00 8794234 [Note] Aborted connection 8794234 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.475883+08:00 8794036 [Note] Aborted connection 8794036 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.476933+08:00 8794376 [Note] Aborted connection 8794376 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.476925+08:00 8793997 [Note] Aborted connection 8793997 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-13T22:17:15.476927+08:00 8793926 [Note] Aborted connection 8793926 to db: 'bjpt_basis' user: 'bjpt_basis_user' host: '10.80.32.229' (Got an error reading communication packets)
+2021-07-14T11:18:52.244443+08:00 8809606 [Note] Aborted connection 8809606 to db: 'bjpt_basis' user: 'xlei40' host: '10.80.80.23' (Got an error reading communication packets)
+2021-07-14T11:18:52.244462+08:00 8809607 [Note] Aborted connection 8809607 to db: 'bjpt_basis' user: 'xlei40' host: '10.80.80.23' (Got an error reading communication packets)
+2021-07-15T15:46:28.181808+08:00 8842738 [Note] Access denied for user 'root'@'localhost' (using password: NO)

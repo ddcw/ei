@@ -1,0 +1,764 @@
+******************** MySQL--localhost--3306 ***********************
+--------------
+mysql  Ver 14.14 Distrib 5.6.38, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+
+Connection id:		2800573
+Current database:	
+Current user:		root@localhost
+SSL:			Not in use
+Current pager:		stdout
+Using outfile:		''
+Using delimiter:	;
+Server version:		5.6.38-log MySQL Community Server (GPL)
+Protocol version:	10
+Connection:		Localhost via UNIX socket
+Server characterset:	utf8
+Db     characterset:	utf8
+Client characterset:	utf8
+Conn.  characterset:	utf8
+UNIX socket:		/usr/local/mysql/data/mysql.sock
+Uptime:			323 days 21 hours 15 min 57 sec
+
+Threads: 6  Questions: 2966660829  Slow queries: 4628377  Opens: 348646509  Flush tables: 3  Open tables: 400  Queries per second avg: 106.013
+--------------
+
+                             basedir :	/data/mysql/
+                             datadir :	/usr/local/mysql/data/
+                                     :	          
+               ####Business info#### :	          
+                       Database size :	cy_prd 514.895 GB cy_prd_log 0.006 GB db_monitor 0.015 GB ta_chuangying_mysql_1 0.090 GB
+                       Tables counts :	cy_prd 330 cy_prd_log 4 db_monitor 1 ta_chuangying_mysql_1 119
+                      Engines counts :	InnoDB 454
+                 Top 10 of big table :	prop_policy_risk 91003960 prop_policy 33969491 ebiz_oper_his 27400769 prop_policy_engaged 26585677 prop_order_vehicle 26211664 prop_order_exclusive_service 25576225 prop_order 24067186 prop_order_jf_info_fee_discount 21403479 prop_order_third_info 21046173 prop_policy_insured 20847250
+        Top 10 of auto increment num :	ebiz_batch_info 1000000061 ebiz_batch_info 1000000061 ebiz_batch_info 1000000013 ebiz_batch_info 1000000013 prop_order_jf_info_fee_discount 889944082 icsm_resource 800000481 icsm_resource 800000481 icsm_resource 800000203 icsm_resource 800000203 prop_policy_risk 445940377
+                                     :	          
+              ####Runtime status#### :	          
+                   Threads connected :	     4.00 
+                                 QPS :	     6.13 
+                                 TPS :	    20.54 
+                               Reads :	101270711.00 
+                              Writes :	2183067405.00 
+                   Read/Writes Ratio :	    4.64% 
+   MyISAM Key buffer read hits(>99%) :	   79.72% 
+        MyISAM Key buffer write hits :	   31.06% 
+                    Query cache hits :	    NULL% 
+       InnoDB buffer read hits(>95%) :	   99.79% 
+             Thread cache hits(>90%) :	  100.00% 
+             Slow queries per second :	     0.17 
+         Select full join per second :	     1.00 
+      Select full join in all select :	    0.46% 
+         MyiSAM lock contention(<1%) :	    0.00% 
+           Temp tables to disk ratio :	   10.98% 
+Replication status:
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: 10.80.88.60
+                  Master_User: repl
+                  Master_Port: 3306
+                Connect_Retry: 60
+              Master_Log_File: mysql-bin.012014
+          Read_Master_Log_Pos: 125123190
+               Relay_Log_File: mysql-01-relay-bin.032670
+                Relay_Log_Pos: 125123040
+        Relay_Master_Log_File: mysql-bin.012014
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
+              Replicate_Do_DB: 
+          Replicate_Ignore_DB: mysql,information_schema,performance_schema
+           Replicate_Do_Table: 
+       Replicate_Ignore_Table: 
+      Replicate_Wild_Do_Table: 
+  Replicate_Wild_Ignore_Table: 
+                   Last_Errno: 0
+                   Last_Error: 
+                 Skip_Counter: 0
+          Exec_Master_Log_Pos: 125123190
+              Relay_Log_Space: 125123150
+              Until_Condition: None
+               Until_Log_File: 
+                Until_Log_Pos: 0
+           Master_SSL_Allowed: No
+           Master_SSL_CA_File: 
+           Master_SSL_CA_Path: 
+              Master_SSL_Cert: 
+            Master_SSL_Cipher: 
+               Master_SSL_Key: 
+        Seconds_Behind_Master: 0
+Master_SSL_Verify_Server_Cert: No
+                Last_IO_Errno: 0
+                Last_IO_Error: 
+               Last_SQL_Errno: 0
+               Last_SQL_Error: 
+  Replicate_Ignore_Server_Ids: 
+             Master_Server_Id: 808860
+                  Master_UUID: c0d1ef9a-a624-11ea-a395-005056aa25e8
+             Master_Info_File: mysql.slave_master_info
+                    SQL_Delay: 0
+          SQL_Remaining_Delay: NULL
+      Slave_SQL_Running_State: Slave has read all relay log; waiting for the slave I/O thread to update it
+           Master_Retry_Count: 86400
+                  Master_Bind: 
+      Last_IO_Error_Timestamp: 
+     Last_SQL_Error_Timestamp: 
+               Master_SSL_Crl: 
+           Master_SSL_Crlpath: 
+           Retrieved_Gtid_Set: c0d1ef9a-a624-11ea-a395-005056aa25e8:1-572733536
+            Executed_Gtid_Set: 525d460d-74ec-11e8-97f6-7cd30abdd128:1-315240145,
+6f67c96a-9f4f-11e5-9c5c-5cb90188f7ac:1-210037652,
+7cbbabb9-9f4f-11e5-9c5c-5cb90189188c:1-97251337,
+7ce42058-6183-11e8-9965-005056be7782:1-102,
+82c048b9-5d4f-11e9-8352-7cd30ac30e72:1-797407220,
+c0d1ef9a-a624-11ea-a395-005056aa25e8:1-572733536,
+c2fbc918-6001-11e7-8a3c-5cb901893d60:1-46069775,
+d23cca0c-4869-11e8-b5b7-c0bfc0a04d60:1-17741269,
+d7cc0fd2-6001-11e7-8a3d-5cb9018913a8:1-31644274,
+dfa5856f-f2a9-11e7-868f-90e2baa9a2d4:1-117300500
+                Auto_Position: 1
+Global variables:
+auto_increment_increment	1
+auto_increment_offset	1
+autocommit	ON
+automatic_sp_privileges	ON
+avoid_temporal_upgrade	OFF
+back_log	92
+basedir	/data/mysql/
+big_tables	OFF
+bind_address	*
+binlog_cache_size	32768
+binlog_checksum	CRC32
+binlog_direct_non_transactional_updates	OFF
+binlog_error_action	IGNORE_ERROR
+binlog_format	ROW
+binlog_gtid_simple_recovery	OFF
+binlog_max_flush_queue_time	0
+binlog_order_commits	ON
+binlog_row_image	FULL
+binlog_rows_query_log_events	OFF
+binlog_stmt_cache_size	32768
+binlogging_impossible_mode	IGNORE_ERROR
+block_encryption_mode	aes-128-ecb
+bulk_insert_buffer_size	8388608
+character_set_client	utf8
+character_set_connection	utf8
+character_set_database	utf8
+character_set_filesystem	binary
+character_set_results	utf8
+character_set_server	utf8
+character_set_system	utf8
+character_sets_dir	/data/mysql/share/charsets/
+collation_connection	utf8_general_ci
+collation_database	utf8_general_ci
+collation_server	utf8_general_ci
+completion_type	NO_CHAIN
+concurrent_insert	AUTO
+connect_timeout	10
+core_file	OFF
+datadir	/usr/local/mysql/data/
+date_format	%Y-%m-%d
+datetime_format	%Y-%m-%d %H:%i:%s
+default_storage_engine	InnoDB
+default_tmp_storage_engine	InnoDB
+default_week_format	0
+delay_key_write	ON
+delayed_insert_limit	100
+delayed_insert_timeout	300
+delayed_queue_size	1000
+disconnect_on_expired_password	ON
+div_precision_increment	4
+end_markers_in_json	OFF
+enforce_gtid_consistency	ON
+eq_range_index_dive_limit	10
+event_scheduler	OFF
+expire_logs_days	7
+explicit_defaults_for_timestamp	OFF
+flush	OFF
+flush_time	0
+foreign_key_checks	ON
+ft_boolean_syntax	+ -><()~*:""&|
+ft_max_word_len	84
+ft_min_word_len	4
+ft_query_expansion_limit	20
+ft_stopword_file	(built-in)
+general_log	OFF
+general_log_file	/usr/local/mysql/data/localhost.log
+group_concat_max_len	1024
+gtid_executed	525d460d-74ec-11e8-97f6-7cd30abdd128:1-315240145,\n6f67c96a-9f4f-11e5-9c5c-5cb90188f7ac:1-210037652,\n7cbbabb9-9f4f-11e5-9c5c-5cb90189188c:1-97251337,\n7ce42058-6183-11e8-9965-005056be7782:1-102,\n82c048b9-5d4f-11e9-8352-7cd30ac30e72:1-797407220,\nc0d1ef9a-a624-11ea-a395-005056aa25e8:1-572733536,\nc2fbc918-6001-11e7-8a3c-5cb901893d60:1-46069775,\nd23cca0c-4869-11e8-b5b7-c0bfc0a04d60:1-17741269,\nd7cc0fd2-6001-11e7-8a3d-5cb9018913a8:1-31644274,\ndfa5856f-f2a9-11e7-868f-90e2baa9a2d4:1-117300500
+gtid_mode	ON
+gtid_owned	
+gtid_purged	525d460d-74ec-11e8-97f6-7cd30abdd128:1-315240145,\n6f67c96a-9f4f-11e5-9c5c-5cb90188f7ac:1-210037652,\n7cbbabb9-9f4f-11e5-9c5c-5cb90189188c:1-97251337,\n7ce42058-6183-11e8-9965-005056be7782:1-102,\n82c048b9-5d4f-11e9-8352-7cd30ac30e72:1-797407220,\nc0d1ef9a-a624-11ea-a395-005056aa25e8:1-562483186,\nc2fbc918-6001-11e7-8a3c-5cb901893d60:1-46069775,\nd23cca0c-4869-11e8-b5b7-c0bfc0a04d60:1-17741269,\nd7cc0fd2-6001-11e7-8a3d-5cb9018913a8:1-31644274,\ndfa5856f-f2a9-11e7-868f-90e2baa9a2d4:1-117300500
+have_compress	YES
+have_crypt	YES
+have_dynamic_loading	YES
+have_geometry	YES
+have_openssl	DISABLED
+have_profiling	YES
+have_query_cache	YES
+have_rtree_keys	YES
+have_ssl	DISABLED
+have_symlink	YES
+host_cache_size	342
+hostname	localhost.default
+ignore_builtin_innodb	OFF
+ignore_db_dirs	
+init_connect	
+init_file	
+init_slave	
+innodb_adaptive_flushing	ON
+innodb_adaptive_flushing_lwm	10
+innodb_adaptive_hash_index	ON
+innodb_adaptive_max_sleep_delay	150000
+innodb_additional_mem_pool_size	52428800
+innodb_api_bk_commit_interval	5
+innodb_api_disable_rowlock	OFF
+innodb_api_enable_binlog	OFF
+innodb_api_enable_mdl	OFF
+innodb_api_trx_level	0
+innodb_autoextend_increment	64
+innodb_autoinc_lock_mode	1
+innodb_buffer_pool_dump_at_shutdown	OFF
+innodb_buffer_pool_dump_now	OFF
+innodb_buffer_pool_filename	ib_buffer_pool
+innodb_buffer_pool_instances	8
+innodb_buffer_pool_load_abort	OFF
+innodb_buffer_pool_load_at_startup	OFF
+innodb_buffer_pool_load_now	OFF
+innodb_buffer_pool_size	4294967296
+innodb_change_buffer_max_size	25
+innodb_change_buffering	all
+innodb_checksum_algorithm	innodb
+innodb_checksums	ON
+innodb_cmp_per_index_enabled	OFF
+innodb_commit_concurrency	0
+innodb_compression_failure_threshold_pct	5
+innodb_compression_level	6
+innodb_compression_pad_pct_max	50
+innodb_concurrency_tickets	5000
+innodb_data_file_path	ibdata1:200M:autoextend
+innodb_data_home_dir	
+innodb_disable_sort_file_cache	OFF
+innodb_doublewrite	ON
+innodb_fast_shutdown	1
+innodb_file_format	Antelope
+innodb_file_format_check	ON
+innodb_file_format_max	Barracuda
+innodb_file_per_table	ON
+innodb_flush_log_at_timeout	1
+innodb_flush_log_at_trx_commit	1
+innodb_flush_method	
+innodb_flush_neighbors	1
+innodb_flushing_avg_loops	30
+innodb_force_load_corrupted	OFF
+innodb_force_recovery	0
+innodb_ft_aux_table	
+innodb_ft_cache_size	8000000
+innodb_ft_enable_diag_print	OFF
+innodb_ft_enable_stopword	ON
+innodb_ft_max_token_size	84
+innodb_ft_min_token_size	3
+innodb_ft_num_word_optimize	2000
+innodb_ft_result_cache_limit	2000000000
+innodb_ft_server_stopword_table	
+innodb_ft_sort_pll_degree	2
+innodb_ft_total_cache_size	640000000
+innodb_ft_user_stopword_table	
+innodb_io_capacity	200
+innodb_io_capacity_max	2000
+innodb_large_prefix	OFF
+innodb_lock_wait_timeout	100
+innodb_locks_unsafe_for_binlog	OFF
+innodb_log_buffer_size	16777216
+innodb_log_compressed_pages	ON
+innodb_log_file_size	1572864000
+innodb_log_files_in_group	2
+innodb_log_group_home_dir	./
+innodb_lru_scan_depth	1024
+innodb_max_dirty_pages_pct	75
+innodb_max_dirty_pages_pct_lwm	0
+innodb_max_purge_lag	0
+innodb_max_purge_lag_delay	0
+innodb_mirrored_log_groups	1
+innodb_monitor_disable	
+innodb_monitor_enable	
+innodb_monitor_reset	
+innodb_monitor_reset_all	
+innodb_numa_interleave	OFF
+innodb_old_blocks_pct	37
+innodb_old_blocks_time	1000
+innodb_online_alter_log_max_size	134217728
+innodb_open_files	400
+innodb_optimize_fulltext_only	OFF
+innodb_page_size	16384
+innodb_print_all_deadlocks	OFF
+innodb_purge_batch_size	300
+innodb_purge_threads	1
+innodb_random_read_ahead	OFF
+innodb_read_ahead_threshold	56
+innodb_read_io_threads	4
+innodb_read_only	OFF
+innodb_replication_delay	0
+innodb_rollback_on_timeout	OFF
+innodb_rollback_segments	128
+innodb_sort_buffer_size	1048576
+innodb_spin_wait_delay	6
+innodb_stats_auto_recalc	ON
+innodb_stats_include_delete_marked	OFF
+innodb_stats_method	nulls_equal
+innodb_stats_on_metadata	OFF
+innodb_stats_persistent	ON
+innodb_stats_persistent_sample_pages	20
+innodb_stats_sample_pages	8
+innodb_stats_transient_sample_pages	8
+innodb_status_output	OFF
+innodb_status_output_locks	OFF
+innodb_strict_mode	OFF
+innodb_support_xa	ON
+innodb_sync_array_size	1
+innodb_sync_spin_loops	30
+innodb_table_locks	ON
+innodb_thread_concurrency	0
+innodb_thread_sleep_delay	10000
+innodb_tmpdir	
+innodb_undo_directory	.
+innodb_undo_logs	128
+innodb_undo_tablespaces	0
+innodb_use_native_aio	ON
+innodb_use_sys_malloc	ON
+innodb_version	5.6.38
+innodb_write_io_threads	4
+interactive_timeout	86400
+join_buffer_size	262144
+keep_files_on_create	OFF
+key_buffer_size	268435456
+key_cache_age_threshold	300
+key_cache_block_size	1024
+key_cache_division_limit	100
+large_files_support	ON
+large_page_size	0
+large_pages	OFF
+lc_messages	en_US
+lc_messages_dir	/data/mysql/share/
+lc_time_names	en_US
+license	GPL
+local_infile	ON
+lock_wait_timeout	31536000
+locked_in_memory	OFF
+log_bin	ON
+log_bin_basename	/usr/local/mysql/arch/mysql-bin
+log_bin_index	/usr/local/mysql/arch/mysql-bin.index
+log_bin_trust_function_creators	ON
+log_bin_use_v1_row_events	OFF
+log_error	/usr/local/mysql/data/mysql-01.err
+log_output	FILE
+log_queries_not_using_indexes	ON
+log_slave_updates	ON
+log_slow_admin_statements	OFF
+log_slow_slave_statements	OFF
+log_throttle_queries_not_using_indexes	10
+log_warnings	1
+long_query_time	2.000000
+low_priority_updates	OFF
+lower_case_file_system	OFF
+lower_case_table_names	1
+master_info_repository	TABLE
+master_verify_checksum	OFF
+max_allowed_packet	16777216
+max_binlog_cache_size	18446744073709547520
+max_binlog_size	268435456
+max_binlog_stmt_cache_size	18446744073709547520
+max_connect_errors	100000
+max_connections	214
+max_delayed_threads	20
+max_digest_length	1024
+max_error_count	64
+max_heap_table_size	134217728
+max_insert_delayed_threads	20
+max_join_size	18446744073709551615
+max_length_for_sort_data	1024
+max_prepared_stmt_count	16382
+max_relay_log_size	0
+max_seeks_for_key	18446744073709551615
+max_sort_length	1024
+max_sp_recursion_depth	0
+max_tmp_tables	32
+max_user_connections	0
+max_write_lock_count	18446744073709551615
+metadata_locks_cache_size	1024
+metadata_locks_hash_instances	8
+min_examined_row_limit	0
+multi_range_count	256
+myisam_data_pointer_size	6
+myisam_max_sort_file_size	9223372036853727232
+myisam_mmap_size	18446744073709551615
+myisam_recover_options	OFF
+myisam_repair_threads	1
+myisam_sort_buffer_size	134217728
+myisam_stats_method	nulls_unequal
+myisam_use_mmap	OFF
+net_buffer_length	16384
+net_read_timeout	360
+net_retry_count	10
+net_write_timeout	60
+new	OFF
+old	OFF
+old_alter_table	OFF
+old_passwords	0
+open_files_limit	1024
+optimizer_prune_level	1
+optimizer_search_depth	62
+optimizer_switch	index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,engine_condition_pushdown=on,index_condition_pushdown=on,mrr=on,mrr_cost_based=on,block_nested_loop=on,batched_key_access=off,materialization=on,semijoin=on,loosescan=on,firstmatch=on,subquery_materialization_cost_based=on,use_index_extensions=on
+optimizer_trace	enabled=off,one_line=off
+optimizer_trace_features	greedy_search=on,range_optimizer=on,dynamic_range=on,repeated_subselect=on
+optimizer_trace_limit	1
+optimizer_trace_max_mem_size	16384
+optimizer_trace_offset	-1
+performance_schema	ON
+performance_schema_accounts_size	100
+performance_schema_digests_size	5000
+performance_schema_events_stages_history_long_size	1000
+performance_schema_events_stages_history_size	10
+performance_schema_events_statements_history_long_size	1000
+performance_schema_events_statements_history_size	10
+performance_schema_events_waits_history_long_size	1000
+performance_schema_events_waits_history_size	10
+performance_schema_hosts_size	100
+performance_schema_max_cond_classes	80
+performance_schema_max_cond_instances	1540
+performance_schema_max_digest_length	1024
+performance_schema_max_file_classes	50
+performance_schema_max_file_handles	32768
+performance_schema_max_file_instances	2500
+performance_schema_max_mutex_classes	200
+performance_schema_max_mutex_instances	5918
+performance_schema_max_rwlock_classes	40
+performance_schema_max_rwlock_instances	3163
+performance_schema_max_socket_classes	10
+performance_schema_max_socket_instances	320
+performance_schema_max_stage_classes	150
+performance_schema_max_statement_classes	168
+performance_schema_max_table_handles	572
+performance_schema_max_table_instances	667
+performance_schema_max_thread_classes	50
+performance_schema_max_thread_instances	378
+performance_schema_session_connect_attrs_size	512
+performance_schema_setup_actors_size	100
+performance_schema_setup_objects_size	100
+performance_schema_users_size	100
+pid_file	/usr/local/mysql/data/mysql-01.pid
+plugin_dir	/usr/local/mysql/lib/plugin/
+port	3306
+preload_buffer_size	32768
+profiling	OFF
+profiling_history_size	15
+protocol_version	10
+query_alloc_block_size	8192
+query_cache_limit	1048576
+query_cache_min_res_unit	4096
+query_cache_size	33554432
+query_cache_type	OFF
+query_cache_wlock_invalidate	OFF
+query_prealloc_size	8192
+range_alloc_block_size	4096
+read_buffer_size	4194304
+read_only	ON
+read_rnd_buffer_size	4194304
+relay_log	
+relay_log_basename	
+relay_log_index	
+relay_log_info_file	relay-log.info
+relay_log_info_repository	TABLE
+relay_log_purge	ON
+relay_log_recovery	ON
+relay_log_space_limit	0
+report_host	
+report_password	
+report_port	3306
+report_user	
+rpl_semi_sync_master_enabled	ON
+rpl_semi_sync_master_timeout	5000
+rpl_semi_sync_master_trace_level	32
+rpl_semi_sync_master_wait_no_slave	ON
+rpl_semi_sync_slave_enabled	ON
+rpl_semi_sync_slave_trace_level	32
+rpl_stop_slave_timeout	31536000
+secure_auth	ON
+secure_file_priv	NULL
+server_id	8001
+server_id_bits	32
+server_uuid	7ce42058-6183-11e8-9965-005056be7782
+show_old_temporals	OFF
+simplified_binlog_gtid_recovery	OFF
+skip_external_locking	ON
+skip_name_resolve	OFF
+skip_networking	OFF
+skip_show_database	OFF
+slave_allow_batching	OFF
+slave_checkpoint_group	512
+slave_checkpoint_period	300
+slave_compressed_protocol	OFF
+slave_exec_mode	STRICT
+slave_load_tmpdir	/data/mysql/tmp
+slave_max_allowed_packet	1073741824
+slave_net_timeout	3600
+slave_parallel_workers	0
+slave_pending_jobs_size_max	16777216
+slave_rows_search_algorithms	TABLE_SCAN,INDEX_SCAN
+slave_skip_errors	OFF
+slave_sql_verify_checksum	ON
+slave_transaction_retries	10
+slave_type_conversions	
+slow_launch_time	2
+slow_query_log	ON
+slow_query_log_file	/usr/local/mysql/data/localhost-slow.log
+socket	/usr/local/mysql/data/mysql.sock
+sort_buffer_size	4194304
+sql_auto_is_null	OFF
+sql_big_selects	ON
+sql_buffer_result	OFF
+sql_log_bin	ON
+sql_log_off	OFF
+sql_mode	STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION
+sql_notes	ON
+sql_quote_show_create	ON
+sql_safe_updates	OFF
+sql_select_limit	18446744073709551615
+sql_slave_skip_counter	0
+sql_warnings	OFF
+ssl_ca	
+ssl_capath	
+ssl_cert	
+ssl_cipher	
+ssl_crl	
+ssl_crlpath	
+ssl_key	
+storage_engine	InnoDB
+stored_program_cache	256
+sync_binlog	0
+sync_frm	ON
+sync_master_info	10000
+sync_relay_log	10000
+sync_relay_log_info	10000
+system_time_zone	CST
+table_definition_cache	600
+table_open_cache	400
+table_open_cache_instances	1
+thread_cache_size	8
+thread_concurrency	10
+thread_handling	one-thread-per-connection
+thread_stack	262144
+time_format	%H:%i:%s
+time_zone	SYSTEM
+timed_mutexes	OFF
+tmp_table_size	33554432
+tmpdir	/data/mysql/tmp
+transaction_alloc_block_size	8192
+transaction_prealloc_size	4096
+tx_isolation	READ-COMMITTED
+tx_read_only	OFF
+unique_checks	ON
+updatable_views_with_limit	YES
+version	5.6.38-log
+version_comment	MySQL Community Server (GPL)
+version_compile_machine	x86_64
+version_compile_os	linux-glibc2.12
+wait_timeout	86400
+ERROR LOG:
+2020-08-25 15:00:28 36746 [Warning] Timeout waiting for reply of binlog (file: mysql-bin.004601, pos: 2459), semi-sync up to file , position 0.
+2020-08-25 15:00:28 36746 [Note] Semi-sync replication switched OFF.
+2020-08-25 15:01:02 36746 [Warning] IP address '10.80.80.83' could not be resolved: Name or service not known
+2020-08-25 15:01:09 36746 [Warning] IP address '10.80.88.60' could not be resolved: Name or service not known
+2020-08-25 15:01:09 36746 [Note] Start semi-sync binlog_dump to slave (server_id: 808860), pos(, 4)
+2020-08-25 15:01:10 36746 [Note] Semi-sync replication switched ON with slave (server_id: 808860) at (mysql-bin.004601, 7009677)
+2020-08-25 15:02:07 36746 [Note] /usr/local/mysql/bin/mysqld: Normal shutdown
+
+2020-08-25 15:02:07 36746 [Note] Giving 6 client threads a chance to die gracefully
+2020-08-25 15:02:07 36746 [Note] Shutting down slave threads
+2020-08-25 15:02:07 36746 [Note] Error reading relay log event: slave SQL thread was killed
+2020-08-25 15:02:07 36746 [Note] Slave I/O thread killed while reading event
+2020-08-25 15:02:07 36746 [Note] Slave I/O thread exiting, read up to log 'mysql-bin.008083', position 180331968
+2020-08-25 15:02:08 36746 [Note] Stop semi-sync binlog_dump to slave (server_id: 808860)
+2020-08-25 15:02:08 36746 [Note] Semi-sync replication switched OFF.
+2020-08-25 15:02:10 36746 [Note] Forcefully disconnecting 0 remaining clients
+2020-08-25 15:02:10 36746 [Note] Binlog end
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'rpl_semi_sync_slave'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'rpl_semi_sync_master'
+2020-08-25 15:02:10 36746 [Note] unregister_replicator OK
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'partition'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'BLACKHOLE'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_METRICS'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_CMPMEM'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_CMP'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_LOCKS'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'INNODB_TRX'
+2020-08-25 15:02:10 36746 [Note] Shutting down plugin 'InnoDB'
+2020-08-25 15:02:10 36746 [Note] InnoDB: FTS optimize thread exiting.
+2020-08-25 15:02:10 36746 [Note] InnoDB: Starting shutdown...
+2020-08-25 15:02:12 36746 [Note] InnoDB: Shutdown completed; log sequence number 8790290519102
+2020-08-25 15:02:12 36746 [Note] Shutting down plugin 'ARCHIVE'
+2020-08-25 15:02:12 36746 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+2020-08-25 15:02:12 36746 [Note] Shutting down plugin 'MRG_MYISAM'
+2020-08-25 15:02:12 36746 [Note] Shutting down plugin 'MEMORY'
+2020-08-25 15:02:12 36746 [Note] Shutting down plugin 'MyISAM'
+2020-08-25 15:02:12 36746 [Note] Shutting down plugin 'CSV'
+2020-08-25 15:02:12 36746 [Note] Shutting down plugin 'sha256_password'
+2020-08-25 15:02:12 36746 [Note] Shutting down plugin 'mysql_old_password'
+2020-08-25 15:02:12 36746 [Note] Shutting down plugin 'mysql_native_password'
+2020-08-25 15:02:12 36746 [Note] Shutting down plugin 'binlog'
+2020-08-25 15:02:12 36746 [Note] /usr/local/mysql/bin/mysqld: Shutdown complete
+
+200825 15:02:12 mysqld_safe mysqld from pid file /usr/local/mysql/data/mysql-01.pid ended
+200825 15:02:13 mysqld_safe Logging to '/usr/local/mysql/data/mysql-01.err'.
+200825 15:02:13 mysqld_safe Starting mysqld daemon with databases from /usr/local/mysql/data
+2020-08-25 15:02:13 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2020-08-25 15:02:13 0 [Note] --secure-file-priv is set to NULL. Operations related to importing and exporting data are disabled
+2020-08-25 15:02:13 0 [Note] /usr/local/mysql/bin/mysqld (mysqld 5.6.38-log) starting as process 37744 ...
+2020-08-25 15:02:13 37744 [Warning] Buffered warning: Changed limits: max_open_files: 1024 (requested 15000)
+
+2020-08-25 15:02:13 37744 [Warning] Buffered warning: Changed limits: max_connections: 214 (requested 3000)
+
+2020-08-25 15:02:13 37744 [Warning] Buffered warning: Changed limits: table_open_cache: 400 (requested 512)
+
+2020-08-25 15:02:13 37744 [Note] Plugin 'FEDERATED' is disabled.
+2020-08-25 15:02:13 37744 [ERROR] Function 'rpl_semi_sync_master' already exists
+2020-08-25 15:02:13 37744 [Warning] Couldn't load plugin named 'rpl_semi_sync_master' with soname 'semisync_master.so'.
+2020-08-25 15:02:13 37744 [ERROR] Function 'rpl_semi_sync_slave' already exists
+2020-08-25 15:02:13 37744 [Warning] Couldn't load plugin named 'rpl_semi_sync_slave' with soname 'semisync_slave.so'.
+2020-08-25 15:02:13 7ffa4c725720 InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option innodb_use_sys_malloc and with the InnoDB's internal memory allocator.
+2020-08-25 15:02:13 37744 [Note] InnoDB: Using atomics to ref count buffer pool pages
+2020-08-25 15:02:13 37744 [Note] InnoDB: The InnoDB memory heap is disabled
+2020-08-25 15:02:13 37744 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+2020-08-25 15:02:13 37744 [Note] InnoDB: Memory barrier is not used
+2020-08-25 15:02:13 37744 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2020-08-25 15:02:13 37744 [Note] InnoDB: Using Linux native AIO
+2020-08-25 15:02:13 37744 [Note] InnoDB: Using CPU crc32 instructions
+2020-08-25 15:02:13 37744 [Note] InnoDB: Initializing buffer pool, size = 4.0G
+2020-08-25 15:02:14 37744 [Note] InnoDB: Completed initialization of buffer pool
+2020-08-25 15:02:14 37744 [Note] InnoDB: Highest supported file format is Barracuda.
+2020-08-25 15:02:14 37744 [Note] InnoDB: 128 rollback segment(s) are active.
+2020-08-25 15:02:14 37744 [Note] InnoDB: Waiting for purge to start
+2020-08-25 15:02:14 37744 [Note] InnoDB: 5.6.38 started; log sequence number 8790290519102
+2020-08-25 15:02:14 37744 [Note] Semi-sync replication initialized for transactions.
+2020-08-25 15:02:14 37744 [Note] Semi-sync replication enabled on the master.
+2020-08-25 15:02:14 37744 [Note] Server hostname (bind-address): '*'; port: 3306
+2020-08-25 15:02:14 37744 [Note] IPv6 is available.
+2020-08-25 15:02:14 37744 [Note]   - '::' resolves to '::';
+2020-08-25 15:02:14 37744 [Note] Server socket created on IP: '::'.
+2020-08-25 15:02:14 37744 [Warning] Neither --relay-log nor --relay-log-index were used; so replication may break when this MySQL server acts as a slave and has his hostname changed!! Please use '--relay-log=mysql-01-relay-bin' to avoid this problem.
+2020-08-25 15:02:14 37744 [Warning] Recovery from master pos 180331730 and file mysql-bin.008083. Previous relay log pos and relay log file had been set to 15763027, ./mysql-01-relay-bin.020880 respectively.
+2020-08-25 15:02:14 37744 [Note] Slave I/O thread: Start asynchronous replication to master 'rpcyuser@chuangying.mysql.rds.aliyuncs.com:3306' in log 'mysql-bin.008083' at position 180331730
+2020-08-25 15:02:14 37744 [Warning] Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information.
+2020-08-25 15:02:14 37744 [Note] Slave SQL thread initialized, starting replication in log 'mysql-bin.008083' at position 180331730, relay log './mysql-01-relay-bin.020881' position: 4
+2020-08-25 15:02:14 37744 [Note] Event Scheduler: Loaded 0 events
+2020-08-25 15:02:14 37744 [Note] /usr/local/mysql/bin/mysqld: ready for connections.
+Version: '5.6.38-log'  socket: '/usr/local/mysql/data/mysql.sock'  port: 3306  MySQL Community Server (GPL)
+2020-08-25 15:02:14 37744 [Note] Slave I/O thread: connected to master 'rpcyuser@chuangying.mysql.rds.aliyuncs.com:3306',replication started in log 'mysql-bin.008083' at position 180331730
+2020-08-25 15:02:20 37744 [Warning] Timeout waiting for reply of binlog (file: mysql-bin.004602, pos: 12557), semi-sync up to file , position 0.
+2020-08-25 15:02:20 37744 [Note] Semi-sync replication switched OFF.
+2020-08-25 15:03:01 37744 [Warning] IP address '10.80.80.83' could not be resolved: Name or service not known
+2020-08-25 15:03:08 37744 [Warning] IP address '10.80.88.60' could not be resolved: Name or service not known
+2020-08-25 15:03:08 37744 [Note] Start semi-sync binlog_dump to slave (server_id: 808860), pos(, 4)
+2020-08-25 15:03:08 37744 [Note] Semi-sync replication switched ON with slave (server_id: 808860) at (mysql-bin.004602, 11905665)
+2020-08-26 02:00:02 37744 [Warning] IP address '10.80.16.72' could not be resolved: Name or service not known
+2020-08-27 20:22:04 37744 [Note] Error reading relay log event: slave SQL thread was killed
+2020-08-27 20:22:05 37744 [Note] Slave I/O thread killed while reading event
+2020-08-27 20:22:05 37744 [Note] Slave I/O thread exiting, read up to log 'mysql-bin.008132', position 496097016
+2020-08-27 20:30:09 37744 [Note] 'CHANGE MASTER TO executed'. Previous state master_host='', master_port= 3306, master_log_file='', master_log_pos= 4, master_bind=''. New state master_host='10.80.88.60', master_port= 3306, master_log_file='', master_log_pos= 4, master_bind=''.
+2020-08-27 20:30:16 37744 [Note] Slave I/O thread: Start asynchronous replication to master 'repl@10.80.88.60:3306' in log 'FIRST' at position 4
+2020-08-27 20:30:16 37744 [Warning] Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information.
+2020-08-27 20:30:16 37744 [Note] Slave SQL thread initialized, starting replication in log 'FIRST' at position 0, relay log './mysql-01-relay-bin.000001' position: 4
+2020-08-27 20:30:16 37744 [Note] Slave I/O thread: connected to master 'repl@10.80.88.60:3306',replication started in log 'FIRST' at position 4
+2020-08-27 20:30:18 37744 [ERROR] Read semi-sync reply network error:  (errno: 1158)
+2020-08-27 20:30:23 37744 [Warning] Timeout waiting for reply of binlog (file: mysql-bin.004695, pos: 638), semi-sync up to file mysql-bin.004694, position 194216062.
+2020-08-27 20:30:23 37744 [Note] Semi-sync replication switched OFF.
+2020-08-27 20:30:47 37744 [Note] Stop semi-sync binlog_dump to slave (server_id: 808860)
+2020-08-27 21:08:22 37744 [Note] Error reading relay log event: slave SQL thread was killed
+2020-08-27 21:08:22 37744 [Note] Slave I/O thread killed while reading event
+2020-08-27 21:08:22 37744 [Note] Slave I/O thread exiting, read up to log 'mysql-bin.001066', position 28625214
+2020-08-27 21:08:26 37744 [Note] Slave I/O thread: Start semi-sync replication to master 'repl@10.80.88.60:3306' in log 'mysql-bin.001066' at position 28625214
+2020-08-27 21:08:26 37744 [Warning] Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information.
+2020-08-27 21:08:26 37744 [Note] Slave SQL thread initialized, starting replication in log 'mysql-bin.001066' at position 28625214, relay log './mysql-01-relay-bin.000193' position: 28618025
+2020-08-27 21:08:26 37744 [Note] Slave I/O thread: connected to master 'repl@10.80.88.60:3306',replication started in log 'mysql-bin.001066' at position 28625214
+2020-08-30 00:12:18 37744 [Warning] IP address '10.100.53.55' could not be resolved: Name or service not known
+2020-09-03 13:50:34 37744 [Warning] IP address '10.80.80.154' could not be resolved: Name or service not known
+2020-10-10 17:12:37 37744 [Warning] IP address '10.80.80.152' could not be resolved: Name or service not known
+2020-10-26 15:45:26 37744 [Warning] IP address '10.100.53.56' could not be resolved: Name or service not known
+2020-11-19 15:23:34 37744 [Warning] IP address '10.80.80.244' could not be resolved: Name or service not known
+2020-11-19 15:37:04 37744 [Warning] IP address '10.80.80.243' could not be resolved: Name or service not known
+2020-11-27 11:26:38 37744 [Warning] IP address '10.80.80.213' could not be resolved: Name or service not known
+2020-12-02 10:03:23 37744 [Warning] IP address '10.80.80.214' could not be resolved: Name or service not known
+2021-04-07 11:03:20 37744 [ERROR] Slave SQL: Error 'Operation CREATE USER failed for 'cxianming'@'%'' on query. Default database: ''. Query: 'CREATE USER 'cxianming'@'%' IDENTIFIED BY PASSWORD '*802743F3615EEAE5E76FAB9B004DBB7888274FE7'', Error_code: 1396
+2021-04-07 11:03:20 37744 [Warning] Slave: Operation CREATE USER failed for 'cxianming'@'%' Error_code: 1396
+2021-04-07 11:03:20 37744 [ERROR] Error running query, slave SQL thread aborted. Fix the problem, and restart the slave SQL thread with "SLAVE START". We stopped at log 'mysql-bin.009080' position 131009698
+2021-04-07 12:19:28 37744 [Note] Slave I/O thread killed while reading event
+2021-04-07 12:19:28 37744 [Note] Slave I/O thread exiting, read up to log 'mysql-bin.009085', position 169165343
+2021-04-07 12:19:36 37744 [Note] Slave I/O thread: Start semi-sync replication to master 'repl@10.80.88.60:3306' in log 'mysql-bin.009085' at position 169165343
+2021-04-07 12:19:36 37744 [Warning] Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information.
+2021-04-07 12:19:36 37744 [Note] Slave SQL thread initialized, starting replication in log 'mysql-bin.009080' at position 131009698, relay log './mysql-01-relay-bin.023963' position: 131009548
+2021-04-07 12:19:36 37744 [ERROR] Slave SQL: Error 'Operation CREATE USER failed for 'cxianming'@'%'' on query. Default database: ''. Query: 'CREATE USER 'cxianming'@'%' IDENTIFIED BY PASSWORD '*802743F3615EEAE5E76FAB9B004DBB7888274FE7'', Error_code: 1396
+2021-04-07 12:19:36 37744 [Warning] Slave: Operation CREATE USER failed for 'cxianming'@'%' Error_code: 1396
+2021-04-07 12:19:36 37744 [ERROR] Error running query, slave SQL thread aborted. Fix the problem, and restart the slave SQL thread with "SLAVE START". We stopped at log 'mysql-bin.009080' position 131009698
+2021-04-07 12:19:36 37744 [Note] Slave I/O thread: connected to master 'repl@10.80.88.60:3306',replication started in log 'mysql-bin.009085' at position 169165343
+2021-04-07 12:20:40 37744 [Note] Slave I/O thread killed while reading event
+2021-04-07 12:20:40 37744 [Note] Slave I/O thread exiting, read up to log 'mysql-bin.009085', position 187019849
+2021-04-07 12:21:08 37744 [Note] Slave I/O thread: Start semi-sync replication to master 'repl@10.80.88.60:3306' in log 'mysql-bin.009085' at position 187019849
+2021-04-07 12:21:08 37744 [Warning] Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information.
+2021-04-07 12:21:08 37744 [Note] Slave I/O thread: connected to master 'repl@10.80.88.60:3306',replication started in log 'mysql-bin.009085' at position 187019849
+2021-04-07 12:21:08 37744 [Note] Slave SQL thread initialized, starting replication in log 'mysql-bin.009080' at position 131009698, relay log './mysql-01-relay-bin.023963' position: 131009548
+2021-04-07 12:21:08 37744 [ERROR] Slave SQL: Error 'Operation CREATE USER failed for 'cxianming'@'%'' on query. Default database: ''. Query: 'CREATE USER 'cxianming'@'%' IDENTIFIED BY PASSWORD '*802743F3615EEAE5E76FAB9B004DBB7888274FE7'', Error_code: 1396
+2021-04-07 12:21:08 37744 [Warning] Slave: Operation CREATE USER failed for 'cxianming'@'%' Error_code: 1396
+2021-04-07 12:21:08 37744 [ERROR] Error running query, slave SQL thread aborted. Fix the problem, and restart the slave SQL thread with "SLAVE START". We stopped at log 'mysql-bin.009080' position 131009698
+2021-04-07 12:21:27 37744 [Note] Slave I/O thread killed while reading event
+2021-04-07 12:21:27 37744 [Note] Slave I/O thread exiting, read up to log 'mysql-bin.009085', position 198863864
+2021-04-07 12:23:41 37744 [Note] Slave I/O thread: Start semi-sync replication to master 'repl@10.80.88.60:3306' in log 'mysql-bin.009085' at position 198863864
+2021-04-07 12:23:41 37744 [Warning] Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information.
+2021-04-07 12:23:41 37744 [Note] Slave I/O thread: connected to master 'repl@10.80.88.60:3306',replication started in log 'mysql-bin.009085' at position 198863864
+2021-04-07 12:23:41 37744 [Note] Slave SQL thread initialized, starting replication in log 'mysql-bin.009080' at position 131009698, relay log './mysql-01-relay-bin.023963' position: 131009548
+2021-04-07 12:24:49 37744 [ERROR] Slave SQL: Error 'Operation CREATE USER failed for 'cxianming'@'%'' on query. Default database: ''. Query: 'CREATE USER 'cxianming'@'%' IDENTIFIED BY PASSWORD '*802743F3615EEAE5E76FAB9B004DBB7888274FE7'', Error_code: 1396
+2021-04-07 12:24:49 37744 [Warning] Slave: Operation CREATE USER failed for 'cxianming'@'%' Error_code: 1396
+2021-04-07 12:24:49 37744 [ERROR] Error running query, slave SQL thread aborted. Fix the problem, and restart the slave SQL thread with "SLAVE START". We stopped at log 'mysql-bin.009081' position 22620677
+2021-04-07 13:42:33 37744 [Note] Slave I/O thread killed while reading event
+2021-04-07 13:42:33 37744 [Note] Slave I/O thread exiting, read up to log 'mysql-bin.009087', position 182503637
+2021-04-07 13:42:50 37744 [Note] Slave I/O thread: Start semi-sync replication to master 'repl@10.80.88.60:3306' in log 'mysql-bin.009087' at position 182503637
+2021-04-07 13:42:50 37744 [Warning] Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information.
+2021-04-07 13:42:50 37744 [Note] Slave I/O thread: connected to master 'repl@10.80.88.60:3306',replication started in log 'mysql-bin.009087' at position 182503637
+2021-04-07 13:42:50 37744 [Note] Slave SQL thread initialized, starting replication in log 'mysql-bin.009081' at position 22620677, relay log './mysql-01-relay-bin.023966' position: 22620527
+2021-04-07 13:42:50 37744 [ERROR] Slave SQL: Error 'Operation CREATE USER failed for 'cxianming'@'%'' on query. Default database: ''. Query: 'CREATE USER 'cxianming'@'%' IDENTIFIED BY PASSWORD '*802743F3615EEAE5E76FAB9B004DBB7888274FE7'', Error_code: 1396
+2021-04-07 13:42:50 37744 [Warning] Slave: Operation CREATE USER failed for 'cxianming'@'%' Error_code: 1396
+2021-04-07 13:42:50 37744 [ERROR] Error running query, slave SQL thread aborted. Fix the problem, and restart the slave SQL thread with "SLAVE START". We stopped at log 'mysql-bin.009081' position 22620677
+2021-04-07 13:42:55 37744 [Note] Slave I/O thread killed while reading event
+2021-04-07 13:42:55 37744 [Note] Slave I/O thread exiting, read up to log 'mysql-bin.009087', position 186234150
+2021-04-07 13:43:10 37744 [Note] Slave I/O thread: Start semi-sync replication to master 'repl@10.80.88.60:3306' in log 'mysql-bin.009087' at position 186234150
+2021-04-07 13:43:10 37744 [Warning] Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information.
+2021-04-07 13:43:10 37744 [Note] Slave SQL thread initialized, starting replication in log 'mysql-bin.009081' at position 22620677, relay log './mysql-01-relay-bin.023966' position: 22620527
+2021-04-07 13:43:10 37744 [Note] Slave I/O thread: connected to master 'repl@10.80.88.60:3306',replication started in log 'mysql-bin.009087' at position 186234150
+2021-04-07 13:43:41 37744 [ERROR] Slave SQL: Error 'Operation CREATE USER failed for 'cxianming'@'%'' on query. Default database: ''. Query: 'CREATE USER 'cxianming'@'%' IDENTIFIED BY PASSWORD '*802743F3615EEAE5E76FAB9B004DBB7888274FE7'', Error_code: 1396
+2021-04-07 13:43:41 37744 [Warning] Slave: Operation CREATE USER failed for 'cxianming'@'%' Error_code: 1396
+2021-04-07 13:43:41 37744 [ERROR] Error running query, slave SQL thread aborted. Fix the problem, and restart the slave SQL thread with "SLAVE START". We stopped at log 'mysql-bin.009081' position 92883647
+2021-04-07 14:12:40 37744 [Note] Slave I/O thread killed while reading event
+2021-04-07 14:12:40 37744 [Note] Slave I/O thread exiting, read up to log 'mysql-bin.009089', position 86046849
+2021-04-07 14:13:21 37744 [Note] Slave I/O thread: Start semi-sync replication to master 'repl@10.80.88.60:3306' in log 'mysql-bin.009089' at position 86046849
+2021-04-07 14:13:21 37744 [Warning] Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information.
+2021-04-07 14:13:21 37744 [Note] Slave I/O thread: connected to master 'repl@10.80.88.60:3306',replication started in log 'mysql-bin.009089' at position 86046849
+2021-04-07 14:13:21 37744 [Note] Slave SQL thread initialized, starting replication in log 'mysql-bin.009081' at position 92883647, relay log './mysql-01-relay-bin.023966' position: 92883497

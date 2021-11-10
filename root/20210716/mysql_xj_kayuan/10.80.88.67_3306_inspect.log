@@ -1,0 +1,1192 @@
+******************** MySQL--localhost--3306 ***********************
+--------------
+mysql  Ver 14.14 Distrib 5.7.24, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+
+Connection id:		110025
+Current database:	
+Current user:		root@localhost
+SSL:			Not in use
+Current pager:		stdout
+Using outfile:		''
+Using delimiter:	;
+Server version:		5.7.24-log MySQL Community Server (GPL)
+Protocol version:	10
+Connection:		Localhost via UNIX socket
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+UNIX socket:		/data/mysql/data/mysql.sock
+Uptime:			316 days 23 hours 43 min 16 sec
+
+Threads: 3  Questions: 1401845032  Slow queries: 100  Opens: 645  Flush tables: 1  Open tables: 583  Queries per second avg: 51.185
+--------------
+
+                             basedir :	/usr/local/mysql/
+                             datadir :	/data/mysql/data/
+                                     :	          
+               ####Business info#### :	          
+                       Database size :	bjpt_cx 32.009 GB db_monitor 0.077 GB sys 0.000 GB
+                       Tables counts :	bjpt_cx 4 db_monitor 1 sys 101
+                      Engines counts :	NULL 100 InnoDB 6
+                 Top 10 of big table :	cxt_transaction_index 155369650 accesslog 1122034 cxm_process_config 12006 cxm_basis_config 124 sys_config 6 cxm_url_config 0 x$schema_flattened_keys NULL user_summary_by_statement_latency NULL io_global_by_wait_by_latency NULL x$waits_by_host_by_latency NULL
+        Top 10 of auto increment num :	cxt_transaction_index 678585334 accesslog 1126652 cxm_process_config 56672 cxm_basis_config 195 cxm_url_config 1
+                                     :	          
+              ####Runtime status#### :	          
+                   Threads connected :	     2.00 
+                                 QPS :	     0.03 
+                                 TPS :	    25.58 
+                               Reads :	363676.00 
+                              Writes :	700470247.00 
+                   Read/Writes Ratio :	    0.05% 
+   MyISAM Key buffer read hits(>99%) :	   99.30% 
+        MyISAM Key buffer write hits :	    0.00% 
+                    Query cache hits :	    NULL% 
+       InnoDB buffer read hits(>95%) :	  100.00% 
+             Thread cache hits(>90%) :	   99.97% 
+             Slow queries per second :	     0.00 
+         Select full join per second :	     0.00 
+      Select full join in all select :	    0.00% 
+         MyiSAM lock contention(<1%) :	    0.00% 
+           Temp tables to disk ratio :	    1.50% 
+No innodb tables
+No primary key tables
+password equals user
+Global status:
+Aborted_clients	613
+Aborted_connects	15
+Binlog_cache_disk_use	4
+Binlog_cache_use	700470249
+Binlog_stmt_cache_disk_use	0
+Binlog_stmt_cache_use	67
+Bytes_received	821051935570
+Bytes_sent	21223174925
+Com_admin_commands	0
+Com_assign_to_keycache	0
+Com_alter_db	0
+Com_alter_db_upgrade	0
+Com_alter_event	0
+Com_alter_function	0
+Com_alter_instance	0
+Com_alter_procedure	0
+Com_alter_server	0
+Com_alter_table	7
+Com_alter_tablespace	0
+Com_alter_user	1
+Com_analyze	0
+Com_begin	700470249
+Com_binlog	0
+Com_call_procedure	0
+Com_change_db	64259
+Com_change_master	0
+Com_change_repl_filter	0
+Com_check	0
+Com_checksum	0
+Com_commit	700470249
+Com_create_db	2
+Com_create_event	1
+Com_create_function	0
+Com_create_index	0
+Com_create_procedure	0
+Com_create_server	0
+Com_create_table	2
+Com_create_trigger	0
+Com_create_udf	0
+Com_create_user	7
+Com_create_view	0
+Com_dealloc_sql	0
+Com_delete	2
+Com_delete_multi	0
+Com_do	0
+Com_drop_db	0
+Com_drop_event	0
+Com_drop_function	0
+Com_drop_index	0
+Com_drop_procedure	0
+Com_drop_server	0
+Com_drop_table	0
+Com_drop_trigger	0
+Com_drop_user	0
+Com_drop_view	0
+Com_empty_query	0
+Com_execute_sql	0
+Com_explain_other	0
+Com_flush	0
+Com_get_diagnostics	0
+Com_grant	46
+Com_ha_close	0
+Com_ha_open	0
+Com_ha_read	0
+Com_help	0
+Com_insert	679712046
+Com_insert_select	0
+Com_install_plugin	0
+Com_kill	16
+Com_load	0
+Com_lock_tables	0
+Com_optimize	0
+Com_preload_keys	0
+Com_prepare_sql	0
+Com_purge	0
+Com_purge_before_date	0
+Com_release_savepoint	0
+Com_rename_table	0
+Com_rename_user	0
+Com_repair	0
+Com_replace	0
+Com_replace_select	0
+Com_reset	0
+Com_resignal	0
+Com_revoke	0
+Com_revoke_all	0
+Com_rollback	0
+Com_rollback_to_savepoint	0
+Com_savepoint	0
+Com_select	363689
+Com_set_option	127939
+Com_signal	0
+Com_show_binlog_events	0
+Com_show_binlogs	0
+Com_show_charsets	5
+Com_show_collations	5
+Com_show_create_db	0
+Com_show_create_event	0
+Com_show_create_func	0
+Com_show_create_proc	0
+Com_show_create_table	63526
+Com_show_create_trigger	0
+Com_show_databases	748
+Com_show_engine_logs	0
+Com_show_engine_mutex	0
+Com_show_engine_status	0
+Com_show_events	0
+Com_show_errors	0
+Com_show_fields	213
+Com_show_function_code	0
+Com_show_function_status	94
+Com_show_grants	0
+Com_show_keys	4
+Com_show_master_status	0
+Com_show_open_tables	0
+Com_show_plugins	0
+Com_show_privileges	0
+Com_show_procedure_code	0
+Com_show_procedure_status	94
+Com_show_processlist	1
+Com_show_profile	0
+Com_show_profiles	0
+Com_show_relaylog_events	0
+Com_show_slave_hosts	0
+Com_show_slave_status	108968
+Com_show_status	448
+Com_show_storage_engines	14
+Com_show_table_status	168
+Com_show_tables	332
+Com_show_triggers	0
+Com_show_variables	64557
+Com_show_warnings	0
+Com_show_create_user	0
+Com_shutdown	0
+Com_slave_start	0
+Com_slave_stop	0
+Com_group_replication_start	0
+Com_group_replication_stop	0
+Com_stmt_execute	0
+Com_stmt_close	0
+Com_stmt_fetch	0
+Com_stmt_prepare	0
+Com_stmt_reset	0
+Com_stmt_send_long_data	0
+Com_truncate	1
+Com_uninstall_plugin	0
+Com_unlock_tables	0
+Com_update	20758201
+Com_update_multi	0
+Com_xa_commit	0
+Com_xa_end	0
+Com_xa_prepare	0
+Com_xa_recover	0
+Com_xa_rollback	0
+Com_xa_start	0
+Com_stmt_reprepare	0
+Connection_errors_accept	0
+Connection_errors_internal	0
+Connection_errors_max_connections	0
+Connection_errors_peer_address	0
+Connection_errors_select	0
+Connection_errors_tcpwrap	0
+Connections	110030
+Created_tmp_disk_tables	1052
+Created_tmp_files	91
+Created_tmp_tables	70156
+Delayed_errors	0
+Delayed_insert_threads	0
+Delayed_writes	0
+Flush_commands	1
+Handler_commit	3502978308
+Handler_delete	12217
+Handler_discover	0
+Handler_external_lock	2803260533
+Handler_mrr_init	0
+Handler_prepare	2801880996
+Handler_read_first	1346
+Handler_read_key	734272279
+Handler_read_last	100
+Handler_read_next	3714201
+Handler_read_prev	83776549
+Handler_read_rnd	21986443
+Handler_read_rnd_next	1138801011
+Handler_rollback	6
+Handler_savepoint	0
+Handler_savepoint_rollback	0
+Handler_update	731667792
+Handler_write	713644873
+Innodb_buffer_pool_dump_status	Dumping of buffer pool not started
+Innodb_buffer_pool_load_status	Buffer pool(s) load completed at 200901 17:36:14
+Innodb_buffer_pool_resize_status	Completed resizing buffer pool at 200902 16:11:19.
+Innodb_buffer_pool_pages_data	646996
+Innodb_buffer_pool_bytes_data	10600382464
+Innodb_buffer_pool_pages_dirty	20153
+Innodb_buffer_pool_bytes_dirty	330186752
+Innodb_buffer_pool_pages_flushed	180642088
+Innodb_buffer_pool_pages_free	8192
+Innodb_buffer_pool_pages_misc	92
+Innodb_buffer_pool_pages_total	655280
+Innodb_buffer_pool_read_ahead_rnd	0
+Innodb_buffer_pool_read_ahead	8727674
+Innodb_buffer_pool_read_ahead_evicted	0
+Innodb_buffer_pool_read_requests	27040932393
+Innodb_buffer_pool_reads	408027
+Innodb_buffer_pool_wait_free	0
+Innodb_buffer_pool_write_requests	14286924487
+Innodb_data_fsyncs	839626467
+Innodb_data_pending_fsyncs	0
+Innodb_data_pending_reads	0
+Innodb_data_pending_writes	0
+Innodb_data_read	153648124416
+Innodb_data_reads	9377979
+Innodb_data_writes	963803519
+Innodb_data_written	8023033203200
+Innodb_dblwr_pages_written	180632444
+Innodb_dblwr_writes	52567885
+Innodb_log_waits	0
+Innodb_log_write_requests	1847638562
+Innodb_log_writes	727733039
+Innodb_os_log_fsyncs	730217246
+Innodb_os_log_pending_fsyncs	0
+Innodb_os_log_pending_writes	0
+Innodb_os_log_written	2102721868800
+Innodb_page_size	16384
+Innodb_pages_created	17578223
+Innodb_pages_read	9377936
+Innodb_pages_written	180642088
+Innodb_row_lock_current_waits	0
+Innodb_row_lock_time	0
+Innodb_row_lock_time_avg	0
+Innodb_row_lock_time_max	0
+Innodb_row_lock_waits	0
+Innodb_rows_deleted	15135
+Innodb_rows_inserted	680944511
+Innodb_rows_read	1881633186
+Innodb_rows_updated	721763902
+Innodb_num_open_files	50
+Innodb_truncated_status_writes	0
+Innodb_available_undo_logs	128
+Key_blocks_not_flushed	0
+Key_blocks_unused	6684
+Key_blocks_used	14
+Key_read_requests	1705
+Key_reads	12
+Key_write_requests	118
+Key_writes	118
+Locked_connects	0
+Max_execution_time_exceeded	0
+Max_execution_time_set	0
+Max_execution_time_set_failed	0
+Max_used_connections	36
+Max_used_connections_time	2021-03-16 08:49:08
+Not_flushed_delayed_rows	0
+Ongoing_anonymous_transaction_count	0
+Open_files	50
+Open_streams	0
+Open_table_definitions	225
+Open_tables	588
+Opened_files	117894
+Opened_table_definitions	240
+Opened_tables	650
+Performance_schema_accounts_lost	0
+Performance_schema_cond_classes_lost	0
+Performance_schema_cond_instances_lost	0
+Performance_schema_digest_lost	0
+Performance_schema_file_classes_lost	0
+Performance_schema_file_handles_lost	0
+Performance_schema_file_instances_lost	3
+Performance_schema_hosts_lost	0
+Performance_schema_index_stat_lost	0
+Performance_schema_locker_lost	0
+Performance_schema_memory_classes_lost	0
+Performance_schema_metadata_lock_lost	0
+Performance_schema_mutex_classes_lost	0
+Performance_schema_mutex_instances_lost	0
+Performance_schema_nested_statement_lost	0
+Performance_schema_prepared_statements_lost	0
+Performance_schema_program_lost	0
+Performance_schema_rwlock_classes_lost	0
+Performance_schema_rwlock_instances_lost	0
+Performance_schema_session_connect_attrs_lost	0
+Performance_schema_socket_classes_lost	0
+Performance_schema_socket_instances_lost	0
+Performance_schema_stage_classes_lost	0
+Performance_schema_statement_classes_lost	0
+Performance_schema_table_handles_lost	0
+Performance_schema_table_instances_lost	0
+Performance_schema_table_lock_stat_lost	0
+Performance_schema_thread_classes_lost	0
+Performance_schema_thread_instances_lost	0
+Performance_schema_users_lost	0
+Prepared_stmt_count	0
+Qcache_free_blocks	0
+Qcache_free_memory	0
+Qcache_hits	0
+Qcache_inserts	0
+Qcache_lowmem_prunes	0
+Qcache_not_cached	0
+Qcache_queries_in_cache	0
+Qcache_total_blocks	0
+Queries	1401845048
+Questions	904477
+Rpl_semi_sync_master_clients	0
+Rpl_semi_sync_master_net_avg_wait_time	0
+Rpl_semi_sync_master_net_wait_time	0
+Rpl_semi_sync_master_net_waits	0
+Rpl_semi_sync_master_no_times	1
+Rpl_semi_sync_master_no_tx	700470316
+Rpl_semi_sync_master_status	OFF
+Rpl_semi_sync_master_timefunc_failures	0
+Rpl_semi_sync_master_tx_avg_wait_time	0
+Rpl_semi_sync_master_tx_wait_time	0
+Rpl_semi_sync_master_tx_waits	0
+Rpl_semi_sync_master_wait_pos_backtraverse	0
+Rpl_semi_sync_master_wait_sessions	0
+Rpl_semi_sync_master_yes_tx	0
+Rpl_semi_sync_slave_status	ON
+Select_full_join	3
+Select_full_range_join	0
+Select_range	11
+Select_range_check	0
+Select_scan	132636
+Slave_open_temp_tables	0
+Slow_launch_threads	0
+Slow_queries	100
+Sort_merge_passes	164
+Sort_range	9
+Sort_rows	1203986
+Sort_scan	459
+Ssl_accept_renegotiates	0
+Ssl_accepts	0
+Ssl_callback_cache_hits	0
+Ssl_cipher	
+Ssl_cipher_list	
+Ssl_client_connects	0
+Ssl_connect_renegotiates	0
+Ssl_ctx_verify_depth	0
+Ssl_ctx_verify_mode	0
+Ssl_default_timeout	0
+Ssl_finished_accepts	0
+Ssl_finished_connects	0
+Ssl_server_not_after	
+Ssl_server_not_before	
+Ssl_session_cache_hits	0
+Ssl_session_cache_misses	0
+Ssl_session_cache_mode	NONE
+Ssl_session_cache_overflows	0
+Ssl_session_cache_size	0
+Ssl_session_cache_timeouts	0
+Ssl_sessions_reused	0
+Ssl_used_session_cache_entries	0
+Ssl_verify_depth	0
+Ssl_verify_mode	0
+Ssl_version	
+Table_locks_immediate	65612
+Table_locks_waited	0
+Table_open_cache_hits	1401696404
+Table_open_cache_misses	650
+Table_open_cache_overflows	0
+Tc_log_max_pages_used	0
+Tc_log_page_size	0
+Tc_log_page_waits	0
+Threads_cached	17
+Threads_connected	1
+Threads_created	36
+Threads_running	1
+Uptime	27387796
+Uptime_since_flush_status	27387796
+Replication status:
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: 10.80.88.66
+                  Master_User: repl
+                  Master_Port: 3306
+                Connect_Retry: 60
+              Master_Log_File: mysql-bin.002980
+          Read_Master_Log_Pos: 176585516
+               Relay_Log_File: mysql-relay.008886
+                Relay_Log_Pos: 176585729
+        Relay_Master_Log_File: mysql-bin.002980
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
+              Replicate_Do_DB: 
+          Replicate_Ignore_DB: 
+           Replicate_Do_Table: 
+       Replicate_Ignore_Table: 
+      Replicate_Wild_Do_Table: 
+  Replicate_Wild_Ignore_Table: 
+                   Last_Errno: 0
+                   Last_Error: 
+                 Skip_Counter: 0
+          Exec_Master_Log_Pos: 176585516
+              Relay_Log_Space: 176586019
+              Until_Condition: None
+               Until_Log_File: 
+                Until_Log_Pos: 0
+           Master_SSL_Allowed: No
+           Master_SSL_CA_File: 
+           Master_SSL_CA_Path: 
+              Master_SSL_Cert: 
+            Master_SSL_Cipher: 
+               Master_SSL_Key: 
+        Seconds_Behind_Master: 0
+Master_SSL_Verify_Server_Cert: No
+                Last_IO_Errno: 0
+                Last_IO_Error: 
+               Last_SQL_Errno: 0
+               Last_SQL_Error: 
+  Replicate_Ignore_Server_Ids: 
+             Master_Server_Id: 88663306
+                  Master_UUID: 55fbb062-e770-11ea-9369-005056aa5999
+             Master_Info_File: mysql.slave_master_info
+                    SQL_Delay: 0
+          SQL_Remaining_Delay: NULL
+      Slave_SQL_Running_State: Slave has read all relay log; waiting for more updates
+           Master_Retry_Count: 86400
+                  Master_Bind: 
+      Last_IO_Error_Timestamp: 
+     Last_SQL_Error_Timestamp: 
+               Master_SSL_Crl: 
+           Master_SSL_Crlpath: 
+           Retrieved_Gtid_Set: 55fbb062-e770-11ea-9369-005056aa5999:529877-701000192
+            Executed_Gtid_Set: 55fbb062-e770-11ea-9369-005056aa5999:1-701000192,
+f72dc267-e841-11ea-8ec1-005056aacba9:1
+                Auto_Position: 1
+         Replicate_Rewrite_DB: 
+                 Channel_Name: 
+           Master_TLS_Version: 
+Global variables:
+auto_increment_increment	1
+auto_increment_offset	1
+autocommit	ON
+automatic_sp_privileges	ON
+avoid_temporal_upgrade	OFF
+back_log	250
+basedir	/usr/local/mysql/
+big_tables	OFF
+bind_address	*
+binlog_cache_size	32768
+binlog_checksum	CRC32
+binlog_direct_non_transactional_updates	OFF
+binlog_error_action	ABORT_SERVER
+binlog_format	ROW
+binlog_group_commit_sync_delay	0
+binlog_group_commit_sync_no_delay_count	0
+binlog_gtid_simple_recovery	ON
+binlog_max_flush_queue_time	0
+binlog_order_commits	ON
+binlog_row_image	FULL
+binlog_rows_query_log_events	ON
+binlog_stmt_cache_size	32768
+binlog_transaction_dependency_history_size	25000
+binlog_transaction_dependency_tracking	COMMIT_ORDER
+block_encryption_mode	aes-128-ecb
+bulk_insert_buffer_size	8388608
+character_set_client	utf8mb4
+character_set_connection	utf8mb4
+character_set_database	utf8mb4
+character_set_filesystem	binary
+character_set_results	utf8mb4
+character_set_server	utf8mb4
+character_set_system	utf8
+character_sets_dir	/usr/local/mysql/share/charsets/
+check_proxy_users	OFF
+collation_connection	utf8mb4_general_ci
+collation_database	utf8mb4_general_ci
+collation_server	utf8mb4_general_ci
+completion_type	NO_CHAIN
+concurrent_insert	AUTO
+connect_timeout	10
+core_file	OFF
+datadir	/data/mysql/data/
+date_format	%Y-%m-%d
+datetime_format	%Y-%m-%d %H:%i:%s
+default_authentication_plugin	mysql_native_password
+default_password_lifetime	0
+default_storage_engine	InnoDB
+default_tmp_storage_engine	InnoDB
+default_week_format	0
+delay_key_write	ON
+delayed_insert_limit	100
+delayed_insert_timeout	300
+delayed_queue_size	1000
+disabled_storage_engines	
+disconnect_on_expired_password	ON
+div_precision_increment	4
+end_markers_in_json	OFF
+enforce_gtid_consistency	ON
+eq_range_index_dive_limit	200
+event_scheduler	OFF
+expire_logs_days	14
+explicit_defaults_for_timestamp	ON
+flush	OFF
+flush_time	0
+foreign_key_checks	ON
+ft_boolean_syntax	+ -><()~*:""&|
+ft_max_word_len	84
+ft_min_word_len	4
+ft_query_expansion_limit	20
+ft_stopword_file	(built-in)
+general_log	OFF
+general_log_file	/data/mysql/data/10-80-88-67.log
+group_concat_max_len	1024
+gtid_executed	55fbb062-e770-11ea-9369-005056aa5999:1-701000192,\nf72dc267-e841-11ea-8ec1-005056aacba9:1
+gtid_executed_compression_period	1000
+gtid_mode	ON
+gtid_owned	
+gtid_purged	55fbb062-e770-11ea-9369-005056aa5999:1-673852077,\nf72dc267-e841-11ea-8ec1-005056aacba9:1
+have_compress	YES
+have_crypt	YES
+have_dynamic_loading	YES
+have_geometry	YES
+have_openssl	DISABLED
+have_profiling	YES
+have_query_cache	YES
+have_rtree_keys	YES
+have_ssl	DISABLED
+have_statement_timeout	YES
+have_symlink	YES
+host_cache_size	653
+hostname	10-80-88-67
+ignore_builtin_innodb	OFF
+ignore_db_dirs	
+init_connect	
+init_file	
+init_slave	
+innodb_adaptive_flushing	ON
+innodb_adaptive_flushing_lwm	10
+innodb_adaptive_hash_index	ON
+innodb_adaptive_hash_index_parts	8
+innodb_adaptive_max_sleep_delay	150000
+innodb_api_bk_commit_interval	5
+innodb_api_disable_rowlock	OFF
+innodb_api_enable_binlog	OFF
+innodb_api_enable_mdl	OFF
+innodb_api_trx_level	0
+innodb_autoextend_increment	64
+innodb_autoinc_lock_mode	1
+innodb_buffer_pool_chunk_size	134217728
+innodb_buffer_pool_dump_at_shutdown	ON
+innodb_buffer_pool_dump_now	OFF
+innodb_buffer_pool_dump_pct	25
+innodb_buffer_pool_filename	ib_buffer_pool
+innodb_buffer_pool_instances	8
+innodb_buffer_pool_load_abort	OFF
+innodb_buffer_pool_load_at_startup	ON
+innodb_buffer_pool_load_now	OFF
+innodb_buffer_pool_size	10737418240
+innodb_change_buffer_max_size	25
+innodb_change_buffering	all
+innodb_checksum_algorithm	innodb
+innodb_checksums	ON
+innodb_cmp_per_index_enabled	OFF
+innodb_commit_concurrency	0
+innodb_compression_failure_threshold_pct	5
+innodb_compression_level	6
+innodb_compression_pad_pct_max	50
+innodb_concurrency_tickets	5000
+innodb_data_file_path	ibdata1:200M:autoextend
+innodb_data_home_dir	
+innodb_deadlock_detect	ON
+innodb_default_row_format	dynamic
+innodb_disable_sort_file_cache	OFF
+innodb_doublewrite	ON
+innodb_fast_shutdown	1
+innodb_file_format	Barracuda
+innodb_file_format_check	ON
+innodb_file_format_max	Barracuda
+innodb_file_per_table	ON
+innodb_fill_factor	100
+innodb_flush_log_at_timeout	1
+innodb_flush_log_at_trx_commit	1
+innodb_flush_method	O_DIRECT
+innodb_flush_neighbors	1
+innodb_flush_sync	ON
+innodb_flushing_avg_loops	30
+innodb_force_load_corrupted	OFF
+innodb_force_recovery	0
+innodb_ft_aux_table	
+innodb_ft_cache_size	8000000
+innodb_ft_enable_diag_print	OFF
+innodb_ft_enable_stopword	ON
+innodb_ft_max_token_size	84
+innodb_ft_min_token_size	3
+innodb_ft_num_word_optimize	2000
+innodb_ft_result_cache_limit	2000000000
+innodb_ft_server_stopword_table	
+innodb_ft_sort_pll_degree	2
+innodb_ft_total_cache_size	640000000
+innodb_ft_user_stopword_table	
+innodb_io_capacity	800
+innodb_io_capacity_max	2000
+innodb_large_prefix	ON
+innodb_lock_wait_timeout	5
+innodb_locks_unsafe_for_binlog	OFF
+innodb_log_buffer_size	16777216
+innodb_log_checksums	ON
+innodb_log_compressed_pages	ON
+innodb_log_file_size	1572864000
+innodb_log_files_in_group	2
+innodb_log_group_home_dir	./
+innodb_log_write_ahead_size	8192
+innodb_lru_scan_depth	1024
+innodb_max_dirty_pages_pct	75.000000
+innodb_max_dirty_pages_pct_lwm	0.000000
+innodb_max_purge_lag	0
+innodb_max_purge_lag_delay	0
+innodb_max_undo_log_size	1073741824
+innodb_monitor_disable	
+innodb_monitor_enable	
+innodb_monitor_reset	
+innodb_monitor_reset_all	
+innodb_numa_interleave	OFF
+innodb_old_blocks_pct	37
+innodb_old_blocks_time	1000
+innodb_online_alter_log_max_size	134217728
+innodb_open_files	2000
+innodb_optimize_fulltext_only	OFF
+innodb_page_cleaners	4
+innodb_page_size	16384
+innodb_print_all_deadlocks	ON
+innodb_purge_batch_size	300
+innodb_purge_rseg_truncate_frequency	128
+innodb_purge_threads	4
+innodb_random_read_ahead	OFF
+innodb_read_ahead_threshold	56
+innodb_read_io_threads	4
+innodb_read_only	OFF
+innodb_replication_delay	0
+innodb_rollback_on_timeout	OFF
+innodb_rollback_segments	128
+innodb_sort_buffer_size	67108864
+innodb_spin_wait_delay	6
+innodb_stats_auto_recalc	ON
+innodb_stats_include_delete_marked	OFF
+innodb_stats_method	nulls_equal
+innodb_stats_on_metadata	OFF
+innodb_stats_persistent	ON
+innodb_stats_persistent_sample_pages	20
+innodb_stats_sample_pages	8
+innodb_stats_transient_sample_pages	8
+innodb_status_output	OFF
+innodb_status_output_locks	OFF
+innodb_strict_mode	ON
+innodb_support_xa	ON
+innodb_sync_array_size	1
+innodb_sync_spin_loops	30
+innodb_table_locks	ON
+innodb_temp_data_file_path	ibtmp1:12M:autoextend
+innodb_thread_concurrency	0
+innodb_thread_sleep_delay	10000
+innodb_tmpdir	
+innodb_undo_directory	./
+innodb_undo_log_truncate	OFF
+innodb_undo_logs	128
+innodb_undo_tablespaces	0
+innodb_use_native_aio	ON
+innodb_version	5.7.24
+innodb_write_io_threads	4
+interactive_timeout	28800
+internal_tmp_disk_storage_engine	InnoDB
+join_buffer_size	8388608
+keep_files_on_create	OFF
+key_buffer_size	8388608
+key_cache_age_threshold	300
+key_cache_block_size	1024
+key_cache_division_limit	100
+keyring_operations	ON
+large_files_support	ON
+large_page_size	0
+large_pages	OFF
+lc_messages	en_US
+lc_messages_dir	/usr/local/mysql/share/
+lc_time_names	en_US
+license	GPL
+local_infile	ON
+lock_wait_timeout	31536000
+locked_in_memory	OFF
+log_bin	ON
+log_bin_basename	/data/mysql/data/mysql-bin
+log_bin_index	/data/mysql/data/mysql-bin.index
+log_bin_trust_function_creators	ON
+log_bin_use_v1_row_events	OFF
+log_builtin_as_identified_by_password	OFF
+log_error	./mysql-error.log
+log_error_verbosity	3
+log_output	FILE
+log_queries_not_using_indexes	ON
+log_slave_updates	ON
+log_slow_admin_statements	ON
+log_slow_slave_statements	ON
+log_statements_unsafe_for_binlog	ON
+log_syslog	OFF
+log_syslog_facility	daemon
+log_syslog_include_pid	ON
+log_syslog_tag	
+log_throttle_queries_not_using_indexes	10
+log_timestamps	UTC
+log_warnings	2
+long_query_time	2.000000
+low_priority_updates	OFF
+lower_case_file_system	OFF
+lower_case_table_names	1
+master_info_repository	TABLE
+master_verify_checksum	OFF
+max_allowed_packet	33554432
+max_binlog_cache_size	18446744073709547520
+max_binlog_size	268435456
+max_binlog_stmt_cache_size	18446744073709547520
+max_connect_errors	100000
+max_connections	1000
+max_delayed_threads	20
+max_digest_length	1024
+max_error_count	64
+max_execution_time	0
+max_heap_table_size	16777216
+max_insert_delayed_threads	20
+max_join_size	18446744073709551615
+max_length_for_sort_data	1024
+max_points_in_geometry	65536
+max_prepared_stmt_count	16382
+max_relay_log_size	0
+max_seeks_for_key	18446744073709551615
+max_sort_length	1024
+max_sp_recursion_depth	0
+max_tmp_tables	32
+max_user_connections	0
+max_write_lock_count	18446744073709551615
+metadata_locks_cache_size	1024
+metadata_locks_hash_instances	8
+min_examined_row_limit	1000
+multi_range_count	256
+myisam_data_pointer_size	6
+myisam_max_sort_file_size	9223372036853727232
+myisam_mmap_size	18446744073709551615
+myisam_recover_options	OFF
+myisam_repair_threads	1
+myisam_sort_buffer_size	8388608
+myisam_stats_method	nulls_unequal
+myisam_use_mmap	OFF
+mysql_native_password_proxy_users	OFF
+net_buffer_length	16384
+net_read_timeout	30
+net_retry_count	10
+net_write_timeout	60
+new	OFF
+ngram_token_size	2
+offline_mode	OFF
+old	OFF
+old_alter_table	OFF
+old_passwords	0
+open_files_limit	65535
+optimizer_prune_level	1
+optimizer_search_depth	62
+optimizer_switch	index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,engine_condition_pushdown=on,index_condition_pushdown=on,mrr=on,mrr_cost_based=on,block_nested_loop=on,batched_key_access=off,materialization=on,semijoin=on,loosescan=on,firstmatch=on,duplicateweedout=on,subquery_materialization_cost_based=on,use_index_extensions=on,condition_fanout_filter=on,derived_merge=on
+optimizer_trace	enabled=off,one_line=off
+optimizer_trace_features	greedy_search=on,range_optimizer=on,dynamic_range=on,repeated_subselect=on
+optimizer_trace_limit	1
+optimizer_trace_max_mem_size	16384
+optimizer_trace_offset	-1
+parser_max_mem_size	18446744073709551615
+performance_schema	ON
+performance_schema_accounts_size	-1
+performance_schema_digests_size	10000
+performance_schema_events_stages_history_long_size	10000
+performance_schema_events_stages_history_size	10
+performance_schema_events_statements_history_long_size	10000
+performance_schema_events_statements_history_size	10
+performance_schema_events_transactions_history_long_size	10000
+performance_schema_events_transactions_history_size	10
+performance_schema_events_waits_history_long_size	10000
+performance_schema_events_waits_history_size	10
+performance_schema_hosts_size	-1
+performance_schema_max_cond_classes	80
+performance_schema_max_cond_instances	-1
+performance_schema_max_digest_length	1024
+performance_schema_max_file_classes	80
+performance_schema_max_file_handles	32768
+performance_schema_max_file_instances	-1
+performance_schema_max_index_stat	-1
+performance_schema_max_memory_classes	320
+performance_schema_max_metadata_locks	-1
+performance_schema_max_mutex_classes	210
+performance_schema_max_mutex_instances	-1
+performance_schema_max_prepared_statements_instances	-1
+performance_schema_max_program_instances	-1
+performance_schema_max_rwlock_classes	40
+performance_schema_max_rwlock_instances	-1
+performance_schema_max_socket_classes	10
+performance_schema_max_socket_instances	-1
+performance_schema_max_sql_text_length	1024
+performance_schema_max_stage_classes	150
+performance_schema_max_statement_classes	193
+performance_schema_max_statement_stack	10
+performance_schema_max_table_handles	-1
+performance_schema_max_table_instances	-1
+performance_schema_max_table_lock_stat	-1
+performance_schema_max_thread_classes	50
+performance_schema_max_thread_instances	-1
+performance_schema_session_connect_attrs_size	512
+performance_schema_setup_actors_size	-1
+performance_schema_setup_objects_size	-1
+performance_schema_users_size	-1
+pid_file	/data/mysql/data/mysql.pid
+plugin_dir	/usr/local/mysql/lib/plugin/
+port	3306
+preload_buffer_size	32768
+profiling	OFF
+profiling_history_size	15
+protocol_version	10
+query_alloc_block_size	8192
+query_cache_limit	1048576
+query_cache_min_res_unit	4096
+query_cache_size	0
+query_cache_type	OFF
+query_cache_wlock_invalidate	OFF
+query_prealloc_size	8192
+range_alloc_block_size	4096
+range_optimizer_max_mem_size	8388608
+rbr_exec_mode	STRICT
+read_buffer_size	8388608
+read_only	ON
+read_rnd_buffer_size	8388608
+relay_log	mysql-relay.log
+relay_log_basename	/data/mysql/data/mysql-relay
+relay_log_index	/data/mysql/data/mysql-relay.index
+relay_log_info_file	relay-log.info
+relay_log_info_repository	TABLE
+relay_log_purge	ON
+relay_log_recovery	ON
+relay_log_space_limit	0
+report_host	
+report_password	
+report_port	3306
+report_user	
+require_secure_transport	OFF
+rpl_semi_sync_master_enabled	ON
+rpl_semi_sync_master_timeout	5000
+rpl_semi_sync_master_trace_level	32
+rpl_semi_sync_master_wait_for_slave_count	1
+rpl_semi_sync_master_wait_no_slave	ON
+rpl_semi_sync_master_wait_point	AFTER_SYNC
+rpl_semi_sync_slave_enabled	ON
+rpl_semi_sync_slave_trace_level	32
+rpl_stop_slave_timeout	31536000
+secure_auth	ON
+secure_file_priv	
+server_id	88673306
+server_id_bits	32
+server_uuid	f72dc267-e841-11ea-8ec1-005056aacba9
+session_track_gtids	OFF
+session_track_schema	ON
+session_track_state_change	OFF
+session_track_system_variables	time_zone,autocommit,character_set_client,character_set_results,character_set_connection
+session_track_transaction_info	OFF
+sha256_password_proxy_users	OFF
+show_compatibility_56	OFF
+show_create_table_verbosity	OFF
+show_old_temporals	OFF
+skip_external_locking	ON
+skip_name_resolve	ON
+skip_networking	OFF
+skip_show_database	OFF
+slave_allow_batching	OFF
+slave_checkpoint_group	512
+slave_checkpoint_period	300
+slave_compressed_protocol	OFF
+slave_exec_mode	STRICT
+slave_load_tmpdir	/data/mysql/mysql_tmp
+slave_max_allowed_packet	1073741824
+slave_net_timeout	60
+slave_parallel_type	DATABASE
+slave_parallel_workers	0
+slave_pending_jobs_size_max	16777216
+slave_preserve_commit_order	OFF
+slave_rows_search_algorithms	TABLE_SCAN,INDEX_SCAN
+slave_skip_errors	OFF
+slave_sql_verify_checksum	ON
+slave_transaction_retries	10
+slave_type_conversions	
+slow_launch_time	2
+slow_query_log	ON
+slow_query_log_file	mysql-slow.log
+socket	/data/mysql/data/mysql.sock
+sort_buffer_size	2097152
+sql_auto_is_null	OFF
+sql_big_selects	ON
+sql_buffer_result	OFF
+sql_log_off	OFF
+sql_mode	ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+sql_notes	ON
+sql_quote_show_create	ON
+sql_safe_updates	OFF
+sql_select_limit	18446744073709551615
+sql_slave_skip_counter	0
+sql_warnings	OFF
+ssl_ca	
+ssl_capath	
+ssl_cert	
+ssl_cipher	
+ssl_crl	
+ssl_crlpath	
+ssl_key	
+stored_program_cache	256
+super_read_only	OFF
+sync_binlog	1
+sync_frm	ON
+sync_master_info	10000
+sync_relay_log	10000
+sync_relay_log_info	10000
+system_time_zone	CST
+table_definition_cache	1400
+table_open_cache	2000
+table_open_cache_instances	16
+thread_cache_size	18
+thread_handling	one-thread-per-connection
+thread_stack	262144
+time_format	%H:%i:%s
+time_zone	SYSTEM
+tls_version	TLSv1,TLSv1.1
+tmp_table_size	67108864
+tmpdir	/data/mysql/mysql_tmp
+transaction_alloc_block_size	8192
+transaction_isolation	REPEATABLE-READ
+transaction_prealloc_size	4096
+transaction_read_only	OFF
+transaction_write_set_extraction	OFF
+tx_isolation	REPEATABLE-READ
+tx_read_only	OFF
+unique_checks	ON
+updatable_views_with_limit	YES
+version	5.7.24-log
+version_comment	MySQL Community Server (GPL)
+version_compile_machine	x86_64
+version_compile_os	linux-glibc2.12
+wait_timeout	28800
+ERROR LOG:
+2021-02-02T09:53:17.803705Z 39205 [Note] Aborted connection 39205 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got timeout reading communication packets)
+2021-02-03T02:57:01.580807Z 39662 [Note] Aborted connection 39662 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-02-03T04:20:59.539748Z 39650 [Note] Aborted connection 39650 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-03T04:29:43.827811Z 39653 [Note] Aborted connection 39653 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-03T05:54:27.804477Z 39640 [Note] Aborted connection 39640 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-03T09:38:50.515668Z 39747 [Note] Aborted connection 39747 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-03T09:48:00.374461Z 39780 [Note] Aborted connection 39780 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-02-03T11:01:18.483720Z 39777 [Note] Aborted connection 39777 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-03T11:11:07.966017Z 39761 [Note] Aborted connection 39761 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-03T11:11:07.966152Z 39764 [Note] Aborted connection 39764 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-04T03:11:00.343682Z 40108 [Note] Aborted connection 40108 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-02-04T03:11:38.164417Z 40107 [Note] Aborted connection 40107 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-04T03:11:38.164608Z 40110 [Note] Aborted connection 40110 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-04T03:43:25.203779Z 40084 [Note] Aborted connection 40084 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-04T03:43:25.203796Z 40083 [Note] Aborted connection 40083 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-04T05:21:19.891793Z 40119 [Note] Aborted connection 40119 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-04T05:21:19.891798Z 40118 [Note] Aborted connection 40118 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-04T09:55:22.771765Z 40203 [Note] Aborted connection 40203 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-04T09:55:22.771775Z 40202 [Note] Aborted connection 40202 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-05T05:19:11.379762Z 40557 [Note] Aborted connection 40557 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-02-05T06:16:42.734287Z 40607 [Note] Aborted connection 40607 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-02-05T07:04:10.794661Z 40631 [Note] Aborted connection 40631 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-02-05T09:17:01.843705Z 40633 [Note] Aborted connection 40633 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-02-05T09:55:29.210984Z 40674 [Note] Aborted connection 40674 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-07T02:58:24.359407Z 41423 [Note] Aborted connection 41423 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-07T05:09:07.219707Z 41425 [Note] Aborted connection 41425 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-07T05:29:19.635679Z 41433 [Note] Aborted connection 41433 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-02-07T07:17:35.020588Z 41505 [Note] Aborted connection 41505 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-02-07T09:34:07.062971Z 41507 [Note] Aborted connection 41507 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-07T10:43:21.235748Z 41532 [Note] Aborted connection 41532 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-08T05:37:40.371783Z 41871 [Note] Aborted connection 41871 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-08T09:50:31.955887Z 41949 [Note] Aborted connection 41949 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-09T06:04:50.734995Z 42321 [Note] Aborted connection 42321 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-09T08:10:44.232904Z 42383 [Note] Aborted connection 42383 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-02-09T12:38:11.933918Z 42393 [Note] Aborted connection 42393 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-18T05:08:37.523767Z 46187 [Note] Aborted connection 46187 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-19T09:25:24.648290Z 46600 [Note] Aborted connection 46600 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-19T10:58:31.571862Z 46728 [Note] Aborted connection 46728 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-19T10:58:31.571870Z 46729 [Note] Aborted connection 46729 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-20T09:53:02.831698Z 47037 [Note] Aborted connection 47037 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got timeout reading communication packets)
+2021-02-20T09:53:21.949523Z 47038 [Note] Aborted connection 47038 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.243' (Got timeout reading communication packets)
+2021-02-22T08:32:56.873679Z 47988 [Note] Aborted connection 47988 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-22T10:07:14.311046Z 47912 [Note] Aborted connection 47912 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got timeout reading communication packets)
+2021-02-22T10:58:50.662231Z 48031 [Note] Aborted connection 48031 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-23T03:59:12.940974Z 48341 [Note] Aborted connection 48341 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-02-23T03:59:29.299690Z 48342 [Note] Aborted connection 48342 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-02-23T11:13:40.879856Z 48505 [Note] Aborted connection 48505 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-02-24T01:28:12.470847Z 48761 [Note] Aborted connection 48761 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-02-24T01:28:12.470875Z 48762 [Note] Aborted connection 48762 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-02-24T05:38:29.523719Z 48808 [Note] Aborted connection 48808 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-24T09:13:40.115703Z 48876 [Note] Aborted connection 48876 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-25T08:19:45.299885Z 49292 [Note] Aborted connection 49292 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-25T08:58:31.827702Z 49304 [Note] Aborted connection 49304 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-02-26T05:57:36.335619Z 49631 [Note] Aborted connection 49631 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-26T06:20:51.091797Z 49691 [Note] Aborted connection 49691 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-02-26T06:26:09.921204Z 49731 [Note] Aborted connection 49731 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-02-26T10:05:39.923512Z 49802 [Note] Aborted connection 49802 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-02-26T10:17:39.908850Z 49792 [Note] Aborted connection 49792 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-02-26T10:58:50.003698Z 49776 [Note] Aborted connection 49776 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-02-26T12:16:55.827699Z 49805 [Note] Aborted connection 49805 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-01T08:23:38.771751Z 51031 [Note] Aborted connection 51031 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-01T10:45:42.985993Z 51080 [Note] Aborted connection 51080 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-03-02T04:00:17.427728Z 51387 [Note] Aborted connection 51387 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-02T04:49:42.931735Z 51404 [Note] Aborted connection 51404 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-02T10:02:35.821789Z 51531 [Note] Aborted connection 51531 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-03-03T05:49:08.028675Z 51892 [Note] Aborted connection 51892 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-03-03T05:55:48.098927Z 51894 [Note] Aborted connection 51894 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-03-03T08:05:06.707748Z 51898 [Note] Aborted connection 51898 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-03T10:43:10.553548Z 51981 [Note] Aborted connection 51981 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-03-04T03:48:02.217968Z 52257 [Note] Aborted connection 52257 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-05T05:43:12.659809Z 52729 [Note] Aborted connection 52729 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-05T05:44:07.443714Z 52728 [Note] Aborted connection 52728 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-08T05:44:42.259764Z 54029 [Note] Aborted connection 54029 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-08T05:44:42.259807Z 54028 [Note] Aborted connection 54028 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-08T05:44:42.259828Z 54027 [Note] Aborted connection 54027 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-09T04:57:20.659826Z 54447 [Note] Aborted connection 54447 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-10T04:42:45.139769Z 54878 [Note] Aborted connection 54878 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-10T11:45:27.589309Z 55005 [Note] Aborted connection 55005 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-11T03:03:14.629697Z 55321 [Note] Aborted connection 55321 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-03-11T03:40:19.232741Z 55328 [Note] Aborted connection 55328 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-03-11T03:40:19.232881Z 55327 [Note] Aborted connection 55327 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-03-11T10:38:59.876679Z 55454 [Note] Aborted connection 55454 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-03-11T10:38:59.876897Z 55453 [Note] Aborted connection 55453 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-03-11T10:41:18.523763Z 55461 [Note] Aborted connection 55461 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-03-12T04:01:00.435760Z 55735 [Note] Aborted connection 55735 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-12T04:59:54.154420Z 55790 [Note] Aborted connection 55790 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-03-12T14:00:06.931728Z 55917 [Note] Aborted connection 55917 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-12T14:00:06.931735Z 55918 [Note] Aborted connection 55918 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-12T15:47:39.524286Z 55939 [Note] Aborted connection 55939 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-03-12T15:47:39.525391Z 55963 [Note] Aborted connection 55963 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-03-12T15:55:53.747851Z 55955 [Note] Aborted connection 55955 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-15T01:22:56.367159Z 57030 [Note] Access denied for user 'system'@'10.80.80.23' (using password: YES)
+2021-03-15T04:32:03.091726Z 57049 [Note] Aborted connection 57049 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-15T06:43:08.931055Z 57075 [Note] Aborted connection 57075 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-03-15T10:40:59.377759Z 57064 [Note] Aborted connection 57064 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-03-16T03:32:07.827719Z 57468 [Note] Aborted connection 57468 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-16T09:46:30.306572Z 57583 [Note] Aborted connection 57583 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-17T09:19:42.480377Z 58046 [Note] Aborted connection 58046 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-03-17T11:06:07.251678Z 58038 [Note] Aborted connection 58038 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-17T11:30:58.195708Z 58048 [Note] Aborted connection 58048 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-18T09:55:16.627759Z 58453 [Note] Aborted connection 58453 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-18T10:05:24.076887Z 58490 [Note] Aborted connection 58490 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-03-19T03:33:08.267603Z 58772 [Note] Aborted connection 58772 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-19T08:59:43.507745Z 58872 [Note] Aborted connection 58872 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-19T14:40:26.863659Z 59014 [Note] Aborted connection 59014 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-03-22T06:36:00.433988Z 60127 [Note] Aborted connection 60127 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-22T08:18:40.787741Z 60161 [Note] Aborted connection 60161 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-22T10:23:00.049727Z 60090 [Note] Aborted connection 60090 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-03-23T03:42:29.395689Z 60512 [Note] Aborted connection 60512 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-23T11:54:33.363772Z 60659 [Note] Aborted connection 60659 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-24T03:34:27.091888Z 60941 [Note] Aborted connection 60941 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-24T09:07:34.344923Z 60961 [Note] Aborted connection 60961 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-03-24T09:41:27.187730Z 61056 [Note] Aborted connection 61056 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-25T05:41:22.156816Z 61400 [Note] Aborted connection 61400 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-03-25T12:39:06.003818Z 61541 [Note] Aborted connection 61541 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-25T14:04:50.579884Z 61568 [Note] Aborted connection 61568 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-25T14:28:36.197959Z 61538 [Note] Aborted connection 61538 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-03-25T15:24:01.939856Z 61594 [Note] Aborted connection 61594 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-26T03:37:29.363670Z 61814 [Note] Aborted connection 61814 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-03-26T05:07:36.083757Z 61842 [Note] Aborted connection 61842 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-26T08:47:41.587811Z 61911 [Note] Aborted connection 61911 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-26T09:22:16.841077Z 61958 [Note] Aborted connection 61958 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-03-26T10:42:59.120733Z 61968 [Note] Aborted connection 61968 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-03-29T05:09:42.035758Z 63142 [Note] Aborted connection 63142 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-30T02:35:29.238882Z 63570 [Note] Aborted connection 63570 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-03-31T03:30:03.923737Z 63979 [Note] Aborted connection 63979 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-31T04:50:53.588034Z 64005 [Note] Aborted connection 64005 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-03-31T11:16:56.114623Z 64017 [Note] Aborted connection 64017 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.243' (Got timeout reading communication packets)
+2021-04-01T09:12:07.650895Z 64548 [Note] Aborted connection 64548 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-04-01T10:04:31.635735Z 64533 [Note] Aborted connection 64533 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-02T08:11:06.115842Z 64973 [Note] Aborted connection 64973 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-04-02T10:22:42.195875Z 64975 [Note] Aborted connection 64975 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-07T07:54:22.633901Z 67093 [Note] Aborted connection 67093 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-08T09:37:20.956819Z 67598 [Note] Access denied for user 'root'@'localhost' (using password: NO)
+2021-04-08T10:04:03.105827Z 67619 [Note] Aborted connection 67619 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-04-20T09:31:28.134062Z 72799 [Note] Aborted connection 72799 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-04-20T09:31:28.297970Z 72800 [Note] Aborted connection 72800 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-04-20T09:36:18.963861Z 72761 [Note] Aborted connection 72761 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-20T10:12:03.412311Z 72815 [Note] Aborted connection 72815 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-04-22T08:09:14.515734Z 73604 [Note] Aborted connection 73604 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-22T08:09:14.515760Z 73603 [Note] Aborted connection 73603 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-22T10:26:44.349197Z 73686 [Note] Access denied for user 'sjinfang'@'10.80.80.243' (using password: YES)
+2021-04-25T02:13:35.924916Z 74837 [Note] Access denied for user 'sjinfang'@'10.80.80.243' (using password: YES)
+2021-04-25T08:31:43.635684Z 74912 [Note] Aborted connection 74912 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-25T08:42:15.955699Z 74911 [Note] Aborted connection 74911 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-25T10:09:00.129706Z 74835 [Note] Aborted connection 74835 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.244' (Got timeout reading communication packets)
+2021-04-27T10:06:36.563760Z 75807 [Note] Aborted connection 75807 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-27T10:06:37.587726Z 75806 [Note] Aborted connection 75806 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-27T11:51:11.635883Z 75831 [Note] Aborted connection 75831 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-27T11:51:11.635897Z 75832 [Note] Aborted connection 75832 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-27T14:25:12.211849Z 75889 [Note] Aborted connection 75889 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-27T14:27:52.979813Z 75888 [Note] Aborted connection 75888 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-27T16:15:14.963771Z 75926 [Note] Aborted connection 75926 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-04-30T11:22:18.492875Z 77173 [Note] Access denied for user 'sjinfang'@'10.80.80.243' (using password: YES)
+2021-05-28T16:04:04.756059Z 89248 [Note] Aborted connection 89248 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-05-28T16:04:04.756062Z 89249 [Note] Aborted connection 89249 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.243' (Got an error reading communication packets)
+2021-06-01T03:44:34.502302Z 90828 [Note] Aborted connection 90828 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-06-01T03:44:34.502651Z 90829 [Note] Aborted connection 90829 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-06-02T08:51:46.835766Z 91324 [Note] Aborted connection 91324 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-06-02T08:51:46.835771Z 91323 [Note] Aborted connection 91323 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-06-04T08:03:49.907696Z 92174 [Note] Aborted connection 92174 to db: 'unconnected' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-06-04T11:01:49.203750Z 92228 [Note] Aborted connection 92228 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-06-04T11:01:52.275731Z 92230 [Note] Aborted connection 92230 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-06-04T16:13:10.035967Z 92327 [Note] Aborted connection 92327 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-06-04T16:13:17.203791Z 92326 [Note] Aborted connection 92326 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-06-08T15:07:17.714467Z 93930 [Note] Aborted connection 93930 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.243' (Got timeout reading communication packets)
+2021-06-08T15:07:17.729387Z 93929 [Note] Aborted connection 93929 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.243' (Got timeout reading communication packets)
+2021-06-10T09:08:33.427753Z 94802 [Note] Aborted connection 94802 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-06-10T09:08:33.939797Z 94800 [Note] Aborted connection 94800 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-06-17T07:06:22.887933Z 97818 [Note] Aborted connection 97818 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-06-17T07:06:22.888778Z 97817 [Note] Aborted connection 97817 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-06-17T07:06:22.889003Z 97824 [Note] Aborted connection 97824 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-06-17T07:46:07.309438Z 97844 [Note] Aborted connection 97844 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got an error reading communication packets)
+2021-06-17T10:11:48.631032Z 97887 [Note] Aborted connection 97887 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-06-17T10:11:48.631034Z 97886 [Note] Aborted connection 97886 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-06-18T08:56:46.360108Z 98265 [Note] Aborted connection 98265 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-06-18T08:56:48.915702Z 98264 [Note] Aborted connection 98264 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-06-18T10:37:15.667829Z 98296 [Note] Aborted connection 98296 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-06-18T10:37:15.667829Z 98295 [Note] Aborted connection 98295 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-06-21T11:04:12.563731Z 99602 [Note] Aborted connection 99602 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-06-21T11:30:09.043729Z 99601 [Note] Aborted connection 99601 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.214' (Got timeout reading communication packets)
+2021-06-21T12:19:48.130181Z 99666 [Note] Aborted connection 99666 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-06-21T12:19:48.130413Z 99665 [Note] Aborted connection 99665 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got an error reading communication packets)
+2021-06-24T01:23:25.426722Z 100773 [Note] Access denied for user 'sjinfang'@'10.80.80.243' (using password: YES)
+2021-06-24T01:33:00.499431Z 100779 [Note] Access denied for user 'sjinfang'@'10.80.80.243' (using password: YES)
+2021-06-24T09:51:23.636923Z 100784 [Note] Aborted connection 100784 to db: 'unconnected' user: 'wb_wangkai' host: '10.80.80.244' (Got timeout reading communication packets)
+2021-06-24T16:41:07.284217Z 100909 [Note] Aborted connection 100909 to db: 'unconnected' user: 'wb_xuguizhou' host: '10.80.80.244' (Got timeout reading communication packets)
+2021-06-24T16:41:46.744199Z 100910 [Note] Aborted connection 100910 to db: 'bjpt_cx' user: 'wb_xuguizhou' host: '10.80.80.244' (Got timeout reading communication packets)
+2021-07-05T16:40:51.665466Z 105663 [Note] Aborted connection 105663 to db: 'unconnected' user: 'wb_wangkai' host: '10.80.80.244' (Got timeout reading communication packets)
+2021-07-05T16:41:04.090677Z 105664 [Note] Aborted connection 105664 to db: 'bjpt_cx' user: 'wb_wangkai' host: '10.80.80.244' (Got timeout reading communication packets)
+2021-07-05T16:41:27.532859Z 105665 [Note] Aborted connection 105665 to db: 'bjpt_cx' user: 'wb_wangkai' host: '10.80.80.244' (Got timeout reading communication packets)
+2021-07-05T16:43:19.166182Z 105673 [Note] Aborted connection 105673 to db: 'bjpt_cx' user: 'wb_wangkai' host: '10.80.80.244' (Got timeout reading communication packets)
+2021-07-07T13:53:11.255670Z 106486 [Note] Aborted connection 106486 to db: 'unconnected' user: 'wb_wujunhua' host: '10.80.80.244' (Got timeout reading communication packets)
+2021-07-07T13:53:38.322625Z 106487 [Note] Aborted connection 106487 to db: 'bjpt_cx' user: 'wb_wujunhua' host: '10.80.80.244' (Got timeout reading communication packets)
+2021-07-07T13:54:32.943929Z 106488 [Note] Aborted connection 106488 to db: 'bjpt_cx' user: 'wb_wujunhua' host: '10.80.80.244' (Got timeout reading communication packets)
+2021-07-12T04:51:15.603760Z 108595 [Note] Aborted connection 108595 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-07-12T05:19:16.499937Z 108597 [Note] Aborted connection 108597 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-07-13T16:45:22.323802Z 109245 [Note] Aborted connection 109245 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-07-13T16:45:22.835782Z 109244 [Note] Aborted connection 109244 to db: 'bjpt_cx' user: 'sjinfang' host: '10.80.80.213' (Got timeout reading communication packets)
+2021-07-15T09:19:25.844481Z 110016 [Note] Access denied for user 'root'@'localhost' (using password: NO)

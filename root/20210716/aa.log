@@ -1,0 +1,1580 @@
+=================================mysql info 10.100.8.156==================
+		5.6.38-log MySQL Community Server (GPL)
+	/data/mysql/
+	/usr/local/mysql/data/
+4
+	cy_prd 330 cy_prd_log 4 db_monitor 1 ta_chuangying_mysql_1 119
+Server characterset:	utf8
+Db     characterset:	utf8
+Client characterset:	utf8
+Conn.  characterset:	utf8
+STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION
+OFF
+OFF
+1
+ROW
+FULL
+15:03:08
+TABLE
+TABLE
+======================系统信息  10.100.8.156=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+内存大小(M)  16073
+磁盘空间(/data):   1.8T
+localhost.default
+系统负载(1,5,15)    0.09, 0.21, 0.24
+cpu使用率(usr+sys)    3.44
+内存使用率       98
+swap使用率      vm.swappiness    policy: default
+磁盘使用率(/app):     1%(剩余94G)
+磁盘使用率(/data):    64%(剩余1.1T)
+IO利用率      1.75 1.07 0.05
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.174==================
+		5.6.32 MySQL Community Server (GPL)
+	      /usr
+	/var/lib/mysql/
+0
+	supplier_prd 122
+Server characterset:	latin1
+Db     characterset:	latin1
+Client characterset:	utf8
+Conn.  characterset:	utf8
+STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION
+OFF
+OFF
+1
+STATEMENT
+FULL
+0
+FILE
+FILE
+======================系统信息  10.100.8.174=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v4 @ 1.70GHz
+内存大小(M)  7994
+磁盘空间(/data):   localhost.localdomain
+系统负载(1,5,15)    0.00, 0.00, 0.00
+cpu使用率(usr+sys)    .10
+内存使用率       77
+swap使用率      vm.swappiness    policy: default
+磁盘使用率(/app):     1%(剩余94G)
+磁盘使用率(/data):    IO利用率      0.61 0.24 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.178==================
+		5.7.24-log MySQL Community Server (GPL)
+		3306
+	          
+	/usr/local/mysql/
+	          
+	/app/mysql/data/
+8
+	          
+	db_monitor 1 pf 80 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+81783306
+TABLE
+TABLE
+======================系统信息  10.100.8.178=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v4 @ 1.70GHz
+内存大小(M)  16037
+磁盘空间(/data):   pfdbm
+系统负载(1,5,15)    0.04, 0.19, 0.19
+cpu使用率(usr+sys)    1.70
+内存使用率       16
+swap使用率      0
+vm.swappiness    0
+磁盘使用率(/app):     12%(剩余89G)
+磁盘使用率(/data):    IO利用率      0.53 0.22 0.02
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.180==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/app/mysql/data/
+16
+	bic_biz_ta 70 bic_fin_ta 12 bic_job_ta 16 bic_tbx_ta 5 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+81803306
+TABLE
+TABLE
+======================系统信息  10.100.8.180=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz
+内存大小(M)  32168
+32168
+磁盘空间(/data):   database-1
+系统负载(1,5,15)    0.04, 0.04, 0.07
+cpu使用率(usr+sys)    .90
+内存使用率       62
+swap使用率      0
+vm.swappiness    0
+磁盘使用率(/app):     71%(剩余30G)
+磁盘使用率(/data):    IO利用率      0.53 0.15 0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.182==================
+		5.7.24-log MySQL Community Server (GPL)
+		3306
+	/usr/local/mysql/
+	/data/mysql/data/
+4
+	lottery_db 9 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+81823306
+TABLE
+TABLE
+======================系统信息  10.100.8.182=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  7973
+7973
+7973
+磁盘空间(/data):   100G
+100G
+100G
+lotterydb
+系统负载(1,5,15)    0.46, 0.16, 0.08
+cpu使用率(usr+sys)    .43
+内存使用率       16
+swap使用率      0
+vm.swappiness    0
+磁盘使用率(/app):     磁盘使用率(/data):    4%(剩余97G)
+IO利用率      0.21 0.12 0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.186==================
+		5.7.24-log MySQL Community Server (GPL)
+		3306
+	/usr/local/mysql/
+	/data/mysql/data/
+8
+	cloudload 180 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+81863306
+TABLE
+TABLE
+======================系统信息  10.100.8.186=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz
+内存大小(M)  16037
+磁盘空间(/data):   100G
+localhost.default
+系统负载(1,5,15)    0.16, 0.12, 0.08
+cpu使用率(usr+sys)    1.46
+内存使用率       12
+swap使用率      0
+vm.swappiness    0
+磁盘使用率(/app):     磁盘使用率(/data):    4%(剩余97G)
+IO利用率      0.59 0.17 0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.188==================
+		5.6.16-log MySQL Community Server (GPL)
+	/usr/local/mysql
+	/app/mysql/
+16
+	db_monitor 1 ncpi 328
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+1
+ROW
+FULL
+10010117
+TABLE
+TABLE
+======================系统信息  10.100.8.188=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  32155
+32155
+10.100.8.188
+磁盘空间(/app):     600G
+600G
+localhost.localdomain
+系统负载(1,5,15)    0.21, 0.35, 0.26
+cpu使用率(usr+sys)    1.57
+内存使用率       59
+swap使用率      3
+vm.swappiness    1
+磁盘使用率(/app):     88%(剩余75G)
+磁盘使用率(/data):    IO利用率      0.31 0.25 0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.192==================
+		5.6.16-log MySQL Community Server (GPL)
+		3306
+	/usr/local/mysql
+	/app/mysql/
+8
+	db_monitor 1 langtai_dp_prod 142 vas_db_prod 11
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+1
+ROW
+FULL
+1008192
+TABLE
+TABLE
+======================系统信息  10.100.8.192=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2420 v2 @ 2.20GHz
+内存大小(M)  16027
+16027
+16027
+10.100.8.192
+磁盘空间(/app):     500G
+500G
+500G
+localhost.localdomain
+系统负载(1,5,15)    0.18, 0.09, 0.13
+cpu使用率(usr+sys)    1.08
+内存使用率       62
+swap使用率      13
+vm.swappiness    30
+磁盘使用率(/app):     75%(剩余130G)
+磁盘使用率(/data):    IO利用率      0.19 0.33 0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.193==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+10
+	db_monitor 1 sys 101 tianan_insurance 78
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+81933306
+TABLE
+TABLE
+======================系统信息  10.100.8.193=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2420 v2 @ 2.20GHz
+内存大小(M)  16037
+磁盘空间(/data):   100G
+localhost.localdomain
+系统负载(1,5,15)    0.02, 0.03, 0.05
+cpu使用率(usr+sys)    .61
+内存使用率       45
+swap使用率      0
+vm.swappiness    1
+磁盘使用率(/app):     磁盘使用率(/data):    12%(剩余89G)
+IO利用率      6.95 0.22 0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.200==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/app/mysql/data/
+10
+	bjpt_basis 30 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+82003306
+TABLE
+TABLE
+======================系统信息  10.100.8.200=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2420 v2 @ 2.20GHz
+内存大小(M)  16027
+16027
+磁盘空间(/data):   localhost.localdomain
+系统负载(1,5,15)    0.00, 0.01, 0.05
+cpu使用率(usr+sys)    .21
+内存使用率       12
+swap使用率      0
+vm.swappiness    1
+磁盘使用率(/app):     6%(剩余95G)
+磁盘使用率(/data):    IO利用率      0.90 0.10 0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.201==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/app/mysql/data/
+10
+	bjpt_cx 4 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+82013306
+TABLE
+TABLE
+======================系统信息  10.100.8.201=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2420 v2 @ 2.20GHz
+内存大小(M)  16027
+16027
+磁盘空间(/data):   localhost.localdomain
+系统负载(1,5,15)    0.40, 0.30, 0.20
+cpu使用率(usr+sys)    .98
+内存使用率       70
+swap使用率      2
+vm.swappiness    1
+磁盘使用率(/app):     21%(剩余397G)
+磁盘使用率(/data):    IO利用率      1.02 0.30 0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.202==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/app/mysql/data/
+10
+	bjpt_bj 49 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+82023306
+TABLE
+TABLE
+======================系统信息  10.100.8.202=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2420 v2 @ 2.20GHz
+内存大小(M)  16027
+磁盘空间(/data):   localhost.localdomain
+系统负载(1,5,15)    0.29, 0.21, 0.16
+cpu使用率(usr+sys)    1.88
+内存使用率       79
+swap使用率      1
+vm.swappiness    1
+磁盘使用率(/app):     52%(剩余979G)
+磁盘使用率(/data):    IO利用率      0.92 0.57 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.203==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/app/mysql/data/
+10
+	bjpt_pt 68 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+82033306
+TABLE
+TABLE
+======================系统信息  10.100.8.203=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2420 v2 @ 2.20GHz
+内存大小(M)  16027
+磁盘空间(/data):   localhost.localdomain
+系统负载(1,5,15)    0.61, 0.43, 0.31
+cpu使用率(usr+sys)    2.96
+内存使用率       76
+swap使用率      1
+vm.swappiness    1
+磁盘使用率(/app):     36%(剩余641G)
+磁盘使用率(/data):    IO利用率      0.86 0.57 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.100.8.236==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+12
+	db_monitor 1 lms 100 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+82363306
+TABLE
+TABLE
+======================系统信息  10.100.8.236=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  7964
+7964
+磁盘空间(/data):   500G
+500G
+10-100-8-236
+系统负载(1,5,15)    0.07, 0.07, 0.06
+cpu使用率(usr+sys)    .11
+内存使用率       63
+swap使用率      0
+vm.swappiness    0
+磁盘使用率(/app):     磁盘使用率(/data):    2%(剩余492G)
+IO利用率      1.49 0.51 0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.18.16==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+10
+	bjpt_bj 49 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+18163306
+TABLE
+TABLE
+======================系统信息  10.80.18.16=================================
+CPU:   Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+内存大小(M)  32412
+32412
+磁盘空间(/data):   2.0T
+2.0T
+10-80-18-16
+系统负载(1,5,15)    0.26, 0.14, 0.14
+cpu使用率(usr+sys)    1.62
+内存使用率       75
+swap使用率      4
+vm.swappiness    1
+磁盘使用率(/app):     磁盘使用率(/data):    50%(剩余1011G)
+IO利用率      1.39 0.41 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.18.17==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+10
+	bjpt_bj 49 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+18173306
+TABLE
+TABLE
+======================系统信息  10.80.18.17=================================
+CPU:   Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+内存大小(M)  16028
+16028
+磁盘空间(/data):   2.0T
+2.0T
+10-80-18-17
+系统负载(1,5,15)    0.15, 0.08, 0.07
+cpu使用率(usr+sys)    .94
+内存使用率       87
+swap使用率      1
+vm.swappiness    1
+磁盘使用率(/app):     磁盘使用率(/data):    53%(剩余957G)
+IO利用率      0.33 0.25 0.02
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.18.18==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+10
+	bjpt_pt 68 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+18183306
+TABLE
+TABLE
+======================系统信息  10.80.18.18=================================
+CPU:   Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+内存大小(M)  16028
+磁盘空间(/data):   1000G
+10-80-18-18
+系统负载(1,5,15)    0.32, 0.31, 0.35
+cpu使用率(usr+sys)    1.98
+内存使用率       87
+swap使用率      3
+vm.swappiness    1
+磁盘使用率(/app):     磁盘使用率(/data):    35%(剩余652G)
+IO利用率      13.92 1.75 0.12
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.18.19==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+10
+	bjpt_pt 68 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+18193306
+TABLE
+TABLE
+======================系统信息  10.80.18.19=================================
+CPU:   Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
+内存大小(M)  16028
+磁盘空间(/data):   1000G
+10-80-18-19
+系统负载(1,5,15)    0.09, 0.10, 0.12
+cpu使用率(usr+sys)    1.07
+内存使用率       84
+swap使用率      2
+vm.swappiness    1
+磁盘使用率(/app):     磁盘使用率(/data):    37%(剩余634G)
+IO利用率      0.61 0.31 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.110==================
+		5.7.24-log MySQL Community Server (GPL)
+	          
+	/usr/local/mysql/
+	          
+	/data/mysql/data/
+5
+	          
+	db_monitor 1 lms 100 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+881103306
+TABLE
+TABLE
+======================系统信息  10.80.88.110=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz
+内存大小(M)  7964
+7964
+磁盘空间(/data):   500G
+500G
+10-80-88-110
+系统负载(1,5,15)    0.02, 0.06, 0.08
+cpu使用率(usr+sys)    2.54
+内存使用率       77
+swap使用率      0
+vm.swappiness    0
+磁盘使用率(/app):     磁盘使用率(/data):    3%(剩余487G)
+IO利用率      1.64 0.46 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.111==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+12
+	db_monitor 1 lms 100 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+881113306
+TABLE
+TABLE
+======================系统信息  10.80.88.111=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz
+内存大小(M)  7964
+磁盘空间(/data):   500G
+10-80-88-111
+系统负载(1,5,15)    0.23, 0.69, 0.47
+cpu使用率(usr+sys)    1.38
+内存使用率       70
+swap使用率      0
+vm.swappiness    0
+磁盘使用率(/app):     磁盘使用率(/data):    4%(剩余485G)
+IO利用率      1.68 0.35 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.34==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+4
+	db_monitor 1 pf 80 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+88343306
+TABLE
+TABLE
+======================系统信息  10.80.88.34=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  16037
+磁盘空间(/data):   100G
+pfdbs
+系统负载(1,5,15)    0.39, 0.26, 0.23
+cpu使用率(usr+sys)    2.54
+内存使用率       36
+swap使用率      0
+vm.swappiness    0
+磁盘使用率(/app):     磁盘使用率(/data):    8%(剩余93G)
+IO利用率      1.99 0.46 0.03
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.35==================
+		5.6.16-log MySQL Community Server (GPL)
+	/usr/local/mysql
+	/app/mysql/
+16
+	db_monitor 1 ncpi 328
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+NO_ENGINE_SUBSTITUTION
+OFF
+ON
+1
+ROW
+FULL
+17:39:16
+TABLE
+TABLE
+======================系统信息  10.80.88.35=================================
+CPU:   Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz
+内存大小(M)  32156
+10.80.88.35
+磁盘空间(/app):     600G
+10-80-88-35
+系统负载(1,5,15)    0.51, 0.69, 0.67
+cpu使用率(usr+sys)    3.78
+内存使用率       79
+swap使用率      5
+vm.swappiness    1
+磁盘使用率(/app):     88%(剩余77G)
+磁盘使用率(/data):    IO利用率      1.48 0.56 0.02
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.45==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/app/mysql/data/
+16
+	bic_biz_ta 70 bic_fin_ta 12 bic_job_ta 16 bic_tbx_ta 5 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+10808845
+TABLE
+TABLE
+======================系统信息  10.80.88.45=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  32168
+磁盘空间(/data):   localhost.localdomain
+系统负载(1,5,15)    0.30, 0.15, 0.09
+cpu使用率(usr+sys)    1.05
+内存使用率       64
+swap使用率      0
+vm.swappiness    0
+磁盘使用率(/app):     67%(剩余34G)
+磁盘使用率(/data):    IO利用率      1.26 0.38 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.52==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+8
+	cloudload 180 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+88523306
+TABLE
+TABLE
+======================系统信息  10.80.88.52=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  16037
+磁盘空间(/data):   100G
+localhost.default
+系统负载(1,5,15)    0.25, 0.18, 0.10
+cpu使用率(usr+sys)    1.66
+内存使用率       16
+swap使用率      0
+vm.swappiness    0
+磁盘使用率(/app):     磁盘使用率(/data):    7%(剩余94G)
+IO利用率      1.48 0.37 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.59==================
+		5.6.16-log MySQL Community Server (GPL)
+	/usr/local/mysql
+	/app/mysql/
+16
+	db_monitor 1 ncpi 328
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+1
+ROW
+FULL
+808859
+TABLE
+TABLE
+======================系统信息  10.80.88.59=================================
+CPU:   Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz
+内存大小(M)  32156
+10.80.88.59
+磁盘空间(/app):     600G
+10-80-88-59
+系统负载(1,5,15)    1.56, 1.60, 0.89
+cpu使用率(usr+sys)    1.02
+内存使用率       64
+swap使用率      4
+vm.swappiness    1
+磁盘使用率(/app):     87%(剩余79G)
+磁盘使用率(/data):    IO利用率      0.91 0.39 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.60==================
+		5.6.38-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/
+16
+	cy_prd 330 cy_prd_log 5 db_monitor 1 ta_chuangying_mysql_1 119
+Server characterset:	utf8
+Db     characterset:	utf8
+Client characterset:	utf8
+Conn.  characterset:	utf8
+STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION
+OFF
+OFF
+1
+ROW
+FULL
+15:18:39
+TABLE
+TABLE
+======================系统信息  10.80.88.60=================================
+CPU:   Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz
+内存大小(M)  32155
+磁盘空间(/data):   2.0T
+10-80-88-60
+系统负载(1,5,15)    0.97, 1.35, 1.67
+cpu使用率(usr+sys)    12.75
+内存使用率       67
+swap使用率      3
+vm.swappiness    1
+磁盘使用率(/app):     磁盘使用率(/data):    74%(剩余531G)
+IO利用率      1.54 1.01 0.06
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.61==================
+		5.6.38-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/
+16
+	cy_prd 330 cy_prd_log 4 db_monitor 1 ta_chuangying_mysql_1 119
+Server characterset:	utf8
+Db     characterset:	utf8
+Client characterset:	utf8
+Conn.  characterset:	utf8
+STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+1
+ROW
+FULL
+808861
+TABLE
+TABLE
+======================系统信息  10.80.88.61=================================
+CPU:   Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz
+内存大小(M)  32156
+磁盘空间(/data):   2.0T
+10-80-88-61
+系统负载(1,5,15)    0.51, 0.34, 0.27
+cpu使用率(usr+sys)    1.74
+内存使用率       61
+swap使用率      0
+vm.swappiness    1
+磁盘使用率(/app):     磁盘使用率(/data):    73%(剩余557G)
+IO利用率      0.96 0.70 0.02
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.62==================
+		5.6.16-log MySQL Community Server (GPL)
+		3306
+	/usr/local/mysql
+	/app/mysql/
+16
+	db_monitor 1 langtai_dp_prod 142 vas_db_prod 11
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+1
+ROW
+FULL
+808862
+TABLE
+TABLE
+======================系统信息  10.80.88.62=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  32156
+10.80.88.62
+磁盘空间(/app):     500G
+10-80-88-62
+系统负载(1,5,15)    0.95, 0.89, 0.89
+cpu使用率(usr+sys)    6.74
+内存使用率       72
+swap使用率      9
+vm.swappiness    30
+磁盘使用率(/app):     68%(剩余164G)
+磁盘使用率(/data):    IO利用率      4.14 0.46 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.63==================
+		5.6.16-log MySQL Community Server (GPL)
+		3306
+	/usr/local/mysql
+	/app/mysql/
+16
+	db_monitor 1 langtai_dp_prod 142 vas_db_prod 11
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+1
+ROW
+FULL
+808863
+TABLE
+TABLE
+======================系统信息  10.80.88.63=================================
+CPU:   Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz
+内存大小(M)  32156
+10.80.88.63
+磁盘空间(/app):     500G
+10-80-88-63
+系统负载(1,5,15)    0.30, 0.24, 0.22
+cpu使用率(usr+sys)    1.30
+内存使用率       62
+swap使用率      0
+vm.swappiness    1
+磁盘使用率(/app):     78%(剩余115G)
+磁盘使用率(/data):    IO利用率      0.73 0.34 0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.64==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/app/mysql/data/
+10
+	bjpt_basis 30 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+88643306
+TABLE
+TABLE
+======================系统信息  10.80.88.64=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  16028
+磁盘空间(/data):   10-80-88-64
+系统负载(1,5,15)    0.09, 0.07, 0.09
+cpu使用率(usr+sys)    1.17
+内存使用率       28
+swap使用率      0
+vm.swappiness    1
+磁盘使用率(/app):     6%(剩余95G)
+磁盘使用率(/data):    IO利用率      1.73 0.34 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.65==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+10
+	bjpt_basis 30 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+88653306
+TABLE
+TABLE
+======================系统信息  10.80.88.65=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  16028
+磁盘空间(/data):   500G
+10-80-88-65
+系统负载(1,5,15)    0.03, 0.03, 0.05
+cpu使用率(usr+sys)    .11
+内存使用率       14
+swap使用率      0
+vm.swappiness    1
+磁盘使用率(/app):     磁盘使用率(/data):    2%(剩余495G)
+IO利用率      1.77 0.34 0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.66==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+10
+	bjpt_cx 4 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+88663306
+TABLE
+TABLE
+======================系统信息  10.80.88.66=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  16028
+磁盘空间(/data):   500G
+10-80-88-66
+系统负载(1,5,15)    0.20, 0.33, 0.30
+cpu使用率(usr+sys)    1.95
+内存使用率       86
+swap使用率      2
+vm.swappiness    1
+磁盘使用率(/app):     磁盘使用率(/data):    21%(剩余397G)
+IO利用率      1.59 0.73 0.02
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.67==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+10
+	bjpt_cx 4 db_monitor 1 sys 101
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+88673306
+TABLE
+TABLE
+======================系统信息  10.80.88.67=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  16028
+磁盘空间(/data):   500G
+10-80-88-67
+系统负载(1,5,15)    0.71, 0.38, 0.25
+cpu使用率(usr+sys)    .58
+内存使用率       73
+swap使用率      2
+vm.swappiness    1
+磁盘使用率(/app):     磁盘使用率(/data):    21%(剩余397G)
+IO利用率      1.26 0.48 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.70==================
+		5.7.24-log MySQL Community Server (GPL)
+	          
+	          
+	/usr/local/mysql/
+	          
+	          
+	/data/mysql/data/
+10
+	          
+	          
+	db_monitor 1 sys 101 tianan_insurance 78
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+88703306
+TABLE
+TABLE
+======================系统信息  10.80.88.70=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  16037
+16037
+16037
+磁盘空间(/data):   100G
+100G
+100G
+10-80-88-70
+系统负载(1,5,15)    0.20, 0.29, 0.38
+cpu使用率(usr+sys)    5.38
+内存使用率       57
+swap使用率      0
+vm.swappiness    1
+磁盘使用率(/app):     磁盘使用率(/data):    12%(剩余89G)
+IO利用率      5.66 0.45 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.71==================
+		5.7.24-log MySQL Community Server (GPL)
+	/usr/local/mysql/
+	/data/mysql/data/
+10
+	db_monitor 1 sys 101 tianan_insurance 78
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+OFF
+ON
+2
+ROW
+FULL
+88713306
+TABLE
+TABLE
+======================系统信息  10.80.88.71=================================
+CPU:   Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+内存大小(M)  16037
+磁盘空间(/data):   100G
+10-80-88-71
+系统负载(1,5,15)    0.23, 0.29, 0.31
+cpu使用率(usr+sys)    1.53
+内存使用率       53
+swap使用率      0
+vm.swappiness    1
+磁盘使用率(/app):     磁盘使用率(/data):    12%(剩余89G)
+IO利用率      5.79 0.55 0.02
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================mysql info 10.80.88.84==================

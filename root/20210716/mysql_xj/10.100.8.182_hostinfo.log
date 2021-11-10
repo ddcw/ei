@@ -1,0 +1,2535 @@
+======host meta information
+=====uptime===============================
+ 13:51:53 up 175 days,  5:50,  1 user,  load average: 0.06, 0.04, 0.05
+======ip=================================
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+    link/ether 00:50:56:be:50:1f brd ff:ff:ff:ff:ff:ff
+    inet 10.100.8.182/24 brd 10.100.8.255 scope global noprefixroute ens192
+       valid_lft forever preferred_lft forever
+    inet6 fe80::250:56ff:febe:501f/64 scope link 
+       valid_lft forever preferred_lft forever
+======hostname============================
+lotterydb
+======os version============================
+\S
+Kernel \r on an \m
+
+======kernel version=========================
+Linux lotterydb 3.10.0-957.10.1.el7.x86_64 #1 SMP Thu Feb 7 07:12:53 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+======mysql version=========================
+======mysql client==========================
+======mysql instance========================
+tcp6       0      0 :::3306                 :::*                    LISTEN      9395/mysqld         
+unix  2      [ ACC ]     STREAM     LISTENING     47140    9395/mysqld          /data/mysql/data/mysql.sock
+======memory&swap========================
+              total        used        free      shared  buff/cache   available
+Mem:           7973        1349        5302         405        1322        5878
+Swap:          8063           0        8063
+======physical cpu==========================
+2
+======cores per physical cpu====================
+cpu cores	: 2
+======processor============================
+4
+======cpu version===========================
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+======disk info=============================
+Filesystem            Type      Size  Used Avail Use% Mounted on
+/dev/mapper/rhel-root xfs        50G  7.7G   43G  16% /
+devtmpfs              devtmpfs  3.9G     0  3.9G   0% /dev
+tmpfs                 tmpfs     3.9G   84K  3.9G   1% /dev/shm
+tmpfs                 tmpfs     3.9G  402M  3.6G  11% /run
+tmpfs                 tmpfs     3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sdb              xfs       100G  3.8G   97G   4% /data
+/dev/sda1             xfs      1014M  242M  773M  24% /boot
+/dev/mapper/rhel-home xfs        21G   52M   21G   1% /home
+/dev/mapper/rhel-tmp  xfs       3.0G   33M  3.0G   2% /tmp
+tmpfs                 tmpfs     798M   12K  798M   1% /run/user/42
+tmpfs                 tmpfs     798M     0  798M   0% /run/user/0
+======numa mount========================
+0
+======io stat===============================
+Linux 3.10.0-957.10.1.el7.x86_64 (lotterydb) 	07/15/2021 	_x86_64_	(4 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.31    0.00    0.07    0.00    0.00   99.62
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.02    0.00    0.18     0.00     0.00    13.17     0.00    0.22    3.34    0.21   0.12   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00    33.47     0.00    0.36    0.36    0.00   0.27   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00    42.43     0.00    1.02    1.77    0.43   0.70   0.00
+dm-0              0.00     0.00    0.00    0.20     0.00     0.00    12.04     0.00    0.23    3.95    0.21   0.11   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00    47.40     0.00    0.81    0.81    0.00   0.71   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00    12.38     0.00    0.34    1.67    0.24   0.33   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00    13.37     0.00    0.28    1.91    0.19   0.25   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.68    0.00    0.28    0.00    0.00   99.05
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.70    0.00   10.20     0.00     0.27    55.03     0.01    1.20    0.00    1.20   0.07   0.07
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00   10.80     0.00     0.27    51.93     0.01    1.22    0.00    1.22   0.06   0.06
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     5.00     0.00    1.00    0.00    1.00   1.00   0.01
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.55    0.00    0.10    0.00    0.00   99.35
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.50    0.00    0.00    0.00    0.00   99.50
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.10     0.00     0.00    16.00     0.00    1.00    0.00    1.00   1.00   0.01
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00    16.00     0.00    1.00    0.00    1.00   1.00   0.01
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.45    0.00    0.05    0.00    0.00   99.50
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.30    0.00    3.30     0.00     0.03    20.67     0.00    0.73    0.00    0.73   0.03   0.01
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    3.10     0.00     0.03    20.32     0.00    0.87    0.00    0.87   0.03   0.01
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.50     0.00     0.00    10.40     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.48    0.00    0.00    0.00    0.00   99.52
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+======host meta information
+=====uptime===============================
+ 13:53:27 up 175 days,  5:51,  1 user,  load average: 0.08, 0.05, 0.05
+======ip=================================
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+    link/ether 00:50:56:be:50:1f brd ff:ff:ff:ff:ff:ff
+    inet 10.100.8.182/24 brd 10.100.8.255 scope global noprefixroute ens192
+       valid_lft forever preferred_lft forever
+    inet6 fe80::250:56ff:febe:501f/64 scope link 
+       valid_lft forever preferred_lft forever
+======hostname============================
+lotterydb
+======os version============================
+\S
+Kernel \r on an \m
+
+======kernel version=========================
+Linux lotterydb 3.10.0-957.10.1.el7.x86_64 #1 SMP Thu Feb 7 07:12:53 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+======mysql version=========================
+======mysql client==========================
+mysql  Ver 14.14 Distrib 5.7.24, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+======mysql instance========================
+tcp6       0      0 :::3306                 :::*                    LISTEN      9395/mysqld         
+unix  2      [ ACC ]     STREAM     LISTENING     47140    9395/mysqld          /data/mysql/data/mysql.sock
+======memory&swap========================
+              total        used        free      shared  buff/cache   available
+Mem:           7973        1344        5306         405        1322        5883
+Swap:          8063           0        8063
+======physical cpu==========================
+2
+======cores per physical cpu====================
+cpu cores	: 2
+======processor============================
+4
+======cpu version===========================
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+======disk info=============================
+Filesystem            Type      Size  Used Avail Use% Mounted on
+/dev/mapper/rhel-root xfs        50G  7.7G   43G  16% /
+devtmpfs              devtmpfs  3.9G     0  3.9G   0% /dev
+tmpfs                 tmpfs     3.9G   84K  3.9G   1% /dev/shm
+tmpfs                 tmpfs     3.9G  402M  3.6G  11% /run
+tmpfs                 tmpfs     3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sdb              xfs       100G  3.8G   97G   4% /data
+/dev/sda1             xfs      1014M  242M  773M  24% /boot
+/dev/mapper/rhel-home xfs        21G   52M   21G   1% /home
+/dev/mapper/rhel-tmp  xfs       3.0G   33M  3.0G   2% /tmp
+tmpfs                 tmpfs     798M   12K  798M   1% /run/user/42
+tmpfs                 tmpfs     798M     0  798M   0% /run/user/0
+======numa mount========================
+0
+======io stat===============================
+Linux 3.10.0-957.10.1.el7.x86_64 (lotterydb) 	07/15/2021 	_x86_64_	(4 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.31    0.00    0.07    0.00    0.00   99.62
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.02    0.00    0.18     0.00     0.00    13.17     0.00    0.22    3.34    0.21   0.12   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00    33.47     0.00    0.36    0.36    0.00   0.27   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00    42.43     0.00    1.02    1.77    0.43   0.70   0.00
+dm-0              0.00     0.00    0.00    0.20     0.00     0.00    12.04     0.00    0.23    3.95    0.21   0.11   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00    47.40     0.00    0.81    0.81    0.00   0.71   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00    12.38     0.00    0.34    1.67    0.24   0.33   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00    13.35     0.00    0.28    1.91    0.19   0.25   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.50    0.00    0.03    0.00    0.00   99.47
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.10    0.00    0.70     0.00     0.00     8.86     0.00    0.57    0.00    0.57   0.14   0.01
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.40     0.00     0.00    10.00     0.00    1.00    0.00    1.00   0.25   0.01
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.40     0.00     0.00     5.50     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.48    0.00    0.05    0.00    0.00   99.47
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.50    0.00    0.03    0.00    0.00   99.47
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.90     0.00     0.01    23.89     0.00    0.22    0.00    0.22   0.11   0.01
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.70     0.00     0.01    28.43     0.00    0.29    0.00    0.29   0.14   0.01
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.20     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.70    0.00    0.28    0.00    0.00   99.02
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    2.00     0.00     0.14   146.60     0.00    0.35    0.00    0.35   0.15   0.03
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    1.50     0.00     0.14   192.00     0.00    0.40    0.00    0.40   0.13   0.02
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.50     0.00     0.00    10.40     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.50    0.00    0.08    0.00    0.00   99.42
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.45    0.00    0.05    0.00    0.00   99.50
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.10    0.00    0.60     0.00     0.01    19.83     0.00    1.17    0.00    1.17   0.33   0.02
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.70     0.00     0.01    17.00     0.00    1.14    0.00    1.14   0.29   0.02
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.78    0.00    0.03    0.00    0.00   99.20
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.60     0.00     0.00     8.50     0.00    0.00    0.00    0.00   0.00   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.30     0.00     0.00    10.67     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.30     0.00     0.00     6.33     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.48    0.00    0.03    0.03    0.00   99.47
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.50    0.00    0.00    0.00    0.00   99.50
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.10    0.00    0.40     0.00     0.00    13.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.50     0.00     0.00    10.40     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+======vmstat======
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 5433620   2224 1351760    0    0     0     0    0    1  0  0 100  0  0
+ 0  0      0 5433564   2224 1351760    0    0     0     0  136  178  1  0 99  0  0
+ 0  0      0 5433572   2224 1351760    0    0     0     0  178  270  1  0 99  0  0
+ 0  0      0 5432864   2224 1351760    0    0     0     0  890 1093  2  2 96  0  0
+ 0  0      0 5433084   2224 1351748    0    0     0    10  116  190  1  0 100  0  0
+ 0  0      0 5433084   2224 1351748    0    0     0     0  141  194  1  0 100  0  0
+ 0  0      0 5433100   2224 1351748    0    0     0     0  104  171  0  0 100  0  0
+ 1  0      0 5433100   2224 1351748    0    0     0     0  102  167  1  0 100  0  0
+ 0  0      0 5433100   2224 1351748    0    0     0     0  106  173  0  0 99  0  0
+ 0  0      0 5433100   2224 1351748    0    0     0     0   95  154  1  0 100  0  0
+====dstat===
+======system log============================
+Jul 15 09:00:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 09:00:01 lotterydb systemd: Started Session 281672 of user root.
+Jul 15 09:00:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:00:01 lotterydb systemd: Started Session 281673 of user mysql.
+Jul 15 09:00:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 09:00:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:01:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:01:01 lotterydb systemd: Started Session 281675 of user mysql.
+Jul 15 09:01:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 09:01:01 lotterydb systemd: Started Session 281674 of user root.
+Jul 15 09:01:02 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 09:01:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:02:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:02:01 lotterydb systemd: Started Session 281676 of user mysql.
+Jul 15 09:02:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:03:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:03:01 lotterydb systemd: Started Session 281677 of user mysql.
+Jul 15 09:03:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:04:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:04:01 lotterydb systemd: Started Session 281678 of user mysql.
+Jul 15 09:04:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:05:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:05:01 lotterydb systemd: Started Session 281679 of user mysql.
+Jul 15 09:05:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:06:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:06:01 lotterydb systemd: Started Session 281680 of user mysql.
+Jul 15 09:06:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:07:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:07:01 lotterydb systemd: Started Session 281681 of user mysql.
+Jul 15 09:07:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:08:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:08:01 lotterydb systemd: Started Session 281682 of user mysql.
+Jul 15 09:08:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:09:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:09:01 lotterydb systemd: Started Session 281683 of user mysql.
+Jul 15 09:09:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:10:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:10:01 lotterydb systemd: Started Session 281685 of user mysql.
+Jul 15 09:10:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 09:10:01 lotterydb systemd: Started Session 281684 of user root.
+Jul 15 09:10:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 09:10:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:11:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:11:01 lotterydb systemd: Started Session 281686 of user mysql.
+Jul 15 09:11:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:12:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:12:01 lotterydb systemd: Started Session 281687 of user mysql.
+Jul 15 09:12:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:13:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:13:01 lotterydb systemd: Started Session 281688 of user mysql.
+Jul 15 09:13:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:13:46 lotterydb systemd: Starting Cleanup of Temporary Directories...
+Jul 15 09:13:46 lotterydb systemd: Started Cleanup of Temporary Directories.
+Jul 15 09:14:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:14:01 lotterydb systemd: Started Session 281689 of user mysql.
+Jul 15 09:14:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:15:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:15:01 lotterydb systemd: Started Session 281690 of user mysql.
+Jul 15 09:15:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:16:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:16:01 lotterydb systemd: Started Session 281691 of user mysql.
+Jul 15 09:16:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:17:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:17:01 lotterydb systemd: Started Session 281692 of user mysql.
+Jul 15 09:17:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:18:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:18:01 lotterydb systemd: Started Session 281693 of user mysql.
+Jul 15 09:18:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:19:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:19:01 lotterydb systemd: Started Session 281694 of user mysql.
+Jul 15 09:19:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:20:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 09:20:01 lotterydb systemd: Started Session 281695 of user root.
+Jul 15 09:20:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:20:01 lotterydb systemd: Started Session 281696 of user mysql.
+Jul 15 09:20:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 09:20:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:21:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:21:01 lotterydb systemd: Started Session 281697 of user mysql.
+Jul 15 09:21:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:22:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:22:01 lotterydb systemd: Started Session 281698 of user mysql.
+Jul 15 09:22:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:23:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:23:01 lotterydb systemd: Started Session 281699 of user mysql.
+Jul 15 09:23:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:24:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:24:01 lotterydb systemd: Started Session 281700 of user mysql.
+Jul 15 09:24:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:25:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:25:01 lotterydb systemd: Started Session 281701 of user mysql.
+Jul 15 09:25:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:26:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:26:01 lotterydb systemd: Started Session 281702 of user mysql.
+Jul 15 09:26:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:27:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:27:01 lotterydb systemd: Started Session 281703 of user mysql.
+Jul 15 09:27:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:28:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:28:01 lotterydb systemd: Started Session 281704 of user mysql.
+Jul 15 09:28:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:29:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:29:01 lotterydb systemd: Started Session 281705 of user mysql.
+Jul 15 09:29:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:30:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 09:30:01 lotterydb systemd: Started Session 281706 of user root.
+Jul 15 09:30:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:30:01 lotterydb systemd: Started Session 281707 of user mysql.
+Jul 15 09:30:02 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 09:30:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:31:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:31:01 lotterydb systemd: Started Session 281708 of user mysql.
+Jul 15 09:31:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:32:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:32:01 lotterydb systemd: Started Session 281709 of user mysql.
+Jul 15 09:32:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:33:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:33:01 lotterydb systemd: Started Session 281710 of user mysql.
+Jul 15 09:33:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:34:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:34:01 lotterydb systemd: Started Session 281711 of user mysql.
+Jul 15 09:34:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:35:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:35:01 lotterydb systemd: Started Session 281712 of user mysql.
+Jul 15 09:35:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:36:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:36:01 lotterydb systemd: Started Session 281713 of user mysql.
+Jul 15 09:36:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:37:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:37:01 lotterydb systemd: Started Session 281714 of user mysql.
+Jul 15 09:37:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:38:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:38:01 lotterydb systemd: Started Session 281715 of user mysql.
+Jul 15 09:38:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:39:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:39:01 lotterydb systemd: Started Session 281716 of user mysql.
+Jul 15 09:39:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:40:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 09:40:01 lotterydb systemd: Started Session 281717 of user root.
+Jul 15 09:40:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:40:01 lotterydb systemd: Started Session 281718 of user mysql.
+Jul 15 09:40:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 09:40:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:41:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:41:01 lotterydb systemd: Started Session 281719 of user mysql.
+Jul 15 09:41:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:42:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:42:01 lotterydb systemd: Started Session 281720 of user mysql.
+Jul 15 09:42:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:43:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:43:01 lotterydb systemd: Started Session 281721 of user mysql.
+Jul 15 09:43:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:44:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:44:01 lotterydb systemd: Started Session 281722 of user mysql.
+Jul 15 09:44:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:45:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:45:02 lotterydb systemd: Started Session 281723 of user mysql.
+Jul 15 09:45:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:46:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:46:01 lotterydb systemd: Started Session 281724 of user mysql.
+Jul 15 09:46:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:47:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:47:01 lotterydb systemd: Started Session 281725 of user mysql.
+Jul 15 09:47:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:48:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:48:01 lotterydb systemd: Started Session 281726 of user mysql.
+Jul 15 09:48:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:49:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:49:01 lotterydb systemd: Started Session 281727 of user mysql.
+Jul 15 09:49:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:50:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:50:01 lotterydb systemd: Started Session 281729 of user mysql.
+Jul 15 09:50:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 09:50:01 lotterydb systemd: Started Session 281728 of user root.
+Jul 15 09:50:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 09:50:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:51:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:51:01 lotterydb systemd: Started Session 281730 of user mysql.
+Jul 15 09:51:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:52:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:52:01 lotterydb systemd: Started Session 281731 of user mysql.
+Jul 15 09:52:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:53:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:53:01 lotterydb systemd: Started Session 281732 of user mysql.
+Jul 15 09:53:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:54:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:54:01 lotterydb systemd: Started Session 281733 of user mysql.
+Jul 15 09:54:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:55:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:55:01 lotterydb systemd: Started Session 281734 of user mysql.
+Jul 15 09:55:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:56:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:56:01 lotterydb systemd: Started Session 281735 of user mysql.
+Jul 15 09:56:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:57:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:57:01 lotterydb systemd: Started Session 281736 of user mysql.
+Jul 15 09:57:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:58:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:58:01 lotterydb systemd: Started Session 281737 of user mysql.
+Jul 15 09:58:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:59:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:59:01 lotterydb systemd: Started Session 281738 of user mysql.
+Jul 15 09:59:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:00:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:00:01 lotterydb systemd: Started Session 281739 of user root.
+Jul 15 10:00:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:00:01 lotterydb systemd: Started Session 281740 of user mysql.
+Jul 15 10:00:02 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:00:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:01:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:01:01 lotterydb systemd: Started Session 281741 of user root.
+Jul 15 10:01:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:01:01 lotterydb systemd: Started Session 281742 of user mysql.
+Jul 15 10:01:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:01:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:02:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:02:01 lotterydb systemd: Started Session 281743 of user mysql.
+Jul 15 10:02:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:03:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:03:01 lotterydb systemd: Started Session 281744 of user mysql.
+Jul 15 10:03:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:04:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:04:01 lotterydb systemd: Started Session 281745 of user mysql.
+Jul 15 10:04:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:05:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:05:01 lotterydb systemd: Started Session 281746 of user mysql.
+Jul 15 10:05:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:06:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:06:01 lotterydb systemd: Started Session 281747 of user mysql.
+Jul 15 10:06:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:07:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:07:01 lotterydb systemd: Started Session 281748 of user mysql.
+Jul 15 10:07:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:08:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:08:01 lotterydb systemd: Started Session 281749 of user mysql.
+Jul 15 10:08:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:09:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:09:01 lotterydb systemd: Started Session 281750 of user mysql.
+Jul 15 10:09:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:10:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:10:01 lotterydb systemd: Started Session 281751 of user mysql.
+Jul 15 10:10:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:10:01 lotterydb systemd: Started Session 281752 of user root.
+Jul 15 10:10:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:10:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:11:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:11:01 lotterydb systemd: Started Session 281753 of user mysql.
+Jul 15 10:11:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:12:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:12:01 lotterydb systemd: Started Session 281754 of user mysql.
+Jul 15 10:12:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:13:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:13:01 lotterydb systemd: Started Session 281755 of user mysql.
+Jul 15 10:13:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:14:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:14:01 lotterydb systemd: Started Session 281756 of user mysql.
+Jul 15 10:14:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:15:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:15:01 lotterydb systemd: Started Session 281757 of user mysql.
+Jul 15 10:15:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:16:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:16:01 lotterydb systemd: Started Session 281758 of user mysql.
+Jul 15 10:16:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:17:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:17:01 lotterydb systemd: Started Session 281759 of user mysql.
+Jul 15 10:17:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:18:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:18:01 lotterydb systemd: Started Session 281760 of user mysql.
+Jul 15 10:18:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:19:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:19:01 lotterydb systemd: Started Session 281761 of user mysql.
+Jul 15 10:19:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:20:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:20:01 lotterydb systemd: Started Session 281762 of user root.
+Jul 15 10:20:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:20:01 lotterydb systemd: Started Session 281763 of user mysql.
+Jul 15 10:20:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:20:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:21:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:21:01 lotterydb systemd: Started Session 281764 of user mysql.
+Jul 15 10:21:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:22:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:22:01 lotterydb systemd: Started Session 281765 of user mysql.
+Jul 15 10:22:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:23:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:23:01 lotterydb systemd: Started Session 281766 of user mysql.
+Jul 15 10:23:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:24:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:24:01 lotterydb systemd: Started Session 281767 of user mysql.
+Jul 15 10:24:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:25:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:25:01 lotterydb systemd: Started Session 281768 of user mysql.
+Jul 15 10:25:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:26:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:26:01 lotterydb systemd: Started Session 281769 of user mysql.
+Jul 15 10:26:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:27:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:27:01 lotterydb systemd: Started Session 281770 of user mysql.
+Jul 15 10:27:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:28:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:28:01 lotterydb systemd: Started Session 281771 of user mysql.
+Jul 15 10:28:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:29:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:29:01 lotterydb systemd: Started Session 281772 of user mysql.
+Jul 15 10:29:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:30:02 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:30:02 lotterydb systemd: Started Session 281773 of user root.
+Jul 15 10:30:02 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:30:02 lotterydb systemd: Started Session 281774 of user mysql.
+Jul 15 10:30:02 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:30:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:31:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:31:01 lotterydb systemd: Started Session 281775 of user mysql.
+Jul 15 10:31:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:32:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:32:01 lotterydb systemd: Started Session 281776 of user mysql.
+Jul 15 10:32:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:33:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:33:01 lotterydb systemd: Started Session 281777 of user mysql.
+Jul 15 10:33:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:34:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:34:01 lotterydb systemd: Started Session 281778 of user mysql.
+Jul 15 10:34:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:35:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:35:01 lotterydb systemd: Started Session 281779 of user mysql.
+Jul 15 10:35:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:36:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:36:01 lotterydb systemd: Started Session 281780 of user mysql.
+Jul 15 10:36:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:37:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:37:01 lotterydb systemd: Started Session 281781 of user mysql.
+Jul 15 10:37:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:38:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:38:01 lotterydb systemd: Started Session 281782 of user mysql.
+Jul 15 10:38:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:39:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:39:01 lotterydb systemd: Started Session 281783 of user mysql.
+Jul 15 10:39:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:40:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:40:01 lotterydb systemd: Started Session 281785 of user mysql.
+Jul 15 10:40:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:40:01 lotterydb systemd: Started Session 281784 of user root.
+Jul 15 10:40:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:40:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:41:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:41:01 lotterydb systemd: Started Session 281786 of user mysql.
+Jul 15 10:41:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:42:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:42:01 lotterydb systemd: Started Session 281787 of user mysql.
+Jul 15 10:42:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:43:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:43:01 lotterydb systemd: Started Session 281788 of user mysql.
+Jul 15 10:43:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:44:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:44:01 lotterydb systemd: Started Session 281789 of user mysql.
+Jul 15 10:44:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:45:02 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:45:02 lotterydb systemd: Started Session 281790 of user mysql.
+Jul 15 10:45:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:46:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:46:01 lotterydb systemd: Started Session 281791 of user mysql.
+Jul 15 10:46:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:47:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:47:01 lotterydb systemd: Started Session 281792 of user mysql.
+Jul 15 10:47:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:48:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:48:01 lotterydb systemd: Started Session 281793 of user mysql.
+Jul 15 10:48:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:49:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:49:01 lotterydb systemd: Started Session 281794 of user mysql.
+Jul 15 10:49:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:50:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:50:01 lotterydb systemd: Started Session 281795 of user root.
+Jul 15 10:50:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:50:01 lotterydb systemd: Started Session 281796 of user mysql.
+Jul 15 10:50:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:50:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:51:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:51:01 lotterydb systemd: Started Session 281797 of user mysql.
+Jul 15 10:51:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:52:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:52:01 lotterydb systemd: Started Session 281798 of user mysql.
+Jul 15 10:52:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:53:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:53:01 lotterydb systemd: Started Session 281799 of user mysql.
+Jul 15 10:53:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:54:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:54:01 lotterydb systemd: Started Session 281800 of user mysql.
+Jul 15 10:54:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:55:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:55:01 lotterydb systemd: Started Session 281801 of user mysql.
+Jul 15 10:55:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:56:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:56:01 lotterydb systemd: Started Session 281802 of user mysql.
+Jul 15 10:56:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:57:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:57:01 lotterydb systemd: Started Session 281803 of user mysql.
+Jul 15 10:57:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:58:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:58:01 lotterydb systemd: Started Session 281804 of user mysql.
+Jul 15 10:58:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:59:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:59:01 lotterydb systemd: Started Session 281805 of user mysql.
+Jul 15 10:59:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:00:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:00:01 lotterydb systemd: Started Session 281806 of user mysql.
+Jul 15 11:00:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:00:01 lotterydb systemd: Started Session 281807 of user root.
+Jul 15 11:00:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:00:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:01:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:01:01 lotterydb systemd: Started Session 281808 of user mysql.
+Jul 15 11:01:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:01:01 lotterydb systemd: Started Session 281809 of user root.
+Jul 15 11:01:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:01:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:02:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:02:01 lotterydb systemd: Started Session 281810 of user mysql.
+Jul 15 11:02:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:03:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:03:01 lotterydb systemd: Started Session 281811 of user mysql.
+Jul 15 11:03:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:04:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:04:01 lotterydb systemd: Started Session 281812 of user mysql.
+Jul 15 11:04:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:05:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:05:01 lotterydb systemd: Started Session 281813 of user mysql.
+Jul 15 11:05:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:06:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:06:01 lotterydb systemd: Started Session 281814 of user mysql.
+Jul 15 11:06:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:07:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:07:01 lotterydb systemd: Started Session 281815 of user mysql.
+Jul 15 11:07:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:08:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:08:01 lotterydb systemd: Started Session 281816 of user mysql.
+Jul 15 11:08:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:09:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:09:01 lotterydb systemd: Started Session 281817 of user mysql.
+Jul 15 11:09:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:10:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:10:01 lotterydb systemd: Started Session 281819 of user mysql.
+Jul 15 11:10:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:10:01 lotterydb systemd: Started Session 281818 of user root.
+Jul 15 11:10:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:10:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:11:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:11:01 lotterydb systemd: Started Session 281820 of user mysql.
+Jul 15 11:11:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:12:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:12:01 lotterydb systemd: Started Session 281821 of user mysql.
+Jul 15 11:12:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:13:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:13:01 lotterydb systemd: Started Session 281822 of user mysql.
+Jul 15 11:13:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:14:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:14:01 lotterydb systemd: Started Session 281823 of user mysql.
+Jul 15 11:14:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:15:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:15:01 lotterydb systemd: Started Session 281824 of user mysql.
+Jul 15 11:15:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:16:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:16:01 lotterydb systemd: Started Session 281825 of user mysql.
+Jul 15 11:16:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:17:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:17:01 lotterydb systemd: Started Session 281826 of user mysql.
+Jul 15 11:17:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:18:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:18:01 lotterydb systemd: Started Session 281827 of user mysql.
+Jul 15 11:18:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:19:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:19:01 lotterydb systemd: Started Session 281828 of user mysql.
+Jul 15 11:19:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:20:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:20:01 lotterydb systemd: Started Session 281829 of user mysql.
+Jul 15 11:20:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:20:01 lotterydb systemd: Started Session 281830 of user root.
+Jul 15 11:20:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:20:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:21:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:21:01 lotterydb systemd: Started Session 281831 of user mysql.
+Jul 15 11:21:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:22:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:22:01 lotterydb systemd: Started Session 281832 of user mysql.
+Jul 15 11:22:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:23:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:23:01 lotterydb systemd: Started Session 281833 of user mysql.
+Jul 15 11:23:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:24:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:24:01 lotterydb systemd: Started Session 281834 of user mysql.
+Jul 15 11:24:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:25:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:25:01 lotterydb systemd: Started Session 281835 of user mysql.
+Jul 15 11:25:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:26:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:26:01 lotterydb systemd: Started Session 281836 of user mysql.
+Jul 15 11:26:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:27:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:27:01 lotterydb systemd: Started Session 281837 of user mysql.
+Jul 15 11:27:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:28:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:28:01 lotterydb systemd: Started Session 281838 of user mysql.
+Jul 15 11:28:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:29:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:29:01 lotterydb systemd: Started Session 281839 of user mysql.
+Jul 15 11:29:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:30:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:30:01 lotterydb systemd: Started Session 281840 of user root.
+Jul 15 11:30:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:30:01 lotterydb systemd: Started Session 281841 of user mysql.
+Jul 15 11:30:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:30:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:31:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:31:01 lotterydb systemd: Started Session 281842 of user mysql.
+Jul 15 11:31:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:32:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:32:01 lotterydb systemd: Started Session 281843 of user mysql.
+Jul 15 11:32:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:33:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:33:01 lotterydb systemd: Started Session 281844 of user mysql.
+Jul 15 11:33:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:34:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:34:01 lotterydb systemd: Started Session 281845 of user mysql.
+Jul 15 11:34:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:35:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:35:01 lotterydb systemd: Started Session 281846 of user mysql.
+Jul 15 11:35:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:36:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:36:01 lotterydb systemd: Started Session 281847 of user mysql.
+Jul 15 11:36:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:37:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:37:01 lotterydb systemd: Started Session 281848 of user mysql.
+Jul 15 11:37:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:38:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:38:01 lotterydb systemd: Started Session 281849 of user mysql.
+Jul 15 11:38:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:39:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:39:01 lotterydb systemd: Started Session 281850 of user mysql.
+Jul 15 11:39:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:40:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:40:01 lotterydb systemd: Started Session 281851 of user mysql.
+Jul 15 11:40:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:40:01 lotterydb systemd: Started Session 281852 of user root.
+Jul 15 11:40:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:40:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:41:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:41:01 lotterydb systemd: Started Session 281853 of user mysql.
+Jul 15 11:41:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:42:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:42:01 lotterydb systemd: Started Session 281854 of user mysql.
+Jul 15 11:42:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:43:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:43:01 lotterydb systemd: Started Session 281855 of user mysql.
+Jul 15 11:43:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:44:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:44:01 lotterydb systemd: Started Session 281856 of user mysql.
+Jul 15 11:44:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:45:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:45:01 lotterydb systemd: Started Session 281857 of user mysql.
+Jul 15 11:45:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:46:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:46:01 lotterydb systemd: Started Session 281858 of user mysql.
+Jul 15 11:46:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:47:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:47:01 lotterydb systemd: Started Session 281859 of user mysql.
+Jul 15 11:47:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:48:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:48:01 lotterydb systemd: Started Session 281860 of user mysql.
+Jul 15 11:48:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:49:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:49:01 lotterydb systemd: Started Session 281861 of user mysql.
+Jul 15 11:49:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:50:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:50:01 lotterydb systemd: Started Session 281862 of user root.
+Jul 15 11:50:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:50:01 lotterydb systemd: Started Session 281863 of user mysql.
+Jul 15 11:50:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:50:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:51:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:51:01 lotterydb systemd: Started Session 281864 of user mysql.
+Jul 15 11:51:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:52:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:52:01 lotterydb systemd: Started Session 281865 of user mysql.
+Jul 15 11:52:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:53:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:53:01 lotterydb systemd: Started Session 281866 of user mysql.
+Jul 15 11:53:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:54:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:54:01 lotterydb systemd: Started Session 281867 of user mysql.
+Jul 15 11:54:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:55:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:55:01 lotterydb systemd: Started Session 281868 of user mysql.
+Jul 15 11:55:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:56:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:56:01 lotterydb systemd: Started Session 281869 of user mysql.
+Jul 15 11:56:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:57:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:57:01 lotterydb systemd: Started Session 281870 of user mysql.
+Jul 15 11:57:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:58:02 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:58:02 lotterydb systemd: Started Session 281871 of user mysql.
+Jul 15 11:58:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:59:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:59:01 lotterydb systemd: Started Session 281872 of user mysql.
+Jul 15 11:59:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:00:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:00:01 lotterydb systemd: Started Session 281873 of user mysql.
+Jul 15 12:00:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:00:01 lotterydb systemd: Started Session 281874 of user root.
+Jul 15 12:00:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:00:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:01:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:01:01 lotterydb systemd: Started Session 281875 of user mysql.
+Jul 15 12:01:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:01:01 lotterydb systemd: Started Session 281876 of user root.
+Jul 15 12:01:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:01:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:02:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:02:01 lotterydb systemd: Started Session 281877 of user mysql.
+Jul 15 12:02:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:03:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:03:01 lotterydb systemd: Started Session 281878 of user mysql.
+Jul 15 12:03:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:04:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:04:01 lotterydb systemd: Started Session 281879 of user mysql.
+Jul 15 12:04:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:05:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:05:01 lotterydb systemd: Started Session 281880 of user mysql.
+Jul 15 12:05:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:06:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:06:01 lotterydb systemd: Started Session 281881 of user mysql.
+Jul 15 12:06:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:07:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:07:01 lotterydb systemd: Started Session 281882 of user mysql.
+Jul 15 12:07:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:08:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:08:01 lotterydb systemd: Started Session 281883 of user mysql.
+Jul 15 12:08:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:09:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:09:01 lotterydb systemd: Started Session 281884 of user mysql.
+Jul 15 12:09:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:10:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:10:01 lotterydb systemd: Started Session 281886 of user mysql.
+Jul 15 12:10:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:10:01 lotterydb systemd: Started Session 281885 of user root.
+Jul 15 12:10:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:10:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:11:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:11:01 lotterydb systemd: Started Session 281887 of user mysql.
+Jul 15 12:11:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:12:02 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:12:02 lotterydb systemd: Started Session 281888 of user mysql.
+Jul 15 12:12:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:13:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:13:01 lotterydb systemd: Started Session 281889 of user mysql.
+Jul 15 12:13:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:14:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:14:01 lotterydb systemd: Started Session 281890 of user mysql.
+Jul 15 12:14:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:15:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:15:01 lotterydb systemd: Started Session 281891 of user mysql.
+Jul 15 12:15:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:16:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:16:01 lotterydb systemd: Started Session 281892 of user mysql.
+Jul 15 12:16:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:17:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:17:01 lotterydb systemd: Started Session 281893 of user mysql.
+Jul 15 12:17:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:18:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:18:01 lotterydb systemd: Started Session 281894 of user mysql.
+Jul 15 12:18:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:19:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:19:01 lotterydb systemd: Started Session 281895 of user mysql.
+Jul 15 12:19:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:20:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:20:01 lotterydb systemd: Started Session 281896 of user mysql.
+Jul 15 12:20:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:20:01 lotterydb systemd: Started Session 281897 of user root.
+Jul 15 12:20:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:20:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:21:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:21:01 lotterydb systemd: Started Session 281898 of user mysql.
+Jul 15 12:21:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:22:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:22:01 lotterydb systemd: Started Session 281899 of user mysql.
+Jul 15 12:22:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:23:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:23:01 lotterydb systemd: Started Session 281900 of user mysql.
+Jul 15 12:23:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:24:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:24:01 lotterydb systemd: Started Session 281901 of user mysql.
+Jul 15 12:24:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:25:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:25:01 lotterydb systemd: Started Session 281902 of user mysql.
+Jul 15 12:25:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:26:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:26:02 lotterydb systemd: Started Session 281903 of user mysql.
+Jul 15 12:26:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:27:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:27:01 lotterydb systemd: Started Session 281904 of user mysql.
+Jul 15 12:27:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:28:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:28:01 lotterydb systemd: Started Session 281905 of user mysql.
+Jul 15 12:28:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:29:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:29:01 lotterydb systemd: Started Session 281906 of user mysql.
+Jul 15 12:29:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:30:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:30:01 lotterydb systemd: Started Session 281907 of user mysql.
+Jul 15 12:30:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:30:01 lotterydb systemd: Started Session 281908 of user root.
+Jul 15 12:30:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:30:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:31:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:31:01 lotterydb systemd: Started Session 281909 of user mysql.
+Jul 15 12:31:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:32:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:32:01 lotterydb systemd: Started Session 281910 of user mysql.
+Jul 15 12:32:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:33:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:33:01 lotterydb systemd: Started Session 281911 of user mysql.
+Jul 15 12:33:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:34:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:34:01 lotterydb systemd: Started Session 281912 of user mysql.
+Jul 15 12:34:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:35:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:35:01 lotterydb systemd: Started Session 281913 of user mysql.
+Jul 15 12:35:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:36:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:36:01 lotterydb systemd: Started Session 281914 of user mysql.
+Jul 15 12:36:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:37:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:37:01 lotterydb systemd: Started Session 281915 of user mysql.
+Jul 15 12:37:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:38:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:38:01 lotterydb systemd: Started Session 281916 of user mysql.
+Jul 15 12:38:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:39:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:39:01 lotterydb systemd: Started Session 281917 of user mysql.
+Jul 15 12:39:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:40:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:40:01 lotterydb systemd: Started Session 281918 of user mysql.
+Jul 15 12:40:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:40:01 lotterydb systemd: Started Session 281919 of user root.
+Jul 15 12:40:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:40:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:41:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:41:01 lotterydb systemd: Started Session 281920 of user mysql.
+Jul 15 12:41:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:42:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:42:01 lotterydb systemd: Started Session 281921 of user mysql.
+Jul 15 12:42:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:43:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:43:01 lotterydb systemd: Started Session 281922 of user mysql.
+Jul 15 12:43:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:44:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:44:01 lotterydb systemd: Started Session 281923 of user mysql.
+Jul 15 12:44:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:45:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:45:01 lotterydb systemd: Started Session 281924 of user mysql.
+Jul 15 12:45:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:46:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:46:01 lotterydb systemd: Started Session 281925 of user mysql.
+Jul 15 12:46:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:47:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:47:01 lotterydb systemd: Started Session 281926 of user mysql.
+Jul 15 12:47:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:48:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:48:01 lotterydb systemd: Started Session 281927 of user mysql.
+Jul 15 12:48:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:49:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:49:01 lotterydb systemd: Started Session 281928 of user mysql.
+Jul 15 12:49:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:50:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:50:01 lotterydb systemd: Started Session 281929 of user root.
+Jul 15 12:50:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:50:01 lotterydb systemd: Started Session 281930 of user mysql.
+Jul 15 12:50:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:50:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:51:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:51:01 lotterydb systemd: Started Session 281931 of user mysql.
+Jul 15 12:51:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:52:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:52:01 lotterydb systemd: Started Session 281932 of user mysql.
+Jul 15 12:52:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:53:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:53:01 lotterydb systemd: Started Session 281933 of user mysql.
+Jul 15 12:53:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:54:02 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:54:02 lotterydb systemd: Started Session 281934 of user mysql.
+Jul 15 12:54:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:55:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:55:01 lotterydb systemd: Started Session 281935 of user mysql.
+Jul 15 12:55:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:56:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:56:01 lotterydb systemd: Started Session 281936 of user mysql.
+Jul 15 12:56:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:57:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:57:01 lotterydb systemd: Started Session 281937 of user mysql.
+Jul 15 12:57:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:58:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:58:01 lotterydb systemd: Started Session 281938 of user mysql.
+Jul 15 12:58:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:59:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:59:01 lotterydb systemd: Started Session 281939 of user mysql.
+Jul 15 12:59:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:00:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:00:01 lotterydb systemd: Started Session 281940 of user root.
+Jul 15 13:00:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:00:01 lotterydb systemd: Started Session 281941 of user mysql.
+Jul 15 13:00:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:00:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:01:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:01:01 lotterydb systemd: Started Session 281942 of user mysql.
+Jul 15 13:01:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:01:01 lotterydb systemd: Started Session 281943 of user root.
+Jul 15 13:01:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:01:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:02:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:02:01 lotterydb systemd: Started Session 281944 of user mysql.
+Jul 15 13:02:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:03:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:03:01 lotterydb systemd: Started Session 281945 of user mysql.
+Jul 15 13:03:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:04:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:04:01 lotterydb systemd: Started Session 281946 of user mysql.
+Jul 15 13:04:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:05:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:05:01 lotterydb systemd: Started Session 281947 of user mysql.
+Jul 15 13:05:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:06:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:06:01 lotterydb systemd: Started Session 281948 of user mysql.
+Jul 15 13:06:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:07:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:07:01 lotterydb systemd: Started Session 281949 of user mysql.
+Jul 15 13:07:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:08:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:08:02 lotterydb systemd: Started Session 281950 of user mysql.
+Jul 15 13:08:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:09:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:09:01 lotterydb systemd: Started Session 281951 of user mysql.
+Jul 15 13:09:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:10:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:10:01 lotterydb systemd: Started Session 281952 of user mysql.
+Jul 15 13:10:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:10:01 lotterydb systemd: Started Session 281953 of user root.
+Jul 15 13:10:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:10:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:11:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:11:01 lotterydb systemd: Started Session 281954 of user mysql.
+Jul 15 13:11:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:12:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:12:01 lotterydb systemd: Started Session 281955 of user mysql.
+Jul 15 13:12:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:13:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:13:01 lotterydb systemd: Started Session 281956 of user mysql.
+Jul 15 13:13:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:14:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:14:01 lotterydb systemd: Started Session 281957 of user mysql.
+Jul 15 13:14:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:15:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:15:01 lotterydb systemd: Started Session 281958 of user mysql.
+Jul 15 13:15:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:16:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:16:01 lotterydb systemd: Started Session 281959 of user mysql.
+Jul 15 13:16:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:17:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:17:01 lotterydb systemd: Started Session 281960 of user mysql.
+Jul 15 13:17:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:18:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:18:01 lotterydb systemd: Started Session 281961 of user mysql.
+Jul 15 13:18:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:19:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:19:01 lotterydb systemd: Started Session 281962 of user mysql.
+Jul 15 13:19:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:20:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:20:01 lotterydb systemd: Started Session 281963 of user mysql.
+Jul 15 13:20:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:20:01 lotterydb systemd: Started Session 281964 of user root.
+Jul 15 13:20:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:20:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:21:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:21:01 lotterydb systemd: Started Session 281965 of user mysql.
+Jul 15 13:21:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:22:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:22:01 lotterydb systemd: Started Session 281966 of user mysql.
+Jul 15 13:22:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:23:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:23:01 lotterydb systemd: Started Session 281967 of user mysql.
+Jul 15 13:23:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:24:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:24:01 lotterydb systemd: Started Session 281968 of user mysql.
+Jul 15 13:24:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:25:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:25:01 lotterydb systemd: Started Session 281969 of user mysql.
+Jul 15 13:25:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:26:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:26:01 lotterydb systemd: Started Session 281970 of user mysql.
+Jul 15 13:26:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:27:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:27:01 lotterydb systemd: Started Session 281971 of user mysql.
+Jul 15 13:27:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:28:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:28:01 lotterydb systemd: Started Session 281972 of user mysql.
+Jul 15 13:28:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:29:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:29:01 lotterydb systemd: Started Session 281973 of user mysql.
+Jul 15 13:29:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:30:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:30:01 lotterydb systemd: Started Session 281974 of user root.
+Jul 15 13:30:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:30:01 lotterydb systemd: Started Session 281975 of user mysql.
+Jul 15 13:30:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:30:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:31:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:31:01 lotterydb systemd: Started Session 281976 of user mysql.
+Jul 15 13:31:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:32:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:32:01 lotterydb systemd: Started Session 281977 of user mysql.
+Jul 15 13:32:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:33:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:33:01 lotterydb systemd: Started Session 281978 of user mysql.
+Jul 15 13:33:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:34:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:34:01 lotterydb systemd: Started Session 281979 of user mysql.
+Jul 15 13:34:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:35:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:35:01 lotterydb systemd: Started Session 281980 of user mysql.
+Jul 15 13:35:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:36:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:36:01 lotterydb systemd: Started Session 281981 of user mysql.
+Jul 15 13:36:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:37:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:37:01 lotterydb systemd: Started Session 281982 of user mysql.
+Jul 15 13:37:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:38:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:38:01 lotterydb systemd: Started Session 281983 of user mysql.
+Jul 15 13:38:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:39:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:39:01 lotterydb systemd: Started Session 281984 of user mysql.
+Jul 15 13:39:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:40:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:40:01 lotterydb systemd: Started Session 281985 of user mysql.
+Jul 15 13:40:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:40:01 lotterydb systemd: Started Session 281986 of user root.
+Jul 15 13:40:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:40:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:41:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:41:01 lotterydb systemd: Started Session 281987 of user mysql.
+Jul 15 13:41:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:42:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:42:01 lotterydb systemd: Started Session 281988 of user mysql.
+Jul 15 13:42:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:43:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:43:01 lotterydb systemd: Started Session 281989 of user mysql.
+Jul 15 13:43:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:44:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:44:01 lotterydb systemd: Started Session 281990 of user mysql.
+Jul 15 13:44:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:45:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:45:01 lotterydb systemd: Started Session 281991 of user mysql.
+Jul 15 13:45:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:46:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:46:01 lotterydb systemd: Started Session 281992 of user mysql.
+Jul 15 13:46:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:47:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:47:01 lotterydb systemd: Started Session 281993 of user mysql.
+Jul 15 13:47:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:48:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:48:01 lotterydb systemd: Started Session 281994 of user mysql.
+Jul 15 13:48:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:49:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:49:01 lotterydb systemd: Started Session 281995 of user mysql.
+Jul 15 13:49:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:50:02 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:50:02 lotterydb systemd: Started Session 281996 of user root.
+Jul 15 13:50:02 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:50:02 lotterydb systemd: Started Session 281997 of user mysql.
+Jul 15 13:50:02 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:50:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:51:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:51:01 lotterydb systemd: Started Session 281998 of user mysql.
+Jul 15 13:51:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:51:14 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:51:14 lotterydb systemd-logind: New session 281999 of user root.
+Jul 15 13:51:14 lotterydb systemd: Started Session 281999 of user root.
+Jul 15 13:51:14 lotterydb dbus[8080]: [system] Activating service name='org.freedesktop.problems' (using servicehelper)
+Jul 15 13:51:14 lotterydb dbus[8080]: [system] Successfully activated service 'org.freedesktop.problems'
+Jul 15 13:52:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:52:01 lotterydb systemd: Started Session 282000 of user mysql.
+Jul 15 13:52:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:53:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:53:01 lotterydb systemd: Started Session 282001 of user mysql.
+Jul 15 13:53:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:54:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:54:01 lotterydb systemd: Started Session 282002 of user mysql.
+Jul 15 13:54:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:55:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:55:01 lotterydb systemd: Started Session 282003 of user mysql.
+Jul 15 13:55:01 lotterydb systemd: Removed slice User Slice of mysql.
+======host meta information
+=====uptime===============================
+ 13:56:07 up 175 days,  5:54,  1 user,  load average: 0.46, 0.16, 0.08
+======ip=================================
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+    link/ether 00:50:56:be:50:1f brd ff:ff:ff:ff:ff:ff
+    inet 10.100.8.182/24 brd 10.100.8.255 scope global noprefixroute ens192
+       valid_lft forever preferred_lft forever
+    inet6 fe80::250:56ff:febe:501f/64 scope link 
+       valid_lft forever preferred_lft forever
+======hostname============================
+lotterydb
+======os version============================
+\S
+Kernel \r on an \m
+
+======kernel version=========================
+Linux lotterydb 3.10.0-957.10.1.el7.x86_64 #1 SMP Thu Feb 7 07:12:53 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+======mysql version=========================
+======mysql client==========================
+mysql  Ver 14.14 Distrib 5.7.24, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+======mysql instance========================
+tcp6       0      0 :::3306                 :::*                    LISTEN      9395/mysqld         
+unix  2      [ ACC ]     STREAM     LISTENING     47140    9395/mysqld          /data/mysql/data/mysql.sock
+======memory&swap========================
+              total        used        free      shared  buff/cache   available
+Mem:           7973        1336        4429         405        2206        5890
+Swap:          8063           0        8063
+======physical cpu==========================
+2
+======cores per physical cpu====================
+cpu cores	: 2
+======processor============================
+4
+======cpu version===========================
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+======disk info=============================
+Filesystem            Type      Size  Used Avail Use% Mounted on
+/dev/mapper/rhel-root xfs        50G  7.6G   43G  16% /
+devtmpfs              devtmpfs  3.9G     0  3.9G   0% /dev
+tmpfs                 tmpfs     3.9G   84K  3.9G   1% /dev/shm
+tmpfs                 tmpfs     3.9G  402M  3.6G  11% /run
+tmpfs                 tmpfs     3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sdb              xfs       100G  3.8G   97G   4% /data
+/dev/sda1             xfs      1014M  242M  773M  24% /boot
+/dev/mapper/rhel-home xfs        21G   52M   21G   1% /home
+/dev/mapper/rhel-tmp  xfs       3.0G   33M  3.0G   2% /tmp
+tmpfs                 tmpfs     798M   12K  798M   1% /run/user/42
+tmpfs                 tmpfs     798M     0  798M   0% /run/user/0
+======numa mount========================
+0
+======io stat===============================
+Linux 3.10.0-957.10.1.el7.x86_64 (lotterydb) 	07/15/2021 	_x86_64_	(4 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.31    0.00    0.07    0.00    0.00   99.62
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.02    0.00    0.18     0.00     0.00    13.81     0.00    0.31    3.60    0.29   0.12   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00    33.47     0.00    0.36    0.36    0.00   0.27   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00    42.43     0.00    1.02    1.77    0.43   0.70   0.00
+dm-0              0.00     0.00    0.00    0.20     0.00     0.00    12.62     0.00    0.31    4.24    0.29   0.11   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00    47.40     0.00    0.81    0.81    0.00   0.71   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00    12.38     0.00    0.34    1.67    0.24   0.33   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00    13.35     0.00    0.28    1.91    0.19   0.24   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.53    0.00    0.10    0.00    0.00   99.37
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.50    0.00    0.03    0.00    0.00   99.47
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     9.10    0.20   21.70     0.00     0.31    29.00     0.05    2.12    6.00    2.08   0.09   0.19
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.20   30.80     0.00     0.31    20.49     0.07    2.18    6.00    2.15   0.06   0.19
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.48    0.00    0.05    0.00    0.00   99.47
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00   26.80     0.00     0.42    31.75     0.06    2.25    0.00    2.25   0.04   0.12
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00   26.40     0.00     0.41    31.91     0.06    2.29    0.00    2.29   0.05   0.12
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.30     0.00     0.00    17.67     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.48    0.00    0.03    0.00    0.00   99.50
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.48    0.00    0.05    0.03    0.00   99.45
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    1.00     0.00     0.02    32.90     0.00    0.70    0.00    0.70   0.10   0.01
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    1.00     0.00     0.02    32.90     0.00    0.70    0.00    0.70   0.10   0.01
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.70    0.00    0.20    0.00    0.00   99.10
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    1.00     0.00     0.00     8.60     0.00    0.10    0.00    0.10   0.10   0.01
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.30     0.00     0.00    10.67     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.50     0.00     0.00    10.20     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.50    0.00    0.08    0.00    0.00   99.42
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.10     0.00     0.00    16.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00    16.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.48    0.00    0.05    0.00    0.00   99.47
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.70    0.00    3.70     0.00     0.05    28.73     0.00    0.57    0.00    0.57   0.05   0.02
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    4.40     0.00     0.05    24.16     0.00    0.52    0.00    0.52   0.05   0.02
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.43    0.00    0.00    0.00    0.00   99.57
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.30     0.00     0.00     1.67     0.00    0.33    0.00    0.33   0.33   0.01
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00     2.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+======vmstat======
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 4536540   2224 2257724    0    0     0     0    0    1  0  0 100  0  0
+ 0  0      0 4536540   2224 2257724    0    0     0     0  116  161  1  0 100  0  0
+ 0  0      0 4536548   2224 2257692    0    0     0     0  119  183  1  0 100  0  0
+ 0  0      0 4536548   2224 2257692    0    0     0     0  103  161  1  0 100  0  0
+ 0  0      0 4536548   2224 2257692    0    0     0     0  109  171  1  0 100  0  0
+ 0  0      0 4536484   2224 2257692    0    0     0     0  129  182  1  0 100  0  0
+ 0  0      0 4536484   2224 2257692    0    0     0     0  128  188  0  0 99  0  0
+ 0  0      0 4536484   2224 2257692    0    0     0     0  111  173  1  0 100  0  0
+ 0  0      0 4536516   2224 2257692    0    0     0     0  123  181  1  0 100  0  0
+ 0  0      0 4536516   2224 2257692    0    0     0     0   99  158  1  0 100  0  0
+====dstat===
+You did not select any stats, using -cdngy by default.
+[7l----total-cpu-usage---- -dsk/total- -net/total- ---paging-- ---system--
+usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw 
+  0   0 100   0   0   0|  37B 1245B|   0     0 |   0     0 |  91   139 
+  1   0 100   0   0   0|   0  8192B|  60B    0 |   0     0 | 111   167 
+  1   0 100   0   0   0|   0     0 |  60B    0 |   0     0 | 104   162 
+  1   0  99   0   0   0|   0     0 |  60B   45B|   0     0 | 114   177 
+  1   0 100   0   0   0|   0     0 |   0     0 |   0     0 | 103   154 
+  1   0  99   0   0   0|   0     0 |  60B   45B|   0     0 | 103   161 
+  1   0 100   0   0   0|   0     0 |   0     0 |   0     0 | 118   175 
+  1   0  99   0   0   0|   0     0 |   0     0 |   0     0 | 107   169 
+  1   0 100   0   0   0|   0     0 |  60B   45B|   0     0 | 103   170 
+  1   0  99   0   0   0|   0     0 |   0     0 |   0     0 |  96   155 
+  1   0 100   0   0   0|   0     0 |  60B   45B|   0     0 | 107   162 
+======system log============================
+Jul 15 09:02:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:03:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:03:01 lotterydb systemd: Started Session 281677 of user mysql.
+Jul 15 09:03:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:04:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:04:01 lotterydb systemd: Started Session 281678 of user mysql.
+Jul 15 09:04:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:05:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:05:01 lotterydb systemd: Started Session 281679 of user mysql.
+Jul 15 09:05:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:06:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:06:01 lotterydb systemd: Started Session 281680 of user mysql.
+Jul 15 09:06:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:07:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:07:01 lotterydb systemd: Started Session 281681 of user mysql.
+Jul 15 09:07:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:08:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:08:01 lotterydb systemd: Started Session 281682 of user mysql.
+Jul 15 09:08:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:09:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:09:01 lotterydb systemd: Started Session 281683 of user mysql.
+Jul 15 09:09:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:10:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:10:01 lotterydb systemd: Started Session 281685 of user mysql.
+Jul 15 09:10:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 09:10:01 lotterydb systemd: Started Session 281684 of user root.
+Jul 15 09:10:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 09:10:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:11:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:11:01 lotterydb systemd: Started Session 281686 of user mysql.
+Jul 15 09:11:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:12:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:12:01 lotterydb systemd: Started Session 281687 of user mysql.
+Jul 15 09:12:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:13:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:13:01 lotterydb systemd: Started Session 281688 of user mysql.
+Jul 15 09:13:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:13:46 lotterydb systemd: Starting Cleanup of Temporary Directories...
+Jul 15 09:13:46 lotterydb systemd: Started Cleanup of Temporary Directories.
+Jul 15 09:14:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:14:01 lotterydb systemd: Started Session 281689 of user mysql.
+Jul 15 09:14:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:15:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:15:01 lotterydb systemd: Started Session 281690 of user mysql.
+Jul 15 09:15:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:16:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:16:01 lotterydb systemd: Started Session 281691 of user mysql.
+Jul 15 09:16:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:17:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:17:01 lotterydb systemd: Started Session 281692 of user mysql.
+Jul 15 09:17:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:18:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:18:01 lotterydb systemd: Started Session 281693 of user mysql.
+Jul 15 09:18:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:19:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:19:01 lotterydb systemd: Started Session 281694 of user mysql.
+Jul 15 09:19:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:20:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 09:20:01 lotterydb systemd: Started Session 281695 of user root.
+Jul 15 09:20:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:20:01 lotterydb systemd: Started Session 281696 of user mysql.
+Jul 15 09:20:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 09:20:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:21:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:21:01 lotterydb systemd: Started Session 281697 of user mysql.
+Jul 15 09:21:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:22:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:22:01 lotterydb systemd: Started Session 281698 of user mysql.
+Jul 15 09:22:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:23:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:23:01 lotterydb systemd: Started Session 281699 of user mysql.
+Jul 15 09:23:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:24:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:24:01 lotterydb systemd: Started Session 281700 of user mysql.
+Jul 15 09:24:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:25:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:25:01 lotterydb systemd: Started Session 281701 of user mysql.
+Jul 15 09:25:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:26:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:26:01 lotterydb systemd: Started Session 281702 of user mysql.
+Jul 15 09:26:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:27:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:27:01 lotterydb systemd: Started Session 281703 of user mysql.
+Jul 15 09:27:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:28:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:28:01 lotterydb systemd: Started Session 281704 of user mysql.
+Jul 15 09:28:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:29:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:29:01 lotterydb systemd: Started Session 281705 of user mysql.
+Jul 15 09:29:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:30:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 09:30:01 lotterydb systemd: Started Session 281706 of user root.
+Jul 15 09:30:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:30:01 lotterydb systemd: Started Session 281707 of user mysql.
+Jul 15 09:30:02 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 09:30:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:31:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:31:01 lotterydb systemd: Started Session 281708 of user mysql.
+Jul 15 09:31:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:32:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:32:01 lotterydb systemd: Started Session 281709 of user mysql.
+Jul 15 09:32:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:33:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:33:01 lotterydb systemd: Started Session 281710 of user mysql.
+Jul 15 09:33:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:34:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:34:01 lotterydb systemd: Started Session 281711 of user mysql.
+Jul 15 09:34:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:35:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:35:01 lotterydb systemd: Started Session 281712 of user mysql.
+Jul 15 09:35:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:36:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:36:01 lotterydb systemd: Started Session 281713 of user mysql.
+Jul 15 09:36:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:37:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:37:01 lotterydb systemd: Started Session 281714 of user mysql.
+Jul 15 09:37:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:38:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:38:01 lotterydb systemd: Started Session 281715 of user mysql.
+Jul 15 09:38:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:39:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:39:01 lotterydb systemd: Started Session 281716 of user mysql.
+Jul 15 09:39:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:40:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 09:40:01 lotterydb systemd: Started Session 281717 of user root.
+Jul 15 09:40:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:40:01 lotterydb systemd: Started Session 281718 of user mysql.
+Jul 15 09:40:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 09:40:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:41:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:41:01 lotterydb systemd: Started Session 281719 of user mysql.
+Jul 15 09:41:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:42:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:42:01 lotterydb systemd: Started Session 281720 of user mysql.
+Jul 15 09:42:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:43:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:43:01 lotterydb systemd: Started Session 281721 of user mysql.
+Jul 15 09:43:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:44:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:44:01 lotterydb systemd: Started Session 281722 of user mysql.
+Jul 15 09:44:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:45:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:45:02 lotterydb systemd: Started Session 281723 of user mysql.
+Jul 15 09:45:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:46:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:46:01 lotterydb systemd: Started Session 281724 of user mysql.
+Jul 15 09:46:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:47:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:47:01 lotterydb systemd: Started Session 281725 of user mysql.
+Jul 15 09:47:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:48:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:48:01 lotterydb systemd: Started Session 281726 of user mysql.
+Jul 15 09:48:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:49:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:49:01 lotterydb systemd: Started Session 281727 of user mysql.
+Jul 15 09:49:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:50:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:50:01 lotterydb systemd: Started Session 281729 of user mysql.
+Jul 15 09:50:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 09:50:01 lotterydb systemd: Started Session 281728 of user root.
+Jul 15 09:50:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 09:50:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:51:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:51:01 lotterydb systemd: Started Session 281730 of user mysql.
+Jul 15 09:51:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:52:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:52:01 lotterydb systemd: Started Session 281731 of user mysql.
+Jul 15 09:52:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:53:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:53:01 lotterydb systemd: Started Session 281732 of user mysql.
+Jul 15 09:53:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:54:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:54:01 lotterydb systemd: Started Session 281733 of user mysql.
+Jul 15 09:54:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:55:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:55:01 lotterydb systemd: Started Session 281734 of user mysql.
+Jul 15 09:55:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:56:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:56:01 lotterydb systemd: Started Session 281735 of user mysql.
+Jul 15 09:56:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:57:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:57:01 lotterydb systemd: Started Session 281736 of user mysql.
+Jul 15 09:57:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:58:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:58:01 lotterydb systemd: Started Session 281737 of user mysql.
+Jul 15 09:58:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 09:59:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 09:59:01 lotterydb systemd: Started Session 281738 of user mysql.
+Jul 15 09:59:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:00:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:00:01 lotterydb systemd: Started Session 281739 of user root.
+Jul 15 10:00:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:00:01 lotterydb systemd: Started Session 281740 of user mysql.
+Jul 15 10:00:02 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:00:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:01:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:01:01 lotterydb systemd: Started Session 281741 of user root.
+Jul 15 10:01:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:01:01 lotterydb systemd: Started Session 281742 of user mysql.
+Jul 15 10:01:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:01:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:02:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:02:01 lotterydb systemd: Started Session 281743 of user mysql.
+Jul 15 10:02:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:03:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:03:01 lotterydb systemd: Started Session 281744 of user mysql.
+Jul 15 10:03:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:04:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:04:01 lotterydb systemd: Started Session 281745 of user mysql.
+Jul 15 10:04:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:05:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:05:01 lotterydb systemd: Started Session 281746 of user mysql.
+Jul 15 10:05:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:06:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:06:01 lotterydb systemd: Started Session 281747 of user mysql.
+Jul 15 10:06:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:07:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:07:01 lotterydb systemd: Started Session 281748 of user mysql.
+Jul 15 10:07:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:08:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:08:01 lotterydb systemd: Started Session 281749 of user mysql.
+Jul 15 10:08:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:09:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:09:01 lotterydb systemd: Started Session 281750 of user mysql.
+Jul 15 10:09:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:10:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:10:01 lotterydb systemd: Started Session 281751 of user mysql.
+Jul 15 10:10:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:10:01 lotterydb systemd: Started Session 281752 of user root.
+Jul 15 10:10:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:10:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:11:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:11:01 lotterydb systemd: Started Session 281753 of user mysql.
+Jul 15 10:11:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:12:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:12:01 lotterydb systemd: Started Session 281754 of user mysql.
+Jul 15 10:12:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:13:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:13:01 lotterydb systemd: Started Session 281755 of user mysql.
+Jul 15 10:13:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:14:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:14:01 lotterydb systemd: Started Session 281756 of user mysql.
+Jul 15 10:14:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:15:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:15:01 lotterydb systemd: Started Session 281757 of user mysql.
+Jul 15 10:15:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:16:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:16:01 lotterydb systemd: Started Session 281758 of user mysql.
+Jul 15 10:16:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:17:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:17:01 lotterydb systemd: Started Session 281759 of user mysql.
+Jul 15 10:17:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:18:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:18:01 lotterydb systemd: Started Session 281760 of user mysql.
+Jul 15 10:18:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:19:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:19:01 lotterydb systemd: Started Session 281761 of user mysql.
+Jul 15 10:19:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:20:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:20:01 lotterydb systemd: Started Session 281762 of user root.
+Jul 15 10:20:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:20:01 lotterydb systemd: Started Session 281763 of user mysql.
+Jul 15 10:20:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:20:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:21:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:21:01 lotterydb systemd: Started Session 281764 of user mysql.
+Jul 15 10:21:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:22:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:22:01 lotterydb systemd: Started Session 281765 of user mysql.
+Jul 15 10:22:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:23:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:23:01 lotterydb systemd: Started Session 281766 of user mysql.
+Jul 15 10:23:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:24:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:24:01 lotterydb systemd: Started Session 281767 of user mysql.
+Jul 15 10:24:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:25:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:25:01 lotterydb systemd: Started Session 281768 of user mysql.
+Jul 15 10:25:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:26:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:26:01 lotterydb systemd: Started Session 281769 of user mysql.
+Jul 15 10:26:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:27:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:27:01 lotterydb systemd: Started Session 281770 of user mysql.
+Jul 15 10:27:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:28:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:28:01 lotterydb systemd: Started Session 281771 of user mysql.
+Jul 15 10:28:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:29:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:29:01 lotterydb systemd: Started Session 281772 of user mysql.
+Jul 15 10:29:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:30:02 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:30:02 lotterydb systemd: Started Session 281773 of user root.
+Jul 15 10:30:02 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:30:02 lotterydb systemd: Started Session 281774 of user mysql.
+Jul 15 10:30:02 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:30:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:31:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:31:01 lotterydb systemd: Started Session 281775 of user mysql.
+Jul 15 10:31:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:32:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:32:01 lotterydb systemd: Started Session 281776 of user mysql.
+Jul 15 10:32:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:33:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:33:01 lotterydb systemd: Started Session 281777 of user mysql.
+Jul 15 10:33:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:34:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:34:01 lotterydb systemd: Started Session 281778 of user mysql.
+Jul 15 10:34:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:35:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:35:01 lotterydb systemd: Started Session 281779 of user mysql.
+Jul 15 10:35:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:36:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:36:01 lotterydb systemd: Started Session 281780 of user mysql.
+Jul 15 10:36:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:37:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:37:01 lotterydb systemd: Started Session 281781 of user mysql.
+Jul 15 10:37:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:38:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:38:01 lotterydb systemd: Started Session 281782 of user mysql.
+Jul 15 10:38:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:39:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:39:01 lotterydb systemd: Started Session 281783 of user mysql.
+Jul 15 10:39:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:40:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:40:01 lotterydb systemd: Started Session 281785 of user mysql.
+Jul 15 10:40:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:40:01 lotterydb systemd: Started Session 281784 of user root.
+Jul 15 10:40:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:40:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:41:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:41:01 lotterydb systemd: Started Session 281786 of user mysql.
+Jul 15 10:41:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:42:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:42:01 lotterydb systemd: Started Session 281787 of user mysql.
+Jul 15 10:42:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:43:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:43:01 lotterydb systemd: Started Session 281788 of user mysql.
+Jul 15 10:43:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:44:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:44:01 lotterydb systemd: Started Session 281789 of user mysql.
+Jul 15 10:44:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:45:02 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:45:02 lotterydb systemd: Started Session 281790 of user mysql.
+Jul 15 10:45:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:46:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:46:01 lotterydb systemd: Started Session 281791 of user mysql.
+Jul 15 10:46:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:47:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:47:01 lotterydb systemd: Started Session 281792 of user mysql.
+Jul 15 10:47:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:48:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:48:01 lotterydb systemd: Started Session 281793 of user mysql.
+Jul 15 10:48:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:49:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:49:01 lotterydb systemd: Started Session 281794 of user mysql.
+Jul 15 10:49:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:50:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 10:50:01 lotterydb systemd: Started Session 281795 of user root.
+Jul 15 10:50:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:50:01 lotterydb systemd: Started Session 281796 of user mysql.
+Jul 15 10:50:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 10:50:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:51:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:51:01 lotterydb systemd: Started Session 281797 of user mysql.
+Jul 15 10:51:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:52:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:52:01 lotterydb systemd: Started Session 281798 of user mysql.
+Jul 15 10:52:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:53:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:53:01 lotterydb systemd: Started Session 281799 of user mysql.
+Jul 15 10:53:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:54:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:54:01 lotterydb systemd: Started Session 281800 of user mysql.
+Jul 15 10:54:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:55:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:55:01 lotterydb systemd: Started Session 281801 of user mysql.
+Jul 15 10:55:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:56:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:56:01 lotterydb systemd: Started Session 281802 of user mysql.
+Jul 15 10:56:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:57:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:57:01 lotterydb systemd: Started Session 281803 of user mysql.
+Jul 15 10:57:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:58:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:58:01 lotterydb systemd: Started Session 281804 of user mysql.
+Jul 15 10:58:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 10:59:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 10:59:01 lotterydb systemd: Started Session 281805 of user mysql.
+Jul 15 10:59:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:00:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:00:01 lotterydb systemd: Started Session 281806 of user mysql.
+Jul 15 11:00:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:00:01 lotterydb systemd: Started Session 281807 of user root.
+Jul 15 11:00:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:00:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:01:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:01:01 lotterydb systemd: Started Session 281808 of user mysql.
+Jul 15 11:01:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:01:01 lotterydb systemd: Started Session 281809 of user root.
+Jul 15 11:01:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:01:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:02:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:02:01 lotterydb systemd: Started Session 281810 of user mysql.
+Jul 15 11:02:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:03:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:03:01 lotterydb systemd: Started Session 281811 of user mysql.
+Jul 15 11:03:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:04:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:04:01 lotterydb systemd: Started Session 281812 of user mysql.
+Jul 15 11:04:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:05:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:05:01 lotterydb systemd: Started Session 281813 of user mysql.
+Jul 15 11:05:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:06:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:06:01 lotterydb systemd: Started Session 281814 of user mysql.
+Jul 15 11:06:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:07:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:07:01 lotterydb systemd: Started Session 281815 of user mysql.
+Jul 15 11:07:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:08:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:08:01 lotterydb systemd: Started Session 281816 of user mysql.
+Jul 15 11:08:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:09:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:09:01 lotterydb systemd: Started Session 281817 of user mysql.
+Jul 15 11:09:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:10:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:10:01 lotterydb systemd: Started Session 281819 of user mysql.
+Jul 15 11:10:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:10:01 lotterydb systemd: Started Session 281818 of user root.
+Jul 15 11:10:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:10:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:11:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:11:01 lotterydb systemd: Started Session 281820 of user mysql.
+Jul 15 11:11:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:12:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:12:01 lotterydb systemd: Started Session 281821 of user mysql.
+Jul 15 11:12:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:13:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:13:01 lotterydb systemd: Started Session 281822 of user mysql.
+Jul 15 11:13:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:14:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:14:01 lotterydb systemd: Started Session 281823 of user mysql.
+Jul 15 11:14:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:15:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:15:01 lotterydb systemd: Started Session 281824 of user mysql.
+Jul 15 11:15:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:16:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:16:01 lotterydb systemd: Started Session 281825 of user mysql.
+Jul 15 11:16:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:17:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:17:01 lotterydb systemd: Started Session 281826 of user mysql.
+Jul 15 11:17:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:18:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:18:01 lotterydb systemd: Started Session 281827 of user mysql.
+Jul 15 11:18:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:19:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:19:01 lotterydb systemd: Started Session 281828 of user mysql.
+Jul 15 11:19:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:20:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:20:01 lotterydb systemd: Started Session 281829 of user mysql.
+Jul 15 11:20:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:20:01 lotterydb systemd: Started Session 281830 of user root.
+Jul 15 11:20:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:20:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:21:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:21:01 lotterydb systemd: Started Session 281831 of user mysql.
+Jul 15 11:21:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:22:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:22:01 lotterydb systemd: Started Session 281832 of user mysql.
+Jul 15 11:22:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:23:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:23:01 lotterydb systemd: Started Session 281833 of user mysql.
+Jul 15 11:23:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:24:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:24:01 lotterydb systemd: Started Session 281834 of user mysql.
+Jul 15 11:24:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:25:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:25:01 lotterydb systemd: Started Session 281835 of user mysql.
+Jul 15 11:25:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:26:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:26:01 lotterydb systemd: Started Session 281836 of user mysql.
+Jul 15 11:26:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:27:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:27:01 lotterydb systemd: Started Session 281837 of user mysql.
+Jul 15 11:27:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:28:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:28:01 lotterydb systemd: Started Session 281838 of user mysql.
+Jul 15 11:28:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:29:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:29:01 lotterydb systemd: Started Session 281839 of user mysql.
+Jul 15 11:29:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:30:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:30:01 lotterydb systemd: Started Session 281840 of user root.
+Jul 15 11:30:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:30:01 lotterydb systemd: Started Session 281841 of user mysql.
+Jul 15 11:30:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:30:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:31:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:31:01 lotterydb systemd: Started Session 281842 of user mysql.
+Jul 15 11:31:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:32:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:32:01 lotterydb systemd: Started Session 281843 of user mysql.
+Jul 15 11:32:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:33:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:33:01 lotterydb systemd: Started Session 281844 of user mysql.
+Jul 15 11:33:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:34:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:34:01 lotterydb systemd: Started Session 281845 of user mysql.
+Jul 15 11:34:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:35:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:35:01 lotterydb systemd: Started Session 281846 of user mysql.
+Jul 15 11:35:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:36:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:36:01 lotterydb systemd: Started Session 281847 of user mysql.
+Jul 15 11:36:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:37:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:37:01 lotterydb systemd: Started Session 281848 of user mysql.
+Jul 15 11:37:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:38:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:38:01 lotterydb systemd: Started Session 281849 of user mysql.
+Jul 15 11:38:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:39:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:39:01 lotterydb systemd: Started Session 281850 of user mysql.
+Jul 15 11:39:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:40:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:40:01 lotterydb systemd: Started Session 281851 of user mysql.
+Jul 15 11:40:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:40:01 lotterydb systemd: Started Session 281852 of user root.
+Jul 15 11:40:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:40:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:41:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:41:01 lotterydb systemd: Started Session 281853 of user mysql.
+Jul 15 11:41:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:42:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:42:01 lotterydb systemd: Started Session 281854 of user mysql.
+Jul 15 11:42:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:43:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:43:01 lotterydb systemd: Started Session 281855 of user mysql.
+Jul 15 11:43:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:44:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:44:01 lotterydb systemd: Started Session 281856 of user mysql.
+Jul 15 11:44:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:45:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:45:01 lotterydb systemd: Started Session 281857 of user mysql.
+Jul 15 11:45:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:46:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:46:01 lotterydb systemd: Started Session 281858 of user mysql.
+Jul 15 11:46:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:47:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:47:01 lotterydb systemd: Started Session 281859 of user mysql.
+Jul 15 11:47:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:48:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:48:01 lotterydb systemd: Started Session 281860 of user mysql.
+Jul 15 11:48:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:49:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:49:01 lotterydb systemd: Started Session 281861 of user mysql.
+Jul 15 11:49:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:50:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 11:50:01 lotterydb systemd: Started Session 281862 of user root.
+Jul 15 11:50:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:50:01 lotterydb systemd: Started Session 281863 of user mysql.
+Jul 15 11:50:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 11:50:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:51:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:51:01 lotterydb systemd: Started Session 281864 of user mysql.
+Jul 15 11:51:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:52:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:52:01 lotterydb systemd: Started Session 281865 of user mysql.
+Jul 15 11:52:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:53:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:53:01 lotterydb systemd: Started Session 281866 of user mysql.
+Jul 15 11:53:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:54:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:54:01 lotterydb systemd: Started Session 281867 of user mysql.
+Jul 15 11:54:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:55:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:55:01 lotterydb systemd: Started Session 281868 of user mysql.
+Jul 15 11:55:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:56:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:56:01 lotterydb systemd: Started Session 281869 of user mysql.
+Jul 15 11:56:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:57:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:57:01 lotterydb systemd: Started Session 281870 of user mysql.
+Jul 15 11:57:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:58:02 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:58:02 lotterydb systemd: Started Session 281871 of user mysql.
+Jul 15 11:58:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 11:59:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 11:59:01 lotterydb systemd: Started Session 281872 of user mysql.
+Jul 15 11:59:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:00:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:00:01 lotterydb systemd: Started Session 281873 of user mysql.
+Jul 15 12:00:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:00:01 lotterydb systemd: Started Session 281874 of user root.
+Jul 15 12:00:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:00:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:01:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:01:01 lotterydb systemd: Started Session 281875 of user mysql.
+Jul 15 12:01:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:01:01 lotterydb systemd: Started Session 281876 of user root.
+Jul 15 12:01:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:01:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:02:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:02:01 lotterydb systemd: Started Session 281877 of user mysql.
+Jul 15 12:02:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:03:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:03:01 lotterydb systemd: Started Session 281878 of user mysql.
+Jul 15 12:03:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:04:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:04:01 lotterydb systemd: Started Session 281879 of user mysql.
+Jul 15 12:04:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:05:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:05:01 lotterydb systemd: Started Session 281880 of user mysql.
+Jul 15 12:05:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:06:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:06:01 lotterydb systemd: Started Session 281881 of user mysql.
+Jul 15 12:06:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:07:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:07:01 lotterydb systemd: Started Session 281882 of user mysql.
+Jul 15 12:07:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:08:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:08:01 lotterydb systemd: Started Session 281883 of user mysql.
+Jul 15 12:08:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:09:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:09:01 lotterydb systemd: Started Session 281884 of user mysql.
+Jul 15 12:09:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:10:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:10:01 lotterydb systemd: Started Session 281886 of user mysql.
+Jul 15 12:10:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:10:01 lotterydb systemd: Started Session 281885 of user root.
+Jul 15 12:10:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:10:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:11:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:11:01 lotterydb systemd: Started Session 281887 of user mysql.
+Jul 15 12:11:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:12:02 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:12:02 lotterydb systemd: Started Session 281888 of user mysql.
+Jul 15 12:12:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:13:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:13:01 lotterydb systemd: Started Session 281889 of user mysql.
+Jul 15 12:13:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:14:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:14:01 lotterydb systemd: Started Session 281890 of user mysql.
+Jul 15 12:14:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:15:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:15:01 lotterydb systemd: Started Session 281891 of user mysql.
+Jul 15 12:15:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:16:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:16:01 lotterydb systemd: Started Session 281892 of user mysql.
+Jul 15 12:16:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:17:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:17:01 lotterydb systemd: Started Session 281893 of user mysql.
+Jul 15 12:17:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:18:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:18:01 lotterydb systemd: Started Session 281894 of user mysql.
+Jul 15 12:18:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:19:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:19:01 lotterydb systemd: Started Session 281895 of user mysql.
+Jul 15 12:19:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:20:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:20:01 lotterydb systemd: Started Session 281896 of user mysql.
+Jul 15 12:20:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:20:01 lotterydb systemd: Started Session 281897 of user root.
+Jul 15 12:20:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:20:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:21:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:21:01 lotterydb systemd: Started Session 281898 of user mysql.
+Jul 15 12:21:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:22:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:22:01 lotterydb systemd: Started Session 281899 of user mysql.
+Jul 15 12:22:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:23:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:23:01 lotterydb systemd: Started Session 281900 of user mysql.
+Jul 15 12:23:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:24:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:24:01 lotterydb systemd: Started Session 281901 of user mysql.
+Jul 15 12:24:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:25:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:25:01 lotterydb systemd: Started Session 281902 of user mysql.
+Jul 15 12:25:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:26:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:26:02 lotterydb systemd: Started Session 281903 of user mysql.
+Jul 15 12:26:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:27:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:27:01 lotterydb systemd: Started Session 281904 of user mysql.
+Jul 15 12:27:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:28:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:28:01 lotterydb systemd: Started Session 281905 of user mysql.
+Jul 15 12:28:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:29:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:29:01 lotterydb systemd: Started Session 281906 of user mysql.
+Jul 15 12:29:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:30:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:30:01 lotterydb systemd: Started Session 281907 of user mysql.
+Jul 15 12:30:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:30:01 lotterydb systemd: Started Session 281908 of user root.
+Jul 15 12:30:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:30:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:31:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:31:01 lotterydb systemd: Started Session 281909 of user mysql.
+Jul 15 12:31:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:32:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:32:01 lotterydb systemd: Started Session 281910 of user mysql.
+Jul 15 12:32:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:33:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:33:01 lotterydb systemd: Started Session 281911 of user mysql.
+Jul 15 12:33:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:34:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:34:01 lotterydb systemd: Started Session 281912 of user mysql.
+Jul 15 12:34:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:35:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:35:01 lotterydb systemd: Started Session 281913 of user mysql.
+Jul 15 12:35:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:36:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:36:01 lotterydb systemd: Started Session 281914 of user mysql.
+Jul 15 12:36:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:37:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:37:01 lotterydb systemd: Started Session 281915 of user mysql.
+Jul 15 12:37:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:38:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:38:01 lotterydb systemd: Started Session 281916 of user mysql.
+Jul 15 12:38:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:39:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:39:01 lotterydb systemd: Started Session 281917 of user mysql.
+Jul 15 12:39:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:40:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:40:01 lotterydb systemd: Started Session 281918 of user mysql.
+Jul 15 12:40:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:40:01 lotterydb systemd: Started Session 281919 of user root.
+Jul 15 12:40:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:40:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:41:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:41:01 lotterydb systemd: Started Session 281920 of user mysql.
+Jul 15 12:41:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:42:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:42:01 lotterydb systemd: Started Session 281921 of user mysql.
+Jul 15 12:42:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:43:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:43:01 lotterydb systemd: Started Session 281922 of user mysql.
+Jul 15 12:43:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:44:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:44:01 lotterydb systemd: Started Session 281923 of user mysql.
+Jul 15 12:44:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:45:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:45:01 lotterydb systemd: Started Session 281924 of user mysql.
+Jul 15 12:45:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:46:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:46:01 lotterydb systemd: Started Session 281925 of user mysql.
+Jul 15 12:46:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:47:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:47:01 lotterydb systemd: Started Session 281926 of user mysql.
+Jul 15 12:47:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:48:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:48:01 lotterydb systemd: Started Session 281927 of user mysql.
+Jul 15 12:48:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:49:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:49:01 lotterydb systemd: Started Session 281928 of user mysql.
+Jul 15 12:49:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:50:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 12:50:01 lotterydb systemd: Started Session 281929 of user root.
+Jul 15 12:50:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:50:01 lotterydb systemd: Started Session 281930 of user mysql.
+Jul 15 12:50:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 12:50:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:51:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:51:01 lotterydb systemd: Started Session 281931 of user mysql.
+Jul 15 12:51:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:52:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:52:01 lotterydb systemd: Started Session 281932 of user mysql.
+Jul 15 12:52:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:53:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:53:01 lotterydb systemd: Started Session 281933 of user mysql.
+Jul 15 12:53:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:54:02 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:54:02 lotterydb systemd: Started Session 281934 of user mysql.
+Jul 15 12:54:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:55:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:55:01 lotterydb systemd: Started Session 281935 of user mysql.
+Jul 15 12:55:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:56:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:56:01 lotterydb systemd: Started Session 281936 of user mysql.
+Jul 15 12:56:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:57:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:57:01 lotterydb systemd: Started Session 281937 of user mysql.
+Jul 15 12:57:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:58:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:58:01 lotterydb systemd: Started Session 281938 of user mysql.
+Jul 15 12:58:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 12:59:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 12:59:01 lotterydb systemd: Started Session 281939 of user mysql.
+Jul 15 12:59:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:00:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:00:01 lotterydb systemd: Started Session 281940 of user root.
+Jul 15 13:00:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:00:01 lotterydb systemd: Started Session 281941 of user mysql.
+Jul 15 13:00:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:00:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:01:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:01:01 lotterydb systemd: Started Session 281942 of user mysql.
+Jul 15 13:01:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:01:01 lotterydb systemd: Started Session 281943 of user root.
+Jul 15 13:01:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:01:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:02:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:02:01 lotterydb systemd: Started Session 281944 of user mysql.
+Jul 15 13:02:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:03:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:03:01 lotterydb systemd: Started Session 281945 of user mysql.
+Jul 15 13:03:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:04:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:04:01 lotterydb systemd: Started Session 281946 of user mysql.
+Jul 15 13:04:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:05:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:05:01 lotterydb systemd: Started Session 281947 of user mysql.
+Jul 15 13:05:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:06:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:06:01 lotterydb systemd: Started Session 281948 of user mysql.
+Jul 15 13:06:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:07:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:07:01 lotterydb systemd: Started Session 281949 of user mysql.
+Jul 15 13:07:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:08:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:08:02 lotterydb systemd: Started Session 281950 of user mysql.
+Jul 15 13:08:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:09:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:09:01 lotterydb systemd: Started Session 281951 of user mysql.
+Jul 15 13:09:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:10:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:10:01 lotterydb systemd: Started Session 281952 of user mysql.
+Jul 15 13:10:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:10:01 lotterydb systemd: Started Session 281953 of user root.
+Jul 15 13:10:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:10:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:11:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:11:01 lotterydb systemd: Started Session 281954 of user mysql.
+Jul 15 13:11:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:12:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:12:01 lotterydb systemd: Started Session 281955 of user mysql.
+Jul 15 13:12:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:13:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:13:01 lotterydb systemd: Started Session 281956 of user mysql.
+Jul 15 13:13:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:14:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:14:01 lotterydb systemd: Started Session 281957 of user mysql.
+Jul 15 13:14:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:15:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:15:01 lotterydb systemd: Started Session 281958 of user mysql.
+Jul 15 13:15:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:16:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:16:01 lotterydb systemd: Started Session 281959 of user mysql.
+Jul 15 13:16:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:17:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:17:01 lotterydb systemd: Started Session 281960 of user mysql.
+Jul 15 13:17:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:18:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:18:01 lotterydb systemd: Started Session 281961 of user mysql.
+Jul 15 13:18:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:19:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:19:01 lotterydb systemd: Started Session 281962 of user mysql.
+Jul 15 13:19:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:20:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:20:01 lotterydb systemd: Started Session 281963 of user mysql.
+Jul 15 13:20:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:20:01 lotterydb systemd: Started Session 281964 of user root.
+Jul 15 13:20:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:20:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:21:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:21:01 lotterydb systemd: Started Session 281965 of user mysql.
+Jul 15 13:21:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:22:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:22:01 lotterydb systemd: Started Session 281966 of user mysql.
+Jul 15 13:22:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:23:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:23:01 lotterydb systemd: Started Session 281967 of user mysql.
+Jul 15 13:23:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:24:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:24:01 lotterydb systemd: Started Session 281968 of user mysql.
+Jul 15 13:24:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:25:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:25:01 lotterydb systemd: Started Session 281969 of user mysql.
+Jul 15 13:25:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:26:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:26:01 lotterydb systemd: Started Session 281970 of user mysql.
+Jul 15 13:26:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:27:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:27:01 lotterydb systemd: Started Session 281971 of user mysql.
+Jul 15 13:27:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:28:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:28:01 lotterydb systemd: Started Session 281972 of user mysql.
+Jul 15 13:28:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:29:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:29:01 lotterydb systemd: Started Session 281973 of user mysql.
+Jul 15 13:29:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:30:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:30:01 lotterydb systemd: Started Session 281974 of user root.
+Jul 15 13:30:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:30:01 lotterydb systemd: Started Session 281975 of user mysql.
+Jul 15 13:30:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:30:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:31:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:31:01 lotterydb systemd: Started Session 281976 of user mysql.
+Jul 15 13:31:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:32:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:32:01 lotterydb systemd: Started Session 281977 of user mysql.
+Jul 15 13:32:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:33:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:33:01 lotterydb systemd: Started Session 281978 of user mysql.
+Jul 15 13:33:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:34:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:34:01 lotterydb systemd: Started Session 281979 of user mysql.
+Jul 15 13:34:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:35:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:35:01 lotterydb systemd: Started Session 281980 of user mysql.
+Jul 15 13:35:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:36:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:36:01 lotterydb systemd: Started Session 281981 of user mysql.
+Jul 15 13:36:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:37:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:37:01 lotterydb systemd: Started Session 281982 of user mysql.
+Jul 15 13:37:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:38:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:38:01 lotterydb systemd: Started Session 281983 of user mysql.
+Jul 15 13:38:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:39:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:39:01 lotterydb systemd: Started Session 281984 of user mysql.
+Jul 15 13:39:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:40:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:40:01 lotterydb systemd: Started Session 281985 of user mysql.
+Jul 15 13:40:01 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:40:01 lotterydb systemd: Started Session 281986 of user root.
+Jul 15 13:40:01 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:40:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:41:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:41:01 lotterydb systemd: Started Session 281987 of user mysql.
+Jul 15 13:41:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:42:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:42:01 lotterydb systemd: Started Session 281988 of user mysql.
+Jul 15 13:42:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:43:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:43:01 lotterydb systemd: Started Session 281989 of user mysql.
+Jul 15 13:43:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:44:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:44:01 lotterydb systemd: Started Session 281990 of user mysql.
+Jul 15 13:44:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:45:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:45:01 lotterydb systemd: Started Session 281991 of user mysql.
+Jul 15 13:45:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:46:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:46:01 lotterydb systemd: Started Session 281992 of user mysql.
+Jul 15 13:46:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:47:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:47:01 lotterydb systemd: Started Session 281993 of user mysql.
+Jul 15 13:47:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:48:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:48:01 lotterydb systemd: Started Session 281994 of user mysql.
+Jul 15 13:48:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:49:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:49:01 lotterydb systemd: Started Session 281995 of user mysql.
+Jul 15 13:49:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:50:02 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:50:02 lotterydb systemd: Started Session 281996 of user root.
+Jul 15 13:50:02 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:50:02 lotterydb systemd: Started Session 281997 of user mysql.
+Jul 15 13:50:02 lotterydb systemd: Removed slice User Slice of root.
+Jul 15 13:50:02 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:51:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:51:01 lotterydb systemd: Started Session 281998 of user mysql.
+Jul 15 13:51:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:51:14 lotterydb systemd: Created slice User Slice of root.
+Jul 15 13:51:14 lotterydb systemd-logind: New session 281999 of user root.
+Jul 15 13:51:14 lotterydb systemd: Started Session 281999 of user root.
+Jul 15 13:51:14 lotterydb dbus[8080]: [system] Activating service name='org.freedesktop.problems' (using servicehelper)
+Jul 15 13:51:14 lotterydb dbus[8080]: [system] Successfully activated service 'org.freedesktop.problems'
+Jul 15 13:52:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:52:01 lotterydb systemd: Started Session 282000 of user mysql.
+Jul 15 13:52:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:53:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:53:01 lotterydb systemd: Started Session 282001 of user mysql.
+Jul 15 13:53:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:54:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:54:01 lotterydb systemd: Started Session 282002 of user mysql.
+Jul 15 13:54:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:55:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:55:01 lotterydb systemd: Started Session 282003 of user mysql.
+Jul 15 13:55:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:56:01 lotterydb yum[57900]: Updated: sysstat-10.1.5-19.el7.x86_64
+Jul 15 13:56:01 lotterydb yum[57900]: Installed: dstat-0.7.2-12.el7.noarch
+Jul 15 13:56:01 lotterydb systemd: Reloading.
+Jul 15 13:56:01 lotterydb systemd: [/usr/lib/systemd/system/bolt.service:11] Unknown lvalue 'MemoryDenyWriteExecute' in section 'Service'
+Jul 15 13:56:01 lotterydb systemd: [/usr/lib/systemd/system/bolt.service:13] Unknown lvalue 'ProtectControlGroups' in section 'Service'
+Jul 15 13:56:01 lotterydb systemd: [/usr/lib/systemd/system/bolt.service:15] Unknown lvalue 'ProtectKernelModules' in section 'Service'
+Jul 15 13:56:01 lotterydb systemd: [/usr/lib/systemd/system/bolt.service:18] Unknown lvalue 'RestrictRealtime' in section 'Service'
+Jul 15 13:56:01 lotterydb systemd: [/usr/lib/systemd/system/bolt.service:19] Unknown lvalue 'ReadWritePaths' in section 'Service'
+Jul 15 13:56:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:56:01 lotterydb systemd: Started Session 282004 of user mysql.
+Jul 15 13:56:01 lotterydb systemd: Removed slice User Slice of mysql.
+Jul 15 13:57:01 lotterydb systemd: Created slice User Slice of mysql.
+Jul 15 13:57:01 lotterydb systemd: Started Session 282005 of user mysql.
+Jul 15 13:57:01 lotterydb systemd: Removed slice User Slice of mysql.

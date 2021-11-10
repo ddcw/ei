@@ -1,0 +1,39 @@
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+Red Hat Enterprise  Server  6.4 (Santiago)
+7
+99G
+localhost.localdomain
+0.32 0.08 0.02
+cpu(usr+sys)    2.6%[mus,[m[m+0.0%[mni,[m[m
+memary usage %       scale=1;100 - /8052736*100%
+swaps    0
+swappiness   5
+3%
+await svctm %util
+1.56 0.81 0.02
+13.19 2.18 0.16
+4.40 0.50 0.02
+1.44 1.37 0.00
+4.40 0.61 0.00
+58.31 0.37 0.00
+  
+4.0.13
+6379
+/app/redis
+dir "/app/redis/redis6379"
+0
+noeviction
+databases 16
+save 900 1
+save 300 10
+save 60 10000
+bind 0.0.0.0
+requirepass "AxYr731ZRW4g"
+daemonize yes
+loglevel notice
+role:slave
+slaveof ipmaster_host:10.80.32.92
+slaveof port master_port:6379

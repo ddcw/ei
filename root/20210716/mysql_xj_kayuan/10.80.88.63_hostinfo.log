@@ -1,0 +1,1219 @@
+======host meta information
+=====uptime===============================
+ 15:21:24 up 265 days, 12:06,  1 user,  load average: 0.30, 0.24, 0.22
+======ip=================================
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens160: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:50:56:aa:0d:bc brd ff:ff:ff:ff:ff:ff
+    inet 10.80.88.63/24 brd 10.80.88.255 scope global noprefixroute ens160
+       valid_lft forever preferred_lft forever
+    inet6 fe80::981a:8b80:a9b6:b72b/64 scope link tentative noprefixroute dadfailed 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::839:2526:3a78:9448/64 scope link tentative noprefixroute dadfailed 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::d593:b520:5684:aa72/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+3: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:50:56:aa:e0:c9 brd ff:ff:ff:ff:ff:ff
+    inet 10.81.137.207/24 brd 10.81.137.255 scope global noprefixroute ens192
+       valid_lft forever preferred_lft forever
+    inet6 fe80::250:56ff:feaa:e0c9/64 scope link 
+       valid_lft forever preferred_lft forever
+======hostname============================
+10-80-88-63
+======os version============================
+\S
+Kernel \r on an \m
+
+======kernel version=========================
+Linux 10-80-88-63 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+======mysql version=========================
+======mysql client==========================
+mysql  Ver 14.14 Distrib 5.6.16, for linux-glibc2.5 (x86_64) using  EditLine wrapper
+======mysql instance========================
+tcp        0      0 10.80.88.63:42002       0.0.0.0:*               LISTEN      9886/mysqld_exporte 
+tcp6       0      0 :::3306                 :::*                    LISTEN      11367/mysqld        
+unix  2      [ ACC ]     STREAM     LISTENING     113010   11367/mysqld         /app/mysql/mysql.sock
+======memory&swap========================
+              total        used        free      shared  buff/cache   available
+Mem:          32156       20141         330        1640       11683        9930
+Swap:          8191          26        8165
+======physical cpu==========================
+2
+======cores per physical cpu====================
+cpu cores	: 4
+======processor============================
+8
+======cpu version===========================
+ Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz
+======disk info=============================
+Filesystem              Type      Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root xfs        50G  3.7G   47G   8% /
+devtmpfs                devtmpfs   16G     0   16G   0% /dev
+tmpfs                   tmpfs      16G     0   16G   0% /dev/shm
+tmpfs                   tmpfs      16G  1.7G   15G  11% /run
+tmpfs                   tmpfs      16G     0   16G   0% /sys/fs/cgroup
+/dev/sda1               xfs      1014M  133M  882M  14% /boot
+/dev/sdb                xfs       500G  386G  115G  78% /app
+/dev/mapper/centos-tmp  xfs       5.0G   33M  5.0G   1% /tmp
+/dev/mapper/centos-home xfs        20G   33M   20G   1% /home
+tmpfs                   tmpfs     3.2G     0  3.2G   0% /run/user/0
+======numa mount========================
+1
+======io stat===============================
+Linux 3.10.0-957.el7.x86_64 (10-80-88-63) 	07/15/2021 	_x86_64_	(8 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.02    0.00    0.17    0.46    0.00   98.36
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.01    0.00    0.14     0.00     0.00    13.45     0.00    0.95   19.93    0.73   0.34   0.00
+sdb               0.02     1.64    5.27   23.28     0.09     0.45    38.32     0.10    3.62   11.71    1.79   1.65   4.70
+sdc               0.00     0.00    0.00    0.00     0.00     0.00    58.49     0.00    2.06    2.06    0.00   1.90   0.00
+dm-0              0.00     0.00    0.00    0.15     0.00     0.00    12.53     0.00    0.95   21.44    0.74   0.31   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     8.59     0.00   10.51   23.69    9.68   4.23   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     9.26     0.00    3.84    2.40    4.33   3.67   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     9.83     0.00    6.36    7.60    6.32   3.20   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.21    0.00    0.25    0.73    0.00   97.81
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.20    1.00     0.01     0.01    36.00     0.00    3.58   12.00    1.90   3.17   0.38
+sdb               0.00     0.30    7.60   24.80     0.12     0.14    16.17     0.10    3.03   11.22    0.52   2.33   7.56
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.20    0.70     0.01     0.01    40.44     0.00    3.33   12.00    0.86   2.78   0.25
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.20     0.00     0.00    18.00     0.00    0.50    0.00    0.50   0.50   0.01
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.94    0.00    0.18    0.76    0.00   98.12
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00   12.20   27.20     0.19     0.62    41.93     0.15    3.75   10.33    0.79   2.02   7.97
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.11    0.00    0.21    0.70    0.00   97.97
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.10     0.00     0.00    16.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00    11.20    8.00   98.20     0.12     2.65    53.51     0.37    3.45   11.06    2.83   0.77   8.23
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.10     0.00     0.00    16.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.16    0.00    0.29    0.29    0.00   98.26
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     1.30    0.00    6.20     0.00     0.21    69.15     0.02    3.69    0.00    3.69   0.37   0.23
+sdb               0.00     0.40    4.40   23.20     0.07     0.14    15.28     0.06    2.12   10.14    0.60   1.33   3.68
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    6.90     0.00     0.21    61.45     0.03    4.04    0.00    4.04   0.32   0.22
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.40     0.00     0.00    11.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.11    0.00    0.19    1.14    0.00   97.56
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.20     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00   14.30   18.20     0.22     0.27    31.01     0.18    5.40   11.11    0.91   3.28  10.66
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.20     0.00     0.00     8.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.18    0.00    0.20    0.84    0.00   97.78
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00   12.70   24.40     0.20     0.16    19.60     0.15    3.93   10.22    0.66   2.38   8.82
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.34    0.00    0.25    0.06    0.00   98.35
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    1.00     0.00     0.01    10.90     0.00    0.20    0.00    0.20   0.20   0.02
+sdb               0.00     0.30    2.80   20.60     0.04     0.13    15.24     0.04    1.90   11.75    0.56   1.31   3.07
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.50     0.00     0.00    17.40     0.00    0.20    0.00    0.20   0.20   0.01
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.30     0.00     0.00     6.33     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.25    0.00    0.24    0.56    0.00   97.95
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     9.50    8.60  101.90     0.13     2.79    54.12     0.42    3.77   14.40    2.87   0.82   9.03
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.09    0.00    0.21    0.61    0.00   98.09
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    8.20   31.00     0.13     0.17    15.65     0.10    2.58   10.35    0.53   1.83   7.17
+sdc               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-3              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+======vmstat======
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0  26624 330392      0 11973076    0    0    11    58    0    0  1  0 98  0  0
+ 0  0  26624 330052      0 11973216    0    0    16   255  895 1381  1  0 99  0  0
+ 0  0  26624 329928      0 11973392    0    0    80   156  757 1146  1  0 99  1  0
+ 0  1  26624 329868      0 11973452    0    0    96   183  818 1261  1  0 99  1  0
+ 0  0  26624 329588      0 11973684    0    0   960   321  873 1284  1  0 93  5  0
+ 0  0  26624 329528      0 11973844    0    0     0   200 1302 1891  3  0 97  0  0
+ 0  0  26624 329496      0 11973912    0    0     0   103  833 1149  1  0 99  0  0
+ 0  0  26624 326788      0 11974016    0    0     0   121 1678 1748  1  1 98  0  0
+ 0  0  26624 327264      0 11974164    0    0     0   205  684 1008  1  0 99  0  0
+ 0  0  26624 327296      0 11974172    0    0     0    44  651 1026  1  0 99  0  0
+====dstat===
+You did not select any stats, using -cdngy by default.
+[7l----total-cpu-usage---- -dsk/total- -net/total- ---paging-- ---system--
+usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw 
+  1   0  98   0   0   0|  87k  461k|   0     0 |   0     1B| 836  1196 
+  3   0  97   0   0   0|  80k 1639k| 105k   52k|   0     0 |1304  1818 
+  1   0  99   0   0   0|  16k  226k|  84k   25k|   0     0 | 796  1158 
+  1   0  97   2   0   0| 496k  225k|  88k   24k|   0     0 | 894  1344 
+  1   0  99   0   0   0|  80k  146k|  58k   23k|   0     0 | 777  1165 
+  1   0  98   1   0   0| 176k  177k|  89k   23k|   0     0 | 885  1320 
+  3   0  96   0   0   0| 176k  137k|  37k   52k|   0     0 |1296  1707 
+  1   0  99   0   0   0|  32k  114k|  36k   23k|   0     0 | 715  1067 
+  1   0  99   0   0   0|  48k  139k|  45k   23k|   0     0 | 766  1209 
+  1   0  99   0   0   0|  16k  221k|  83k   23k|   0     0 | 733  1094 
+  1   0  98   1   0   0| 176k  120k|  32k   23k|   0     0 | 907  1384 
+======system log============================
+Jul 15 09:55:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 09:55:01 10-80-88-63 systemd: Started Session 370474 of user mysql.
+Jul 15 09:55:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 09:56:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 09:56:01 10-80-88-63 systemd: Started Session 370475 of user mysql.
+Jul 15 09:56:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 09:57:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 09:57:01 10-80-88-63 systemd: Started Session 370476 of user mysql.
+Jul 15 09:57:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 09:58:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 09:58:01 10-80-88-63 systemd: Started Session 370477 of user mysql.
+Jul 15 09:58:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 09:59:02 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 09:59:02 10-80-88-63 systemd: Started Session 370478 of user mysql.
+Jul 15 09:59:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:00:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:00:01 10-80-88-63 systemd: Started Session 370479 of user mysql.
+Jul 15 10:00:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:01:01 10-80-88-63 systemd: Started Session 370480 of user root.
+Jul 15 10:01:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:01:01 10-80-88-63 systemd: Started Session 370481 of user mysql.
+Jul 15 10:01:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:02:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:02:01 10-80-88-63 systemd: Started Session 370482 of user mysql.
+Jul 15 10:02:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:03:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:03:01 10-80-88-63 systemd: Started Session 370483 of user mysql.
+Jul 15 10:03:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:04:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:04:01 10-80-88-63 systemd: Started Session 370484 of user mysql.
+Jul 15 10:04:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:05:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:05:01 10-80-88-63 systemd: Started Session 370485 of user mysql.
+Jul 15 10:05:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:06:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:06:01 10-80-88-63 systemd: Started Session 370486 of user mysql.
+Jul 15 10:06:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:07:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:07:01 10-80-88-63 systemd: Started Session 370487 of user mysql.
+Jul 15 10:07:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:08:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:08:01 10-80-88-63 systemd: Started Session 370488 of user mysql.
+Jul 15 10:08:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:09:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:09:01 10-80-88-63 systemd: Started Session 370489 of user mysql.
+Jul 15 10:09:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:10:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:10:01 10-80-88-63 systemd: Started Session 370490 of user mysql.
+Jul 15 10:10:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:11:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:11:01 10-80-88-63 systemd: Started Session 370491 of user mysql.
+Jul 15 10:11:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:12:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:12:01 10-80-88-63 systemd: Started Session 370492 of user mysql.
+Jul 15 10:12:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:13:02 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:13:02 10-80-88-63 systemd: Started Session 370493 of user mysql.
+Jul 15 10:13:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:14:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:14:01 10-80-88-63 systemd: Started Session 370494 of user mysql.
+Jul 15 10:14:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:15:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:15:01 10-80-88-63 systemd: Started Session 370495 of user mysql.
+Jul 15 10:15:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:16:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:16:01 10-80-88-63 systemd: Started Session 370496 of user mysql.
+Jul 15 10:16:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:17:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:17:01 10-80-88-63 systemd: Started Session 370497 of user mysql.
+Jul 15 10:17:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:18:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:18:01 10-80-88-63 systemd: Started Session 370498 of user mysql.
+Jul 15 10:18:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:19:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:19:01 10-80-88-63 systemd: Started Session 370499 of user mysql.
+Jul 15 10:19:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:20:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:20:01 10-80-88-63 systemd: Started Session 370500 of user mysql.
+Jul 15 10:20:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:21:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:21:01 10-80-88-63 systemd: Started Session 370501 of user mysql.
+Jul 15 10:21:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:22:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:22:01 10-80-88-63 systemd: Started Session 370502 of user mysql.
+Jul 15 10:22:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:23:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:23:01 10-80-88-63 systemd: Started Session 370503 of user mysql.
+Jul 15 10:23:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:24:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:24:01 10-80-88-63 systemd: Started Session 370504 of user mysql.
+Jul 15 10:24:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:25:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:25:01 10-80-88-63 systemd: Started Session 370505 of user mysql.
+Jul 15 10:25:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:26:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:26:01 10-80-88-63 systemd: Started Session 370506 of user mysql.
+Jul 15 10:26:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:27:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:27:01 10-80-88-63 systemd: Started Session 370507 of user mysql.
+Jul 15 10:27:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:28:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:28:01 10-80-88-63 systemd: Started Session 370508 of user mysql.
+Jul 15 10:28:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:29:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:29:01 10-80-88-63 systemd: Started Session 370509 of user mysql.
+Jul 15 10:29:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:30:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:30:01 10-80-88-63 systemd: Started Session 370510 of user mysql.
+Jul 15 10:30:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:31:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:31:01 10-80-88-63 systemd: Started Session 370511 of user mysql.
+Jul 15 10:31:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:32:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:32:01 10-80-88-63 systemd: Started Session 370512 of user mysql.
+Jul 15 10:32:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:33:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:33:01 10-80-88-63 systemd: Started Session 370513 of user mysql.
+Jul 15 10:33:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:34:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:34:01 10-80-88-63 systemd: Started Session 370514 of user mysql.
+Jul 15 10:34:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:35:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:35:01 10-80-88-63 systemd: Started Session 370515 of user mysql.
+Jul 15 10:35:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:36:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:36:01 10-80-88-63 systemd: Started Session 370516 of user mysql.
+Jul 15 10:36:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:37:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:37:01 10-80-88-63 systemd: Started Session 370517 of user mysql.
+Jul 15 10:37:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:38:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:38:01 10-80-88-63 systemd: Started Session 370518 of user mysql.
+Jul 15 10:38:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:39:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:39:01 10-80-88-63 systemd: Started Session 370519 of user mysql.
+Jul 15 10:39:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:40:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:40:02 10-80-88-63 systemd: Started Session 370520 of user mysql.
+Jul 15 10:40:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:41:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:41:01 10-80-88-63 systemd: Started Session 370521 of user mysql.
+Jul 15 10:41:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:42:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:42:01 10-80-88-63 systemd: Started Session 370522 of user mysql.
+Jul 15 10:42:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:43:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:43:01 10-80-88-63 systemd: Started Session 370523 of user mysql.
+Jul 15 10:43:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:44:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:44:01 10-80-88-63 systemd: Started Session 370524 of user mysql.
+Jul 15 10:44:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:45:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:45:01 10-80-88-63 systemd: Started Session 370525 of user mysql.
+Jul 15 10:45:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:46:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:46:01 10-80-88-63 systemd: Started Session 370526 of user mysql.
+Jul 15 10:46:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:47:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:47:01 10-80-88-63 systemd: Started Session 370527 of user mysql.
+Jul 15 10:47:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:48:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:48:01 10-80-88-63 systemd: Started Session 370528 of user mysql.
+Jul 15 10:48:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:49:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:49:01 10-80-88-63 systemd: Started Session 370529 of user mysql.
+Jul 15 10:49:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:50:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:50:01 10-80-88-63 systemd: Started Session 370530 of user mysql.
+Jul 15 10:50:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:51:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:51:01 10-80-88-63 systemd: Started Session 370531 of user mysql.
+Jul 15 10:51:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:52:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:52:01 10-80-88-63 systemd: Started Session 370532 of user mysql.
+Jul 15 10:52:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:53:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:53:01 10-80-88-63 systemd: Started Session 370533 of user mysql.
+Jul 15 10:53:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:54:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:54:01 10-80-88-63 systemd: Started Session 370534 of user mysql.
+Jul 15 10:54:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:55:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:55:01 10-80-88-63 systemd: Started Session 370535 of user mysql.
+Jul 15 10:55:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:56:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:56:01 10-80-88-63 systemd: Started Session 370536 of user mysql.
+Jul 15 10:56:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:57:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:57:01 10-80-88-63 systemd: Started Session 370537 of user mysql.
+Jul 15 10:57:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:58:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:58:01 10-80-88-63 systemd: Started Session 370538 of user mysql.
+Jul 15 10:58:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 10:59:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 10:59:01 10-80-88-63 systemd: Started Session 370539 of user mysql.
+Jul 15 10:59:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:00:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:00:01 10-80-88-63 systemd: Started Session 370540 of user mysql.
+Jul 15 11:00:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:01:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:01:01 10-80-88-63 systemd: Started Session 370541 of user mysql.
+Jul 15 11:01:01 10-80-88-63 systemd: Started Session 370542 of user root.
+Jul 15 11:01:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:02:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:02:01 10-80-88-63 systemd: Started Session 370543 of user mysql.
+Jul 15 11:02:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:03:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:03:01 10-80-88-63 systemd: Started Session 370544 of user mysql.
+Jul 15 11:03:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:04:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:04:01 10-80-88-63 systemd: Started Session 370545 of user mysql.
+Jul 15 11:04:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:05:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:05:01 10-80-88-63 systemd: Started Session 370546 of user mysql.
+Jul 15 11:05:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:06:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:06:01 10-80-88-63 systemd: Started Session 370547 of user mysql.
+Jul 15 11:06:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:07:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:07:01 10-80-88-63 systemd: Started Session 370548 of user mysql.
+Jul 15 11:07:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:08:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:08:01 10-80-88-63 systemd: Started Session 370549 of user mysql.
+Jul 15 11:08:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:09:02 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:09:02 10-80-88-63 systemd: Started Session 370550 of user mysql.
+Jul 15 11:09:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:10:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:10:01 10-80-88-63 systemd: Started Session 370551 of user mysql.
+Jul 15 11:10:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:11:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:11:01 10-80-88-63 systemd: Started Session 370552 of user mysql.
+Jul 15 11:11:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:12:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:12:01 10-80-88-63 systemd: Started Session 370553 of user mysql.
+Jul 15 11:12:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:13:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:13:01 10-80-88-63 systemd: Started Session 370554 of user mysql.
+Jul 15 11:13:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:14:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:14:01 10-80-88-63 systemd: Started Session 370555 of user mysql.
+Jul 15 11:14:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:15:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:15:01 10-80-88-63 systemd: Started Session 370556 of user mysql.
+Jul 15 11:15:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:16:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:16:01 10-80-88-63 systemd: Started Session 370557 of user mysql.
+Jul 15 11:16:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:17:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:17:01 10-80-88-63 systemd: Started Session 370558 of user mysql.
+Jul 15 11:17:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:18:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:18:01 10-80-88-63 systemd: Started Session 370559 of user mysql.
+Jul 15 11:18:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:19:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:19:01 10-80-88-63 systemd: Started Session 370560 of user mysql.
+Jul 15 11:19:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:20:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:20:01 10-80-88-63 systemd: Started Session 370561 of user mysql.
+Jul 15 11:20:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:21:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:21:01 10-80-88-63 systemd: Started Session 370562 of user mysql.
+Jul 15 11:21:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:22:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:22:01 10-80-88-63 systemd: Started Session 370563 of user mysql.
+Jul 15 11:22:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:23:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:23:01 10-80-88-63 systemd: Started Session 370564 of user mysql.
+Jul 15 11:23:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:24:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:24:01 10-80-88-63 systemd: Started Session 370565 of user mysql.
+Jul 15 11:24:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:25:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:25:01 10-80-88-63 systemd: Started Session 370566 of user mysql.
+Jul 15 11:25:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:26:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:26:01 10-80-88-63 systemd: Started Session 370567 of user mysql.
+Jul 15 11:26:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:27:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:27:01 10-80-88-63 systemd: Started Session 370568 of user mysql.
+Jul 15 11:27:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:28:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:28:01 10-80-88-63 systemd: Started Session 370569 of user mysql.
+Jul 15 11:28:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:29:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:29:01 10-80-88-63 systemd: Started Session 370570 of user mysql.
+Jul 15 11:29:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:30:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:30:01 10-80-88-63 systemd: Started Session 370571 of user mysql.
+Jul 15 11:30:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:31:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:31:01 10-80-88-63 systemd: Started Session 370572 of user mysql.
+Jul 15 11:31:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:32:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:32:01 10-80-88-63 systemd: Started Session 370573 of user mysql.
+Jul 15 11:32:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:33:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:33:01 10-80-88-63 systemd: Started Session 370574 of user mysql.
+Jul 15 11:33:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:34:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:34:01 10-80-88-63 systemd: Started Session 370575 of user mysql.
+Jul 15 11:34:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:35:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:35:01 10-80-88-63 systemd: Started Session 370576 of user mysql.
+Jul 15 11:35:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:36:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:36:01 10-80-88-63 systemd: Started Session 370577 of user mysql.
+Jul 15 11:36:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:37:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:37:01 10-80-88-63 systemd: Started Session 370578 of user mysql.
+Jul 15 11:37:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:38:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:38:01 10-80-88-63 systemd: Started Session 370579 of user mysql.
+Jul 15 11:38:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:39:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:39:01 10-80-88-63 systemd: Started Session 370580 of user mysql.
+Jul 15 11:39:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:40:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:40:01 10-80-88-63 systemd: Started Session 370581 of user mysql.
+Jul 15 11:40:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:41:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:41:01 10-80-88-63 systemd: Started Session 370582 of user mysql.
+Jul 15 11:41:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:42:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:42:01 10-80-88-63 systemd: Started Session 370583 of user mysql.
+Jul 15 11:42:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:43:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:43:01 10-80-88-63 systemd: Started Session 370584 of user mysql.
+Jul 15 11:43:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:44:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:44:01 10-80-88-63 systemd: Started Session 370585 of user mysql.
+Jul 15 11:44:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:45:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:45:01 10-80-88-63 systemd: Started Session 370586 of user mysql.
+Jul 15 11:45:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:46:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:46:01 10-80-88-63 systemd: Started Session 370587 of user mysql.
+Jul 15 11:46:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:47:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:47:01 10-80-88-63 systemd: Started Session 370588 of user mysql.
+Jul 15 11:47:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:48:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:48:01 10-80-88-63 systemd: Started Session 370589 of user mysql.
+Jul 15 11:48:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:49:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:49:01 10-80-88-63 systemd: Started Session 370590 of user mysql.
+Jul 15 11:49:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:50:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:50:01 10-80-88-63 systemd: Started Session 370591 of user mysql.
+Jul 15 11:50:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:51:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:51:01 10-80-88-63 systemd: Started Session 370592 of user mysql.
+Jul 15 11:51:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:52:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:52:01 10-80-88-63 systemd: Started Session 370593 of user mysql.
+Jul 15 11:52:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:53:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:53:01 10-80-88-63 systemd: Started Session 370594 of user mysql.
+Jul 15 11:53:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:54:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:54:01 10-80-88-63 systemd: Started Session 370595 of user mysql.
+Jul 15 11:54:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:55:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:55:01 10-80-88-63 systemd: Started Session 370596 of user mysql.
+Jul 15 11:55:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:56:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:56:01 10-80-88-63 systemd: Started Session 370597 of user mysql.
+Jul 15 11:56:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:57:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:57:01 10-80-88-63 systemd: Started Session 370598 of user mysql.
+Jul 15 11:57:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:58:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:58:01 10-80-88-63 systemd: Started Session 370599 of user mysql.
+Jul 15 11:58:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 11:59:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 11:59:01 10-80-88-63 systemd: Started Session 370600 of user mysql.
+Jul 15 11:59:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:00:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:00:01 10-80-88-63 systemd: Started Session 370601 of user mysql.
+Jul 15 12:00:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:01:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:01:01 10-80-88-63 systemd: Started Session 370602 of user mysql.
+Jul 15 12:01:01 10-80-88-63 systemd: Started Session 370603 of user root.
+Jul 15 12:01:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:02:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:02:01 10-80-88-63 systemd: Started Session 370604 of user mysql.
+Jul 15 12:02:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:03:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:03:01 10-80-88-63 systemd: Started Session 370605 of user mysql.
+Jul 15 12:03:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:04:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:04:01 10-80-88-63 systemd: Started Session 370606 of user mysql.
+Jul 15 12:04:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:05:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:05:01 10-80-88-63 systemd: Started Session 370607 of user mysql.
+Jul 15 12:05:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:06:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:06:01 10-80-88-63 systemd: Started Session 370608 of user mysql.
+Jul 15 12:06:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:07:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:07:01 10-80-88-63 systemd: Started Session 370609 of user mysql.
+Jul 15 12:07:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:08:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:08:01 10-80-88-63 systemd: Started Session 370610 of user mysql.
+Jul 15 12:08:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:09:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:09:01 10-80-88-63 systemd: Started Session 370611 of user mysql.
+Jul 15 12:09:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:10:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:10:01 10-80-88-63 systemd: Started Session 370612 of user mysql.
+Jul 15 12:10:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:11:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:11:01 10-80-88-63 systemd: Started Session 370613 of user mysql.
+Jul 15 12:11:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:12:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:12:01 10-80-88-63 systemd: Started Session 370614 of user mysql.
+Jul 15 12:12:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:13:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:13:01 10-80-88-63 systemd: Started Session 370615 of user mysql.
+Jul 15 12:13:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:14:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:14:01 10-80-88-63 systemd: Started Session 370616 of user mysql.
+Jul 15 12:14:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:15:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:15:01 10-80-88-63 systemd: Started Session 370617 of user mysql.
+Jul 15 12:15:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:16:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:16:01 10-80-88-63 systemd: Started Session 370618 of user mysql.
+Jul 15 12:16:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:17:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:17:01 10-80-88-63 systemd: Started Session 370619 of user mysql.
+Jul 15 12:17:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:18:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:18:01 10-80-88-63 systemd: Started Session 370620 of user mysql.
+Jul 15 12:18:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:19:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:19:01 10-80-88-63 systemd: Started Session 370621 of user mysql.
+Jul 15 12:19:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:20:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:20:01 10-80-88-63 systemd: Started Session 370622 of user mysql.
+Jul 15 12:20:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:21:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:21:01 10-80-88-63 systemd: Started Session 370623 of user mysql.
+Jul 15 12:21:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:22:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:22:01 10-80-88-63 systemd: Started Session 370624 of user mysql.
+Jul 15 12:22:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:23:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:23:01 10-80-88-63 systemd: Started Session 370625 of user mysql.
+Jul 15 12:23:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:24:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:24:01 10-80-88-63 systemd: Started Session 370626 of user mysql.
+Jul 15 12:24:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:25:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:25:01 10-80-88-63 systemd: Started Session 370627 of user mysql.
+Jul 15 12:25:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:26:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:26:01 10-80-88-63 systemd: Started Session 370628 of user mysql.
+Jul 15 12:26:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:27:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:27:01 10-80-88-63 systemd: Started Session 370629 of user mysql.
+Jul 15 12:27:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:28:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:28:01 10-80-88-63 systemd: Started Session 370630 of user mysql.
+Jul 15 12:28:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:29:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:29:01 10-80-88-63 systemd: Started Session 370631 of user mysql.
+Jul 15 12:29:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:30:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:30:01 10-80-88-63 systemd: Started Session 370632 of user mysql.
+Jul 15 12:30:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:31:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:31:01 10-80-88-63 systemd: Started Session 370633 of user mysql.
+Jul 15 12:31:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:32:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:32:01 10-80-88-63 systemd: Started Session 370634 of user mysql.
+Jul 15 12:32:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:33:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:33:01 10-80-88-63 systemd: Started Session 370635 of user mysql.
+Jul 15 12:33:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:34:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:34:01 10-80-88-63 systemd: Started Session 370636 of user mysql.
+Jul 15 12:34:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:35:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:35:01 10-80-88-63 systemd: Started Session 370637 of user mysql.
+Jul 15 12:35:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:36:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:36:01 10-80-88-63 systemd: Started Session 370638 of user mysql.
+Jul 15 12:36:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:37:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:37:01 10-80-88-63 systemd: Started Session 370639 of user mysql.
+Jul 15 12:37:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:38:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:38:01 10-80-88-63 systemd: Started Session 370640 of user mysql.
+Jul 15 12:38:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:39:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:39:01 10-80-88-63 systemd: Started Session 370641 of user mysql.
+Jul 15 12:39:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:40:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:40:01 10-80-88-63 systemd: Started Session 370642 of user mysql.
+Jul 15 12:40:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:41:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:41:01 10-80-88-63 systemd: Started Session 370643 of user mysql.
+Jul 15 12:41:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:42:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:42:01 10-80-88-63 systemd: Started Session 370644 of user mysql.
+Jul 15 12:42:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:43:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:43:01 10-80-88-63 systemd: Started Session 370645 of user mysql.
+Jul 15 12:43:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:44:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:44:01 10-80-88-63 systemd: Started Session 370646 of user mysql.
+Jul 15 12:44:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:45:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:45:01 10-80-88-63 systemd: Started Session 370647 of user mysql.
+Jul 15 12:45:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:46:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:46:01 10-80-88-63 systemd: Started Session 370648 of user mysql.
+Jul 15 12:46:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:47:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:47:02 10-80-88-63 systemd: Started Session 370649 of user mysql.
+Jul 15 12:47:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:48:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:48:01 10-80-88-63 systemd: Started Session 370650 of user mysql.
+Jul 15 12:48:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:49:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:49:01 10-80-88-63 systemd: Started Session 370651 of user mysql.
+Jul 15 12:49:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:50:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:50:01 10-80-88-63 systemd: Started Session 370652 of user mysql.
+Jul 15 12:50:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:51:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:51:01 10-80-88-63 systemd: Started Session 370653 of user mysql.
+Jul 15 12:51:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:52:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:52:01 10-80-88-63 systemd: Started Session 370654 of user mysql.
+Jul 15 12:52:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:53:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:53:01 10-80-88-63 systemd: Started Session 370655 of user mysql.
+Jul 15 12:53:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:54:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:54:01 10-80-88-63 systemd: Started Session 370656 of user mysql.
+Jul 15 12:54:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:55:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:55:01 10-80-88-63 systemd: Started Session 370657 of user mysql.
+Jul 15 12:55:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:56:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:56:01 10-80-88-63 systemd: Started Session 370658 of user mysql.
+Jul 15 12:56:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:57:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:57:01 10-80-88-63 systemd: Started Session 370659 of user mysql.
+Jul 15 12:57:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:58:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:58:01 10-80-88-63 systemd: Started Session 370660 of user mysql.
+Jul 15 12:58:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 12:59:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 12:59:01 10-80-88-63 systemd: Started Session 370661 of user mysql.
+Jul 15 12:59:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:00:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:00:01 10-80-88-63 systemd: Started Session 370662 of user mysql.
+Jul 15 13:00:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:01:01 10-80-88-63 systemd: Started Session 370663 of user root.
+Jul 15 13:01:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:01:01 10-80-88-63 systemd: Started Session 370664 of user mysql.
+Jul 15 13:01:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:02:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:02:01 10-80-88-63 systemd: Started Session 370665 of user mysql.
+Jul 15 13:02:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:03:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:03:01 10-80-88-63 systemd: Started Session 370666 of user mysql.
+Jul 15 13:03:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:04:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:04:01 10-80-88-63 systemd: Started Session 370667 of user mysql.
+Jul 15 13:04:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:05:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:05:01 10-80-88-63 systemd: Started Session 370668 of user mysql.
+Jul 15 13:05:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:06:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:06:01 10-80-88-63 systemd: Started Session 370669 of user mysql.
+Jul 15 13:06:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:07:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:07:01 10-80-88-63 systemd: Started Session 370670 of user mysql.
+Jul 15 13:07:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:08:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:08:01 10-80-88-63 systemd: Started Session 370671 of user mysql.
+Jul 15 13:08:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:09:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:09:01 10-80-88-63 systemd: Started Session 370672 of user mysql.
+Jul 15 13:09:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:10:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:10:01 10-80-88-63 systemd: Started Session 370673 of user mysql.
+Jul 15 13:10:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:11:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:11:01 10-80-88-63 systemd: Started Session 370674 of user mysql.
+Jul 15 13:11:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:12:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:12:01 10-80-88-63 systemd: Started Session 370675 of user mysql.
+Jul 15 13:12:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:13:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:13:01 10-80-88-63 systemd: Started Session 370676 of user mysql.
+Jul 15 13:13:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:14:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:14:01 10-80-88-63 systemd: Started Session 370677 of user mysql.
+Jul 15 13:14:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:15:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:15:01 10-80-88-63 systemd: Started Session 370678 of user mysql.
+Jul 15 13:15:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:16:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:16:01 10-80-88-63 systemd: Started Session 370679 of user mysql.
+Jul 15 13:16:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:17:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:17:01 10-80-88-63 systemd: Started Session 370680 of user mysql.
+Jul 15 13:17:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:18:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:18:01 10-80-88-63 systemd: Started Session 370681 of user mysql.
+Jul 15 13:18:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:19:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:19:01 10-80-88-63 systemd: Started Session 370682 of user mysql.
+Jul 15 13:19:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:20:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:20:01 10-80-88-63 systemd: Started Session 370683 of user mysql.
+Jul 15 13:20:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:21:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:21:01 10-80-88-63 systemd: Started Session 370684 of user mysql.
+Jul 15 13:21:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:22:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:22:01 10-80-88-63 systemd: Started Session 370685 of user mysql.
+Jul 15 13:22:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:23:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:23:01 10-80-88-63 systemd: Started Session 370686 of user mysql.
+Jul 15 13:23:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:24:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:24:01 10-80-88-63 systemd: Started Session 370687 of user mysql.
+Jul 15 13:24:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:25:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:25:01 10-80-88-63 systemd: Started Session 370688 of user mysql.
+Jul 15 13:25:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:26:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:26:01 10-80-88-63 systemd: Started Session 370689 of user mysql.
+Jul 15 13:26:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:27:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:27:01 10-80-88-63 systemd: Started Session 370690 of user mysql.
+Jul 15 13:27:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:28:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:28:01 10-80-88-63 systemd: Started Session 370691 of user mysql.
+Jul 15 13:28:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:29:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:29:01 10-80-88-63 systemd: Started Session 370692 of user mysql.
+Jul 15 13:29:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:30:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:30:01 10-80-88-63 systemd: Started Session 370693 of user mysql.
+Jul 15 13:30:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:31:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:31:01 10-80-88-63 systemd: Started Session 370694 of user mysql.
+Jul 15 13:31:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:32:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:32:01 10-80-88-63 systemd: Started Session 370695 of user mysql.
+Jul 15 13:32:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:33:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:33:01 10-80-88-63 systemd: Started Session 370696 of user mysql.
+Jul 15 13:33:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:34:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:34:01 10-80-88-63 systemd: Started Session 370697 of user mysql.
+Jul 15 13:34:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:35:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:35:01 10-80-88-63 systemd: Started Session 370698 of user mysql.
+Jul 15 13:35:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:36:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:36:01 10-80-88-63 systemd: Started Session 370699 of user mysql.
+Jul 15 13:36:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:37:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:37:01 10-80-88-63 systemd: Started Session 370700 of user mysql.
+Jul 15 13:37:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:38:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:38:01 10-80-88-63 systemd: Started Session 370701 of user mysql.
+Jul 15 13:38:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:39:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:39:01 10-80-88-63 systemd: Started Session 370702 of user mysql.
+Jul 15 13:39:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:40:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:40:01 10-80-88-63 systemd: Started Session 370703 of user mysql.
+Jul 15 13:40:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:41:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:41:01 10-80-88-63 systemd: Started Session 370704 of user mysql.
+Jul 15 13:41:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:42:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:42:01 10-80-88-63 systemd: Started Session 370705 of user mysql.
+Jul 15 13:42:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:43:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:43:01 10-80-88-63 systemd: Started Session 370706 of user mysql.
+Jul 15 13:43:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:44:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:44:01 10-80-88-63 systemd: Started Session 370707 of user mysql.
+Jul 15 13:44:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:45:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:45:01 10-80-88-63 systemd: Started Session 370708 of user mysql.
+Jul 15 13:45:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:46:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:46:01 10-80-88-63 systemd: Started Session 370709 of user mysql.
+Jul 15 13:46:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:47:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:47:01 10-80-88-63 systemd: Started Session 370710 of user mysql.
+Jul 15 13:47:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:48:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:48:01 10-80-88-63 systemd: Started Session 370711 of user mysql.
+Jul 15 13:48:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:49:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:49:01 10-80-88-63 systemd: Started Session 370712 of user mysql.
+Jul 15 13:49:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:50:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:50:01 10-80-88-63 systemd: Started Session 370713 of user mysql.
+Jul 15 13:50:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:51:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:51:01 10-80-88-63 systemd: Started Session 370714 of user mysql.
+Jul 15 13:51:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:52:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:52:01 10-80-88-63 systemd: Started Session 370715 of user mysql.
+Jul 15 13:52:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:53:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:53:01 10-80-88-63 systemd: Started Session 370716 of user mysql.
+Jul 15 13:53:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:54:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:54:01 10-80-88-63 systemd: Started Session 370717 of user mysql.
+Jul 15 13:54:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:55:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:55:01 10-80-88-63 systemd: Started Session 370718 of user mysql.
+Jul 15 13:55:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:56:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:56:01 10-80-88-63 systemd: Started Session 370719 of user mysql.
+Jul 15 13:56:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:57:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:57:01 10-80-88-63 systemd: Started Session 370720 of user mysql.
+Jul 15 13:57:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:58:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:58:01 10-80-88-63 systemd: Started Session 370721 of user mysql.
+Jul 15 13:58:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 13:59:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 13:59:01 10-80-88-63 systemd: Started Session 370722 of user mysql.
+Jul 15 13:59:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:00:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:00:01 10-80-88-63 systemd: Started Session 370723 of user mysql.
+Jul 15 14:00:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:01:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:01:01 10-80-88-63 systemd: Started Session 370724 of user mysql.
+Jul 15 14:01:01 10-80-88-63 systemd: Started Session 370725 of user root.
+Jul 15 14:01:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:02:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:02:01 10-80-88-63 systemd: Started Session 370726 of user mysql.
+Jul 15 14:02:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:03:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:03:01 10-80-88-63 systemd: Started Session 370727 of user mysql.
+Jul 15 14:03:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:04:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:04:01 10-80-88-63 systemd: Started Session 370728 of user mysql.
+Jul 15 14:04:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:05:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:05:01 10-80-88-63 systemd: Started Session 370729 of user mysql.
+Jul 15 14:05:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:06:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:06:01 10-80-88-63 systemd: Started Session 370730 of user mysql.
+Jul 15 14:06:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:07:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:07:01 10-80-88-63 systemd: Started Session 370731 of user mysql.
+Jul 15 14:07:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:08:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:08:01 10-80-88-63 systemd: Started Session 370732 of user mysql.
+Jul 15 14:08:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:09:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:09:01 10-80-88-63 systemd: Started Session 370733 of user mysql.
+Jul 15 14:09:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:10:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:10:01 10-80-88-63 systemd: Started Session 370734 of user mysql.
+Jul 15 14:10:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:11:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:11:01 10-80-88-63 systemd: Started Session 370735 of user mysql.
+Jul 15 14:11:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:12:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:12:01 10-80-88-63 systemd: Started Session 370736 of user mysql.
+Jul 15 14:12:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:13:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:13:01 10-80-88-63 systemd: Started Session 370737 of user mysql.
+Jul 15 14:13:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:14:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:14:01 10-80-88-63 systemd: Started Session 370738 of user mysql.
+Jul 15 14:14:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:15:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:15:01 10-80-88-63 systemd: Started Session 370739 of user mysql.
+Jul 15 14:15:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:16:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:16:01 10-80-88-63 systemd: Started Session 370740 of user mysql.
+Jul 15 14:16:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:17:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:17:01 10-80-88-63 systemd: Started Session 370741 of user mysql.
+Jul 15 14:17:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:18:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:18:01 10-80-88-63 systemd: Started Session 370742 of user mysql.
+Jul 15 14:18:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:19:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:19:01 10-80-88-63 systemd: Started Session 370743 of user mysql.
+Jul 15 14:19:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:20:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:20:01 10-80-88-63 systemd: Started Session 370744 of user mysql.
+Jul 15 14:20:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:21:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:21:01 10-80-88-63 systemd: Started Session 370745 of user mysql.
+Jul 15 14:21:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:22:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:22:01 10-80-88-63 systemd: Started Session 370746 of user mysql.
+Jul 15 14:22:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:23:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:23:01 10-80-88-63 systemd: Started Session 370747 of user mysql.
+Jul 15 14:23:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:24:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:24:01 10-80-88-63 systemd: Started Session 370748 of user mysql.
+Jul 15 14:24:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:25:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:25:01 10-80-88-63 systemd: Started Session 370749 of user mysql.
+Jul 15 14:25:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:26:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:26:01 10-80-88-63 systemd: Started Session 370750 of user mysql.
+Jul 15 14:26:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:27:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:27:01 10-80-88-63 systemd: Started Session 370751 of user mysql.
+Jul 15 14:27:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:28:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:28:01 10-80-88-63 systemd: Started Session 370752 of user mysql.
+Jul 15 14:28:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:29:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:29:01 10-80-88-63 systemd: Started Session 370753 of user mysql.
+Jul 15 14:29:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:30:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:30:01 10-80-88-63 systemd: Started Session 370754 of user mysql.
+Jul 15 14:30:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:31:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:31:01 10-80-88-63 systemd: Started Session 370755 of user mysql.
+Jul 15 14:31:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:32:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:32:01 10-80-88-63 systemd: Started Session 370756 of user mysql.
+Jul 15 14:32:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:33:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:33:01 10-80-88-63 systemd: Started Session 370757 of user mysql.
+Jul 15 14:33:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:34:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:34:01 10-80-88-63 systemd: Started Session 370758 of user mysql.
+Jul 15 14:34:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:35:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:35:01 10-80-88-63 systemd: Started Session 370759 of user mysql.
+Jul 15 14:35:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:36:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:36:01 10-80-88-63 systemd: Started Session 370760 of user mysql.
+Jul 15 14:36:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:37:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:37:01 10-80-88-63 systemd: Started Session 370761 of user mysql.
+Jul 15 14:37:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:38:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:38:01 10-80-88-63 systemd: Started Session 370762 of user mysql.
+Jul 15 14:38:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:39:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:39:01 10-80-88-63 systemd: Started Session 370763 of user mysql.
+Jul 15 14:39:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:40:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:40:01 10-80-88-63 systemd: Started Session 370764 of user mysql.
+Jul 15 14:40:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:41:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:41:01 10-80-88-63 systemd: Started Session 370765 of user mysql.
+Jul 15 14:41:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:42:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:42:01 10-80-88-63 systemd: Started Session 370766 of user mysql.
+Jul 15 14:42:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:43:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:43:01 10-80-88-63 systemd: Started Session 370767 of user mysql.
+Jul 15 14:43:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:44:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:44:01 10-80-88-63 systemd: Started Session 370768 of user mysql.
+Jul 15 14:44:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:45:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:45:01 10-80-88-63 systemd: Started Session 370769 of user mysql.
+Jul 15 14:45:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:46:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:46:01 10-80-88-63 systemd: Started Session 370770 of user mysql.
+Jul 15 14:46:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:47:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:47:01 10-80-88-63 systemd: Started Session 370771 of user mysql.
+Jul 15 14:47:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:48:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:48:01 10-80-88-63 systemd: Started Session 370772 of user mysql.
+Jul 15 14:48:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:49:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:49:01 10-80-88-63 systemd: Started Session 370773 of user mysql.
+Jul 15 14:49:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:50:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:50:01 10-80-88-63 systemd: Started Session 370774 of user mysql.
+Jul 15 14:50:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:51:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:51:01 10-80-88-63 systemd: Started Session 370775 of user mysql.
+Jul 15 14:51:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:52:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:52:01 10-80-88-63 systemd: Started Session 370776 of user mysql.
+Jul 15 14:52:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:53:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:53:01 10-80-88-63 systemd: Started Session 370777 of user mysql.
+Jul 15 14:53:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:54:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:54:01 10-80-88-63 systemd: Started Session 370778 of user mysql.
+Jul 15 14:54:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:55:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:55:01 10-80-88-63 systemd: Started Session 370779 of user mysql.
+Jul 15 14:55:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:56:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:56:01 10-80-88-63 systemd: Started Session 370780 of user mysql.
+Jul 15 14:56:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:57:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:57:01 10-80-88-63 systemd: Started Session 370781 of user mysql.
+Jul 15 14:57:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:58:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:58:01 10-80-88-63 systemd: Started Session 370782 of user mysql.
+Jul 15 14:58:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 14:59:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 14:59:01 10-80-88-63 systemd: Started Session 370783 of user mysql.
+Jul 15 14:59:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:00:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:00:01 10-80-88-63 systemd: Started Session 370784 of user mysql.
+Jul 15 15:00:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:01:01 10-80-88-63 systemd: Started Session 370785 of user root.
+Jul 15 15:01:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:01:01 10-80-88-63 systemd: Started Session 370786 of user mysql.
+Jul 15 15:01:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:02:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:02:01 10-80-88-63 systemd: Started Session 370787 of user mysql.
+Jul 15 15:02:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:03:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:03:01 10-80-88-63 systemd: Started Session 370788 of user mysql.
+Jul 15 15:03:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:04:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:04:01 10-80-88-63 systemd: Started Session 370789 of user mysql.
+Jul 15 15:04:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:05:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:05:01 10-80-88-63 systemd: Started Session 370790 of user mysql.
+Jul 15 15:05:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:06:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:06:01 10-80-88-63 systemd: Started Session 370791 of user mysql.
+Jul 15 15:06:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:07:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:07:01 10-80-88-63 systemd: Started Session 370792 of user mysql.
+Jul 15 15:07:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:08:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:08:01 10-80-88-63 systemd: Started Session 370793 of user mysql.
+Jul 15 15:08:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:09:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:09:01 10-80-88-63 systemd: Started Session 370794 of user mysql.
+Jul 15 15:09:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:10:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:10:01 10-80-88-63 systemd: Started Session 370795 of user mysql.
+Jul 15 15:10:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:11:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:11:01 10-80-88-63 systemd: Started Session 370796 of user mysql.
+Jul 15 15:11:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:12:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:12:01 10-80-88-63 systemd: Started Session 370797 of user mysql.
+Jul 15 15:12:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:13:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:13:01 10-80-88-63 systemd: Started Session 370798 of user mysql.
+Jul 15 15:13:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:14:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:14:01 10-80-88-63 systemd: Started Session 370799 of user mysql.
+Jul 15 15:14:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:15:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:15:01 10-80-88-63 systemd: Started Session 370800 of user mysql.
+Jul 15 15:15:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:16:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:16:01 10-80-88-63 systemd: Started Session 370801 of user mysql.
+Jul 15 15:16:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:17:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:17:01 10-80-88-63 systemd: Started Session 370802 of user mysql.
+Jul 15 15:17:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:18:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:18:01 10-80-88-63 systemd: Started Session 370803 of user mysql.
+Jul 15 15:18:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:19:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:19:01 10-80-88-63 systemd: Started Session 370804 of user mysql.
+Jul 15 15:19:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:20:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:20:01 10-80-88-63 systemd: Started Session 370805 of user mysql.
+Jul 15 15:20:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:20:19 10-80-88-63 systemd-logind: New session 370806 of user root.
+Jul 15 15:20:19 10-80-88-63 systemd: Started Session 370806 of user root.
+Jul 15 15:20:49 10-80-88-63 yum[113535]: Installed: lm_sensors-libs-3.4.0-8.20160601gitf9185e5.el7.x86_64
+Jul 15 15:20:50 10-80-88-63 systemd: Reloading.
+Jul 15 15:20:50 10-80-88-63 yum[113535]: Installed: sysstat-10.1.5-19.el7.x86_64
+Jul 15 15:21:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:21:01 10-80-88-63 systemd: Started Session 370807 of user mysql.
+Jul 15 15:21:01 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:21:33 10-80-88-63 sftp-server[113627]: error: Unknown extended request "fs-multiple-roots-supported@vandyke.com"
+Jul 15 15:21:33 10-80-88-63 sftp-server[113627]: error: Unknown extended request "vendor-id"
+Jul 15 15:22:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:22:01 10-80-88-63 systemd: Started Session 370808 of user mysql.
+Jul 15 15:22:02 10-80-88-63 systemd: Removed slice User Slice of mysql.
+Jul 15 15:23:01 10-80-88-63 systemd: Created slice User Slice of mysql.
+Jul 15 15:23:01 10-80-88-63 systemd: Started Session 370809 of user mysql.
+Jul 15 15:23:01 10-80-88-63 systemd: Removed slice User Slice of mysql.

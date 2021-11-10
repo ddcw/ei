@@ -1,0 +1,1207 @@
+******************** MySQL--localhost--3306 ***********************
+--------------
+mysql  Ver 14.14 Distrib 5.6.38, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+
+Connection id:		67524474
+Current database:	
+Current user:		root@localhost
+SSL:			Not in use
+Current pager:		stdout
+Using outfile:		''
+Using delimiter:	;
+Server version:		5.6.38-log MySQL Community Server (GPL)
+Protocol version:	10
+Connection:		Localhost via UNIX socket
+Server characterset:	utf8
+Db     characterset:	utf8
+Client characterset:	utf8
+Conn.  characterset:	utf8
+UNIX socket:		/data/mysql/mysql.sock
+Uptime:			321 days 6 hours 34 min 59 sec
+
+Threads: 5  Questions: 2751785907  Slow queries: 10950  Opens: 1565337  Flush tables: 1  Open tables: 512  Queries per second avg: 99.134
+--------------
+
+                             basedir :	/usr/local/mysql/
+                             datadir :	/data/mysql/
+                                     :	          
+               ####Business info#### :	          
+                       Database size :	cy_prd 1264.424 GB cy_prd_log 0.006 GB db_monitor 0.141 GB ta_chuangying_mysql_1 0.090 GB
+                       Tables counts :	cy_prd 330 cy_prd_log 4 db_monitor 1 ta_chuangying_mysql_1 119
+                      Engines counts :	InnoDB 454
+                 Top 10 of big table :	prop_policy_risk 133651063 ebiz_oper_his 107328563 prop_order_jf_info_fee_discount 77073458 prop_policy 50303080 prop_policy_engaged 48981204 ebiz_core_trade220210415 45955701 prop_order_exclusive_service 28341550 prop_order_vehicle 26775798 prop_policy_insured 26564594 prop_order 26058254
+        Top 10 of auto increment num :	ebiz_batch_info 1000000061 ebiz_batch_info 1000000061 ebiz_batch_info 1000000013 ebiz_batch_info 1000000013 prop_order_jf_info_fee_discount 890683616 icsm_resource 800000481 icsm_resource 800000481 icsm_resource 800000203 icsm_resource 800000203 prop_policy_risk 446020801
+                                     :	          
+              ####Runtime status#### :	          
+                   Threads connected :	     3.00 
+                                 QPS :	     0.03 
+                                 TPS :	    20.62 
+                               Reads :	381802.00 
+                              Writes :	2175304314.00 
+                   Read/Writes Ratio :	    0.02% 
+   MyISAM Key buffer read hits(>99%) :	  100.00% 
+        MyISAM Key buffer write hits :	  100.00% 
+                    Query cache hits :	    NULL% 
+       InnoDB buffer read hits(>95%) :	   99.98% 
+             Thread cache hits(>90%) :	  100.00% 
+             Slow queries per second :	     0.00 
+         Select full join per second :	     0.00 
+      Select full join in all select :	    0.05% 
+         MyiSAM lock contention(<1%) :	    0.00% 
+           Temp tables to disk ratio :	    5.62% 
+No innodb tables
+No primary key tables
+TABLE_SCHEMA	TABLE_NAME	TABLE_TYPE	TABLE_ROWS
+cy_prd	e_agent_org_20190929	BASE TABLE	6384
+cy_prd	e_area20200311	BASE TABLE	385
+cy_prd	e_channel_config20170607	BASE TABLE	563
+cy_prd	e_channel_config20170727	BASE TABLE	645
+cy_prd	e_channel_config20200311	BASE TABLE	4979
+cy_prd	e_channel_product20200304	BASE TABLE	261
+cy_prd	e_customer20170911	BASE TABLE	229
+cy_prd	e_customer20200205	BASE TABLE	490366
+cy_prd	e_customer_20191112	BASE TABLE	409144
+cy_prd	e_customer_20200219	BASE TABLE	517362
+cy_prd	e_customer_bank_20200317	BASE TABLE	3872
+cy_prd	e_manage_fi_rates20200228	BASE TABLE	440
+cy_prd	e_manage_fi_rates_trace20200228	BASE TABLE	8550
+cy_prd	e_manage_integrated_extension_org20191126	BASE TABLE	2686
+cy_prd	e_manage_integrated_extension_org_2019	BASE TABLE	24377
+cy_prd	e_manage_rates20200228	BASE TABLE	19166
+cy_prd	e_manage_rates_trace20200228	BASE TABLE	4109994
+cy_prd	e_meal20200304	BASE TABLE	17
+cy_prd	e_meal_clause20200304	BASE TABLE	51
+cy_prd	e_meal_liability20200304	BASE TABLE	40
+cy_prd	e_meal_rate20200304	BASE TABLE	89
+cy_prd	ebiz_code20190712	BASE TABLE	872
+cy_prd	ebiz_code20200429	BASE TABLE	1210
+cy_prd	ebiz_code_1	BASE TABLE	849
+cy_prd	ebiz_code_20190618	BASE TABLE	855
+cy_prd	ebiz_code_20200428	BASE TABLE	1210
+cy_prd	ebiz_code_bak20170722	BASE TABLE	525
+cy_prd	friends	BASE TABLE	2
+cy_prd	icsm_agent_role	BASE TABLE	103
+cy_prd	ls_order_customer	BASE TABLE	15
+cy_prd	oims_point_exchange_bak	BASE TABLE	38
+cy_prd	prop_order_premium_record_0701bak	BASE TABLE	15430
+cy_prd	prop_point_account_bak	BASE TABLE	19
+cy_prd	prop_point_account_bak1	BASE TABLE	12
+cy_prd	prop_point_exchange_0329	BASE TABLE	75
+cy_prd	prop_point_sync_core_bak1	BASE TABLE	202275
+cy_prd	prop_product20191112	BASE TABLE	13
+cy_prd	prop_product20200304	BASE TABLE	23
+cy_prd	prop_third_send_point20170328	BASE TABLE	364
+cy_prd	prop_user_recommend20170911	BASE TABLE	406
+cy_prd	sawrittenpremium	BASE TABLE	457571
+cy_prd	sawrittenpremium_0701bak	BASE TABLE	3910
+cy_prd	temp_20210428_1	BASE TABLE	26123
+cy_prd	temp_20210428_2	BASE TABLE	21854
+cy_prd	tmp_20161205	BASE TABLE	17777
+cy_prd	tmp_20161205_1	BASE TABLE	32929
+cy_prd	tmp_20161205_2	BASE TABLE	80193
+cy_prd	tmp_e_customer_bak	BASE TABLE	146248
+cy_prd	tmp_e_customer_bak2	BASE TABLE	16166
+cy_prd	tmp_e_customer_bak3	BASE TABLE	29520
+cy_prd	tmp_e_customer_bak4	BASE TABLE	6443
+cy_prd	tmp_e_customer_bak5	BASE TABLE	31586
+cy_prd	tmp_e_customer_bak6	BASE TABLE	669
+cy_prd	tmp_e_customer_bak7	BASE TABLE	17
+cy_prd	tmp_prop_point_account20170215	BASE TABLE	122
+cy_prd	tmp_prop_point_account20170309	BASE TABLE	122
+cy_prd	tmp_prop_point_account_bak	BASE TABLE	133864
+cy_prd	tmp_prop_point_account_bak2	BASE TABLE	14665
+cy_prd	tmp_prop_point_account_bak3	BASE TABLE	28248
+cy_prd	tmp_prop_point_account_bak4	BASE TABLE	6281
+cy_prd	tmp_prop_point_account_bak5	BASE TABLE	26091
+cy_prd	tmp_prop_point_account_bak6	BASE TABLE	249
+cy_prd	tmp_prop_point_account_bak7	BASE TABLE	12
+cy_prd	tmp_prop_point_history_bak	BASE TABLE	1157780
+cy_prd	tmp_prop_point_history_bak2	BASE TABLE	50125
+cy_prd	tmp_prop_point_history_bak3	BASE TABLE	305313
+cy_prd	tmp_prop_point_history_bak4	BASE TABLE	26920
+cy_prd	tmp_prop_point_history_bak5	BASE TABLE	412622
+cy_prd	tmp_prop_point_history_bak6	BASE TABLE	1005
+cy_prd	tmp_prop_point_history_bak7	BASE TABLE	37
+cy_prd	tmp_referee20161221	BASE TABLE	113766
+cy_prd	tmp_vehicle_bak20161205	BASE TABLE	14762
+cy_prd	tmp_vehicle_bak20161205_1	BASE TABLE	9196
+cy_prd	tmp_vehicle_bak20161205_3	BASE TABLE	6369
+cy_prd_log	e_manage_rates_2	BASE TABLE	11613
+ta_chuangying_mysql_1	icsm_agent_role	BASE TABLE	4
+test	slave_monitor	BASE TABLE	0
+password equals user
+%	dsg	*1F25D2170131E8B6C861C4F06AB0F0A99A6D70EB	*1F25D2170131E8B6C861C4F06AB0F0A99A6D70EB	
+localhost	dsg	*1F25D2170131E8B6C861C4F06AB0F0A99A6D70EB	*1F25D2170131E8B6C861C4F06AB0F0A99A6D70EB	
+%	table_copy	*6DF75523BE3D6BFA008012BC35B1E968DA81CBCA	*6DF75523BE3D6BFA008012BC35B1E968DA81CBCA	
+Global status:
+Aborted_clients	610
+Aborted_connects	67413836
+Binlog_cache_disk_use	3815581
+Binlog_cache_use	572388514
+Binlog_stmt_cache_disk_use	0
+Binlog_stmt_cache_use	3138832
+Bytes_received	2994935589566
+Bytes_sent	34967920281
+Com_admin_commands	0
+Com_assign_to_keycache	0
+Com_alter_db	0
+Com_alter_db_upgrade	0
+Com_alter_event	0
+Com_alter_function	0
+Com_alter_procedure	0
+Com_alter_server	0
+Com_alter_table	102
+Com_alter_tablespace	0
+Com_alter_user	0
+Com_analyze	0
+Com_begin	572388516
+Com_binlog	0
+Com_call_procedure	0
+Com_change_db	66488
+Com_change_master	1
+Com_check	0
+Com_checksum	0
+Com_commit	572388516
+Com_create_db	1
+Com_create_event	1
+Com_create_function	0
+Com_create_index	0
+Com_create_procedure	0
+Com_create_server	0
+Com_create_table	1571593
+Com_create_trigger	0
+Com_create_udf	0
+Com_create_user	11
+Com_create_view	0
+Com_dealloc_sql	0
+Com_delete	196802881
+Com_delete_multi	0
+Com_do	0
+Com_drop_db	0
+Com_drop_event	0
+Com_drop_function	0
+Com_drop_index	0
+Com_drop_procedure	0
+Com_drop_server	0
+Com_drop_table	1565910
+Com_drop_trigger	0
+Com_drop_user	10
+Com_drop_view	0
+Com_empty_query	18
+Com_execute_sql	0
+Com_flush	8
+Com_get_diagnostics	0
+Com_grant	51
+Com_ha_close	0
+Com_ha_open	0
+Com_ha_read	0
+Com_help	0
+Com_insert	1410203437
+Com_insert_select	0
+Com_install_plugin	0
+Com_kill	53
+Com_load	0
+Com_lock_tables	0
+Com_optimize	0
+Com_preload_keys	0
+Com_prepare_sql	0
+Com_purge	0
+Com_purge_before_date	0
+Com_release_savepoint	0
+Com_rename_table	4
+Com_rename_user	0
+Com_repair	0
+Com_replace	0
+Com_replace_select	0
+Com_reset	2
+Com_resignal	0
+Com_revoke	0
+Com_revoke_all	0
+Com_rollback	0
+Com_rollback_to_savepoint	0
+Com_savepoint	0
+Com_select	381815
+Com_set_option	133399
+Com_signal	0
+Com_show_binlog_events	0
+Com_show_binlogs	0
+Com_show_charsets	2
+Com_show_collations	2
+Com_show_create_db	0
+Com_show_create_event	0
+Com_show_create_func	0
+Com_show_create_proc	0
+Com_show_create_table	63866
+Com_show_create_trigger	0
+Com_show_databases	232
+Com_show_engine_logs	0
+Com_show_engine_mutex	0
+Com_show_engine_status	0
+Com_show_events	0
+Com_show_errors	0
+Com_show_fields	5035
+Com_show_function_code	0
+Com_show_function_status	172
+Com_show_grants	16
+Com_show_keys	5
+Com_show_master_status	1
+Com_show_open_tables	0
+Com_show_plugins	0
+Com_show_privileges	0
+Com_show_procedure_code	0
+Com_show_procedure_status	172
+Com_show_processlist	5
+Com_show_profile	0
+Com_show_profiles	0
+Com_show_relaylog_events	0
+Com_show_slave_hosts	0
+Com_show_slave_status	109655
+Com_show_status	13995
+Com_show_storage_engines	3
+Com_show_table_status	124
+Com_show_tables	499
+Com_show_triggers	0
+Com_show_variables	63691
+Com_show_warnings	0
+Com_slave_start	4
+Com_slave_stop	4
+Com_stmt_close	0
+Com_stmt_execute	0
+Com_stmt_fetch	0
+Com_stmt_prepare	0
+Com_stmt_reprepare	0
+Com_stmt_reset	0
+Com_stmt_send_long_data	0
+Com_truncate	1153
+Com_uninstall_plugin	0
+Com_unlock_tables	0
+Com_update	568298118
+Com_update_multi	1
+Com_xa_commit	0
+Com_xa_end	0
+Com_xa_prepare	0
+Com_xa_recover	0
+Com_xa_rollback	0
+Com_xa_start	0
+Compression	OFF
+Connection_errors_accept	0
+Connection_errors_internal	0
+Connection_errors_max_connections	0
+Connection_errors_peer_address	0
+Connection_errors_select	0
+Connection_errors_tcpwrap	0
+Connections	67524481
+Created_tmp_disk_tables	5821
+Created_tmp_files	535
+Created_tmp_tables	103591
+Delayed_errors	0
+Delayed_insert_threads	0
+Delayed_writes	0
+Flush_commands	1
+Handler_commit	6068595362
+Handler_delete	899776488
+Handler_discover	0
+Handler_external_lock	9229569186
+Handler_mrr_init	0
+Handler_prepare	5495376170
+Handler_read_first	1870
+Handler_read_key	2363661598
+Handler_read_last	0
+Handler_read_next	765477755
+Handler_read_prev	0
+Handler_read_rnd	1475493397
+Handler_read_rnd_next	3390372676
+Handler_rollback	60
+Handler_savepoint	0
+Handler_savepoint_rollback	0
+Handler_update	1145517489
+Handler_write	1585081624
+Innodb_buffer_pool_dump_status	not started
+Innodb_buffer_pool_load_status	not started
+Innodb_buffer_pool_pages_data	1037865
+Innodb_buffer_pool_bytes_data	17004380160
+Innodb_buffer_pool_pages_dirty	23890
+Innodb_buffer_pool_bytes_dirty	391413760
+Innodb_buffer_pool_pages_flushed	500090363
+Innodb_buffer_pool_pages_free	8182
+Innodb_buffer_pool_pages_misc	2521
+Innodb_buffer_pool_pages_total	1048568
+Innodb_buffer_pool_read_ahead_rnd	0
+Innodb_buffer_pool_read_ahead	12610546
+Innodb_buffer_pool_read_ahead_evicted	3907
+Innodb_buffer_pool_read_requests	135061096932
+Innodb_buffer_pool_reads	32777516
+Innodb_buffer_pool_wait_free	0
+Innodb_buffer_pool_write_requests	27051977498
+Innodb_data_fsyncs	795300319
+Innodb_data_pending_fsyncs	0
+Innodb_data_pending_reads	0
+Innodb_data_pending_writes	0
+Innodb_data_read	1073989881856
+Innodb_data_reads	66961484
+Innodb_data_writes	1148817778
+Innodb_data_written	20633988160512
+Innodb_dblwr_pages_written	500090363
+Innodb_dblwr_writes	26918753
+Innodb_have_atomic_builtins	ON
+Innodb_log_waits	17
+Innodb_log_write_requests	9164218242
+Innodb_log_writes	611445558
+Innodb_os_log_fsyncs	612858675
+Innodb_os_log_pending_fsyncs	0
+Innodb_os_log_pending_writes	0
+Innodb_os_log_written	4246400470016
+Innodb_page_size	16384
+Innodb_pages_created	169060999
+Innodb_pages_read	65551158
+Innodb_pages_written	500090363
+Innodb_row_lock_current_waits	0
+Innodb_row_lock_time	0
+Innodb_row_lock_time_avg	0
+Innodb_row_lock_time_max	0
+Innodb_row_lock_waits	0
+Innodb_rows_deleted	899776458
+Innodb_rows_inserted	1551008669
+Innodb_rows_read	6204732268
+Innodb_rows_updated	1143633363
+Innodb_num_open_files	499
+Innodb_truncated_status_writes	0
+Innodb_available_undo_logs	128
+Key_blocks_not_flushed	0
+Key_blocks_unused	214340
+Key_blocks_used	184034
+Key_read_requests	80187573
+Key_reads	27
+Key_write_requests	9012660
+Key_writes	166
+Last_query_cost	0.000000
+Last_query_partial_plans	0
+Max_used_connections	36
+Not_flushed_delayed_rows	0
+Open_files	12
+Open_streams	0
+Open_table_definitions	542
+Open_tables	512
+Opened_files	8416155
+Opened_table_definitions	3124785
+Opened_tables	1565338
+Performance_schema_accounts_lost	0
+Performance_schema_cond_classes_lost	0
+Performance_schema_cond_instances_lost	0
+Performance_schema_digest_lost	0
+Performance_schema_file_classes_lost	0
+Performance_schema_file_handles_lost	0
+Performance_schema_file_instances_lost	0
+Performance_schema_hosts_lost	0
+Performance_schema_locker_lost	0
+Performance_schema_mutex_classes_lost	0
+Performance_schema_mutex_instances_lost	0
+Performance_schema_rwlock_classes_lost	0
+Performance_schema_rwlock_instances_lost	0
+Performance_schema_session_connect_attrs_lost	0
+Performance_schema_socket_classes_lost	0
+Performance_schema_socket_instances_lost	0
+Performance_schema_stage_classes_lost	0
+Performance_schema_statement_classes_lost	0
+Performance_schema_table_handles_lost	0
+Performance_schema_table_instances_lost	0
+Performance_schema_thread_classes_lost	0
+Performance_schema_thread_instances_lost	0
+Performance_schema_users_lost	0
+Prepared_stmt_count	0
+Qcache_free_blocks	1
+Qcache_free_memory	33536840
+Qcache_hits	0
+Qcache_inserts	0
+Qcache_lowmem_prunes	0
+Qcache_not_cached	381733
+Qcache_queries_in_cache	0
+Qcache_total_blocks	1
+Queries	2751786078
+Questions	949417
+Rpl_semi_sync_master_clients	0
+Rpl_semi_sync_master_net_avg_wait_time	0
+Rpl_semi_sync_master_net_wait_time	0
+Rpl_semi_sync_master_net_waits	0
+Rpl_semi_sync_master_no_times	1
+Rpl_semi_sync_master_no_tx	575527346
+Rpl_semi_sync_master_status	OFF
+Rpl_semi_sync_master_timefunc_failures	0
+Rpl_semi_sync_master_tx_avg_wait_time	0
+Rpl_semi_sync_master_tx_wait_time	0
+Rpl_semi_sync_master_tx_waits	0
+Rpl_semi_sync_master_wait_pos_backtraverse	0
+Rpl_semi_sync_master_wait_sessions	0
+Rpl_semi_sync_master_yes_tx	0
+Rpl_semi_sync_slave_status	ON
+Select_full_join	190
+Select_full_range_join	39
+Select_range	244
+Select_range_check	14
+Select_scan	94728
+Slave_heartbeat_period	1800.000
+Slave_last_heartbeat	2021-07-15 05:30:03
+Slave_open_temp_tables	0
+Slave_received_heartbeats	88
+Slave_retried_transactions	0
+Slave_running	ON
+Slow_launch_threads	0
+Slow_queries	10951
+Sort_merge_passes	102
+Sort_range	148
+Sort_rows	6286630
+Sort_scan	9572
+Ssl_accept_renegotiates	0
+Ssl_accepts	0
+Ssl_callback_cache_hits	0
+Ssl_cipher	
+Ssl_cipher_list	
+Ssl_client_connects	0
+Ssl_connect_renegotiates	0
+Ssl_ctx_verify_depth	0
+Ssl_ctx_verify_mode	0
+Ssl_default_timeout	0
+Ssl_finished_accepts	0
+Ssl_finished_connects	0
+Ssl_server_not_after	
+Ssl_server_not_before	
+Ssl_session_cache_hits	0
+Ssl_session_cache_misses	0
+Ssl_session_cache_mode	NONE
+Ssl_session_cache_overflows	0
+Ssl_session_cache_size	0
+Ssl_session_cache_timeouts	0
+Ssl_sessions_reused	0
+Ssl_used_session_cache_entries	0
+Ssl_verify_depth	0
+Ssl_verify_mode	0
+Ssl_version	
+Table_locks_immediate	4511103491
+Table_locks_waited	0
+Table_open_cache_hits	2747106893
+Table_open_cache_misses	1565329
+Table_open_cache_overflows	2107
+Tc_log_max_pages_used	0
+Tc_log_page_size	0
+Tc_log_page_waits	0
+Threads_cached	5
+Threads_connected	3
+Threads_created	177
+Threads_running	1
+Uptime	27758100
+Uptime_since_flush_status	27758100
+Replication status:
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: 10.80.88.60
+                  Master_User: repl
+                  Master_Port: 3306
+                Connect_Retry: 60
+              Master_Log_File: mysql-bin.012025
+          Read_Master_Log_Pos: 191290375
+               Relay_Log_File: mysql-relay.032837
+                Relay_Log_Pos: 191290265
+        Relay_Master_Log_File: mysql-bin.012025
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
+              Replicate_Do_DB: 
+          Replicate_Ignore_DB: 
+           Replicate_Do_Table: 
+       Replicate_Ignore_Table: 
+      Replicate_Wild_Do_Table: 
+  Replicate_Wild_Ignore_Table: 
+                   Last_Errno: 0
+                   Last_Error: 
+                 Skip_Counter: 0
+          Exec_Master_Log_Pos: 191290375
+              Relay_Log_Space: 459737083
+              Until_Condition: None
+               Until_Log_File: 
+                Until_Log_Pos: 0
+           Master_SSL_Allowed: No
+           Master_SSL_CA_File: 
+           Master_SSL_CA_Path: 
+              Master_SSL_Cert: 
+            Master_SSL_Cipher: 
+               Master_SSL_Key: 
+        Seconds_Behind_Master: 0
+Master_SSL_Verify_Server_Cert: No
+                Last_IO_Errno: 0
+                Last_IO_Error: 
+               Last_SQL_Errno: 0
+               Last_SQL_Error: 
+  Replicate_Ignore_Server_Ids: 
+             Master_Server_Id: 808860
+                  Master_UUID: c0d1ef9a-a624-11ea-a395-005056aa25e8
+             Master_Info_File: mysql.slave_master_info
+                    SQL_Delay: 0
+          SQL_Remaining_Delay: NULL
+      Slave_SQL_Running_State: Slave has read all relay log; waiting for the slave I/O thread to update it
+           Master_Retry_Count: 86400
+                  Master_Bind: 
+      Last_IO_Error_Timestamp: 
+     Last_SQL_Error_Timestamp: 
+               Master_SSL_Crl: 
+           Master_SSL_Crlpath: 
+           Retrieved_Gtid_Set: 82c048b9-5d4f-11e9-8352-7cd30ac30e72:795205049-797407220,
+c0d1ef9a-a624-11ea-a395-005056aa25e8:1-573325173
+            Executed_Gtid_Set: 525d460d-74ec-11e8-97f6-7cd30abdd128:1-315240145,
+6f67c96a-9f4f-11e5-9c5c-5cb90188f7ac:1-210037652,
+7cbbabb9-9f4f-11e5-9c5c-5cb90189188c:1-97251337,
+7ce42058-6183-11e8-9965-005056be7782:1-102,
+82c048b9-5d4f-11e9-8352-7cd30ac30e72:1-797407220,
+c0d1ef9a-a624-11ea-a395-005056aa25e8:1-573325173,
+c2fbc918-6001-11e7-8a3c-5cb901893d60:1-46069775,
+d23cca0c-4869-11e8-b5b7-c0bfc0a04d60:1-17741269,
+d7cc0fd2-6001-11e7-8a3d-5cb9018913a8:1-31644274,
+da13c3a6-e8d5-11ea-9678-005056aacc4c:1,
+dfa5856f-f2a9-11e7-868f-90e2baa9a2d4:1-117300500
+                Auto_Position: 1
+Global variables:
+auto_increment_increment	1
+auto_increment_offset	1
+autocommit	ON
+automatic_sp_privileges	ON
+avoid_temporal_upgrade	OFF
+back_log	650
+basedir	/usr/local/mysql/
+big_tables	OFF
+bind_address	*
+binlog_cache_size	32768
+binlog_checksum	CRC32
+binlog_direct_non_transactional_updates	OFF
+binlog_error_action	IGNORE_ERROR
+binlog_format	ROW
+binlog_gtid_simple_recovery	OFF
+binlog_max_flush_queue_time	0
+binlog_order_commits	ON
+binlog_row_image	FULL
+binlog_rows_query_log_events	OFF
+binlog_stmt_cache_size	32768
+binlogging_impossible_mode	IGNORE_ERROR
+block_encryption_mode	aes-128-ecb
+bulk_insert_buffer_size	8388608
+character_set_client	utf8
+character_set_connection	utf8
+character_set_database	utf8
+character_set_filesystem	binary
+character_set_results	utf8
+character_set_server	utf8
+character_set_system	utf8
+character_sets_dir	/usr/local/mysql/share/charsets/
+collation_connection	utf8_general_ci
+collation_database	utf8_general_ci
+collation_server	utf8_general_ci
+completion_type	NO_CHAIN
+concurrent_insert	AUTO
+connect_timeout	10
+core_file	OFF
+datadir	/data/mysql/
+date_format	%Y-%m-%d
+datetime_format	%Y-%m-%d %H:%i:%s
+default_storage_engine	InnoDB
+default_tmp_storage_engine	InnoDB
+default_week_format	0
+delay_key_write	ON
+delayed_insert_limit	100
+delayed_insert_timeout	300
+delayed_queue_size	1000
+disconnect_on_expired_password	ON
+div_precision_increment	4
+end_markers_in_json	OFF
+enforce_gtid_consistency	ON
+eq_range_index_dive_limit	10
+event_scheduler	OFF
+expire_logs_days	3
+explicit_defaults_for_timestamp	OFF
+flush	OFF
+flush_time	0
+foreign_key_checks	ON
+ft_boolean_syntax	+ -><()~*:""&|
+ft_max_word_len	84
+ft_min_word_len	4
+ft_query_expansion_limit	20
+ft_stopword_file	(built-in)
+general_log	OFF
+general_log_file	/data/mysql/localhost.log
+group_concat_max_len	1024
+gtid_executed	525d460d-74ec-11e8-97f6-7cd30abdd128:1-315240145,\n6f67c96a-9f4f-11e5-9c5c-5cb90188f7ac:1-210037652,\n7cbbabb9-9f4f-11e5-9c5c-5cb90189188c:1-97251337,\n7ce42058-6183-11e8-9965-005056be7782:1-102,\n82c048b9-5d4f-11e9-8352-7cd30ac30e72:1-797407220,\nc0d1ef9a-a624-11ea-a395-005056aa25e8:1-573325173,\nc2fbc918-6001-11e7-8a3c-5cb901893d60:1-46069775,\nd23cca0c-4869-11e8-b5b7-c0bfc0a04d60:1-17741269,\nd7cc0fd2-6001-11e7-8a3d-5cb9018913a8:1-31644274,\nda13c3a6-e8d5-11ea-9678-005056aacc4c:1,\ndfa5856f-f2a9-11e7-868f-90e2baa9a2d4:1-117300500
+gtid_mode	ON
+gtid_owned	
+gtid_purged	525d460d-74ec-11e8-97f6-7cd30abdd128:1-315240145,\n6f67c96a-9f4f-11e5-9c5c-5cb90188f7ac:1-210037652,\n7cbbabb9-9f4f-11e5-9c5c-5cb90189188c:1-97251337,\n7ce42058-6183-11e8-9965-005056be7782:1-102,\n82c048b9-5d4f-11e9-8352-7cd30ac30e72:1-797407220,\nc0d1ef9a-a624-11ea-a395-005056aa25e8:1-567986831,\nc2fbc918-6001-11e7-8a3c-5cb901893d60:1-46069775,\nd23cca0c-4869-11e8-b5b7-c0bfc0a04d60:1-17741269,\nd7cc0fd2-6001-11e7-8a3d-5cb9018913a8:1-31644274,\nda13c3a6-e8d5-11ea-9678-005056aacc4c:1,\ndfa5856f-f2a9-11e7-868f-90e2baa9a2d4:1-117300500
+have_compress	YES
+have_crypt	YES
+have_dynamic_loading	YES
+have_geometry	YES
+have_openssl	DISABLED
+have_profiling	YES
+have_query_cache	YES
+have_rtree_keys	YES
+have_ssl	DISABLED
+have_symlink	YES
+host_cache_size	753
+hostname	localhost.default
+ignore_builtin_innodb	OFF
+ignore_db_dirs	
+init_connect	
+init_file	
+init_slave	
+innodb_adaptive_flushing	ON
+innodb_adaptive_flushing_lwm	10
+innodb_adaptive_hash_index	ON
+innodb_adaptive_max_sleep_delay	150000
+innodb_additional_mem_pool_size	52428800
+innodb_api_bk_commit_interval	5
+innodb_api_disable_rowlock	OFF
+innodb_api_enable_binlog	OFF
+innodb_api_enable_mdl	OFF
+innodb_api_trx_level	0
+innodb_autoextend_increment	64
+innodb_autoinc_lock_mode	1
+innodb_buffer_pool_dump_at_shutdown	OFF
+innodb_buffer_pool_dump_now	OFF
+innodb_buffer_pool_filename	ib_buffer_pool
+innodb_buffer_pool_instances	8
+innodb_buffer_pool_load_abort	OFF
+innodb_buffer_pool_load_at_startup	OFF
+innodb_buffer_pool_load_now	OFF
+innodb_buffer_pool_size	17179869184
+innodb_change_buffer_max_size	25
+innodb_change_buffering	all
+innodb_checksum_algorithm	innodb
+innodb_checksums	ON
+innodb_cmp_per_index_enabled	OFF
+innodb_commit_concurrency	0
+innodb_compression_failure_threshold_pct	5
+innodb_compression_level	6
+innodb_compression_pad_pct_max	50
+innodb_concurrency_tickets	5000
+innodb_data_file_path	ibdata1:200M:autoextend
+innodb_data_home_dir	
+innodb_disable_sort_file_cache	OFF
+innodb_doublewrite	ON
+innodb_fast_shutdown	1
+innodb_file_format	Antelope
+innodb_file_format_check	ON
+innodb_file_format_max	Barracuda
+innodb_file_per_table	ON
+innodb_flush_log_at_timeout	1
+innodb_flush_log_at_trx_commit	1
+innodb_flush_method	
+innodb_flush_neighbors	1
+innodb_flushing_avg_loops	30
+innodb_force_load_corrupted	OFF
+innodb_force_recovery	0
+innodb_ft_aux_table	
+innodb_ft_cache_size	8000000
+innodb_ft_enable_diag_print	OFF
+innodb_ft_enable_stopword	ON
+innodb_ft_max_token_size	84
+innodb_ft_min_token_size	3
+innodb_ft_num_word_optimize	2000
+innodb_ft_result_cache_limit	2000000000
+innodb_ft_server_stopword_table	
+innodb_ft_sort_pll_degree	2
+innodb_ft_total_cache_size	640000000
+innodb_ft_user_stopword_table	
+innodb_io_capacity	200
+innodb_io_capacity_max	2000
+innodb_large_prefix	OFF
+innodb_lock_wait_timeout	100
+innodb_locks_unsafe_for_binlog	OFF
+innodb_log_buffer_size	16777216
+innodb_log_compressed_pages	ON
+innodb_log_file_size	1572864000
+innodb_log_files_in_group	2
+innodb_log_group_home_dir	./
+innodb_lru_scan_depth	1024
+innodb_max_dirty_pages_pct	75
+innodb_max_dirty_pages_pct_lwm	0
+innodb_max_purge_lag	0
+innodb_max_purge_lag_delay	0
+innodb_mirrored_log_groups	1
+innodb_monitor_disable	
+innodb_monitor_enable	
+innodb_monitor_reset	
+innodb_monitor_reset_all	
+innodb_numa_interleave	OFF
+innodb_old_blocks_pct	37
+innodb_old_blocks_time	1000
+innodb_online_alter_log_max_size	134217728
+innodb_open_files	512
+innodb_optimize_fulltext_only	OFF
+innodb_page_size	16384
+innodb_print_all_deadlocks	OFF
+innodb_purge_batch_size	300
+innodb_purge_threads	1
+innodb_random_read_ahead	OFF
+innodb_read_ahead_threshold	56
+innodb_read_io_threads	4
+innodb_read_only	OFF
+innodb_replication_delay	0
+innodb_rollback_on_timeout	OFF
+innodb_rollback_segments	128
+innodb_sort_buffer_size	1048576
+innodb_spin_wait_delay	6
+innodb_stats_auto_recalc	ON
+innodb_stats_include_delete_marked	OFF
+innodb_stats_method	nulls_equal
+innodb_stats_on_metadata	OFF
+innodb_stats_persistent	ON
+innodb_stats_persistent_sample_pages	20
+innodb_stats_sample_pages	8
+innodb_stats_transient_sample_pages	8
+innodb_status_output	OFF
+innodb_status_output_locks	OFF
+innodb_strict_mode	OFF
+innodb_support_xa	ON
+innodb_sync_array_size	1
+innodb_sync_spin_loops	30
+innodb_table_locks	ON
+innodb_thread_concurrency	0
+innodb_thread_sleep_delay	10000
+innodb_tmpdir	
+innodb_undo_directory	.
+innodb_undo_logs	128
+innodb_undo_tablespaces	0
+innodb_use_native_aio	ON
+innodb_use_sys_malloc	ON
+innodb_version	5.6.38
+innodb_write_io_threads	4
+interactive_timeout	86400
+join_buffer_size	262144
+keep_files_on_create	OFF
+key_buffer_size	268435456
+key_cache_age_threshold	300
+key_cache_block_size	1024
+key_cache_division_limit	100
+large_files_support	ON
+large_page_size	0
+large_pages	OFF
+lc_messages	en_US
+lc_messages_dir	/usr/local/mysql/share/
+lc_time_names	en_US
+license	GPL
+local_infile	ON
+lock_wait_timeout	31536000
+locked_in_memory	OFF
+log_bin	ON
+log_bin_basename	/data/mysql/mysql-bin
+log_bin_index	/data/mysql/mysql-bin.index
+log_bin_trust_function_creators	ON
+log_bin_use_v1_row_events	OFF
+log_error	./mysql-error.log
+log_output	FILE
+log_queries_not_using_indexes	ON
+log_slave_updates	ON
+log_slow_admin_statements	OFF
+log_slow_slave_statements	OFF
+log_throttle_queries_not_using_indexes	10
+log_warnings	1
+long_query_time	2.000000
+low_priority_updates	OFF
+lower_case_file_system	OFF
+lower_case_table_names	1
+master_info_repository	TABLE
+master_verify_checksum	OFF
+max_allowed_packet	16777216
+max_binlog_cache_size	18446744073709547520
+max_binlog_size	268435456
+max_binlog_stmt_cache_size	18446744073709547520
+max_connect_errors	100000
+max_connections	3000
+max_delayed_threads	20
+max_digest_length	1024
+max_error_count	64
+max_heap_table_size	134217728
+max_insert_delayed_threads	20
+max_join_size	18446744073709551615
+max_length_for_sort_data	1024
+max_prepared_stmt_count	16382
+max_relay_log_size	0
+max_seeks_for_key	18446744073709551615
+max_sort_length	1024
+max_sp_recursion_depth	0
+max_tmp_tables	32
+max_user_connections	0
+max_write_lock_count	18446744073709551615
+metadata_locks_cache_size	1024
+metadata_locks_hash_instances	8
+min_examined_row_limit	0
+multi_range_count	256
+myisam_data_pointer_size	6
+myisam_max_sort_file_size	9223372036853727232
+myisam_mmap_size	18446744073709551615
+myisam_recover_options	OFF
+myisam_repair_threads	1
+myisam_sort_buffer_size	134217728
+myisam_stats_method	nulls_unequal
+myisam_use_mmap	OFF
+net_buffer_length	16384
+net_read_timeout	360
+net_retry_count	10
+net_write_timeout	60
+new	OFF
+old	OFF
+old_alter_table	OFF
+old_passwords	0
+open_files_limit	65535
+optimizer_prune_level	1
+optimizer_search_depth	62
+optimizer_switch	index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,engine_condition_pushdown=on,index_condition_pushdown=on,mrr=on,mrr_cost_based=on,block_nested_loop=on,batched_key_access=off,materialization=on,semijoin=on,loosescan=on,firstmatch=on,subquery_materialization_cost_based=on,use_index_extensions=on
+optimizer_trace	enabled=off,one_line=off
+optimizer_trace_features	greedy_search=on,range_optimizer=on,dynamic_range=on,repeated_subselect=on
+optimizer_trace_limit	1
+optimizer_trace_max_mem_size	16384
+optimizer_trace_offset	-1
+performance_schema	ON
+performance_schema_accounts_size	100
+performance_schema_digests_size	10000
+performance_schema_events_stages_history_long_size	10000
+performance_schema_events_stages_history_size	10
+performance_schema_events_statements_history_long_size	10000
+performance_schema_events_statements_history_size	10
+performance_schema_events_waits_history_long_size	10000
+performance_schema_events_waits_history_size	10
+performance_schema_hosts_size	100
+performance_schema_max_cond_classes	80
+performance_schema_max_cond_instances	13412
+performance_schema_max_digest_length	1024
+performance_schema_max_file_classes	50
+performance_schema_max_file_handles	32768
+performance_schema_max_file_instances	23077
+performance_schema_max_mutex_classes	200
+performance_schema_max_mutex_instances	25560
+performance_schema_max_rwlock_classes	40
+performance_schema_max_rwlock_instances	10336
+performance_schema_max_socket_classes	10
+performance_schema_max_socket_instances	6020
+performance_schema_max_stage_classes	150
+performance_schema_max_statement_classes	168
+performance_schema_max_table_handles	1024
+performance_schema_max_table_instances	12500
+performance_schema_max_thread_classes	50
+performance_schema_max_thread_instances	6100
+performance_schema_session_connect_attrs_size	512
+performance_schema_setup_actors_size	100
+performance_schema_setup_objects_size	100
+performance_schema_users_size	100
+pid_file	/data/mysql/localhost.default.pid
+plugin_dir	/usr/local/mysql/lib/plugin/
+port	3306
+preload_buffer_size	32768
+profiling	OFF
+profiling_history_size	15
+protocol_version	10
+query_alloc_block_size	8192
+query_cache_limit	1048576
+query_cache_min_res_unit	4096
+query_cache_size	33554432
+query_cache_type	OFF
+query_cache_wlock_invalidate	OFF
+query_prealloc_size	8192
+range_alloc_block_size	4096
+read_buffer_size	4194304
+read_only	ON
+read_rnd_buffer_size	4194304
+relay_log	mysql-relay.log
+relay_log_basename	/data/mysql/mysql-relay
+relay_log_index	/data/mysql/mysql-relay.index
+relay_log_info_file	relay-log.info
+relay_log_info_repository	TABLE
+relay_log_purge	ON
+relay_log_recovery	ON
+relay_log_space_limit	0
+report_host	
+report_password	
+report_port	3306
+report_user	
+rpl_semi_sync_master_enabled	ON
+rpl_semi_sync_master_timeout	5000
+rpl_semi_sync_master_trace_level	32
+rpl_semi_sync_master_wait_no_slave	ON
+rpl_semi_sync_slave_enabled	ON
+rpl_semi_sync_slave_trace_level	32
+rpl_stop_slave_timeout	31536000
+secure_auth	ON
+secure_file_priv	NULL
+server_id	808861
+server_id_bits	32
+server_uuid	da13c3a6-e8d5-11ea-9678-005056aacc4c
+show_old_temporals	OFF
+simplified_binlog_gtid_recovery	OFF
+skip_external_locking	ON
+skip_name_resolve	ON
+skip_networking	OFF
+skip_show_database	OFF
+slave_allow_batching	OFF
+slave_checkpoint_group	512
+slave_checkpoint_period	300
+slave_compressed_protocol	OFF
+slave_exec_mode	STRICT
+slave_load_tmpdir	/data/mysql_temp
+slave_max_allowed_packet	1073741824
+slave_net_timeout	3600
+slave_parallel_workers	0
+slave_pending_jobs_size_max	16777216
+slave_rows_search_algorithms	TABLE_SCAN,INDEX_SCAN
+slave_skip_errors	OFF
+slave_sql_verify_checksum	ON
+slave_transaction_retries	10
+slave_type_conversions	
+slow_launch_time	2
+slow_query_log	ON
+slow_query_log_file	mysql-slow.log
+socket	/data/mysql/mysql.sock
+sort_buffer_size	4194304
+sql_auto_is_null	OFF
+sql_big_selects	ON
+sql_buffer_result	OFF
+sql_log_bin	ON
+sql_log_off	OFF
+sql_mode	STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION
+sql_notes	ON
+sql_quote_show_create	ON
+sql_safe_updates	OFF
+sql_select_limit	18446744073709551615
+sql_slave_skip_counter	0
+sql_warnings	OFF
+ssl_ca	
+ssl_capath	
+ssl_cert	
+ssl_cipher	
+ssl_crl	
+ssl_crlpath	
+ssl_key	
+storage_engine	InnoDB
+stored_program_cache	256
+sync_binlog	0
+sync_frm	ON
+sync_master_info	10000
+sync_relay_log	10000
+sync_relay_log_info	10000
+system_time_zone	CST
+table_definition_cache	656
+table_open_cache	512
+table_open_cache_instances	1
+thread_cache_size	8
+thread_concurrency	10
+thread_handling	one-thread-per-connection
+thread_stack	262144
+time_format	%H:%i:%s
+time_zone	SYSTEM
+timed_mutexes	OFF
+tmp_table_size	33554432
+tmpdir	/data/mysql_temp
+transaction_alloc_block_size	8192
+transaction_prealloc_size	4096
+tx_isolation	READ-COMMITTED
+tx_read_only	OFF
+unique_checks	ON
+updatable_views_with_limit	YES
+version	5.6.38-log
+version_comment	MySQL Community Server (GPL)
+version_compile_machine	x86_64
+version_compile_os	linux-glibc2.12
+wait_timeout	86400
+ERROR LOG:
+2020-11-05 11:26:48 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:26:48 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:26:49 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:26:49 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:26:50 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:26:50 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:26:51 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:26:51 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:26:52 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:26:52 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:26:53 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:26:53 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:26:54 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:26:54 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:26:55 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:26:55 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:26:56 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:26:56 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:26:57 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:26:57 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:26:58 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:26:58 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:26:59 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:26:59 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:00 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:00 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:01 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:01 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:02 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:02 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:03 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:03 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:04 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:04 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:05 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:05 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:06 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:06 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:07 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:07 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:08 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:08 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:09 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:09 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:10 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:10 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:11 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:11 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:12 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:12 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:13 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:13 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:14 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:14 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:15 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:15 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:16 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:16 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:17 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:17 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:18 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:18 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:19 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:19 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:20 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:20 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:21 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:21 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:22 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:22 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:23 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:23 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:24 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:24 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:25 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:25 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:26 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:26 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:27 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:27 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:28 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:28 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:29 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:29 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:30 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:30 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:31 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:31 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:32 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:32 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:33 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:33 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:34 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:34 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:35 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:35 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:36 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:36 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:37 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:37 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:38 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:38 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:39 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:39 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:40 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:40 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:41 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:41 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:42 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:42 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:43 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:43 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:44 42386 [ERROR] InnoDB: Unable to lock ./ibdata1, error: 11
+2020-11-05 11:27:44 42386 [Note] InnoDB: Check that you do not already have another mysqld process using the same InnoDB data or log files.
+2020-11-05 11:27:44 42386 [Note] InnoDB: Unable to open the first data file
+2020-11-05 11:27:44 7ffff7fe9780  InnoDB: Operating system error number 11 in a file operation.
+InnoDB: Error number 11 means 'Resource temporarily unavailable'.
+InnoDB: Some operating system error numbers are described at
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/operating-system-error-codes.html
+2020-11-05 11:27:44 42386 [ERROR] InnoDB: Can't open './ibdata1'
+2020-11-05 11:27:44 42386 [ERROR] InnoDB: Could not open or create the system tablespace. If you tried to add new data files to the system tablespace, and it failed here, you should now edit innodb_data_file_path in my.cnf back to what it was, and remove the new ibdata files InnoDB created in this failed attempt. InnoDB only wrote those files full of zeros, but did not yet use them in any way. But be careful: do not remove old data files which contain your precious data!
+2020-11-05 11:27:44 42386 [ERROR] Plugin 'InnoDB' init function returned error.
+2020-11-05 11:27:44 42386 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+2020-11-05 11:27:44 42386 [Note] Semi-sync replication initialized for transactions.
+2020-11-05 11:27:44 42386 [Note] Semi-sync replication enabled on the master.
+2020-11-05 11:27:44 42386 [ERROR] Unknown/unsupported storage engine: InnoDB
+2020-11-05 11:27:44 42386 [ERROR] Aborting
+
+2020-11-05 11:27:44 42386 [Note] Binlog end
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'rpl_semi_sync_slave'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'rpl_semi_sync_master'
+2020-11-05 11:27:44 42386 [Note] unregister_replicator OK
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'partition'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'BLACKHOLE'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_METRICS'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_CMPMEM'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_CMP'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_LOCKS'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'INNODB_TRX'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'ARCHIVE'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'MRG_MYISAM'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'MEMORY'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'MyISAM'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'CSV'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'sha256_password'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'mysql_old_password'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'mysql_native_password'
+2020-11-05 11:27:44 42386 [Note] Shutting down plugin 'binlog'
+2020-11-05 11:27:44 42386 [Note] /usr/local/mysql/bin/mysqld: Shutdown complete
+
+201105 11:27:44 mysqld_safe mysqld from pid file /data/mysql/10-80-88-61.pid ended
+2021-04-07 11:03:20 48963 [ERROR] Slave SQL: Error 'Operation CREATE USER failed for 'cxianming'@'%'' on query. Default database: ''. Query: 'CREATE USER 'cxianming'@'%' IDENTIFIED BY PASSWORD '*802743F3615EEAE5E76FAB9B004DBB7888274FE7'', Error_code: 1396
+2021-04-07 11:03:20 48963 [Warning] Slave: Operation CREATE USER failed for 'cxianming'@'%' Error_code: 1396
+2021-04-07 11:03:20 48963 [ERROR] Error running query, slave SQL thread aborted. Fix the problem, and restart the slave SQL thread with "SLAVE START". We stopped at log 'mysql-bin.009080' position 131009698
+2021-04-07 12:09:26 48963 [Note] Slave SQL thread initialized, starting replication in log 'mysql-bin.009080' at position 131009698, relay log './mysql-relay.024069' position: 131009588
+2021-04-07 12:10:33 48963 [ERROR] Slave SQL: Error 'Operation CREATE USER failed for 'cxianming'@'%'' on query. Default database: ''. Query: 'CREATE USER 'cxianming'@'%' IDENTIFIED BY PASSWORD '*802743F3615EEAE5E76FAB9B004DBB7888274FE7'', Error_code: 1396
+2021-04-07 12:10:33 48963 [Warning] Slave: Operation CREATE USER failed for 'cxianming'@'%' Error_code: 1396
+2021-04-07 12:10:33 48963 [ERROR] Error running query, slave SQL thread aborted. Fix the problem, and restart the slave SQL thread with "SLAVE START". We stopped at log 'mysql-bin.009081' position 22620677
+2021-04-07 12:19:40 48963 [Note] Slave I/O thread killed while reading event
+2021-04-07 12:19:40 48963 [Note] Slave I/O thread exiting, read up to log 'mysql-bin.009085', position 171904530
+2021-04-07 12:19:46 48963 [Note] Slave I/O thread: Start semi-sync replication to master 'repl@10.80.88.60:3306' in log 'mysql-bin.009085' at position 171904530
+2021-04-07 12:19:46 48963 [Warning] Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information.
+2021-04-07 12:19:46 48963 [Note] Slave I/O thread: connected to master 'repl@10.80.88.60:3306',replication started in log 'mysql-bin.009085' at position 171904530
+2021-04-07 12:19:46 48963 [Note] Slave SQL thread initialized, starting replication in log 'mysql-bin.009081' at position 22620677, relay log './mysql-relay.024072' position: 22620567
+2021-04-07 12:20:17 48963 [ERROR] Slave SQL: Error 'Operation CREATE USER failed for 'cxianming'@'%'' on query. Default database: ''. Query: 'CREATE USER 'cxianming'@'%' IDENTIFIED BY PASSWORD '*802743F3615EEAE5E76FAB9B004DBB7888274FE7'', Error_code: 1396
+2021-04-07 12:20:17 48963 [Warning] Slave: Operation CREATE USER failed for 'cxianming'@'%' Error_code: 1396
+2021-04-07 12:20:17 48963 [ERROR] Error running query, slave SQL thread aborted. Fix the problem, and restart the slave SQL thread with "SLAVE START". We stopped at log 'mysql-bin.009081' position 92883647
+2021-04-07 12:28:01 48963 [Warning] 'proxies_priv' entry '@ root@rds151176219.cloud.st3' ignored in --skip-name-resolve mode.
+2021-04-07 12:36:26 48963 [Note] Slave I/O thread killed while reading event
+2021-04-07 12:36:26 48963 [Note] Slave I/O thread exiting, read up to log 'mysql-bin.009086', position 58047690
+2021-04-07 12:45:54 48963 [Warning] 'proxies_priv' entry '@ root@rds151176219.cloud.st3' ignored in --skip-name-resolve mode.
+2021-04-07 12:46:06 48963 [Note] Slave I/O thread: Start semi-sync replication to master 'repl@10.80.88.60:3306' in log 'mysql-bin.009086' at position 58047690
+2021-04-07 12:46:06 48963 [Warning] Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information.
+2021-04-07 12:46:06 48963 [Note] Slave I/O thread: connected to master 'repl@10.80.88.60:3306',replication started in log 'mysql-bin.009086' at position 58047690
+2021-04-07 12:46:06 48963 [Note] Slave SQL thread initialized, starting replication in log 'mysql-bin.009081' at position 92883647, relay log './mysql-relay.024072' position: 92883537
+2021-06-30 13:47:47 48963 [Warning] 'proxies_priv' entry '@ root@rds151176219.cloud.st3' ignored in --skip-name-resolve mode.

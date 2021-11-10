@@ -1,0 +1,1194 @@
+======host meta information
+=====uptime===============================
+ 16:04:00 up 753 days, 10:51,  1 user,  load average: 0.30, 0.15, 0.09
+======ip=================================
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens160: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+    link/ether 00:50:56:aa:81:d6 brd ff:ff:ff:ff:ff:ff
+    inet 10.80.88.45/24 brd 10.80.88.255 scope global ens160
+       valid_lft forever preferred_lft forever
+    inet6 fe80::250:56ff:feaa:81d6/64 scope link 
+       valid_lft forever preferred_lft forever
+3: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+    link/ether 00:50:56:aa:7c:08 brd ff:ff:ff:ff:ff:ff
+    inet 10.81.137.247/24 brd 10.81.137.255 scope global ens192
+       valid_lft forever preferred_lft forever
+    inet6 fe80::250:56ff:feaa:7c08/64 scope link 
+       valid_lft forever preferred_lft forever
+======hostname============================
+localhost.localdomain
+======os version============================
+\S
+Kernel \r on an \m
+
+======kernel version=========================
+Linux localhost.localdomain 3.10.0-693.5.2.el7.x86_64 #1 SMP Fri Oct 20 20:32:50 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+======mysql version=========================
+======mysql client==========================
+mysql  Ver 14.14 Distrib 5.7.24, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+======mysql instance========================
+tcp        0      0 10.80.88.45:42002       0.0.0.0:*               LISTEN      30660/mysqld_export 
+tcp6       0      0 :::3306                 :::*                    LISTEN      2913/mysqld         
+unix  2      [ ACC ]     STREAM     LISTENING     48180    2913/mysqld          /app/mysql/data/mysql.sock
+======memory&swap========================
+              total        used        free      shared  buff/cache   available
+Mem:          32168       20881         891        1665       10394        9163
+Swap:          8063           0        8063
+======physical cpu==========================
+2
+======cores per physical cpu====================
+cpu cores	: 4
+======processor============================
+8
+======cpu version===========================
+ Intel(R) Xeon(R) CPU E5-2609 v3 @ 1.90GHz
+======disk info=============================
+Filesystem              Type      Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root xfs        50G   13G   38G  26% /
+devtmpfs                devtmpfs   16G     0   16G   0% /dev
+tmpfs                   tmpfs      16G     0   16G   0% /dev/shm
+tmpfs                   tmpfs      16G  1.7G   15G  11% /run
+tmpfs                   tmpfs      16G     0   16G   0% /sys/fs/cgroup
+/dev/sdb                xfs       100G   67G   34G  67% /app
+/dev/sda1               xfs       497M  139M  359M  28% /boot
+/dev/mapper/centos-home xfs        20G   53M   20G   1% /home
+tmpfs                   tmpfs     3.2G     0  3.2G   0% /run/user/0
+======numa mount========================
+0
+======io stat===============================
+Linux 3.10.0-693.5.2.el7.x86_64 (localhost.localdomain) 	07/15/2021 	_x86_64_	(8 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.90    0.00    0.15    0.09    0.00   98.85
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.02    0.00    0.30     0.00     0.00    34.49     0.00    1.49   20.08    1.26   0.38   0.01
+sdb               0.03     0.26    0.98   30.31     0.41     0.33    48.27     0.05    1.61   22.76    0.92   0.50   1.56
+dm-0              0.00     0.00    0.00    0.32     0.00     0.00    32.04     0.00    1.52   20.19    1.30   0.39   0.01
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00    47.40     0.00    0.48    0.48    0.00   0.31   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00    17.96     0.00    2.63    4.13    2.49   1.53   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.01    0.00    0.34    0.09    0.00   98.56
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.50     0.00     0.00    11.20     0.00    1.20    0.00    1.20   0.80   0.04
+sdb               0.00     0.00    0.00   33.40     0.00     0.11     6.44     0.01    0.40    0.00    0.40   0.40   1.33
+dm-0              0.00     0.00    0.00    0.50     0.00     0.00    11.20     0.00    1.00    0.00    1.00   0.60   0.03
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.86    0.00    0.18    0.13    0.00   98.84
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.20     0.00     0.00    12.00     0.00    0.50    0.00    0.50   0.50   0.01
+sdb               0.00     0.00    0.00   40.00     0.00     0.19     9.69     0.03    0.65    0.00    0.65   0.56   2.23
+dm-0              0.00     0.00    0.00    0.20     0.00     0.00    12.00     0.00    0.50    0.00    0.50   0.50   0.01
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.85    0.00    0.18    0.13    0.00   98.85
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     1.60    0.00    4.00     0.00     0.04    18.10     0.01    2.30    0.00    2.30   0.15   0.06
+sdb               0.00     0.00    0.00   39.20     0.00     0.13     6.57     0.02    0.52    0.00    0.52   0.51   2.01
+dm-0              0.00     0.00    0.00    5.40     0.00     0.04    13.35     0.01    2.35    0.00    2.35   0.09   0.05
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.85    0.00    0.16    0.10    0.00   98.89
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    2.20     0.00     0.14   133.82     0.01    3.64    0.00    3.64   0.55   0.12
+sdb               0.00     0.00    0.00   34.90     0.00     0.11     6.30     0.02    0.58    0.00    0.58   0.58   2.02
+dm-0              0.00     0.00    0.00    2.20     0.00     0.14   133.82     0.01    3.64    0.00    3.64   0.55   0.12
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.80    0.00    0.19    0.14    0.00   98.87
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00   33.80     0.00     0.11     6.45     0.02    0.63    0.00    0.63   0.58   1.97
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.11    0.00    0.14    0.09    0.00   98.66
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.30    0.00    2.80     0.00     0.02    13.36     0.00    1.54    0.00    1.54   0.11   0.03
+sdb               0.00     0.00    0.00   23.00     0.00     0.07     6.23     0.01    0.58    0.00    0.58   0.56   1.28
+dm-0              0.00     0.00    0.00    2.90     0.00     0.02    12.79     0.00    1.62    0.00    1.62   0.07   0.02
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.03    0.00    0.38    0.14    0.00   98.46
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.40     0.00     0.00    12.25     0.00    0.50    0.00    0.50   0.50   0.02
+sdb               0.00     0.00    0.00   35.80     0.00     0.18    10.16     0.02    0.67    0.00    0.67   0.63   2.27
+dm-0              0.00     0.00    0.00    0.40     0.00     0.00    12.25     0.00    0.50    0.00    0.50   0.50   0.02
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.80    0.00    0.19    0.09    0.00   98.92
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.40     0.00     0.00    10.00     0.00    0.25    0.00    0.25   0.25   0.01
+sdb               0.00     0.00    0.00   23.50     0.00     0.07     6.27     0.01    0.51    0.00    0.51   0.50   1.18
+dm-0              0.00     0.00    0.00    0.40     0.00     0.00    10.00     0.00    0.25    0.00    0.25   0.25   0.01
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.89    0.00    0.16    0.09    0.00   98.86
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.20    0.00    0.90     0.00     0.01    12.33     0.00    0.78    0.00    0.78   0.11   0.01
+sdb               0.00     0.00    0.00   29.50     0.00     0.09     6.45     0.02    0.53    0.00    0.53   0.50   1.47
+dm-0              0.00     0.00    0.00    1.10     0.00     0.01    10.09     0.00    0.82    0.00    0.82   0.09   0.01
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-2              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+======vmstat======
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 913944      0 10644772    0    0    52    43    0    0  1  0 99  0  0
+ 0  0      0 914092      0 10644780    0    0     0    35  878 1022  0  0 99  0  0
+ 0  0      0 914092      0 10644784    0    0     0   105 1339 1518  1  0 99  0  0
+ 0  0      0 914092      0 10644804    0    0     0    29  989 1225  0  0 99  0  0
+ 0  0      0 914064      0 10644824    0    0     0   249 2012 2087  1  0 98  0  0
+ 0  0      0 913812      0 10644852    0    0     0    23 1380 1795  2  0 98  0  0
+ 0  0      0 913844      0 10644860    0    0     0    35  998 1110  1  0 99  0  0
+ 0  0      0 913908      0 10644880    0    0     0    79 1202 1371  1  0 99  0  0
+ 0  0      0 913876      0 10644880    0    0     0    87 1184 1421  1  0 99  0  0
+ 0  0      0 913876      0 10644888    0    0     0   228 1943 1964  1  0 99  0  0
+====dstat===
+You did not select any stats, using -cdngy by default.
+[7l----total-cpu-usage---- -dsk/total- -net/total- ---paging-- ---system--
+usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw 
+  1   0  99   0   0   0| 419k  341k|   0     0 |   0     0 | 642  1343 
+  2   0  98   0   0   0|   0    81k|8607B   60k|   0     0 |1572  1888 
+  1   0  99   0   0   0|   0    19k|3143B   24k|   0     0 | 913  1036 
+  1   0  99   0   0   0|   0   113k|  23k   78k|   0     0 |1398  1471 
+  1   0  99   0   0   0|   0    57k|  14k   56k|   0     0 |1153  1316 
+  1   0  99   0   0   0|   0   197k|  40k  341k|   0     0 |2012  1978 
+  2   0  98   0   0   0|   0    15k|5282B   53k|   0     0 |1486  1682 
+  1   0  99   0   0   0|   0    15k|2818B   24k|   0     0 | 984  1185 
+  0   0  99   0   0   0|   0    25k|2880B   26k|   0     0 | 971  1187 
+  1   0  99   0   0   0|   0    15k|2143B   24k|   0     0 | 902  1074 
+  1   0  99   0   0   0|   0   166k|  30k  106k|   0     0 |1590  1677 
+======system log============================
+Jul 15 14:17:01 localhost systemd: Started Session 1179649 of user root.
+Jul 15 14:17:01 localhost systemd: Starting Session 1179649 of user root.
+Jul 15 14:17:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:17:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:17:01 localhost systemd: Started Session 1179650 of user mysql.
+Jul 15 14:17:01 localhost systemd: Starting Session 1179650 of user mysql.
+Jul 15 14:17:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:17:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:18:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:18:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:18:01 localhost systemd: Started Session 1179652 of user mysql.
+Jul 15 14:18:01 localhost systemd: Starting Session 1179652 of user mysql.
+Jul 15 14:18:01 localhost systemd: Started Session 1179651 of user root.
+Jul 15 14:18:01 localhost systemd: Starting Session 1179651 of user root.
+Jul 15 14:18:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:18:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:19:01 localhost systemd: Started Session 1179653 of user root.
+Jul 15 14:19:01 localhost systemd: Starting Session 1179653 of user root.
+Jul 15 14:19:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:19:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:19:01 localhost systemd: Started Session 1179654 of user mysql.
+Jul 15 14:19:01 localhost systemd: Starting Session 1179654 of user mysql.
+Jul 15 14:19:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:19:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:20:01 localhost systemd: Started Session 1179657 of user root.
+Jul 15 14:20:01 localhost systemd: Starting Session 1179657 of user root.
+Jul 15 14:20:01 localhost systemd: Started Session 1179655 of user root.
+Jul 15 14:20:01 localhost systemd: Starting Session 1179655 of user root.
+Jul 15 14:20:01 localhost systemd: Started Session 1179656 of user root.
+Jul 15 14:20:01 localhost systemd: Starting Session 1179656 of user root.
+Jul 15 14:20:01 localhost systemd: Started Session 1179658 of user root.
+Jul 15 14:20:01 localhost systemd: Starting Session 1179658 of user root.
+Jul 15 14:20:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:20:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:20:01 localhost systemd: Started Session 1179659 of user mysql.
+Jul 15 14:20:01 localhost systemd: Starting Session 1179659 of user mysql.
+Jul 15 14:20:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:20:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:21:01 localhost systemd: Started Session 1179660 of user root.
+Jul 15 14:21:01 localhost systemd: Starting Session 1179660 of user root.
+Jul 15 14:21:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:21:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:21:01 localhost systemd: Started Session 1179661 of user mysql.
+Jul 15 14:21:01 localhost systemd: Starting Session 1179661 of user mysql.
+Jul 15 14:21:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:21:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:22:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:22:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:22:01 localhost systemd: Started Session 1179663 of user mysql.
+Jul 15 14:22:01 localhost systemd: Starting Session 1179663 of user mysql.
+Jul 15 14:22:01 localhost systemd: Started Session 1179662 of user root.
+Jul 15 14:22:01 localhost systemd: Starting Session 1179662 of user root.
+Jul 15 14:22:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:22:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:23:01 localhost systemd: Started Session 1179664 of user root.
+Jul 15 14:23:01 localhost systemd: Starting Session 1179664 of user root.
+Jul 15 14:23:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:23:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:23:01 localhost systemd: Started Session 1179665 of user mysql.
+Jul 15 14:23:01 localhost systemd: Starting Session 1179665 of user mysql.
+Jul 15 14:23:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:23:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:24:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:24:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:24:01 localhost systemd: Started Session 1179667 of user mysql.
+Jul 15 14:24:01 localhost systemd: Starting Session 1179667 of user mysql.
+Jul 15 14:24:01 localhost systemd: Started Session 1179666 of user root.
+Jul 15 14:24:01 localhost systemd: Starting Session 1179666 of user root.
+Jul 15 14:24:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:24:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:25:01 localhost systemd: Started Session 1179669 of user root.
+Jul 15 14:25:01 localhost systemd: Starting Session 1179669 of user root.
+Jul 15 14:25:01 localhost systemd: Started Session 1179671 of user root.
+Jul 15 14:25:01 localhost systemd: Starting Session 1179671 of user root.
+Jul 15 14:25:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:25:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:25:01 localhost systemd: Started Session 1179670 of user mysql.
+Jul 15 14:25:01 localhost systemd: Starting Session 1179670 of user mysql.
+Jul 15 14:25:01 localhost systemd: Started Session 1179668 of user root.
+Jul 15 14:25:01 localhost systemd: Starting Session 1179668 of user root.
+Jul 15 14:25:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:25:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:26:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:26:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:26:01 localhost systemd: Started Session 1179673 of user mysql.
+Jul 15 14:26:01 localhost systemd: Starting Session 1179673 of user mysql.
+Jul 15 14:26:01 localhost systemd: Started Session 1179672 of user root.
+Jul 15 14:26:01 localhost systemd: Starting Session 1179672 of user root.
+Jul 15 14:26:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:26:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:27:01 localhost systemd: Started Session 1179674 of user root.
+Jul 15 14:27:01 localhost systemd: Starting Session 1179674 of user root.
+Jul 15 14:27:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:27:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:27:01 localhost systemd: Started Session 1179675 of user mysql.
+Jul 15 14:27:01 localhost systemd: Starting Session 1179675 of user mysql.
+Jul 15 14:27:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:27:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:28:01 localhost systemd: Started Session 1179677 of user root.
+Jul 15 14:28:01 localhost systemd: Starting Session 1179677 of user root.
+Jul 15 14:28:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:28:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:28:01 localhost systemd: Started Session 1179676 of user mysql.
+Jul 15 14:28:01 localhost systemd: Starting Session 1179676 of user mysql.
+Jul 15 14:28:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:28:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:29:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:29:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:29:01 localhost systemd: Started Session 1179679 of user mysql.
+Jul 15 14:29:01 localhost systemd: Starting Session 1179679 of user mysql.
+Jul 15 14:29:01 localhost systemd: Started Session 1179678 of user root.
+Jul 15 14:29:01 localhost systemd: Starting Session 1179678 of user root.
+Jul 15 14:29:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:29:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:30:01 localhost systemd: Started Session 1179680 of user root.
+Jul 15 14:30:01 localhost systemd: Starting Session 1179680 of user root.
+Jul 15 14:30:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:30:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:30:01 localhost systemd: Started Session 1179682 of user mysql.
+Jul 15 14:30:01 localhost systemd: Starting Session 1179682 of user mysql.
+Jul 15 14:30:01 localhost systemd: Started Session 1179681 of user root.
+Jul 15 14:30:01 localhost systemd: Starting Session 1179681 of user root.
+Jul 15 14:30:01 localhost systemd: Started Session 1179683 of user root.
+Jul 15 14:30:01 localhost systemd: Starting Session 1179683 of user root.
+Jul 15 14:30:01 localhost systemd: Started Session 1179684 of user root.
+Jul 15 14:30:01 localhost systemd: Starting Session 1179684 of user root.
+Jul 15 14:30:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:30:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:31:01 localhost systemd: Started Session 1179685 of user root.
+Jul 15 14:31:01 localhost systemd: Starting Session 1179685 of user root.
+Jul 15 14:31:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:31:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:31:01 localhost systemd: Started Session 1179686 of user mysql.
+Jul 15 14:31:01 localhost systemd: Starting Session 1179686 of user mysql.
+Jul 15 14:31:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:31:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:32:01 localhost systemd: Started Session 1179687 of user root.
+Jul 15 14:32:01 localhost systemd: Starting Session 1179687 of user root.
+Jul 15 14:32:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:32:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:32:01 localhost systemd: Started Session 1179688 of user mysql.
+Jul 15 14:32:01 localhost systemd: Starting Session 1179688 of user mysql.
+Jul 15 14:32:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:32:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:33:01 localhost systemd: Started Session 1179690 of user root.
+Jul 15 14:33:01 localhost systemd: Starting Session 1179690 of user root.
+Jul 15 14:33:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:33:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:33:01 localhost systemd: Started Session 1179689 of user mysql.
+Jul 15 14:33:01 localhost systemd: Starting Session 1179689 of user mysql.
+Jul 15 14:33:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:33:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:34:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:34:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:34:01 localhost systemd: Started Session 1179692 of user mysql.
+Jul 15 14:34:01 localhost systemd: Starting Session 1179692 of user mysql.
+Jul 15 14:34:01 localhost systemd: Started Session 1179691 of user root.
+Jul 15 14:34:01 localhost systemd: Starting Session 1179691 of user root.
+Jul 15 14:34:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:34:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:35:01 localhost systemd: Started Session 1179695 of user root.
+Jul 15 14:35:01 localhost systemd: Starting Session 1179695 of user root.
+Jul 15 14:35:01 localhost systemd: Started Session 1179693 of user root.
+Jul 15 14:35:01 localhost systemd: Starting Session 1179693 of user root.
+Jul 15 14:35:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:35:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:35:01 localhost systemd: Started Session 1179696 of user mysql.
+Jul 15 14:35:01 localhost systemd: Starting Session 1179696 of user mysql.
+Jul 15 14:35:01 localhost systemd: Started Session 1179694 of user root.
+Jul 15 14:35:01 localhost systemd: Starting Session 1179694 of user root.
+Jul 15 14:35:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:35:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:36:01 localhost systemd: Started Session 1179697 of user root.
+Jul 15 14:36:01 localhost systemd: Starting Session 1179697 of user root.
+Jul 15 14:36:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:36:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:36:01 localhost systemd: Started Session 1179698 of user mysql.
+Jul 15 14:36:01 localhost systemd: Starting Session 1179698 of user mysql.
+Jul 15 14:36:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:36:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:37:01 localhost systemd: Started Session 1179699 of user root.
+Jul 15 14:37:01 localhost systemd: Starting Session 1179699 of user root.
+Jul 15 14:37:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:37:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:37:01 localhost systemd: Started Session 1179700 of user mysql.
+Jul 15 14:37:01 localhost systemd: Starting Session 1179700 of user mysql.
+Jul 15 14:37:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:37:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:38:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:38:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:38:01 localhost systemd: Started Session 1179701 of user mysql.
+Jul 15 14:38:01 localhost systemd: Starting Session 1179701 of user mysql.
+Jul 15 14:38:01 localhost systemd: Started Session 1179702 of user root.
+Jul 15 14:38:01 localhost systemd: Starting Session 1179702 of user root.
+Jul 15 14:38:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:38:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:39:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:39:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:39:01 localhost systemd: Started Session 1179704 of user mysql.
+Jul 15 14:39:01 localhost systemd: Starting Session 1179704 of user mysql.
+Jul 15 14:39:01 localhost systemd: Started Session 1179703 of user root.
+Jul 15 14:39:01 localhost systemd: Starting Session 1179703 of user root.
+Jul 15 14:39:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:39:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:40:01 localhost systemd: Started Session 1179705 of user root.
+Jul 15 14:40:01 localhost systemd: Starting Session 1179705 of user root.
+Jul 15 14:40:01 localhost systemd: Started Session 1179707 of user root.
+Jul 15 14:40:01 localhost systemd: Starting Session 1179707 of user root.
+Jul 15 14:40:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:40:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:40:01 localhost systemd: Started Session 1179709 of user mysql.
+Jul 15 14:40:01 localhost systemd: Starting Session 1179709 of user mysql.
+Jul 15 14:40:01 localhost systemd: Started Session 1179708 of user root.
+Jul 15 14:40:01 localhost systemd: Starting Session 1179708 of user root.
+Jul 15 14:40:01 localhost systemd: Started Session 1179706 of user root.
+Jul 15 14:40:01 localhost systemd: Starting Session 1179706 of user root.
+Jul 15 14:40:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:40:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:41:02 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:41:02 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:41:02 localhost systemd: Started Session 1179711 of user mysql.
+Jul 15 14:41:02 localhost systemd: Starting Session 1179711 of user mysql.
+Jul 15 14:41:02 localhost systemd: Started Session 1179710 of user root.
+Jul 15 14:41:02 localhost systemd: Starting Session 1179710 of user root.
+Jul 15 14:41:02 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:41:02 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:42:01 localhost systemd: Started Session 1179712 of user root.
+Jul 15 14:42:01 localhost systemd: Starting Session 1179712 of user root.
+Jul 15 14:42:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:42:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:42:01 localhost systemd: Started Session 1179713 of user mysql.
+Jul 15 14:42:01 localhost systemd: Starting Session 1179713 of user mysql.
+Jul 15 14:42:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:42:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:43:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:43:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:43:01 localhost systemd: Started Session 1179714 of user mysql.
+Jul 15 14:43:01 localhost systemd: Starting Session 1179714 of user mysql.
+Jul 15 14:43:01 localhost systemd: Started Session 1179715 of user root.
+Jul 15 14:43:01 localhost systemd: Starting Session 1179715 of user root.
+Jul 15 14:43:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:43:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:44:01 localhost systemd: Started Session 1179716 of user root.
+Jul 15 14:44:01 localhost systemd: Starting Session 1179716 of user root.
+Jul 15 14:44:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:44:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:44:01 localhost systemd: Started Session 1179717 of user mysql.
+Jul 15 14:44:01 localhost systemd: Starting Session 1179717 of user mysql.
+Jul 15 14:44:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:44:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:45:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:45:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:45:01 localhost systemd: Started Session 1179721 of user mysql.
+Jul 15 14:45:01 localhost systemd: Starting Session 1179721 of user mysql.
+Jul 15 14:45:01 localhost systemd: Started Session 1179719 of user root.
+Jul 15 14:45:01 localhost systemd: Starting Session 1179719 of user root.
+Jul 15 14:45:01 localhost systemd: Started Session 1179718 of user root.
+Jul 15 14:45:01 localhost systemd: Starting Session 1179718 of user root.
+Jul 15 14:45:01 localhost systemd: Started Session 1179720 of user root.
+Jul 15 14:45:01 localhost systemd: Starting Session 1179720 of user root.
+Jul 15 14:45:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:45:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:46:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:46:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:46:01 localhost systemd: Started Session 1179723 of user mysql.
+Jul 15 14:46:01 localhost systemd: Starting Session 1179723 of user mysql.
+Jul 15 14:46:01 localhost systemd: Started Session 1179722 of user root.
+Jul 15 14:46:01 localhost systemd: Starting Session 1179722 of user root.
+Jul 15 14:46:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:46:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:47:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:47:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:47:01 localhost systemd: Started Session 1179725 of user mysql.
+Jul 15 14:47:01 localhost systemd: Starting Session 1179725 of user mysql.
+Jul 15 14:47:01 localhost systemd: Started Session 1179724 of user root.
+Jul 15 14:47:01 localhost systemd: Starting Session 1179724 of user root.
+Jul 15 14:47:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:47:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:48:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:48:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:48:01 localhost systemd: Started Session 1179726 of user mysql.
+Jul 15 14:48:01 localhost systemd: Starting Session 1179726 of user mysql.
+Jul 15 14:48:01 localhost systemd: Started Session 1179727 of user root.
+Jul 15 14:48:01 localhost systemd: Starting Session 1179727 of user root.
+Jul 15 14:48:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:48:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:49:01 localhost systemd: Started Session 1179728 of user root.
+Jul 15 14:49:01 localhost systemd: Starting Session 1179728 of user root.
+Jul 15 14:49:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:49:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:49:01 localhost systemd: Started Session 1179729 of user mysql.
+Jul 15 14:49:01 localhost systemd: Starting Session 1179729 of user mysql.
+Jul 15 14:49:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:49:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:50:01 localhost systemd: Started Session 1179730 of user root.
+Jul 15 14:50:01 localhost systemd: Starting Session 1179730 of user root.
+Jul 15 14:50:01 localhost systemd: Started Session 1179731 of user root.
+Jul 15 14:50:01 localhost systemd: Starting Session 1179731 of user root.
+Jul 15 14:50:01 localhost systemd: Started Session 1179732 of user root.
+Jul 15 14:50:01 localhost systemd: Starting Session 1179732 of user root.
+Jul 15 14:50:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:50:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:50:01 localhost systemd: Started Session 1179733 of user mysql.
+Jul 15 14:50:01 localhost systemd: Starting Session 1179733 of user mysql.
+Jul 15 14:50:01 localhost systemd: Started Session 1179734 of user root.
+Jul 15 14:50:01 localhost systemd: Starting Session 1179734 of user root.
+Jul 15 14:50:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:50:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:51:01 localhost systemd: Started Session 1179735 of user root.
+Jul 15 14:51:01 localhost systemd: Starting Session 1179735 of user root.
+Jul 15 14:51:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:51:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:51:01 localhost systemd: Started Session 1179736 of user mysql.
+Jul 15 14:51:01 localhost systemd: Starting Session 1179736 of user mysql.
+Jul 15 14:51:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:51:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:52:01 localhost systemd: Started Session 1179737 of user root.
+Jul 15 14:52:01 localhost systemd: Starting Session 1179737 of user root.
+Jul 15 14:52:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:52:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:52:01 localhost systemd: Started Session 1179738 of user mysql.
+Jul 15 14:52:01 localhost systemd: Starting Session 1179738 of user mysql.
+Jul 15 14:52:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:52:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:53:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:53:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:53:01 localhost systemd: Started Session 1179739 of user mysql.
+Jul 15 14:53:01 localhost systemd: Starting Session 1179739 of user mysql.
+Jul 15 14:53:01 localhost systemd: Started Session 1179740 of user root.
+Jul 15 14:53:01 localhost systemd: Starting Session 1179740 of user root.
+Jul 15 14:53:02 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:53:02 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:54:01 localhost systemd: Started Session 1179742 of user root.
+Jul 15 14:54:01 localhost systemd: Starting Session 1179742 of user root.
+Jul 15 14:54:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:54:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:54:01 localhost systemd: Started Session 1179741 of user mysql.
+Jul 15 14:54:01 localhost systemd: Starting Session 1179741 of user mysql.
+Jul 15 14:54:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:54:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:55:01 localhost systemd: Started Session 1179743 of user root.
+Jul 15 14:55:01 localhost systemd: Starting Session 1179743 of user root.
+Jul 15 14:55:01 localhost systemd: Started Session 1179745 of user root.
+Jul 15 14:55:01 localhost systemd: Starting Session 1179745 of user root.
+Jul 15 14:55:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:55:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:55:01 localhost systemd: Started Session 1179746 of user mysql.
+Jul 15 14:55:01 localhost systemd: Starting Session 1179746 of user mysql.
+Jul 15 14:55:01 localhost systemd: Started Session 1179744 of user root.
+Jul 15 14:55:01 localhost systemd: Starting Session 1179744 of user root.
+Jul 15 14:55:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:55:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:56:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:56:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:56:01 localhost systemd: Started Session 1179748 of user mysql.
+Jul 15 14:56:01 localhost systemd: Starting Session 1179748 of user mysql.
+Jul 15 14:56:01 localhost systemd: Started Session 1179747 of user root.
+Jul 15 14:56:01 localhost systemd: Starting Session 1179747 of user root.
+Jul 15 14:56:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:56:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:57:01 localhost systemd: Started Session 1179749 of user root.
+Jul 15 14:57:01 localhost systemd: Starting Session 1179749 of user root.
+Jul 15 14:57:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:57:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:57:01 localhost systemd: Started Session 1179750 of user mysql.
+Jul 15 14:57:01 localhost systemd: Starting Session 1179750 of user mysql.
+Jul 15 14:57:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:57:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:58:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:58:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:58:01 localhost systemd: Started Session 1179751 of user mysql.
+Jul 15 14:58:01 localhost systemd: Starting Session 1179751 of user mysql.
+Jul 15 14:58:01 localhost systemd: Started Session 1179752 of user root.
+Jul 15 14:58:01 localhost systemd: Starting Session 1179752 of user root.
+Jul 15 14:58:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:58:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 14:59:01 localhost systemd: Started Session 1179753 of user root.
+Jul 15 14:59:01 localhost systemd: Starting Session 1179753 of user root.
+Jul 15 14:59:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 14:59:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 14:59:01 localhost systemd: Started Session 1179754 of user mysql.
+Jul 15 14:59:01 localhost systemd: Starting Session 1179754 of user mysql.
+Jul 15 14:59:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 14:59:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:00:01 localhost systemd: Started Session 1179755 of user root.
+Jul 15 15:00:01 localhost systemd: Starting Session 1179755 of user root.
+Jul 15 15:00:01 localhost systemd: Started Session 1179756 of user root.
+Jul 15 15:00:01 localhost systemd: Starting Session 1179756 of user root.
+Jul 15 15:00:01 localhost systemd: Started Session 1179758 of user root.
+Jul 15 15:00:01 localhost systemd: Starting Session 1179758 of user root.
+Jul 15 15:00:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:00:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:00:01 localhost systemd: Started Session 1179759 of user mysql.
+Jul 15 15:00:01 localhost systemd: Starting Session 1179759 of user mysql.
+Jul 15 15:00:01 localhost systemd: Started Session 1179757 of user root.
+Jul 15 15:00:01 localhost systemd: Starting Session 1179757 of user root.
+Jul 15 15:00:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:00:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:01:01 localhost systemd: Started Session 1179760 of user root.
+Jul 15 15:01:01 localhost systemd: Starting Session 1179760 of user root.
+Jul 15 15:01:01 localhost systemd: Started Session 1179761 of user root.
+Jul 15 15:01:01 localhost systemd: Starting Session 1179761 of user root.
+Jul 15 15:01:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:01:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:01:01 localhost systemd: Started Session 1179762 of user mysql.
+Jul 15 15:01:01 localhost systemd: Starting Session 1179762 of user mysql.
+Jul 15 15:01:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:01:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:02:01 localhost systemd: Started Session 1179763 of user root.
+Jul 15 15:02:01 localhost systemd: Starting Session 1179763 of user root.
+Jul 15 15:02:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:02:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:02:01 localhost systemd: Started Session 1179764 of user mysql.
+Jul 15 15:02:01 localhost systemd: Starting Session 1179764 of user mysql.
+Jul 15 15:02:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:02:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:03:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:03:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:03:01 localhost systemd: Started Session 1179766 of user mysql.
+Jul 15 15:03:01 localhost systemd: Starting Session 1179766 of user mysql.
+Jul 15 15:03:01 localhost systemd: Started Session 1179765 of user root.
+Jul 15 15:03:01 localhost systemd: Starting Session 1179765 of user root.
+Jul 15 15:03:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:03:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:04:01 localhost systemd: Started Session 1179767 of user root.
+Jul 15 15:04:01 localhost systemd: Starting Session 1179767 of user root.
+Jul 15 15:04:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:04:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:04:01 localhost systemd: Started Session 1179768 of user mysql.
+Jul 15 15:04:01 localhost systemd: Starting Session 1179768 of user mysql.
+Jul 15 15:04:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:04:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:05:01 localhost systemd: Started Session 1179769 of user root.
+Jul 15 15:05:01 localhost systemd: Starting Session 1179769 of user root.
+Jul 15 15:05:01 localhost systemd: Started Session 1179770 of user root.
+Jul 15 15:05:01 localhost systemd: Starting Session 1179770 of user root.
+Jul 15 15:05:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:05:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:05:01 localhost systemd: Started Session 1179772 of user mysql.
+Jul 15 15:05:01 localhost systemd: Starting Session 1179772 of user mysql.
+Jul 15 15:05:01 localhost systemd: Started Session 1179771 of user root.
+Jul 15 15:05:01 localhost systemd: Starting Session 1179771 of user root.
+Jul 15 15:05:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:05:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:06:01 localhost systemd: Started Session 1179773 of user root.
+Jul 15 15:06:01 localhost systemd: Starting Session 1179773 of user root.
+Jul 15 15:06:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:06:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:06:01 localhost systemd: Started Session 1179774 of user mysql.
+Jul 15 15:06:01 localhost systemd: Starting Session 1179774 of user mysql.
+Jul 15 15:06:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:06:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:07:01 localhost systemd: Started Session 1179775 of user root.
+Jul 15 15:07:01 localhost systemd: Starting Session 1179775 of user root.
+Jul 15 15:07:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:07:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:07:01 localhost systemd: Started Session 1179776 of user mysql.
+Jul 15 15:07:01 localhost systemd: Starting Session 1179776 of user mysql.
+Jul 15 15:07:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:07:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:08:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:08:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:08:01 localhost systemd: Started Session 1179778 of user mysql.
+Jul 15 15:08:01 localhost systemd: Starting Session 1179778 of user mysql.
+Jul 15 15:08:01 localhost systemd: Started Session 1179777 of user root.
+Jul 15 15:08:01 localhost systemd: Starting Session 1179777 of user root.
+Jul 15 15:08:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:08:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:09:01 localhost systemd: Started Session 1179779 of user root.
+Jul 15 15:09:01 localhost systemd: Starting Session 1179779 of user root.
+Jul 15 15:09:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:09:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:09:01 localhost systemd: Started Session 1179780 of user mysql.
+Jul 15 15:09:01 localhost systemd: Starting Session 1179780 of user mysql.
+Jul 15 15:09:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:09:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:10:01 localhost systemd: Started Session 1179783 of user root.
+Jul 15 15:10:01 localhost systemd: Starting Session 1179783 of user root.
+Jul 15 15:10:01 localhost systemd: Started Session 1179782 of user root.
+Jul 15 15:10:01 localhost systemd: Starting Session 1179782 of user root.
+Jul 15 15:10:01 localhost systemd: Started Session 1179781 of user root.
+Jul 15 15:10:01 localhost systemd: Starting Session 1179781 of user root.
+Jul 15 15:10:01 localhost systemd: Started Session 1179784 of user root.
+Jul 15 15:10:01 localhost systemd: Starting Session 1179784 of user root.
+Jul 15 15:10:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:10:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:10:01 localhost systemd: Started Session 1179785 of user mysql.
+Jul 15 15:10:01 localhost systemd: Starting Session 1179785 of user mysql.
+Jul 15 15:10:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:10:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:11:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:11:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:11:01 localhost systemd: Started Session 1179787 of user mysql.
+Jul 15 15:11:01 localhost systemd: Starting Session 1179787 of user mysql.
+Jul 15 15:11:01 localhost systemd: Started Session 1179786 of user root.
+Jul 15 15:11:01 localhost systemd: Starting Session 1179786 of user root.
+Jul 15 15:11:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:11:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:12:01 localhost systemd: Started Session 1179789 of user root.
+Jul 15 15:12:01 localhost systemd: Starting Session 1179789 of user root.
+Jul 15 15:12:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:12:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:12:01 localhost systemd: Started Session 1179788 of user mysql.
+Jul 15 15:12:01 localhost systemd: Starting Session 1179788 of user mysql.
+Jul 15 15:12:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:12:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:13:01 localhost systemd: Started Session 1179790 of user root.
+Jul 15 15:13:01 localhost systemd: Starting Session 1179790 of user root.
+Jul 15 15:13:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:13:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:13:01 localhost systemd: Started Session 1179791 of user mysql.
+Jul 15 15:13:01 localhost systemd: Starting Session 1179791 of user mysql.
+Jul 15 15:13:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:13:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:14:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:14:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:14:01 localhost systemd: Started Session 1179793 of user mysql.
+Jul 15 15:14:01 localhost systemd: Starting Session 1179793 of user mysql.
+Jul 15 15:14:01 localhost systemd: Started Session 1179792 of user root.
+Jul 15 15:14:01 localhost systemd: Starting Session 1179792 of user root.
+Jul 15 15:14:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:14:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:15:01 localhost systemd: Started Session 1179795 of user root.
+Jul 15 15:15:01 localhost systemd: Starting Session 1179795 of user root.
+Jul 15 15:15:01 localhost systemd: Started Session 1179794 of user root.
+Jul 15 15:15:01 localhost systemd: Starting Session 1179794 of user root.
+Jul 15 15:15:01 localhost systemd: Started Session 1179797 of user root.
+Jul 15 15:15:01 localhost systemd: Starting Session 1179797 of user root.
+Jul 15 15:15:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:15:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:15:01 localhost systemd: Started Session 1179796 of user mysql.
+Jul 15 15:15:01 localhost systemd: Starting Session 1179796 of user mysql.
+Jul 15 15:15:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:15:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:16:01 localhost systemd: Started Session 1179798 of user root.
+Jul 15 15:16:01 localhost systemd: Starting Session 1179798 of user root.
+Jul 15 15:16:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:16:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:16:01 localhost systemd: Started Session 1179799 of user mysql.
+Jul 15 15:16:01 localhost systemd: Starting Session 1179799 of user mysql.
+Jul 15 15:16:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:16:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:17:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:17:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:17:01 localhost systemd: Started Session 1179801 of user mysql.
+Jul 15 15:17:01 localhost systemd: Starting Session 1179801 of user mysql.
+Jul 15 15:17:01 localhost systemd: Started Session 1179800 of user root.
+Jul 15 15:17:01 localhost systemd: Starting Session 1179800 of user root.
+Jul 15 15:17:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:17:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:18:01 localhost systemd: Started Session 1179802 of user root.
+Jul 15 15:18:01 localhost systemd: Starting Session 1179802 of user root.
+Jul 15 15:18:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:18:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:18:01 localhost systemd: Started Session 1179803 of user mysql.
+Jul 15 15:18:01 localhost systemd: Starting Session 1179803 of user mysql.
+Jul 15 15:18:02 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:18:02 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:19:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:19:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:19:01 localhost systemd: Started Session 1179805 of user mysql.
+Jul 15 15:19:01 localhost systemd: Starting Session 1179805 of user mysql.
+Jul 15 15:19:01 localhost systemd: Started Session 1179804 of user root.
+Jul 15 15:19:01 localhost systemd: Starting Session 1179804 of user root.
+Jul 15 15:19:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:19:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:20:01 localhost systemd: Started Session 1179808 of user root.
+Jul 15 15:20:01 localhost systemd: Starting Session 1179808 of user root.
+Jul 15 15:20:01 localhost systemd: Started Session 1179807 of user root.
+Jul 15 15:20:01 localhost systemd: Starting Session 1179807 of user root.
+Jul 15 15:20:01 localhost systemd: Started Session 1179806 of user root.
+Jul 15 15:20:01 localhost systemd: Starting Session 1179806 of user root.
+Jul 15 15:20:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:20:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:20:01 localhost systemd: Started Session 1179809 of user mysql.
+Jul 15 15:20:01 localhost systemd: Starting Session 1179809 of user mysql.
+Jul 15 15:20:01 localhost systemd: Started Session 1179810 of user root.
+Jul 15 15:20:01 localhost systemd: Starting Session 1179810 of user root.
+Jul 15 15:20:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:20:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:21:01 localhost systemd: Started Session 1179811 of user root.
+Jul 15 15:21:01 localhost systemd: Starting Session 1179811 of user root.
+Jul 15 15:21:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:21:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:21:01 localhost systemd: Started Session 1179812 of user mysql.
+Jul 15 15:21:01 localhost systemd: Starting Session 1179812 of user mysql.
+Jul 15 15:21:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:21:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:22:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:22:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:22:01 localhost systemd: Started Session 1179813 of user mysql.
+Jul 15 15:22:01 localhost systemd: Starting Session 1179813 of user mysql.
+Jul 15 15:22:01 localhost systemd: Started Session 1179814 of user root.
+Jul 15 15:22:01 localhost systemd: Starting Session 1179814 of user root.
+Jul 15 15:22:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:22:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:23:01 localhost systemd: Started Session 1179815 of user root.
+Jul 15 15:23:01 localhost systemd: Starting Session 1179815 of user root.
+Jul 15 15:23:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:23:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:23:01 localhost systemd: Started Session 1179816 of user mysql.
+Jul 15 15:23:01 localhost systemd: Starting Session 1179816 of user mysql.
+Jul 15 15:23:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:23:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:24:01 localhost systemd: Started Session 1179817 of user root.
+Jul 15 15:24:01 localhost systemd: Starting Session 1179817 of user root.
+Jul 15 15:24:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:24:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:24:01 localhost systemd: Started Session 1179818 of user mysql.
+Jul 15 15:24:01 localhost systemd: Starting Session 1179818 of user mysql.
+Jul 15 15:24:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:24:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:25:01 localhost systemd: Started Session 1179819 of user root.
+Jul 15 15:25:01 localhost systemd: Starting Session 1179819 of user root.
+Jul 15 15:25:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:25:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:25:01 localhost systemd: Started Session 1179820 of user mysql.
+Jul 15 15:25:01 localhost systemd: Starting Session 1179820 of user mysql.
+Jul 15 15:25:01 localhost systemd: Started Session 1179821 of user root.
+Jul 15 15:25:01 localhost systemd: Starting Session 1179821 of user root.
+Jul 15 15:25:01 localhost systemd: Started Session 1179822 of user root.
+Jul 15 15:25:01 localhost systemd: Starting Session 1179822 of user root.
+Jul 15 15:25:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:25:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:26:01 localhost systemd: Started Session 1179823 of user root.
+Jul 15 15:26:01 localhost systemd: Starting Session 1179823 of user root.
+Jul 15 15:26:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:26:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:26:01 localhost systemd: Started Session 1179824 of user mysql.
+Jul 15 15:26:01 localhost systemd: Starting Session 1179824 of user mysql.
+Jul 15 15:26:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:26:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:27:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:27:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:27:01 localhost systemd: Started Session 1179826 of user mysql.
+Jul 15 15:27:01 localhost systemd: Starting Session 1179826 of user mysql.
+Jul 15 15:27:01 localhost systemd: Started Session 1179825 of user root.
+Jul 15 15:27:01 localhost systemd: Starting Session 1179825 of user root.
+Jul 15 15:27:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:27:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:28:01 localhost systemd: Started Session 1179827 of user root.
+Jul 15 15:28:01 localhost systemd: Starting Session 1179827 of user root.
+Jul 15 15:28:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:28:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:28:01 localhost systemd: Started Session 1179828 of user mysql.
+Jul 15 15:28:01 localhost systemd: Starting Session 1179828 of user mysql.
+Jul 15 15:28:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:28:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:29:01 localhost systemd: Started Session 1179829 of user root.
+Jul 15 15:29:01 localhost systemd: Starting Session 1179829 of user root.
+Jul 15 15:29:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:29:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:29:01 localhost systemd: Started Session 1179830 of user mysql.
+Jul 15 15:29:01 localhost systemd: Starting Session 1179830 of user mysql.
+Jul 15 15:29:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:29:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:30:01 localhost systemd: Started Session 1179832 of user root.
+Jul 15 15:30:01 localhost systemd: Starting Session 1179832 of user root.
+Jul 15 15:30:01 localhost systemd: Started Session 1179833 of user root.
+Jul 15 15:30:01 localhost systemd: Starting Session 1179833 of user root.
+Jul 15 15:30:01 localhost systemd: Started Session 1179831 of user root.
+Jul 15 15:30:01 localhost systemd: Starting Session 1179831 of user root.
+Jul 15 15:30:01 localhost systemd: Started Session 1179834 of user root.
+Jul 15 15:30:01 localhost systemd: Starting Session 1179834 of user root.
+Jul 15 15:30:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:30:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:30:01 localhost systemd: Started Session 1179835 of user mysql.
+Jul 15 15:30:01 localhost systemd: Starting Session 1179835 of user mysql.
+Jul 15 15:30:02 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:30:02 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:31:01 localhost systemd: Started Session 1179836 of user root.
+Jul 15 15:31:01 localhost systemd: Starting Session 1179836 of user root.
+Jul 15 15:31:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:31:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:31:01 localhost systemd: Started Session 1179837 of user mysql.
+Jul 15 15:31:01 localhost systemd: Starting Session 1179837 of user mysql.
+Jul 15 15:31:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:31:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:32:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:32:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:32:01 localhost systemd: Started Session 1179839 of user mysql.
+Jul 15 15:32:01 localhost systemd: Starting Session 1179839 of user mysql.
+Jul 15 15:32:01 localhost systemd: Started Session 1179838 of user root.
+Jul 15 15:32:01 localhost systemd: Starting Session 1179838 of user root.
+Jul 15 15:32:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:32:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:33:01 localhost systemd: Started Session 1179840 of user root.
+Jul 15 15:33:01 localhost systemd: Starting Session 1179840 of user root.
+Jul 15 15:33:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:33:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:33:01 localhost systemd: Started Session 1179841 of user mysql.
+Jul 15 15:33:01 localhost systemd: Starting Session 1179841 of user mysql.
+Jul 15 15:33:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:33:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:34:01 localhost systemd: Started Session 1179842 of user root.
+Jul 15 15:34:01 localhost systemd: Starting Session 1179842 of user root.
+Jul 15 15:34:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:34:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:34:01 localhost systemd: Started Session 1179843 of user mysql.
+Jul 15 15:34:01 localhost systemd: Starting Session 1179843 of user mysql.
+Jul 15 15:34:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:34:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:35:01 localhost systemd: Started Session 1179845 of user root.
+Jul 15 15:35:01 localhost systemd: Starting Session 1179845 of user root.
+Jul 15 15:35:01 localhost systemd: Started Session 1179844 of user root.
+Jul 15 15:35:01 localhost systemd: Starting Session 1179844 of user root.
+Jul 15 15:35:01 localhost systemd: Started Session 1179847 of user root.
+Jul 15 15:35:01 localhost systemd: Starting Session 1179847 of user root.
+Jul 15 15:35:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:35:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:35:01 localhost systemd: Started Session 1179846 of user mysql.
+Jul 15 15:35:01 localhost systemd: Starting Session 1179846 of user mysql.
+Jul 15 15:35:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:35:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:36:01 localhost systemd: Started Session 1179848 of user root.
+Jul 15 15:36:01 localhost systemd: Starting Session 1179848 of user root.
+Jul 15 15:36:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:36:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:36:01 localhost systemd: Started Session 1179849 of user mysql.
+Jul 15 15:36:01 localhost systemd: Starting Session 1179849 of user mysql.
+Jul 15 15:36:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:36:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:37:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:37:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:37:01 localhost systemd: Started Session 1179851 of user mysql.
+Jul 15 15:37:01 localhost systemd: Starting Session 1179851 of user mysql.
+Jul 15 15:37:01 localhost systemd: Started Session 1179850 of user root.
+Jul 15 15:37:01 localhost systemd: Starting Session 1179850 of user root.
+Jul 15 15:37:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:37:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:38:01 localhost systemd: Started Session 1179852 of user root.
+Jul 15 15:38:01 localhost systemd: Starting Session 1179852 of user root.
+Jul 15 15:38:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:38:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:38:01 localhost systemd: Started Session 1179853 of user mysql.
+Jul 15 15:38:01 localhost systemd: Starting Session 1179853 of user mysql.
+Jul 15 15:38:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:38:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:39:01 localhost systemd: Started Session 1179854 of user root.
+Jul 15 15:39:01 localhost systemd: Starting Session 1179854 of user root.
+Jul 15 15:39:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:39:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:39:01 localhost systemd: Started Session 1179855 of user mysql.
+Jul 15 15:39:01 localhost systemd: Starting Session 1179855 of user mysql.
+Jul 15 15:39:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:39:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:40:01 localhost systemd: Started Session 1179858 of user root.
+Jul 15 15:40:01 localhost systemd: Starting Session 1179858 of user root.
+Jul 15 15:40:01 localhost systemd: Started Session 1179857 of user root.
+Jul 15 15:40:01 localhost systemd: Starting Session 1179857 of user root.
+Jul 15 15:40:01 localhost systemd: Started Session 1179856 of user root.
+Jul 15 15:40:01 localhost systemd: Starting Session 1179856 of user root.
+Jul 15 15:40:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:40:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:40:01 localhost systemd: Started Session 1179860 of user mysql.
+Jul 15 15:40:01 localhost systemd: Starting Session 1179860 of user mysql.
+Jul 15 15:40:01 localhost systemd: Started Session 1179859 of user root.
+Jul 15 15:40:01 localhost systemd: Starting Session 1179859 of user root.
+Jul 15 15:40:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:40:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:41:01 localhost systemd: Started Session 1179861 of user root.
+Jul 15 15:41:01 localhost systemd: Starting Session 1179861 of user root.
+Jul 15 15:41:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:41:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:41:01 localhost systemd: Started Session 1179862 of user mysql.
+Jul 15 15:41:01 localhost systemd: Starting Session 1179862 of user mysql.
+Jul 15 15:41:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:41:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:42:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:42:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:42:01 localhost systemd: Started Session 1179863 of user mysql.
+Jul 15 15:42:01 localhost systemd: Starting Session 1179863 of user mysql.
+Jul 15 15:42:01 localhost systemd: Started Session 1179864 of user root.
+Jul 15 15:42:01 localhost systemd: Starting Session 1179864 of user root.
+Jul 15 15:42:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:42:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:43:02 localhost systemd: Started Session 1179865 of user root.
+Jul 15 15:43:02 localhost systemd: Starting Session 1179865 of user root.
+Jul 15 15:43:02 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:43:02 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:43:02 localhost systemd: Started Session 1179866 of user mysql.
+Jul 15 15:43:02 localhost systemd: Starting Session 1179866 of user mysql.
+Jul 15 15:43:02 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:43:02 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:44:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:44:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:44:01 localhost systemd: Started Session 1179868 of user mysql.
+Jul 15 15:44:01 localhost systemd: Starting Session 1179868 of user mysql.
+Jul 15 15:44:01 localhost systemd: Started Session 1179867 of user root.
+Jul 15 15:44:01 localhost systemd: Starting Session 1179867 of user root.
+Jul 15 15:44:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:44:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:45:01 localhost systemd: Started Session 1179870 of user root.
+Jul 15 15:45:01 localhost systemd: Starting Session 1179870 of user root.
+Jul 15 15:45:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:45:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:45:01 localhost systemd: Started Session 1179871 of user mysql.
+Jul 15 15:45:01 localhost systemd: Starting Session 1179871 of user mysql.
+Jul 15 15:45:01 localhost systemd: Started Session 1179869 of user root.
+Jul 15 15:45:01 localhost systemd: Starting Session 1179869 of user root.
+Jul 15 15:45:01 localhost systemd: Started Session 1179872 of user root.
+Jul 15 15:45:01 localhost systemd: Starting Session 1179872 of user root.
+Jul 15 15:45:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:45:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:46:01 localhost systemd: Started Session 1179873 of user root.
+Jul 15 15:46:01 localhost systemd: Starting Session 1179873 of user root.
+Jul 15 15:46:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:46:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:46:01 localhost systemd: Started Session 1179874 of user mysql.
+Jul 15 15:46:01 localhost systemd: Starting Session 1179874 of user mysql.
+Jul 15 15:46:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:46:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:47:01 localhost systemd: Started Session 1179875 of user root.
+Jul 15 15:47:01 localhost systemd: Starting Session 1179875 of user root.
+Jul 15 15:47:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:47:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:47:01 localhost systemd: Started Session 1179876 of user mysql.
+Jul 15 15:47:01 localhost systemd: Starting Session 1179876 of user mysql.
+Jul 15 15:47:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:47:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:48:01 localhost systemd: Started Session 1179877 of user root.
+Jul 15 15:48:01 localhost systemd: Starting Session 1179877 of user root.
+Jul 15 15:48:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:48:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:48:01 localhost systemd: Started Session 1179878 of user mysql.
+Jul 15 15:48:01 localhost systemd: Starting Session 1179878 of user mysql.
+Jul 15 15:48:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:48:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:49:01 localhost systemd: Started Session 1179879 of user root.
+Jul 15 15:49:01 localhost systemd: Starting Session 1179879 of user root.
+Jul 15 15:49:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:49:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:49:01 localhost systemd: Started Session 1179880 of user mysql.
+Jul 15 15:49:01 localhost systemd: Starting Session 1179880 of user mysql.
+Jul 15 15:49:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:49:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:50:01 localhost systemd: Started Session 1179882 of user root.
+Jul 15 15:50:01 localhost systemd: Starting Session 1179882 of user root.
+Jul 15 15:50:01 localhost systemd: Started Session 1179881 of user root.
+Jul 15 15:50:01 localhost systemd: Starting Session 1179881 of user root.
+Jul 15 15:50:01 localhost systemd: Started Session 1179883 of user root.
+Jul 15 15:50:01 localhost systemd: Starting Session 1179883 of user root.
+Jul 15 15:50:01 localhost systemd: Started Session 1179884 of user root.
+Jul 15 15:50:01 localhost systemd: Starting Session 1179884 of user root.
+Jul 15 15:50:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:50:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:50:01 localhost systemd: Started Session 1179885 of user mysql.
+Jul 15 15:50:01 localhost systemd: Starting Session 1179885 of user mysql.
+Jul 15 15:50:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:50:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:51:01 localhost systemd: Started Session 1179886 of user root.
+Jul 15 15:51:01 localhost systemd: Starting Session 1179886 of user root.
+Jul 15 15:51:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:51:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:51:01 localhost systemd: Started Session 1179887 of user mysql.
+Jul 15 15:51:01 localhost systemd: Starting Session 1179887 of user mysql.
+Jul 15 15:51:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:51:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:52:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:52:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:52:01 localhost systemd: Started Session 1179889 of user mysql.
+Jul 15 15:52:01 localhost systemd: Starting Session 1179889 of user mysql.
+Jul 15 15:52:01 localhost systemd: Started Session 1179888 of user root.
+Jul 15 15:52:01 localhost systemd: Starting Session 1179888 of user root.
+Jul 15 15:52:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:52:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:53:01 localhost systemd: Started Session 1179890 of user root.
+Jul 15 15:53:01 localhost systemd: Starting Session 1179890 of user root.
+Jul 15 15:53:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:53:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:53:01 localhost systemd: Started Session 1179891 of user mysql.
+Jul 15 15:53:01 localhost systemd: Starting Session 1179891 of user mysql.
+Jul 15 15:53:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:53:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:54:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:54:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:54:01 localhost systemd: Started Session 1179892 of user mysql.
+Jul 15 15:54:01 localhost systemd: Starting Session 1179892 of user mysql.
+Jul 15 15:54:01 localhost systemd: Started Session 1179893 of user root.
+Jul 15 15:54:01 localhost systemd: Starting Session 1179893 of user root.
+Jul 15 15:54:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:54:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:55:01 localhost systemd: Started Session 1179896 of user root.
+Jul 15 15:55:01 localhost systemd: Starting Session 1179896 of user root.
+Jul 15 15:55:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:55:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:55:01 localhost systemd: Started Session 1179897 of user mysql.
+Jul 15 15:55:01 localhost systemd: Starting Session 1179897 of user mysql.
+Jul 15 15:55:01 localhost systemd: Started Session 1179895 of user root.
+Jul 15 15:55:01 localhost systemd: Starting Session 1179895 of user root.
+Jul 15 15:55:01 localhost systemd: Started Session 1179894 of user root.
+Jul 15 15:55:01 localhost systemd: Starting Session 1179894 of user root.
+Jul 15 15:55:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:55:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:56:01 localhost systemd: Started Session 1179898 of user root.
+Jul 15 15:56:01 localhost systemd: Starting Session 1179898 of user root.
+Jul 15 15:56:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:56:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:56:01 localhost systemd: Started Session 1179899 of user mysql.
+Jul 15 15:56:01 localhost systemd: Starting Session 1179899 of user mysql.
+Jul 15 15:56:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:56:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:57:01 localhost systemd: Started Session 1179900 of user root.
+Jul 15 15:57:01 localhost systemd: Starting Session 1179900 of user root.
+Jul 15 15:57:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:57:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:57:01 localhost systemd: Started Session 1179901 of user mysql.
+Jul 15 15:57:01 localhost systemd: Starting Session 1179901 of user mysql.
+Jul 15 15:57:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:57:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:58:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:58:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:58:01 localhost systemd: Started Session 1179902 of user mysql.
+Jul 15 15:58:01 localhost systemd: Starting Session 1179902 of user mysql.
+Jul 15 15:58:01 localhost systemd: Started Session 1179903 of user root.
+Jul 15 15:58:01 localhost systemd: Starting Session 1179903 of user root.
+Jul 15 15:58:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:58:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 15:59:01 localhost systemd: Started Session 1179904 of user root.
+Jul 15 15:59:01 localhost systemd: Starting Session 1179904 of user root.
+Jul 15 15:59:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 15:59:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 15:59:01 localhost systemd: Started Session 1179905 of user mysql.
+Jul 15 15:59:01 localhost systemd: Starting Session 1179905 of user mysql.
+Jul 15 15:59:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 15:59:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 16:00:01 localhost systemd: Started Session 1179906 of user root.
+Jul 15 16:00:01 localhost systemd: Starting Session 1179906 of user root.
+Jul 15 16:00:01 localhost systemd: Started Session 1179908 of user root.
+Jul 15 16:00:01 localhost systemd: Starting Session 1179908 of user root.
+Jul 15 16:00:01 localhost systemd: Started Session 1179907 of user root.
+Jul 15 16:00:01 localhost systemd: Starting Session 1179907 of user root.
+Jul 15 16:00:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 16:00:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 16:00:01 localhost systemd: Started Session 1179910 of user mysql.
+Jul 15 16:00:01 localhost systemd: Starting Session 1179910 of user mysql.
+Jul 15 16:00:01 localhost systemd: Started Session 1179909 of user root.
+Jul 15 16:00:01 localhost systemd: Starting Session 1179909 of user root.
+Jul 15 16:00:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 16:00:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 16:01:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 16:01:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 16:01:01 localhost systemd: Started Session 1179912 of user mysql.
+Jul 15 16:01:01 localhost systemd: Starting Session 1179912 of user mysql.
+Jul 15 16:01:01 localhost systemd: Started Session 1179913 of user root.
+Jul 15 16:01:01 localhost systemd: Starting Session 1179913 of user root.
+Jul 15 16:01:01 localhost systemd: Started Session 1179911 of user root.
+Jul 15 16:01:01 localhost systemd: Starting Session 1179911 of user root.
+Jul 15 16:01:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 16:01:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 16:02:01 localhost systemd: Started Session 1179914 of user root.
+Jul 15 16:02:01 localhost systemd: Starting Session 1179914 of user root.
+Jul 15 16:02:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 16:02:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 16:02:01 localhost systemd: Started Session 1179915 of user mysql.
+Jul 15 16:02:01 localhost systemd: Starting Session 1179915 of user mysql.
+Jul 15 16:02:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 16:02:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 16:02:26 localhost systemd-logind: New session 1179916 of user root.
+Jul 15 16:02:26 localhost systemd: Started Session 1179916 of user root.
+Jul 15 16:02:26 localhost systemd: Starting Session 1179916 of user root.
+Jul 15 16:02:26 localhost dbus[786]: [system] Activating service name='org.freedesktop.problems' (using servicehelper)
+Jul 15 16:02:26 localhost dbus-daemon: dbus[786]: [system] Activating service name='org.freedesktop.problems' (using servicehelper)
+Jul 15 16:02:26 localhost dbus[786]: [system] Successfully activated service 'org.freedesktop.problems'
+Jul 15 16:02:26 localhost dbus-daemon: dbus[786]: [system] Successfully activated service 'org.freedesktop.problems'
+Jul 15 16:03:01 localhost systemd: Started Session 1179917 of user root.
+Jul 15 16:03:01 localhost systemd: Starting Session 1179917 of user root.
+Jul 15 16:03:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 16:03:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 16:03:01 localhost systemd: Started Session 1179918 of user mysql.
+Jul 15 16:03:01 localhost systemd: Starting Session 1179918 of user mysql.
+Jul 15 16:03:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 16:03:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 16:03:07 localhost yum[33906]: Installed: dstat-0.7.2-12.el7.noarch
+Jul 15 16:03:07 localhost yum[33906]: Updated: sysstat-10.1.5-19.el7.x86_64
+Jul 15 16:03:07 localhost systemd: Reloading.
+Jul 15 16:03:15 localhost systemd-logind: New session 1179919 of user root.
+Jul 15 16:03:15 localhost systemd: Started Session 1179919 of user root.
+Jul 15 16:03:15 localhost systemd: Starting Session 1179919 of user root.
+Jul 15 16:03:31 localhost systemd-logind: Removed session 1179919.
+Jul 15 16:04:01 localhost systemd: Started Session 1179920 of user root.
+Jul 15 16:04:01 localhost systemd: Starting Session 1179920 of user root.
+Jul 15 16:04:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 16:04:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 16:04:01 localhost systemd: Started Session 1179921 of user mysql.
+Jul 15 16:04:01 localhost systemd: Starting Session 1179921 of user mysql.
+Jul 15 16:04:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 16:04:01 localhost systemd: Stopping User Slice of mysql.
+Jul 15 16:05:01 localhost systemd: Started Session 1179922 of user root.
+Jul 15 16:05:01 localhost systemd: Starting Session 1179922 of user root.
+Jul 15 16:05:01 localhost systemd: Started Session 1179923 of user root.
+Jul 15 16:05:01 localhost systemd: Starting Session 1179923 of user root.
+Jul 15 16:05:01 localhost systemd: Started Session 1179924 of user root.
+Jul 15 16:05:01 localhost systemd: Starting Session 1179924 of user root.
+Jul 15 16:05:01 localhost systemd: Created slice User Slice of mysql.
+Jul 15 16:05:01 localhost systemd: Starting User Slice of mysql.
+Jul 15 16:05:01 localhost systemd: Started Session 1179925 of user mysql.
+Jul 15 16:05:01 localhost systemd: Starting Session 1179925 of user mysql.
+Jul 15 16:05:01 localhost systemd: Removed slice User Slice of mysql.
+Jul 15 16:05:01 localhost systemd: Stopping User Slice of mysql.

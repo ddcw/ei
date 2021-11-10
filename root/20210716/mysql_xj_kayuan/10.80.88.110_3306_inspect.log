@@ -1,0 +1,1168 @@
+******************** MySQL--localhost--3306 ***********************
+                             basedir :	          
+                             datadir :	          
+                                     :	          
+               ####Business info#### :	          
+                       Database size :	          
+                       Tables counts :	          
+                      Engines counts :	          
+                 Top 10 of big table :	          
+        Top 10 of auto increment num :	          
+                                     :	          
+              ####Runtime status#### :	          
+                   Threads connected :	     NULL 
+                                 QPS :	     NULL 
+                                 TPS :	     NULL 
+                               Reads :	     NULL 
+                              Writes :	     NULL 
+                   Read/Writes Ratio :	    NULL% 
+   MyISAM Key buffer read hits(>99%) :	    NULL% 
+        MyISAM Key buffer write hits :	    NULL% 
+                    Query cache hits :	    NULL% 
+       InnoDB buffer read hits(>95%) :	    NULL% 
+             Thread cache hits(>90%) :	    NULL% 
+             Slow queries per second :	     NULL 
+         Select full join per second :	     NULL 
+      Select full join in all select :	    NULL% 
+         MyiSAM lock contention(<1%) :	    NULL% 
+           Temp tables to disk ratio :	    NULL% 
+No innodb tables
+No primary key tables
+password equals user
+Global status:
+Replication status:
+Global variables:
+ERROR LOG:
+******************** MySQL--localhost--3306 ***********************
+--------------
+mysql  Ver 14.14 Distrib 5.7.24, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+
+Connection id:		3464150
+Current database:	
+Current user:		root@localhost
+SSL:			Not in use
+Current pager:		stdout
+Using outfile:		''
+Using delimiter:	;
+Server version:		5.7.24-log MySQL Community Server (GPL)
+Protocol version:	10
+Connection:		Localhost via UNIX socket
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8
+Conn.  characterset:	utf8
+UNIX socket:		/data/mysql/data/mysql.sock
+Uptime:			184 days 6 hours 57 min 57 sec
+
+Threads: 22  Questions: 400840048  Slow queries: 88897  Opens: 78523038  Flush tables: 178  Open tables: 2000  Queries per second avg: 25.174
+--------------
+
+                             basedir :	/usr/local/mysql/
+                             datadir :	/data/mysql/data/
+                                     :	          
+               ####Business info#### :	          
+                       Database size :	db_monitor 0.002 GB lms 1.770 GB sys 0.000 GB
+                       Tables counts :	db_monitor 1 lms 100 sys 101
+                      Engines counts :	NULL 100 InnoDB 102
+                 Top 10 of big table :	tbl_user_audit_log 376728 tbl_accounting_calculation_cas21 89236 tbl_entry_gl_submitted 45603 tbl_scheduler_log 43321 tbl_entry_gl 36773 accesslog 25663 tbl_lease_audit_contract_data 18620 tbl_scheduler_tasks 18392 tbl_accounting_book_close 17666 tbl_payments_calculation 16071
+        Top 10 of auto increment num :	tbl_user_audit_log 1119600 tbl_accounting_calculation_cas21 158960 accesslog 131735 tbl_scheduler_tasks 76815 tbl_accounting_book_close 73952 tbl_scheduler_log 70314 tbl_entry_gl_submitted 53271 tbl_entry_gl 48455 tbl_sap_master_cost_center 46493 tbl_lease_audit_contract_data 32689
+                                     :	          
+              ####Runtime status#### :	          
+                   Threads connected :	    21.00 
+                                 QPS :	    22.99 
+                                 TPS :	     1.22 
+                               Reads :	210524658.00 
+                              Writes :	21175669.00 
+                   Read/Writes Ratio :	  994.18% 
+   MyISAM Key buffer read hits(>99%) :	   99.99% 
+        MyISAM Key buffer write hits :	    NULL% 
+                    Query cache hits :	    NULL% 
+       InnoDB buffer read hits(>95%) :	  100.00% 
+             Thread cache hits(>90%) :	   99.99% 
+             Slow queries per second :	     0.01 
+         Select full join per second :	     8.57 
+      Select full join in all select :	    1.08% 
+         MyiSAM lock contention(<1%) :	    0.00% 
+           Temp tables to disk ratio :	    9.22% 
+No innodb tables
+No primary key tables
+password equals user
+Global status:
+Aborted_clients	338
+Aborted_connects	17
+Binlog_cache_disk_use	6844
+Binlog_cache_use	17790846
+Binlog_stmt_cache_disk_use	0
+Binlog_stmt_cache_use	289
+Bytes_received	68656275627
+Bytes_sent	2041173032082
+Com_admin_commands	34771070
+Com_assign_to_keycache	0
+Com_alter_db	0
+Com_alter_db_upgrade	0
+Com_alter_event	0
+Com_alter_function	0
+Com_alter_instance	0
+Com_alter_procedure	0
+Com_alter_server	0
+Com_alter_table	5
+Com_alter_tablespace	0
+Com_alter_user	2
+Com_analyze	0
+Com_begin	52
+Com_binlog	0
+Com_call_procedure	0
+Com_change_db	723
+Com_change_master	0
+Com_change_repl_filter	0
+Com_check	0
+Com_checksum	0
+Com_commit	19445932
+Com_create_db	7
+Com_create_event	8
+Com_create_function	0
+Com_create_index	0
+Com_create_procedure	0
+Com_create_server	0
+Com_create_table	752
+Com_create_trigger	0
+Com_create_udf	0
+Com_create_user	7
+Com_create_view	0
+Com_dealloc_sql	0
+Com_delete	18782
+Com_delete_multi	79
+Com_do	0
+Com_drop_db	2
+Com_drop_event	0
+Com_drop_function	0
+Com_drop_index	0
+Com_drop_procedure	0
+Com_drop_server	0
+Com_drop_table	4
+Com_drop_trigger	0
+Com_drop_user	1
+Com_drop_view	0
+Com_empty_query	0
+Com_execute_sql	0
+Com_explain_other	0
+Com_flush	542
+Com_get_diagnostics	0
+Com_grant	51
+Com_ha_close	0
+Com_ha_open	0
+Com_ha_read	0
+Com_help	0
+Com_insert	1807642
+Com_insert_select	27526
+Com_install_plugin	2
+Com_kill	0
+Com_load	0
+Com_lock_tables	0
+Com_optimize	0
+Com_preload_keys	0
+Com_prepare_sql	0
+Com_purge	0
+Com_purge_before_date	0
+Com_release_savepoint	0
+Com_rename_table	0
+Com_rename_user	0
+Com_repair	0
+Com_replace	0
+Com_replace_select	0
+Com_reset	0
+Com_resignal	0
+Com_revoke	0
+Com_revoke_all	0
+Com_rollback	22025
+Com_rollback_to_savepoint	0
+Com_savepoint	0
+Com_select	210524673
+Com_set_option	45371037
+Com_signal	0
+Com_show_binlog_events	0
+Com_show_binlogs	253562
+Com_show_charsets	1
+Com_show_collations	0
+Com_show_create_db	3
+Com_show_create_event	3
+Com_show_create_func	0
+Com_show_create_proc	0
+Com_show_create_table	132
+Com_show_create_trigger	0
+Com_show_databases	79
+Com_show_engine_logs	0
+Com_show_engine_mutex	0
+Com_show_engine_status	186
+Com_show_events	0
+Com_show_errors	0
+Com_show_fields	764
+Com_show_function_code	0
+Com_show_function_status	10
+Com_show_grants	34
+Com_show_keys	80
+Com_show_master_status	15731437
+Com_show_open_tables	0
+Com_show_plugins	177
+Com_show_privileges	0
+Com_show_procedure_code	0
+Com_show_procedure_status	10
+Com_show_processlist	20
+Com_show_profile	0
+Com_show_profiles	0
+Com_show_relaylog_events	0
+Com_show_slave_hosts	0
+Com_show_slave_status	18773421
+Com_show_status	15209121
+Com_show_storage_engines	0
+Com_show_table_status	32
+Com_show_tables	47
+Com_show_triggers	0
+Com_show_variables	811674
+Com_show_warnings	8
+Com_show_create_user	0
+Com_shutdown	0
+Com_slave_start	0
+Com_slave_stop	0
+Com_group_replication_start	0
+Com_group_replication_stop	0
+Com_stmt_execute	1266
+Com_stmt_close	372
+Com_stmt_fetch	0
+Com_stmt_prepare	726
+Com_stmt_reset	0
+Com_stmt_send_long_data	0
+Com_truncate	0
+Com_uninstall_plugin	0
+Com_unlock_tables	177
+Com_update	19349245
+Com_update_multi	45549
+Com_xa_commit	0
+Com_xa_end	0
+Com_xa_prepare	0
+Com_xa_recover	0
+Com_xa_rollback	0
+Com_xa_start	0
+Com_stmt_reprepare	177
+Connection_errors_accept	0
+Connection_errors_internal	0
+Connection_errors_max_connections	0
+Connection_errors_peer_address	0
+Connection_errors_select	0
+Connection_errors_tcpwrap	0
+Connections	3464156
+Created_tmp_disk_tables	15291785
+Created_tmp_files	3324
+Created_tmp_tables	165767067
+Delayed_errors	0
+Delayed_insert_threads	0
+Delayed_writes	0
+Flush_commands	178
+Handler_commit	182382084
+Handler_delete	101736
+Handler_discover	0
+Handler_external_lock	402680949
+Handler_mrr_init	0
+Handler_prepare	40536650
+Handler_read_first	27851350
+Handler_read_key	3001915035
+Handler_read_last	70261
+Handler_read_next	268432172130
+Handler_read_prev	349246827
+Handler_read_rnd	2579740402
+Handler_read_rnd_next	128346634908
+Handler_rollback	44819
+Handler_savepoint	0
+Handler_savepoint_rollback	0
+Handler_update	65718223
+Handler_write	10513438405
+Innodb_buffer_pool_dump_status	Buffer pool(s) dump completed at 210714 23:30:40
+Innodb_buffer_pool_load_status	Buffer pool(s) load completed at 210112  9:29:28
+Innodb_buffer_pool_resize_status	
+Innodb_buffer_pool_pages_data	213851
+Innodb_buffer_pool_bytes_data	3503734784
+Innodb_buffer_pool_pages_dirty	498
+Innodb_buffer_pool_bytes_dirty	8159232
+Innodb_buffer_pool_pages_flushed	1296290
+Innodb_buffer_pool_pages_free	113004
+Innodb_buffer_pool_pages_misc	785
+Innodb_buffer_pool_pages_total	327640
+Innodb_buffer_pool_read_ahead_rnd	0
+Innodb_buffer_pool_read_ahead	0
+Innodb_buffer_pool_read_ahead_evicted	0
+Innodb_buffer_pool_read_requests	806479091781
+Innodb_buffer_pool_reads	270
+Innodb_buffer_pool_wait_free	0
+Innodb_buffer_pool_write_requests	626279319
+Innodb_data_fsyncs	33468542
+Innodb_data_pending_fsyncs	0
+Innodb_data_pending_reads	0
+Innodb_data_pending_writes	0
+Innodb_data_read	4493824
+Innodb_data_reads	305
+Innodb_data_writes	34598836
+Innodb_data_written	77678127616
+Innodb_dblwr_pages_written	1059895
+Innodb_dblwr_writes	120981
+Innodb_log_waits	0
+Innodb_log_write_requests	26826544
+Innodb_log_writes	33162111
+Innodb_os_log_fsyncs	33170926
+Innodb_os_log_pending_fsyncs	0
+Innodb_os_log_pending_writes	0
+Innodb_os_log_written	39067838464
+Innodb_page_size	16384
+Innodb_pages_created	213582
+Innodb_pages_read	269
+Innodb_pages_written	1296450
+Innodb_row_lock_current_waits	0
+Innodb_row_lock_time	856438
+Innodb_row_lock_time_avg	1019
+Innodb_row_lock_time_max	6901
+Innodb_row_lock_waits	840
+Innodb_rows_deleted	101914
+Innodb_rows_inserted	1248991432
+Innodb_rows_read	382240094399
+Innodb_rows_updated	16755268
+Innodb_num_open_files	130
+Innodb_truncated_status_writes	0
+Innodb_available_undo_logs	128
+Key_blocks_not_flushed	0
+Key_blocks_unused	6696
+Key_blocks_used	4
+Key_read_requests	31860
+Key_reads	4
+Key_write_requests	0
+Key_writes	0
+Locked_connects	0
+Max_execution_time_exceeded	0
+Max_execution_time_set	0
+Max_execution_time_set_failed	0
+Max_used_connections	63
+Max_used_connections_time	2021-01-21 13:50:21
+Not_flushed_delayed_rows	0
+Ongoing_anonymous_transaction_count	0
+Open_files	47
+Open_streams	0
+Open_table_definitions	324
+Open_tables	2000
+Opened_files	9634055
+Opened_table_definitions	57937
+Opened_tables	78523139
+Performance_schema_accounts_lost	0
+Performance_schema_cond_classes_lost	0
+Performance_schema_cond_instances_lost	0
+Performance_schema_digest_lost	0
+Performance_schema_file_classes_lost	0
+Performance_schema_file_handles_lost	0
+Performance_schema_file_instances_lost	4
+Performance_schema_hosts_lost	0
+Performance_schema_index_stat_lost	0
+Performance_schema_locker_lost	0
+Performance_schema_memory_classes_lost	0
+Performance_schema_metadata_lock_lost	0
+Performance_schema_mutex_classes_lost	0
+Performance_schema_mutex_instances_lost	0
+Performance_schema_nested_statement_lost	0
+Performance_schema_prepared_statements_lost	0
+Performance_schema_program_lost	0
+Performance_schema_rwlock_classes_lost	0
+Performance_schema_rwlock_instances_lost	0
+Performance_schema_session_connect_attrs_lost	0
+Performance_schema_socket_classes_lost	0
+Performance_schema_socket_instances_lost	0
+Performance_schema_stage_classes_lost	0
+Performance_schema_statement_classes_lost	0
+Performance_schema_table_handles_lost	0
+Performance_schema_table_instances_lost	0
+Performance_schema_table_lock_stat_lost	0
+Performance_schema_thread_classes_lost	0
+Performance_schema_thread_instances_lost	0
+Performance_schema_users_lost	0
+Prepared_stmt_count	0
+Qcache_free_blocks	0
+Qcache_free_memory	0
+Qcache_hits	0
+Qcache_inserts	0
+Qcache_lowmem_prunes	0
+Qcache_not_cached	0
+Qcache_queries_in_cache	0
+Qcache_total_blocks	0
+Queries	400840063
+Questions	366067672
+Rpl_semi_sync_master_clients	2
+Rpl_semi_sync_master_net_avg_wait_time	0
+Rpl_semi_sync_master_net_wait_time	0
+Rpl_semi_sync_master_net_waits	35450450
+Rpl_semi_sync_master_no_times	1
+Rpl_semi_sync_master_no_tx	1
+Rpl_semi_sync_master_status	ON
+Rpl_semi_sync_master_timefunc_failures	0
+Rpl_semi_sync_master_tx_avg_wait_time	742
+Rpl_semi_sync_master_tx_wait_time	13200603150
+Rpl_semi_sync_master_tx_waits	17790263
+Rpl_semi_sync_master_wait_pos_backtraverse	0
+Rpl_semi_sync_master_wait_sessions	0
+Rpl_semi_sync_master_yes_tx	17790910
+Rpl_semi_sync_slave_status	OFF
+Select_full_join	2273200
+Select_full_range_join	89631
+Select_range	12108797
+Select_range_check	1115
+Select_scan	90615697
+Slave_open_temp_tables	0
+Slow_launch_threads	0
+Slow_queries	88897
+Sort_merge_passes	50
+Sort_range	44451835
+Sort_rows	2104498906
+Sort_scan	3039880
+Ssl_accept_renegotiates	0
+Ssl_accepts	0
+Ssl_callback_cache_hits	0
+Ssl_cipher	
+Ssl_cipher_list	
+Ssl_client_connects	0
+Ssl_connect_renegotiates	0
+Ssl_ctx_verify_depth	0
+Ssl_ctx_verify_mode	0
+Ssl_default_timeout	0
+Ssl_finished_accepts	0
+Ssl_finished_connects	0
+Ssl_server_not_after	
+Ssl_server_not_before	
+Ssl_session_cache_hits	0
+Ssl_session_cache_misses	0
+Ssl_session_cache_mode	NONE
+Ssl_session_cache_overflows	0
+Ssl_session_cache_size	0
+Ssl_session_cache_timeouts	0
+Ssl_sessions_reused	0
+Ssl_used_session_cache_entries	0
+Ssl_verify_depth	0
+Ssl_verify_mode	0
+Ssl_version	
+Table_locks_immediate	29620468
+Table_locks_waited	1
+Table_open_cache_hits	329692065
+Table_open_cache_misses	78523138
+Table_open_cache_overflows	78167040
+Tc_log_max_pages_used	0
+Tc_log_page_size	0
+Tc_log_page_waits	0
+Threads_cached	13
+Threads_connected	21
+Threads_created	196
+Threads_running	4
+Uptime	15922677
+Uptime_since_flush_status	15922677
+Replication status:
+Global variables:
+auto_increment_increment	1
+auto_increment_offset	1
+autocommit	ON
+automatic_sp_privileges	ON
+avoid_temporal_upgrade	OFF
+back_log	250
+basedir	/usr/local/mysql/
+big_tables	OFF
+bind_address	*
+binlog_cache_size	32768
+binlog_checksum	CRC32
+binlog_direct_non_transactional_updates	OFF
+binlog_error_action	ABORT_SERVER
+binlog_format	ROW
+binlog_group_commit_sync_delay	0
+binlog_group_commit_sync_no_delay_count	0
+binlog_gtid_simple_recovery	ON
+binlog_max_flush_queue_time	0
+binlog_order_commits	ON
+binlog_row_image	FULL
+binlog_rows_query_log_events	ON
+binlog_stmt_cache_size	32768
+binlog_transaction_dependency_history_size	25000
+binlog_transaction_dependency_tracking	COMMIT_ORDER
+block_encryption_mode	aes-128-ecb
+bulk_insert_buffer_size	8388608
+character_set_client	utf8mb4
+character_set_connection	utf8mb4
+character_set_database	utf8mb4
+character_set_filesystem	binary
+character_set_results	utf8mb4
+character_set_server	utf8mb4
+character_set_system	utf8
+character_sets_dir	/usr/local/mysql/share/charsets/
+check_proxy_users	OFF
+collation_connection	utf8mb4_general_ci
+collation_database	utf8mb4_general_ci
+collation_server	utf8mb4_general_ci
+completion_type	NO_CHAIN
+concurrent_insert	AUTO
+connect_timeout	10
+core_file	OFF
+datadir	/data/mysql/data/
+date_format	%Y-%m-%d
+datetime_format	%Y-%m-%d %H:%i:%s
+default_authentication_plugin	mysql_native_password
+default_password_lifetime	0
+default_storage_engine	InnoDB
+default_tmp_storage_engine	InnoDB
+default_week_format	0
+delay_key_write	ON
+delayed_insert_limit	100
+delayed_insert_timeout	300
+delayed_queue_size	1000
+disabled_storage_engines	
+disconnect_on_expired_password	ON
+div_precision_increment	4
+end_markers_in_json	OFF
+enforce_gtid_consistency	ON
+eq_range_index_dive_limit	200
+event_scheduler	ON
+expire_logs_days	14
+explicit_defaults_for_timestamp	ON
+flush	OFF
+flush_time	0
+foreign_key_checks	ON
+ft_boolean_syntax	+ -><()~*:""&|
+ft_max_word_len	84
+ft_min_word_len	4
+ft_query_expansion_limit	20
+ft_stopword_file	(built-in)
+general_log	OFF
+general_log_file	/data/mysql/data/10-80-88-110.log
+group_concat_max_len	1024
+gtid_executed	3c100376-5475-11eb-8979-005056aa7bda:1-17791133
+gtid_executed_compression_period	1000
+gtid_mode	ON
+gtid_owned	
+gtid_purged	3c100376-5475-11eb-8979-005056aa7bda:1-16329097
+have_compress	YES
+have_crypt	YES
+have_dynamic_loading	YES
+have_geometry	YES
+have_openssl	DISABLED
+have_profiling	YES
+have_query_cache	YES
+have_rtree_keys	YES
+have_ssl	DISABLED
+have_statement_timeout	YES
+have_symlink	YES
+host_cache_size	653
+hostname	10-80-88-110
+ignore_builtin_innodb	OFF
+ignore_db_dirs	
+init_connect	insert into db_monitor.accesslog(thread_id,log_time,localname,matchname) values(connection_id(),now(),user(),current_user());
+init_file	
+init_slave	
+innodb_adaptive_flushing	ON
+innodb_adaptive_flushing_lwm	10
+innodb_adaptive_hash_index	ON
+innodb_adaptive_hash_index_parts	8
+innodb_adaptive_max_sleep_delay	150000
+innodb_api_bk_commit_interval	5
+innodb_api_disable_rowlock	OFF
+innodb_api_enable_binlog	OFF
+innodb_api_enable_mdl	OFF
+innodb_api_trx_level	0
+innodb_autoextend_increment	64
+innodb_autoinc_lock_mode	1
+innodb_buffer_pool_chunk_size	134217728
+innodb_buffer_pool_dump_at_shutdown	ON
+innodb_buffer_pool_dump_now	OFF
+innodb_buffer_pool_dump_pct	25
+innodb_buffer_pool_filename	ib_buffer_pool
+innodb_buffer_pool_instances	8
+innodb_buffer_pool_load_abort	OFF
+innodb_buffer_pool_load_at_startup	ON
+innodb_buffer_pool_load_now	OFF
+innodb_buffer_pool_size	5368709120
+innodb_change_buffer_max_size	25
+innodb_change_buffering	all
+innodb_checksum_algorithm	crc32
+innodb_checksums	ON
+innodb_cmp_per_index_enabled	OFF
+innodb_commit_concurrency	0
+innodb_compression_failure_threshold_pct	5
+innodb_compression_level	6
+innodb_compression_pad_pct_max	50
+innodb_concurrency_tickets	5000
+innodb_data_file_path	ibdata1:1G:autoextend
+innodb_data_home_dir	
+innodb_deadlock_detect	ON
+innodb_default_row_format	dynamic
+innodb_disable_sort_file_cache	OFF
+innodb_doublewrite	ON
+innodb_fast_shutdown	1
+innodb_file_format	Barracuda
+innodb_file_format_check	ON
+innodb_file_format_max	Barracuda
+innodb_file_per_table	ON
+innodb_fill_factor	100
+innodb_flush_log_at_timeout	1
+innodb_flush_log_at_trx_commit	1
+innodb_flush_method	O_DIRECT
+innodb_flush_neighbors	1
+innodb_flush_sync	ON
+innodb_flushing_avg_loops	30
+innodb_force_load_corrupted	OFF
+innodb_force_recovery	0
+innodb_ft_aux_table	
+innodb_ft_cache_size	8000000
+innodb_ft_enable_diag_print	OFF
+innodb_ft_enable_stopword	ON
+innodb_ft_max_token_size	84
+innodb_ft_min_token_size	3
+innodb_ft_num_word_optimize	2000
+innodb_ft_result_cache_limit	2000000000
+innodb_ft_server_stopword_table	
+innodb_ft_sort_pll_degree	2
+innodb_ft_total_cache_size	640000000
+innodb_ft_user_stopword_table	
+innodb_io_capacity	800
+innodb_io_capacity_max	2000
+innodb_large_prefix	ON
+innodb_lock_wait_timeout	5
+innodb_locks_unsafe_for_binlog	OFF
+innodb_log_buffer_size	67108864
+innodb_log_checksums	ON
+innodb_log_compressed_pages	ON
+innodb_log_file_size	1073741824
+innodb_log_files_in_group	2
+innodb_log_group_home_dir	./
+innodb_log_write_ahead_size	8192
+innodb_lru_scan_depth	1024
+innodb_max_dirty_pages_pct	75.000000
+innodb_max_dirty_pages_pct_lwm	0.000000
+innodb_max_purge_lag	0
+innodb_max_purge_lag_delay	0
+innodb_max_undo_log_size	1073741824
+innodb_monitor_disable	
+innodb_monitor_enable	
+innodb_monitor_reset	
+innodb_monitor_reset_all	
+innodb_numa_interleave	OFF
+innodb_old_blocks_pct	37
+innodb_old_blocks_time	1000
+innodb_online_alter_log_max_size	134217728
+innodb_open_files	2000
+innodb_optimize_fulltext_only	OFF
+innodb_page_cleaners	4
+innodb_page_size	16384
+innodb_print_all_deadlocks	ON
+innodb_purge_batch_size	300
+innodb_purge_rseg_truncate_frequency	128
+innodb_purge_threads	4
+innodb_random_read_ahead	OFF
+innodb_read_ahead_threshold	56
+innodb_read_io_threads	4
+innodb_read_only	OFF
+innodb_replication_delay	0
+innodb_rollback_on_timeout	OFF
+innodb_rollback_segments	128
+innodb_sort_buffer_size	67108864
+innodb_spin_wait_delay	6
+innodb_stats_auto_recalc	ON
+innodb_stats_include_delete_marked	OFF
+innodb_stats_method	nulls_equal
+innodb_stats_on_metadata	OFF
+innodb_stats_persistent	ON
+innodb_stats_persistent_sample_pages	20
+innodb_stats_sample_pages	8
+innodb_stats_transient_sample_pages	8
+innodb_status_output	OFF
+innodb_status_output_locks	OFF
+innodb_strict_mode	ON
+innodb_support_xa	ON
+innodb_sync_array_size	1
+innodb_sync_spin_loops	30
+innodb_table_locks	ON
+innodb_temp_data_file_path	ibtmp1:12M:autoextend
+innodb_thread_concurrency	0
+innodb_thread_sleep_delay	10000
+innodb_tmpdir	
+innodb_undo_directory	./
+innodb_undo_log_truncate	OFF
+innodb_undo_logs	128
+innodb_undo_tablespaces	3
+innodb_use_native_aio	ON
+innodb_version	5.7.24
+innodb_write_io_threads	4
+interactive_timeout	28800
+internal_tmp_disk_storage_engine	InnoDB
+join_buffer_size	67108864
+keep_files_on_create	OFF
+key_buffer_size	8388608
+key_cache_age_threshold	300
+key_cache_block_size	1024
+key_cache_division_limit	100
+keyring_operations	ON
+large_files_support	ON
+large_page_size	0
+large_pages	OFF
+lc_messages	en_US
+lc_messages_dir	/usr/local/mysql/share/
+lc_time_names	en_US
+license	GPL
+local_infile	ON
+lock_wait_timeout	31536000
+locked_in_memory	OFF
+log_bin	ON
+log_bin_basename	/data/mysql/mysql_logs/mysql-bin
+log_bin_index	/data/mysql/mysql_logs/mysql-bin.index
+log_bin_trust_function_creators	OFF
+log_bin_use_v1_row_events	OFF
+log_builtin_as_identified_by_password	OFF
+log_error	./mysql-error.log
+log_error_verbosity	3
+log_output	FILE
+log_queries_not_using_indexes	ON
+log_slave_updates	ON
+log_slow_admin_statements	ON
+log_slow_slave_statements	ON
+log_statements_unsafe_for_binlog	ON
+log_syslog	OFF
+log_syslog_facility	daemon
+log_syslog_include_pid	ON
+log_syslog_tag	
+log_throttle_queries_not_using_indexes	10
+log_timestamps	UTC
+log_warnings	2
+long_query_time	2.000000
+low_priority_updates	OFF
+lower_case_file_system	OFF
+lower_case_table_names	1
+master_info_repository	TABLE
+master_verify_checksum	OFF
+max_allowed_packet	134217728
+max_binlog_cache_size	18446744073709547520
+max_binlog_size	1073741824
+max_binlog_stmt_cache_size	18446744073709547520
+max_connect_errors	100000
+max_connections	1000
+max_delayed_threads	20
+max_digest_length	1024
+max_error_count	64
+max_execution_time	0
+max_heap_table_size	16777216
+max_insert_delayed_threads	20
+max_join_size	18446744073709551615
+max_length_for_sort_data	1024
+max_points_in_geometry	65536
+max_prepared_stmt_count	16382
+max_relay_log_size	0
+max_seeks_for_key	18446744073709551615
+max_sort_length	1024
+max_sp_recursion_depth	0
+max_tmp_tables	32
+max_user_connections	0
+max_write_lock_count	18446744073709551615
+metadata_locks_cache_size	1024
+metadata_locks_hash_instances	8
+min_examined_row_limit	1000
+multi_range_count	256
+myisam_data_pointer_size	6
+myisam_max_sort_file_size	9223372036853727232
+myisam_mmap_size	18446744073709551615
+myisam_recover_options	OFF
+myisam_repair_threads	1
+myisam_sort_buffer_size	8388608
+myisam_stats_method	nulls_unequal
+myisam_use_mmap	OFF
+mysql_native_password_proxy_users	OFF
+net_buffer_length	16384
+net_read_timeout	30
+net_retry_count	10
+net_write_timeout	60
+new	OFF
+ngram_token_size	2
+offline_mode	OFF
+old	OFF
+old_alter_table	OFF
+old_passwords	0
+open_files_limit	65535
+optimizer_prune_level	1
+optimizer_search_depth	62
+optimizer_switch	index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,engine_condition_pushdown=on,index_condition_pushdown=on,mrr=on,mrr_cost_based=on,block_nested_loop=on,batched_key_access=off,materialization=on,semijoin=on,loosescan=on,firstmatch=on,duplicateweedout=on,subquery_materialization_cost_based=on,use_index_extensions=on,condition_fanout_filter=on,derived_merge=on
+optimizer_trace	enabled=off,one_line=off
+optimizer_trace_features	greedy_search=on,range_optimizer=on,dynamic_range=on,repeated_subselect=on
+optimizer_trace_limit	1
+optimizer_trace_max_mem_size	16384
+optimizer_trace_offset	-1
+parser_max_mem_size	18446744073709551615
+performance_schema	ON
+performance_schema_accounts_size	-1
+performance_schema_digests_size	10000
+performance_schema_events_stages_history_long_size	10000
+performance_schema_events_stages_history_size	10
+performance_schema_events_statements_history_long_size	10000
+performance_schema_events_statements_history_size	10
+performance_schema_events_transactions_history_long_size	10000
+performance_schema_events_transactions_history_size	10
+performance_schema_events_waits_history_long_size	10000
+performance_schema_events_waits_history_size	10
+performance_schema_hosts_size	-1
+performance_schema_max_cond_classes	80
+performance_schema_max_cond_instances	-1
+performance_schema_max_digest_length	1024
+performance_schema_max_file_classes	80
+performance_schema_max_file_handles	32768
+performance_schema_max_file_instances	-1
+performance_schema_max_index_stat	-1
+performance_schema_max_memory_classes	320
+performance_schema_max_metadata_locks	-1
+performance_schema_max_mutex_classes	210
+performance_schema_max_mutex_instances	-1
+performance_schema_max_prepared_statements_instances	-1
+performance_schema_max_program_instances	-1
+performance_schema_max_rwlock_classes	40
+performance_schema_max_rwlock_instances	-1
+performance_schema_max_socket_classes	10
+performance_schema_max_socket_instances	-1
+performance_schema_max_sql_text_length	1024
+performance_schema_max_stage_classes	150
+performance_schema_max_statement_classes	193
+performance_schema_max_statement_stack	10
+performance_schema_max_table_handles	-1
+performance_schema_max_table_instances	-1
+performance_schema_max_table_lock_stat	-1
+performance_schema_max_thread_classes	50
+performance_schema_max_thread_instances	-1
+performance_schema_session_connect_attrs_size	512
+performance_schema_setup_actors_size	-1
+performance_schema_setup_objects_size	-1
+performance_schema_users_size	-1
+pid_file	mysql.pid
+plugin_dir	/usr/local/mysql/lib/plugin/
+port	3306
+preload_buffer_size	32768
+profiling	OFF
+profiling_history_size	15
+protocol_version	10
+query_alloc_block_size	8192
+query_cache_limit	1048576
+query_cache_min_res_unit	4096
+query_cache_size	0
+query_cache_type	OFF
+query_cache_wlock_invalidate	OFF
+query_prealloc_size	8192
+range_alloc_block_size	4096
+range_optimizer_max_mem_size	8388608
+rbr_exec_mode	STRICT
+read_buffer_size	16777216
+read_only	OFF
+read_rnd_buffer_size	33554432
+relay_log	mysql-relay.log
+relay_log_basename	/data/mysql/data/mysql-relay
+relay_log_index	/data/mysql/data/mysql-relay.index
+relay_log_info_file	relay-log.info
+relay_log_info_repository	TABLE
+relay_log_purge	ON
+relay_log_recovery	ON
+relay_log_space_limit	0
+report_host	
+report_password	
+report_port	3306
+report_user	
+require_secure_transport	OFF
+rpl_semi_sync_master_enabled	ON
+rpl_semi_sync_master_timeout	2000
+rpl_semi_sync_master_trace_level	32
+rpl_semi_sync_master_wait_for_slave_count	1
+rpl_semi_sync_master_wait_no_slave	ON
+rpl_semi_sync_master_wait_point	AFTER_SYNC
+rpl_semi_sync_slave_enabled	ON
+rpl_semi_sync_slave_trace_level	32
+rpl_stop_slave_timeout	31536000
+secure_auth	ON
+secure_file_priv	NULL
+server_id	881103306
+server_id_bits	32
+server_uuid	3c100376-5475-11eb-8979-005056aa7bda
+session_track_gtids	OFF
+session_track_schema	ON
+session_track_state_change	OFF
+session_track_system_variables	time_zone,autocommit,character_set_client,character_set_results,character_set_connection
+session_track_transaction_info	OFF
+sha256_password_proxy_users	OFF
+show_compatibility_56	OFF
+show_create_table_verbosity	OFF
+show_old_temporals	OFF
+skip_external_locking	ON
+skip_name_resolve	ON
+skip_networking	OFF
+skip_show_database	OFF
+slave_allow_batching	OFF
+slave_checkpoint_group	512
+slave_checkpoint_period	300
+slave_compressed_protocol	OFF
+slave_exec_mode	STRICT
+slave_load_tmpdir	/data/mysql/mysql_tmp
+slave_max_allowed_packet	1073741824
+slave_net_timeout	60
+slave_parallel_type	DATABASE
+slave_parallel_workers	0
+slave_pending_jobs_size_max	16777216
+slave_preserve_commit_order	OFF
+slave_rows_search_algorithms	TABLE_SCAN,INDEX_SCAN
+slave_skip_errors	OFF
+slave_sql_verify_checksum	ON
+slave_transaction_retries	10
+slave_type_conversions	
+slow_launch_time	2
+slow_query_log	ON
+slow_query_log_file	mysql-slow.log
+socket	/data/mysql/data/mysql.sock
+sort_buffer_size	33554432
+sql_auto_is_null	OFF
+sql_big_selects	ON
+sql_buffer_result	OFF
+sql_log_off	OFF
+sql_mode	STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+sql_notes	ON
+sql_quote_show_create	ON
+sql_safe_updates	OFF
+sql_select_limit	18446744073709551615
+sql_slave_skip_counter	0
+sql_warnings	OFF
+ssl_ca	
+ssl_capath	
+ssl_cert	
+ssl_cipher	
+ssl_crl	
+ssl_crlpath	
+ssl_key	
+stored_program_cache	256
+super_read_only	OFF
+sync_binlog	1
+sync_frm	ON
+sync_master_info	10000
+sync_relay_log	10000
+sync_relay_log_info	10000
+system_time_zone	CST
+table_definition_cache	1400
+table_open_cache	2000
+table_open_cache_instances	16
+thread_cache_size	18
+thread_handling	one-thread-per-connection
+thread_stack	262144
+time_format	%H:%i:%s
+time_zone	+08:00
+tls_version	TLSv1,TLSv1.1
+tmp_table_size	67108864
+tmpdir	/data/mysql/mysql_tmp
+transaction_alloc_block_size	8192
+transaction_isolation	REPEATABLE-READ
+transaction_prealloc_size	4096
+transaction_read_only	OFF
+transaction_write_set_extraction	OFF
+tx_isolation	REPEATABLE-READ
+tx_read_only	OFF
+unique_checks	ON
+updatable_views_with_limit	YES
+version	5.7.24-log
+version_comment	MySQL Community Server (GPL)
+version_compile_machine	x86_64
+version_compile_os	linux-glibc2.12
+wait_timeout	28800
+ERROR LOG:
+MySQL thread id 3135042, OS thread handle 140576392083200, query id 368697440 10.80.41.56 lmsdata updating
+UPDATE tbl_scheduler_tasks SET CurrentStatus = 'Running',Enabled='0',Progress='0',LastUpdateTime=NOW() WHERE TaskID='70'
+2021-06-28T16:00:11.425029Z 3135197 [Note] InnoDB: *** (1) WAITING FOR THIS LOCK TO BE GRANTED:
+
+RECORD LOCKS space id 216 page no 37 n bits 1000 index IX_tbl_Scheduler_Tasks_TaskID of table `lms`.`tbl_scheduler_tasks` trx id 34299008 lock_mode X waiting
+Record lock, heap no 2 PHYSICAL RECORD: n_fields 2; compact format; info bits 0
+ 0: len 4; hex 80000046; asc    F;;
+ 1: len 8; hex 8000000000005212; asc       R ;;
+
+2021-06-28T16:00:11.425162Z 3135197 [Note] InnoDB: *** (2) TRANSACTION:
+
+TRANSACTION 34299009, ACTIVE 0 sec starting index read
+mysql tables in use 1, locked 1
+992 lock struct(s), heap size 106704, 47403 row lock(s)
+MySQL thread id 3135197, OS thread handle 140576377214720, query id 368697447 10.80.41.57 lmsdata updating
+UPDATE tbl_scheduler_tasks SET CurrentStatus = 'Running',Enabled='0',Progress='0',LastUpdateTime=NOW() WHERE TaskID='70'
+2021-06-28T16:00:11.425209Z 3135197 [Note] InnoDB: *** (2) HOLDS THE LOCK(S):
+
+RECORD LOCKS space id 216 page no 37 n bits 1000 index IX_tbl_Scheduler_Tasks_TaskID of table `lms`.`tbl_scheduler_tasks` trx id 34299009 lock mode S
+Record lock, heap no 2 PHYSICAL RECORD: n_fields 2; compact format; info bits 0
+ 0: len 4; hex 80000046; asc    F;;
+ 1: len 8; hex 8000000000005212; asc       R ;;
+
+2021-06-28T16:00:11.425328Z 3135197 [Note] InnoDB: *** (2) WAITING FOR THIS LOCK TO BE GRANTED:
+
+RECORD LOCKS space id 216 page no 37 n bits 1000 index IX_tbl_Scheduler_Tasks_TaskID of table `lms`.`tbl_scheduler_tasks` trx id 34299009 lock_mode X waiting
+Record lock, heap no 2 PHYSICAL RECORD: n_fields 2; compact format; info bits 0
+ 0: len 4; hex 80000046; asc    F;;
+ 1: len 8; hex 8000000000005212; asc       R ;;
+
+2021-06-28T16:00:11.425449Z 3135197 [Note] InnoDB: *** WE ROLL BACK TRANSACTION (2)
+
+2021-06-29T15:30:37.558481Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-06-29T15:30:37.578587Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210629 23:30:37
+2021-06-29T16:03:38.341996Z 3148582 [Note] Aborted connection 3148582 to db: 'unconnected' user: 'xlei40' host: '10.80.80.23' (Got timeout reading communication packets)
+2021-06-30T15:30:40.704010Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-06-30T15:30:40.722682Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210630 23:30:40
+2021-07-01T03:19:45.464271Z 3183817 [Note] InnoDB: Transactions deadlock detected, dumping detailed information.
+2021-07-01T03:19:45.482067Z 3183817 [Note] InnoDB: 
+*** (1) TRANSACTION:
+
+TRANSACTION 34922043, ACTIVE 0 sec starting index read
+mysql tables in use 1, locked 1
+LOCK WAIT 942 lock struct(s), heap size 90320, 50343 row lock(s)
+MySQL thread id 3183843, OS thread handle 140576378836736, query id 376412659 10.80.41.56 lmsdata updating
+UPDATE tbl_scheduler_tasks SET CurrentStatus = 'Running',Enabled='0',Progress='0',LastUpdateTime=NOW() WHERE TaskID='208' AND Session='4f5a5ae3-c2ab-4a3f-9aba-ed1eba461afe'
+2021-07-01T03:19:45.482200Z 3183817 [Note] InnoDB: *** (1) WAITING FOR THIS LOCK TO BE GRANTED:
+
+RECORD LOCKS space id 216 page no 1395 n bits 72 index PRIMARY of table `lms`.`tbl_scheduler_tasks` trx id 34922043 lock_mode X locks rec but not gap waiting
+Record lock, heap no 2 PHYSICAL RECORD: n_fields 14; compact format; info bits 0
+ 0: len 8; hex 8000000000012a7d; asc       *};;
+ 1: len 6; hex 00000214de28; asc      (;;
+ 2: len 7; hex aa000000260110; asc     &  ;;
+ 3: len 4; hex 800000d0; asc     ;;
+ 4: len 22; hex 40407461736b47656e65726174655265706f72744040; asc @@taskGenerateReport@@;;
+ 5: len 1; hex 81; asc  ;;
+ 6: len 5; hex 4164486f74; asc AdHot;;
+ 7: len 4; hex 49646c65; asc Idle;;
+ 8: len 0; hex ; asc ;;
+ 9: len 30; hex 7b22636f6d70616e79436f6465223a5b2243333133222c6e756c6c5d2c22; asc {"companyCode":["C313",null],"; (total 410 bytes);
+ 10: len 4; hex 80000000; asc     ;;
+ 11: len 30; hex 34663561356165332d633261622d346133662d396162612d656431656261; asc 4f5a5ae3-c2ab-4a3f-9aba-ed1eba; (total 36 bytes);
+ 12: len 8; hex 3930303038393637; asc 90008967;;
+ 13: len 5; hex 99aa02b4e6; asc      ;;
+
+2021-07-01T03:19:45.484592Z 3183817 [Note] InnoDB: *** (2) TRANSACTION:
+
+TRANSACTION 34922044, ACTIVE 0 sec starting index read
+mysql tables in use 1, locked 1
+941 lock struct(s), heap size 90320, 50342 row lock(s)
+MySQL thread id 3183817, OS thread handle 140576378566400, query id 376412660 10.80.41.57 lmsdata updating
+UPDATE tbl_scheduler_tasks SET CurrentStatus = 'Running',Enabled='0',Progress='0',LastUpdateTime=NOW() WHERE TaskID='208' AND Session='4f5a5ae3-c2ab-4a3f-9aba-ed1eba461afe'
+2021-07-01T03:19:45.484684Z 3183817 [Note] InnoDB: *** (2) HOLDS THE LOCK(S):
+
+RECORD LOCKS space id 216 page no 1395 n bits 72 index PRIMARY of table `lms`.`tbl_scheduler_tasks` trx id 34922044 lock mode S locks rec but not gap
+Record lock, heap no 2 PHYSICAL RECORD: n_fields 14; compact format; info bits 0
+ 0: len 8; hex 8000000000012a7d; asc       *};;
+ 1: len 6; hex 00000214de28; asc      (;;
+ 2: len 7; hex aa000000260110; asc     &  ;;
+ 3: len 4; hex 800000d0; asc     ;;
+ 4: len 22; hex 40407461736b47656e65726174655265706f72744040; asc @@taskGenerateReport@@;;
+ 5: len 1; hex 81; asc  ;;
+ 6: len 5; hex 4164486f74; asc AdHot;;
+ 7: len 4; hex 49646c65; asc Idle;;
+ 8: len 0; hex ; asc ;;
+ 9: len 30; hex 7b22636f6d70616e79436f6465223a5b2243333133222c6e756c6c5d2c22; asc {"companyCode":["C313",null],"; (total 410 bytes);
+ 10: len 4; hex 80000000; asc     ;;
+ 11: len 30; hex 34663561356165332d633261622d346133662d396162612d656431656261; asc 4f5a5ae3-c2ab-4a3f-9aba-ed1eba; (total 36 bytes);
+ 12: len 8; hex 3930303038393637; asc 90008967;;
+ 13: len 5; hex 99aa02b4e6; asc      ;;
+
+2021-07-01T03:19:45.487102Z 3183817 [Note] InnoDB: *** (2) WAITING FOR THIS LOCK TO BE GRANTED:
+
+RECORD LOCKS space id 216 page no 395 n bits 384 index IX_tbl_Scheduler_Tasks_Session of table `lms`.`tbl_scheduler_tasks` trx id 34922044 lock_mode X waiting
+Record lock, heap no 97 PHYSICAL RECORD: n_fields 2; compact format; info bits 0
+ 0: len 30; hex 34663561356165332d633261622d346133662d396162612d656431656261; asc 4f5a5ae3-c2ab-4a3f-9aba-ed1eba; (total 36 bytes);
+ 1: len 8; hex 8000000000012a7d; asc       *};;
+
+2021-07-01T03:19:45.487766Z 3183817 [Note] InnoDB: *** WE ROLL BACK TRANSACTION (2)
+
+2021-07-01T15:30:38.263956Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-01T15:30:38.278165Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210701 23:30:38
+2021-07-01T19:02:32.090233Z 3190532 [Note] Aborted connection 3190532 to db: 'unconnected' user: 'xlei40' host: '10.80.80.23' (Got timeout reading communication packets)
+2021-07-02T15:30:41.524630Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-02T15:30:41.568336Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210702 23:30:41
+2021-07-03T15:30:50.596356Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-03T15:30:50.609277Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210703 23:30:50
+2021-07-03T16:00:03.524224Z 3233885 [ERROR] Event Scheduler: [system@%][lms.remove_obsoleted_rows] Table 'lms.tbl_lessor_calculation_excel' doesn't exist
+2021-07-03T16:00:03.524256Z 3233885 [Note] Event Scheduler: [system@%].[lms.remove_obsoleted_rows] event execution failed.
+2021-07-04T15:30:35.807445Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-04T15:30:35.824929Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210704 23:30:35
+2021-07-05T15:30:35.971415Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-05T15:30:35.985610Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210705 23:30:35
+2021-07-06T15:30:38.586467Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-06T15:30:38.601472Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210706 23:30:38
+2021-07-07T15:30:41.681719Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-07T15:30:41.696753Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210707 23:30:41
+2021-07-08T15:30:39.499425Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-08T15:30:39.533422Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210708 23:30:39
+2021-07-09T01:57:20.269676Z 3340467 [Note] Access denied for user 'root'@'localhost' (using password: NO)
+2021-07-09T15:30:47.034667Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-09T15:30:47.057058Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210709 23:30:47
+2021-07-10T15:30:34.705081Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-10T15:30:34.730249Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210710 23:30:34
+2021-07-10T16:00:02.809508Z 3371612 [ERROR] Event Scheduler: [system@%][lms.remove_obsoleted_rows] Table 'lms.tbl_lessor_calculation_excel' doesn't exist
+2021-07-10T16:00:02.809539Z 3371612 [Note] Event Scheduler: [system@%].[lms.remove_obsoleted_rows] event execution failed.
+2021-07-11T15:30:41.331900Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-11T15:30:41.356267Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210711 23:30:41
+2021-07-12T15:30:38.030892Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-12T15:30:38.058763Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210712 23:30:38
+2021-07-13T05:53:53.793968Z 3422019 [Note] InnoDB: Transactions deadlock detected, dumping detailed information.
+2021-07-13T05:53:53.801996Z 3422019 [Note] InnoDB: 
+*** (1) TRANSACTION:
+
+TRANSACTION 37110568, ACTIVE 0 sec starting index read
+mysql tables in use 1, locked 1
+LOCK WAIT 954 lock struct(s), heap size 90320, 51001 row lock(s)
+MySQL thread id 3422114, OS thread handle 140576387217152, query id 397075800 10.80.41.56 lmsdata updating
+UPDATE tbl_scheduler_tasks SET CurrentStatus = 'Running',Enabled='0',Progress='0',LastUpdateTime=NOW() WHERE TaskID='208' AND Session='85a46e74-eab3-41d4-b474-1781fdaa94bf'
+2021-07-13T05:53:53.802124Z 3422019 [Note] InnoDB: *** (1) WAITING FOR THIS LOCK TO BE GRANTED:
+
+RECORD LOCKS space id 216 page no 1407 n bits 72 index PRIMARY of table `lms`.`tbl_scheduler_tasks` trx id 37110568 lock_mode X locks rec but not gap waiting
+Record lock, heap no 2 PHYSICAL RECORD: n_fields 14; compact format; info bits 0
+ 0: len 8; hex 8000000000012bbf; asc       + ;;
+ 1: len 6; hex 000002364324; asc    6C$;;
+ 2: len 7; hex a4000000240110; asc     $  ;;
+ 3: len 4; hex 800000d0; asc     ;;
+ 4: len 22; hex 40407461736b47656e65726174655265706f72744040; asc @@taskGenerateReport@@;;
+ 5: len 1; hex 81; asc  ;;
+ 6: len 5; hex 4164486f74; asc AdHot;;
+ 7: len 4; hex 49646c65; asc Idle;;
+ 8: len 0; hex ; asc ;;
+ 9: len 30; hex 7b22636f6d70616e79436f6465223a5b2243323138222c2243323139222c; asc {"companyCode":["C218","C219",; (total 491 bytes);
+ 10: len 4; hex 80000000; asc     ;;
+ 11: len 30; hex 38356134366537342d656162332d343164342d623437342d313738316664; asc 85a46e74-eab3-41d4-b474-1781fd; (total 36 bytes);
+ 12: len 8; hex 3830303434373237; asc 80044727;;
+ 13: len 5; hex 99aa1add74; asc     t;;
+
+2021-07-13T05:53:53.804663Z 3422019 [Note] InnoDB: *** (2) TRANSACTION:
+
+TRANSACTION 37110569, ACTIVE 0 sec starting index read
+mysql tables in use 1, locked 1
+953 lock struct(s), heap size 90320, 51000 row lock(s)
+MySQL thread id 3422019, OS thread handle 140576379918080, query id 397075801 10.80.41.57 lmsdata updating
+UPDATE tbl_scheduler_tasks SET CurrentStatus = 'Running',Enabled='0',Progress='0',LastUpdateTime=NOW() WHERE TaskID='208' AND Session='85a46e74-eab3-41d4-b474-1781fdaa94bf'
+2021-07-13T05:53:53.804759Z 3422019 [Note] InnoDB: *** (2) HOLDS THE LOCK(S):
+
+RECORD LOCKS space id 216 page no 1407 n bits 72 index PRIMARY of table `lms`.`tbl_scheduler_tasks` trx id 37110569 lock mode S locks rec but not gap
+Record lock, heap no 2 PHYSICAL RECORD: n_fields 14; compact format; info bits 0
+ 0: len 8; hex 8000000000012bbf; asc       + ;;
+ 1: len 6; hex 000002364324; asc    6C$;;
+ 2: len 7; hex a4000000240110; asc     $  ;;
+ 3: len 4; hex 800000d0; asc     ;;
+ 4: len 22; hex 40407461736b47656e65726174655265706f72744040; asc @@taskGenerateReport@@;;
+ 5: len 1; hex 81; asc  ;;
+ 6: len 5; hex 4164486f74; asc AdHot;;
+ 7: len 4; hex 49646c65; asc Idle;;
+ 8: len 0; hex ; asc ;;
+ 9: len 30; hex 7b22636f6d70616e79436f6465223a5b2243323138222c2243323139222c; asc {"companyCode":["C218","C219",; (total 491 bytes);
+ 10: len 4; hex 80000000; asc     ;;
+ 11: len 30; hex 38356134366537342d656162332d343164342d623437342d313738316664; asc 85a46e74-eab3-41d4-b474-1781fd; (total 36 bytes);
+ 12: len 8; hex 3830303434373237; asc 80044727;;
+ 13: len 5; hex 99aa1add74; asc     t;;
+
+2021-07-13T05:53:53.807102Z 3422019 [Note] InnoDB: *** (2) WAITING FOR THIS LOCK TO BE GRANTED:
+
+RECORD LOCKS space id 216 page no 896 n bits 288 index IX_tbl_Scheduler_Tasks_Session of table `lms`.`tbl_scheduler_tasks` trx id 37110569 lock_mode X waiting
+Record lock, heap no 222 PHYSICAL RECORD: n_fields 2; compact format; info bits 0
+ 0: len 30; hex 38356134366537342d656162332d343164342d623437342d313738316664; asc 85a46e74-eab3-41d4-b474-1781fd; (total 36 bytes);
+ 1: len 8; hex 8000000000012bbf; asc       + ;;
+
+2021-07-13T05:53:53.807773Z 3422019 [Note] InnoDB: *** WE ROLL BACK TRANSACTION (2)
+
+2021-07-13T15:30:39.215779Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-13T15:30:39.237695Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210713 23:30:39
+2021-07-14T03:18:52.244448Z 3440106 [Note] Aborted connection 3440106 to db: 'lms' user: 'xlei40' host: '10.80.80.23' (Got an error reading communication packets)
+2021-07-14T03:18:52.244449Z 3440107 [Note] Aborted connection 3440107 to db: 'lms' user: 'xlei40' host: '10.80.80.23' (Got an error reading communication packets)
+2021-07-14T15:30:40.840993Z 0 [Note] InnoDB: Dumping buffer pool(s) to /data/mysql/data/ib_buffer_pool
+2021-07-14T15:30:40.866416Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 210714 23:30:40
+2021-07-15T08:27:24.389844Z 3464140 [Note] Access denied for user 'root'@'localhost' (using password: NO)
