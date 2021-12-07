@@ -2,7 +2,7 @@
 ```shell
 . webei/venv/bin/activate  #设置环境
 python webei/test.py  #初始化数据表(sqlite)
-python webei/app.py  #启动
+cd webei && python app.py  #启动
 ```
 然后浏览器访问: http://127.0.0.1:6121
 默认账号密码为: ddcw/123456
