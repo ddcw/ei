@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/echarts.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-3.1.1/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/datatables.min.css"/>
+    <script type="text/javascript" src="/static/js/datatables.min.js"></script>
+<link rel="stylesheet" href="/static/css/index1.css">
+    <title>{{ instance_name }}</title>
+</head>
+<body>
+
+
+<div class="container mt-3">
+  <ul class="nav nav-pills  navbar-dark bg-dark" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link " data-bs-toggle="pill" href="#instance">实例概览</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="pill" href="#db">数据库概览</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#user">用户概览</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#opt">优化</a>
+    </li>   
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#processlist">processlist</a>
+    </li>       
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#lock1">锁</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#innodb">innodb</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#variables">参数</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#ms">主从状态</a>
+    </li>
+  </ul>
+
+<div class="tab-content">
+
+	<div id="instance" class="container tab-pane fade"></br>
+
+		<table class="table table table-dark table-striped">
+			<thead>
+				<tr>
+					<th>对象</th>
+					<th>值</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>实例名(仅ei识别而已)</th>
+					<th>{{instance_name}}</th>
+				</tr>
+				<tr>
+					<th>TPS</th>
+					<th>{{tps}}</th>
+				</tr>
+				<tr>
+					<th>QPS</th>
+					<th>{{qps}}</th>
+				</tr>
+				<tr>
+					<th>总库数(不含系统库和test库)</th>
+					<th>{{db|length}}</th>
+				</tr>
+				<tr>
+					<th>总用户数量</th>
+					<th>{{users|length}}</th>
+				</tr>
+				<tr>
+					<th>总表数量(不含系统表和视图)</th>
+					<th>{{total_table_count[0][0]}}</th>
+				</tr>
+				<tr>
+					<th>总数据量(GB)(不含系统表)</th>
+					<th>{{db_total_size[0][0]}}</th>
+				</tr>
+				<tr>
+					<th>无索引的表</th>
+					<th>{{no_index|length}}</th>
+				</tr>
+				<tr>
+					<th>无主键的表</th>
+					<th>{{primary_key|length}}</th>
+				</tr>
+				<tr>
+					<th>重复索引</th>
+					<th>{{rpl_index|length}}</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+	<div id="opt" class="container tab-pane fade">
+
+<!-- 无主键的表 -->
+	{% if primary_key %}
+		<table class="table table-striped" title="无主键的表">
+			<caption>无主键的表</caption>
+			<thead>
+				<tr>
+					<th>库名</th>
+					<th>表名</th>
+				</tr>
+			</thead>
+			<tbody>
+	{% for item_pri in primary_key %}
+			<tr>
+				<td>{{item_pri[0]}}</td>
+				<td>{{item_pri[1]}}</td>
+			</tr>
+	{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+
+<!-- 重复索引的表 -->
+	{% if rpl_index %}
+		<table class="table table-striped" title="重复索引的表">
+			<caption>重复索引的表</caption>
+                        <thead>
+                                <tr>
+                                        <th>库名</th>
+                                        <th>表名</th>
+                                        <th>索引名</th>
+                                        <th>索引名</th>
+                                        <th>重复字段</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+        {% for item_ind in rpl_index %}
+                        <tr>
+                                <td>{{item_ind[0]}}</td>
+                                <td>{{item_ind[1]}}</td>
+                                <td>{{item_ind[2]}}</td>
+                                <td>{{item_ind[3]}}</td>
+                                <td>{{item_ind[4]}}</td>
+                        </tr>
+        {% endfor %}
+                        </tbody>
+                </table>
+        {% endif %}
+
+
+<!-- 无索引的表 -->
+        {% if no_index %}
+                <table class="table table-striped" title="无索引的表">
+                        <caption>无索引的表</caption>
+                        <thead>
+                                <tr>
+                                        <th>库名</th>
+                                        <th>表名</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+        {% for item_noi in no_index %}
+                        <tr>
+                                <td>{{item_noi[0]}}</td>
+                                <td>{{item_noi[1]}}</td>
+                        </tr>
+        {% endfor %}
+                        </tbody>
+                </table>
+        {% endif %}
+
+
+<br></div>
+
+
+
+
+	<div id="lock1" class="container tab-pane fade">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>requesting_trx_id</th>
+					<th>requested_lock_id</th>
+					<th>blocking_trx_id</th>
+					<th>blocking_lock_id</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item_lock in db_lock %}
+					<tr>
+						<td>{{item_lock[0]}}</td>
+						<td>{{item_lock[1]}}</td>
+						<td>{{item_lock[2]}}</td>
+						<td>{{item_lock[3]}}</td>
+					</tr>
+				{% else %}
+					<tr><td><p class="text-success">无锁</p></td></tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+
+
+	<div id="db" class="container tab-pane fade">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>数据库名</th>
+					<th>数据量大小(MB)</th>
+					<th>索引大小(MB)</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item_db in db %}
+					<tr>
+						<td>{{item_db[0]}}</td>
+						<td>{{item_db[1]}}</td>
+						<td>{{item_db[2]}}</td>
+					</tr>
+				{% else %}
+					ERROR
+				{% endfor %}
+			</tbody>
+		</table>
+		
+	</div>
+
+
+	<div id="user" class="container tab-pane fade">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>USER</th>
+					<th>HOST</th>
+					<th>密码插件</th>
+					<th>最后一次修改密码时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for user in users %}
+					<tr>
+						<td>{{user[0]}}</td>
+						<td>{{user[1]}}</td>
+						<td>{{user[2]}}</td>
+						<td>{{user[3]}}</td>
+					</tr>
+				{% else %}
+					ERROR
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+
+	<div id="ms" class="container tab-pane fade"> 暂不支持</div>
+
+
+	<div id="processlist" class="container tab-pane fade">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>USER</th>
+					<th>HOST</th>
+					<th>DB</th>
+					<th>COMMAND</th>
+					<th>执行时间</th>
+					<th>状态</th>
+					<th>SQL语句</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for pro in processlist %}
+					<tr>
+						<td>{{pro[0]}}</td>
+						<td>{{pro[1]}}</td>
+						<td>{{pro[2]}}</td>
+						<td>{{pro[3]}}</td>
+						<td>{{pro[4]}}</td>
+						<td>{{pro[5]}}</td>
+						<td>{{pro[6]}}</td>
+						<td>{{pro[7]}}</td>
+						<td><a href="#">KILL</td>
+					</tr>
+				{% else %}
+					ERROR
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+
+	<div id="variables" class="container tab-pane fade">
+<table class="table table-striped table-hover table-responsive "  id="var_table1">
+		<thead>
+      <tr>
+        <th>参数</th>
+        <th data-sortable="true">值</th>
+      </tr>
+    </thead>
+
+	<tbody>
+	{% for var in mysql_var %}
+		<tr>
+		<td>{{var[0]}}</td>
+		<td>{{var[1]}}</td>
+		</tr>
+	{% else %}
+		ERROR
+	{% endfor %}
+	</tbody>
+ </table>
+	</div>
+	
+
+	<div id="innodb" class="container tab-pane fade">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>KEY</th>
+					<th>Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item_innodb in innodb %}
+					<tr>
+						<td>{{item_innodb[1]}}</td>
+						<td>{{item_innodb[2]}}</td>
+					</tr>
+				{% else %}
+					ERROR
+				{% endfor %}
+			<tbody>
+		<table>
+	</div>
+
+
+</div>
+
+</div>
+
+<footer hidden>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p align="center">
+                     ^_^
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

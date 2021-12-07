@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/echarts.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-3.1.1/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="/static/css/index1.css">
+    <script>
+
+function ck(a){
+    if(a==1){
+        document.getElementById("qx").checked=true
+        document.getElementById("qbx").checked=false
+        for(var i=0;i<document.getElementsByName("del_instance").length;i++){
+            document.getElementsByName("del_instance")[i].checked=true;
+        }
+    }
+    else if(a==0){
+        document.getElementById("qbx").checked=true;
+        document.getElementById("qx").checked=false
+        for(var i=0;i<document.getElementsByName("del_instance").length;i++){
+            document.getElementsByName("del_instance")[i].checked=false;
+        }
+    }
+
+}
+
+function ck3(a){ 
+    if(a==1){
+        document.getElementById("qx3").checked=true
+        document.getElementById("qbx3").checked=false
+        for(var i=0;i<document.getElementsByName("del_instance_host").length;i++){
+            document.getElementsByName("del_instance_host")[i].checked=true;
+        }
+    }
+    else if(a==0){
+        document.getElementById("qbx3").checked=true;
+        document.getElementById("qx3").checked=false
+        for(var i=0;i<document.getElementsByName("del_instance_host").length;i++){
+            document.getElementsByName("del_instance_host")[i].checked=false;
+        }
+    }
+
+}
+
+        $(document).ready(function () {
+            $("#qx").click(function () {
+                $("[name='del_instance']").prop('checked',$(this).is(':checked'))
+                $("#qbx").prop('checked',false)
+            })
+            $("#qbx").click(function () {
+                $("[name='del_instance']").prop('checked',false)
+                $("#qx").prop('checked',false)
+            })
+        })
+
+        $(document).ready(function () {
+            $("#qx3").click(function () {
+                $("[name='del_instance_host']").prop('checked',$(this).is(':checked'))
+                $("#qbx3").prop('checked',false)
+            })
+            $("#qbx3").click(function () {
+                $("[name='del_instance_host']").prop('checked',false)
+                $("#qx3").prop('checked',false)
+            })
+        })
+
+
+    </script>
+    <title>DDCW--{{username}}</title>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+
+{% if message %}
+<script type="text/javascript">
+	alert({{message}})
+</script>
+{% endif %}
+        
+<div class="container mt-3">
+  <ul class="nav nav-pills" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="pill" href="#home">首页</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#db1">数据库实例</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#host1">主机实例</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#app1">应用实例</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#tool1">工具</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#install1">部署/安装</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#task1">任务</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#set1">设置</a>
+    </li>
+{% if username %}
+	<li class="mt-3">
+		<li><p>{{ username }}</p></li>
+		<li><p>|</p></li>
+		<li><a href="/logout">注销</a>
+	</li>
+
+{% else %}
+	<li class="mt-3">
+      		<li><a href="/register">注册</a>
+		<li><p>|</p></li>
+      		<li><a href="/login"> 登录</a>
+	</li>
+{% endif %}
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+	<div class="row">
+	<div id="db-echart" class="col-md-6" style="width: 600px;height:400px;"></div>
+	<div id="host-echart" class="col-md-6" style="width: 600px;height:400px;"></div>
+	<div class="col-md-6 text-center"><p>数据库汇总信息</p></div>
+	<div class="col-md-6 text-center"><p>主机汇总信息</p></div>
+	<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('db-echart'));
+        var myChart2 = echarts.init(document.getElementById('host-echart'));
+ 
+        // 指定图表的配置项和数据
+        var option = {
+                series : [
+                    {
+                        name: '数据库汇总信息',
+                        type: 'pie',
+                        radius: '90%',
+			color:['#7FFFD4', '#FFFF00', '#A52A2A', '#C0C0C0'],
+                        data:[
+                            {value:{{db_norm}}, name:'正常',url:'db?type=normal'},
+                            {value:{{db_warn}}, name:'告警',url:'db?type=warn'},
+                            {value:{{db_error}}, name:'异常',url:'db?type=error'},
+                            {value:{{db_un}}, name:'未知',url:'db?type=unknown'}
+                        ]
+                    }
+                ]
+            };
+	var option2 = {
+                series : [
+                    {
+                        name: '主机汇总信息',
+                        type: 'pie',
+                        radius: '90%',
+			color:['#7FFFD4', '#FFFF00', '#A52A2A', '#C0C0C0'],
+                        data:[
+                            {value:{{host_norm}}, name:'正常',url:'host?type=normal'},
+                            {value:{{host_warn}}, name:'告警',url:'host?type=warn'},
+                            {value:{{host_error}}, name:'异常',url:'host?type=error'},
+                            {value:{{host_un}}, name:'未知',url:'host?type=unknown'}
+                        ]
+                    }
+                ]
+            };
+ 
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+	myChart.on('click', function(param) { var url = param.data.url; window.location.href = url;});
+        myChart2.setOption(option2);
+	myChart2.on('click', function(param) { var url = param.data.url; window.location.href = url;});
+    </script>
+	</div>
+    </div>
+    <div id="db1" class="container tab-pane fade"><br>
+	<div><ul><li><h3>数据库实例</h3></li><li><a href="/static/add_mysql.html">添加数据库实例</a></li><li><a data-bs-toggle="modal" href="#deldb2">删除数据库实例</a></li></ul></div>
+	<div class="row">
+{% for db in db_list %}
+	<div class="col-md-4 card bg-dark text-white" ><a  href="db/mysql?instance_name={{db[0]}}" class="text-white"><div class="card-body"><h6>{{ db[0] }}</h6><ul><li>实例类型:{{db[1]}}</li><li>IP地址:{{db[2]}}</li><li>端口:{{ db[3] }}</li><li><div>状态: 
+	{% if db[4] == 0 %} 
+		<p class="text-success" >RUNNING</p>
+	{% elif db[4] == 1 %}
+		<p class="text-warning" >WARNING</p>
+	{% elif db[4] == 2 %}
+		<p class="text-danger" >DOWN</p>
+	{% else %}
+		<p class="text-muted" >UNKNOWN</p>
+	{% endif %}
+	</div></li></ul></div></a></div>
+{% else %}
+无数据库实例
+{% endfor %}
+	</div>
+    </div>
+
+<div class="modal" id="deldb2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">删除数据库实例</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+	        <div id="ck" align="left">
+            <input type="checkbox" onclick="ck('true')" id="qx"><span onclick="ck(1)">全选</span>
+            <input type="checkbox" onclick="ck('false')" id="qbx"><span onclick="ck(0)">全不选</span>
+        </div>
+         <form action = "/deldb" method = "post">
+<p>请选择要删除的实例</p>
+	{% for db_instacne_name in db_list %}
+	<input type="checkbox" name="del_instance" value="{{db_instacne_name[0]}}">{{db_instacne_name[0]}}</br>
+	{% else %}
+	<p>无实例</>
+	{% endfor %}
+         <p><input type = "submit" value = "确认删除" /></p>
+      </form>
+
+      </div>
+
+      <!-- 模态框底部 -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    <div id="host1" class="container tab-pane fade"><br>
+	<div><ul><li><h3>主机实例</h3></li><li><a href="/static/add_host.html">添加主机实例</a></li><li><a data-bs-toggle="modal"  href="#delhost">删除主机实例</a></li></ul></div>
+      <div class="row"> 
+
+{% for host in host_list %}
+	<div class="col-md-4 card bg-dark text-white" ><a  href="host?instance_name={{host[0]}}" class="text-white"><div class="card-body"><h6>{{host[0]}}</h6><ul><li>操作系统类型:{{host[1]}} {{host[2]}}</li><li>IP地址:{{host[3]}}</li><li>SSH端口:{{host[4]}}</li><li><div>状态:
+	{% if host[5] == 0 %} 
+		<p class="text-success" >RUNNING</p>
+	{% elif host[5] == 1 %}
+		<p class="text-warning" >WARNING</p>
+	{% elif host[5] == 2 %}
+		<p class="text-danger" >DOWN</p>
+	{% else %}
+		<p class="text-muted" >UNKNOWN</p>
+	{% endif %}
+	</div></li></ul></div></a></div>
+{% else %}
+	
+	无主机实例
+{% endfor %}
+
+	</div>
+    </div>
+
+<div class="modal" id="delhost">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">删除数据库实例</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+                <div id="ck3" align="left">
+            <input type="checkbox" onclick="ck('true')" id="qx3"><span onclick="ck3(1)">全选</span>
+            <input type="checkbox" onclick="ck('false')" id="qbx3"><span onclick="ck3(0)">全不选</span>
+        </div>
+         <form action = "/delhost" method = "post">
+<p>请选择要删除的主机实例(仅删除ei配置,并不是物理上删除主机)</p>
+        {% for host_instacne_name in host_list %}
+        <input type="checkbox" name="del_instance_host" value="{{host_instacne_name[0]}}">{{host_instacne_name[0]}}</br>
+        {% else %}
+        <p>无实例</>
+        {% endfor %}
+         <p><input type = "submit" value = "确认删除" /></p>
+      </form>
+
+      </div>
+
+      <!-- 模态框底部 -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    <div id="app1" class="container tab-pane fade"><br>
+      <h3>应用实例</h3>
+      <p>自个整</p>
+    </div>
+    <div id="tool1" class="container tab-pane fade"><br>
+      <h3>工具</h3>
+	<div class="row"> 
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>生成二维码</h4><p>仅支持QR-CODE</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>主机巡检</h4><p>仅支持巡检主机列表里的</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>数据库巡检</h4><p>仅支持巡检数据库实例列表里的数据空</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>生成随机密码</h4><p>生成任意长度的字符串</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>base64加密/解密</h4><p>对字符串做base64加密或者解密</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>生成UUID</h4><p>生成随机的UUID</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>CPU压测</h4><p>使用sysbench压测cpu</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>内存压测</h4><p>使用sysbench压测内存</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>IO压测</h4><p>使用sysbench压测IO</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>数据库压测</h4><p>使用sysbench压测数据库OLTP</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>mysql一致性对比</h4><p>对比mysql数据一致性</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>TPCC</h4><p>可选tpcc-mysql或者benchmarksql</p></div></a></div>
+	</div>
+    </div>
+
+
+    <div id="install1" class="container tab-pane fade"><br>
+	<div><ul><li><h3>部署安装</h3></li><li><a href="#addinstance_script">添加自定义脚本</a></li><li><a href="#deleteinstance_script">删除自定义脚本</a></li><li><a href="#upload">上传软件包</a></li></ul></div>
+      <p class="text-secondary">TIPS: 部署进度可在任务管理处看</p>
+	<div class="row">
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>部署单机MYSQL</h4><p>支持mysql官方版本5.7, 8.0</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>部署主从MYSQL</h4><p>支持mysql官方版本5.7, 8.0, 若mysql实例未安装,会自动安装</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>部署单机REDIS</h4><p>支持redis5.0 6.0</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>部署单机REDIS集群</h4><p>支持redis5.0 6.0</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>部署单机ORACLE</h4><p>支持oracle 19c</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>安装单机kafka</h4><p>安装kafka</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>安装单机pg</h4><p>安装pg</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>安装php</h4><p>安装php</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>安装nginx</h4><p>安装nginx</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>安装zabbix</h4><p>安装zabbix</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>运行自定义脚本</h4><p>支持自定义脚本运行</p></div></a></div>
+		
+	</div>
+    </div>
+
+
+    <div id="task1" class="container tab-pane fade"><br>
+      <h3>任务</h3>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>任务名</th>
+	<th>任务对象</th>
+        <th>任务简述</th>
+	<th>任务起止时间</th>
+        <th>任务进度</th>
+	<th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>add-mysql-single-20211223</td>
+	<td>127.1.1.1</td>
+        <td>部署mysql单机</td>
+        <td>2021-12-03 12:32:12 -- 2021-12-03 12:32:14</td>
+	<td></div>已完成90%</td>
+	<td><a href="#add-mysql-single-20211223">详情</a> <a href="#add-mysql-single-20211223">停止</td>
+      </tr>
+      <tr>
+        <td>add-mysql-single-20211223</td>
+	<td>127.1.1.1</td>
+        <td>部署mysql单机</td>
+        <td>2021-12-03 12:32:12 -- 2021-12-03 12:32:14</td>
+	<td></div>已完成100%</td>
+	<td><a href="#add-mysql-single-20211223">详情</a></td>
+      </tr>
+      <tr>
+        <td>add-mysql-single-20211223</td>
+	<td>127.1.1.1</td>
+        <td>部署mysql单机</td>
+        <td>2021-12-03 12:32:12 -- 2021-12-03 12:32:14</td>
+	<td></div>已完成100%</td>
+	<td><a href="#add-mysql-single-20211223">详情</a></td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+
+
+    <div id="set1" class="container tab-pane fade"><br>
+      <h3>设置</h3>
+     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"> 修改密码 </button>
+<p class="text-info">项目地址: <a href="https://www.github.com/ddcw/ei" >https://www.github.com/ddcw/ei</a></p>
+    </div>
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- 模态框头部 -->
+      <div class="modal-header">
+        <h4 class="modal-title">修改密码</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- 模态框内容 -->
+      <div class="modal-body">
+	 <form action = "/modifypassword" method = "post">
+         <p>Enter Name:</p>
+         <p>原密码:<input type = "password" name = "password_old" /></p>
+         <p>新密码:<input type = "password" name = "password_new" /></p>
+         <p><input type = "submit" value = "确认修改" /></p>
+      </form>
+
+      </div>
+
+      <!-- 模态框底部 -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+
+
+<footer hidden>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p align="center"> 
+                     ^_^ 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
