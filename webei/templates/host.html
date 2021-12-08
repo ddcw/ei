@@ -6,20 +6,11 @@
     <link rel="stylesheet" href="/static/bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <script type="text/javascript" src="/static/bootstrap-5.1.3-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="/static/js/echarts.min.js"></script>
+    <script type="text/javascript" src="/static/js/echarts-liquidfill.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery-3.1.1/jquery-3.1.1.js"></script>
     <link rel="stylesheet" href="/static/css/index1.css">
      <title>{{username}} -- {{instance_name}}</title>
 
-
-系统架构 系统版本 内核版本 CPU内存 负载 文件系统分区 用户登录情况 /proc/cpuinfo  /proc/loadavg df -P
-防火墙状态/selinux状态 systemctl status firewalld   getenforce
-系统参数/内核参数 资源限制
-运行的服务 监听的端口 lsof
-当前TOP top 10
-网络流量 /proc/net/tcp
-系统启动日志/系统登录日志 dmsg jourctl
-yum/apt/zypper源
-定时任务
 
 
 
@@ -28,12 +19,10 @@ yum/apt/zypper源
 
 {% if message %}
 <script type="text/javascript">
-        alert({{message}})
+       alert({{message}})
 </script>
 {% endif %}
 
-{{username}}
-{{instance_name}}
 
 
 <div class="container mt-3">
@@ -66,32 +55,259 @@ yum/apt/zypper源
   <!-- Tab panes -->
   <div class="tab-content">
     <div id="home" class="container tab-pane active"><br>
-      <h3>HOME</h3>
-      <p>echart画3个球状图 显示cpu和内存和磁盘
+                <table class="table table-striped" title="重复索引的表">
+                        <caption></caption>
+                        <thead>
+                                <tr>
+                                        <th>对象</th>
+                                        <th>值</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td>主机名</td>
+                                <td>{{host_name.split("'")[1]}}</td>
+                        </tr>
+                        <tr>
+                                <td>系统架构</td>
+                                <td>{{host_platform.split("'")[1]}}</td>
+                        </tr>
+                        <tr>
+                                <td>内核版本</td>
+                                <td>{{kernel_version.split("'")[1]}}</td>
+                        </tr>
+                        <tr>
+                                <td>操作系统版本</td>
+                                <td>{{os_version}}</td>
+                        </tr>
+                        <tr>
+                                <td>CPU数量(物理数量,核心数量,线程数量)</td>
+                                <td>{{cpu_count}} = {{cpu_sock}} * {{cpu_core}} * {{cpu_thread}}</td>
+                        </tr>
+                        <tr>
+                                <td>内存大小</td>
+                                <td>{{mem_total_MB}} MB</td>
+                        </tr>
+                        <tr>
+                                <td>swap大小</td>
+                                <td>{{swap_total_MB}} MB  (swappiness={{swappiness}})</td>
+                        </tr>
+                        </tbody>
+                </table>
+<div class="row">
+<!-- cpu采样/proc/stat: 详情:https://www.kernel.org/doc/html/latest/filesystems/proc.html#miscellaneous-kernel-statistics-in-proc-stat  -->
+<div id="echartCPU" class="col-md-4" style="width: 500px;height:300px;" ></div>
+<div id="echartMEM" class="col-md-4" style="width: 500px;height:300px;" ></div>
+<div id="echartDISK" class="col-md-4" style="width: 500px;height:300px;"></div>
+</div>
+        <script>
+            var options = [{
+                series: [{
+                    type: 'liquidFill',
+                    waveAnimation: true,
+                    label: {
+                        formatter: 'CPU使用 {{cpu_p100}}%',
+                        fontSize: 20
+                    },
+                    data: [{
+                        value: {{cpu_p}}
+                    }]
+                }] },{
+                series: [{
+                    type: 'liquidFill',
+                    waveAnimation: true,
+                    label: {
+                        formatter: '内存使用 {{mem_p100}}%',
+                        fontSize: 20
+                    },
+                    data: [{
+                        value: {{mem_p}}
+                    }]
+                }]},{
+                series: [{
+                    type: 'liquidFill',
+                    waveAnimation: true,
+                    label: {
+                        formatter: ' / 目录 {{root_dir_p100}}%',
+                        fontSize: 20
+                    },
+                    data: [{
+                        value: {{root_dir_p}}
+                    }]
+                }]
+            }];
+
+            var chartCPU = echarts.init(document.getElementById('echartCPU'));
+            var chartMEM = echarts.init(document.getElementById('echartMEM'));
+            var chartDISK = echarts.init(document.getElementById('echartDISK'));
+            chartCPU.setOption(options[0]);
+            chartMEM.setOption(options[1]);
+            chartDISK.setOption(options[2]);
+
+            window.onresize = function () {
+                chartCPU.resize();
+                chartMEM.resize();
+                chartDISK.resize();
+            };
+        </script>
+	
     </div>
+
+
     <div id="resource" class="container tab-pane fade"><br>
       <h3>resource</h3>
       <p>显示系统资源:cpu内存负载 文件系统,用户, 网络
+	                <table class="table table-striped">
+                        <thead>
+                                <tr>
+                                        <th>对象</th>
+                                        <th>值</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                        <tr>
+                                                <td>系统运行时间</td>
+                                                <td>{{uptime}}(天)</td>
+                                        </tr>
+                                        <tr>
+                                                <td>CPU使用率(当前)</td>
+                                                <td>{{cpu_p100}}%</td>
+                                        </tr>
+                                        <tr>
+                                                <td>CPU总使用率(从开启算起)</td>
+                                                <td>{{cpu_p_total}}%</td>
+                                        </tr>
+                                        <tr>
+                                                <td>内存使用率</td>
+                                                <td>{{mem_p100}}%</td>
+                                        </tr>
+                                        <tr>
+                                                <td>系统负载<a href="https://www.kernel.org/doc/html/latest/filesystems/proc.html#kernel-data">(1,5,15min)</a></td>
+                                                <td>{{loadavg}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td>根目录使用率</td>
+                                                <td>{{root_dir_p100}}%</td>
+                                        </tr>
+                                        <tr>
+                                                <td><a href="https://www.kernel.org/doc/html/latest/filesystems/proc.html#id15">tcp4 sockets</a></td>
+                                                <td>{{tcp4_sockets}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td>tcp6 sockets</td>
+                                                <td>{{tcp6_sockets}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td>在线用户数量</td>
+                                                <td>{{online_users}}</td>
+                                        </tr>
+                        </tbody>
+                </table>
+
     </div>
+
+
+
     <div id="server" class="container tab-pane fade"><br>
       <h3>server</h3>
       <p>显示系统常见服务, 是否启动和是否开机自启, 比如nginx, ssh mysql, redis 
+                <table class="table table-striped">
+                        <thead>
+                                <tr>
+                                        <th>服务名字</th>
+                                        <th>在线数量</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                        <tr>
+                                                <td>MYSQL</td>
+                                                <td>{{mysql_server}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td>REDIS</td>
+                                                <td>{{redis_server}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Oracle</td>
+                                                <td>{{oracle_server}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Mongodb</td>
+                                                <td>暂不支持</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Nginx</td>
+                                                <td>{{nginx_server}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td>haproxy</td>
+                                                <td>{{haproxy_server}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td>php</td>
+                                                <td>{{php_server}}</td>
+                                        </tr>
+                        </tbody>
+                </table>
+
     </div>
+
+
+
+
     <div id="sec" class="container tab-pane fade"><br>
       <h3>防火墙selinux</h3>
       <p>显示当前的防火墙和selinux策略(后续可能会添加控制防火墙的功能)
+	<table class="table table-striped">
+                        <thead>
+                                <tr>
+                                        <th>对象</th>
+                                        <th>状态</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                        <tr>
+                                                <td>防火墙</td>
+                                                <td>{{firewalld_status.split("'")[1]}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Selinux</td>
+                                                <td>{{selinux_status.split("'")[1]}}</td>
+                                        </tr>
+                        </tbody>
+                </table>
+
     </div>
     <div id="parameter" class="container tab-pane fade"><br>
       <h3>系统参数</h3>
       <p>内核参数,资源限制参数,登录限制参数等
+                <table class="table table-striped">
+                        <thead>
+                                <tr>
+                                        <th>参数</th>
+                                        <th>值</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                {% for item_sysctl_para in sysctl_parameter %}
+                                        <tr>
+                                                <td>{{item_sysctl_para.split('=')[0]}}</td>
+                                                <td>{{item_sysctl_para.split('=')[1]}}</td>
+                                        </tr>
+                                {% else %}
+                                        <tr><td><p class="text-success">无参数(可能是没得权限)</p></td></tr>
+                                {% endfor %}
+                        </tbody>
+                </table>
+
     </div>
     <div id="yum" class="container tab-pane fade"><br>
       <h3>yum</h3>
-      <p>当前的yum/apt源信息, 可以添加源/删除不可用源
+      <p>yum仓库数量: {{yum_repo_count}} </p>
     </div>
     <div id="log" class="container tab-pane fade"><br>
       <h3>log</h3>
-      <p>系统日志dmesg 登录日志等
+      <p>系统日志dmesg 登录日志等(暂不支持,这玩意只有root才能看)</p>
     </div>
   </div>
 </div>

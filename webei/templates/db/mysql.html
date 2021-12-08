@@ -50,6 +50,7 @@
 
 	<div id="instance" class="container tab-pane fade"></br>
 
+{% if total_table_count %}
 		<table class="table table table-dark table-striped">
 			<thead>
 				<tr>
@@ -100,6 +101,9 @@
 				</tr>
 			</tbody>
 		</table>
+{% else %}
+		配置的账号密码不对
+{% endif %}
 	</div>
 
 
@@ -226,7 +230,7 @@
 						<td>{{item_db[2]}}</td>
 					</tr>
 				{% else %}
-					ERROR
+					无其他数据库(排除系统库)
 				{% endfor %}
 			</tbody>
 		</table>

@@ -325,6 +325,7 @@ def monitor_db_mysql():
 			return render_template('db/mysql.html', instance_name = instance_name, error = error, mysql_var = result_mysql_variables, processlist = result_mysql_processlist, users = result_mysql_user, db = result_mysql_db, db_lock = result_mysql_lock, innodb = result_mysql_innodb_status, primary_key = result_mysql_NO_primary_key, tps = mysql_tps, qps = mysql_qps,total_table_count = result_mysql_total_table_count, db_total_size = result_mysql_total_size, rpl_index = result_mysql_rep_index,  no_index = result_mysql_no_index )
 		except:
 			error = "error"
+			return str(instance_name) + " 该实例信息不对,账号/密码/端口/主机"
 		return render_template('db/mysql.html', instance_name = instance_name, error = error, mysql_var="aaaa")
 	return redirect('/login')
 
@@ -336,6 +337,111 @@ def monitor_host():
 	if 'username' in session:
 		instance_name=request.args.get("instance_name")
 		username = session['username']
+		sql_info = 'select host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password from ei_host where host_author = "' + username + '" and host_instance_name = "' + instance_name + '"'
+		try:
+			items = list(db.session.execute(sql_info))
+			host_host = list(items)[0][0]
+			host_port = list(items)[0][1]
+			host_ssh_username = list(items)[0][2]
+			host_ssh_password = list(items)[0][3]
+			ssh = paramiko.SSHClient()
+			ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+			ssh.connect(hostname=host_host, port=host_port, username=host_ssh_username, password=host_ssh_password)
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/head -1 /proc/stat | /usr/bin/awk '{print $2+$3+$4+$5+$6+$7+$8+$9+$(10),$5}'")
+			time.sleep(0.1)
+			cpu_b = stdout.read()
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/head -1 /proc/stat | /usr/bin/awk '{print $2+$3+$4+$5+$6+$7+$8+$9+$(10),$5}'")
+			cpu_e = stdout.read()
+			cpu_total = int(cpu_e.split()[0]) - int(cpu_b.split()[0])
+			cpu_idle = int(cpu_e.split()[1]) - int(cpu_b.split()[1])
+			cpu_p = (cpu_total - cpu_idle ) / cpu_total
+			cpu_p100 = round((cpu_total - cpu_idle ) / cpu_total * 100)
+
+
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep MemTotal /proc/meminfo | /usr/bin/awk '{print $2}'")
+			mem_total = stdout.read()
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep MemAvailable /proc/meminfo | /usr/bin/awk '{print $2}'")
+			mem_ali = stdout.read()
+			mem_p = (int(mem_total) - int(mem_ali)) / int(mem_total)
+			mem_p100 = round((int(mem_total) - int(mem_ali)) / int(mem_total) * 100)
+
+
+			#stdin, stdout, stderr = ssh.exec_command("/usr/bin/df -P / | /usr/bin/tail -n +2 | /usr/bin/awk '{sub(/%/,"") ;{print $(NF-1)}'")
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/df -P / | /usr/bin/tail -n +2 | /usr/bin/awk '{print $(NF-1)}' | /usr/bin/sed 's/%//'")
+			root_dir_p100 = float(stdout.read())
+			root_dir_p = round(float(root_dir_p100) / 100, 2)
+
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/awk '{print $1,$2,$3}' /proc/loadavg")
+			loadavg = stdout.readlines()[0].rstrip()
+
+
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/wc -l /proc/net/tcp | /usr/bin/awk '{print $1-1}'")
+			tcp4_sockets = int(stdout.read())
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/wc -l /proc/net/tcp6 | /usr/bin/awk '{print $1-1}'")
+			tcp6_sockets = int(stdout.read())
+
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/cat /proc/uptime")
+			uptime_res = stdout.read()
+			uptime = round(float(uptime_res.split()[0])/60/60/24,2)
+			cpu_p_total = round((float(uptime_res.split()[0]) - float(uptime_res.split()[1]))/float(uptime_res.split()[0])*100,3)
+
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/w | /usr/bin/tail -n +3 | /usr/bin/wc -l")
+			online_users = int(stdout.read())
+
+
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/ps -ef | /usr/bin/grep mysqld | /usr/bin/grep -v mysqld_safe | /usr/bin/grep -v grep | /usr/bin/wc -l")
+			mysql_server = int(stdout.read())
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/ps -ef | /usr/bin/grep redis-server | /usr/bin/grep -v grep | /usr/bin/wc -l")
+			redis_server = int(stdout.read())
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/ps -ef | /usr/bin/grep ora_pmon_ | /usr/bin/grep -v grep | /usr/bin/wc -l")
+			oracle_server = int(stdout.read())
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/ps -ef | /usr/bin/grep nginx | /usr/bin/grep -v grep | /usr/bin/grep master | /usr/bin/wc -l")
+			nginx_server = int(stdout.read())
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/ps -ef | /usr/bin/grep php-fpm | /usr/bin/grep -v grep | /usr/bin/grep master | /usr/bin/wc -l")
+			php_server = int(stdout.read())
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/ps -ef | /usr/bin/grep haproxy | /usr/bin/grep -v grep | /usr/bin/awk '{$1="";$2="" ; print $0}' | /usr/bin/uniq | /usr/bin/wc -l")
+			haproxy_server = int(stdout.read())
+
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep -v '^#' /etc/sysctl.conf | /usr/bin/sed '/^$/d'")
+			sysctl_parameter = stdout.readlines()
+
+
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/systemctl status firewalld >/dev/null 2>&1 && /usr/bin/echo 'ON' || /usr/bin/echo 'OFF'")
+			firewalld_status = str(stdout.read().rstrip())
+			stdin, stdout, stderr = ssh.exec_command("/usr/sbin/getenforce")
+			selinux_status = str(stdout.read().rstrip())
+
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep -ri enabled=1 /etc/yum.repos.d/  2>/dev/null | /usr/bin/wc -l")
+			yum_repo_count = int(stdout.read())
+
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/uname -m")
+			host_platform = str(stdout.read().rstrip())
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/uname -r")
+			kernel_version = str(stdout.read().rstrip())
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/cat /proc/sys/kernel/hostname")
+			host_name1 = str(stdout.read().rstrip())
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep NAME= /etc/os-release | /usr/bin/head -1")
+			os_name = str(stdout.read().rstrip())
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep VERSION= /etc/os-release | /usr/bin/head -1")
+			os_version1 = str(stdout.read().rstrip())
+			os_version = os_name.split('"')[1] + " " + os_version1.split('"')[1]
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/lscpu  | /usr/bin/grep 'Socket(s)' | /usr/bin/awk '{print $NF}'")
+			cpu_sock = int(stdout.read().rstrip())
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/lscpu  | /usr/bin/grep 'Core(s)' | /usr/bin/awk '{print $NF}'")
+			cpu_core = int(stdout.read().rstrip())
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/lscpu  | /usr/bin/grep 'Thread(s)' | /usr/bin/awk '{print $NF}'")
+			cpu_thread = int(stdout.read().rstrip())
+			cpu_count = cpu_sock * cpu_core * cpu_thread
+			mem_total_MB = round( int(mem_total) / 1024 , 1 )
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep SwapTotal /proc/meminfo | /usr/bin/awk '{print $2}'")
+			swap_total = int(stdout.read())
+			swap_total_MB = round( swap_total / 1024 , 1 ) 
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/cat /proc/sys/vm/swappiness")
+			swappiness = int(stdout.read())
+
+			return render_template('host.html',username=username, instance_name=instance_name, cpu_p = cpu_p, cpu_p100 = cpu_p100, mem_p = mem_p, mem_p100 = mem_p100, root_dir_p = root_dir_p, root_dir_p100 = root_dir_p100, loadavg = loadavg, tcp4_sockets = tcp4_sockets, tcp6_sockets = tcp6_sockets, uptime = uptime, cpu_p_total = cpu_p_total, online_users = online_users , mysql_server = mysql_server, redis_server = redis_server, oracle_server = oracle_server, nginx_server = nginx_server, php_server = php_server, haproxy_server = haproxy_server, sysctl_parameter = sysctl_parameter, firewalld_status = firewalld_status, selinux_status = selinux_status, yum_repo_count = yum_repo_count, host_platform = host_platform, kernel_version = kernel_version, host_name = host_name1, os_version = os_version, cpu_sock = cpu_sock, cpu_core = cpu_core, cpu_thread = cpu_thread, cpu_count = cpu_count, mem_total_MB = mem_total_MB, swap_total_MB = swap_total_MB, swappiness = swappiness)
+		except:
+			return "失败,自己慢慢排查, 可能是实例有问题,也可能是连接有问题, 反正就是ei里面记录的账号问题"
 		return render_template('host.html',username=username, instance_name=instance_name)
 	return redirect('/login')
 	
