@@ -7,11 +7,14 @@ from flask_sqlalchemy import SQLAlchemy
 import sqlite3
 from flask import g
 from flask_sockets import Sockets
+from flask_socketio import send, emit
 import time
 import datetime
 import random
 import logging
 import pymysql
+from flask_apscheduler import APScheduler
+from threading import Lock
 
 DATABASE="ei.db"
 
@@ -27,12 +30,60 @@ EI_WEB_ADDRESS = config.get('ei','address')
 EI_WEB_DEBUG = config.get('ei','debug')
 
 app = Flask(__name__)
-sockets = Sockets(app)
+scheduler = APScheduler()
+scheduler.init_app(app)
+scheduler.start()
+#sockets = Sockets(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///ei.db'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 app.secret_key = "20210608 1533 6121"
 #app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)
 db = SQLAlchemy(app)
+
+socketio = SocketIO(app,cors_allowed_origins="*")
+thread = None
+thread_lock = Lock()
+
+@socketio.on('message')
+def handle_message(data):
+	print('received message: ' + data)
+	emit('my_response',str(time.asctime(time.localtime(time.time()))))
+
+#	while True:
+#		emit('my_response',str(time.asctime(time.localtime(time.time()))))
+#		time.sleep(1)
+#	
+#
+#@socketio.on('json')
+#def handle_json(json):
+#	print('received json2: ' + str(json))
+#
+#@socketio.on('my event')
+#def handle_my_custom_event(json):
+#	print('received json3: ' + str(json))
+#	send(" i know")
+#
+#@socketio.on('my event', namespace='/testsio')
+#def handle_my_custom_namespace_event(json):
+#	print('received json4: ' + str(json))
+#	send("test 4")
+#
+@socketio.on('evt1')
+def evt1(message):
+	print('evt1:    ',str(message))
+	#emit('my_response','aaaaaaaa')
+
+
+	
+
+
+@app.route('/newterminal')
+def newterminnal():
+	return app.send_static_file('newterminal.html')
+
+@app.route('/testsio')
+def testsio():
+	return render_template('testso.html')
 
 class User(db.Model):
 	__tablename__ = 'user'
@@ -46,7 +97,7 @@ class User(db.Model):
 def index():
 	if 'username' in session:
 		username = session['username']
-		sql_db_instance = 'select db_instance_name, db_type, db_host, db_port, status from ei_db where db_author = "' + username + '"'
+		sql_db_instance = 'select db_instance_name, db_type, db_host, db_port, status,db_version from ei_db where db_author = "' + username + '"'
 		sql_host_instance = 'select host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,status from ei_host where host_author = "' + username + '"'
 		try:
 			items_db = db.session.execute(sql_db_instance)
@@ -72,12 +123,77 @@ def default_index():
 	return redirect(url_for('index'))
 
 
-@sockets.route('/echo')
-def echo_socket(ws):
-	while not ws.closed:
-		now = datetime.datetime.now().isoformat() + 'Z'
-		ws.send(now)
-		time.sleep(1)
+@scheduler.task('interval', id='set_db_instacne_status', seconds=120, misfire_grace_time=900)
+def set_db_instacne_status():
+	localtime = time.asctime(time.localtime(time.time()))
+	sql_db_instacne = 'select db_instance_name,db_host,db_port,db_user,db_password from ei_db where db_type = "mysql"'
+	try:
+		items_db = db.session.execute(sql_db_instacne)
+		for instance_db in items_db:
+			try:
+				db_instance_name = instance_db[0]
+				db_host = instance_db[1]
+				db_port = instance_db[2]
+				db_user = instance_db[3]
+				db_password = instance_db[4]
+				conn_mysql = pymysql.connect(host=db_host, port=db_port, user=db_user, passwd=db_password)
+				cursor_mysql = conn_mysql.cursor()
+				cursor_mysql.execute("select version()")
+				db_version = cursor_mysql.fetchall()
+				cursor_mysql.close()
+				conn_mysql.close()
+				sql_update = 'update ei_db set db_version = "{db_version}",status={status} where db_instance_name = "{db_instance_name}" and db_host = "{db_host}" and db_port = {db_port};'.format(db_version=db_version[0][0],status=0,db_instance_name=db_instance_name,db_host=db_host,db_port=db_port)
+				try:
+					update_db_result = db.session.execute(sql_update)
+					db.session.execute("commit")
+				except:
+					print("更新状态失败: ",db_instance_name)
+			except:
+				print(db_instance_name,db_host," 连接失败")
+				sql_update_2 = 'update ei_db set status={status} where db_instance_name = "{db_instance_name}" and db_host = "{db_host}" and db_port = {db_port};'.format(status=2,db_instance_name=db_instance_name,db_host=db_host,db_port=db_port)
+				update_db_result = db.session.execute(sql_update_2)
+				db.session.execute("commit")
+	except:
+		print("执行任务set_db_instacne_status失败, (部分失败或者全部失败)",localtime)
+
+
+@scheduler.task('interval', id='set_host_instacne_status', seconds=180, misfire_grace_time=900)
+def set_host_instacne_status():
+	return "暂时关闭定时任务功能"
+	localtime = time.asctime(time.localtime(time.time()))
+	sql_host_instance = 'select host_instance_name,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password from ei_host ;'
+	try:
+		items_host = db.session.execute(sql_host_instance)
+		for instance_host in items_host:
+			try:
+				host_instance_name = instance_host[0]
+				host_ssh_ip = instance_host[1]
+				host_ssh_port = instance_host[2]
+				host_ssh_username = instance_host[3]
+				host_ssh_password = instance_host[4]
+				ssh = paramiko.SSHClient()
+				ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+				ssh.connect(hostname=host_ssh_ip, port=host_ssh_port, username=host_ssh_username, password=host_ssh_password)
+				stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep NAME= /etc/os-release | /usr/bin/head -1")
+				os_name = str(stdout.read().rstrip()).split('"')[1]
+				stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep VERSION= /etc/os-release | /usr/bin/head -1")
+				os_version = str(stdout.read().rstrip()).split('"')[1]
+				ssh.close()
+				sql_update = 'update ei_host set host_type="{host_type}",host_version="{host_version}",status={status} where host_instance_name="{host_instance_name}" and host_ssh_ip="{host_ssh_ip}" and host_ssh_port={host_ssh_port} and host_ssh_username="{host_ssh_username}";'.format(host_type=os_name, host_version=os_version, status=0, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, host_ssh_port=host_ssh_port, host_ssh_username=host_ssh_username)
+				try:
+					db.session.execute(sql_update)
+					db.session.execute("commit")
+				except:
+					print("更新失败: ", sql_update)
+			except:
+				print("连接失败: ", host_instance_name)
+				sql_update_2 = 'update ei_host set status={status} where host_instance_name="{host_instance_name}" and host_ssh_ip="{host_ssh_ip}" and host_ssh_port={host_ssh_port} and host_ssh_username="{host_ssh_username}";'.format(status=2, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, host_ssh_port=host_ssh_port, host_ssh_username=host_ssh_username)
+				db.session.execute(sql_update_2)
+				db.session.execute("commit")
+	except:
+		print("JOB set_host_instacne_status 失败, 原因:部分主机信息不对,或者本地sqlite库有问题")
+	#print("Time:", localtime)
+
 
 @app.route('/login',methods = ['POST','GET'])
 def login():
@@ -196,9 +312,10 @@ def add_host_instance():
 			message = "添加成功:" + instance_name
 			return redirect('/index')
 			return render_template('index.html', username = username, message = message)
-		except:
-			db.session.execute("rollback")
+		except Exception as e:
+			#db.session.execute("rollback")
 			error = "添加失败:" + instance_name
+			return str(e)
 	return redirect('/login')
 
 @app.route('/deldb', methods = ['POST','GET'])
@@ -370,6 +487,8 @@ def monitor_host():
 			stdin, stdout, stderr = ssh.exec_command("/usr/bin/df -P / | /usr/bin/tail -n +2 | /usr/bin/awk '{print $(NF-1)}' | /usr/bin/sed 's/%//'")
 			root_dir_p100 = float(stdout.read())
 			root_dir_p = round(float(root_dir_p100) / 100, 2)
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/df -PT / | /usr/bin/tail -n +2 | /usr/bin/awk '{print $2}'")
+			root_dir_type = str(stdout.read().rstrip())
 
 			stdin, stdout, stderr = ssh.exec_command("/usr/bin/awk '{print $1,$2,$3}' /proc/loadavg")
 			loadavg = stdout.readlines()[0].rstrip()
@@ -383,7 +502,7 @@ def monitor_host():
 			stdin, stdout, stderr = ssh.exec_command("/usr/bin/cat /proc/uptime")
 			uptime_res = stdout.read()
 			uptime = round(float(uptime_res.split()[0])/60/60/24,2)
-			cpu_p_total = round((float(uptime_res.split()[0]) - float(uptime_res.split()[1]))/float(uptime_res.split()[0])*100,3)
+			#cpu_p_total = round((float(uptime_res.split()[0])  - float(uptime_res.split()[1]))/float(uptime_res.split()[0])*100,3)
 
 			stdin, stdout, stderr = ssh.exec_command("/usr/bin/w | /usr/bin/tail -n +3 | /usr/bin/wc -l")
 			online_users = int(stdout.read())
@@ -432,14 +551,16 @@ def monitor_host():
 			stdin, stdout, stderr = ssh.exec_command("/usr/bin/lscpu  | /usr/bin/grep 'Thread(s)' | /usr/bin/awk '{print $NF}'")
 			cpu_thread = int(stdout.read().rstrip())
 			cpu_count = cpu_sock * cpu_core * cpu_thread
+			cpu_p_total = round((float(uptime_res.split()[0]) * cpu_count  - float(uptime_res.split()[1]))/float(uptime_res.split()[0])*100*cpu_count,3)
 			mem_total_MB = round( int(mem_total) / 1024 , 1 )
 			stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep SwapTotal /proc/meminfo | /usr/bin/awk '{print $2}'")
 			swap_total = int(stdout.read())
 			swap_total_MB = round( swap_total / 1024 , 1 ) 
 			stdin, stdout, stderr = ssh.exec_command("/usr/bin/cat /proc/sys/vm/swappiness")
 			swappiness = int(stdout.read())
+			ssh.close()
 
-			return render_template('host.html',username=username, instance_name=instance_name, cpu_p = cpu_p, cpu_p100 = cpu_p100, mem_p = mem_p, mem_p100 = mem_p100, root_dir_p = root_dir_p, root_dir_p100 = root_dir_p100, loadavg = loadavg, tcp4_sockets = tcp4_sockets, tcp6_sockets = tcp6_sockets, uptime = uptime, cpu_p_total = cpu_p_total, online_users = online_users , mysql_server = mysql_server, redis_server = redis_server, oracle_server = oracle_server, nginx_server = nginx_server, php_server = php_server, haproxy_server = haproxy_server, sysctl_parameter = sysctl_parameter, firewalld_status = firewalld_status, selinux_status = selinux_status, yum_repo_count = yum_repo_count, host_platform = host_platform, kernel_version = kernel_version, host_name = host_name1, os_version = os_version, cpu_sock = cpu_sock, cpu_core = cpu_core, cpu_thread = cpu_thread, cpu_count = cpu_count, mem_total_MB = mem_total_MB, swap_total_MB = swap_total_MB, swappiness = swappiness)
+			return render_template('host.html',username=username, instance_name=instance_name, cpu_p = cpu_p, cpu_p100 = cpu_p100, mem_p = mem_p, mem_p100 = mem_p100, root_dir_p = root_dir_p, root_dir_p100 = root_dir_p100, loadavg = loadavg, tcp4_sockets = tcp4_sockets, tcp6_sockets = tcp6_sockets, uptime = uptime, cpu_p_total = cpu_p_total, online_users = online_users , mysql_server = mysql_server, redis_server = redis_server, oracle_server = oracle_server, nginx_server = nginx_server, php_server = php_server, haproxy_server = haproxy_server, sysctl_parameter = sysctl_parameter, firewalld_status = firewalld_status, selinux_status = selinux_status, yum_repo_count = yum_repo_count, host_platform = host_platform, kernel_version = kernel_version, host_name = host_name1, os_version = os_version, cpu_sock = cpu_sock, cpu_core = cpu_core, cpu_thread = cpu_thread, cpu_count = cpu_count, mem_total_MB = mem_total_MB, swap_total_MB = swap_total_MB, swappiness = swappiness, root_dir_type = root_dir_type)
 		except:
 			return "失败,自己慢慢排查, 可能是实例有问题,也可能是连接有问题, 反正就是ei里面记录的账号问题"
 		return render_template('host.html',username=username, instance_name=instance_name)
@@ -557,7 +678,8 @@ def install_mysql_single_instance():
 
 
 if __name__ == '__main__':
-    app.run(host=EI_WEB_ADDRESS, debug=EI_WEB_DEBUG, port=EI_WEB_PORT)
+    #app.run(app, host=EI_WEB_ADDRESS, debug=EI_WEB_DEBUG, port=EI_WEB_PORT)
+    socketio.run(app, host='0.0.0.0', debug=True, port=6121)
 #if __name__ == "__main__":
 #	from gevent import pywsgi
 #	from geventwebsocket.handler import WebSocketHandler
