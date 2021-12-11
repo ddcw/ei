@@ -15,6 +15,7 @@ import logging
 import pymysql
 from flask_apscheduler import APScheduler
 from threading import Lock
+import subprocess
 
 DATABASE="ei.db"
 
@@ -40,14 +41,127 @@ app.secret_key = "20210608 1533 6121"
 #app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)
 db = SQLAlchemy(app)
 
-socketio = SocketIO(app,cors_allowed_origins="*")
+#socketio = SocketIO(app,cors_allowed_origins="*")
+socketio = SocketIO(app)
 thread = None
 thread_lock = Lock()
 
+
+def get_top_info():
+	top_pipe = os.popen('top -n 1')
+	try:
+		top_output = top_pipe.read()
+	finally:
+		top_pipe.close()
+	return top_output
+
+
+@socketio.on('connect')
+def socket_connection():
+	print("connect: ")
+
+@socketio.on('disconnect')
+def socket_connection():
+	print("disconnect: ")
+
+#@socketio.on('once1')
+def install_mysql_single(msg):
+	if 'username' in session:
+		username = session['username']
+		print("from clientaaaaaaaaaa : ",msg)
+		#emit('once_resp',"aaaaaaaaaaaa")
+		#shell_command = "/usr/bin/sh /tmp/testshell.sh"
+		shell_command = "/usr/bin/sh /tmp/MysqlInstallerByDDCW_ei_1.0.sh MYSQL_ROOT_PASSWORD={mysql_root_password} MYSQL_PORT={mysql_port} MYSQL_TAR='/tmp'".format(mysql_root_password=msg['mysql_root_password'], mysql_port=msg['mysql_port'])
+		socketio.start_background_task(target=background_thread(shell_command,username,msg['mysql_host'],msg['mysql_host_port'],msg['mysql_host_username'],msg['mysql_host_password']))
+	return  redirect(url_for('login'))
+socketio.on_event('install_mysql_single', install_mysql_single) #@socketio.on('once1') 没得用...
+
 @socketio.on('message')
 def handle_message(data):
-	print('received message: ' + data)
+	print('received message: ' + str(data))
 	emit('my_response',str(time.asctime(time.localtime(time.time()))))
+	#emit('once_resp',str(time.asctime(time.localtime(time.time()))))
+	#emit('my_response',get_top_info())
+	#shell_command = "/usr/bin/sh /tmp/getrand.sh"
+	#socketio.start_background_task(target=background_thread(shell_command))
+
+
+def background_thread(shell_command,username,host,port,user,password):
+	ssh_client = paramiko.SSHClient()
+	ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+	responce_evt = 'my_responce' + username
+	responce_evt_err = 'my_responce' + username + "error"
+	try:
+		ssh_client.connect(hostname=host, port=port, username=user, password=password)
+	except:
+		socketio.emit(responce_evt_err,"连接失败,无法执行脚本")
+		return 2
+	sshSession = ssh_client.get_transport().open_session()
+	print(shell_command)
+	shell_command = "/usr/bin/sh /tmp/testshell.sh"
+	print(shell_command)
+	sshSession.exec_command(shell_command)
+	with open("/tmp/testshell_stdout2.log",'w',1) as f:
+		while True:
+			if sshSession.recv_ready():
+				res_std_1 = bytes.decode(sshSession.recv(8))
+				f.write(res_std_1)
+				socketio.emit(responce_evt,res_std_1)
+				print(res_std_1)
+			if sshSession.recv_stderr_ready():
+				res_std_2 = bytes.decode(sshSession.recv_stderr(8))
+				f.write(res_std_2)
+				socketio.emit(responce_evt,res_std_2)
+				print(res_std_2)
+			if sshSession.exit_status_ready():
+				break
+			socketio.sleep(0.1)
+		last_std = bytes.decode(sshSession.recv(8))
+		f.write(last_std)
+	socketio.emit(responce_evt,last_std)
+	socketio.emit(responce_evt,"finished")
+	sshSession.close()
+	ssh_client.close()
+	
+
+#	while True:
+#		if sshSession.recv_ready():
+#			res_std = bytes.decode(sshSession.recv(8))
+#			print(res_std)
+#			socketio.sleep(0.1)
+#			#socketio.emit('my_responce',res_std.replace('\n','%OA"'))
+#			responce_evt = 'my_responce' + username
+#			socketio.emit(responce_evt,res_std)
+#			stdout_data.write(res_std)
+#			os.fsync(stdout_data)
+#		if sshSession.recv_stderr_ready():
+#			res_std_err = bytes.decode(sshSession.recv_stderr(8))
+#			print(res_std_err)
+#			socketio.sleep(0.1)
+#			responce_evt = 'my_responce' + username
+#			socketio.emit(responce_evt,res_std_err)
+#		if sshSession.exit_status_ready():
+#			res_std = bytes.decode(sshSession.recv(8))
+#			print(res_std)
+#			responce_evt = 'my_responce' + username
+#			socketio.emit(responce_evt,res_std)
+#			break
+#	responce_evt = 'my_responce' + username
+#	#socketio.emit(responce_evt,bytes.decode(sshSession.recv(8)))
+#	socketio.emit(responce_evt,"finished")
+#	stdout_data.close()
+#	stderr_data.close()
+	
+#	#stdin, stdout, stderr = ssh_client.exec_command(shell_command, get_pty=True)
+#	while not stdout.channel.exit_status_ready():
+#		result = stdout.readline()
+#		socketio.sleep(1)
+#		socketio.emit('once_resp',result)
+#		if stdout.channel.exit_status_ready():
+#			a = stdout.readlines()
+#			socketio.emit('once_resp',a)
+#			break
+
 
 #	while True:
 #		emit('my_response',str(time.asctime(time.localtime(time.time()))))
@@ -77,12 +191,41 @@ def evt1(message):
 	
 
 
+@app.route('/install')
+def install_byshell():
+	if 'username' in session:
+		username = session['username']
+		html = 'db/' + request.args.get('html')
+		return render_template(html,username = username)
+	return  redirect(url_for('login'))
+
+
+@app.route('/install_mysql_single',methods = ['POST','GET'])
+def install_mysql_single():
+	if 'username' in session:
+		username = session['username']
+		mysql_host = request.form['mysql_host']
+		mysql_host_port = request.form['mysql_host_port']
+		mysql_host_username = request.form['mysql_host_username']
+		mysql_host_password = request.form['mysql_host_password']
+		mysql_port = request.form['mysql_port']
+		mysql_root_password = request.form['mysql_root_password']
+		shell_command = "/usr/bin/sh /tmp/MysqlInstallerByDDCW_ei_1.0.sh MYSQL_ROOT_PASSWORD={mysql_root_password} MYSQL_PORT={mysql_port} MYSQL_TAR='/tmp'".format(mysql_root_password=mysql_root_password, mysql_port=mysql_port)
+		straa = username + mysql_host + mysql_host_port + mysql_host_password
+		socketio.start_background_task(target=background_thread(shell_command,username,mysql_host,mysql_host_port,mysql_host_username,mysql_host_password))
+		return "aa"
+	else:
+		return "aaaaaaaa"
+		return  redirect(url_for('login'))
+
 @app.route('/newterminal')
 def newterminnal():
 	return app.send_static_file('newterminal.html')
 
 @app.route('/testsio')
 def testsio():
+	#shell_command = "/usr/bin/sh /tmp/testshell.sh"
+	#socketio.start_background_task(target=background_thread(shell_command))
 	return render_template('testso.html')
 
 class User(db.Model):
@@ -114,7 +257,8 @@ def index():
 			items_db="NO DB CONFIG, you can add db"
 			items_host="NO HOST, you can add host"
 		return render_template('index.html',username=username, db_list=list(items_db), host_list=list(items_host), db_norm = db_norm, db_warn = db_warn, db_error = db_error, db_un = db_un, host_norm = host_norm, host_warn = host_warn, host_error = host_error, host_un = host_un)
-	return  redirect(url_for('login'))
+	else:
+		return  redirect(url_for('login'))
 
 @app.route('/')
 def default_index():
@@ -383,7 +527,7 @@ def monitor_db_mysql():
 			cursor_mysql = conn_mysql.cursor()
 			sql_mysql_variables = "show variables;"
 			sql_mysql_processlist = 'select ID,USER,HOST,DB,COMMAND,TIME,STATE,INFO from information_schema.processlist where command != "Sleep";'
-			sql_mysql_user = 'select user,host,plugin,password_last_changed from mysql.user;'
+			sql_mysql_user = 'select user,host,plugin,password_last_changed,password_expired from mysql.user;'
 			sql_mysql_db = 'select table_schema, concat(round(sum(data_length/1024/1024),2),"MB") as data_length_MB  , concat(round(sum(index_length/1024/1024),2),"MB") as index_length_MB from information_schema.tables where TABLE_SCHEMA not in ("test","sys","mysql","information_schema","performance_schema") group by table_schema order by 2,3;'
 			sql_mysql_lock = 'select requesting_trx_id, requested_lock_id, blocking_trx_id, blocking_lock_id from information_schema.innodb_lock_waits;'
 			sql_mysql_innodb_status = 'show engine innodb status'
@@ -558,9 +702,19 @@ def monitor_host():
 			swap_total_MB = round( swap_total / 1024 , 1 ) 
 			stdin, stdout, stderr = ssh.exec_command("/usr/bin/cat /proc/sys/vm/swappiness")
 			swappiness = int(stdout.read())
+
+			#查询端口和进程的对应关系需要root权限, 或者用其它命令
+			if host_ssh_username == "root":
+				command_process_port = '''for procnum in /proc/[0-9]* ; do for inodes in $(/usr/bin/ls -l ${procnum}/fd 2>/dev/null | /usr/bin/grep socket: | /usr/bin/awk -F [ '{print $2}' | /usr/bin/awk -F ] '{print $1}'); do PORT=$(/usr/bin/awk -v inode2="${inodes}" '{if ($10 == inode2) print $2}' /proc/net/tcp | /usr/bin/awk -F : '{print $2}'); PORT=$((0x${PORT})); if [[ ${PORT} -gt 0 ]];then /usr/bin/echo -e "${procnum##*/} ${PORT} $(/usr/bin/ls ${procnum}/fd | /usr/bin/wc -l) $(/usr/bin/cat ${procnum}/cmdline)"; fi; done; done; '''
+				stdin, stdout, stderr = ssh.exec_command(command_process_port)
+				process_port = stdout.read()
+				process_port_2 = stderr.read()
+			else:
+				process_port = None
+
 			ssh.close()
 
-			return render_template('host.html',username=username, instance_name=instance_name, cpu_p = cpu_p, cpu_p100 = cpu_p100, mem_p = mem_p, mem_p100 = mem_p100, root_dir_p = root_dir_p, root_dir_p100 = root_dir_p100, loadavg = loadavg, tcp4_sockets = tcp4_sockets, tcp6_sockets = tcp6_sockets, uptime = uptime, cpu_p_total = cpu_p_total, online_users = online_users , mysql_server = mysql_server, redis_server = redis_server, oracle_server = oracle_server, nginx_server = nginx_server, php_server = php_server, haproxy_server = haproxy_server, sysctl_parameter = sysctl_parameter, firewalld_status = firewalld_status, selinux_status = selinux_status, yum_repo_count = yum_repo_count, host_platform = host_platform, kernel_version = kernel_version, host_name = host_name1, os_version = os_version, cpu_sock = cpu_sock, cpu_core = cpu_core, cpu_thread = cpu_thread, cpu_count = cpu_count, mem_total_MB = mem_total_MB, swap_total_MB = swap_total_MB, swappiness = swappiness, root_dir_type = root_dir_type)
+			return render_template('host.html',username=username, instance_name=instance_name, cpu_p = cpu_p, cpu_p100 = cpu_p100, mem_p = mem_p, mem_p100 = mem_p100, root_dir_p = root_dir_p, root_dir_p100 = root_dir_p100, loadavg = loadavg, tcp4_sockets = tcp4_sockets, tcp6_sockets = tcp6_sockets, uptime = uptime, cpu_p_total = cpu_p_total, online_users = online_users , mysql_server = mysql_server, redis_server = redis_server, oracle_server = oracle_server, nginx_server = nginx_server, php_server = php_server, haproxy_server = haproxy_server, sysctl_parameter = sysctl_parameter, firewalld_status = firewalld_status, selinux_status = selinux_status, yum_repo_count = yum_repo_count, host_platform = host_platform, kernel_version = kernel_version, host_name = host_name1, os_version = os_version, cpu_sock = cpu_sock, cpu_core = cpu_core, cpu_thread = cpu_thread, cpu_count = cpu_count, mem_total_MB = mem_total_MB, swap_total_MB = swap_total_MB, swappiness = swappiness, root_dir_type = root_dir_type, process_port = process_port)
 		except:
 			return "失败,自己慢慢排查, 可能是实例有问题,也可能是连接有问题, 反正就是ei里面记录的账号问题"
 		return render_template('host.html',username=username, instance_name=instance_name)
