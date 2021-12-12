@@ -72,6 +72,16 @@ def install_mysql_single(msg):
 		#emit('once_resp',"aaaaaaaaaaaa")
 		#shell_command = "/usr/bin/sh /tmp/testshell.sh"
 		shell_command = "/usr/bin/sh /tmp/MysqlInstallerByDDCW_ei_1.0.sh MYSQL_ROOT_PASSWORD={mysql_root_password} MYSQL_PORT={mysql_port} MYSQL_TAR='/tmp'".format(mysql_root_password=msg['mysql_root_password'], mysql_port=msg['mysql_port'])
+		try:
+			ts = paramiko.Transport((str(msg['mysql_host']),int(msg['mysql_host_port'])))
+			ts.connect(username=str(msg['mysql_host_username']), password=str(msg['mysql_host_password']))
+			sftp = paramiko.SFTPClient.from_transport(ts)
+			sftp.put('../script/bin/MysqlInstallerByDDCW_ei_1.0.sh','/tmp/MysqlInstallerByDDCW_ei_1.0.sh')
+			sftp.put('../pack/bin/mysql-5.7.33-linux-glibc2.12-x86_64.tar.gz','/tmp/mysql-5.7.33-linux-glibc2.12-x86_64.tar.gz')
+			ts.close()
+		except Exception as  e:
+			print(str(e))
+	
 		socketio.start_background_task(target=background_thread(shell_command,username,msg['mysql_host'],msg['mysql_host_port'],msg['mysql_host_username'],msg['mysql_host_password']))
 	return  redirect(url_for('login'))
 socketio.on_event('install_mysql_single', install_mysql_single) #@socketio.on('once1') 没得用...
@@ -98,25 +108,26 @@ def background_thread(shell_command,username,host,port,user,password):
 		return 2
 	sshSession = ssh_client.get_transport().open_session()
 	print(shell_command)
-	shell_command = "/usr/bin/sh /tmp/testshell.sh"
-	print(shell_command)
 	sshSession.exec_command(shell_command)
-	with open("/tmp/testshell_stdout2.log",'w',1) as f:
+	msg_begin = "开始执行(此消息来自服务器)" + shell_command + "\n"
+	socketio.emit(responce_evt,msg_begin)
+	with open("../data/tasks/test.log",'w',1) as f:
 		while True:
 			if sshSession.recv_ready():
-				res_std_1 = bytes.decode(sshSession.recv(8))
+				res_std_1 = bytes.decode(sshSession.recv(1024))
 				f.write(res_std_1)
 				socketio.emit(responce_evt,res_std_1)
 				print(res_std_1)
 			if sshSession.recv_stderr_ready():
-				res_std_2 = bytes.decode(sshSession.recv_stderr(8))
+				res_std_2 = bytes.decode(sshSession.recv_stderr(1024))
 				f.write(res_std_2)
 				socketio.emit(responce_evt,res_std_2)
 				print(res_std_2)
 			if sshSession.exit_status_ready():
 				break
 			socketio.sleep(0.1)
-		last_std = bytes.decode(sshSession.recv(8))
+		last_std = bytes.decode(sshSession.recv(1024))
+		last_std  += bytes.decode(sshSession.recv_stderr(1024))
 		f.write(last_std)
 	socketio.emit(responce_evt,last_std)
 	socketio.emit(responce_evt,"finished")
@@ -254,6 +265,14 @@ def index():
 			host_error = list(db.session.execute('select count(host_instance_name) from ei_host where host_author = "' + username + '" and status = 2'))[0][0]
 			host_un = list(db.session.execute('select count(host_instance_name) from ei_host where host_author = "' + username + '" and status not in (0,1,2)'))[0][0]
 		except:
+			db_norm=0
+			db_warn=0
+			db_error=0
+			db_un=0
+			host_norm=0
+			host_warn=0
+			host_error=0
+			host_un=0
 			items_db="NO DB CONFIG, you can add db"
 			items_host="NO HOST, you can add host"
 		return render_template('index.html',username=username, db_list=list(items_db), host_list=list(items_host), db_norm = db_norm, db_warn = db_warn, db_error = db_error, db_un = db_un, host_norm = host_norm, host_warn = host_warn, host_error = host_error, host_un = host_un)
@@ -291,9 +310,9 @@ def set_db_instacne_status():
 					update_db_result = db.session.execute(sql_update)
 					db.session.execute("commit")
 				except:
-					print("更新状态失败: ",db_instance_name)
+					print("db 更新状态失败: ",db_instance_name, sql_update)
 			except:
-				print(db_instance_name,db_host," 连接失败")
+				print(db_instance_name,db_host," db 连接失败")
 				sql_update_2 = 'update ei_db set status={status} where db_instance_name = "{db_instance_name}" and db_host = "{db_host}" and db_port = {db_port};'.format(status=2,db_instance_name=db_instance_name,db_host=db_host,db_port=db_port)
 				update_db_result = db.session.execute(sql_update_2)
 				db.session.execute("commit")
@@ -303,7 +322,7 @@ def set_db_instacne_status():
 
 @scheduler.task('interval', id='set_host_instacne_status', seconds=180, misfire_grace_time=900)
 def set_host_instacne_status():
-	return "暂时关闭定时任务功能"
+	#return "暂时关闭定时任务功能"
 	localtime = time.asctime(time.localtime(time.time()))
 	sql_host_instance = 'select host_instance_name,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password from ei_host ;'
 	try:
@@ -325,12 +344,12 @@ def set_host_instacne_status():
 				ssh.close()
 				sql_update = 'update ei_host set host_type="{host_type}",host_version="{host_version}",status={status} where host_instance_name="{host_instance_name}" and host_ssh_ip="{host_ssh_ip}" and host_ssh_port={host_ssh_port} and host_ssh_username="{host_ssh_username}";'.format(host_type=os_name, host_version=os_version, status=0, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, host_ssh_port=host_ssh_port, host_ssh_username=host_ssh_username)
 				try:
-					db.session.execute(sql_update)
+					update_db_result = db.session.execute(sql_update)
 					db.session.execute("commit")
 				except:
-					print("更新失败: ", sql_update)
+					print("host 更新失败: ",host_instance_name , sql_update)
 			except:
-				print("连接失败: ", host_instance_name)
+				print("连接失败 host : ", host_instance_name)
 				sql_update_2 = 'update ei_host set status={status} where host_instance_name="{host_instance_name}" and host_ssh_ip="{host_ssh_ip}" and host_ssh_port={host_ssh_port} and host_ssh_username="{host_ssh_username}";'.format(status=2, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, host_ssh_port=host_ssh_port, host_ssh_username=host_ssh_username)
 				db.session.execute(sql_update_2)
 				db.session.execute("commit")
