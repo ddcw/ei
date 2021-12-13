@@ -58,31 +58,70 @@ def get_top_info():
 
 @socketio.on('connect')
 def socket_connection():
-	print("connect: ")
+	#print("someone connect: ", msg)
+	print("someone connect")
 
 @socketio.on('disconnect')
 def socket_connection():
-	print("disconnect: ")
+	#print("disconnect: ",msg)
+	print("someone disconnect")
+
+#@socketio.on('returntaskdetail')
+def returntaskdetail(msg):
+	if 'username' in session:
+		username = session['username']
+		task_name = str(msg['task_name'])
+		task_file = str(msg['taskfile'])
+		evt_name = str(msg['evtname'])
+		evt_name_err = str(msg['evtnameerror'])
+		try:
+			with open(task_file,'r') as f:
+				return_message = f.read()
+			socketio.emit(evt_name,return_message)
+		except Exception as  e:
+			 socketio.emit(evt_name_err,"有问题,应该是文件的问题,比如权限")
+	else:
+		return  redirect(url_for('login'))
+socketio.on_event('returntaskdetail', returntaskdetail)
 
 #@socketio.on('once1')
 def install_mysql_single(msg):
 	if 'username' in session:
 		username = session['username']
-		print("from clientaaaaaaaaaa : ",msg)
-		#emit('once_resp',"aaaaaaaaaaaa")
-		#shell_command = "/usr/bin/sh /tmp/testshell.sh"
-		shell_command = "/usr/bin/sh /tmp/MysqlInstallerByDDCW_ei_1.0.sh MYSQL_ROOT_PASSWORD={mysql_root_password} MYSQL_PORT={mysql_port} MYSQL_TAR='/tmp'".format(mysql_root_password=msg['mysql_root_password'], mysql_port=msg['mysql_port'])
+		current_time = time.localtime() 
+		print(username, "开始安装单机MYSQL了..")
+		task_name = "INSTALL_MYSQL_SINGLE_" + str(time.strftime('%Y%m%d_%H%M%S',current_time)) + str(random.randint(0,10000))
+		task_file = "../data/tasks/" + username + "_" + task_name + ".log"
+		host = str(msg['mysql_host'])
+		port = int(msg['mysql_host_port'])
+		host_user = str(msg['mysql_host_username'])
+		host_password = str(msg['mysql_host_password'])
+		mysql_port = int(msg['mysql_port'])
+		mysql_password = str(msg['mysql_root_password'])
+		evt_name = str(msg['evt_name'])
+		evt_name_err = str(msg['evt_name_err'])
+		script_sql =  "select script_path,script_pack_path,script_target_path from ei_script where script_share=0 and script_name='install_mysql_single'"
+		scrtpt_sql_result = list(db.session.execute(script_sql))
+		script_name = scrtpt_sql_result[0][0].split('/')[-1]
+		script_local_path = str(scrtpt_sql_result[0][0])
+		pack_name = scrtpt_sql_result[0][1].split('/')[-1]
+		pack_local_path = str(scrtpt_sql_result[0][1])
+		remote_dir = str(scrtpt_sql_result[0][2])
+		shell_command = "/usr/bin/sh {remote_dir}/{script_name} MYSQL_ROOT_PASSWORD={mysql_password} MYSQL_PORT={mysql_port} MYSQL_TAR='{remote_dir}/{pack_name}'".format(remote_dir=remote_dir,script_name=script_name,mysql_password=mysql_password,mysql_port=mysql_port,pack_name=pack_name)
+
+		#task_sql ei_task表的   sql_0 成功则执行的sql   sql_2 失败则执行的sql  主要是修改状态
+		task_sql = '''insert into ei_task(task_author,task_name,task_object,task_describe,task_shell,task_detail_path) values("{username}","{task_name}","{host}:{port}","安装mysql单机","{shell_command}","{task_file}")'''.format(username=username, task_name=task_name, host=host,port=port, host_password=host_password, shell_command=shell_command, task_file=task_file)
 		try:
-			ts = paramiko.Transport((str(msg['mysql_host']),int(msg['mysql_host_port'])))
-			ts.connect(username=str(msg['mysql_host_username']), password=str(msg['mysql_host_password']))
-			sftp = paramiko.SFTPClient.from_transport(ts)
-			sftp.put('../script/bin/MysqlInstallerByDDCW_ei_1.0.sh','/tmp/MysqlInstallerByDDCW_ei_1.0.sh')
-			sftp.put('../pack/bin/mysql-5.7.33-linux-glibc2.12-x86_64.tar.gz','/tmp/mysql-5.7.33-linux-glibc2.12-x86_64.tar.gz')
-			ts.close()
-		except Exception as  e:
-			print(str(e))
-	
-		socketio.start_background_task(target=background_thread(shell_command,username,msg['mysql_host'],msg['mysql_host_port'],msg['mysql_host_username'],msg['mysql_host_password']))
+			res = db.session.execute(task_sql)
+			res = db.session.execute("commit;")
+		except Exception as et:
+			print(str(et))
+			err_task = "配置任务失败" + task_name + task_file + "sql:  " + task_sql
+			socketio.emit(evt_name_err,err_task)
+		sql_0 = '''update ei_task set task_status = 0 where task_name="{task_name}" and task_author="{task_author}" and task_detail_path="{task_detail_path}"'''.format(task_name=task_name, task_author=username, task_detail_path=task_file)
+		sql_2 = '''update ei_task set task_status = 2 where task_name="{task_name}" and task_author="{task_author}" and task_detail_path="{task_detail_path}"'''.format(task_name=task_name, task_author=username, task_detail_path=task_file)
+		bgtsk = socketio.start_background_task(target=background_thread(host,port,host_user,host_password,shell_command,script_local_path,pack_local_path,remote_dir,evt_name,evt_name_err,task_file,sql_0,sql_2))
+		print('设置任务状态完成 ')
 	return  redirect(url_for('login'))
 socketio.on_event('install_mysql_single', install_mysql_single) #@socketio.on('once1') 没得用...
 
@@ -96,43 +135,88 @@ def handle_message(data):
 	#socketio.start_background_task(target=background_thread(shell_command))
 
 
-def background_thread(shell_command,username,host,port,user,password):
+def background_thread(host,port,host_user,host_password,shell_command,script_local_path,pack_local_path,remote_dir,evt_name,evt_name_err,task_file,sql_success,sql_fail):
 	ssh_client = paramiko.SSHClient()
 	ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-	responce_evt = 'my_responce' + username
-	responce_evt_err = 'my_responce' + username + "error"
-	try:
-		ssh_client.connect(hostname=host, port=port, username=user, password=password)
-	except:
-		socketio.emit(responce_evt_err,"连接失败,无法执行脚本")
-		return 2
-	sshSession = ssh_client.get_transport().open_session()
-	print(shell_command)
-	sshSession.exec_command(shell_command)
-	msg_begin = "开始执行(此消息来自服务器)" + shell_command + "\n"
-	socketio.emit(responce_evt,msg_begin)
-	with open("../data/tasks/test.log",'w',1) as f:
+	with open(task_file,'w',1) as f:
+		socketio.emit(evt_name,'开始上传软件\n')
+		try:
+			ts = paramiko.Transport(str(host),int(port))
+			ts.connect(username=str(host_user),password=str(host_password))
+			sftp = paramiko.SFTPClient.from_transport(ts)
+			try:
+				script_remote_path = remote_dir + "/" + script_local_path.split('/')[-1]
+				sftp.put(script_local_path, script_remote_path)
+				socketio.emit(evt_name,"上传脚本成功\n")
+			except Exception as  es:
+				err_msg = "上传脚本失败 \n" + script_local_path + script_remote_path + str(es)
+				f.write(err_msg)
+				socketio.emit(evt_name_err,err_msg)
+				db.session.execute(sql_fail)
+				db.session.execute("commit")
+				return None
+			socketio.emit(evt_name,'开始上传软件包\n')
+			try:
+				for pack in pack_local_path.split(','):
+					pack_remote_path = remote_dir + "/" + pack.split('/')[-1]
+					sftp.put(pack,pack_remote_path)
+				socketio.emit(evt_name,"上传软件包成功\n")
+			except Exception as  ep:
+				err_msg = "上传软件包失败 \n" + pack_local_path  + remote_dir + str(ep)
+				f.write(err_msg)
+				socketio.emit(evt_name_err,err_msg)
+				db.session.execute(sql_fail)
+				db.session.execute("commit")
+				return None
+			finally:
+				ts.close()
+		except Exception as  e:
+			err_msg = "上传软件失败, 连接sftp失败\n" + str(e)
+			f.write(err_msg)
+			socketio.emit(evt_name_err,err_msg)
+			ts.close()
+			db.session.execute(sql_fail)
+			db.session.execute("commit")
+			print("error sftp,", sql_fail)
+			return None
+		finally:
+			ts.close()
+
+		socketio.emit(evt_name,'开始连接远程服务器执行脚本\n')
+		try:
+			ssh_client.connect(hostname=host, port=port, username=host_user, password=host_password)
+		except:
+			socketio.emit(evt_name_err,"连接失败,无法执行脚本\n")
+			db.session.execute(sql_fail)
+			db.session.execute("commit")
+			return None
+		sshSession = ssh_client.get_transport().open_session()
+		print(shell_command)
+		sshSession.exec_command(shell_command)
+		msg_begin = "正在执行(此消息来自服务器)" + shell_command + "\n"
+		socketio.emit(evt_name,msg_begin)
 		while True:
 			if sshSession.recv_ready():
 				res_std_1 = bytes.decode(sshSession.recv(1024))
 				f.write(res_std_1)
-				socketio.emit(responce_evt,res_std_1)
-				print(res_std_1)
+				socketio.emit(evt_name,res_std_1)
 			if sshSession.recv_stderr_ready():
 				res_std_2 = bytes.decode(sshSession.recv_stderr(1024))
 				f.write(res_std_2)
-				socketio.emit(responce_evt,res_std_2)
-				print(res_std_2)
+				socketio.emit(evt_name_err,res_std_2)
 			if sshSession.exit_status_ready():
 				break
 			socketio.sleep(0.1)
 		last_std = bytes.decode(sshSession.recv(1024))
 		last_std  += bytes.decode(sshSession.recv_stderr(1024))
 		f.write(last_std)
-	socketio.emit(responce_evt,last_std)
-	socketio.emit(responce_evt,"finished")
+	socketio.emit(evt_name,last_std)
+	socketio.emit(evt_name,"\nfinished(此消息来自服务器)\n")
 	sshSession.close()
 	ssh_client.close()
+	db.session.execute(sql_success)
+	db.session.execute("commit")
+	return None
 	
 
 #	while True:
@@ -193,9 +277,9 @@ def background_thread(shell_command,username,host,port,user,password):
 #	print('received json4: ' + str(json))
 #	send("test 4")
 #
-@socketio.on('evt1')
-def evt1(message):
-	print('evt1:    ',str(message))
+#@socketio.on('evt1')
+#def evt1(message):
+#	print('evt1:    ',str(message))
 	#emit('my_response','aaaaaaaa')
 
 
@@ -209,6 +293,15 @@ def install_byshell():
 		html = 'db/' + request.args.get('html')
 		return render_template(html,username = username)
 	return  redirect(url_for('login'))
+
+@app.route('/task_detail')
+def return_task_detail():
+	if 'username' in session:
+		username = session['username']
+		task_name = request.args.get('task_name')
+		task_file = request.args.get('task_file')
+		return render_template('task_detail.html',task_name = task_name, task_file=task_file, username=username)
+	return redirect(url_for('login'))
 
 
 @app.route('/install_mysql_single',methods = ['POST','GET'])
@@ -253,9 +346,11 @@ def index():
 		username = session['username']
 		sql_db_instance = 'select db_instance_name, db_type, db_host, db_port, status,db_version from ei_db where db_author = "' + username + '"'
 		sql_host_instance = 'select host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,status from ei_host where host_author = "' + username + '"'
+		sql_task = 'select task_name,task_object,task_describe,task_start,task_stop,task_detail_path,task_status from ei_task where task_author="' + username + '" order by task_start desc limit 15;'
 		try:
 			items_db = db.session.execute(sql_db_instance)
 			items_host = db.session.execute(sql_host_instance)
+			items_task = db.session.execute(sql_task)
 			db_norm = list(db.session.execute('select count(db_instance_name) from ei_db where db_author = "' + username + '" and status = 0'))[0][0]
 			db_warn = list(db.session.execute('select count(db_instance_name) from ei_db where db_author = "' + username + '" and status = 1'))[0][0]
 			db_error = list(db.session.execute('select count(db_instance_name) from ei_db where db_author = "' + username + '" and status = 2'))[0][0]
@@ -275,7 +370,8 @@ def index():
 			host_un=0
 			items_db="NO DB CONFIG, you can add db"
 			items_host="NO HOST, you can add host"
-		return render_template('index.html',username=username, db_list=list(items_db), host_list=list(items_host), db_norm = db_norm, db_warn = db_warn, db_error = db_error, db_un = db_un, host_norm = host_norm, host_warn = host_warn, host_error = host_error, host_un = host_un)
+			items_task="NO task"
+		return render_template('index.html',username=username, db_list=list(items_db), host_list=list(items_host), task_list=list(items_task), db_norm = db_norm, db_warn = db_warn, db_error = db_error, db_un = db_un, host_norm = host_norm, host_warn = host_warn, host_error = host_error, host_un = host_un)
 	else:
 		return  redirect(url_for('login'))
 
@@ -522,6 +618,28 @@ def del_host_instance():
 			except:
 				db.session.execute("rollback")
 				error = "删除失败" + ','.join(host_instance_list)
+		else:
+			return "不能选择空"
+	return redirect('/login')
+
+@app.route('/deltask', methods = ['POST','GET'])
+def del_task():
+	error = None
+	if 'username' in session:
+		username = session['username']
+		task_list = request.form.getlist('del_task_1')
+		if len(task_list):
+			task_name_str = '","'.join(task_list)
+			sql_del = 'delete from ei_task where task_author = "' + username + '" and task_name in ("' + task_name_str + '")'
+			try:
+				db.session.execute(sql_del)
+				db.session.execute("commit")
+				message = "删除成功" + ','.join(task_list)
+				return redirect('/index')
+				return render_template('index.html', username = username, message = message)
+			except:
+				db.session.execute("rollback")
+				error = "删除失败" + ','.join(task_list)
 		else:
 			return "不能选择空"
 	return redirect('/login')
