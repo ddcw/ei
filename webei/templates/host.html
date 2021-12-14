@@ -175,7 +175,7 @@
                                         </tr>
                                         <tr>
                                                 <td>CPU总使用率(从开启算起)</td>
-                                                <td>{{cpu_p_total}}%</td>
+                                                <td>{{cpu_p_total/cpu_count}}%</td>
                                         </tr>
                                         <tr>
                                                 <td>内存使用率</td>
@@ -186,7 +186,7 @@
                                                 <td>{{loadavg}}</td>
                                         </tr>
                                         <tr>
-                                                <td>根目录使用率</td>
+                                                <td>根目录({{root_dir_type.split("'")[1]}})使用率</td>
                                                 <td>{{root_dir_p100}}%</td>
                                         </tr>
                                         <tr>
@@ -212,6 +212,7 @@
       <h3>server</h3>
       <p>显示系统常见服务, 是否启动和是否开机自启, 比如nginx, ssh mysql, redis 
                 <table class="table table-striped">
+<caption>服务汇总信息</caption>
                         <thead>
                                 <tr>
                                         <th>服务名字</th>
@@ -249,6 +250,33 @@
                                         </tr>
                         </tbody>
                 </table>
+
+
+
+<!-- 端口和进程  -->
+{% if process_port %}
+                <table class="table table-striped">
+		<caption>端口进程对应</caption>
+                        <thead>
+                                <tr>
+                                        <th>进程号</th>
+                                        <th>端口号</th>
+                                        <th>打开文件数量</th>
+                                        <th>进程命令(cmdline)</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+			{% for p_p in process_port %}
+                                        <tr>
+                                                <td>{{p_p[0]}}</td>
+                                                <td>{{p_p[1]}}</td>
+                                                <td>{{p_p[2]}}</td>
+                                                <td>{{p_p[3]}}</td>
+                                        </tr>
+			{% endfor %}
+                        </tbody>
+                </table>
+{% endif %}
 
     </div>
 

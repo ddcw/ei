@@ -246,6 +246,7 @@
 					<th>HOST</th>
 					<th>密码插件</th>
 					<th>最后一次修改密码时间</th>
+					<th>密码过期时间</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -255,6 +256,11 @@
 						<td>{{user[1]}}</td>
 						<td>{{user[2]}}</td>
 						<td>{{user[3]}}</td>
+						{% if user[4] == 'N' %}
+						<td>永不过期</td>
+						{% else %}
+						<td>{{user[4]}}</td>
+						{% endif %}
 					</tr>
 				{% else %}
 					ERROR

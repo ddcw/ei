@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>安装单机mysql--{{username}}</title>
+    <link rel="stylesheet" href="/static/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/index1.css">
+    <script type="text/javascript" src="/static/bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="/static/js/socket.io.min.js" ></script>
+</head>
+<body>
+
+
+<script type="text/javascript" charset="utf-8">
+    var socket = io();
+
+    //服务端的emit可以在任意函数触发 connect是特殊事件, 连接的时候就触发,   还有个断开的时候触发 disconnect
+    socket.on('connect', function() {
+        //socket.emit('message',  'I\'m connected! i am install mysql single, from {{username}}');
+        socket.emit('message', '{{username}} connect' );
+    });
+
+    socket.on('disconnect', function() {
+        //socket.emit('message', '{{username}} leaved');
+        socket.emit('message', '{{username}} leaved');
+    });
+
+socket.on('install_mysql_single_{{username}}',function begintest(msg){
+	document.getElementById("textarea1").value = document.getElementById("textarea1").value + msg
+});
+socket.on('install_mysql_single_{{username}}error',function begintest(msg){
+	alert(msg);
+});
+
+	function beginstall(){
+	var mysql_host=document.getElementById("mysql_host").value
+	var mysql_host_port=document.getElementById("mysql_host_port").value
+	var mysql_host_username=document.getElementById("mysql_host_username").value
+	var mysql_host_password=document.getElementById("mysql_host_password").value
+	var mysql_port=document.getElementById("mysql_port").value
+	var mysql_root_password=document.getElementById("mysql_root_password").value
+	socket.emit('install_mysql_single', {"mysql_host":mysql_host,"mysql_host_port":mysql_host_port,"mysql_host_username":mysql_host_username,"mysql_host_password":mysql_host_password,"mysql_port":mysql_port,"mysql_root_password":mysql_root_password,"evt_name":"install_mysql_single_{{username}}","evt_name_err":"install_mysql_single_{{username}}error"});
+	document.getElementById("textarea1").value = "开始安装......\n"
+}
+
+	function clearlog(){
+	document.getElementById("textarea1").value = ""
+}
+
+   //my_response是事件名字, 客户端监听这个事件, 服务端发送消息给这个事件,这个事件再处理消息 emit('my_response','aaaaaaaa')
+   //实时交互原理: 客户端 定时发送消息给服务端, 服务端返回消息给客户端,  客户端收到消息,触发定时给服务端发消息.
+//   socket.on('my_response',function(msg) {
+//	//socket.emit('message', {data: 'send data OK !!!!!!!'});
+//	document.getElementById("terminal").innerHTML = msg
+//	//$("#t").append(msg).append('<br/>');
+//	setTimeout(function(){
+//		socket.emit('message', {data: '给老子当前返回时间'});
+//},1000)
+//	//alert(msg);
+//});
+
+   //这个监控事件,需要收到服务器的消息才能触发, 也就是直接在这里面 给服务器发消息是没用的, 因为不会触发, 可以在连接的时候, 触发服务器的其它事件, 其它事件返回消息给这个事件
+//   socket.on('once_resp',function(msg) {
+//	//socket.emit('once1', 'i am once');
+//	//document.getElementById("t").innerHTML = msg;
+//	$("#t").append(msg).append('<br/>');
+//});
+
+
+
+
+</script>
+
+
+<div class="container mt-3" id="install_mysql" >
+<form method = "post" action = "/install_mysql_single">
+<h3 >安装单机MYSQL</h3>
+
+  <div class="mb-3">
+    <label for="mysql_host"  class="form-label" >服务器地址</label>
+    <input type="text" name="mysql_host" class="form-control" id="mysql_host" value="127.0.0.1" >
+    <div class="form-text">IP地址或者主机名</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="mysql_host_port"  class="form-label" >服务器ssh端口</label>
+    <input type="number" name="mysql_host_port" class="form-control"  min="22" max="65535" id="mysql_host_port" value="22" >
+  </div>
+
+  <div class="mb-3">
+    <label for="mysql_host_username"  class="form-label" >服务器ssh用户名</label>
+    <input type="text" name="mysql_host_username" class="form-control" id="mysql_host_username" value="root" >
+  </div>
+
+  <div class="mb-3">
+    <label for="mysql_host_password"  class="form-label" >服务器ssh用户密码</label>
+    <input type="password" name="mysql_host_password" class="form-control" id="mysql_host_password"  >
+  </div>
+
+  <div class="mb-3">
+    <label for="mysql_port" class="form-label">mysql端口</label>
+    <input type="number" name="mysql_port"  min="1024" max="65535" id="mysql_port" value="3306" >
+    <div class="form-text">范围:1024-65535, 为空的话,就由脚本自动生成</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="mysql_root_password" class="form-label">mysql root密码</label>
+    <input type="password" name="mysql_root_password" class="form-control"   id="mysql_root_password"  >
+    <div class="form-text">mysql的root用户密码</div>
+  </div>
+
+  <button type="button" class="btn btn-primary" onclick="beginstall()">开始安装</button>
+  <button type="button" class="btn btn-info"><a style="text-decoration: none" href="install?html=install_mysql_single.html">重置</a></button>
+</form>
+
+<div class="container mt-3">
+<!-- <button type="button" class="btn" onclick="begintest()">开始</button> -->
+</div>
+<button type="button" class="btn  btn-info" onclick="clearlog()">清空日志</button>
+<div><textarea readonly rows="10" cols="200" id="textarea1"></textarea></div>
+</body>
+</html>
+

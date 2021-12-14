@@ -1,0 +1,56 @@
+nohup: ignoring input
+/root/ddcw-ei/ei/webei/venv/lib64/python3.6/site-packages/apscheduler/util.py:95: PytzUsageWarning: The zone attribute is specific to pytz's interface; please migrate to a new time zone provider. For more details on how to do so, see https://pytz-deprecation-shim.readthedocs.io/en/latest/migration.html
+  if obj.zone == 'local':
+/root/ddcw-ei/ei/webei/venv/lib64/python3.6/site-packages/apscheduler/triggers/interval.py:66: PytzUsageWarning: The normalize method is no longer necessary, as this time zone supports the fold attribute (PEP 495). For more details on migrating to a PEP 495-compliant implementation, see https://pytz-deprecation-shim.readthedocs.io/en/latest/migration.html
+  return self.timezone.normalize(next_fire_time)
+ * Restarting with stat
+/root/ddcw-ei/ei/webei/venv/lib64/python3.6/site-packages/apscheduler/util.py:95: PytzUsageWarning: The zone attribute is specific to pytz's interface; please migrate to a new time zone provider. For more details on how to do so, see https://pytz-deprecation-shim.readthedocs.io/en/latest/migration.html
+  if obj.zone == 'local':
+/root/ddcw-ei/ei/webei/venv/lib64/python3.6/site-packages/apscheduler/triggers/interval.py:66: PytzUsageWarning: The normalize method is no longer necessary, as this time zone supports the fold attribute (PEP 495). For more details on migrating to a PEP 495-compliant implementation, see https://pytz-deprecation-shim.readthedocs.io/en/latest/migration.html
+  return self.timezone.normalize(next_fire_time)
+ * Debugger is active!
+ * Debugger PIN: 718-988-498
+[2021-12-14 22:55:57,320] WARNING in app: mysql实例连接失败. 实例ID:13  实例名:eeeeeeeeeeeeeeeee  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:55:57,377] WARNING in app: mysql实例连接失败. 实例ID:18  实例名:dsadsadsadsa  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:55:58,234] WARNING in app: mysql实例连接失败. 实例ID:13  实例名:eeeeeeeeeeeeeeeee  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:55:58,281] WARNING in app: mysql实例连接失败. 实例ID:18  实例名:dsadsadsadsa  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:56:27,317] WARNING in app: mysql实例连接失败. 实例ID:13  实例名:eeeeeeeeeeeeeeeee  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:56:27,368] WARNING in app: mysql实例连接失败. 实例ID:18  实例名:dsadsadsadsa  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:56:28,244] WARNING in app: mysql实例连接失败. 实例ID:13  实例名:eeeeeeeeeeeeeeeee  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:56:28,302] WARNING in app: mysql实例连接失败. 实例ID:18  实例名:dsadsadsadsa  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:56:57,316] WARNING in app: mysql实例连接失败. 实例ID:13  实例名:eeeeeeeeeeeeeeeee  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:56:57,378] WARNING in app: mysql实例连接失败. 实例ID:18  实例名:dsadsadsadsa  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:56:58,240] WARNING in app: mysql实例连接失败. 实例ID:13  实例名:eeeeeeeeeeeeeeeee  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:56:58,307] WARNING in app: mysql实例连接失败. 实例ID:18  实例名:dsadsadsadsa  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:57:27,317] WARNING in app: mysql实例连接失败. 实例ID:13  实例名:eeeeeeeeeeeeeeeee  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 22:57:27,369] WARNING in app: mysql实例连接失败. 实例ID:18  实例名:dsadsadsadsa  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 23:04:16,991] WARNING in app: mysql实例连接失败. 实例ID:13  实例名:eeeeeeeeeeeeeeeee  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 23:04:17,041] WARNING in app: mysql实例连接失败. 实例ID:18  实例名:dsadsadsadsa  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 23:04:17,904] WARNING in app: mysql实例连接失败. 实例ID:13  实例名:eeeeeeeeeeeeeeeee  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 23:04:17,949] WARNING in app: mysql实例连接失败. 实例ID:18  实例名:dsadsadsadsa  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 23:04:46,988] WARNING in app: mysql实例连接失败. 实例ID:13  实例名:eeeeeeeeeeeeeeeee  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 23:04:47,029] WARNING in app: mysql实例连接失败. 实例ID:18  实例名:dsadsadsadsa  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 23:04:47,903] WARNING in app: mysql实例连接失败. 实例ID:13  实例名:eeeeeeeeeeeeeeeee  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+[2021-12-14 23:04:47,956] WARNING in app: mysql实例连接失败. 实例ID:18  实例名:dsadsadsadsa  实例主机地址:127.0.0.1  实例端口:3306 异常信息为: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+

@@ -24,7 +24,7 @@
 
 
 
-stty erase ^H
+#stty erase ^H
 #基本参数设置
 export LANG="en_US.UTF-8"
 export PARAMS=$@

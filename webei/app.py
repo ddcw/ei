@@ -29,6 +29,9 @@ config.read(DEFAULT_CONFIG_FILE)
 EI_WEB_PORT = config.get('ei','port')
 EI_WEB_ADDRESS = config.get('ei','address')
 EI_WEB_DEBUG = config.get('ei','debug')
+EI_LOG = config.get('ei','log')
+#EI_LOG_FORMAT = config.get('ei','log_format')
+EI_LOG_FORMAT = "[%(asctime)s] %(levelname)s in %(module)s: %(message)s"
 
 app = Flask(__name__)
 scheduler = APScheduler()
@@ -49,13 +52,13 @@ thread_lock = Lock()
 
 @socketio.on('connect')
 def socket_connection():
-	#print("someone connect: ", msg)
-	print("someone connect")
+	#app.logger.info("someone connect: ", msg)
+	app.logger.info("someone connect")
 
 @socketio.on('disconnect')
 def socket_connection():
-	#print("disconnect: ",msg)
-	print("someone disconnect")
+	#app.logger.info("disconnect: ",msg)
+	app.logger.info("someone disconnect")
 
 @socketio.on('delete_task')
 def delete_task(msg):
@@ -69,7 +72,7 @@ def delete_task(msg):
 			db.session.commit()
 			return_message = {"status":0,"object_name":task_name,"opt":"删除任务成功: ","hide_id":task_name}
 		except Exception as ed:
-			print('删除任务失败:  ',task_name, "sql:  ",del_task_sql)
+			app.logger.error('删除任务失败:  ',task_name, "sql:  ",del_task_sql)
 			return_message = {"status":1,"object_name":task_name,"opt":"删除任务失败: ","hide_id":task_name}
 		finally:
 			socketio.emit(evt_name,return_message)
@@ -99,7 +102,7 @@ def install_mysql_single(msg):
 	if 'username' in session:
 		username = session['username']
 		current_time = time.localtime() 
-		print(username, "开始安装单机MYSQL了..")
+		app.logger.info(username, "开始安装单机MYSQL了..")
 		task_name = "INSTALL_MYSQL_SINGLE_" + str(time.strftime('%Y%m%d_%H%M%S',current_time)) + str(random.randint(0,10000))
 		task_file = "../data/tasks/" + username + "_" + task_name + ".log"
 		host = str(msg['mysql_host'])
@@ -125,19 +128,20 @@ def install_mysql_single(msg):
 			res = db.session.execute(task_sql)
 			res = db.session.commit()
 		except Exception as et:
-			print(str(et))
+			app.logger.error(str(et))
 			err_task = "配置任务失败" + task_name + task_file + "sql:  " + task_sql
 			socketio.emit(evt_name_err,err_task)
 		sql_0 = '''update ei_task set task_status = 0 where task_name="{task_name}" and task_author="{task_author}" and task_detail_path="{task_detail_path}"'''.format(task_name=task_name, task_author=username, task_detail_path=task_file)
 		sql_2 = '''update ei_task set task_status = 2 where task_name="{task_name}" and task_author="{task_author}" and task_detail_path="{task_detail_path}"'''.format(task_name=task_name, task_author=username, task_detail_path=task_file)
 		bgtsk = socketio.start_background_task(target=background_thread(host,port,host_user,host_password,shell_command,script_local_path,pack_local_path,remote_dir,evt_name,evt_name_err,task_file,task_name,sql_0,sql_2))
-		print('设置任务状态完成 ')
+		log_info = "USERNAME:{username}  任务:{task_name}已执行完. 日志文件: {task_file} ".format(username=username, task_name=task_name, task_file=task_file)
+		app.logger.info(log_info)
 	return  redirect(url_for('login'))
 socketio.on_event('install_mysql_single', install_mysql_single) #@socketio.on('once1') 没得用...
 
 @socketio.on('message')
 def handle_message(data):
-	print('received message: ' + str(data))
+	app.logger.info('received message: ' + str(data))
 	emit('my_response',str(time.asctime(time.localtime(time.time()))))
 	#emit('once_resp',str(time.asctime(time.localtime(time.time()))))
 	#emit('my_response',get_top_info())
@@ -212,7 +216,7 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 			db.session.commit()
 			return None
 		sshSession = ssh_client.get_transport().open_session()
-		print(shell_command)
+		#app.logger.info(shell_command)
 		sshSession.exec_command(shell_command)
 		msg_install_3 = "\n\n开始执行(以下消息为脚本的标准输出, 错误输出将会弹窗)" + shell_command + "\n"
 		socketio.emit(evt_name,msg_begin)
@@ -244,7 +248,7 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 #	while True:
 #		if sshSession.recv_ready():
 #			res_std = bytes.decode(sshSession.recv(8))
-#			print(res_std)
+#			app.logger.info(res_std)
 #			socketio.sleep(0.1)
 #			#socketio.emit('my_responce',res_std.replace('\n','%OA"'))
 #			responce_evt = 'my_responce' + username
@@ -253,13 +257,13 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 #			os.fsync(stdout_data)
 #		if sshSession.recv_stderr_ready():
 #			res_std_err = bytes.decode(sshSession.recv_stderr(8))
-#			print(res_std_err)
+#			app.logger.info(res_std_err)
 #			socketio.sleep(0.1)
 #			responce_evt = 'my_responce' + username
 #			socketio.emit(responce_evt,res_std_err)
 #		if sshSession.exit_status_ready():
 #			res_std = bytes.decode(sshSession.recv(8))
-#			print(res_std)
+#			app.logger.info(res_std)
 #			responce_evt = 'my_responce' + username
 #			socketio.emit(responce_evt,res_std)
 #			break
@@ -287,21 +291,21 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 #
 #@socketio.on('json')
 #def handle_json(json):
-#	print('received json2: ' + str(json))
+#	app.logger.info('received json2: ' + str(json))
 #
 #@socketio.on('my event')
 #def handle_my_custom_event(json):
-#	print('received json3: ' + str(json))
+#	app.logger.info('received json3: ' + str(json))
 #	send(" i know")
 #
 #@socketio.on('my event', namespace='/testsio')
 #def handle_my_custom_namespace_event(json):
-#	print('received json4: ' + str(json))
+#	app.logger.info('received json4: ' + str(json))
 #	send("test 4")
 #
 #@socketio.on('evt1')
 #def evt1(message):
-#	print('evt1:    ',str(message))
+#	app.logger.info('evt1:    ',str(message))
 	#emit('my_response','aaaaaaaa')
 
 
@@ -443,7 +447,8 @@ def set_db_instacne_status():
 			conn_mysql.close()
 			sql_update = 'update ei_db set db_version = "{db_version}",status={status} where db_instance_id={db_instance_id};'.format(db_version=db_version[0][0],status=0,db_instance_id=db_instance_id)
 		except Exception as emysql:
-			print(db_instance_id,db_instance_name," MYSQL实例连接失败 ", emysql)
+			warnning_msg = "mysql实例连接失败. 实例ID:{db_instance_id}  实例名:{db_instance_name}  实例主机地址:{db_host}  实例端口:{db_port} 异常信息为: {emysql}\n".format(db_instance_id=db_instance_id, db_instance_name=db_instance_name, db_host=db_host, db_port=db_port, emysql=str(emysql))
+			app.logger.warning(warnning_msg)
 			sql_update = 'update ei_db set status={status} where db_instance_id={db_instance_id};'.format(status=2,db_instance_id=db_instance_id)
 		#update_db_result = db.session.execute(sql_update)
 		#db.session.execute('commit;')
@@ -477,7 +482,8 @@ def set_host_instacne_status():
 			ssh.close()
 			sql_update = 'update ei_host set host_type="{host_type}",host_version="{host_version}",status={status} where host_instance_id={host_instance_id}'.format(host_type=os_name, host_version=os_version, status=0, host_instance_id=host_instance_id)
 		except Exception as ehost:
-			print("连接主机失败,",host_instance_id,ehost)
+			log_warning = "主机SSH连接失败, 实例ID: {host_instance_id}   实例名字:{host_instance_name}  实例IP地址: {host_ssh_ip}  实例端口:{host_ssh_port} 报错信息为: {ehost}\n".format(host_instance_id=host_instance_id,host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, host_ssh_port=host_ssh_port, ehost=str(ehost))
+			app.logger.warning(log_warning)
 			sql_update = 'update ei_host set status={status} where host_instance_id={host_instance_id};'.format(status=2, host_instance_id=host_instance_id)
 		db.session.execute(sql_update)
 		db.session.execute('commit;')
@@ -508,7 +514,7 @@ def set_host_instacne_status():
 #				db.session.commit()
 #
 #			except Exception as ed1:
-#				print("DB实例连接失败 ",db_instance_name,db_host,db_port,db_user,db1)
+#				app.logger.info("DB实例连接失败 ",db_instance_name,db_host,db_port,db_user,db1)
 #				sql_update = 'update ei_db set status={status} where where db_instance_id={db_instance_id};'.format(status=2,db_instance_id=db_instance_id)
 #				db.session.execute(sql_update)
 #				db.session.commit()
@@ -516,7 +522,7 @@ def set_host_instacne_status():
 #			#	db.session.execute(sql_update)
 #			#	db.session.commit()
 #	except Exception as edb:
-#		print("执行任务set_db_instacne_status失败, (部分失败或者全部失败)",localtime,edb)
+#		app.logger.info("执行任务set_db_instacne_status失败, (部分失败或者全部失败)",localtime,edb)
 #
 #
 #@scheduler.task('interval', id='set_host_instacne_status', seconds=20, misfire_grace_time=4)
@@ -544,7 +550,7 @@ def set_host_instacne_status():
 #				db.session.execute(sql_update)
 #				db.session.commit()
 #			except Exception as eh1:
-#				print("连接失败 host : ", host_instance_name, eh1)
+#				app.logger.info("连接失败 host : ", host_instance_name, eh1)
 #				sql_update = 'update ei_host set status={status} where host_instance_name="{host_instance_name}" and host_ssh_ip="{host_ssh_ip}" and host_ssh_port={host_ssh_port} and host_ssh_username="{host_ssh_username}";'.format(status=2, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, host_ssh_port=host_ssh_port, host_ssh_username=host_ssh_username)
 #				db.session.execute(sql_update)
 #				db.session.commit()
@@ -552,8 +558,8 @@ def set_host_instacne_status():
 #			#	db.session.execute(sql_update)
 #			#	db.session.commit()
 #	except Exception as ehost:
-#		print("JOB set_host_instacne_status 失败, 原因:部分主机信息不对,或者本地sqlite库有问题",ehost)
-#	#print("Time:", localtime)
+#		app.logger.info("JOB set_host_instacne_status 失败, 原因:部分主机信息不对,或者本地sqlite库有问题",ehost)
+#	#app.logger.info("Time:", localtime)
 #
 
 @app.route('/login',methods = ['POST','GET'])
@@ -987,8 +993,9 @@ def sftp_upload_file(server_path, local_path, host, rootpassword):
 		sftp = paramiko.SFTPClient.from_transport(ts)
 		sftp.put(local_path, server_path)
 		ts.close()
-	except Exception as  e:
-		print(e)
+	except Exception as e:
+		log_error = "上传文件失败: "
+		app.logger.error(e)
 
 
 
@@ -1067,11 +1074,15 @@ def install_mysql_single_instance():
 
 
 if __name__ == '__main__':
-    #app.run(app, host=EI_WEB_ADDRESS, debug=EI_WEB_DEBUG, port=EI_WEB_PORT)
-    socketio.run(app, host='0.0.0.0', debug=True, port=6121)
+	#app.run(app, host=EI_WEB_ADDRESS, debug=EI_WEB_DEBUG, port=EI_WEB_PORT)
+	handler = logging.FileHandler(filename=str(EI_LOG), encoding='UTF-8')
+	handler.setFormatter(logging.Formatter(EI_LOG_FORMAT))
+	app.logger.addHandler(handler)
+	#socketio.run(app, host=str(EI_WEB_ADDRESS), debug=bool(EI_WEB_DEBUG), port=int(EI_WEB_PORT))
+	socketio.run(app, host=str(EI_WEB_ADDRESS), debug=EI_WEB_DEBUG, port=int(EI_WEB_PORT))
 #if __name__ == "__main__":
 #	from gevent import pywsgi
 #	from geventwebsocket.handler import WebSocketHandler
 #	server = pywsgi.WSGIServer(('', 6121), app, handler_class=WebSocketHandler)
-#	print('server start')
+#	app.logger.info('server start')
 #	server.serve_forever()
