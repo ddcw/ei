@@ -67,6 +67,11 @@ else
 	else
 		exits "NO PYTHON3 ,  you must install python3 first."
 	fi
+
+	if ! which python3 >/dev/null 2>&1; then
+		echo "[ERROR] 请先安装python3"
+		exit 1
+	fi
 fi
 
 #config venv 建议是重新设置个venv, 但是ei的目的是简单轻量化, 就没必要了
