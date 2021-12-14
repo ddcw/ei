@@ -1,7 +1,7 @@
 import configparser
 import os
 import paramiko
-from flask import Flask , redirect, url_for, request,render_template,make_response,session
+from flask import Flask , redirect, url_for, request,render_template,make_response,session,send_file
 from flask_socketio import SocketIO, emit
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
@@ -66,6 +66,25 @@ def socket_connection():
 	#print("disconnect: ",msg)
 	print("someone disconnect")
 
+@socketio.on('delete_task')
+def delete_task(msg):
+	if 'username' in session:
+		username = session['username']
+		task_name = str(msg['task_name'])
+		evt_name = str(msg['evt_name'])
+		del_task_sql = 'delete from ei_task where task_author="' + username + '" and task_name="' + task_name + '";'
+		try:
+			db.session.execute(del_task_sql)
+			db.session.commit()
+			return_message = {"status":0,"object_name":task_name,"opt":"删除任务成功: ","hide_id":task_name}
+		except Exception as ed:
+			print('删除任务失败:  ',task_name, "sql:  ",del_task_sql)
+			return_message = {"status":1,"object_name":task_name,"opt":"删除任务失败: ","hide_id":task_name}
+		finally:
+			socketio.emit(evt_name,return_message)
+	else:
+		return  redirect(url_for('login'))
+
 #@socketio.on('returntaskdetail')
 def returntaskdetail(msg):
 	if 'username' in session:
@@ -113,7 +132,7 @@ def install_mysql_single(msg):
 		task_sql = '''insert into ei_task(task_author,task_name,task_object,task_describe,task_shell,task_detail_path) values("{username}","{task_name}","{host}:{port}","安装mysql单机","{shell_command}","{task_file}")'''.format(username=username, task_name=task_name, host=host,port=port, host_password=host_password, shell_command=shell_command, task_file=task_file)
 		try:
 			res = db.session.execute(task_sql)
-			res = db.session.execute("commit;")
+			res = db.session.commit()
 		except Exception as et:
 			print(str(et))
 			err_task = "配置任务失败" + task_name + task_file + "sql:  " + task_sql
@@ -153,7 +172,7 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 				f.write(err_msg)
 				socketio.emit(evt_name_err,err_msg)
 				db.session.execute(sql_fail)
-				db.session.execute("commit")
+				db.session.commit()
 				return None
 			socketio.emit(evt_name,'开始上传软件包\n')
 			try:
@@ -166,7 +185,7 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 				f.write(err_msg)
 				socketio.emit(evt_name_err,err_msg)
 				db.session.execute(sql_fail)
-				db.session.execute("commit")
+				db.session.commit()
 				return None
 			finally:
 				ts.close()
@@ -176,7 +195,7 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 			socketio.emit(evt_name_err,err_msg)
 			ts.close()
 			db.session.execute(sql_fail)
-			db.session.execute("commit")
+			db.session.commit()
 			print("error sftp,", sql_fail)
 			return None
 		finally:
@@ -188,7 +207,7 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 		except:
 			socketio.emit(evt_name_err,"连接失败,无法执行脚本\n")
 			db.session.execute(sql_fail)
-			db.session.execute("commit")
+			db.session.commit()
 			return None
 		sshSession = ssh_client.get_transport().open_session()
 		print(shell_command)
@@ -215,7 +234,7 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 	sshSession.close()
 	ssh_client.close()
 	db.session.execute(sql_success)
-	db.session.execute("commit")
+	db.session.commit()
 	return None
 	
 
@@ -304,6 +323,18 @@ def return_task_detail():
 	return redirect(url_for('login'))
 
 
+@app.route('/download')
+def download():
+	if 'username' in session:
+		username = session['username']
+		file_name = request.args.get('task_file')
+		if username == file_name.split('_INSTALL_MYSQL_SINGLE_')[0].split('/')[-1] :
+			return send_file(file_name,as_attachment=True)
+		else:
+			return "没得权限或者用户名不对, 或者这个文件不是你的"
+	return redirect(url_for('login'))
+
+#这个路由没有使用了, 找个机会删掉
 @app.route('/install_mysql_single',methods = ['POST','GET'])
 def install_mysql_single():
 	if 'username' in session:
@@ -382,7 +413,7 @@ def default_index():
 	return redirect(url_for('index'))
 
 
-@scheduler.task('interval', id='set_db_instacne_status', seconds=120, misfire_grace_time=900)
+@scheduler.task('interval', id='set_db_instacne_status', seconds=120, misfire_grace_time=4)
 def set_db_instacne_status():
 	localtime = time.asctime(time.localtime(time.time()))
 	sql_db_instacne = 'select db_instance_name,db_host,db_port,db_user,db_password from ei_db where db_type = "mysql"'
@@ -404,21 +435,20 @@ def set_db_instacne_status():
 				sql_update = 'update ei_db set db_version = "{db_version}",status={status} where db_instance_name = "{db_instance_name}" and db_host = "{db_host}" and db_port = {db_port};'.format(db_version=db_version[0][0],status=0,db_instance_name=db_instance_name,db_host=db_host,db_port=db_port)
 				try:
 					update_db_result = db.session.execute(sql_update)
-					db.session.execute("commit")
+					db.session.commit()
 				except:
 					print("db 更新状态失败: ",db_instance_name, sql_update)
 			except:
-				print(db_instance_name,db_host," db 连接失败")
+				print(db_instance_name,db_host," db 连接失败, 将设置其状态为异常")
 				sql_update_2 = 'update ei_db set status={status} where db_instance_name = "{db_instance_name}" and db_host = "{db_host}" and db_port = {db_port};'.format(status=2,db_instance_name=db_instance_name,db_host=db_host,db_port=db_port)
 				update_db_result = db.session.execute(sql_update_2)
-				db.session.execute("commit")
+				db.session.commit()
 	except:
 		print("执行任务set_db_instacne_status失败, (部分失败或者全部失败)",localtime)
 
 
-@scheduler.task('interval', id='set_host_instacne_status', seconds=180, misfire_grace_time=900)
+@scheduler.task('interval', id='set_host_instacne_status', seconds=210, misfire_grace_time=4)
 def set_host_instacne_status():
-	#return "暂时关闭定时任务功能"
 	localtime = time.asctime(time.localtime(time.time()))
 	sql_host_instance = 'select host_instance_name,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password from ei_host ;'
 	try:
@@ -441,14 +471,14 @@ def set_host_instacne_status():
 				sql_update = 'update ei_host set host_type="{host_type}",host_version="{host_version}",status={status} where host_instance_name="{host_instance_name}" and host_ssh_ip="{host_ssh_ip}" and host_ssh_port={host_ssh_port} and host_ssh_username="{host_ssh_username}";'.format(host_type=os_name, host_version=os_version, status=0, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, host_ssh_port=host_ssh_port, host_ssh_username=host_ssh_username)
 				try:
 					update_db_result = db.session.execute(sql_update)
-					db.session.execute("commit")
+					db.session.commit()
 				except:
 					print("host 更新失败: ",host_instance_name , sql_update)
 			except:
 				print("连接失败 host : ", host_instance_name)
 				sql_update_2 = 'update ei_host set status={status} where host_instance_name="{host_instance_name}" and host_ssh_ip="{host_ssh_ip}" and host_ssh_port={host_ssh_port} and host_ssh_username="{host_ssh_username}";'.format(status=2, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, host_ssh_port=host_ssh_port, host_ssh_username=host_ssh_username)
 				db.session.execute(sql_update_2)
-				db.session.execute("commit")
+				db.session.commit()
 	except:
 		print("JOB set_host_instacne_status 失败, 原因:部分主机信息不对,或者本地sqlite库有问题")
 	#print("Time:", localtime)
@@ -499,7 +529,7 @@ def modifypassword():
 			if password == password_old:
 				try:
 					items2 = db.session.execute(sql_exec2)
-					db.session.execute("commit;")
+					db.session.commit()
 					flash('修改成功')
 				except:
 					error = "修改密码失败"
@@ -539,7 +569,7 @@ def add_db_instance():
 			sql_insert = 'insert into ei_db(db_author,db_instance_name,db_type,db_version,db_host,db_port,db_user,db_password,status) values("' + username + '","' + instance_name + '","'+ dbtype +'","NULL","'+ mysql_host +'",' + mysql_port + ',"' +mysql_user +'","' + mysql_password + '",4)'
 			try:
 				db.session.execute(sql_insert)
-				db.session.execute("commit")
+				db.session.commit()
 				message = "添加成功:" + instance_name
 				return redirect('/index')
 				return render_template('index.html', username = username, message = message)
@@ -567,7 +597,7 @@ def add_host_instance():
 		sql_insert = 'insert into ei_host(host_author,host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,status) values("'+username+'","'+instance_name+'","xxxx","xx","'+host_host+'",'+host_port+',"'+host_user+'","'+host_password+'",4)'
 		try:
 			db.session.execute(sql_insert)
-			db.session.execute("commit")
+			db.session.commit()
 			message = "添加成功:" + instance_name
 			return redirect('/index')
 			return render_template('index.html', username = username, message = message)
@@ -588,7 +618,7 @@ def del_db_instance():
 			sql_del = 'delete from ei_db where db_author = "' + username + '" and db_instance_name in ("' + instance_name_str + '")'
 			try:
 				db.session.execute(sql_del)
-				db.session.execute("commit")
+				db.session.commit()
 				message = "删除成功" + ','.join(db_instance_list)
 				return redirect('/index')
 				return render_template('index.html', username = username, message = message)
@@ -611,7 +641,7 @@ def del_host_instance():
 			sql_del = 'delete from ei_host where host_author = "' + username + '" and host_instance_name in ("' + instance_name_str + '")'
 			try:
 				db.session.execute(sql_del)
-				db.session.execute("commit")
+				db.session.commit()
 				message = "删除成功" + ','.join(host_instance_list)
 				return redirect('/index')
 				return render_template('index.html', username = username, message = message)
@@ -633,7 +663,7 @@ def del_task():
 			sql_del = 'delete from ei_task where task_author = "' + username + '" and task_name in ("' + task_name_str + '")'
 			try:
 				db.session.execute(sql_del)
-				db.session.execute("commit")
+				db.session.commit()
 				message = "删除成功" + ','.join(task_list)
 				return redirect('/index')
 				return render_template('index.html', username = username, message = message)
