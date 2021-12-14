@@ -35,7 +35,7 @@ scheduler = APScheduler()
 scheduler.init_app(app)
 scheduler.start()
 #sockets = Sockets(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///ei.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+DATABASE
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 app.secret_key = "20210608 1533 6121"
 #app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)
@@ -45,15 +45,6 @@ db = SQLAlchemy(app)
 socketio = SocketIO(app)
 thread = None
 thread_lock = Lock()
-
-
-def get_top_info():
-	top_pipe = os.popen('top -n 1')
-	try:
-		top_output = top_pipe.read()
-	finally:
-		top_pipe.close()
-	return top_output
 
 
 @socketio.on('connect')
@@ -139,7 +130,7 @@ def install_mysql_single(msg):
 			socketio.emit(evt_name_err,err_task)
 		sql_0 = '''update ei_task set task_status = 0 where task_name="{task_name}" and task_author="{task_author}" and task_detail_path="{task_detail_path}"'''.format(task_name=task_name, task_author=username, task_detail_path=task_file)
 		sql_2 = '''update ei_task set task_status = 2 where task_name="{task_name}" and task_author="{task_author}" and task_detail_path="{task_detail_path}"'''.format(task_name=task_name, task_author=username, task_detail_path=task_file)
-		bgtsk = socketio.start_background_task(target=background_thread(host,port,host_user,host_password,shell_command,script_local_path,pack_local_path,remote_dir,evt_name,evt_name_err,task_file,sql_0,sql_2))
+		bgtsk = socketio.start_background_task(target=background_thread(host,port,host_user,host_password,shell_command,script_local_path,pack_local_path,remote_dir,evt_name,evt_name_err,task_file,task_name,sql_0,sql_2))
 		print('设置任务状态完成 ')
 	return  redirect(url_for('login'))
 socketio.on_event('install_mysql_single', install_mysql_single) #@socketio.on('once1') 没得用...
@@ -154,11 +145,13 @@ def handle_message(data):
 	#socketio.start_background_task(target=background_thread(shell_command))
 
 
-def background_thread(host,port,host_user,host_password,shell_command,script_local_path,pack_local_path,remote_dir,evt_name,evt_name_err,task_file,sql_success,sql_fail):
+def background_thread(host,port,host_user,host_password,shell_command,script_local_path,pack_local_path,remote_dir,evt_name,evt_name_err,task_file,task_name,sql_success,sql_fail):
 	ssh_client = paramiko.SSHClient()
 	ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 	with open(task_file,'w',1) as f:
-		socketio.emit(evt_name,'开始上传软件\n')
+		msg_begin_1 = '开始上传脚本\n'
+		socketio.emit(evt_name,msg_begin_1)
+		f.write(msg_begin_1)
 		try:
 			ts = paramiko.Transport(str(host),int(port))
 			ts.connect(username=str(host_user),password=str(host_password))
@@ -166,22 +159,28 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 			try:
 				script_remote_path = remote_dir + "/" + script_local_path.split('/')[-1]
 				sftp.put(script_local_path, script_remote_path)
-				socketio.emit(evt_name,"上传脚本成功\n")
+				msg_begin_2 = '上传脚本成功 本地脚本:' + script_local_path + "    远端脚本: " + script_remote_path + " \n"
+				socketio.emit(evt_name,msg_begin_2)
+				f.write(msg_begin_2)
 			except Exception as  es:
-				err_msg = "上传脚本失败 \n" + script_local_path + script_remote_path + str(es)
+				err_msg = "上传脚本失败 \n" + script_local_path + script_remote_path + "\n报错如下:\n" + str(es)
 				f.write(err_msg)
 				socketio.emit(evt_name_err,err_msg)
 				db.session.execute(sql_fail)
 				db.session.commit()
 				return None
-			socketio.emit(evt_name,'开始上传软件包\n')
+			msg_begin_3 = '开始上传软件包\n'
+			socketio.emit(evt_name,msg_begin_3)
+			f.write(msg_begin_3)
 			try:
 				for pack in pack_local_path.split(','):
 					pack_remote_path = remote_dir + "/" + pack.split('/')[-1]
 					sftp.put(pack,pack_remote_path)
-				socketio.emit(evt_name,"上传软件包成功\n")
+				msg_begin_4 = '上传软件包成功     本地软件包:' + pack_local_path + "     远端目录: "  + remote_dir + ' \n'
+				socketio.emit(evt_name, msg_begin_4)
+				f.write(msg_begin_4)
 			except Exception as  ep:
-				err_msg = "上传软件包失败 \n" + pack_local_path  + remote_dir + str(ep)
+				err_msg = "上传软件包失败 \n" + pack_local_path  + remote_dir + "\n报错如下\n" + str(ep)
 				f.write(err_msg)
 				socketio.emit(evt_name_err,err_msg)
 				db.session.execute(sql_fail)
@@ -196,23 +195,26 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 			ts.close()
 			db.session.execute(sql_fail)
 			db.session.commit()
-			print("error sftp,", sql_fail)
 			return None
 		finally:
 			ts.close()
 
-		socketio.emit(evt_name,'开始连接远程服务器执行脚本\n')
+		msg_install_1 = '\n\n开始连接远程服务器执行脚本\n'
+		socketio.emit(evt_name,msg_install_1)
+		f.write(msg_install_1)
 		try:
 			ssh_client.connect(hostname=host, port=port, username=host_user, password=host_password)
 		except:
-			socketio.emit(evt_name_err,"连接失败,无法执行脚本\n")
+			msg_install_2 = "连接失败,无法执行脚本\n"
+			socketio.emit(evt_name_err,msg_install_2)
+			f.write(msg_install_2)
 			db.session.execute(sql_fail)
 			db.session.commit()
 			return None
 		sshSession = ssh_client.get_transport().open_session()
 		print(shell_command)
 		sshSession.exec_command(shell_command)
-		msg_begin = "正在执行(此消息来自服务器)" + shell_command + "\n"
+		msg_install_3 = "\n\n开始执行(以下消息为脚本的标准输出, 错误输出将会弹窗)" + shell_command + "\n"
 		socketio.emit(evt_name,msg_begin)
 		while True:
 			if sshSession.recv_ready():
@@ -225,12 +227,13 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 				socketio.emit(evt_name_err,res_std_2)
 			if sshSession.exit_status_ready():
 				break
-			socketio.sleep(0.1)
+			socketio.sleep(0.5)
 		last_std = bytes.decode(sshSession.recv(1024))
 		last_std  += bytes.decode(sshSession.recv_stderr(1024))
 		f.write(last_std)
 	socketio.emit(evt_name,last_std)
-	socketio.emit(evt_name,"\nfinished(此消息来自服务器)\n")
+	msg_end_1 = "\n\n脚本执行完毕, 可以关闭此页面, 任务列表中的 {task_name} 为本次任务\n".format(task_name=task_name)
+	socketio.emit(evt_name,msg_end_1)
 	sshSession.close()
 	ssh_client.close()
 	db.session.execute(sql_success)
@@ -413,76 +416,145 @@ def default_index():
 	return redirect(url_for('index'))
 
 
-@scheduler.task('interval', id='set_db_instacne_status', seconds=120, misfire_grace_time=4)
+
+#@scheduler.task('interval', id='set_db_instacne_status', seconds=30, misfire_grace_time=4)
+@scheduler.task('interval', id='set_db_instacne_status', seconds=30)
 def set_db_instacne_status():
+	conn = sqlite3.connect(DATABASE)
+	c = conn.cursor()
 	localtime = time.asctime(time.localtime(time.time()))
-	sql_db_instacne = 'select db_instance_name,db_host,db_port,db_user,db_password from ei_db where db_type = "mysql"'
-	try:
-		items_db = db.session.execute(sql_db_instacne)
-		for instance_db in items_db:
-			try:
-				db_instance_name = instance_db[0]
-				db_host = instance_db[1]
-				db_port = instance_db[2]
-				db_user = instance_db[3]
-				db_password = instance_db[4]
-				conn_mysql = pymysql.connect(host=db_host, port=db_port, user=db_user, passwd=db_password)
-				cursor_mysql = conn_mysql.cursor()
-				cursor_mysql.execute("select version()")
-				db_version = cursor_mysql.fetchall()
-				cursor_mysql.close()
-				conn_mysql.close()
-				sql_update = 'update ei_db set db_version = "{db_version}",status={status} where db_instance_name = "{db_instance_name}" and db_host = "{db_host}" and db_port = {db_port};'.format(db_version=db_version[0][0],status=0,db_instance_name=db_instance_name,db_host=db_host,db_port=db_port)
-				try:
-					update_db_result = db.session.execute(sql_update)
-					db.session.commit()
-				except:
-					print("db 更新状态失败: ",db_instance_name, sql_update)
-			except:
-				print(db_instance_name,db_host," db 连接失败, 将设置其状态为异常")
-				sql_update_2 = 'update ei_db set status={status} where db_instance_name = "{db_instance_name}" and db_host = "{db_host}" and db_port = {db_port};'.format(status=2,db_instance_name=db_instance_name,db_host=db_host,db_port=db_port)
-				update_db_result = db.session.execute(sql_update_2)
-				db.session.commit()
-	except:
-		print("执行任务set_db_instacne_status失败, (部分失败或者全部失败)",localtime)
+	sql_db_instacne = 'select db_instance_name,db_host,db_port,db_user,db_password, db_instance_id from ei_db where db_type = "mysql"'
+	#items_db = db.session.execute(sql_db_instacne)
+	items_db = c.execute(sql_db_instacne)
+	items_db = items_db.fetchall()
+	for instance_db in items_db:
+		db_instance_name = instance_db[0]
+		db_host = instance_db[1]
+		db_port = instance_db[2]
+		db_user = instance_db[3]
+		db_password = instance_db[4]
+		db_instance_id = instance_db[5]
+		try:
+			conn_mysql = pymysql.connect(host=db_host, port=db_port, user=db_user, passwd=db_password)
+			cursor_mysql = conn_mysql.cursor()
+			cursor_mysql.execute("select version()")
+			db_version = cursor_mysql.fetchall()
+			cursor_mysql.close()
+			conn_mysql.close()
+			sql_update = 'update ei_db set db_version = "{db_version}",status={status} where db_instance_id={db_instance_id};'.format(db_version=db_version[0][0],status=0,db_instance_id=db_instance_id)
+		except Exception as emysql:
+			print(db_instance_id,db_instance_name," MYSQL实例连接失败 ", emysql)
+			sql_update = 'update ei_db set status={status} where db_instance_id={db_instance_id};'.format(status=2,db_instance_id=db_instance_id)
+		#update_db_result = db.session.execute(sql_update)
+		#db.session.execute('commit;')
+		c.execute(sql_update)
+		conn.commit()
+	conn.close()
 
 
-@scheduler.task('interval', id='set_host_instacne_status', seconds=210, misfire_grace_time=4)
+#@scheduler.task('interval', id='set_host_instacne_status', seconds=20, misfire_grace_time=4)
+@scheduler.task('interval', id='set_host_instacne_status', seconds=20)
 def set_host_instacne_status():
 	localtime = time.asctime(time.localtime(time.time()))
-	sql_host_instance = 'select host_instance_name,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password from ei_host ;'
-	try:
-		items_host = db.session.execute(sql_host_instance)
-		for instance_host in items_host:
-			try:
-				host_instance_name = instance_host[0]
-				host_ssh_ip = instance_host[1]
-				host_ssh_port = instance_host[2]
-				host_ssh_username = instance_host[3]
-				host_ssh_password = instance_host[4]
-				ssh = paramiko.SSHClient()
-				ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-				ssh.connect(hostname=host_ssh_ip, port=host_ssh_port, username=host_ssh_username, password=host_ssh_password)
-				stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep NAME= /etc/os-release | /usr/bin/head -1")
-				os_name = str(stdout.read().rstrip()).split('"')[1]
-				stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep VERSION= /etc/os-release | /usr/bin/head -1")
-				os_version = str(stdout.read().rstrip()).split('"')[1]
-				ssh.close()
-				sql_update = 'update ei_host set host_type="{host_type}",host_version="{host_version}",status={status} where host_instance_name="{host_instance_name}" and host_ssh_ip="{host_ssh_ip}" and host_ssh_port={host_ssh_port} and host_ssh_username="{host_ssh_username}";'.format(host_type=os_name, host_version=os_version, status=0, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, host_ssh_port=host_ssh_port, host_ssh_username=host_ssh_username)
-				try:
-					update_db_result = db.session.execute(sql_update)
-					db.session.commit()
-				except:
-					print("host 更新失败: ",host_instance_name , sql_update)
-			except:
-				print("连接失败 host : ", host_instance_name)
-				sql_update_2 = 'update ei_host set status={status} where host_instance_name="{host_instance_name}" and host_ssh_ip="{host_ssh_ip}" and host_ssh_port={host_ssh_port} and host_ssh_username="{host_ssh_username}";'.format(status=2, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, host_ssh_port=host_ssh_port, host_ssh_username=host_ssh_username)
-				db.session.execute(sql_update_2)
-				db.session.commit()
-	except:
-		print("JOB set_host_instacne_status 失败, 原因:部分主机信息不对,或者本地sqlite库有问题")
-	#print("Time:", localtime)
+	sql_host_instance = 'select host_instance_name,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,host_instance_id from ei_host ;'
+	items_host = db.session.execute(sql_host_instance)
+	items_host = items_host.fetchall()
+	for instance_host in items_host:
+		host_instance_name = instance_host[0]
+		host_ssh_ip = instance_host[1]
+		host_ssh_port = instance_host[2]
+		host_ssh_username = instance_host[3]
+		host_ssh_password = instance_host[4]
+		host_instance_id = instance_host[5]
+		try:
+			ssh = paramiko.SSHClient()
+			ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+			ssh.connect(hostname=host_ssh_ip, port=host_ssh_port, username=host_ssh_username, password=host_ssh_password)
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep NAME= /etc/os-release | /usr/bin/head -1")
+			os_name = str(stdout.read().rstrip()).split('"')[1]
+			stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep VERSION= /etc/os-release | /usr/bin/head -1")
+			os_version = str(stdout.read().rstrip()).split('"')[1]
+			ssh.close()
+			sql_update = 'update ei_host set host_type="{host_type}",host_version="{host_version}",status={status} where host_instance_id={host_instance_id}'.format(host_type=os_name, host_version=os_version, status=0, host_instance_id=host_instance_id)
+		except Exception as ehost:
+			print("连接主机失败,",host_instance_id,ehost)
+			sql_update = 'update ei_host set status={status} where host_instance_id={host_instance_id};'.format(status=2, host_instance_id=host_instance_id)
+		db.session.execute(sql_update)
+		db.session.execute('commit;')
 
+#@scheduler.task('interval', id='set_db_instacne_status', seconds=30, misfire_grace_time=4)
+#def set_db_instacne_status():
+#	localtime = time.asctime(time.localtime(time.time()))
+#	sql_db_instacne = 'select db_instance_name,db_host,db_port,db_user,db_password,db_instance_id from ei_db where db_type = "mysql"'
+#	try:
+#		items_db = db.session.execute(sql_db_instacne)
+#		for instance_db in items_db:
+#			try:
+#				db_instance_name = instance_db[0]
+#				db_host = instance_db[1]
+#				db_port = instance_db[2]
+#				db_user = instance_db[3]
+#				db_password = instance_db[4]
+#				db_instance_id = instance_db[5]
+#
+#				conn_mysql = pymysql.connect(host=db_host, port=db_port, user=db_user, passwd=db_password)
+#				cursor_mysql = conn_mysql.cursor()
+#				cursor_mysql.execute("select version()")
+#				db_version = cursor_mysql.fetchall()
+#				cursor_mysql.close()
+#				conn_mysql.close()
+#				sql_update = 'update ei_db set db_version = "{db_version}",status={status} where db_instance_id={db_instance_id};'.format(db_version=db_version[0][0],status=0,db_instance_id=db_instance_id)
+#				db.session.execute(sql_update)
+#				db.session.commit()
+#
+#			except Exception as ed1:
+#				print("DB实例连接失败 ",db_instance_name,db_host,db_port,db_user,db1)
+#				sql_update = 'update ei_db set status={status} where where db_instance_id={db_instance_id};'.format(status=2,db_instance_id=db_instance_id)
+#				db.session.execute(sql_update)
+#				db.session.commit()
+#			#finally:
+#			#	db.session.execute(sql_update)
+#			#	db.session.commit()
+#	except Exception as edb:
+#		print("执行任务set_db_instacne_status失败, (部分失败或者全部失败)",localtime,edb)
+#
+#
+#@scheduler.task('interval', id='set_host_instacne_status', seconds=20, misfire_grace_time=4)
+#def set_host_instacne_status():
+#	localtime = time.asctime(time.localtime(time.time()))
+#	sql_host_instance = 'select host_instance_name,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password from ei_host ;'
+#	try:
+#		items_host = db.session.execute(sql_host_instance)
+#		for instance_host in items_host:
+#			try:
+#				host_instance_name = instance_host[0]
+#				host_ssh_ip = instance_host[1]
+#				host_ssh_port = instance_host[2]
+#				host_ssh_username = instance_host[3]
+#				host_ssh_password = instance_host[4]
+#				ssh = paramiko.SSHClient()
+#				ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+#				ssh.connect(hostname=host_ssh_ip, port=host_ssh_port, username=host_ssh_username, password=host_ssh_password)
+#				stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep NAME= /etc/os-release | /usr/bin/head -1")
+#				os_name = str(stdout.read().rstrip()).split('"')[1]
+#				stdin, stdout, stderr = ssh.exec_command("/usr/bin/grep VERSION= /etc/os-release | /usr/bin/head -1")
+#				os_version = str(stdout.read().rstrip()).split('"')[1]
+#				ssh.close()
+#				sql_update = 'update ei_host set host_type="{host_type}",host_version="{host_version}",status={status} where host_instance_name="{host_instance_name}" and host_ssh_ip="{host_ssh_ip}" and host_ssh_port={host_ssh_port} and host_ssh_username="{host_ssh_username}";'.format(host_type=os_name, host_version=os_version, status=0, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, host_ssh_port=host_ssh_port, host_ssh_username=host_ssh_username)
+#				db.session.execute(sql_update)
+#				db.session.commit()
+#			except Exception as eh1:
+#				print("连接失败 host : ", host_instance_name, eh1)
+#				sql_update = 'update ei_host set status={status} where host_instance_name="{host_instance_name}" and host_ssh_ip="{host_ssh_ip}" and host_ssh_port={host_ssh_port} and host_ssh_username="{host_ssh_username}";'.format(status=2, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, host_ssh_port=host_ssh_port, host_ssh_username=host_ssh_username)
+#				db.session.execute(sql_update)
+#				db.session.commit()
+#			#finally:
+#			#	db.session.execute(sql_update)
+#			#	db.session.commit()
+#	except Exception as ehost:
+#		print("JOB set_host_instacne_status 失败, 原因:部分主机信息不对,或者本地sqlite库有问题",ehost)
+#	#print("Time:", localtime)
+#
 
 @app.route('/login',methods = ['POST','GET'])
 def login():
@@ -574,7 +646,6 @@ def add_db_instance():
 				return redirect('/index')
 				return render_template('index.html', username = username, message = message)
 			except:
-				db.session.execute("rollback")
 				error = "添加失败:" + instance_name
 		else:
 			error = "暂不支持其他添加数据库"
@@ -623,7 +694,6 @@ def del_db_instance():
 				return redirect('/index')
 				return render_template('index.html', username = username, message = message)
 			except:
-				db.session.execute("rollback")
 				error = "删除失败" + ','.join(db_instance_list)
 		else:
 			return "不能选择为空"
@@ -646,7 +716,6 @@ def del_host_instance():
 				return redirect('/index')
 				return render_template('index.html', username = username, message = message)
 			except:
-				db.session.execute("rollback")
 				error = "删除失败" + ','.join(host_instance_list)
 		else:
 			return "不能选择空"
@@ -668,7 +737,6 @@ def del_task():
 				return redirect('/index')
 				return render_template('index.html', username = username, message = message)
 			except:
-				db.session.execute("rollback")
 				error = "删除失败" + ','.join(task_list)
 		else:
 			return "不能选择空"

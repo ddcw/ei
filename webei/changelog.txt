@@ -1,0 +1,10 @@
+2021.12.14 by ddcw
+不用拆表了, 后台任务单独用连接
+
+2021.12.13 by ddcw
+拆分部分表, 因为定时任务更新状态的时候 会 导致锁表, 这就很尴尬.
+所以把状态表单独列出来, 这样更新很频繁也不会锁表了 
+ei_db =  ei_db + ei_db_status
+ei_host = ei_host + ei_host_status
+ei_task = ei_task + ei_task_status
+
