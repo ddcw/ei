@@ -60,6 +60,7 @@ def socket_connection():
 	#app.logger.info("disconnect: ",msg)
 	app.logger.info("someone disconnect")
 
+#todo delete数据库后, 把系统上的日志 改名 加个后缀.rm  在调定时任务删除 .rm结尾的
 @socketio.on('delete_task')
 def delete_task(msg):
 	if 'username' in session:
