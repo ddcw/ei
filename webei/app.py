@@ -1,7 +1,7 @@
 import configparser
 import os
 import paramiko
-from flask import Flask , redirect, url_for, request,render_template,make_response,session,send_file
+from flask import Flask , redirect, url_for, request,render_template,make_response,session,send_file,jsonify
 from flask_socketio import SocketIO, emit
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
@@ -16,6 +16,8 @@ import pymysql
 from flask_apscheduler import APScheduler
 from threading import Lock
 import subprocess
+from werkzeug.utils import secure_filename
+import json
 
 DATABASE="ei.db"
 
@@ -29,6 +31,8 @@ config.read(DEFAULT_CONFIG_FILE)
 EI_WEB_PORT = config.get('ei','port')
 EI_WEB_ADDRESS = config.get('ei','address')
 EI_WEB_DEBUG = config.get('ei','debug')
+EI_HOST_INTERVALS_SECOND=config.get('ei','host_status_check_intervals')
+EI_DB_INTERVALS_SECOND=config.get('ei','db_status_check_intervals')
 EI_LOG = config.get('ei','log')
 #EI_LOG_FORMAT = config.get('ei','log_format')
 EI_LOG_FORMAT = "[%(asctime)s] %(levelname)s in %(module)s: %(message)s"
@@ -97,6 +101,45 @@ def returntaskdetail(msg):
 	else:
 		return  redirect(url_for('login'))
 socketio.on_event('returntaskdetail', returntaskdetail)
+
+
+#@socketio.on('get_script_info')
+def get_script_info(msg):
+	if 'username' in session:
+		username = session['username']
+		evt_name = str(msg['evt_name'])
+		sql = "select script_id,script_name,script_object,script_type,script_path,script_version,script_describe,script_des_dir,script_md5,script_status from ei_script"
+		try:
+			sql_result = list(db.session.execute(sql))
+			addtype = 0
+			for rows in sql_result:
+				socketio.emit(evt_name,{"data":list(rows),"add":addtype})
+				addtype = 1
+				#socketio.sleep(0.5)
+		except Exception as e:
+			socketio.emit(evt_name,str(e))
+	else:
+		return  redirect(url_for('login'))
+socketio.on_event('get_script_info', get_script_info)
+
+#@socketio.on('get_pack_info')
+def get_pack_info(msg):
+	if 'username' in session:
+		username = session['username']
+		evt_name = str(msg['evt_name'])
+		sql = "select pack_id,pack_name,pack_path,pack_type,pack_version,pack_describe,pack_des_dir,pack_md5,pack_staus from ei_pack;"
+		try:
+			sql_result = list(db.session.execute(sql))
+			addtype = 0
+			for rows in sql_result:
+				socketio.emit(evt_name,{"data":list(rows),"add":addtype})
+				addtype = 1
+				#socketio.sleep(0.5)
+		except Exception as e:
+			socketio.emit(evt_name,str(e))
+	else:
+		return  redirect(url_for('login'))
+socketio.on_event('get_pack_info', get_pack_info)
 
 #@socketio.on('once1')
 def install_mysql_single(msg):
@@ -383,9 +426,9 @@ class User(db.Model):
 def index():
 	if 'username' in session:
 		username = session['username']
-		sql_db_instance = 'select db_instance_name, db_type, db_host, db_port, status,db_version from ei_db where db_author = "' + username + '"'
-		sql_host_instance = 'select host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,status from ei_host where host_author = "' + username + '"'
-		sql_task = 'select task_name,task_object,task_describe,task_start,task_stop,task_detail_path,task_status from ei_task where task_author="' + username + '" order by task_start desc limit 15;'
+		sql_db_instance = 'select db_instance_name, db_type, db_host, db_port, status,db_version,db_instance_id from ei_db where db_author = "' + username + '"'
+		sql_host_instance = 'select host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,status,host_instance_id from ei_host where host_author = "' + username + '"'
+		sql_task = 'select task_name,task_object,task_describe,task_start,task_stop,task_detail_path,task_status,task_id from ei_task where task_author="' + username + '" order by task_start desc limit 15;'
 		try:
 			items_db = db.session.execute(sql_db_instance)
 			items_host = db.session.execute(sql_host_instance)
@@ -422,8 +465,61 @@ def default_index():
 
 
 
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+	if 'username' in session:
+		evt_name = request.form['evt_name']
+		type_table = request.form['type_table']
+		if type_table == "script":
+			script_name = request.form['script_name']
+			script_object = request.form['script_object']
+			script_file = request.files['myfilebyei']
+			script_file_name = secure_filename(script_file.filename)
+			script_dir = "../script"
+			script_file_name_and_path = script_dir + "/" + script_file_name
+			script_sql = 'insert into ei_script(script_name,script_object,script_path) values("{script_name}","{script_object}","{script_file_name_and_path}")'.format(script_name=script_name, script_object=script_object, script_file_name_and_path=script_file_name_and_path)
+			try:
+				script_file.save(script_file_name_and_path)
+				db.session.execute(script_sql)
+				db.session.commit()
+				msg = script_file_name + " 脚本上传成功."
+			except Exception as e:
+				msg = script_file_name + " 脚本上传失败" + str(e)
+		elif type_table == "pack":
+			pack_name = request.form['pack_name']
+			pack_file = request.files['myfilebyei2']
+			pack_version = request.form['pack_version']
+			pack_file_name = secure_filename(pack_file.filename)
+			if pack_version is None:
+				pack_version = pack_file_name
+			pack_dir = "../pack"
+			pack_file_name_and_path = pack_dir + "/" + pack_file_name
+			pack_sql = 'insert into ei_pack(pack_name,pack_path,pack_version) values("{pack_name}","{pack_file_name_and_path}","{pack_version}")'.format(pack_name=pack_name, pack_file_name_and_path=pack_file_name_and_path, pack_version=pack_version)
+			try:
+				pack_file.save(pack_file_name_and_path)
+				db.session.execute(pack_sql)
+				db.session.commit()
+				msg = pack_file_name + "  软件包上传成功"
+			except Exception as ep:
+				msg = pack_file_name + " 软件包上传失败 " + str(ep)
+			
+		else:
+			return "暂不支持上传其它类型的文件"
+		r_msg = '''
+<script type="text/javascript">
+function returnIndex(){
+location.href="/index"
+}
+setTimeout("returnIndex()",5000)
+</script>
+<div align="center"><h2>''' + msg + '''</h2><p id="timereturn">5 秒后自动跳回首页<a href="/index">(点此返回)</a></p></div>'''
+		return r_msg
+	else:
+		return  redirect(url_for('login'))
+
+
 #@scheduler.task('interval', id='set_db_instacne_status', seconds=30, misfire_grace_time=4)
-@scheduler.task('interval', id='set_db_instacne_status', seconds=30)
+@scheduler.task('interval', id='set_db_instacne_status', seconds=int(EI_DB_INTERVALS_SECOND))
 def set_db_instacne_status():
 	conn = sqlite3.connect(DATABASE)
 	c = conn.cursor()
@@ -459,7 +555,7 @@ def set_db_instacne_status():
 
 
 #@scheduler.task('interval', id='set_host_instacne_status', seconds=20, misfire_grace_time=4)
-@scheduler.task('interval', id='set_host_instacne_status', seconds=20)
+@scheduler.task('interval', id='set_host_instacne_status', seconds=int(EI_HOST_INTERVALS_SECOND))
 def set_host_instacne_status():
 	localtime = time.asctime(time.localtime(time.time()))
 	sql_host_instance = 'select host_instance_name,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,host_instance_id from ei_host ;'
