@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/static/css/index1.css">
     <script type="text/javascript">
 
+//声明全局变量
+var old_row_script_html=""
 
 var socket = io();
 socket.on('responce_index_{{username}}',function(msg){
@@ -26,6 +28,122 @@ socket.on('responce_index_{{username}}',function(msg){
 		alert(alert_msg)
 	}
 });
+
+
+socket.on('ei-index-{{username}}-alert-only',function(msg){
+	alert(msg)
+});
+
+
+
+function del_script(script_id){
+	alert("waiting"+script_id)
+}
+
+function modify_script_info_uncommit(script_id){
+	var aa=document.getElementById(script_id)
+	aa.innerHTML=old_row_script_html
+	old_row_script_html=""
+}
+
+function modify_script_info_commit(script_id){
+	var aa=document.getElementById(script_id)
+	var row=$("#"+script_id).children()
+	var script_id=row.children().val()
+	var script_name=row.next().children().val()
+	var script_object=row.next().next().children().val()
+	var script_type=row.next().next().next().children().val()
+	var script_path=row.next().next().next().next().children().val()
+	var script_version=row.next().next().next().next().next().children().val()
+	var script_describe=row.next().next().next().next().next().next().children().val()
+	var script_des_dir=row.next().next().next().next().next().next().next().children().val()
+	var script_md5=row.next().next().next().next().next().next().next().next().children().val()
+	var script_status=row.next().next().next().next().next().next().next().next().next().children().val()
+
+	data={"script_id":script_id, "script_name":script_name, "script_object":script_object,  "script_type":script_type,  "script_path":script_path,  "script_version":script_version, "script_describe":script_describe, "script_des_dir":script_des_dir,  "script_md5":script_md5, "script_status":script_status,  "evt_name":"ei-index-{{username}}-alert-only"}
+	socket.emit("modify_script_info_commit",data) 
+	alert("已发送")
+	//aa.innerHTML=old_row_script_html
+	document.getElementById("button_get_script_info").click()
+
+}
+
+
+function modify_script_online(script_id){
+	//必须要把这个对象保存下来, 不然会报错 Uncaught TypeError: Cannot set properties of null (setting 'innerHTML')
+	aa=document.getElementById(script_id)
+	this_script_id=script_id
+
+	old_row_script_html=document.getElementById(script_id).innerHTML
+	var row=$("#"+script_id).children()
+	var script_id=row.html()
+	var script_name=row.next().html()
+	var script_object=row.next().next().html()
+	var script_type=row.next().next().next().html()
+	var script_path=row.next().next().next().next().html()
+	var script_version=row.next().next().next().next().next().html()
+	var script_describe=row.next().next().next().next().next().next().html()
+	var script_des_dir=row.next().next().next().next().next().next().next().html()
+	var script_md5=row.next().next().next().next().next().next().next().next().html()
+	var script_status=row.next().next().next().next().next().next().next().next().next().html()
+
+	var new_row_html="<td><input disabled='disabled' type='text' value='"+script_id+"'></td> <td><input type='text' value='"+script_name+"'></td> <td><input type='text' value='"+script_object+"'></td> <td><input type='text' value='"+script_type+"'></td> <td><input type='text' value='"+script_path+"'></td> <td><input type='text' value='"+script_version+"'></td> <td><input type='text' value='"+script_describe+"'></td> <td><input type='text' value='"+script_des_dir+"'></td> <td><input type='text' value='"+script_md5+"'></td> <td><input type='number' value='"+script_status+"'></td> <td><button type='button' class='btn btn-info ' onclick=modify_script_info_commit('"+this_script_id+"')  >确认修改</button><button onclick=modify_script_info_uncommit('"+this_script_id+"') type='button' class='btn btn-secondary'>取消</button></td> "
+
+	aa.innerHTML=new_row_html
+	//$("#"+script_id).replaceWith(new_row_html)
+	//$("#"+script_id).replaceWith("<h1>aaa</h1>")
+	//alert(old_row_html)
+}
+
+
+socket.on('script_info_{{username}}',function(msg){
+	document.getElementById("script_info").style.display="table"
+	//document.getElementById("pack_info").style.display="none"
+	$("#pack_info").hide()
+	var table=$("script_info table tbody")
+	var data=msg["data"]
+	script_id="<td>"+data[0]+"</td>"
+	script_name="<td>"+data[1]+"</td>"
+	script_object="<td>"+data[2]+"</td>"
+	script_type="<td>"+data[3]+"</td>"
+	script_path="<td>"+data[4]+"</td>"
+	script_version="<td>"+data[5]+"</td>"
+	script_describe="<td>"+data[6]+"</td>"
+	script_des_dir="<td>"+data[7]+"</td>"
+	script_md5="<td>"+data[8]+"</td>"
+	script_status="<td>"+data[9]+"</td>"
+	row_id="script_id_"+data[0]+"flag"
+	script_opt="<td><button type='button' class='btn btn-info modify_script_info' onclick=modify_script_online('" + row_id + "') >修改</button><button type='button' class='btn btn-danger' onclick=del_script("+data[0]+")>删除</button></td>"
+	//script_opt="<td><button type='button' class='btn btn-info ' onclick=modify_script_online(this) >修改</button><button type='button' class='btn btn-danger' onclick=del_script("+data[0]+")>删除</button></td>"
+	var html1 = "<tr id='" + row_id +"'>"+script_id+script_name+script_object+script_type+script_path+script_version+script_describe+script_des_dir+script_md5+script_status+script_opt+"</tr>"
+	if ( msg["add"] == 0 ) {
+		$("#script_info tbody").html(html1)
+		}
+	else if ( msg["add"] == 1  ){
+		$("#script_info tbody:first").append(html1)
+	}
+});
+
+socket.on('pack_info_{{username}}',function(msg){
+	document.getElementById("pack_info").style.display="table"
+	//document.getElementById("script_info").style.display="none"
+	$("#script_info").hide() 
+	if ( msg["add"] == 1 ){
+		document.getElementById("pack_info").innerHTML+=msg["data"][4]
+		}
+	else{
+		document.getElementById("pack_info").innerHTML=msg["data"][4]
+	}
+});
+
+function get_script_info(){
+	socket.emit('get_script_info',{"evt_name":"script_info_{{username}}"})
+}
+
+function get_pack_info(){
+	socket.emit('get_pack_info',{"evt_name":"pack_info_{{username}}"})
+}
+
 
 function delete_task(task_name){
 	socket.emit('delete_task',{"task_name":task_name,"evt_name":"responce_index_{{username}}"})
@@ -122,8 +240,6 @@ function ckt(a){
 
     </script>
     <title>DDCW--{{username}}</title>
-<script type="text/javascript">
-</script>
 </head>
 <body background="/static/img/bg4.jpg">
 
@@ -133,7 +249,7 @@ function ckt(a){
 </script>
 {% endif %}
         
-<div class="container mt-3">
+<div class="container mt-3" id="ei-index">
   <ul class="nav nav-pills bg-light" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" data-bs-toggle="pill" href="#home">首页</a>
@@ -237,7 +353,7 @@ function ckt(a){
 	<div><ul><li><h3>数据库实例</h3></li><li><a href="/static/add_mysql.html">添加数据库实例</a></li><li><a data-bs-toggle="modal" href="#deldb2">删除数据库实例</a></li></ul></div>
 	<div class="row">
 {% for db in db_list %}
-	<div class="col-md-4 card bg-dark text-white" ><a  href="db/mysql?instance_name={{db[0]}}" class="text-white"><div class="card-body"><h6>{{ db[0] }}</h6><ul><li>实例类型: {{db[1]}}</li><li>实例版本: {{db[5]}}</li><li>IP地址: {{db[2]}}</li><li>端口: {{ db[3] }}</li><li><div>状态: 
+	<div class="col-md-4 card bg-dark text-white" id="ei-db-{{db[6]}}" ><a  href="db/mysql?instance_name={{db[0]}}" class="text-white"><div class="card-body"><h6>{{ db[0] }}</h6><ul><li>实例类型: {{db[1]}}</li><li>实例版本: {{db[5]}}</li><li>IP地址: {{db[2]}}</li><li>端口: {{ db[3] }}</li><li><div>状态: 
 	{% if db[4] == 0 %} 
 		<p class="text-success" >RUNNING</p>
 	{% elif db[4] == 1 %}
@@ -295,7 +411,7 @@ function ckt(a){
       <div class="row"> 
 
 {% for host in host_list %}
-	<div class="col-md-4 card bg-dark text-white"  ><a  href="host?instance_name={{host[0]}}" class="text-white"><div class="card-body"><h6>{{host[0]}}</h6><ul><li>操作系统类型: {{host[1]}} {{host[2]}}</li><li>IP地址: {{host[3]}}</li><li>SSH端口: {{host[4]}}</li><li><div>状态:
+	<div class="col-md-4 card bg-dark text-white" id="ei-host-{{host[6]}}"  ><a  href="host?instance_name={{host[0]}}" class="text-white"><div class="card-body"><h6>{{host[0]}}</h6><ul><li>操作系统类型: {{host[1]}} {{host[2]}}</li><li>IP地址: {{host[3]}}</li><li>SSH端口: {{host[4]}}</li><li><div>状态:
 	{% if host[5] == 0 %} 
 		<p class="text-success" >RUNNING</p>
 	{% elif host[5] == 1 %}
@@ -390,7 +506,7 @@ function ckt(a){
 
 
     <div id="install1" class="container tab-pane fade"><br>
-	<div><ul><li><h3>部署安装</h3></li><li><a href="#addinstance_script">添加自定义脚本</a></li><li><a href="#deleteinstance_script">删除自定义脚本</a></li><li><a href="#upload">上传软件包</a></li></ul></div>
+	<div><ul><li><h3>部署安装</h3></li><li><a href="#upload_script" data-bs-toggle="modal">上传脚本</a></li><li><a href="#upload_pack" data-bs-toggle="modal">上传软件包</a></li></ul></div>
       <p class="text-secondary">TIPS: 部署进度可在任务管理处看</p>
 	<div class="row">
 		<div class="col-md-3 card bg-info text-white"><a href="/install?html=install_mysql_single.html" class="text-white"><div class="card-body"><h4>部署单机MYSQL</h4><p>支持mysql官方版本5.7, 8.0</p></div></a></div>
@@ -489,9 +605,34 @@ function ckt(a){
       <h3>设置</h3>
      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"> 修改密码 </button>
 <p class="text-info">项目地址: <a href="https://www.github.com/ddcw/ei" >https://www.github.com/ddcw/ei</a></p>
-<p class="text-info">MYSQL tar包路径 和 安装脚本</a></p>
-<p class="text-info">redis tar包路径 和 安装脚本</a></p>
+<div class="container mt-3"> 
+<button id="button_get_script_info" type="button" class="btn btn-primary" onclick="get_script_info()">显示脚本</button>
+<button id="button_get_pack_info" type="button" class="btn btn-info" onclick="get_pack_info()">显示软件包</button>
+<div id="script_info" style="display:none">
+	<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">脚本ID</th>
+      <th scope="col">脚本名字(功能名字)</th>
+      <th scope="col">脚本对象</th>
+      <th scope="col">脚本类型</th>
+      <th scope="col">脚本路径</th>
+      <th scope="col">脚本版本</th>
+      <th scope="col">脚本描述</th>
+      <th scope="col">脚本将要拷贝到的目标端目录</th>
+      <th scope="col">MD5校验码</th>
+      <th scope="col">脚本状态</th>
+      <th scope="col">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+<div id="pack_info" style="display:none"></div>
+</div>
     </div>
+
 
 <div class="modal" id="myModal">
   <div class="modal-dialog">
@@ -580,6 +721,113 @@ var qrcode = new QRCode("qrcode_div", {
   </div>
 </div>
 
+
+
+
+
+
+
+
+
+
+<!-- 上传脚本 -->
+<!-- 模态框 -->
+<div class="modal" id="upload_script">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- 模态框头部 -->
+      <div class="modal-header">
+        <h4 class="modal-title">上传脚本</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- 模态框内容 -->
+      <div class="modal-body">
+<form id="upload_script1" method="post" action="/upload?type=script&evt_name=ei-index-{{username}}-alert-only" enctype="multipart/form-data">
+    <div>
+        <input id="myfilebyei_script" type="file" name="myfilebyei"/></br></br>
+	脚本名字(可忽略)
+	<select class="input-xlarge valtype" data-valtype="option" name="script_name">
+                          <option>CUSTOMIZE</option>
+                          <option>INSTALL_MYSQL_SINGLE</option>
+                          <option>INSTALL_REDIS_SINGLE</option>
+                          <option>INSTALL_ZK_SINGLE</option>
+	</select>
+	</br>脚本对象(可忽略)
+	<select class="input-xlarge valtype" data-valtype="option" name="script_object">
+                          <option>CUSTOMIZE</option>
+                          <option>MYSQL</option>
+                          <option>POSTGRESQL</option>
+                          <option>ORACLE</option>
+                          <option>REDIS</option>
+                          <option>MONGODB</option>
+	</select></br></br>
+        <input type="submit" class="btn btn-primary" value="上传"></input>
+	<input type="text" name="type_table" value="script" style="display:none">
+	<input type="text" name="evt_name" value="ei-index-{{username}}-alert-only" style="display:none">
+    </div>
+</form>
+      </div>
+
+      <!-- 模态框底部 -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- 上传软件包  -->
+<!-- 模态框 -->
+<div class="modal" id="upload_pack">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- 模态框头部 -->
+      <div class="modal-header">
+        <h4 class="modal-title">上传软件包</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- 模态框内容 -->
+      <div class="modal-body">
+
+<form id="upload_pack1" method="post" action="/upload" enctype="multipart/form-data">
+    <div>
+        <input id="myfilebyei_pack" type="file" name="myfilebyei2"/></br></br>
+        </br>软件包名字(可忽略)
+        <select class="input-xlarge valtype" data-valtype="option" name="pack_name">
+                          <option>CUSTOMIZE</option>
+                          <option>MYSQL</option>
+                          <option>POSTGRESQL</option>
+                          <option>ORACLE</option>
+                          <option>REDIS</option>
+                          <option>MONGODB</option>
+        </select></br></br>
+	软件包版本(可忽略)
+	<input type="text" name="pack_version" value="">
+        <input type="submit" class="btn btn-primary" value="上传"></input>
+        <input type="text" name="type_table" value="pack" style="display:none">
+        <input type="text" name="evt_name" value="ei-index-{{username}}-alert-only" style="display:none">
+    </div>
+</form>
+
+      </div>
+
+      <!-- 模态框底部 -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
 

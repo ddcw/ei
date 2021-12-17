@@ -122,6 +122,33 @@ def get_script_info(msg):
 		return  redirect(url_for('login'))
 socketio.on_event('get_script_info', get_script_info)
 
+
+@socketio.on('modify_script_info_commit')
+def modify_script_info_commit(msg):
+	if 'username' in session:
+		username = session['username']
+		evt_name = str(msg['evt_name'])
+		script_id = int(msg['script_id'])
+		script_name = str(msg['script_name'])
+		script_object = str(msg['script_object'])
+		script_type = str(msg['script_type'])
+		script_path = str(msg['script_path'])
+		script_version = str(msg['script_version'])
+		script_describe = str(msg['script_describe'])
+		script_des_dir = str(msg['script_des_dir'])
+		script_md5 = str(msg['script_md5'])
+		script_status = int(msg['script_status'])
+		update_sql = "update ei_script set script_name='{script_name}',script_object='{script_object}',script_type='{script_type}', script_path='{script_path}', script_version='{script_version}', script_describe='{script_describe}', script_des_dir='{script_des_dir}', script_md5='{script_md5}', script_status={script_status} where script_id='{script_id}';".format(script_id=script_id, script_name=script_name, script_object=script_object, script_type=script_type, script_path=script_path, script_version=script_version, script_describe=script_describe, script_des_dir=script_des_dir, script_md5=script_md5, script_status=script_status)
+		try:
+			db.session.execute(update_sql)
+			db.session.commit()
+			rmsg = script_id + " 更新成功!"
+		except Exception as es:
+			rmsg = script_id + " 更新失败, 报错为: " + str(es)
+		socketio.emit(evt_name,rmsg)
+	else:
+		return  redirect(url_for('login'))
+
 #@socketio.on('get_pack_info')
 def get_pack_info(msg):
 	if 'username' in session:
