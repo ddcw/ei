@@ -111,6 +111,9 @@ def get_script_info(msg):
 		sql = "select script_id,script_name,script_object,script_type,script_path,script_version,script_describe,script_des_dir,script_md5,script_status from ei_script"
 		try:
 			sql_result = list(db.session.execute(sql))
+			if str(len(sql_result)) == "0":
+				socketio.emit(evt_name,{"ROWS":0})
+				return None
 			addtype = 0
 			for rows in sql_result:
 				socketio.emit(evt_name,{"data":list(rows),"add":addtype})
@@ -142,21 +145,96 @@ def modify_script_info_commit(msg):
 		try:
 			db.session.execute(update_sql)
 			db.session.commit()
-			rmsg = script_id + " 更新成功!"
+			rmsg = str(script_id) + " 更新成功!"
 		except Exception as es:
-			rmsg = script_id + " 更新失败, 报错为: " + str(es)
+			rmsg = str(script_id) + " 更新失败, 报错为: " + str(es)
 		socketio.emit(evt_name,rmsg)
 	else:
 		return  redirect(url_for('login'))
+
+@socketio.on('modify_pack_info_commit')
+def modify_pack_info_commit(msg):
+	if 'username' in session:
+		username = session['username']
+		evt_name = str(msg['evt_name'])
+		pack_id = int(msg['pack_id'])
+		pack_name = str(msg['pack_name'])
+		pack_type = str(msg['pack_type'])
+		pack_path = str(msg['pack_path'])
+		pack_version = str(msg['pack_version'])
+		pack_describe = str(msg['pack_describe'])
+		pack_des_dir = str(msg['pack_des_dir'])
+		pack_md5 = str(msg['pack_md5'])
+		pack_status = int(msg['pack_status'])
+		update_sql = "update ei_pack set pack_name='{pack_name}',pack_type='{pack_type}', pack_path='{pack_path}', pack_version='{pack_version}', pack_describe='{pack_describe}', pack_des_dir='{pack_des_dir}', pack_md5='{pack_md5}', pack_status={pack_status} where pack_id='{pack_id}';".format(pack_id=pack_id, pack_name=pack_name, pack_type=pack_type, pack_path=pack_path, pack_version=pack_version, pack_describe=pack_describe, pack_des_dir=pack_des_dir, pack_md5=pack_md5, pack_status=pack_status)
+		try:
+			db.session.execute(update_sql)
+			db.session.commit()
+			rmsg = str(pack_id) + " 更新成功!"
+		except Exception as es:
+			rmsg = str(pack_id) + " 更新失败, 报错为: " + str(es)
+		socketio.emit(evt_name,rmsg)
+	else:
+		return  redirect(url_for('login'))
+
+@socketio.on('del_script')
+def del_script(msg):
+	if 'username' in session:
+		current_time = time.localtime()
+		username = session['username']
+		evt_name = str(msg['evt_name'])
+		script_id = int(msg['script_id'])
+		select_sql = "select script_path from ei_script where script_id={script_id}".format(script_id=script_id)
+		delete_sql = "delete from ei_script where script_id={script_id}".format(script_id=script_id)
+		try:
+			file_path = list(db.session.execute(select_sql))
+			file_name_old = str(file_path[0][0])
+			file_name_new = file_name_old + "_WILL_NEED_AUTO_"  + str(time.strftime('%Y%m%d_%H%M%S',current_time))
+			os.rename(file_name_old,file_name_new)
+			db.session.execute(delete_sql)
+			db.session.commit()
+			rmsg = str(script_id) + " 删除成功!"
+		except Exception as es:
+			rmsg = str(script_id) + " 删除失败, 报错为: " + str(es)
+		socketio.emit(evt_name,rmsg)
+	else:
+		return  redirect(url_for('login'))
+
+@socketio.on('del_pack')
+def del_pack(msg):
+	if 'username' in session:
+		current_time = time.localtime()
+		username = session['username']
+		evt_name = str(msg['evt_name'])
+		pack_id = int(msg['pack_id'])
+		select_sql = "select pack_path from ei_pack where pack_id={pack_id}".format(pack_id=pack_id)
+		delete_sql = "delete from ei_pack where pack_id={pack_id}".format(pack_id=pack_id)
+		try:
+			file_path = list(db.session.execute(select_sql))
+			file_name_old = str(file_path[0][0])
+			file_name_new = file_name_old + "_WILL_NEED_AUTO_"  + str(time.strftime('%Y%m%d_%H%M%S',current_time))
+			os.rename(file_name_old,file_name_new)
+			db.session.execute(delete_sql)
+			db.session.commit()
+			rmsg = str(pack_id) + " 删除成功!"
+		except Exception as es:
+			rmsg = str(pack_id) + " 删除失败, 报错为: " + str(es)
+		socketio.emit(evt_name,rmsg)
+	else:
+		return  redirect(url_for('login'))
+
 
 #@socketio.on('get_pack_info')
 def get_pack_info(msg):
 	if 'username' in session:
 		username = session['username']
 		evt_name = str(msg['evt_name'])
-		sql = "select pack_id,pack_name,pack_path,pack_type,pack_version,pack_describe,pack_des_dir,pack_md5,pack_staus from ei_pack;"
+		sql = "select pack_id,pack_name,pack_path,pack_type,pack_version,pack_describe,pack_des_dir,pack_md5,pack_status from ei_pack;"
 		try:
 			sql_result = list(db.session.execute(sql))
+			if str(len(sql_result)) == "0":
+				socketio.emit(evt_name,{"ROWS":0})
+				return None
 			addtype = 0
 			for rows in sql_result:
 				socketio.emit(evt_name,{"data":list(rows),"add":addtype})
@@ -500,21 +578,28 @@ def upload():
 		if type_table == "script":
 			script_name = request.form['script_name']
 			script_object = request.form['script_object']
+			exist_file = request.form['exist_file'] #等于0表示 存在文件则跳过
 			script_file = request.files['myfilebyei']
 			script_file_name = secure_filename(script_file.filename)
 			script_dir = "../script"
 			script_file_name_and_path = script_dir + "/" + script_file_name
 			script_sql = 'insert into ei_script(script_name,script_object,script_path) values("{script_name}","{script_object}","{script_file_name_and_path}")'.format(script_name=script_name, script_object=script_object, script_file_name_and_path=script_file_name_and_path)
-			try:
-				script_file.save(script_file_name_and_path)
-				db.session.execute(script_sql)
-				db.session.commit()
-				msg = script_file_name + " 脚本上传成功."
-			except Exception as e:
-				msg = script_file_name + " 脚本上传失败" + str(e)
+			if os.path.isfile(script_file_name_and_path) and str(exist_file) == "0":
+				msg = str(script_file_name_and_path) + " 文件存在, 将自动跳过"
+				app.logger.warning(msg)
+				
+			else:
+				try:
+					script_file.save(script_file_name_and_path)
+					db.session.execute(script_sql)
+					db.session.commit()
+					msg = script_file_name + " 脚本上传成功."
+				except Exception as e:
+					msg = script_file_name + " 脚本上传失败" + str(e)
 		elif type_table == "pack":
 			pack_name = request.form['pack_name']
 			pack_file = request.files['myfilebyei2']
+			exist_file = request.form['exist_file'] #等于0表示 存在文件则跳过
 			pack_version = request.form['pack_version']
 			pack_file_name = secure_filename(pack_file.filename)
 			if pack_version is None:
@@ -522,20 +607,25 @@ def upload():
 			pack_dir = "../pack"
 			pack_file_name_and_path = pack_dir + "/" + pack_file_name
 			pack_sql = 'insert into ei_pack(pack_name,pack_path,pack_version) values("{pack_name}","{pack_file_name_and_path}","{pack_version}")'.format(pack_name=pack_name, pack_file_name_and_path=pack_file_name_and_path, pack_version=pack_version)
-			try:
-				pack_file.save(pack_file_name_and_path)
-				db.session.execute(pack_sql)
-				db.session.commit()
-				msg = pack_file_name + "  软件包上传成功"
-			except Exception as ep:
-				msg = pack_file_name + " 软件包上传失败 " + str(ep)
+			if os.path.isfile(pack_file_name_and_path) and str(exist_file) == "0":
+				msg = str(pack_file_name_and_path) + "文件存在, 将自动跳过"
+				app.logger.warning(msg)
+			else:
+				try:
+					pack_file.save(pack_file_name_and_path)
+					db.session.execute(pack_sql)
+					db.session.commit()
+					msg = pack_file_name + "  软件包上传成功"
+				except Exception as ep:
+					msg = pack_file_name + " 软件包上传失败 " + str(ep)
 			
 		else:
 			return "暂不支持上传其它类型的文件"
 		r_msg = '''
 <script type="text/javascript">
 function returnIndex(){
-location.href="/index"
+//location.href="/index"
+window.history.go(-1)
 }
 setTimeout("returnIndex()",5000)
 </script>
