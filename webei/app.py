@@ -189,7 +189,7 @@ def del_script(msg):
 		try:
 			file_path = list(db.session.execute(select_sql))
 			file_name_old = str(file_path[0][0])
-			file_name_new = file_name_old + "_WILL_NEED_AUTO_"  + str(time.strftime('%Y%m%d_%H%M%S',current_time))
+			file_name_new = file_name_old + "_WILL_REMOVE_AUTO_BY_DDCW_"  + str(time.strftime('%Y%m%d_%H%M%S',current_time))
 			os.rename(file_name_old,file_name_new)
 			db.session.execute(delete_sql)
 			db.session.commit()
@@ -251,6 +251,9 @@ def install_mysql_single(msg):
 	if 'username' in session:
 		username = session['username']
 		current_time = time.localtime() 
+		socketio.emit(str(msg['evt_name_err']),msg["mysql_root_password"])
+		return None
+		#这下面的代码要重写了... at 2021.12.18
 		app.logger.info(username, "开始安装单机MYSQL了..")
 		task_name = "INSTALL_MYSQL_SINGLE_" + str(time.strftime('%Y%m%d_%H%M%S',current_time)) + str(random.randint(0,10000))
 		task_file = "../data/tasks/" + username + "_" + task_name + ".log"
@@ -461,13 +464,23 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 	
 
 
-@app.route('/install')
-def install_byshell():
+@app.route('/install_mysql_instance')
+def install_mysql_instance():
 	if 'username' in session:
 		username = session['username']
-		html = 'db/' + request.args.get('html')
-		return render_template(html,username = username)
-	return  redirect(url_for('login'))
+		sql_host_instance = "select host_instance_id,host_instance_name,host_ssh_ip,host_ssh_port from ei_host where status=0 and host_author='{host_author}';".format(host_author=username)
+		#sql_host_instance = "select host_instance_id,host_instance_name from ei_host where host_author='" + username + "'};"
+		sql_script = "select script_id,script_name,script_path from ei_script where script_object='MYSQL' and script_name='INSTALL_MYSQL_SINGLE';"
+		sql_pack = "select pack_id,pack_path,pack_version from ei_pack where pack_name='MYSQL';"
+		try:
+			host_instance = list(db.session.execute(sql_host_instance))
+			script = list(db.session.execute(sql_script))
+			pack = list(db.session.execute(sql_pack))
+		except Exception as e:
+			return (str(e))
+		return render_template("/db/install_mysql_single.html",username = username, host_instance=host_instance, script=script, pack=pack)
+	else:
+		return  redirect(url_for('login'))
 
 @app.route('/task_detail')
 def return_task_detail():
