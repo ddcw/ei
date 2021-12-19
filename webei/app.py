@@ -251,41 +251,114 @@ def install_mysql_single(msg):
 	if 'username' in session:
 		username = session['username']
 		current_time = time.localtime() 
-		socketio.emit(str(msg['evt_name_err']),msg["mysql_root_password"])
-		return None
-		#这下面的代码要重写了... at 2021.12.18
-		app.logger.info(username, "开始安装单机MYSQL了..")
-		task_name = "INSTALL_MYSQL_SINGLE_" + str(time.strftime('%Y%m%d_%H%M%S',current_time)) + str(random.randint(0,10000))
-		task_file = "../data/tasks/" + username + "_" + task_name + ".log"
-		host = str(msg['mysql_host'])
-		port = int(msg['mysql_host_port'])
-		host_user = str(msg['mysql_host_username'])
-		host_password = str(msg['mysql_host_password'])
-		mysql_port = int(msg['mysql_port'])
-		mysql_password = str(msg['mysql_root_password'])
 		evt_name = str(msg['evt_name'])
 		evt_name_err = str(msg['evt_name_err'])
-		script_sql =  "select script_path,script_pack_path,script_target_path from ei_script where script_share=0 and script_name='install_mysql_single'"
-		scrtpt_sql_result = list(db.session.execute(script_sql))
-		script_name = scrtpt_sql_result[0][0].split('/')[-1]
-		script_local_path = str(scrtpt_sql_result[0][0])
-		pack_name = scrtpt_sql_result[0][1].split('/')[-1]
-		pack_local_path = str(scrtpt_sql_result[0][1])
-		remote_dir = str(scrtpt_sql_result[0][2])
-		shell_command = "/usr/bin/sh {remote_dir}/{script_name} MYSQL_ROOT_PASSWORD={mysql_password} MYSQL_PORT={mysql_port} MYSQL_TAR='{remote_dir}/{pack_name}'".format(remote_dir=remote_dir,script_name=script_name,mysql_password=mysql_password,mysql_port=mysql_port,pack_name=pack_name)
+		task_name = "INSTALL_MYSQL_SINGLE_" + str(time.strftime('%Y%m%d_%H%M%S',current_time)) + str(random.randint(0,10000))
+		task_file = "../data/tasks/" + username + "_" + task_name + ".log"
+		#这下面的代码要重写了... at 2021.12.18
 
-		#task_sql ei_task表的   sql_0 成功则执行的sql   sql_2 失败则执行的sql  主要是修改状态
-		task_sql = '''insert into ei_task(task_author,task_name,task_object,task_describe,task_shell,task_detail_path) values("{username}","{task_name}","{host}:{port}","安装mysql单机","{shell_command}","{task_file}")'''.format(username=username, task_name=task_name, host=host,port=port, host_password=host_password, shell_command=shell_command, task_file=task_file)
+
+		host_instance_id = int(msg['host_instance_id'])
+		script_id = int(msg['script_id'])
+		pack_id = int(msg['pack_id'])
+		mysql_port = int(msg['mysql_port'])
+		mysql_root_password = str(msg['mysql_root_password'])
+
+		host_sql = "select host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,host_instance_name from ei_host where status=0 and host_instance_id={host_instance_id} and host_author='{username}';".format(host_instance_id=host_instance_id, username=username)
+		script_sql = "select script_path,script_des_dir from ei_script where script_status=0 and script_id={script_id}".format(script_id=script_id)
+		pack_sql = "select pack_path,pack_des_dir from ei_pack where pack_status=0 and pack_id={pack_id}".format(pack_id=pack_id)
 		try:
-			res = db.session.execute(task_sql)
-			res = db.session.commit()
+			host_sql_result = list(db.session.execute(host_sql))
+			host_ssh_ip = str(host_sql_result[0][0])
+			host_ssh_port = int(host_sql_result[0][1])
+			host_ssh_username = str(host_sql_result[0][2])
+			host_ssh_password = str(host_sql_result[0][3])
+			host_instance_name = str(host_sql_result[0][4])
+
+			script_sql_result = list(db.session.execute(script_sql))
+			script_path = str(script_sql_result[0][0])
+			script_name = str(script_path.split('/')[-1])
+			script_des_dir = str(script_sql_result[0][1])
+
+			pack_sql_result = list(db.session.execute(pack_sql))
+			pack_path = str(pack_sql_result[0][0])
+			pack_name = str(pack_path.split('/')[-1])
+			pack_des_dir = str(pack_sql_result[0][1])
+		except Exception as es:
+			errmsg = "获取信息失败 " + str(es)
+			app.logger.error(errmsg)
+			socketio.emit(evt_name_err,errmsg)
+			
+		mysql_parameter_innodb_size = msg['mysql_parameter_innodb_size']
+		mysql_parameter_innodb_page = msg['mysql_parameter_innodb_page']
+		mysql_parameter_base_dir = str(msg['mysql_parameter_base_dir'])
+		mysql_parameter_data_dir = str(msg['mysql_parameter_data_dir'])
+		mysql_parameter_log_dir = str(msg['mysql_parameter_log_dir'])
+		mysql_parameter_charset = str(msg['mysql_parameter_charset'])
+		mysql_parameter_sync_binlog = msg['mysql_parameter_sync_binlog']
+		mysql_parameter_flush_log_at_trx_commit = msg['mysql_parameter_flush_log_at_trx_commit']
+		mysql_parameter_server_id = msg['mysql_parameter_server_id']
+		mysql_parameter_binlog = str(msg['mysql_parameter_binlog'])
+		mysql_parameter_default_engine = str(msg['mysql_parameter_default_engine'])
+
+		shell_command = "/usr/bin/sh {script_des_dir}/{script_name} MYSQL_PORT={mysql_port} MYSQL_ROOT_PASSWORD={mysql_root_password} MYSQL_TAR={pack_des_dir}/{pack_name}".format(script_des_dir=script_des_dir, script_name=script_name, mysql_port=mysql_port, mysql_root_password=mysql_root_password, pack_des_dir=pack_des_dir, pack_name=pack_name)
+
+		if len(mysql_parameter_innodb_size) > 0:
+			shell_command += " MYSQL_INNODB_BUFFER_POOL_SIZE={mysql_parameter_innodb_size}".format(mysql_parameter_innodb_size=mysql_parameter_innodb_size)
+
+		if len(mysql_parameter_innodb_page) > 0:
+			shell_command += " MYSQL_INNODB_PAGE_SIZE={mysql_parameter_innodb_page}".format(mysql_parameter_innodb_page=mysql_parameter_innodb_page)
+
+		if len(mysql_parameter_base_dir) > 0:
+			shell_command += " MYSQL_BASE_DIR={mysql_parameter_base_dir}".format(mysql_parameter_base_dir=mysql_parameter_base_dir)
+
+		if len(mysql_parameter_data_dir) > 0:
+			shell_command += " MYSQL_DATA_DIR={mysql_parameter_data_dir}".format(mysql_parameter_data_dir=mysql_parameter_data_dir)
+
+		if len(mysql_parameter_log_dir) > 0:
+			shell_command += " MYSQL_LOG_DIR={mysql_parameter_log_dir}".format(mysql_parameter_log_dir=mysql_parameter_log_dir)
+
+		if len(mysql_parameter_charset) > 0:
+			shell_command += " MYSQL_CHARACTER_SET={mysql_parameter_charset}".format(mysql_parameter_charset=mysql_parameter_charset)
+
+		if len(mysql_parameter_sync_binlog) > 0:
+			shell_command += " MYSQL_SYNC_BINLOG={mysql_parameter_sync_binlog}".format(mysql_parameter_sync_binlog=mysql_parameter_sync_binlog)
+
+		if len(mysql_parameter_flush_log_at_trx_commit) > 0:
+			shell_command += " MYSQL_INNODB_FLUSH_LOG_AT_TRX_COMMIT={mysql_parameter_flush_log_at_trx_commit}".format(mysql_parameter_flush_log_at_trx_commit=mysql_parameter_flush_log_at_trx_commit)
+
+		if len(mysql_parameter_server_id) > 0:
+			shell_command += " MYSQL_SERVER_ID={mysql_parameter_server_id}".format(mysql_parameter_server_id=mysql_parameter_server_id)
+
+		if len(mysql_parameter_binlog) > 0:
+			shell_command += " MYSQL_BINLOG={mysql_parameter_binlog}".format(mysql_parameter_binlog=mysql_parameter_binlog)
+
+		if len(mysql_parameter_default_engine) > 0:
+			shell_command += " MYSQL_DEFAULT_STORAGE_ENGINE={mysql_parameter_default_engine}".format(mysql_parameter_default_engine=mysql_parameter_default_engine)
+
+
+		#socketio.emit(evt_name_err,shell_command)
+		#return None
+		#task_sql ei_task表的   sql_0 成功则执行的sql   sql_2 失败则执行的sql  主要是修改状态
+		task_sql = '''insert into ei_task(task_author,task_name,task_object,task_describe,task_shell,task_detail_path) values("{username}","{task_name}","{host_instance_name}:{host_ssh_ip}","安装mysql单机","{shell_command}","{task_file}")'''.format(username=username, task_name=task_name, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, shell_command=shell_command, task_file=task_file)
+		try:
+			db.session.execute(task_sql)
+			db.session.commit()
+			task_info = "配置任务({task_name})成功, 即将开始安装..\n".format(task_name=task_name)
+			app.logger.info(task_info)
+			socketio.emit(evt_name,task_info)
 		except Exception as et:
-			app.logger.error(str(et))
-			err_task = "配置任务失败" + task_name + task_file + "sql:  " + task_sql
+			#app.logger.error(str(et))
+			err_task = "配置任务失败, 请排错后,重新开始" + task_name + task_file + "sql:  " + task_sql + "报错为: " + str(et)
+			app.logger.error(err_task)
 			socketio.emit(evt_name_err,err_task)
+			return None
 		sql_0 = '''update ei_task set task_status = 0 where task_name="{task_name}" and task_author="{task_author}" and task_detail_path="{task_detail_path}"'''.format(task_name=task_name, task_author=username, task_detail_path=task_file)
 		sql_2 = '''update ei_task set task_status = 2 where task_name="{task_name}" and task_author="{task_author}" and task_detail_path="{task_detail_path}"'''.format(task_name=task_name, task_author=username, task_detail_path=task_file)
-		bgtsk = socketio.start_background_task(target=background_thread(host,port,host_user,host_password,shell_command,script_local_path,pack_local_path,remote_dir,evt_name,evt_name_err,task_file,task_name,sql_0,sql_2))
+		app.logger.info(username, "开始安装单机MYSQL了..")
+
+		bgtsk = socketio.start_background_task(target=background_thread(host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,shell_command,script_path,script_name,script_des_dir, pack_path,pack_name,pack_des_dir,evt_name,evt_name_err,task_file,task_name,sql_0,sql_2))
+
 		log_info = "USERNAME:{username}  任务:{task_name}已执行完. 日志文件: {task_file} ".format(username=username, task_name=task_name, task_file=task_file)
 		app.logger.info(log_info)
 	return  redirect(url_for('login'))
@@ -301,10 +374,23 @@ def handle_message(data):
 	#socketio.start_background_task(target=background_thread(shell_command))
 
 
-def background_thread(host,port,host_user,host_password,shell_command,script_local_path,pack_local_path,remote_dir,evt_name,evt_name_err,task_file,task_name,sql_success,sql_fail):
+def background_thread(host,port,host_user,host_password,shell_command,script_path,script_name,script_des_dir, pack_path,pack_name,pack_des_dir,evt_name,evt_name_err,task_file,task_name,sql_success,sql_fail):
 	ssh_client = paramiko.SSHClient()
+	sshmkdir = paramiko.SSHClient()
 	ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+	sshmkdir.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 	with open(task_file,'w',1) as f:
+		#app.logger.info(shell_command)
+		mkdir_command = "/usr/bin/mkdir -p {script_des_dir} {pack_des_dir}".format(pack_des_dir=pack_des_dir, script_des_dir=script_des_dir)
+		try:
+			sshmkdir.connect(hostname=host, port=port, username=host_user, password=host_password)
+			sshmkdir.exec_command(mkdir_command)
+			sshmkdir.close()
+		except Exception as emkdir:
+			err_msg = "无法创建目录({mkdir_command}), 报错为:{emkdir}".format(mkdir_command=mkdir_command, emkdir=str(emkdir))
+			socketio.emit(evt_name_err,err_msg)
+			f.write(err_msg)
+			return None
 		msg_begin_1 = '开始上传脚本\n'
 		socketio.emit(evt_name,msg_begin_1)
 		f.write(msg_begin_1)
@@ -312,8 +398,11 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 			ts = paramiko.Transport(str(host),int(port))
 			ts.connect(username=str(host_user),password=str(host_password))
 			sftp = paramiko.SFTPClient.from_transport(ts)
+			script_remote_path = str(script_des_dir) + "/" + str(script_name)
+			script_local_path = str(script_path)
+			pack_remote_path = str(pack_des_dir) + "/" + str(pack_name)
+			pack_local_path = str(pack_path)
 			try:
-				script_remote_path = remote_dir + "/" + script_local_path.split('/')[-1]
 				sftp.put(script_local_path, script_remote_path)
 				msg_begin_2 = '上传脚本成功 本地脚本:' + script_local_path + "    远端脚本: " + script_remote_path + " \n"
 				socketio.emit(evt_name,msg_begin_2)
@@ -329,14 +418,12 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 			socketio.emit(evt_name,msg_begin_3)
 			f.write(msg_begin_3)
 			try:
-				for pack in pack_local_path.split(','):
-					pack_remote_path = remote_dir + "/" + pack.split('/')[-1]
-					sftp.put(pack,pack_remote_path)
-				msg_begin_4 = '上传软件包成功     本地软件包:' + pack_local_path + "     远端目录: "  + remote_dir + ' \n'
+				sftp.put(pack_local_path,pack_remote_path)
+				msg_begin_4 = '上传软件包成功     本地软件包:' + pack_local_path + "     远端目录: "  + pack_remote_path+ ' \n'
 				socketio.emit(evt_name, msg_begin_4)
 				f.write(msg_begin_4)
 			except Exception as  ep:
-				err_msg = "上传软件包失败 \n" + pack_local_path  + remote_dir + "\n报错如下\n" + str(ep)
+				err_msg = "上传软件包失败 \n" + pack_local_path  + pack_remote_path + "\n报错如下\n" + str(ep)
 				f.write(err_msg)
 				socketio.emit(evt_name_err,err_msg)
 				db.session.execute(sql_fail)
@@ -367,11 +454,10 @@ def background_thread(host,port,host_user,host_password,shell_command,script_loc
 			db.session.execute(sql_fail)
 			db.session.commit()
 			return None
-		sshSession = ssh_client.get_transport().open_session()
-		#app.logger.info(shell_command)
-		sshSession.exec_command(shell_command)
 		msg_install_3 = "\n\n开始执行(以下消息为脚本的标准输出, 错误输出将会弹窗)" + shell_command + "\n"
-		socketio.emit(evt_name,msg_begin)
+		socketio.emit(evt_name,msg_install_3)
+		sshSession = ssh_client.get_transport().open_session()
+		sshSession.exec_command(shell_command)
 		while True:
 			if sshSession.recv_ready():
 				res_std_1 = bytes.decode(sshSession.recv(1024))
@@ -470,8 +556,8 @@ def install_mysql_instance():
 		username = session['username']
 		sql_host_instance = "select host_instance_id,host_instance_name,host_ssh_ip,host_ssh_port from ei_host where status=0 and host_author='{host_author}';".format(host_author=username)
 		#sql_host_instance = "select host_instance_id,host_instance_name from ei_host where host_author='" + username + "'};"
-		sql_script = "select script_id,script_name,script_path from ei_script where script_object='MYSQL' and script_name='INSTALL_MYSQL_SINGLE';"
-		sql_pack = "select pack_id,pack_path,pack_version from ei_pack where pack_name='MYSQL';"
+		sql_script = "select script_id,script_name,script_path from ei_script where script_object='MYSQL' and script_name='INSTALL_MYSQL_SINGLE' and script_status=0;"
+		sql_pack = "select pack_id,pack_path,pack_version from ei_pack where pack_name='MYSQL' and pack_status=0;"
 		try:
 			host_instance = list(db.session.execute(sql_host_instance))
 			script = list(db.session.execute(sql_script))
