@@ -64,17 +64,97 @@ def socket_connection():
 	#app.logger.info("disconnect: ",msg)
 	app.logger.info("someone disconnect")
 
+
+@socketio.on('get_uuid')
+def get_uuid(msg):
+	f = os.popen("/usr/bin/sh tool/shell/get_uuid.sh")
+	return_msg = f.read()
+	f.close()
+	socketio.emit(msg['evt_name'],return_msg)
+
+@socketio.on('get_password')
+def get_uuid(msg):
+	f = os.popen("/usr/bin/sh tool/shell/get_urandom.sh")
+	return_msg = f.read()
+	f.close()
+	socketio.emit(msg['evt_name'],return_msg)
+
+
+@socketio.on('get_scanport')
+def get_scanport(msg):
+	ip = msg['ip']
+	evt_name = msg['evt_name']
+	f = os.popen("/usr/bin/sh tool/shell/get_scanport.sh {ip}".format(ip=ip))
+	return_msg = f.read()
+	f.close()
+	socketio.emit(evt_name,return_msg)
+	
+
+@socketio.on('get_base64')
+def get_base64(msg):
+	data = msg['data']
+	evt_name = msg['evt_name']
+	print(msg)
+	if msg['obj'] == "encode":
+		f = os.popen("sh tool/shell/get_base64_encode.sh {data}".format(data=data))
+		return_msg = f.read()
+		f.close()
+		return_msg_format = {"obj":"encode","data":return_msg}
+		socketio.emit(msg['evt_name'],return_msg_format)
+	elif msg['obj'] == "decode":
+		print('xxxxxxxxxxxxxxxxxxx ',data)
+		f = os.popen("sh tool/shell/get_base64_decode.sh {data}".format(data=data))
+		return_msg = f.read()
+		f.close()
+		return_msg_format = {"obj":"decode","data":return_msg}
+		socketio.emit(msg['evt_name'],return_msg_format)
+
+#to do 返回各种类型的数据
+@socketio.on('get_db_status')
+def get_db_status(msg):
+	if 'username' in session:
+		username = session['username']
+		obj = msg['obj'] #采样类型, 如tps qps (这两数据一起采样)
+		db_instance_id = msg['db_instance_id'] #数据库实例ID
+		evt_name = msg['evt_name']
+		sql = "select db_host,db_port,db_user,db_password,db_type from ei_db where db_instance_id={db_instance_id} and db_author='{username}'".format(db_instance_id,username)
+		try:
+			sql_result = list(db.session.execute(sql))
+			db_host = str(sql_result[0][0])
+			db_port = int(sql_result[0][1])
+			db_user = str(sql_result[0][2])
+			db_password = str(sql_result[0][3])
+			db_type = str(sql_result[0][4])
+		except Exception as e:
+			app.logger.error(str(e))
+		if db_type == "mysql":
+			msg = "暂不支持"
+		elif db_type == "postgresql":
+			msg = "暂不支持"
+		socketio.emit(evt_name,msg)
+	else:
+		return  redirect(url_for('login'))
+		
+	
+
 #todo delete数据库后, 把系统上的日志 改名 加个后缀.rm  在调定时任务删除 .rm结尾的
 @socketio.on('delete_task')
 def delete_task(msg):
 	if 'username' in session:
 		username = session['username']
 		task_name = str(msg['task_name'])
+		task_id = int(msg['task_id'])
 		evt_name = str(msg['evt_name'])
-		del_task_sql = 'delete from ei_task where task_author="' + username + '" and task_name="' + task_name + '";'
+		#del_task_sql = 'delete from ei_task where task_author="' + username + '" and task_name="' + task_name + '";'
+		#file_name_sql = 'select task_detail_path from ei_task where task_author="{username}" and task_name="{task_name}";'.format(username=username,task_name=task_name)
+		del_task_sql = 'delete from ei_task where task_author="{username}" and task_id={task_id}'.format(username=username, task_id=task_id)
+		file_name_sql = 'select task_detail_path from ei_task where task_author="{username}" and task_id="{task_id}";'.format(username=username,task_id=task_id)
 		try:
+			file_name_old = list(db.session.execute(file_name_sql))[0][0]
+			file_name_new = str(file_name_old) + "_WILL_NEED_AUTO_RM_BYDDCW"
 			db.session.execute(del_task_sql)
 			db.session.commit()
+			os.rename(file_name_old,file_name_new)
 			return_message = {"status":0,"object_name":task_name,"opt":"删除任务成功: ","hide_id":task_name}
 		except Exception as ed:
 			app.logger.error('删除任务失败:  ',task_name, "sql:  ",del_task_sql)
@@ -246,6 +326,83 @@ def get_pack_info(msg):
 		return  redirect(url_for('login'))
 socketio.on_event('get_pack_info', get_pack_info)
 
+
+@socketio.on('custom_script')
+def custom_script(msg):
+	if 'username' in session:
+		username = session['username']
+		current_time = time.localtime()
+		evt_name = str(msg['evt_name'])
+		evt_name_err = str(msg['evt_name_err'])
+		task_name = "CUSTOM_SCRIPT" + str(time.strftime('%Y%m%d_%H%M%S',current_time)) + str(random.randint(0,10000))
+		task_file = "../data/tasks/" + username + "_" + task_name + ".log"
+		custom_parameter = str(msg['custom_parameter'])
+
+		host_instance_id = int(msg['host_instance_id'])
+		script_id = int(msg['script_id'])
+		pack_id = int(msg['pack_id'])
+		host_sql = "select host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,host_instance_name from ei_host where status=0 and host_instance_id={host_instance_id} and host_author='{username}';".format(host_instance_id=host_instance_id, username=username)
+		script_sql = "select script_path,script_des_dir from ei_script where script_status=0 and script_id={script_id}".format(script_id=script_id)
+		pack_sql = "select pack_path,pack_des_dir from ei_pack where pack_status=0 and pack_id={pack_id}".format(pack_id=pack_id)
+		try:
+			host_sql_result = list(db.session.execute(host_sql))
+			host_ssh_ip = str(host_sql_result[0][0])
+			host_ssh_port = int(host_sql_result[0][1])
+			host_ssh_username = str(host_sql_result[0][2])
+			host_ssh_password = str(host_sql_result[0][3])
+			host_instance_name = str(host_sql_result[0][4])
+
+			script_sql_result = list(db.session.execute(script_sql))
+			script_path = str(script_sql_result[0][0])
+			script_name = str(script_path.split('/')[-1])
+			script_des_dir = str(script_sql_result[0][1])
+
+			if pack_id > 0:
+				pack_sql_result = list(db.session.execute(pack_sql))
+				pack_path = str(pack_sql_result[0][0])
+				pack_name = str(pack_path.split('/')[-1])
+				pack_des_dir = str(pack_sql_result[0][1])
+			else:
+				pack_path=""
+				pack_name=""
+				pack_des_dir=""
+		except Exception as e:
+			errmsg = "获取信息失败 " + str(e)
+			app.logger.error(errmsg)
+			socketio.emit(evt_name_err,errmsg)
+		shell_command = "/usr/bin/sh {script_des_dir}/{script_name} {custom_parameter}".format(script_des_dir=script_des_dir, script_name=script_name, custom_parameter=custom_parameter)
+		task_sql = '''insert into ei_task(task_author,task_name,task_object,task_describe,task_shell,task_detail_path) values("{username}","{task_name}","{host_instance_name}:{host_ssh_ip}","安装mysql单机","{shell_command}","{task_file}")'''.format(username=username, task_name=task_name, host_instance_name=host_instance_name, host_ssh_ip=host_ssh_ip, shell_command=shell_command, task_file=task_file)
+		try:
+			db.session.execute(task_sql)
+			db.session.commit()
+			task_info = "配置任务({task_name})成功..\n".format(task_name=task_name)
+			app.logger.info(task_info)
+			#socketio.emit(evt_name,task_info)
+		except Exception as et:
+			#app.logger.error(str(et))
+			err_task = "配置任务失败, 请排错后,重新开始" + task_name + task_file + "sql:  " + task_sql + "报错为: " + str(et)
+			app.logger.error(err_task)
+			socketio.emit(evt_name_err,err_task)
+			return None
+		sql_0 = '''update ei_task set task_status = 0 where task_name="{task_name}" and task_author="{task_author}" and task_detail_path="{task_detail_path}"'''.format(task_name=task_name, task_author=username, task_detail_path=task_file)
+		sql_2 = '''update ei_task set task_status = 2 where task_name="{task_name}" and task_author="{task_author}" and task_detail_path="{task_detail_path}"'''.format(task_name=task_name, task_author=username, task_detail_path=task_file)
+		app.logger.info(username, "开始后台执行脚本..")
+		
+		#if len(pack_path) == 0 :
+			#bgtsk = socketio.start_background_task(target=background_thread_shell_only(host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,shell_command,script_path,script_name,script_des_dir, evt_name,evt_name_err,task_file,task_name,sql_0,sql_2))
+		#else:
+			#bgtsk = socketio.start_background_task(target=background_thread(host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,shell_command,script_path,script_name,script_des_dir, pack_path,pack_name,pack_des_dir,evt_name,evt_name_err,task_file,task_name,sql_0,sql_2))
+
+		bgtsk = socketio.start_background_task(target=background_thread(host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,shell_command,script_path,script_name,script_des_dir, pack_path,pack_name,pack_des_dir,evt_name,evt_name_err,task_file,task_name,sql_0,sql_2))
+
+			
+
+		log_info = "USERNAME:{username}  任务:{task_name}已执行完. 日志文件: {task_file} ".format(username=username, task_name=task_name, task_file=task_file)
+		app.logger.info(log_info)
+
+	else:
+		return  redirect(url_for('login'))
+
 #@socketio.on('once1')
 def install_mysql_single(msg):
 	if 'username' in session:
@@ -264,6 +421,12 @@ def install_mysql_single(msg):
 		mysql_port = int(msg['mysql_port'])
 		mysql_root_password = str(msg['mysql_root_password'])
 
+		if pack_id < 0 or script_id < 0:
+			errmsg = "脚本或软件包不存在 " 
+			app.logger.error(errmsg)
+			socketio.emit(evt_name_err,errmsg)
+			return None
+
 		host_sql = "select host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,host_instance_name from ei_host where status=0 and host_instance_id={host_instance_id} and host_author='{username}';".format(host_instance_id=host_instance_id, username=username)
 		script_sql = "select script_path,script_des_dir from ei_script where script_status=0 and script_id={script_id}".format(script_id=script_id)
 		pack_sql = "select pack_path,pack_des_dir from ei_pack where pack_status=0 and pack_id={pack_id}".format(pack_id=pack_id)
@@ -280,10 +443,15 @@ def install_mysql_single(msg):
 			script_name = str(script_path.split('/')[-1])
 			script_des_dir = str(script_sql_result[0][1])
 
-			pack_sql_result = list(db.session.execute(pack_sql))
-			pack_path = str(pack_sql_result[0][0])
-			pack_name = str(pack_path.split('/')[-1])
-			pack_des_dir = str(pack_sql_result[0][1])
+			if pack_id > 0:
+				pack_sql_result = list(db.session.execute(pack_sql))
+				pack_path = str(pack_sql_result[0][0])
+				pack_name = str(pack_path.split('/')[-1])
+				pack_des_dir = str(pack_sql_result[0][1])
+			else:
+				pack_path=""
+				pack_name=""
+				pack_des_dir=""
 		except Exception as es:
 			errmsg = "获取信息失败 " + str(es)
 			app.logger.error(errmsg)
@@ -373,6 +541,49 @@ def handle_message(data):
 	#shell_command = "/usr/bin/sh /tmp/getrand.sh"
 	#socketio.start_background_task(target=background_thread(shell_command))
 
+def background_thread_shell_only(host,port,user,password,shell_command,script_path,script_name,script_des_dir,evt_name,evt_name_err,task_file,task_name,sql_success,sql_fail):
+	ssh = paramiko.SSHClient()
+	ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+	with open(task_file,'w',1) as f:
+		try:
+			ssh.connect(hostname=host, port=port, username=user, password=password)
+			sshSession = ssh.get_transport().open_session()
+			msg = "连接成功, 即将执行脚本..\n"
+			socketio.emit(evt_name,msg)
+			f.write(msg)
+		except Exception as e:
+			msg = "连接失败, 请排查...\n 报错为: {msg}".format(msg=str(e))
+			socketio.emit(evt_name,msg)
+			f.write(msg)
+			db.session.execute(sql_fail)
+			db.session.commit()
+			return None
+		while True:
+			if sshSession.recv_ready():
+				res_std_1 = bytes.decode(sshSession.recv(1024))
+				f.write(res_std_1)
+				socketio.emit(evt_name,res_std_1)
+			if sshSession.recv_stderr_ready():
+				res_std_2 = bytes.decode(sshSession.recv_stderr(1024))
+				f.write(res_std_2)
+				socketio.emit(evt_name_err,res_std_2)
+			if sshSession.exit_status_ready():
+				break
+			socketio.sleep(0.5)
+		last_std  = bytes.decode(sshSession.recv(1024))
+		last_std += bytes.decode(sshSession.recv_stderr(1024))
+		f.write(last_std)
+	socketio.emit(evt_name,last_std)
+	msg_end = "\n\n脚本执行完毕, 可以关闭此页面, 任务列表中的 {task_name} 为本次任务\n".format(task_name=task_name)
+	socketio.emit(evt_name,msg_end)
+	sshSession.close()
+	ssh.close()
+	db.session.execute(sql_success)
+	db.session.commit()
+	return None
+	
+
+
 
 def background_thread(host,port,host_user,host_password,shell_command,script_path,script_name,script_des_dir, pack_path,pack_name,pack_des_dir,evt_name,evt_name_err,task_file,task_name,sql_success,sql_fail):
 	ssh_client = paramiko.SSHClient()
@@ -388,11 +599,11 @@ def background_thread(host,port,host_user,host_password,shell_command,script_pat
 			sshmkdir.close()
 		except Exception as emkdir:
 			err_msg = "无法创建目录({mkdir_command}), 报错为:{emkdir}".format(mkdir_command=mkdir_command, emkdir=str(emkdir))
-			socketio.emit(evt_name_err,err_msg)
+			#socketio.emit(evt_name_err,err_msg)
 			f.write(err_msg)
 			return None
 		msg_begin_1 = '开始上传脚本\n'
-		socketio.emit(evt_name,msg_begin_1)
+		#socketio.emit(evt_name,msg_begin_1)
 		f.write(msg_begin_1)
 		try:
 			ts = paramiko.Transport(str(host),int(port))
@@ -405,7 +616,7 @@ def background_thread(host,port,host_user,host_password,shell_command,script_pat
 			try:
 				sftp.put(script_local_path, script_remote_path)
 				msg_begin_2 = '上传脚本成功 本地脚本:' + script_local_path + "    远端脚本: " + script_remote_path + " \n"
-				socketio.emit(evt_name,msg_begin_2)
+				#socketio.emit(evt_name,msg_begin_2)
 				f.write(msg_begin_2)
 			except Exception as  es:
 				err_msg = "上传脚本失败 \n" + script_local_path + script_remote_path + "\n报错如下:\n" + str(es)
@@ -415,22 +626,22 @@ def background_thread(host,port,host_user,host_password,shell_command,script_pat
 				db.session.commit()
 				return None
 			msg_begin_3 = '开始上传软件包\n'
-			socketio.emit(evt_name,msg_begin_3)
+			#socketio.emit(evt_name,msg_begin_3)
 			f.write(msg_begin_3)
-			try:
-				sftp.put(pack_local_path,pack_remote_path)
-				msg_begin_4 = '上传软件包成功     本地软件包:' + pack_local_path + "     远端目录: "  + pack_remote_path+ ' \n'
-				socketio.emit(evt_name, msg_begin_4)
-				f.write(msg_begin_4)
-			except Exception as  ep:
-				err_msg = "上传软件包失败 \n" + pack_local_path  + pack_remote_path + "\n报错如下\n" + str(ep)
-				f.write(err_msg)
-				socketio.emit(evt_name_err,err_msg)
-				db.session.execute(sql_fail)
-				db.session.commit()
-				return None
-			finally:
-				ts.close()
+			if len(pack_name) > 0:
+				try:
+					sftp.put(pack_local_path,pack_remote_path)
+					msg_begin_4 = '上传软件包成功     本地软件包:' + pack_local_path + "     远端目录: "  + pack_remote_path+ ' \n'
+					#socketio.emit(evt_name, msg_begin_4)
+					f.write(msg_begin_4)
+				except Exception as  ep:
+					err_msg = "上传软件包失败 \n" + pack_local_path  + pack_remote_path + "\n报错如下\n" + str(ep)
+					f.write(err_msg)
+					socketio.emit(evt_name_err,err_msg)
+					db.session.execute(sql_fail)
+					db.session.commit()
+					return None
+			ts.close()
 		except Exception as  e:
 			err_msg = "上传软件失败, 连接sftp失败\n" + str(e)
 			f.write(err_msg)
@@ -443,7 +654,7 @@ def background_thread(host,port,host_user,host_password,shell_command,script_pat
 			ts.close()
 
 		msg_install_1 = '\n\n开始连接远程服务器执行脚本\n'
-		socketio.emit(evt_name,msg_install_1)
+		#socketio.emit(evt_name,msg_install_1)
 		f.write(msg_install_1)
 		try:
 			ssh_client.connect(hostname=host, port=port, username=host_user, password=host_password)
@@ -455,7 +666,7 @@ def background_thread(host,port,host_user,host_password,shell_command,script_pat
 			db.session.commit()
 			return None
 		msg_install_3 = "\n\n开始执行(以下消息为脚本的标准输出, 错误输出将会弹窗)" + shell_command + "\n"
-		socketio.emit(evt_name,msg_install_3)
+		#socketio.emit(evt_name,msg_install_3)
 		sshSession = ssh_client.get_transport().open_session()
 		sshSession.exec_command(shell_command)
 		while True:
@@ -565,6 +776,26 @@ def install_mysql_instance():
 		except Exception as e:
 			return (str(e))
 		return render_template("/db/install_mysql_single.html",username = username, host_instance=host_instance, script=script, pack=pack)
+	else:
+		return  redirect(url_for('login'))
+
+
+
+@app.route('/custom_script')
+def custom_script():
+	if 'username' in session:
+		username = session['username']
+		sql_host_instance = "select host_instance_id,host_instance_name,host_ssh_ip,host_ssh_port from ei_host where status=0 and host_author='{host_author}';".format(host_author=username)
+		sql_script = "select script_id,script_name,script_path from ei_script where script_status=0;"
+		sql_pack = "select pack_id,pack_path,pack_version from ei_pack where pack_status=0;"
+		try:
+			host_instance = list(db.session.execute(sql_host_instance))
+			script = list(db.session.execute(sql_script))
+			pack = list(db.session.execute(sql_pack))
+		except Exception as e:
+			return (str(e))
+		return render_template("/custom_install_script.html",username = username, host_instance=host_instance, script=script, pack=pack)
+		
 	else:
 		return  redirect(url_for('login'))
 

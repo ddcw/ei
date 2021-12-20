@@ -1,7 +1,0 @@
-开始上传脚本
-上传脚本成功 本地脚本:../script/bin/MysqlInstallerByDDCW_ei_1.0.sh    远端脚本: /tmp/ddcw/MysqlInstallerByDDCW_ei_1.0.sh 
-开始上传软件包
-上传软件包失败 
-../pack/bin/mysql-5.7.33-linux-glibc2.12-x86_64.tar.gz/tmp/ddcw
-报错如下
-[Errno 2] No such file or directory: '../pack/bin/mysql-5.7.33-linux-glibc2.12-x86_64.tar.gz'

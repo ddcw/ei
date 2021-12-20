@@ -15,13 +15,13 @@
 <body>
 
 
-<div class="container mt-3">
-  <ul class="nav nav-pills  navbar-dark bg-dark" role="tablist">
+<div class="container mt-3" id="db_nav">
+  <ul class="nav nav-pills  navbar-dark " role="tablist">
     <li class="nav-item">
-      <a class="nav-link " data-bs-toggle="pill" href="#instance">实例概览</a>
+      <a class="nav-link active" data-bs-toggle="pill" href="#instance">实例概览</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" data-bs-toggle="pill" href="#db">数据库概览</a>
+      <a class="nav-link" data-bs-toggle="pill" href="#db">数据库概览</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="pill" href="#user">用户概览</a>
@@ -65,11 +65,11 @@
 				</tr>
 				<tr>
 					<th>TPS</th>
-					<th>{{tps}}</th>
+					<th id="tps">{{tps}}</th>
 				</tr>
 				<tr>
 					<th>QPS</th>
-					<th>{{qps}}</th>
+					<th id="qps">{{qps}}</th>
 				</tr>
 				<tr>
 					<th>总库数(不含系统库和test库)</th>

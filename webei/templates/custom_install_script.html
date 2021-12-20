@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>安装单机mysql--{{username}}</title>
+    <title>运行自定义脚本--{{username}}</title>
     <link rel="stylesheet" href="/static/bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/index1.css">
     <script type="text/javascript" src="/static/bootstrap-5.1.3-dist/js/bootstrap.js"></script>
@@ -14,8 +14,6 @@
 
 <script type="text/javascript" charset="utf-8">
 
-	// 0表示展示高级信息
-	var showMore_flag=0
 
     var socket = io();
 
@@ -30,50 +28,26 @@
         socket.emit('message', '{{username}} leaved');
     });
 
-socket.on('install_mysql_single_{{username}}',function begintest(msg){
+socket.on('custom_script_{{username}}',function begintest(msg){
 	document.getElementById("textarea1").value = document.getElementById("textarea1").value + msg
 });
-socket.on('install_mysql_single_{{username}}error',function begintest(msg){
+socket.on('custom_script_{{username}}error',function begintest(msg){
 	alert(msg);
 });
 
 
 
-function showMore(){
-	if( showMore_flag == 0){
-	showMore_flag=1
-	document.getElementById("MysqlParameter").style.display=""
-}
-	else if ( showMore_flag ==1 ) {
-	showMore_flag=0
-	document.getElementById("MysqlParameter").style.display="None"
-	}
-
-}
 
 	function beginstall(){
-	document.getElementById("MysqlParameter").style.display="None"
 	var host_instance_id=document.getElementById("instance_name").value
 	var script_id = document.getElementById("script_name").value
 	var pack_id = document.getElementById("pack_name").value
-	var mysql_port=document.getElementById("mysql_port").value
-	var mysql_root_password=document.getElementById("mysql_root_password").value
-
-	var mysql_parameter_innodb_size=document.getElementById("mysql_parameter_innodb_size").value
-	var mysql_parameter_innodb_page=document.getElementById("mysql_parameter_innodb_page").value
-	var mysql_parameter_base_dir=document.getElementById("mysql_parameter_base_dir").value
-	var mysql_parameter_data_dir=document.getElementById("mysql_parameter_data_dir").value
-	var mysql_parameter_log_dir=document.getElementById("mysql_parameter_log_dir").value
-	var mysql_parameter_charset=document.getElementById("mysql_parameter_charset").value
-	var mysql_parameter_sync_binlog=document.getElementById("mysql_parameter_sync_binlog").value
-	var mysql_parameter_flush_log_at_trx_commit=document.getElementById("mysql_parameter_flush_log_at_trx_commit").value
-	var mysql_parameter_server_id=document.getElementById("mysql_parameter_server_id").value
-	var mysql_parameter_binlog=document.getElementById("mysql_parameter_binlog").value
-	var mysql_parameter_default_engine=document.getElementById("mysql_parameter_default_engine").value
+	var custom_parameter=document.getElementById("custom_parameter").value
 
 
-	socket.emit('install_mysql_single', {"host_instance_id":host_instance_id,"script_id":script_id,"pack_id":pack_id,"mysql_port":mysql_port, "mysql_root_password":mysql_root_password, "mysql_parameter_innodb_size":mysql_parameter_innodb_size, "mysql_parameter_innodb_page":mysql_parameter_innodb_page, "mysql_parameter_base_dir":mysql_parameter_base_dir, "mysql_parameter_data_dir":mysql_parameter_data_dir, "mysql_parameter_log_dir":mysql_parameter_log_dir, "mysql_parameter_charset":mysql_parameter_charset, "mysql_parameter_sync_binlog":mysql_parameter_sync_binlog, "mysql_parameter_flush_log_at_trx_commit":mysql_parameter_flush_log_at_trx_commit, "mysql_parameter_server_id":mysql_parameter_server_id, "mysql_parameter_binlog":mysql_parameter_binlog, "mysql_parameter_default_engine":mysql_parameter_default_engine ,"evt_name":"install_mysql_single_{{username}}","evt_name_err":"install_mysql_single_{{username}}error"});
-	document.getElementById("textarea1").value = "开始安装......\n"
+
+	socket.emit('custom_script', {"host_instance_id":host_instance_id,"script_id":script_id,"pack_id":pack_id,"custom_parameter":custom_parameter, "evt_name":"custom_script_{{username}}","evt_name_err":"custom_script_{{username}}error"});
+	document.getElementById("textarea1").value = "开始执行......\n\n"
 }
 
 	function clearlog(){
@@ -102,6 +76,7 @@ function showMore(){
 
 
 function formReset(){
+	document.getElementById("textarea1").value = ""
 	document.getElementById("install_mysql_single").reset()
 }
 
@@ -137,61 +112,23 @@ function formReset(){
 
   <div class="mb-3">
         <select class="input-xlarge valtype" data-valtype="option" name="pack_name" id="pack_name">
+		<option value="-1">不需要软件包 </option>
 	{% for pack_i in pack %}
 		<option value="{{pack_i[0]}}">{{pack_i[2]}}   ({{pack_i[1]}}) </option>
 	{% else %}
-                          <option disabled="disabled">无可用软件包</option>
+                          <option disabled="disabled" value="-2">无可用软件包</option>
 	{% endfor %}
         </select>
 	<span>选择需要安装的MYSQL软件包</span>
   </div>
 
-  <div class="mb-3">
-    <label for="mysql_port" class="form-label">mysql端口</label>
-    <input type="number" name="mysql_port"  min="1024" max="65535" id="mysql_port" value="3306" >
-  <!--  <div class="form-text">范围:1024-65535, 为空的话,就由脚本自动生成</div> -->
-  </div>
 
   <div class="mb-3">
-	<label for="mysql_password" class="form-label">MYSQL的root密码(默认为:123456)</label>
-    <input type="password" name="mysql_root_password"   id="mysql_root_password" value="123456" > 
+	<label for="custom_parameter" class="form-label">自定义参数(此参数将会直接传给脚本)</label>
+    <input type="text" name="custom_parameter"   id="custom_parameter" value="" > 
   </div>
 
-<button type="button" class="btn btn-secondary" onclick=showMore()>高级选项</button>
-<div class="mb-3" id="MysqlParameter" style="display:none">
 
-<div class="form-text">以下参数为空时, 脚本会自动生成</div>
-<span>innodb内存大小(字节)</span> <input type="number" name="mysql_parameter_innodb_size" id="mysql_parameter_innodb_size"></br>
-<span>innodb页大小(字节)</span> <input type="number" name="mysql_parameter_innodb_page" id="mysql_parameter_innodb_page" value="16384"></br>
-<span>软件安装目录</span> <input type="text" name="mysql_parameter_base_dir" id="mysql_parameter_base_dir"></br>
-<span>数据目录</span> <input type="text" name="mysql_parameter_data_dir" id="mysql_parameter_data_dir"></br>
-<span>日志目录</span> <input type="text" name="mysql_parameter_log_dir" id="mysql_parameter_log_dir"></br>
-<span>默认存储引擎</span><select class="input-xlarge valtype" data-valtype="option" name="mysql_parameter_default_engine" id="mysql_parameter_default_engine">
-<option value="InnoDB">InnoDB</option>
-<option value="MyISAM" disabled>MyISAM</option>
-<option value="ARCHIVE" disabled>ARCHIVE</option>
-<option value="MEMORY" disabled>MEMORY</option>
-<option value="FEDERATED" disabled>FEDERATED</option>
-</select></br>
-<span>字符集</span><select class="input-xlarge valtype" data-valtype="option" name="mysql_parameter_charset" id="mysql_parameter_charset">
-<option value="utf8" selected>utf8</option>
-<option value="utf8mb4">utf8mb4</option>
-<option value="gbk">gbk</option>
-<option value="gb2312">gb2312</option>
-<option value="latin1">latin1</option>
-<option value="latin2">latin2</option>
-</select></br>
-<span>SYNC_BINLOG</span> <input type="number" name="mysql_parameter_sync_binlog" value="1" id="mysql_parameter_sync_binlog"></br>
-<span>FLUSH_LOG_AT_TRX_COMMIT</span> <input type="number" name="mysql_parameter_flush_log_at_trx_commit" value="1" id="mysql_parameter_flush_log_at_trx_commit"></br>
-<span>SERVER_ID</span> <input type="number" name="mysql_parameter_server_id" id="mysql_parameter_server_id" ></br>
-<span>是否开启binlog</span></span><select class="input-xlarge valtype"  data-valtype="option" name="mysql_parameter_binlog" id="mysql_parameter_binlog">
-<option value="ON">是</option>
-<option value="OFF" disabled>否</option>
-<select></br></br></br>
-
-<button type="button" class="btn btn-primary" disabled>备份策略设置(暂不支持)</button>
-
-</div>
 
 </br>
 </br>

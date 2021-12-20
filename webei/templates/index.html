@@ -35,6 +35,56 @@ socket.on('ei-index-{{username}}-alert-only',function(msg){
 	alert(msg)
 });
 
+socket.on('ei-index-{{username}}-alert-copy',function(msg){
+	var text=msg
+	document.execCommand("copy",text);
+	alert(msg)
+});
+
+function get_uuid(){
+	socket.emit('get_uuid',{"evt_name":"ei-index-{{username}}-alert-copy"})
+}
+
+function get_password(){
+	socket.emit('get_password',{"evt_name":"ei-index-{{username}}-alert-copy"})
+	}
+
+socket.on('ei-index-{username}-base64-set',function(msg){
+	obj = msg['obj']
+	if ( obj == "encode" ){
+		document.getElementById("textarea-base64-decode").value=msg['data']
+	}
+	else if (obj == "decode"){
+		document.getElementById("textarea-base64-encode").value=msg['data']
+	}
+
+	});
+
+function base64(op){
+	if ( op == "encode"){
+	datas=document.getElementById("textarea-base64-encode").value
+	//document.getElementById("textarea-base64-encode").value=""
+	data={"obj":"encode","evt_name":"ei-index-{username}-base64-set","data":datas}
+	socket.emit('get_base64',data)
+	}
+	else if (op == "decode"){
+	datas=document.getElementById("textarea-base64-decode").value
+	//document.getElementById("textarea-base64-decode").value=""
+	data={"obj":"decode","evt_name":"ei-index-{username}-base64-set","data":datas}
+	socket.emit('get_base64',data)
+
+	}
+}
+
+socket.on('ei-index-scanport-result-{{username}}',function(msg){
+	document.getElementById('scanport_result').value=msg
+});
+
+function scanport(){
+	instacne_ip = document.getElementById("host_ip").value
+	document.getElementById('scanport_result').value="waiting..."
+	socket.emit('get_scanport',{"evt_name":"ei-index-scanport-result-{{username}}",'ip':instacne_ip})
+}
 
 function del_script(script_id){
 	var tip="是否删除脚本: "+script_id
@@ -233,8 +283,9 @@ function get_pack_info(){
 }
 
 
-function delete_task(task_name){
-	socket.emit('delete_task',{"task_name":task_name,"evt_name":"responce_index_{{username}}"})
+function delete_task(task_name,task_id){
+	//alert(task_id)
+	socket.emit('delete_task',{"task_name":task_name,"task_id":task_id,"evt_name":"responce_index_{{username}}"})
 }
 
 function ck(a){
@@ -565,31 +616,31 @@ function ckt(a){
 	<div class="row"> 
 		<div class="col-md-3 card bg-success  text-dark bg-opacity-50" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>数据库巡检</h4><p>仅支持巡检数据库实例列表里的数据空</p></div></a></div>
 		<div class="col-md-3 card bg-success  text-dark bg-opacity-50" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>数据库压测</h4><p>使用sysbench压测数据库OLTP</p></div></a></div>
-		<div class="col-md-3 card bg-success  text-dark bg-opacity-50" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>mysql一致性对比</h4><p>对比mysql数据一致性</p></div></a></div>
-		<div class="col-md-3 card bg-success  text-dark bg-opacity-50" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>TPCC</h4><p>可选tpcc-mysql或者benchmarksql</p></div></a></div>
+		<div class="col-md-3 card bg-success  text-dark bg-opacity-50" onclick="alert('暂不支持')" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>mysql一致性对比</h4><p>对比mysql数据一致性</p></div></a></div>
+		<div class="col-md-3 card bg-success  text-dark bg-opacity-50" onclick="alert('暂不支持')" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>TPCC</h4><p>可选tpcc-mysql或者benchmarksql</p></div></a></div>
 	</div>
 
 	</br>
 	</br>
 	<h3>操作系统类</h3>
 	<div class="row">
-		<div class="col-md-3 card bg-dark text-white bg-opacity-75" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>主机巡检</h4><p>仅支持巡检主机列表里的</p></div></a></div>
-		<div class="col-md-3 card bg-dark text-white bg-opacity-75" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>CPU压测</h4><p>使用sysbench压测cpu</p></div></a></div>
-		<div class="col-md-3 card bg-dark text-white bg-opacity-75" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>内存压测</h4><p>使用sysbench压测内存</p></div></a></div>
-		<div class="col-md-3 card bg-dark text-white bg-opacity-75" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>IO压测</h4><p>使用sysbench压测IO</p></div></a></div>
-		<div class="col-md-3 card bg-dark text-white bg-opacity-75" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>OPENSSH升级</h4><p>升级openssh, 采用编译安装openssh, 升级前会先启一个ssh服务作为意外情况的时候连上去</p></div></a></div>
+		<div class="col-md-3 card bg-dark text-white bg-opacity-75" style="margin:1px" onclick="alert('暂不支持')"><a href="#qr-code" class="text-white"><div class="card-body"><h4>主机巡检</h4><p>仅支持巡检主机列表里的</p></div></a></div>
+		<div class="col-md-3 card bg-dark text-white bg-opacity-75" style="margin:1px" onclick="alert('暂不支持')"><a href="#qr-code" class="text-white"><div class="card-body"><h4>CPU压测</h4><p>使用sysbench压测cpu</p></div></a></div>
+		<div class="col-md-3 card bg-dark text-white bg-opacity-75" style="margin:1px" onclick="alert('暂不支持')"><a href="#qr-code" class="text-white"><div class="card-body"><h4>内存压测</h4><p>使用sysbench压测内存</p></div></a></div>
+		<div class="col-md-3 card bg-dark text-white bg-opacity-75" style="margin:1px" onclick="alert('暂不支持')"><a href="#qr-code" class="text-white"><div class="card-body"><h4>IO压测</h4><p>使用sysbench压测IO</p></div></a></div>
+		<div class="col-md-3 card bg-dark text-white bg-opacity-75" style="margin:1px" onclick="alert('暂不支持')"><a href="#qr-code" class="text-white"><div class="card-body"><h4>OPENSSH升级</h4><p>升级openssh, 采用编译安装openssh, 升级前会先启一个ssh服务作为意外情况的时候连上去</p></div></a></div>
 	</div>
 
 	</br>
 	</br>
 	<h3>其它类</h3>
 	<div class="row">
-		<div class="col-md-3 card bg-secondary text-white" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>生成随机密码</h4><p>生成任意长度的字符串</p></div></a></div>
-		<div class="col-md-3 card bg-secondary text-white" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>base64加密/解密</h4><p>对字符串做base64加密或者解密</p></div></a></div>
-		<div class="col-md-3 card bg-secondary text-white" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>生成UUID</h4><p>生成随机的UUID</p></div></a></div>
+		<div class="col-md-3 card bg-secondary text-white" style="margin:1px" onclick="get_password()"><a href="#get_password" class="text-white"><div class="card-body"><h4>生成随机密码</h4><p>生成任意长度的字符串</p></div></a></div>
+		<div class="col-md-3 card bg-secondary text-white" style="margin:1px" ><a data-bs-toggle="modal" href="#base64_code" class="text-white"><div class="card-body"><h4>base64加密/解密</h4><p>对字符串做base64加密或者解密</p></div></a></div>
+		<div class="col-md-3 card bg-secondary text-white" onclick="get_uuid()" style="margin:1px"><a href="#get_uuid" class="text-white"><div class="card-body"><h4>生成UUID</h4><p>生成随机的UUID</p></div></a></div>
 		<div class="col-md-3 card bg-secondary text-white" style="margin:1px"><a data-bs-toggle="modal" href="#qrcode1" class="text-white"><div class="card-body"><h4>生成二维码</h4><p>仅支持QR-CODE</p></div></a></div>
-		<div class="col-md-3 card bg-secondary text-white" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>网段/端口扫描</h4><p>利用icmp探测某网段存活IP</p></div></a></div>
-		<div class="col-md-3 card bg-secondary text-white" style="margin:1px"><a href="#qr-code" class="text-white"><div class="card-body"><h4>运行自定义脚本</h4><p>对N台主机执行自定义脚本</p></div></a></div>
+		<div class="col-md-3 card bg-secondary text-white" style="margin:1px"><a href="#scanport" data-bs-toggle="modal" class="text-white"><div class="card-body"><h4>端口扫描</h4><p>利用/dev/tcp/${host_o}/${port_o}探测TCP端口是否监听</p></div></a></div>
+		<div class="col-md-3 card bg-secondary text-white" style="margin:1px"><a href="/custom_script" class="text-white"><div class="card-body"><h4>运行自定义脚本</h4><p>对N台主机执行自定义脚本</p></div></a></div>
 	</div>
     </div>
 
@@ -611,7 +662,7 @@ function ckt(a){
 
 	<h3>其它类</h3>
 	<div class="row">
-		<div class="col-md-3 card bg-info text-white"><a href="/custom_install_script" class="text-white"><div class="card-body"><h4>运行自定义安装脚本</h4><p>支持自定义脚本运行</p></div></a></div>
+		<div class="col-md-3 card bg-info text-white"><a href="/custom_script" class="text-white"><div class="card-body"><h4>运行自定义安装脚本</h4><p>支持自定义脚本运行</p></div></a></div>
 		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>安装php</h4><p>安装php</p></div></a></div>
 		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>安装nginx</h4><p>安装nginx</p></div></a></div>
 		<div class="col-md-3 card bg-info text-white"><a href="#qr-code" class="text-white"><div class="card-body"><h4>安装zabbix</h4><p>安装zabbix</p></div></a></div>
@@ -650,7 +701,7 @@ function ckt(a){
 	{% else %}
 		<td><p class="text-secondary">未知状态</p></td>
 	{%endif%}
-	<td><a href="/task_detail?task_file={{task[5]}}&task_name={{task[0]}}" target="view_window">详情</a> <a href="/download?task_file={{task[5]}}">下载</a> <button type="button" class="btn btn-danger" onclick="delete_task('{{task[0]}}')">删除</button> </td>
+	<td><a href="/task_detail?task_file={{task[5]}}&task_name={{task[0]}}" target="view_window">详情</a> <a href="/download?task_file={{task[5]}}">下载</a> <button type="button" class="btn btn-danger" onclick="delete_task('{{task[0]}}','{{task[7]}}')">删除</button> </td>
       </tr>
 {% else %}
 	无任务
@@ -931,6 +982,100 @@ var qrcode = new QRCode("qrcode_div", {
         <input type="submit" class="btn btn-primary" value="上传"></input>
         <input type="text" name="type_table" value="pack" style="display:none">
         <input type="text" name="evt_name" value="ei-index-{{username}}-alert-only" style="display:none">
+    </div>
+</form>
+
+      </div>
+
+      <!-- 模态框底部 -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 模态框 -->
+<div class="modal" id="base64_code">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- 模态框头部 -->
+      <div class="modal-header">
+        <h4 class="modal-title">base64加密解密</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- 模态框内容 -->
+      <div class="modal-body">
+
+<form id="base64_encode_decode" method="post" action="/base64" >
+    <div>
+	<span>加密前内容</span>
+	<textarea name="textarea-base64-decode" rows="10" cols="50" id="textarea-base64-encode"> </textarea></br></br>
+	<span>加密后内容</span>
+	<textarea name="textarea-base64-decode" rows="10" cols="50" id="textarea-base64-decode"> </textarea></br></br>
+
+	<button type="button" class="btn btn-primary" onclick="base64('encode')">加密</button>&nbsp;&nbsp;&nbsp;&nbsp;
+	<button type="button" class="btn btn-primary" onclick="base64('decode')">解密</button>
+	
+    </div>
+</form>
+
+      </div>
+
+      <!-- 模态框底部 -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- 模态框 -->
+<div class="modal" id="scanport">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- 模态框头部 -->
+      <div class="modal-header">
+        <h4 class="modal-title">端口扫描</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- 模态框内容 -->
+      <div class="modal-body">
+
+<form id="scanport-form" method="post" action="/scanport" >
+    <div>
+        <span>选择需要扫描的主机</span>
+        <select class="input-xlarge valtype" data-valtype="option" name="host_ip" id="host_ip">
+{% for host in host_list %}
+			<option value="{{host[3]}}">{{host[0]}}</option>
+{% else %}
+                          <option disabled value="-2">无主机</option>
+{% endfor %}
+        </select>
+        <span>结果如下</span>
+        <textarea disabled name="scanport_result" rows="10" cols="50" id="scanport_result"> </textarea></br></br>
+
+        <button type="button" class="btn btn-primary" onclick="scanport()">开始扫描</button>
+
     </div>
 </form>
 

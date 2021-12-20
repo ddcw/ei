@@ -72,6 +72,7 @@ function showMore(){
 	var mysql_parameter_default_engine=document.getElementById("mysql_parameter_default_engine").value
 
 
+	//alert(pack_id)
 	socket.emit('install_mysql_single', {"host_instance_id":host_instance_id,"script_id":script_id,"pack_id":pack_id,"mysql_port":mysql_port, "mysql_root_password":mysql_root_password, "mysql_parameter_innodb_size":mysql_parameter_innodb_size, "mysql_parameter_innodb_page":mysql_parameter_innodb_page, "mysql_parameter_base_dir":mysql_parameter_base_dir, "mysql_parameter_data_dir":mysql_parameter_data_dir, "mysql_parameter_log_dir":mysql_parameter_log_dir, "mysql_parameter_charset":mysql_parameter_charset, "mysql_parameter_sync_binlog":mysql_parameter_sync_binlog, "mysql_parameter_flush_log_at_trx_commit":mysql_parameter_flush_log_at_trx_commit, "mysql_parameter_server_id":mysql_parameter_server_id, "mysql_parameter_binlog":mysql_parameter_binlog, "mysql_parameter_default_engine":mysql_parameter_default_engine ,"evt_name":"install_mysql_single_{{username}}","evt_name_err":"install_mysql_single_{{username}}error"});
 	document.getElementById("textarea1").value = "开始安装......\n"
 }
@@ -102,6 +103,7 @@ function showMore(){
 
 
 function formReset(){
+	document.getElementById("textarea1").value = ""
 	document.getElementById("install_mysql_single").reset()
 }
 
@@ -129,7 +131,7 @@ function formReset(){
 	{% for script_i in script %}
 		<option value="{{script_i[0]}}">{{script_i[1]}}   ({{script_i[2]}}) </option>
 	{% else %}
-                          <option disabled="disabled">无可用脚本</option>
+                          <option value="-2">无可用脚本</option>
 	{% endfor %}
         </select>
 	<span>选择使用的脚本</span>
@@ -140,7 +142,7 @@ function formReset(){
 	{% for pack_i in pack %}
 		<option value="{{pack_i[0]}}">{{pack_i[2]}}   ({{pack_i[1]}}) </option>
 	{% else %}
-                          <option disabled="disabled">无可用软件包</option>
+                          <option  value="-2">无可用软件包</option>
 	{% endfor %}
         </select>
 	<span>选择需要安装的MYSQL软件包</span>

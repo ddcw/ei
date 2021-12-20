@@ -96,6 +96,7 @@ fi
 if [ -f ${BASE_DIR}/webei/ei.db  ] 2>/dev/null; then
 	echo_color info "${BASE_DIR}/webei/ei.db 已存在,不会初始化ei.db. (初始化方法: python3 ${BASE_DIR}/webei/initdb.py)"	
 else
+	cd ${BASE_DIR}/webei
 	python3 ${BASE_DIR}/webei/initdb.py
 fi
 
@@ -131,3 +132,5 @@ sed -i "/PID_FILE_/cPID_FILE=${PID_FILE}" ${BASE_DIR}/bin/stop.sh
 sed -i "/LOG_FILE_/cLOG_FILE=${LOG_FILE}" ${BASE_DIR}/bin/stop.sh
 
 echo "初始化完成."
+echo "启动: sh ${BASE_DIR}/bin/start.sh"
+echo "停止: sh ${BASE_DIR}/bin/stop.sh"

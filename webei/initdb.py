@@ -109,34 +109,20 @@ c.execute('insert into user(username,password) values("admin","123456")')
 
 #脚本和软件包测试数据
 c.execute('insert into ei_script(script_name,script_object,script_path,script_des_dir) values("INSTALL_MYSQL_SINGLE","MYSQL","../script/MysqlInstallerByDDCW_ei_1.0.sh","/tmp/ddcw")')
-c.execute('insert into ei_pack(pack_name,pack_path,pack_version,pack_des_dir) values("MYSQL","../pack/mysql-5.7.33-linux-glibc2.12-x86_64.tar.gz","5.7.33","/tmp/ddcw")')
+#c.execute('insert into ei_pack(pack_name,pack_path,pack_version,pack_des_dir) values("MYSQL","../pack/mysql-5.7.33-linux-glibc2.12-x86_64.tar.gz","5.7.33","/tmp/ddcw")')
 
 #任务表测试数据
-c.execute('insert into ei_task(task_author,task_name,task_object,task_describe,task_detail_path,task_status) values("ddcw","ddcw的测试任务","127.0.0.1:22","仅测试,建议删除此任务","../data/tasks/test.log",0)')
-c.execute('insert into ei_task(task_author,task_name,task_object,task_describe,task_detail_path,task_status) values("ddcw","ddcw test task","127.0.0.1:22","仅测试,建议删除此任务","../data/tasks/test.log",1)')
-
+#c.execute('insert into ei_task(task_author,task_name,task_object,task_describe,task_detail_path,task_status) values("ddcw","ddcw的测试任务","127.0.0.1:22","仅测试,建议删除此任务","../data/tasks/test.log",0)')
+#c.execute('insert into ei_task(task_author,task_name,task_object,task_describe,task_detail_path,task_status) values("ddcw","ddcw test task","127.0.0.1:22","仅测试,建议删除此任务","../data/tasks/test.log",1)')
+#
 #脚本位置
-#c.execute('insert into ei_script(script_author,script_name,script_path,script_describe,script_pack_path,script_target_path) values("ddcw","install_mysql_single","../script/bin/MysqlInstallerByDDCW_ei_1.0.sh","安装mysql单机的脚本","../pack/bin/mysql-5.7.33-linux-glibc2.12-x86_64.tar.gz","/tmp/ddcw")')
 
 #数据库实例 测试数据
 c.execute('insert into ei_db(db_author,db_instance_name,db_type,db_version,db_host,db_port,db_user,db_password,status) values("ddcw","first_test_db","mysql","5.7","127.0.0.1",3311,"root","123456",0)')
-c.execute('insert into ei_db(db_author,db_instance_name,db_type,db_version,db_host,db_port,db_user,db_password,status) values("ddcw","seccond_test_db","mysql","5.7","127.0.0.1",3311,"root","123456",0)')
-c.execute('insert into ei_db(db_author,db_instance_name,db_type,db_version,db_host,db_port,db_user,db_password,status) values("ddcw","test_status1","mysql","5.7","127.0.0.1",3311,"root","123456",1)')
-c.execute('insert into ei_db(db_author,db_instance_name,db_type,db_version,db_host,db_port,db_user,db_password,status) values("ddcw","test_status2","mysql","5.7","127.0.0.1",3311,"root","123456",2)')
-c.execute('insert into ei_db(db_author,db_instance_name,db_type,db_version,db_host,db_port,db_user,db_password,status) values("ddcw","test_status3","mysql","5.7","127.0.0.1",3311,"root","123456",3)')
-c.execute('insert into ei_db(db_author,db_instance_name,db_type,db_version,db_host,db_port,db_user,db_password,status) values("ddcw","test_status4","mysql","5.7","127.0.0.1",3311,"root","123456",4)')
 
 
 #主机实例 测试数据
 c.execute('insert into ei_host(host_author,host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,status) values("ddcw","host1","centos","7.6","127.0.0.1",22,"aa","Ddcw@123.",0)')
-c.execute('insert into ei_host(host_author,host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,status) values("ddcw","host2","centos","7.6","127.0.0.1",22,"aa","Ddcw@123.",0)')
-c.execute('insert into ei_host(host_author,host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,status) values("ddcw","host2","centos","7.6","127.0.0.1",22,"aa","Ddcw@123.",0)')
-c.execute('insert into ei_host(host_author,host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,status) values("ddcw","test_status1","centos","7.6","127.0.0.1",22,"aa","Ddcw@123.",1)')
-c.execute('insert into ei_host(host_author,host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,status) values("ddcw","test_status2","centos","7.6","127.0.0.1",22,"aa","Ddcw@123.",2)')
-c.execute('insert into ei_host(host_author,host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,status) values("ddcw","test_status3","centos","7.6","127.0.0.1",22,"aa","Ddcw@123.",3)')
-c.execute('insert into ei_host(host_author,host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,status) values("ddcw","test_status4","centos","7.6","127.0.0.1",22,"aa","Ddcw@123.",4)')
-c.execute('insert into ei_host(host_author,host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,status) values("ddcw","test_status4","centos","7.6","127.0.0.1",22,"aa","Ddcw@123.",4)')
-c.execute('insert into ei_host(host_author,host_instance_name,host_type,host_version,host_ssh_ip,host_ssh_port,host_ssh_username,host_ssh_password,status) values("ddcw","test_status4","centos","7.6","127.0.0.1",22,"aa","Ddcw@123.",4)')
 
 #提交&关闭
 conn.commit()

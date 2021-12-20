@@ -9,7 +9,7 @@ dt=$(date +%Y%m%d-%H:%M:%S)
 current_ei_pid=$(ps -ef | grep python | grep flag=${FLAGS} | grep ei | awk '{print $2}')
 
 if [ ! -z ${current_ei_pid} ];then
-	pidfile_pid=(cat ${PID_FILE})
+	pidfile_pid=$(cat ${PID_FILE})
 	if [ ${pidfile_pid} -eq ${current_ei_pid} ]; then
 		echo "ei正在运行, PID: ${current_ei_pid}"
 		exit 0
@@ -32,6 +32,7 @@ else
 	if [ ! -z ${current_ei_pid_2} ]; then
 		echo ${current_ei_pid_2} > ${PID_FILE}
 		echo "启动完成. 进程号: ${current_ei_pid_2}"
+		echo "http://127.0.0.1:6121"
 	fi
 fi
 
