@@ -190,10 +190,13 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>requesting_trx_id</th>
-					<th>requested_lock_id</th>
-					<th>blocking_trx_id</th>
-					<th>blocking_lock_id</th>
+                                        <th>表</th>
+                                        <th>开始锁的时间</th>
+                                        <th>锁了的时间(单位:秒)</th>
+                                        <th>锁类型</th>
+                                        <th>造成锁的SQL</th>
+                                        <th>造成锁的ID</th>
+                                        <th>建议</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -203,6 +206,9 @@
 						<td>{{item_lock[1]}}</td>
 						<td>{{item_lock[2]}}</td>
 						<td>{{item_lock[3]}}</td>
+						<td>{{item_lock[4]}}</td>
+						<td>{{item_lock[5]}}</td>
+						<td>{{item_lock[6]}}</td>
 					</tr>
 				{% else %}
 					<tr><td><p class="text-success">无锁</p></td></tr>

@@ -1314,7 +1314,7 @@ def monitor_db_mysql():
 			sql_mysql_processlist = 'select ID,USER,HOST,DB,COMMAND,TIME,STATE,INFO from information_schema.processlist where command != "Sleep";'
 			sql_mysql_user = 'select user,host,plugin,password_last_changed,password_expired from mysql.user;'
 			sql_mysql_db = 'select table_schema, concat(round(sum(data_length/1024/1024),2),"MB") as data_length_MB  , concat(round(sum(index_length/1024/1024),2),"MB") as index_length_MB from information_schema.tables where TABLE_SCHEMA not in ("test","sys","mysql","information_schema","performance_schema") group by table_schema order by 2,3;'
-			sql_mysql_lock = 'select requesting_trx_id, requested_lock_id, blocking_trx_id, blocking_lock_id from information_schema.innodb_lock_waits;'
+			sql_mysql_lock = 'select locked_table,wait_started,wait_age_secs,locked_type,waiting_query,blocking_pid,sql_kill_blocking_query from sys.innodb_lock_waits;'
 			sql_mysql_innodb_status = 'show engine innodb status'
 			sql_mysql_NO_primary_key = 'select table_schema, table_name from information_schema.tables where table_name not in (select distinct table_name from information_schema.columns where column_key = "PRI") AND table_schema not in ("mysql", "performance_schema", "information_schema", "sys");'
 			sql_mysql_total_table = "select count(TABLE_NAME) from information_schema.tables where TABLE_SCHEMA not in ('test','sys','mysql','information_schema','performance_schema') and TABLE_TYPE='BASE TABLE';"
@@ -1369,9 +1369,9 @@ def monitor_db_mysql():
 			conn_mysql.close()
 
 			return render_template('db/mysql.html', instance_name = instance_name, error = error, mysql_var = result_mysql_variables, processlist = result_mysql_processlist, users = result_mysql_user, db = result_mysql_db, db_lock = result_mysql_lock, innodb = result_mysql_innodb_status, primary_key = result_mysql_NO_primary_key, tps = mysql_tps, qps = mysql_qps,total_table_count = result_mysql_total_table_count, db_total_size = result_mysql_total_size, rpl_index = result_mysql_rep_index,  no_index = result_mysql_no_index )
-		except:
+		except Exception as e:
 			error = "error"
-			return str(instance_name) + " 该实例信息不对,账号/密码/端口/主机"
+			return str(instance_name) + " 该实例信息不对,账号/密码/端口/主机 " + str(e)
 		return render_template('db/mysql.html', instance_name = instance_name, error = error, mysql_var="aaaa")
 	return redirect('/login')
 
@@ -1500,8 +1500,9 @@ def monitor_host():
 			ssh.close()
 
 			return render_template('host.html',username=username, instance_name=instance_name, cpu_p = cpu_p, cpu_p100 = cpu_p100, mem_p = mem_p, mem_p100 = mem_p100, root_dir_p = root_dir_p, root_dir_p100 = root_dir_p100, loadavg = loadavg, tcp4_sockets = tcp4_sockets, tcp6_sockets = tcp6_sockets, uptime = uptime, cpu_p_total = cpu_p_total, online_users = online_users , mysql_server = mysql_server, redis_server = redis_server, oracle_server = oracle_server, nginx_server = nginx_server, php_server = php_server, haproxy_server = haproxy_server, sysctl_parameter = sysctl_parameter, firewalld_status = firewalld_status, selinux_status = selinux_status, yum_repo_count = yum_repo_count, host_platform = host_platform, kernel_version = kernel_version, host_name = host_name1, os_version = os_version, cpu_sock = cpu_sock, cpu_core = cpu_core, cpu_thread = cpu_thread, cpu_count = cpu_count, mem_total_MB = mem_total_MB, swap_total_MB = swap_total_MB, swappiness = swappiness, root_dir_type = root_dir_type, process_port = process_port)
-		except:
-			return "失败,自己慢慢排查, 可能是实例有问题,也可能是连接有问题, 反正就是ei里面记录的账号问题"
+		except Exception as e:
+			err_msg = "连接主机失败 " + str(e)
+			return err_msg
 		return render_template('host.html',username=username, instance_name=instance_name)
 	return redirect('/login')
 	
