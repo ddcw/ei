@@ -276,7 +276,19 @@
 	</div>
 
 
-	<div id="ms" class="container tab-pane fade"> 暂不支持</div>
+	<div id="ms" class="container tab-pane fade"> 
+	
+当前是单机/主库/从库/主从库/GR (根据mysql.slave_master_info mysql.slave_relay_log_info) 
+主库查看有哪些从库在连接: show slave hosts; (这些数据来源于从库的变量 show variables like '%report%';)
+主从类型, (异步复制 传统半同步after_comit 增强半同步after_sync mg )
+主库信息(有主库才显示)   当前库信息(单机就不显示)   从库信息(有从库才显示)
+信息来源: performance_schema.replication_*视图  mysql.slave_master_info mysql.slave_relay_log_info 
+用户连接数量: performance_schema.users 记录了当前连接数 总连接数  还有hosts表等, Performance_Schema库挺好用的
+performance_schema.file_instances  记录文件打开的次数
+可用用echart画个关系图,可用点击链接到对应的实例上的(最后再考虑)
+
+
+	</div>
 
 
 	<div id="processlist" class="container tab-pane fade">
