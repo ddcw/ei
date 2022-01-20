@@ -18,6 +18,7 @@ from threading import Lock
 import subprocess
 from werkzeug.utils import secure_filename
 import json
+#from flask_dropzone import Dropzone
 
 DATABASE="ei.db"
 
@@ -38,6 +39,20 @@ EI_LOG = config.get('ei','log')
 EI_LOG_FORMAT = "[%(asctime)s] %(levelname)s in %(module)s: %(message)s"
 
 app = Flask(__name__)
+
+
+
+#pic_basedir = os.path.abspath(os.path.dirname(__file__))
+#app.config.update(
+#	UPLOADED_PATH=os.path.join(pic_basedir, 'pic_uploads'),
+#	# Flask-Dropzone config:
+#	DROPZONE_ALLOWED_FILE_TYPE='image',
+#	DROPZONE_MAX_FILE_SIZE=3,
+#	DROPZONE_MAX_FILES=30,
+#)
+
+
+#dropzone = Dropzone(app)
 scheduler = APScheduler()
 scheduler.init_app(app)
 scheduler.start()
@@ -1162,17 +1177,6 @@ def modifypassword():
 	return render_template('index.html',error = error, username = username)
 
 
-@app.route('/api/database/mysql', methods = ['POST','GET'])
-def api_db_mysql():
-	if request.method == 'GET':
-		username=request.args.get("usr_name")
-		scriptname = request.args.get("scriptname")
-		com_str = 'sh scripts/' + scriptname + ' ' + username 
-		value = os.popen(com_str).read()
-	elif request.method == 'POST':
-		username=request.form['user_name']
-	return value
-		
 
 @app.route('/adddb', methods = ['POST','GET'])
 def add_db_instance():
@@ -1508,114 +1512,8 @@ def monitor_host():
 	
 
 
-@app.route('/api/other/zookeeper_1')
-def install_zookeeper_1():
-	ssh = paramiko.SSHClient()
-	ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-	if request.method == 'GET':
-		host=request.args.get("host")
-		rootpassword = request.args.get("rootpassword")
-		zk_version = request.args.get("version")
-	elif request.method == 'POST':
-		host=request.form['host']
-
-	ssh.connect(hostname=host, port=22, username='root', password=rootpassword)
-	local_path_soft="software/other/zookeeper-"+zk_version+".tar.gz"
-	local_path_script="scripts/zookeeper/ZK_PseudoCluster.sh"
-	server_path_soft="/tmp/zookeeper-"+zk_version+".tar.gz"
-	server_path_script="/tmp/ZK_PseudoCluster.sh"
-	sftp_upload_file(server_path_soft,local_path_soft,host,rootpassword)
-	sftp_upload_file(server_path_script,local_path_script,host,rootpassword)
-	stdin, stdout, stderr = ssh.exec_command('sh /tmp/ZK_PseudoCluster.sh')
-	value = stdout.read()
-	ssh.close()
-	return value
-	
-def sftp_upload_file(server_path, local_path, host, rootpassword):
-	try:
-		ts = paramiko.Transport((host,22))
-		ts.connect(username="root", password=rootpassword)
-		sftp = paramiko.SFTPClient.from_transport(ts)
-		sftp.put(local_path, server_path)
-		ts.close()
-	except Exception as e:
-		log_error = "上传文件失败: "
-		app.logger.error(e)
 
 
-
-@app.route('/api/database/redis-single-instance')
-def install_redis_single_instance():
-	ssh = paramiko.SSHClient()
-	ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-	if request.method == 'GET':
-		host=request.args.get("host")
-		rootpassword = request.args.get("rootpassword")
-		redis_version = request.args.get("version")
-	elif request.method == 'POST':
-		host=request.form['host']
-
-	#
-	value='host: '+host+' rootpassword:'+rootpassword+' redis_version:'+redis_version
-	ssh.connect(hostname=host, port=22, username='root', password=rootpassword)
-	local_path_soft="scripts/redis/redis-5.0.5-update20201123.tar.gz"
-	server_path_soft="/tmp/redis-5.0.5-update20201123.tar.gz"
-	sftp_upload_file(server_path_soft,local_path_soft,host,rootpassword)
-	stdin, stdout, stderr = ssh.exec_command('cd /tmp && tar -xf redis-5.0.5-update20201123.tar.gz && cd redis-5.0.5-update20201123 && sh installRedisStand.sh')
-	value = stdout.read()
-	ssh.close()
-	return value
-
-@app.route('/api/database/redis-PseudoCluster')
-def install_redis_PseudoCluster():
-	ssh = paramiko.SSHClient()
-	ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-	if request.method == 'GET':
-		host=request.args.get("host")
-		rootpassword = request.args.get("rootpassword")
-		redis_version = request.args.get("version")
-	elif request.method == 'POST':
-		host=request.form['host']
-
-	#
-	value='host: '+host+' rootpassword:'+rootpassword+' redis_version:'+redis_version
-	ssh.connect(hostname=host, port=22, username='root', password=rootpassword)
-	local_path_soft="scripts/redis/redis-5.0.5-update20201123.tar.gz"
-	server_path_soft="/tmp/redis-5.0.5-update20201123.tar.gz"
-	sftp_upload_file(server_path_soft,local_path_soft,host,rootpassword)
-	stdin, stdout, stderr = ssh.exec_command('cd /tmp && tar -xf redis-5.0.5-update20201123.tar.gz && cd redis-5.0.5-update20201123 && sh installRedisPseudoCluster.sh')
-	value = stdout.read()
-	ssh.close()
-	return value
-
-
-@app.route('/api/database/mysql_single')
-def install_mysql_single_instance():
-	ssh = paramiko.SSHClient()
-	ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-	if request.method == 'GET':
-		host=request.args.get("host")
-		rootpassword = request.args.get("rootpassword")
-		mysql_version = request.args.get("version")
-		mysql_port = request.args.get("port")
-		mysql_password = request.args.get("mysqlpassword")
-	elif request.method == 'POST':
-		host=request.form['host']
-
-	#
-	value='host: '+host+' rootpassword:'+rootpassword+' redis_version:'+mysql_version
-	ssh.connect(hostname=host, port=22, username='root', password=rootpassword)
-	local_path_soft="software/mysql/mysql-"+mysql_version+"-linux-glibc2.12-x86_64.tar.gz"
-	local_path_script="scripts/mysql/installMYSQL.sh"
-	server_path_soft="/tmp/mysql-"+mysql_version+"-linux-glibc2.12-x86_64.tar.gz"
-	server_path_script="/tmp/installMYSQL.sh"
-	sftp_upload_file(server_path_soft,local_path_soft,host,rootpassword)
-	sftp_upload_file(server_path_script,local_path_script,host,rootpassword)
-	commd="cd /tmp && sh installMYSQL.sh version="+str(mysql_version)+" port="+str(mysql_port)+" password="+str(mysql_password)
-	stdin, stdout, stderr = ssh.exec_command(commd)
-	value = stdout.read()
-	ssh.close()
-	return value
 
 
 if __name__ == '__main__':
