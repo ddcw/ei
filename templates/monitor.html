@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block header %} <h1>ddcw-ei</h1> {% endblock %}
+
+{% block content %}
+<script>
+	function show_action(e){
+		urls = location.protocol + "//" + location.hostname + ":" + location.port + "/api/get" 
+		let xhr = new XMLHttpRequest();
+		xhr.open('POST', urls, true);
+		xhr.setRequestHeader("Content-Type", "application/json")
+		xhr.onreadystatechange = function (){
+			if (this.readyState == 4 && this.status == 200) {
+				rsp_text = JSON.parse(xhr.responseText)['data']
+				table_start = "<table align='center'  class='table table-hover'><thead><th>HOST</th><th>PORT</th><th>Status</th><th></th><th></th></thead><tbody>"
+				for (var i=0; i<rsp_text.length;i++){
+					isrunning=rsp_text[i]['status']
+					host=rsp_text[i]['host']
+					port=rsp_text[i]['port']
+					table_start += "<tr id='"+host+"_"+port+"'><td>"+host+"</td><td>"+port+"</td>"
+					if ((isrunning == 0) && (e=="host")){
+						osname=rsp_text[i]['osname']
+						cpu_socket=rsp_text[i]['cpu_socket']
+						cpu_core=rsp_text[i]['cpu_core']
+						cpu_thread=rsp_text[i]['cpu_thread']
+						mem_total=rsp_text[i]['mem_total']
+						mem_ava=rsp_text[i]['mem_ava']
+						swap=rsp_text[i]['swap']
+						swapness=rsp_text[i]['swapness']
+						firewalld=rsp_text[i]['firewalld']
+						selinux=rsp_text[i]['selinux']
+						last_update=rsp_text[i]['last_update']
+						disk=rsp_text[i]['disk']
+						fs=rsp_text[i]['fs']
+						_tmp = "cpu:"+cpu_socket+"*"+cpu_core+"*"+cpu_thread+"="+cpu_socket*cpu_core*cpu_thread
+						_tmp += "mem:"+mem_ava+"/"+mem_total
+						_tmp += "swap:"+swap+"("+swapness+")"
+						//_tmp += "disk:"+disk //懒得写了,直接字符串拼接弹窗吧....
+						table_start += "<td>运行中</td><td><input type='button' value='详情' onclick=alert('"+_tmp+"')></td><td><input type='button' value='删除' onclick='del_obj(1,\""+host+"\","+port+")'></td>" 
+					}
+					else if((isrunning == 0) && (e=="db")){
+						table_start += "<td>运行中</td><td><a href='/api/mysql_status?mysql_host="+host+"&mysql_port="+port +"' target='_blank'><input type='button' value='详情')></a></td><td><input type='button' value='删除' onclick='del_obj(2,\""+host+"\","+port+")'></td>"
+					}
+					else if((isrunning != 0) && (e=="db")){table_start += "<td>未运行</td><td> </td><td><input type='button' value='删除' onclick='del_obj(2,\""+host+"\","+port+")'></td>"}
+					else{ table_start += "<td>未运行</td><td> </td><td><input type='button' value='删除' onclick='del_obj(1,\""+host+"\","+port+")'></td>"}
+					table_start += "</tr>"
+				}
+				table_start += "</tbody></table>"
+				document.getElementById('content2').innerHTML = table_start
+				//alert(rsp_text[0]['fs'])
+			}
+		}
+		data = {'test':'aa'}
+		data1 = JSON.stringify({'obj':e,'data':data})
+		xhr.send(data1)
+	}
+
+function del_obj(t,host,port){
+	tr_id = host + '_' + port
+	//alert(tr_id)
+	data = {'host':host,'port':port}
+	urls = location.protocol + "//" + location.hostname + ":" + location.port + "/api/del"
+	let xhr = new XMLHttpRequest();
+	xhr.open('POST', urls, true);
+	xhr.setRequestHeader("Content-Type", "application/json")
+	xhr.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200){
+			is_ok = JSON.parse(xhr.responseText)['status']
+			if (is_ok == true){
+				_msg = '删除成功: ' +host +" "+port 
+				alert(_msg)
+				document.getElementById(tr_id).style.display="none"
+			}
+			else{
+				_msg = '删除失败: ' +host +" "+port 
+				alert(_msg)
+			}
+		}
+	}
+	data1 = JSON.stringify({"obj":t,"data":data}) //1:host 2:mysql
+	xhr.send(data1)
+}
+</script>
+<div id='monitor'>
+<input id="action_1" type="button" value="所有" onclick="show_action('all')" class="btn btn-primary">
+<input id="action_2" type="button" value="主机信息" onclick="show_action('host')" class="btn btn-primary">
+<input id="action_3" type="button" value="数据库信息" onclick="show_action('db')" class="btn btn-primary">
+<input id="action_4" type="button" value="集群信息" onclick="show_action('cluster')" class="btn btn-primary">
+</div>
+<div id='content2'></div>
+{% endblock %}
+
+{% block whichcontent %}monitor{% endblock %}
+

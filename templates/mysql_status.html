@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head lang="zh"> <!-- 避免部分浏览器自动弹窗翻译 -->
+	<meta charset="UTF-8">
+	<title>MYSQL_STATUS</title>
+	<script src="{{ url_for('static', filename='js/chart.min.js') }}"></script>
+</head>
+<body>
+<h3>Queries</h3>
+<div>
+<canvas id="Queries" ></canvas>
+</div>
+<script>
+// chartjs 使用 [{'k':'v','k2':'v2'},{'k':'v','k2':'v2'},] 不行,应该是我不熟悉的原因,后面再说. 也可能是版本问题, 所有使用{'k':[1,2,3],'k2':[1,2,3]}这种格式...
+const ctx_test = document.getElementById('Queries');
+const data = {
+	labels: {{data['itime']}},
+	datasets: [{
+		label: 'Queries',
+		data: {{data['Queries']}},
+		 fill: false,
+	}],
+}
+const conf = {
+	type: 'line',
+	data: data,
+}
+new Chart(ctx_test, conf);
+</script>
+
+
+<h3>Bytes_received and Bytes_sent</h3>
+<div>
+<canvas id="Bytes_received" ></canvas>
+</div>
+<script>
+const ctx_Bytes_received = document.getElementById('Bytes_received');
+const data_Bytes_received = {
+	labels: {{data['itime']}},
+	datasets: [
+		{
+		label: 'Bytes_received',
+		data: {{data['Bytes_received']}},
+		fill: false,
+		},
+		{
+		label: 'Bytes_sent',
+		data: {{data['Bytes_sent']}},
+		fill: false,
+		},
+		
+],
+}
+const conf_Bytes_received = {
+	type: 'line',
+	data: data_Bytes_received,
+}
+new Chart(ctx_Bytes_received, conf_Bytes_received);
+</script>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block header %} <h1>ddcw-ei</h1> {% endblock %}
+
+{% block content %}
+<div id='task'>
+<input type='button' value='获取所有task' onclick='get_all_task()'>
+<div id='task_content'></div>
+</div>
+<script>
+	function get_all_task(){
+		urls = location.protocol + "//" + location.hostname + ":" + location.port + "/api/get"
+		let xhr = new XMLHttpRequest();
+		xhr.open('POST', urls, true);
+		xhr.setRequestHeader("Content-Type", "application/json")
+		xhr.onreadystatechange = function (){
+			if (this.readyState == 4 && this.status == 200) {
+				tasklist = JSON.parse(xhr.responseText)['data']
+				is_ok = JSON.parse(xhr.responseText)['status']
+				task_table =  "<table align='center'  class='table table-hover'><thead><th>任务名</th><th>创建时间</th><th>开始时间</th><th>结束时间</th><th>任务类型</th><th>任务状态</th><th>任务详情</th></thead>"
+				if (is_ok == true){
+					task_table += "<tbody>"
+					for (var i=0;i<tasklist.length;i++){
+						taskname = tasklist[i]['taskname']
+						create_time = tasklist[i]['create_time']
+						start_time= tasklist[i]['start_time']
+						end_time= tasklist[i]['end_time']
+						task_type= tasklist[i]['task_type']
+						task_status= tasklist[i]['status']
+						task_detail = tasklist[i]['log'].replace(/\n/g,""); //把换行去了, 因为我不想写了, 直接alert吧....
+						task_table += "<tr><td>"+taskname+"</td><td>"+create_time+"</td><td>"+start_time+"</td><td>"+end_time+"</td><td>"+task_type+"</td><td>"+task_status+"</td><td><input type='button' value='详情' onclick='alert("+'"""'+task_detail+'"""'+")'></td></tr>"
+					}
+					task_table += "</tbody>"
+				}
+				task_table += "</table>"
+				document.getElementById('task_content').innerHTML = task_table
+				
+			}
+		}
+		data = {'test':'aa'}
+		data1 = JSON.stringify({'obj':'task','data':data})
+		xhr.send(data1)
+	}
+</script>
+{% endblock %}
+
+{% block whichcontent %}task{% endblock %}
+

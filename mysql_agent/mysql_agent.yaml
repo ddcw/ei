@@ -1,0 +1,25 @@
+MONITOR_SERVER_HOST : '192.168.101.21'
+MONITOR_SERVER_PORT : 6121
+MONITOR_SERVER_AUTHKEY : 'abc' #1020字节以内
+MONITOR_SERVER_ENABLED : True #是否上传监控信息到server端
+
+
+MYSQL_HOST : '192.168.101.21'
+MYSQL_PORT : 3308
+MYSQL_USER : 'root'
+MYSQL_PASSWORD : '123456'
+MYSQL_SOCKET : ''
+
+BASEDIR: '/data/monitor3308' #监控数据保存路径 (记录传输进度的文件也在这里,名字固定)
+COMPRESS_MAX_DAYS : 3 #压缩3天以前的数据
+COMPRESS_REMOVED : True #压缩后删除源文件
+COMPRESS : True #开启压缩
+EXPIRED_DAYS : 14 #保存最近14天的数据(含压缩文件)
+DAEMON : True #放后台(默认)
+FLUSH_SYNC : 0 # 0:自动  1:每条/秒 刷一次,  n>=2 每n条刷一次.
+
+LOG : 'monitor.log' #日志信息 无效, 是自动生成的, 方便点...(老是忘记修改路径了)
+LOG_BASENAME : "t20230115BASEDIR" #日志文件名 日志轮转用的, TODO  logging.handlers.RotatingFileHandler
+LOG_MAX_FILE_SIZE : 1024 * 1024 * 1024 #每个日志文件的大小 日志轮转用的
+LOG_SAVED_COUNT : 5  #保存的数量 日志轮转用的
+

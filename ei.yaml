@@ -1,0 +1,38 @@
+BASEDIR : 'data' #基础路径, 日志路径, pid和数据之类的都是放这下面....
+TMP : 'tmp' #存放临时文件的目录, 删除不影响, 比如巡检报告(含innodb status分析)之类的
+
+WEB_HOST : '0.0.0.0' #web端监听地址
+WEB_PORT : 80 #web端监听端口
+WEB_ADMIN : 'admin' #web控制台账号, 目前不支持多用户/租户
+WEB_PASSWORD : '123456'
+WEB_ENABLE : True #是否启用WEB控制台
+WEB_LOG : 'webei.log' #web端日志
+
+HOST : '0.0.0.0' #server
+PORT : 6121 #server端监听端口
+AUTHKEY : 'abc' #客户端连上server需要的密码 1000字节以内
+LISTENS : 100 #最多的连接数
+COMPRESS : True #开启压缩(监控数据的)
+COMPRESS_MAX_DAYS : 3 #压缩3天以前的数据
+COMPRESS_REMOVED : True #压缩后删除源文件
+LOG : 'server.log'
+EXPIRED_DAYS : 14 #保存最近14天的数据(含压缩文件)
+DAEMON : True #放后台(默认), 也不支持修改....
+FLUSH_SYNC : 0 # 0:自动  1:每条/秒 刷一次,  n>=2 每n条刷一次.
+CLEANER : 1 #cleaner线程数量, 固定1
+WRITER : 4 #writer 线程数量 每个writer线程都有自己的fd
+WORKER : 4 #mysql安装, 集群添加, 巡检, 压测等都是这个玩意干.....
+UPDATE_INTERVAL : 60 #每60秒更新一次基础信息.
+ALLOW : [] #允许的主机 TODO
+DENY : [] #拒绝的主机 TODO
+UPDATE_INTERVAL : 60 #每60秒更新一次监控信息. 后面再考虑自动更新的事情
+
+
+
+#ALERM 告警相关的 TODO
+
+
+
+#MYSQL安装相关的(默认参数模板路径)
+MYSQL_CNF_FILE : 'templates/my.cnf' #parser 解析 
+MYSQL_PACK : '/root/mysql-5.7.41-linux-glibc2.12-x86_64.tar.gz' #后面再考虑给前端选包之类的

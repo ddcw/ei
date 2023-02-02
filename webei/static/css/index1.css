@@ -1,4 +1,0 @@
-nav { background: lightgray; display: flex; align-items: center; padding: 0 0.5rem; }
-a {text-decoration: none; color:#377ba8}
-nav ul  { display: flex; list-style: none; margin: 0; padding: 0; }
-nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }

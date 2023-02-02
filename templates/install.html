@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% block header %} <h1>ddcw-ei</h1> {% endblock %}
+
+{% block content %}
+<script>
+	function install_page(pgn){
+		var aa = ["install_mysql","menu","install_pg",]
+		for (var i = 0; i < aa.length; i ++){
+			document.getElementById(aa[i]).style.display="none"
+		}
+		document.getElementById(pgn).style.display=""
+	}
+</script>
+<div id='menu'>
+<button onclick='install_page("install_mysql")'>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">安装单机MYSQL</h5>
+    <p class="card-text">mysql:5.7/8.0</p>
+    <p class="card-text">os:linux</p>
+    <a href="#" class="card-link">/api/install_mysql</a>
+  </div>
+</div>
+</button>
+<button onclick='install_page("install_pg")'>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">安装单机PG</h5>
+    <p class="card-text">不支持,只是占排版的 >_< </p>
+    <p class="card-text">os:linux</p>
+    <a href="#" class="card-link">/api/install_pg</a>
+  </div>
+</div>
+</button>
+</div>
+
+<div id='install_mysql' style='display:none'>
+<div style='padding-left:0px;'><button onclick='install_page("menu")'>返回</button></div>
+<div id='install_mysql_1'>
+<p>主机信息</p>
+<table class="table table-bordered">
+        <thead>
+                <tr>
+                        <th>HOST</th>
+                        <th>PORT</th>
+                        <th>USER</th>
+                        <th>PASSWORD</th>
+                </tr>
+        </thead>
+        <tbody align="center">
+                <tr>
+                        <td><input id='host_host' name="host" type="text" value="127.0.0.1"></td>
+                        <td><input id='host_port' name="port" type="number" value="22"></td>
+                        <td><input id='host_user' name="user" type="text" value="root"></td>
+                        <td><input id='host_password' name="password" type="password" value="123456"></td>
+                </tr>
+        </tbody>
+</table>
+<input id="install_mysql_1_button" type="button" value="获取信息" onclick="install_mysql1()" class="btn btn-primary">
+</div>
+<div id='install_mysql_2' style='display:none'>
+<p>mysql的 root@% 密码设置 <input id='mysql_password' name="password" type="password" value="123456"> </p>
+<input id="install_mysql_2_button" type="button" value="开始安装" onclick="install_mysql2()" class="btn btn-primary">
+<p>参数如下</p>
+<div id='install_mysql_2_content'></div>
+</div>
+</div>
+<script>
+function install_mysql1(){
+	host = document.getElementById("host_host").value
+	port = document.getElementById("host_port").value
+	user = document.getElementById("host_user").value
+	password = document.getElementById("host_password").value
+	data = {'host':host,'port':port,'user':user,'password':password}
+	urls = location.protocol + "//" + location.hostname + ":" + location.port + "/api/install_mysql_1"
+	let xhr = new XMLHttpRequest();
+	xhr.open('POST', urls, true);
+	xhr.setRequestHeader("Content-Type", "application/json")
+	xhr.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			mysql_var_dict = JSON.parse(xhr.responseText)['data']
+			is_ok = JSON.parse(xhr.responseText)['status']
+			if (is_ok == true){
+				document.getElementById('install_mysql_1').style.display="none"
+				document.getElementById('install_mysql_2').style.display=""
+				var var_html = ""
+				for (var key in mysql_var_dict){
+					var_html += "<p><input disabled='disabled' value='" +key + "'>:<input value='"+mysql_var_dict[key]+"'></p>"
+				}
+				document.getElementById('install_mysql_2_content').innerHTML = var_html
+				//alert(mysql_var_dict['port'])
+			}
+			else{alert('failed')}
+		}
+	}
+	data1 = JSON.stringify({"obj":'install_mysql_1',"data":data})
+	xhr.send(data1)
+}
+function install_mysql2(){
+	host = document.getElementById("host_host").value
+	port = document.getElementById("host_port").value
+	user = document.getElementById("host_user").value
+	password = document.getElementById("host_password").value
+	mysql_password = document.getElementById("mysql_password").value
+	data = {'host':host,'port':port,'user':user,'password':password,'mysql_password':mysql_password}
+	var mysql_var = {}
+	mysql_var_html = document.getElementById("install_mysql_2_content").children
+	for (var i=0;i<mysql_var_html.length;i++){
+		mysql_var[mysql_var_html[i].children[0].value] = mysql_var_html[i].children[1].value
+	}
+	data['var']=mysql_var
+	//alert(mysql_var_html[0].children[1].value)
+	//alert(mysql_var['basedir'])
+	urls = location.protocol + "//" + location.hostname + ":" + location.port + "/api/install_mysql_2"
+	let xhr = new XMLHttpRequest();
+	xhr.open('POST', urls, true);
+	xhr.setRequestHeader("Content-Type", "application/json")
+	xhr.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			mysql_var_dict = JSON.parse(xhr.responseText)['data']
+			alert(mysql_var_dict)
+		}
+	}
+	data1 = JSON.stringify({"obj":'install_mysql_2',"data":data})
+	xhr.send(data1)
+}
+</script>
+
+<div id='install_pg' style='display:none'>
+<button onclick='install_page("menu")'>返回</button>
+不会.... (./configure && make && make install)
+</div>
+
+{% endblock %}
+
+{% block whichcontent %}install{% endblock %}
+

@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+
+{% block header %} <h1>ddcw-ei</h1> {% endblock %}
+
+{% block content %}
+<script>
+        function install_page(pgn){
+                var aa = ["menu","add_host","add_db","add_ms","add_mgr","add_pxc"]
+		//alert(pgn)
+                for (var i = 0; i < aa.length; i ++){
+                        document.getElementById(aa[i]).style.display="none"
+                }
+                document.getElementById(pgn).style.display=""
+        }
+</script>
+<div id='menu'>
+<button onclick='install_page("add_host")'>
+	<div class="card" style="width: 18rem;">
+		<div class="card-body">
+			<h5 class="card-title">添加主机实例</h5>
+			<p class="card-text">os:linux</p>
+			<p class="card-text">platform:x86</p>
+			<p class="card-text">ps:只支持账号密码,暂不支持密钥</p>
+			<a href="#" class="card-link">/api/add_host</a>
+		</div>
+	</div>
+</button>
+<button onclick='install_page("add_db")'>
+	<div class="card" style="width: 18rem;">
+		<div class="card-body">
+			<h5 class="card-title">添加MYSQL实例</h5>
+			<p class="card-text">version:mysql5.7.x/8.0.x</p>
+			<p class="card-text">os:linux</p>
+			<p class="card-text">ps:还不支持socket</p>
+			<a href="#" class="card-link">/api/add_db</a>
+		</div>
+	</div>
+</button>
+<button onclick='install_page("add_ms")'>
+	<div class="card" style="width: 18rem;">
+		<div class="card-body">
+			<h5 class="card-title">添加MYSQL主从</h5>
+			<p class="card-text">version:mysql5.7.x/8.0.x</p>
+			<p class="card-text">os:linux</p>
+			<p class="card-text">ps:自动识别主从关系</p>
+			<a href="#" class="card-link">/api/add_ms</a>
+		</div>
+	</div>
+</button>
+<button onclick='install_page("add_mgr")'>
+	<div class="card" style="width: 18rem;">
+		<div class="card-body">
+			<h5 class="card-title">添加MGR集群</h5>
+			<p class="card-text">version:mysql5.7.x/8.0.x</p>
+			<p class="card-text">os:linux</p>
+			<p class="card-text">ps:自动识别集群关系</p>
+			<a href="#" class="card-link">/api/add_mgr</a>
+		</div>
+	</div>
+</button>
+<button onclick='install_page("add_pxc")'>
+	<div class="card" style="width: 18rem;">
+		<div class="card-body">
+			<h5 class="card-title">添加PXC集群</h5>
+			<p class="card-text">version:mysql5.7.x/8.0.x</p>
+			<p class="card-text">os:linux</p>
+			<p class="card-text">ps:自动识别集群关系</p>
+			<a href="#" class="card-link">/api/add_pxc</a>
+		</div>
+	</div>
+</button>
+</div>
+
+
+<div id='add_host' style='display:none'>
+<div style='padding-left:0px;'><button onclick='install_page("menu")'>返回</button></div>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>HOST</th>
+			<th>PORT</th>
+			<th>USER</th>
+			<th>PASSWORD</th>
+		</tr>
+	</thead>
+	<tbody align="center">
+		<tr>
+			<td><input id='host_host' name="host" type="text" value="127.0.0.1"></td>
+			<td><input id='host_port' name="port" type="number" value="22"></td>
+			<td><input id='host_user' name="user" type="text" value="root"></td>
+			<td><input id='host_password' name="password" type="password" value="123456"></td>
+		</tr>
+	</tbody>
+</table>
+<input id="add_host_button" type="button" value="添加" onclick="add_host()" class="btn btn-primary">
+</div>
+<script>
+function add_host(){
+	host = document.getElementById("host_host").value
+	port = document.getElementById("host_port").value
+	user = document.getElementById("host_user").value
+	password = document.getElementById("host_password").value
+	data = {'host':host,'port':port,'user':user,'password':password}
+	urls = location.protocol + "//" + location.hostname + ":" + location.port + "/api/add"
+	//formdata = new FormData();
+	//formdata.append("data",'test api add_host');
+	let xhr = new XMLHttpRequest();
+	xhr.open('POST', urls, true);
+	xhr.setRequestHeader("Content-Type", "application/json")
+	xhr.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			rsp_text = JSON.parse(xhr.responseText)['data']
+			alert(rsp_text)
+		}
+		//else if (this.status != 200) {
+		//	alert('gg')
+		//}
+	}
+	data1 = JSON.stringify({"obj":'addhost',"data":data})
+	xhr.send(data1)
+}
+</script>
+
+<div id='add_db' style='display:none'>
+<div style='padding-left:0px;'><button onclick='install_page("menu")'>返回</button></div>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>HOST</th>
+			<th>PORT</th>
+			<th>USER</th>
+			<th>PASSWORD</th>
+		</tr>
+	</thead>
+	<tbody align="center">
+		<tr>
+			<td><input id='db_host' name="host" type="text" value="127.0.0.1"></td>
+			<td><input id='db_port' name="port" type="number" value="3306"></td>
+			<td><input id='db_user' name="user" type="text" value="root"></td>
+			<td><input id='db_password' name="password" type="password" value="123456"></td>
+		</tr>
+	</tbody>
+</table>
+<input id="add_db_button" type="button" value="添加" onclick="add_db()" class="btn btn-primary">
+</div>
+<script>
+function add_db(){
+	host = document.getElementById("db_host").value
+	port = document.getElementById("db_port").value
+	user = document.getElementById("db_user").value
+	password = document.getElementById("db_password").value
+	data = {'host':host,'port':port,'user':user,'password':password}
+	urls = location.protocol + "//" + location.hostname + ":" + location.port + "/api/add"
+	//formdata = new FormData();
+	//formdata.append("data",'test api add_host');
+	let xhr = new XMLHttpRequest();
+	xhr.open('POST', urls, true);
+	xhr.setRequestHeader("Content-Type", "application/json")
+	xhr.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			rsp_text = JSON.parse(xhr.responseText)['data']
+			alert(rsp_text)
+		}
+		//else if (this.status != 200) {
+		//	alert('gg')
+		//}
+	}
+	data1 = JSON.stringify({"obj":'adddb',"data":data})
+	xhr.send(data1)
+}
+</script>
+
+<div id='add_db' style='display:none'>
+<div style='padding-left:0px;'><button onclick='install_page("menu")'>返回</button></div>
+host  port user password db
+</div>
+
+<div id='add_ms' style='display:none'>
+<div style='padding-left:0px;'><button onclick='install_page("menu")'>返回</button></div>
+host  port user password ms
+</div>
+</div>
+
+<div id='add_ms' style='display:none'>
+<div style='padding-left:0px;'><button onclick='install_page("menu")'>返回</button></div>
+host  port user password ms
+</div>
+
+<div id='add_mgr' style='display:none'>
+<div style='padding-left:0px;'><button onclick='install_page("menu")'>返回</button></div>
+host  port user password mgr
+</div>
+
+<div id='add_pxc' style='display:none'>
+<div style='padding-left:0px;'><button onclick='install_page("menu")'>返回</button></div>
+host  port user password pxc
+</div>
+
+{% endblock %}
+
+{% block whichcontent %}conf{% endblock %}
+

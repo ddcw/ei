@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head lang="zh"> <!-- 避免部分浏览器自动弹窗翻译 -->
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-table.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+	<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap-table.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap-table-zh-CN.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.knob.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/base.js') }}"></script>
+	<script>
+		console.log("最新下载地址: https://github.com/ddcw/ei")
+	</script>
+
+</head>
+
+<body>
+<div class="leftnav">
+	<h1>ddcw-ei</h1>
+	<button id='bindex'   class="btn" ><a href="/"        >首页</a></button>
+	<button id='binstall' class="btn" ><a href="/install" >安装</a></button>
+	<button id='bconf'    class="btn" ><a href="/conf"    >配置</a></button>
+	<button id='bmonitor' class="btn" ><a href="/monitor" >监控</a></button>
+	<button id='btool'    class="btn" ><a href="/tool"    >工具</a></button>
+	<button id='btask'    class="btn" ><a href="/task"    >任务</a></button>
+	<button id='bset'     class="btn" ><a href="/set"     >设置</a></button>
+	<button id='logout'  style="margin-top:100%;"  class="btn" ><a href="/logout"        >注销</a></button>
+</div>
+<div align="center" id="content" style="margin-left:180px; margin-top:5px;">
+{% block content %}{% endblock %}
+</div>
+
+
+<footer style='margin-top:100%; margin-left:180px;'>
+footer: ddcw is handsome
+</footer>
+
+
+<script>
+	window.onload = function(){
+		be = "b" + "{% block whichcontent %}{%endblock%}"
+		//alert(be)
+		//document.getElementById(be).getElementsByTagName('a')[0].className += "nav-item"
+		document.getElementById(be).style.color='white'
+		document.getElementById(be).style.backgroundColor='#3399CC'
+		
+	}
+</script>
+
+</body>
+
+</html>
